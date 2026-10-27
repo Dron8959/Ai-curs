@@ -1,0 +1,2177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Make Show Lab — AI creativity course for kids 6–14 and their parents</title>
+<meta name="description" content="An AI creativity course you do side by side with your child. 37 short lessons, and each one ends with a real thing to show: a cartoon, a song, a game, a website. No coding. From $197.">
+<meta name="theme-color" content="#3195e0">
+<meta property="og:title" content="Make Show Lab — Make It. Show It.">
+<meta property="og:description" content="An AI creativity course for kids 6–14 and their parents. Cartoons, songs, games and websites, made together. No coding.">
+<meta property="og:image" content="assets/img/meet-kamilla.webp">
+<link rel="icon" href="assets/img/logo.png">
+<link rel="preconnect" href="https://d2ol7oe51mr4n9.cloudfront.net" crossorigin>
+<link rel="preload" as="image" href="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/dc4ac5c7-4eee-48ab-814c-cbba3c9fd1b7.jpg" fetchpriority="high">
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/dm-serif-display-400-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/poppins-400-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/poppins-700-latin.woff2" crossorigin>
+<script>
+  // Set before first paint so the intro elements never flash in their final state.
+  (function () {
+    var d = document.documentElement;
+    d.classList.add('js');
+    var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduce && 'animate' in d) d.classList.add('intro');
+  })();
+</script>
+<style>
+/* ---------- Fonts (self-hosted, latin) ---------- */
+@font-face {
+  font-family: 'DM Serif Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/dm-serif-display-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/poppins-400-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/fonts/poppins-600-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(assets/fonts/poppins-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* ---------- Tokens ---------- */
+:root {
+  --sky-top: #3195e0;
+  --sky-bot: #49a9f3;
+  --sky-deep: #1d6fb8;
+  --ink: #161c08;
+  --hl: #f6f03b;
+  --hl-glow: rgba(246, 240, 59, .75);
+  --cloud: #f4f9ff;
+  --mist: #e7f2fd;
+  --paper: #ffffff;
+  --text: #34404f;
+  --muted: #5d6b7e;
+  --line: rgba(29, 111, 184, .14);
+  --shadow: 0 26px 50px -28px rgba(17, 79, 140, .45), 0 6px 14px -8px rgba(17, 79, 140, .18);
+  --shadow-lift: 0 34px 60px -26px rgba(17, 79, 140, .5), 0 10px 20px -10px rgba(17, 79, 140, .22);
+  --ease: cubic-bezier(.2, .75, .2, 1);
+
+  /* Frame unit: the 1440×900 hero frame always covers the viewport. */
+  --u: max(100vw / 1440, 100vh / 900);
+  /* Nav unit: its own fit, clamped. */
+  --n: clamp(.62px, min(100vw / 1440, 100vh / 900), 1.6px);
+
+  /* Rough highlighter swipes: jagged brush shapes, stretched behind the text. */
+  --swipe: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 40' preserveAspectRatio='none'%3E%3Cpath fill='%23f6f03b' d='M4 8L15 5L28 7L42 4L57 6L71 3L86 6L101 4L116 6L131 3L146 6L161 4L175 6L188 3L196 7L194 14L198 21L195 28L197 35L185 37L171 35L157 38L142 35L127 37L112 35L97 38L82 35L67 37L52 35L37 38L23 35L10 37L3 34L6 27L2 20L5 13Z'/%3E%3Cpath fill='%23fffa8c' opacity='.55' d='M16 13L92 10L186 14L96 16Z'/%3E%3Cpath fill='%23e9e12a' opacity='.45' d='M22 30L110 28L182 31L104 33Z'/%3E%3C/svg%3E");
+  --swipe-2: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 40' preserveAspectRatio='none'%3E%3Cpath fill='%23f6f03b' d='M6 10L19 6L33 8L48 4L62 7L77 4L92 6L107 3L122 6L137 4L152 7L166 4L180 6L194 4L198 11L195 18L199 25L196 32L193 37L179 35L164 38L150 35L135 37L120 34L105 37L90 35L75 38L60 35L45 37L30 34L16 37L4 35L1 28L5 21L2 15Z'/%3E%3Cpath fill='%23fffa8c' opacity='.5' d='M12 14L104 11L188 15L98 17Z'/%3E%3Cpath fill='%23e9e12a' opacity='.4' d='M18 29L96 27L184 30L92 32Z'/%3E%3C/svg%3E");
+  --blob: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60' preserveAspectRatio='none'%3E%3Cpath fill='%23f6f03b' d='M9 7L20 4L31 6L43 3L54 7L57 18L55 29L58 41L55 53L43 56L31 54L19 57L7 54L4 43L6 31L3 19Z'/%3E%3C/svg%3E");
+  --clouds: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 70' preserveAspectRatio='none'%3E%3Cpath fill='%23f4f9ff' d='M0 70V44C10 30 34 28 46 40C52 18 86 12 100 32C112 20 136 22 142 38C156 14 196 10 210 34C222 24 246 26 252 40C266 22 300 20 312 36C322 28 346 28 360 44V70Z'/%3E%3C/svg%3E");
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 96px; }
+body {
+  margin: 0;
+  font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-size: 17px;
+  line-height: 1.62;
+  color: var(--text);
+  background: var(--cloud);
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+}
+img, video, svg { display: block; max-width: 100%; }
+a { color: inherit; }
+h1, h2, h3, p, figure, blockquote, ul, ol, dl, dd { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+button { font: inherit; color: inherit; }
+.sr-only {
+  position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.skip {
+  position: fixed; left: 16px; top: -60px; z-index: 100; padding: 10px 16px;
+  background: var(--ink); color: #fff; border-radius: 999px; font-weight: 600; text-decoration: none;
+}
+.skip:focus { top: 16px; }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; border-radius: 6px; }
+.band-sky :focus-visible, .hero :focus-visible, .nav :focus-visible { outline-color: #fff; }
+
+/* ---------- Highlighter label ---------- */
+.hl {
+  position: relative;
+  display: inline-block;
+  isolation: isolate;
+  margin: 0;
+  padding: .2em .5em .22em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  letter-spacing: -.018em;
+  line-height: 1;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.hl::before {
+  content: "";
+  position: absolute;
+  inset: 0 -.06em;
+  z-index: -1;
+  background: var(--swipe) center / 100% 100% no-repeat;
+  filter: drop-shadow(0 0 calc(1.5 * var(--u)) var(--hl-glow));
+}
+.hl.v2::before { background-image: var(--swipe-2); }
+.hl > span { position: relative; display: inline-block; }
+
+mark {
+  color: inherit;
+  padding: 0 .1em;
+  background: var(--swipe) 0 62% / 100% 86% no-repeat;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+mark.v2 { background-image: var(--swipe-2); }
+
+/* ---------- Nav (pinned to the viewport, own unit --n) ---------- */
+.nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: calc(88 * var(--n));
+  z-index: 50;
+  transition: background-color .35s, box-shadow .35s;
+}
+.nav.is-solid {
+  background: rgba(41, 140, 218, .9);
+  -webkit-backdrop-filter: saturate(1.3) blur(14px);
+  backdrop-filter: saturate(1.3) blur(14px);
+  box-shadow: 0 10px 30px -16px rgba(10, 60, 110, .55);
+}
+.nav-logo {
+  position: absolute;
+  left: calc(118 * var(--n));
+  top: calc(22 * var(--n));
+  display: flex;
+  align-items: center;
+  gap: calc(11 * var(--n));
+  height: calc(44 * var(--n));
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: calc(17 * var(--n));
+  letter-spacing: -.01em;
+}
+.nav-logo img {
+  width: calc(44 * var(--n));
+  height: calc(44 * var(--n));
+  border-radius: calc(12 * var(--n));
+  background: #fff;
+  box-shadow: 0 4px 14px -4px rgba(10, 60, 110, .45);
+}
+.nav-links {
+  position: absolute;
+  left: 50%;
+  top: calc(44 * var(--n));
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: calc(35.5 * var(--n));
+}
+.nav-links a {
+  position: relative;
+  color: #fff;
+  font-size: calc(17 * var(--n));
+  text-decoration: none;
+  isolation: isolate;
+}
+.nav-links a::before {
+  content: "";
+  position: absolute;
+  inset: -.12em -.35em;
+  z-index: -1;
+  background: var(--swipe) center / 100% 100% no-repeat;
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path .35s var(--ease);
+}
+.nav-links a:hover, .nav-links a:focus-visible { color: var(--ink); }
+.nav-links a:hover::before, .nav-links a:focus-visible::before { clip-path: inset(0 0 0 0); }
+.nav-social {
+  position: absolute;
+  right: calc(283 * var(--n));
+  top: calc(19 * var(--n));
+  width: calc(50 * var(--n));
+  height: calc(50 * var(--n));
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background: rgba(255, 255, 255, .22);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .35);
+  transition: background-color .25s, transform .25s var(--ease);
+}
+.nav-social:hover { background: rgba(255, 255, 255, .36); transform: translateY(-2px); }
+.nav-social svg { width: calc(22 * var(--n)); height: calc(22 * var(--n)); }
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  background: #fff;
+  color: var(--ink);
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 10px 24px -12px rgba(10, 60, 110, .6), 0 0 0 0 var(--hl-glow);
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+}
+.pill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px -12px rgba(10, 60, 110, .6), 0 0 0 4px rgba(246, 240, 59, .85);
+}
+.nav-pill {
+  position: absolute;
+  right: calc(107 * var(--n));
+  top: calc(22 * var(--n));
+  width: calc(168 * var(--n));
+  height: calc(44 * var(--n));
+  font-size: calc(15 * var(--n));
+}
+.nav-menu { display: none; }
+.nav-panel { display: none; }
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  height: max(100vh, 720 * var(--u));
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--sky-top), var(--sky-bot));
+}
+.scene { position: absolute; inset: 0; }
+.frame, .copy {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: calc(1440 * var(--u));
+  height: calc(900 * var(--u));
+  margin-left: calc(-720 * var(--u));
+}
+.plate {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+}
+/* The video was rendered from the plate mirror-extended 96/1728 per side: its middle sits exactly on the plate. */
+.scene-video {
+  position: absolute;
+  top: 0;
+  left: -5.556%;
+  width: 111.11%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  opacity: 0;
+}
+.scene-video.is-playing { opacity: 1; }
+
+.card {
+  position: absolute;
+  left: calc(var(--x) * var(--u));
+  top: calc(var(--y) * var(--u));
+  width: calc(132 * var(--u));
+  height: calc(162 * var(--u));
+  border: calc(5 * var(--u)) solid #fff;
+  border-radius: calc(12 * var(--u));
+  background: #fff;
+  overflow: hidden;
+  transform: rotate(var(--r));
+  box-shadow:
+    0 calc(14 * var(--u)) calc(26 * var(--u)) calc(-6 * var(--u)) rgba(9, 58, 105, .42),
+    0 calc(3 * var(--u)) calc(7 * var(--u)) rgba(9, 58, 105, .18);
+  transition: transform .5s var(--ease), box-shadow .5s var(--ease);
+  z-index: 2;
+}
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: calc(7 * var(--u));
+}
+@media (hover: hover) {
+  .card:hover {
+    transform: translateY(calc(-18 * var(--u))) rotate(0deg) scale(1.07);
+    z-index: 6;
+    box-shadow:
+      0 calc(30 * var(--u)) calc(40 * var(--u)) calc(-10 * var(--u)) rgba(9, 58, 105, .45),
+      0 calc(6 * var(--u)) calc(12 * var(--u)) rgba(9, 58, 105, .2);
+  }
+}
+
+.tag {
+  position: absolute;
+  left: calc(var(--x) * var(--u));
+  top: calc(var(--y) * var(--u));
+  transform: rotate(var(--r));
+  height: calc(32 * var(--u));
+  padding: 0 calc(13 * var(--u));
+  font-size: calc(17 * var(--u));
+  line-height: calc(33 * var(--u));
+  z-index: 5;
+}
+.tag-zero { --x: 395; --y: 424; --r: -11deg; translate: -50% 0; }
+.tag-words { --x: 968; --y: 518; --r: -6deg; }
+
+.arrows {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  pointer-events: none;
+  z-index: 5;
+  overflow: visible;
+  filter: drop-shadow(0 0 calc(1.5 * var(--u)) var(--hl-glow)) drop-shadow(0 calc(1 * var(--u)) calc(1.5 * var(--u)) rgba(10, 55, 100, .3));
+}
+.arrows path {
+  fill: none;
+  stroke: var(--hl);
+  stroke-width: 3.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.cta {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(584 * var(--u));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: 50% 0;
+  z-index: 4;
+}
+.cta-price {
+  height: calc(25 * var(--u));
+  padding: 0 calc(10 * var(--u));
+  font-size: calc(14.5 * var(--u));
+  line-height: calc(26 * var(--u));
+}
+.cta-pill {
+  margin-top: calc(15 * var(--u));
+  width: calc(195 * var(--u));
+  height: calc(44 * var(--u));
+  font-size: calc(17 * var(--u));
+}
+.cta-note {
+  margin-top: calc(14 * var(--u));
+  font-size: calc(15.6 * var(--u));
+  line-height: 1.3;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px calc(10 * var(--u)) rgba(10, 50, 95, .55), 0 0 2px rgba(10, 50, 95, .35);
+}
+
+.copy {
+  z-index: 3;
+  color: #fff;
+  text-align: center;
+  pointer-events: none;
+}
+.copy > * { pointer-events: auto; }
+.copy-begin, .copy-nocost {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  width: max-content;
+  z-index: 2;
+}
+.copy-begin {
+  top: calc(117 * var(--u));
+  height: calc(44 * var(--u));
+  padding: 0 calc(16 * var(--u));
+  font-size: calc(40 * var(--u));
+  line-height: calc(46 * var(--u));
+}
+.copy-nocost {
+  top: calc(241 * var(--u));
+  height: calc(45 * var(--u));
+  padding: 0 calc(16 * var(--u));
+  font-size: calc(39 * var(--u));
+  line-height: calc(47 * var(--u));
+}
+.headline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(140 * var(--u));
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-weight: 400;
+  font-size: calc(103 * var(--u));
+  line-height: 1;
+  letter-spacing: -.005em;
+  white-space: nowrap;
+  color: #fff;
+  -webkit-text-stroke: calc(1.1 * var(--u)) #fff;
+  text-shadow: 0 calc(6 * var(--u)) calc(30 * var(--u)) rgba(13, 72, 135, .25);
+}
+.headline > span { display: inline-block; }
+.subline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(312 * var(--u));
+  font-size: calc(17.2 * var(--u));
+  line-height: calc(24.5 * var(--u));
+  text-shadow: 0 1px calc(14 * var(--u)) rgba(13, 72, 135, .35);
+}
+.hero-fade {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: calc(64 * var(--u));
+  background: linear-gradient(180deg, rgba(244, 249, 255, 0), var(--cloud));
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Intro state (set in <head>); the Web Animations timeline takes over from here. */
+.intro .nav-logo, .intro .nav-links a, .intro .nav-social, .intro .nav-pill, .intro .nav-menu,
+.intro .copy-begin > span, .intro .copy-nocost > span,
+.intro .headline, .intro .subline { opacity: 0; }
+.intro .copy-begin::before, .intro .copy-nocost::before { clip-path: inset(0 100% 0 0); }
+
+/* ---------- Page layout ---------- */
+.wrap { width: min(1120px, 100% - 48px); margin-inline: auto; }
+.narrow { width: min(860px, 100% - 48px); margin-inline: auto; }
+.section { position: relative; padding-block: clamp(80px, 10vw, 140px); }
+.section-mist { background: var(--mist); }
+.center { text-align: center; }
+.nowrap { white-space: nowrap; }
+.sec-head { max-width: 760px; margin-bottom: clamp(40px, 5vw, 64px); }
+.sec-head.center { margin-inline: auto; }
+.kicker { margin-bottom: 18px; }
+.hl-kicker { font-size: 15px; transform: rotate(-2deg); padding: .45em .8em; }
+h2, .h2 {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(38px, 5vw, 62px);
+  line-height: 1.05;
+  letter-spacing: -.01em;
+  color: var(--ink);
+}
+h3 { font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 20px; line-height: 1.3; color: var(--ink); letter-spacing: -.01em; }
+.h3-serif { font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: clamp(30px, 3.4vw, 42px); line-height: 1.1; }
+.lead { margin-top: 18px; font-size: clamp(17px, 1.5vw, 19px); color: var(--muted); }
+.reveal { transition: opacity .8s var(--ease), translate .8s var(--ease); }
+.js .reveal:not(.in) { opacity: 0; translate: 0 28px; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 54px;
+  padding: 0 28px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  white-space: nowrap;
+  border: 0;
+  cursor: pointer;
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease), background-color .3s;
+}
+.btn svg { width: 18px; height: 18px; }
+.btn-ink { background: var(--ink); color: #fff; box-shadow: 0 14px 28px -14px rgba(22, 28, 8, .7); }
+.btn-ink:hover { transform: translateY(-2px); box-shadow: 0 18px 30px -14px rgba(22, 28, 8, .7), 0 0 0 4px var(--hl); }
+.btn-ghost { background: #fff; color: var(--ink); box-shadow: inset 0 0 0 2px var(--ink); }
+.btn-ghost:hover { transform: translateY(-2px); background: var(--hl); }
+.btn-white { background: #fff; color: var(--ink); box-shadow: 0 14px 28px -14px rgba(10, 60, 110, .6); }
+.btn-white:hover { transform: translateY(-2px); box-shadow: 0 18px 30px -14px rgba(10, 60, 110, .6), 0 0 0 4px var(--hl); }
+
+.ico {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  background: var(--blob) center / 100% 100% no-repeat;
+  color: var(--ink);
+  flex: none;
+}
+.ico svg { width: 26px; height: 26px; }
+.icon { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+.photo {
+  position: relative;
+  border: 6px solid #fff;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+.photo img { width: 100%; height: auto; border-radius: 16px; }
+
+/* Sky bands with cloud edges */
+.band-sky {
+  position: relative;
+  color: #fff;
+  background: linear-gradient(180deg, var(--sky-top), var(--sky-bot));
+  padding-block: clamp(120px, 13vw, 180px);
+}
+.band-sky h2, .band-sky .h2 { color: #fff; }
+.band-sky mark { color: var(--ink); }
+.cloud-edge {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 70px;
+  pointer-events: none;
+  background: var(--clouds) 0 100% / 360px 70px repeat-x;
+}
+.cloud-edge::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  background-size: 250px 54px;
+  background-position: 120px 100%;
+  opacity: .6;
+}
+.cloud-edge.top { top: -1px; transform: scaleY(-1); }
+.cloud-edge.bottom { bottom: -1px; }
+
+/* ---------- Ticker ---------- */
+.ticker {
+  position: relative;
+  padding: 26px 0;
+  overflow: hidden;
+  border-block: 1px solid var(--line);
+  background: var(--cloud);
+}
+.ticker-track { display: flex; width: max-content; animation: ticker 48s linear infinite; }
+.ticker:hover .ticker-track { animation-play-state: paused; }
+.ticker ul { display: flex; align-items: center; }
+.ticker li {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  padding-right: 34px;
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(24px, 2.6vw, 34px);
+  line-height: 1.2;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.ticker li::after { content: "✦"; font-family: 'Poppins', sans-serif; font-size: .6em; color: var(--sky-top); }
+@keyframes ticker { to { transform: translateX(-50%); } }
+
+/* ---------- Intro (original hero) ---------- */
+.intro-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: clamp(40px, 6vw, 90px);
+  align-items: center;
+}
+.kamilla { transform: rotate(-3deg); max-width: 440px; justify-self: center; }
+.kamilla .sticker {
+  position: absolute;
+  top: -22px;
+  left: -18px;
+  font-size: 20px;
+  padding: .45em .75em;
+  transform: rotate(-7deg);
+}
+.eyebrow { font-weight: 600; font-size: 15px; color: var(--sky-deep); margin-bottom: 18px; }
+.btn-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+.meta { margin-top: 20px; font-size: 15px; color: var(--muted); }
+.meta b { color: var(--ink); }
+
+/* ---------- Stat band ---------- */
+.stat-quote p {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(30px, 4.2vw, 52px);
+  line-height: 1.12;
+  letter-spacing: -.005em;
+}
+.stat-quote footer { margin-top: 22px; font-size: 15px; opacity: .92; }
+.stat-quote footer a { text-underline-offset: 3px; }
+.stat-aside {
+  position: relative;
+  margin-top: clamp(40px, 5vw, 60px);
+  padding: 28px 32px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, .16);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .3);
+  font-size: clamp(17px, 1.6vw, 20px);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+.stat-aside strong { font-weight: 700; }
+
+/* ---------- Outcomes ---------- */
+.outcomes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; }
+.note {
+  position: relative;
+  padding: 30px 28px 32px;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: var(--shadow);
+  transform: rotate(var(--tilt, -.8deg));
+  transition: transform .5s var(--ease), box-shadow .5s var(--ease);
+}
+.note:nth-child(even) { --tilt: .9deg; }
+.note:nth-child(3n) { --tilt: -.4deg; }
+@media (hover: hover) {
+  .note:hover { transform: translateY(-8px) rotate(0); box-shadow: var(--shadow-lift); }
+}
+.note h3 { margin-top: 20px; }
+.note p { margin-top: 10px; font-size: 16px; color: var(--muted); }
+
+/* ---------- Steps + plan ---------- */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(26px, 4vw, 56px);
+  counter-reset: step;
+}
+.step {
+  position: relative;
+  padding: 34px 30px 36px;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: var(--shadow);
+  transform: rotate(var(--tilt));
+}
+.step:nth-child(1) { --tilt: -2deg; }
+.step:nth-child(2) { --tilt: 1.2deg; margin-top: 34px; }
+.step:nth-child(3) { --tilt: -1deg; }
+.step-num {
+  display: inline-grid;
+  place-items: center;
+  width: 74px;
+  height: 66px;
+  background: var(--blob) center / 100% 100% no-repeat;
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 46px;
+  line-height: 1;
+  color: var(--ink);
+}
+.step h3 { margin-top: 18px; font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: 34px; line-height: 1.05; }
+.step p { margin-top: 12px; font-size: 16px; color: var(--muted); }
+.step-arrow {
+  position: absolute;
+  top: 46px;
+  right: calc(-1 * clamp(26px, 4vw, 56px) - 6px);
+  width: clamp(40px, 4.6vw, 66px);
+  height: 46px;
+  z-index: 2;
+  color: var(--sky-top);
+}
+.step-arrow path { fill: none; stroke: currentColor; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.step:last-child .step-arrow { display: none; }
+
+.plan {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+  gap: clamp(36px, 6vw, 90px);
+  align-items: center;
+  margin-top: clamp(80px, 9vw, 120px);
+}
+.plan-count { text-align: center; }
+.plan-count .big {
+  display: inline-block;
+  padding: 0 .12em;
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: clamp(130px, 17vw, 220px);
+  line-height: .9;
+  color: var(--ink);
+  background: var(--swipe-2) 0 70% / 100% 52% no-repeat;
+}
+.plan-count p { margin-top: 12px; font-weight: 600; font-size: 18px; color: var(--ink); }
+.plan-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+.plan-side h3 { margin-bottom: 22px; color: var(--ink); }
+.plan-item {
+  padding: 24px 24px 26px;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+.plan-item dt {
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--sky-deep);
+}
+.plan-item dd { margin-top: 8px; font-size: 16px; color: var(--muted); }
+
+/* ---------- Prompt playground ---------- */
+.pg-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: clamp(40px, 6vw, 90px);
+  align-items: center;
+}
+.pg-tabs { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+.pg-tab {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 16px 6px 6px;
+  border: 0;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: inset 0 0 0 2px var(--line);
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: box-shadow .25s, background-color .25s, transform .25s var(--ease);
+}
+.pg-tab img { width: 38px; height: 38px; border-radius: 50%; object-fit: cover; }
+.pg-tab:hover { transform: translateY(-2px); }
+.pg-tab[aria-pressed="true"] { background: var(--hl); box-shadow: inset 0 0 0 2px var(--ink); color: var(--ink); }
+.pg-note { margin-top: 18px; font-size: 14px; color: var(--muted); }
+.pg-stage { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 28px; align-items: center; }
+.pg-window {
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.pg-bar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 14px 18px;
+  background: linear-gradient(180deg, var(--sky-top), var(--sky-bot));
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+}
+.pg-bar i { width: 11px; height: 11px; border-radius: 50%; background: rgba(255, 255, 255, .55); }
+.pg-bar b { margin-left: 8px; font-weight: 600; }
+.pg-chat { display: grid; gap: 14px; padding: 22px 20px 24px; min-height: 300px; align-content: start; }
+.pg-msg { max-width: 100%; }
+.pg-msg small {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--sky-deep);
+}
+.pg-msg p {
+  min-height: 1.6em;
+  padding: 10px 14px;
+  border-radius: 14px 14px 14px 4px;
+  background: var(--mist);
+  font-size: 15.5px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.pg-msg.pg-check p { background: #fff8c2; }
+.pg-msg.pg-again p { background: var(--hl); font-weight: 600; }
+.pg-out {
+  width: clamp(170px, 16vw, 210px);
+  transform: rotate(4deg);
+  overflow: hidden;
+}
+.pg-out img { aspect-ratio: 132 / 162; object-fit: cover; }
+.pg-out figcaption { padding: 10px 6px 4px; font-size: 13px; font-weight: 600; text-align: center; color: var(--ink); }
+.caret::after { content: "▍"; margin-left: 1px; color: var(--sky-top); animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+/* ---------- Showcase ---------- */
+.makes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+.make {
+  padding: 10px 10px 22px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: var(--shadow);
+  transform: rotate(var(--tilt, -1.2deg));
+  transition: transform .5s var(--ease), box-shadow .5s var(--ease);
+}
+.make:nth-child(even) { --tilt: 1.4deg; }
+.make:nth-child(3n) { --tilt: -.6deg; }
+@media (hover: hover) {
+  .make:hover { transform: translateY(-10px) rotate(0) scale(1.02); box-shadow: var(--shadow-lift); }
+}
+.make-art {
+  display: grid;
+  place-items: center;
+  height: 150px;
+  border-radius: 13px;
+  color: #fff;
+  background:
+    radial-gradient(120px 60px at 18% 100%, rgba(255, 255, 255, .55), transparent 70%),
+    radial-gradient(140px 70px at 85% 105%, rgba(255, 255, 255, .5), transparent 70%),
+    linear-gradient(180deg, var(--sky-top), var(--sky-bot));
+}
+.make-art svg { width: 58px; height: 58px; filter: drop-shadow(0 6px 10px rgba(10, 60, 110, .3)); }
+.make h3 { margin-top: 18px; padding-inline: 14px; font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: 27px; line-height: 1.1; }
+.make p { margin-top: 6px; padding-inline: 14px; font-size: 15px; color: var(--muted); }
+.tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px 14px;
+  margin-top: clamp(48px, 6vw, 72px);
+  text-align: center;
+}
+.tools > span { font-weight: 600; color: var(--ink); }
+.chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.chips li {
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: inset 0 0 0 1px var(--line), 0 6px 14px -10px rgba(17, 79, 140, .5);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.chips li.more { background: transparent; box-shadow: none; font-weight: 400; color: var(--muted); }
+.tools-note { flex-basis: 100%; margin-top: 4px; }
+.tools-note .hl { font-size: 17px; padding: .4em .7em; transform: rotate(-1.5deg); }
+
+.ba { margin-top: clamp(90px, 10vw, 140px); }
+.ba header p { max-width: 560px; margin: 14px auto 0; color: var(--muted); }
+.ba-pair {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: clamp(26px, 6vw, 90px);
+  margin-top: 56px;
+}
+.ba-card { width: min(300px, 42vw); padding-bottom: 16px; }
+.ba-card img { aspect-ratio: 2 / 3; object-fit: cover; }
+.ba-card figcaption {
+  margin-top: 14px;
+  text-align: center;
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 24px;
+  line-height: 1.1;
+  color: var(--ink);
+}
+.ba-card.before { transform: rotate(-4deg); margin-top: 40px; }
+.ba-card.after { transform: rotate(3deg); }
+.ba-card .sticker {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  translate: -50% 0;
+  transform: rotate(-4deg);
+  font-size: 17px;
+  padding: .45em .8em;
+  z-index: 2;
+}
+.ba-arrow {
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  width: clamp(70px, 9vw, 120px);
+  height: 70px;
+  translate: -50% 0;
+  z-index: 3;
+  filter: drop-shadow(0 1px 1px rgba(10, 55, 100, .25));
+}
+.ba-arrow path { fill: none; stroke: var(--ink); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ---------- Story ---------- */
+.story-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: clamp(40px, 6vw, 90px);
+  align-items: center;
+}
+.story-copy p + p { margin-top: 16px; }
+.story-photo { transform: rotate(2deg); }
+.story-photo .hl { position: absolute; font-size: 16px; padding: .45em .75em; z-index: 2; }
+.story-photo .tag-desk { left: 6%; bottom: 13%; transform: rotate(-5deg); }
+.story-photo .tag-cat { right: -14px; top: 30%; transform: rotate(5deg); }
+.story-arrows {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+  overflow: visible;
+  filter: drop-shadow(0 0 3px rgba(246, 240, 59, .8)) drop-shadow(0 1px 2px rgba(0, 0, 0, .35));
+}
+.story-arrows path { fill: none; stroke: var(--hl); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+
+/* ---------- Why parents ---------- */
+.why-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; margin-top: clamp(40px, 5vw, 60px); }
+.why-list li {
+  padding: 30px 28px 32px;
+  border-radius: 22px;
+  background: #fff;
+  color: var(--muted);
+  box-shadow: 0 30px 50px -30px rgba(10, 50, 95, .6);
+  transform: rotate(var(--tilt, -1deg));
+}
+.why-list li:nth-child(2) { --tilt: 1deg; }
+.why-list li:nth-child(3) { --tilt: -.5deg; }
+.why-list h3 { margin: 18px 0 8px; font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: 28px; line-height: 1.1; }
+
+/* ---------- Pricing ---------- */
+.plans {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  align-items: stretch;
+  max-width: 980px;
+  margin-inline: auto;
+}
+.plan-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 34px 32px 30px;
+  border-radius: 26px;
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+.plan-card.featured { box-shadow: inset 0 0 0 2.5px var(--ink), var(--shadow-lift); }
+.badges { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.badge {
+  padding: 5px 14px;
+  border-radius: 999px;
+  box-shadow: inset 0 0 0 2px #f2df3a;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.badge-soft { box-shadow: none; padding-inline: 4px; color: var(--muted); font-weight: 600; }
+.plan-card h3 { margin-top: 22px; font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: 34px; line-height: 1.05; }
+.price { display: flex; align-items: baseline; gap: 10px; margin-top: 10px; color: var(--ink); }
+.price b {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-weight: 400;
+  font-size: 72px;
+  line-height: 1;
+  padding: 0 .06em;
+  background: var(--swipe) 0 78% / 100% 42% no-repeat;
+}
+.price span { font-size: 16px; color: var(--muted); }
+.plan-sub { margin-top: 10px; color: var(--muted); font-size: 16px; }
+.ticks { display: grid; gap: 14px; margin: 26px 0 30px; }
+.ticks li { display: grid; grid-template-columns: 26px 1fr; gap: 12px; font-size: 16px; line-height: 1.5; }
+.ticks li svg { width: 22px; height: 22px; margin-top: 1px; padding: 3px; border-radius: 50%; background: var(--hl); color: var(--ink); stroke-width: 3; }
+.ticks li.strong { font-weight: 600; color: var(--ink); }
+.ticks li.strong mark { background-size: 100% 70%; padding: 0; }
+.plan-card .btn { margin-top: auto; width: 100%; }
+.fine { margin-top: 12px; text-align: center; font-size: 13.5px; color: var(--muted); }
+.assure { max-width: 760px; margin: clamp(48px, 6vw, 64px) auto 0; text-align: center; }
+.guarantee {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 22px 26px;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: var(--shadow);
+  text-align: left;
+  color: var(--ink);
+  font-size: 17px;
+}
+.assure p.small { margin-top: 18px; font-size: 14.5px; color: var(--muted); }
+.assure a { font-weight: 600; color: var(--ink); text-underline-offset: 3px; }
+
+/* ---------- Homework review ---------- */
+.review-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+  gap: clamp(40px, 6vw, 90px);
+  align-items: center;
+}
+.review-points { display: grid; gap: 16px; margin-top: 32px; }
+.review-points li { padding-left: 22px; border-left: 3px solid var(--hl); color: var(--muted); }
+.review-points b { color: var(--ink); font-weight: 600; }
+.reply {
+  position: relative;
+  padding: 28px 28px 30px;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: var(--shadow);
+  transform: rotate(2deg);
+}
+.reply-head { display: flex; align-items: center; gap: 12px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+.reply-head .ico { width: 46px; height: 46px; }
+.reply-head .ico svg { width: 22px; height: 22px; }
+.reply-head b { display: block; color: var(--ink); font-size: 16px; }
+.reply-head span { font-size: 14px; color: var(--muted); }
+.reply ul { display: grid; gap: 12px; margin-top: 20px; }
+.reply li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: var(--mist);
+  font-weight: 600;
+  color: var(--ink);
+  font-size: 15.5px;
+}
+.reply li i {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #fff;
+  font-style: normal;
+  font-weight: 700;
+  color: var(--sky-deep);
+}
+.reply .sticker { position: absolute; top: -20px; right: 18px; font-size: 15px; padding: .45em .75em; transform: rotate(4deg); }
+
+/* ---------- FAQ ---------- */
+.faq { max-width: 860px; margin-inline: auto; display: grid; gap: 14px; }
+.faq details {
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: inset 0 0 0 1px var(--line), 0 14px 30px -24px rgba(17, 79, 140, .5);
+  transition: box-shadow .3s;
+}
+.faq details[open] { box-shadow: inset 0 0 0 2px var(--ink), 0 20px 40px -26px rgba(17, 79, 140, .55); }
+.faq summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 22px 24px;
+  cursor: pointer;
+  list-style: none;
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--ink);
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary i {
+  flex: none;
+  position: relative;
+  width: 34px;
+  height: 34px;
+  background: var(--blob) center / 100% 100% no-repeat;
+}
+.faq summary i::before, .faq summary i::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 14px;
+  height: 2.5px;
+  margin: -1.25px 0 0 -7px;
+  border-radius: 2px;
+  background: var(--ink);
+  transition: transform .3s var(--ease);
+}
+.faq summary i::after { transform: rotate(90deg); }
+.faq details[open] summary i::after { transform: rotate(0); }
+.faq details p { padding: 0 24px 24px; color: var(--muted); max-width: 70ch; }
+.faq details a { color: var(--ink); font-weight: 600; }
+
+/* ---------- Remind (finale) ---------- */
+.remind { text-align: center; }
+.remind .lead { color: rgba(255, 255, 255, .92); }
+.remind-form {
+  display: flex;
+  gap: 10px;
+  max-width: 560px;
+  margin: 36px auto 0;
+  padding: 8px;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 24px 40px -22px rgba(10, 50, 95, .7);
+}
+.remind-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 16px;
+  color: var(--ink);
+  background: transparent;
+}
+.remind-form input::placeholder { color: #8a97a8; }
+.remind-form input:focus-visible { outline: 2px solid var(--sky-top); outline-offset: 0; }
+.remind-form .btn { min-height: 50px; }
+.remind-msg { min-height: 1.6em; margin-top: 14px; font-size: 14.5px; opacity: .95; }
+.follow { margin-top: clamp(48px, 6vw, 64px); }
+.follow p { font-weight: 600; }
+.socials { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 16px; }
+.socials a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 50px;
+  padding: 0 22px;
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  background: rgba(255, 255, 255, .18);
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, .7);
+  transition: background-color .25s, color .25s, transform .25s var(--ease);
+}
+.socials a:hover { background: #fff; color: var(--ink); transform: translateY(-2px); }
+.socials svg { width: 20px; height: 20px; }
+.ask { margin-top: 24px; font-size: 18px; }
+.ask a { font-weight: 700; text-underline-offset: 4px; }
+
+/* ---------- Footer ---------- */
+.footer { padding: 48px 0 calc(48px + env(safe-area-inset-bottom)); font-size: 14.5px; color: var(--muted); }
+.footer-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px; }
+.footer-brand { display: flex; align-items: center; gap: 12px; font-weight: 600; color: var(--ink); }
+.footer-brand img { width: 36px; height: 36px; border-radius: 10px; }
+.footer nav { display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.footer nav a { text-underline-offset: 3px; }
+
+/* ---------- Sticky CTA (phones) ---------- */
+.sticky-cta { display: none; }
+
+/* ---------- Tablet ---------- */
+@media (max-width: 1080px) {
+  .outcomes, .makes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .why-list { grid-template-columns: 1fr; max-width: 620px; margin-inline: auto; }
+  .pg-grid, .review-grid { grid-template-columns: 1fr; }
+  .plan { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr; max-width: 560px; margin-inline: auto; }
+  .step:nth-child(2) { margin-top: 0; }
+  .step-arrow { display: none; }
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 820px) {
+  :root { --u: calc(100vw / 720); }
+  body { font-size: 16px; }
+  html { scroll-padding-top: 88px; }
+
+  .nav { height: 64px; }
+  .nav-links, .nav-social, .nav-logo span { display: none; }
+  .nav-logo { left: 16px; top: 12px; height: 40px; }
+  .nav-logo img { width: 40px; height: 40px; border-radius: 11px; }
+  .nav-pill { right: 68px; top: 12px; width: auto; height: 40px; padding: 0 18px; font-size: 14px; }
+  .nav-menu {
+    position: absolute;
+    right: 16px;
+    top: 12px;
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    color: #fff;
+    background: rgba(255, 255, 255, .24);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .4);
+    cursor: pointer;
+  }
+  .nav-menu svg { width: 20px; height: 20px; }
+  .nav-panel {
+    position: absolute;
+    top: 70px;
+    left: 12px;
+    right: 12px;
+    padding: 10px;
+    border-radius: 22px;
+    background: #fff;
+    box-shadow: 0 30px 60px -20px rgba(10, 50, 95, .55);
+  }
+  .nav-panel:not([hidden]) { display: grid; }
+  .nav-panel a { padding: 14px 16px; border-radius: 14px; font-weight: 600; color: var(--ink); text-decoration: none; }
+  .nav-panel a:hover { background: var(--mist); }
+  .nav-panel .socials-row { display: flex; gap: 8px; padding: 8px 8px 4px; }
+  .nav-panel .socials-row a { flex: 1; padding: 10px; text-align: center; font-size: 14px; background: var(--mist); }
+
+  .hero {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding-top: 76px;
+    background: linear-gradient(180deg, #3195e0 0%, #3b9ee9 100%);
+  }
+  .copy {
+    position: relative;
+    order: 1;
+    top: auto;
+    left: auto;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 22px 16px 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .copy-begin, .copy-nocost, .headline, .subline { position: relative; top: auto; }
+  .copy-begin, .copy-nocost { height: 38px; padding: 0 14px; font-size: 26px; line-height: 40px; }
+  .copy-nocost { margin-top: 6px; }
+  .headline {
+    margin-top: 12px;
+    font-size: clamp(48px, 15.5vw, 96px);
+    line-height: .98;
+    white-space: normal;
+    -webkit-text-stroke-width: 1px;
+  }
+  .subline { max-width: 34ch; margin-top: 18px; font-size: 16px; line-height: 1.5; }
+  .subline br { display: none; }
+  .scene {
+    position: relative;
+    inset: auto;
+    order: 2;
+    height: calc(560 * var(--u));
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 calc(100 * var(--u)));
+    mask-image: linear-gradient(180deg, transparent 0, #000 calc(100 * var(--u)));
+  }
+  .frame { top: calc(-260 * var(--u)); }
+  .cta { transform: scale(1.6); }
+  .tag { height: calc(40 * var(--u)); padding: 0 calc(15 * var(--u)); font-size: calc(22 * var(--u)); line-height: calc(41 * var(--u)); }
+  .tag-zero { --x: 500; --y: 330; --r: -8deg; }
+  .tag-words { --x: 790; --y: 334; --r: 6deg; }
+  .arrows { display: none; }
+  .hero-fade { height: 36px; }
+
+  @media (min-width: 560px) {
+    .cta { transform: scale(1.15); }
+  }
+
+  .wrap, .narrow { width: min(1120px, 100% - 32px); }
+  .intro-grid, .story-grid { grid-template-columns: 1fr; }
+  .kamilla { max-width: 340px; margin-top: 12px; }
+  .outcomes { grid-template-columns: 1fr; }
+  .makes { gap: 16px; }
+  .make { padding: 7px 7px 16px; border-radius: 16px; }
+  .make-art { height: 96px; border-radius: 11px; }
+  .make-art svg { width: 40px; height: 40px; }
+  .make h3 { margin-top: 12px; padding-inline: 8px; font-size: 20px; }
+  .make p { padding-inline: 8px; font-size: 13.5px; line-height: 1.45; }
+  .plans { grid-template-columns: 1fr; }
+  .plan-grid { grid-template-columns: 1fr; }
+  .pg-stage { grid-template-columns: 1fr; }
+  .pg-out { justify-self: center; order: -1; }
+  .pg-chat { min-height: 0; }
+  .btn-row .btn { width: 100%; }
+  .stat-aside { padding: 22px 20px; }
+  .ba-pair { gap: 18px; }
+  .ba-card figcaption { font-size: 18px; }
+  .ba-arrow { display: none; }
+  .story-photo .tag-cat { right: -6px; }
+  .remind-form { flex-direction: column; border-radius: 24px; }
+  .remind-form input { min-height: 50px; }
+  .footer-row { flex-direction: column; align-items: flex-start; }
+
+  .sticky-cta {
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    bottom: calc(12px + env(safe-area-inset-bottom));
+    z-index: 40;
+    display: flex;
+    min-height: 54px;
+    font-size: 16px;
+    background: var(--ink);
+    color: #fff;
+    translate: 0 calc(100% + 30px);
+    visibility: hidden;
+    transition: translate .45s var(--ease), visibility 0s .45s;
+  }
+  .sticky-cta.is-on { translate: 0 0; visibility: visible; transition: translate .45s var(--ease); }
+}
+
+/* ---------- Reduced motion: no entrance, no video, no drifting ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .scene-video { display: none; }
+  .ticker-track { animation: none; flex-wrap: wrap; width: auto; justify-content: center; }
+  .ticker ul[aria-hidden="true"] { display: none; }
+  .ticker ul { flex-wrap: wrap; justify-content: center; row-gap: 10px; }
+  .js .reveal:not(.in) { opacity: 1; translate: none; }
+  .caret::after { animation: none; }
+  *, *::before, *::after { transition-duration: .01ms !important; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><path d="M17.6 6.4h.01"/></symbol>
+  <symbol id="i-threads" viewBox="0 0 24 24"><path d="M16.6 11.1c-.4-2.5-2.1-3.8-4.5-3.8-2.7 0-4.4 1.9-4.4 4.7 0 2.9 1.8 4.7 4.4 4.7 2.2 0 3.6-1.2 3.6-3 0-1.8-1.4-2.8-3.5-2.8-1.7 0-2.8.8-2.8 2 0 1.1.9 1.8 2.1 1.8 2.1 0 3.4-1.7 3.4-4.8 0-3.8-2.6-6.4-6.3-6.4C5.9 3.5 3.5 6.6 3.5 12c0 5.6 2.9 8.5 8.4 8.5 2.4 0 4.2-.6 5.6-1.9"/></symbol>
+  <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M18 2.5h-3a5 5 0 0 0-5 5v3H7v4h3v7h4v-7h3l1-4h-4v-3a1 1 0 0 1 1-1h3z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 7 9 6 9-6"/></symbol>
+</svg>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <a class="nav-logo" href="#top" aria-label="Make Show Lab — home">
+    <img src="assets/img/logo.png" width="120" height="120" alt="">
+    <span>Make Show Lab</span>
+  </a>
+  <nav class="nav-links" aria-label="Main">
+    <a href="#story">Story</a>
+    <a href="#study-plan">Study Plan</a>
+    <a href="#showcase">Showcase</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">Q&amp;A</a>
+  </nav>
+  <a class="nav-social" href="#" data-link="instagram" aria-label="Make Show Lab on Instagram" target="_blank" rel="noopener">
+    <svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg>
+  </a>
+  <a class="pill nav-pill" href="#pricing">Choose a course</a>
+  <button class="nav-menu" type="button" aria-expanded="false" aria-controls="nav-panel" aria-label="Open menu">
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+  </button>
+  <div class="nav-panel" id="nav-panel" hidden>
+    <a href="#story">Story</a>
+    <a href="#study-plan">Study Plan</a>
+    <a href="#showcase">Showcase</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">Q&amp;A</a>
+    <div class="socials-row">
+      <a href="#" data-link="instagram" target="_blank" rel="noopener">Instagram</a>
+      <a href="#" data-link="threads" target="_blank" rel="noopener">Threads</a>
+      <a href="#" data-link="facebook" target="_blank" rel="noopener">Facebook</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top" aria-labelledby="hero-title">
+  <div class="scene">
+    <div class="frame">
+      <img class="plate" src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/dc4ac5c7-4eee-48ab-814c-cbba3c9fd1b7.jpg" width="1440" height="900" alt="" fetchpriority="high">
+      <video class="scene-video" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"
+        data-src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/81764d30-8120-4ab5-8491-4dd852b82496.mp4"></video>
+
+      <figure class="card" style="--x:472; --y:419; --r:-12deg">
+        <img src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/37b0e4f8-9780-409b-9aa4-f855a9a4ef24.webp" width="264" height="324" alt="AI picture: a cottage on a sea cliff">
+      </figure>
+      <figure class="card" style="--x:601; --y:407; --r:-4deg">
+        <img src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/02be94e0-6903-4edd-b5ec-a10eb62d166e.webp" width="264" height="324" alt="AI picture: an orange kitten in a blue beanie and scarf">
+      </figure>
+      <figure class="card" style="--x:711; --y:409; --r:4deg">
+        <img src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/73e9f810-8b43-4548-a4b1-830b1b99cdfd.webp" width="264" height="324" alt="AI picture: a smiling succulent in a terracotta pot">
+      </figure>
+      <figure class="card" style="--x:827; --y:419; --r:12deg">
+        <img src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/fde79b9a-ae7c-439f-9a96-f727754defb7.webp" width="264" height="324" alt="AI picture: a golden retriever in a cowboy hat and red bandana">
+      </figure>
+
+      <svg class="arrows" viewBox="0 0 1440 900" aria-hidden="true">
+        <!-- into the first card -->
+        <path d="M352 466c-9 22-6 44 11 58 17 14 47 15 98 3"/>
+        <path d="M447 515l16 12-15 12"/>
+        <!-- curling up to the dog card -->
+        <path d="M1006 512c10-14 13-32 4-46-8-12-21-17-33-16"/>
+        <path d="M990 441l-14 9 13 10"/>
+        <!-- double arrow curling down -->
+        <path d="M1070 552c12 34 2 62-30 80-40 22-108 22-188 18"/>
+        <path d="M1082 548c14 40 3 72-34 92-44 24-114 24-194 20"/>
+        <path d="M866 638l-16 12 16 12"/>
+        <path d="M868 648l-16 12 16 12"/>
+      </svg>
+
+      <p class="hl tag tag-zero"><span>Starts from Zero!</span></p>
+      <p class="hl v2 tag tag-words"><span>Words In, Art Out!</span></p>
+
+      <div class="cta">
+        <p class="hl cta-price"><span>From $197</span></p>
+        <a class="pill cta-pill" href="#pricing">Choose a course</a>
+        <p class="cta-note">Made together with a parent. 37 lessons, all ready.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="copy">
+    <p class="hl copy-begin"><span>Kids 6–14</span></p>
+    <h1 class="headline" id="hero-title"><span>Make It.</span> <span>Show It.</span><span class="sr-only"> An AI creativity course for kids and their parents.</span></h1>
+    <p class="hl v2 copy-nocost"><span>No Coding!</span></p>
+    <p class="subline">An AI creativity course you do side by side with your child.<br> Every short lesson ends with a cartoon, a song or a game to show.</p>
+  </div>
+  <div class="hero-fade" aria-hidden="true"></div>
+</section>
+
+<!-- ============ INTRO ============ -->
+<section class="section" id="course" aria-labelledby="course-title">
+  <div class="wrap intro-grid">
+    <figure class="photo kamilla reveal">
+      <img src="assets/img/meet-kamilla.webp" width="760" height="950" loading="lazy" alt="Kamilla, the 10-year-old co-host of Make Show Lab, smiling behind a laptop with the Make Show Lab logo">
+      <figcaption class="hl sticker"><span>Meet Kamilla</span></figcaption>
+    </figure>
+    <div class="reveal">
+      <p class="eyebrow">Kids 6–14 with a parent · 37 lessons, all ready</p>
+      <h2 id="course-title">Your kid watches Shorts every day. What if they made <mark>games, cartoons and songs</mark> instead?</h2>
+      <p class="lead">An AI creativity course you do side by side with your child. Short lessons, and at the end of each one there is a real thing to show: a cartoon, a song, a game, a website. No coding.</p>
+      <div class="btn-row">
+        <a class="btn btn-ink" href="#pricing">Choose a course — from $197</a>
+        <a class="btn btn-ghost" href="#showcase">See what kids make</a>
+      </div>
+      <p class="meta"><b>From $197</b> · One-time payment · Learn at your own pace</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TICKER ============ -->
+<div class="ticker" role="region" aria-label="Things kids make in the course">
+  <div class="ticker-track">
+    <ul>
+      <li>Their own cartoon</li>
+      <li>A song from their words</li>
+      <li>A game they invent</li>
+      <li>A website with their name on it</li>
+      <li>A print for the fridge</li>
+      <li>A drawing, brought to life</li>
+    </ul>
+    <ul aria-hidden="true">
+      <li>Their own cartoon</li>
+      <li>A song from their words</li>
+      <li>A game they invent</li>
+      <li>A website with their name on it</li>
+      <li>A print for the fridge</li>
+      <li>A drawing, brought to life</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============ STAT ============ -->
+<section class="band-sky" aria-label="Why now">
+  <div class="cloud-edge top" aria-hidden="true"></div>
+  <div class="narrow reveal">
+    <blockquote class="stat-quote">
+      <p><mark>Nearly 9 in 10</mark> American kids aged <span class="nowrap">9–17</span> already use AI. <mark class="v2">Nearly half</mark> have never talked with a parent about using it safely.</p>
+      <footer>Common Sense Media, <a href="https://www.commonsensemedia.org/research" target="_blank" rel="noopener">AI Census of tweens and teens</a>, 2026</footer>
+    </blockquote>
+    <p class="stat-aside">They're learning AI anyway — from friends, from YouTube, alone. <strong>Make Show Lab puts you right next to them,</strong> making something together instead of scrolling past each other.</p>
+  </div>
+  <div class="cloud-edge bottom" aria-hidden="true"></div>
+</section>
+
+<!-- ============ OUTCOMES ============ -->
+<section class="section" id="outcomes" aria-labelledby="outcomes-title">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <p class="kicker"><span class="hl hl-kicker"><span>The outcome</span></span></p>
+      <h2 id="outcomes-title">What your kid <mark>walks away</mark> with</h2>
+      <p class="lead">By the end there is a folder of things they actually made, and a few habits that outlast the course.</p>
+    </header>
+    <ul class="outcomes">
+      <li class="note reveal">
+        <span class="ico"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m21.6 11.6-9.2 9.2a1.4 1.4 0 0 1-2 0l-.8-.8a1.4 1.4 0 0 1 0-2l9.2-9.2"/><path d="m14 5 1 2.5L17.5 8.5 15 9.5 14 12l-1-2.5L10.5 8.5 13 7.5z"/><path d="M5 3v4M3 5h4M6 15v3M4.5 16.5h3"/></svg></span>
+        <h3>Directs AI, doesn't poke at it</h3>
+        <p>Your kid learns to describe what they want, check the result and ask again until it matches what they imagined. That's the skill behind every tool.</p>
+      </li>
+      <li class="note reveal">
+        <span class="ico"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-check"/></svg></span>
+        <h3>Finishes things</h3>
+        <p>Each lesson has a clear finish line: a file saved, a song played, a print on the fridge. Starting and finishing becomes normal.</p>
+      </li>
+      <li class="note reveal">
+        <span class="ico"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.9 5.9 6.4.9-4.7 4.6 1.1 6.4-5.7-3-5.7 3 1.1-6.4-4.7-4.6 6.4-.9z"/></svg></span>
+        <h3>Creative confidence</h3>
+        <p>A cartoon with their own voice, a song from their words, a game their friends can play. Kids who've made things stop saying "I can't draw."</p>
+      </li>
+      <li class="note reveal">
+        <span class="ico"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="3.5" width="19" height="13" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></svg></span>
+        <h3>Something to show for it</h3>
+        <p>The results live on your laptop, not in a workbook. A cartoon to play at Thanksgiving, a game the cousins can try, a website with their name on it.</p>
+      </li>
+      <li class="note reveal">
+        <span class="ico"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.5s7.5-3.6 7.5-9.4V5.4L12 2.5 4.5 5.4v6.7c0 5.8 7.5 9.4 7.5 9.4z"/><path d="m9 12 2.2 2.2L15.5 10"/></svg></span>
+        <h3>Safe habits from day one</h3>
+        <p>What not to share, how to spot a fake, why AI is a helper and not a homework machine. The boring lessons, taught early, while they still listen.</p>
+      </li>
+      <li class="note reveal">
+        <span class="ico"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="7.5" r="3.5"/><path d="M2.5 20.5v-1.5a4.5 4.5 0 0 1 4.5-4.5h4a4.5 4.5 0 0 1 4.5 4.5v1.5"/><path d="M16 3.6a3.5 3.5 0 0 1 0 7.8M21.5 20.5V19a4.5 4.5 0 0 0-3-4.2"/></svg></span>
+        <h3>You learn it too</h3>
+        <p>Each lesson has a short part for grown-ups. Plenty of parents finish the course knowing the tools better than their coworkers.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ STUDY PLAN ============ -->
+<section class="section section-mist" id="study-plan" aria-labelledby="plan-title">
+  <div class="wrap">
+    <header class="sec-head center reveal">
+      <p class="kicker"><span class="hl hl-kicker"><span>Study plan</span></span></p>
+      <h2 id="plan-title">How one lesson <mark>works</mark></h2>
+      <p class="lead">Every lesson runs on the same three steps. Dull to describe, surprisingly hard to stop once you start.</p>
+    </header>
+    <ol class="steps">
+      <li class="step reveal">
+        <span class="step-num" aria-hidden="true">1</span>
+        <h3>Watch</h3>
+        <p>A short video shows the finished result first, so your kid knows exactly what they're about to make.</p>
+        <svg class="step-arrow" viewBox="0 0 66 46" aria-hidden="true"><path d="M4 30c14-18 34-22 54-10"/><path d="M48 12l11 8-12 6"/></svg>
+      </li>
+      <li class="step reveal">
+        <span class="step-num" aria-hidden="true">2</span>
+        <h3>Make</h3>
+        <p>Side by side, in one sitting. Your kid has the ideas and gives the directions. You are the hands on the keyboard, and sometimes the voice of reason.</p>
+        <svg class="step-arrow" viewBox="0 0 66 46" aria-hidden="true"><path d="M4 14c16 16 36 18 54 6"/><path d="M47 14l12 5-9 10"/></svg>
+      </li>
+      <li class="step reveal">
+        <span class="step-num" aria-hidden="true">3</span>
+        <h3>Show</h3>
+        <p>They show it to the family — and can send it in for the course showcase.</p>
+      </li>
+    </ol>
+
+    <div class="plan">
+      <div class="plan-count reveal">
+        <span class="big">37</span>
+        <p>lessons, all filmed and ready</p>
+      </div>
+      <div class="plan-side reveal">
+        <h3 class="h3-serif">What it asks of you</h3>
+        <dl class="plan-grid">
+        <div class="plan-item">
+          <dt>One lesson</dt>
+          <dd>A short video, then 15–20 minutes of making together. Most families finish a lesson in one sitting.</dd>
+        </div>
+        <div class="plan-item">
+          <dt>Your role</dt>
+          <dd>Every tool runs on your account, so you are in the room for all of it. Expect to get drawn in. The grown-up parts of the lessons are there for a reason.</dd>
+        </div>
+        <div class="plan-item">
+          <dt>Pace</dt>
+          <dd>Lessons unlock one after another as you finish them, so nobody skips ahead to the game. No schedule. If you can keep a steady rhythm and finish in a couple of weeks, the skills stick better.</dd>
+        </div>
+        <div class="plan-item">
+          <dt>Access</dt>
+          <dd>Your login arrives by email the same day you pay. Access does not expire.</dd>
+        </div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROMPT PLAYGROUND ============ -->
+<section class="section" id="try" aria-labelledby="try-title">
+  <div class="wrap pg-grid">
+    <div class="reveal">
+      <p class="kicker"><span class="hl hl-kicker"><span>The core skill</span></span></p>
+      <h2 id="try-title">Words in, <mark>art out.</mark></h2>
+      <p class="lead">Every tool in the course listens to words. Your kid learns to describe what they want, check the result and ask again until it matches what they imagined.</p>
+      <div class="pg-tabs" role="group" aria-label="Pick an example">
+        <button class="pg-tab" type="button" data-ex="kitten" aria-pressed="true"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/02be94e0-6903-4edd-b5ec-a10eb62d166e.webp" alt="" loading="lazy">Kitten</button>
+        <button class="pg-tab" type="button" data-ex="dog" aria-pressed="false"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/fde79b9a-ae7c-439f-9a96-f727754defb7.webp" alt="" loading="lazy">Cowboy dog</button>
+        <button class="pg-tab" type="button" data-ex="cottage" aria-pressed="false"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/37b0e4f8-9780-409b-9aa4-f855a9a4ef24.webp" alt="" loading="lazy">Sea cottage</button>
+        <button class="pg-tab" type="button" data-ex="succulent" aria-pressed="false"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/73e9f810-8b43-4548-a4b1-830b1b99cdfd.webp" alt="" loading="lazy">Happy plant</button>
+      </div>
+      <p class="pg-note">Example prompts, for illustration. In the course, the ideas are your kid's.</p>
+    </div>
+    <div class="pg-stage reveal">
+      <div class="pg-window">
+        <div class="pg-bar" aria-hidden="true"><i></i><i></i><i></i><b>describe → check → ask again</b></div>
+        <div class="pg-chat">
+          <div class="pg-msg"><small>First try</small><p data-pg="first">a cat in a hat</p></div>
+          <div class="pg-msg pg-check"><small>Check</small><p data-pg="check">Cute, but it's grey, and the hat is way too big.</p></div>
+          <div class="pg-msg pg-again"><small>Ask again</small><p data-pg="again">an orange kitten in a blue knitted beanie and a matching scarf, cozy and soft</p></div>
+        </div>
+      </div>
+      <figure class="photo pg-out">
+        <img data-pg="img" src="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/02be94e0-6903-4edd-b5ec-a10eb62d166e.webp" width="264" height="324" alt="AI picture: an orange kitten in a blue beanie and scarf" loading="lazy">
+        <figcaption>That's the one!</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SHOWCASE ============ -->
+<section class="section section-mist" id="showcase" aria-labelledby="showcase-title">
+  <div class="wrap">
+    <header class="sec-head reveal">
+      <p class="kicker"><span class="hl hl-kicker"><span>Showcase</span></span></p>
+      <h2 id="showcase-title">Everything your kid <mark>will make</mark></h2>
+      <p class="lead">Here is what they will be showing off by the end. Each one comes out of a single lesson.</p>
+    </header>
+    <ul class="makes">
+      <li class="make reveal">
+        <div class="make-art"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 10.5h17v8a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/><path d="m3.5 10.5-.8-2.7a2 2 0 0 1 1.3-2.5l11.6-3.5a2 2 0 0 1 2.5 1.3l.8 2.7z"/><path d="m6.6 5 3.3 4.2M11.9 3.4l3.3 4.2"/></svg></div>
+        <h3>Their own cartoon</h3>
+        <p>With their own voice in it.</p>
+      </li>
+      <li class="make reveal">
+        <div class="make-art"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
+        <h3>A song from their words</h3>
+        <p>Lyrics they wrote, turned into a real song.</p>
+      </li>
+      <li class="make reveal">
+        <div class="make-art"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="3"/><path d="M6 12h4M8 10v4M15 13h.01M18 11h.01"/></svg></div>
+        <h3>A game they invent</h3>
+        <p>One their friends can actually play.</p>
+      </li>
+      <li class="make reveal">
+        <div class="make-art"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M12 2.5a14.5 14.5 0 0 0 0 19 14.5 14.5 0 0 0 0-19M2.5 12h19"/></svg></div>
+        <h3>A website with their name on it</h3>
+        <p>A real page they can send to grandma.</p>
+      </li>
+      <li class="make reveal">
+        <div class="make-art"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.1-3.1a2 2 0 0 0-2.8 0L6 21"/></svg></div>
+        <h3>A print for the fridge</h3>
+        <p>A picture worth the magnet.</p>
+      </li>
+      <li class="make reveal">
+        <div class="make-art"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 6.8a1 1 0 0 0-4-4L3.8 15.2a2 2 0 0 0-.5.8L2 20.4a.5.5 0 0 0 .6.6l4.4-1.3a2 2 0 0 0 .8-.5z"/><path d="m14 5 4 4"/><path d="M19 15v4M17 17h4"/></svg></div>
+        <h3>A drawing, brought to life</h3>
+        <p>Paper in the morning, a cartoon by the end of the lesson.</p>
+      </li>
+    </ul>
+
+    <div class="tools reveal">
+      <span>Made with</span>
+      <ul class="chips">
+        <li>ChatGPT</li><li>Gemini</li><li>Canva</li><li>Suno</li><li>CapCut</li><li>Higgsfield</li><li class="more">and a few more.</li>
+      </ul>
+      <p class="tools-note"><span class="hl v2"><span>No coding anywhere in the course.</span></span></p>
+    </div>
+
+    <div class="ba">
+      <header class="center reveal">
+        <h3 class="h3-serif">One lesson, <mark>start to finish</mark></h3>
+        <p>A drawing on paper in the morning. The same scene, brought to life, by the end of one lesson.</p>
+      </header>
+      <div class="ba-pair reveal">
+        <figure class="photo ba-card before">
+          <img src="assets/img/drawing-6-year-old.webp" width="560" height="840" loading="lazy" alt="A crayon drawing of a rainbow with a monster truck, a bird and a snowman, drawn by a 6-year-old">
+          <figcaption>Drawn by a 6&#8209;year&#8209;old</figcaption>
+        </figure>
+        <svg class="ba-arrow" viewBox="0 0 120 70" aria-hidden="true"><path d="M6 46c22-30 62-38 100-16"/><path d="M92 18l15 12-17 8"/></svg>
+        <figure class="photo ba-card after">
+          <span class="hl sticker"><span>One lesson later</span></span>
+          <img src="assets/img/now-a-cartoon.webp" width="600" height="900" loading="lazy" alt="The same scene as a glowing cartoon: a rainbow at night with a monster truck, a fluffy pink monster, a bird and a snowman">
+          <figcaption>Now a cartoon</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY ============ -->
+<section class="section" id="story" aria-labelledby="story-title">
+  <div class="wrap story-grid">
+    <div class="story-copy reveal">
+      <p class="kicker"><span class="hl hl-kicker"><span>Our story</span></span></p>
+      <h2 id="story-title">A mom and a daughter — <mark>not a studio.</mark></h2>
+      <p class="lead">Anna leads the course and reads every piece of homework herself.</p>
+      <p>Kamilla, her daughter, is 10 and co-hosts: she is the kid on screen, trying each project first and occasionally arguing with the script. They built Make Show Lab at home, at this very desk, and filmed every lesson themselves. The cat was not consulted.</p>
+    </div>
+    <figure class="photo story-photo reveal">
+      <img src="assets/img/anna-and-kamilla-studio.webp" width="1200" height="1197" loading="lazy" alt="Anna and Kamilla at their home desk with two laptops, plants, a ring light on a tripod and a grey cat">
+      <svg class="story-arrows" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M22 84c2-6 6-10 13-12"/>
+        <path d="M31 69.5l4.4 2.4-3.4 3.6"/>
+        <path d="M92 39c-4 6-8 10-15 13"/>
+        <path d="M80 48.5l-3.5 3.8 5 1"/>
+      </svg>
+      <span class="hl tag-desk"><span>This very desk</span></span>
+      <span class="hl v2 tag-cat"><span>Not consulted</span></span>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ WHY PARENTS ============ -->
+<section class="band-sky" aria-labelledby="why-title">
+  <div class="cloud-edge top" aria-hidden="true"></div>
+  <div class="wrap">
+    <h2 class="center reveal" id="why-title">Why parents <mark>pick it</mark></h2>
+    <ul class="why-list">
+      <li class="reveal">
+        <span class="ico"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 13.6 12 21l-7.5-7.4A4.9 4.9 0 0 1 12 6.8a4.9 4.9 0 0 1 7.5 6.8z"/></svg></span>
+        <h3>Time together that counts.</h3>
+        <p>You sit side by side and make something, instead of scrolling in separate rooms.</p>
+      </li>
+      <li class="reveal">
+        <span class="ico"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.5s7.5-3.6 7.5-9.4V5.4L12 2.5 4.5 5.4v6.7c0 5.8 7.5 9.4 7.5 9.4z"/><path d="m9 12 2.2 2.2L15.5 10"/></svg></span>
+        <h3>Safe by design.</h3>
+        <p>Every AI tool runs on your account, and you see everything your child makes.</p>
+      </li>
+      <li class="reveal">
+        <span class="ico"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span>
+        <h3>Honest fit.</h3>
+        <p>If you want a course where the AI does the homework for the kid, this isn't it. Here the kid does the directing.</p>
+      </li>
+    </ul>
+  </div>
+  <div class="cloud-edge bottom" aria-hidden="true"></div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="section" id="pricing" aria-labelledby="pricing-title">
+  <div class="wrap">
+    <header class="sec-head center reveal">
+      <p class="kicker"><span class="hl hl-kicker"><span>Pricing</span></span></p>
+      <h2 id="pricing-title">Choose <mark>your course</mark></h2>
+      <p class="lead">One-time payment, lifetime access. The only difference is whether a real person checks your kid's work.</p>
+    </header>
+    <div class="plans">
+      <article class="plan-card reveal" aria-labelledby="plan-creator">
+        <div class="badges"><span class="badge">Self-paced</span></div>
+        <h3 id="plan-creator">Creator</h3>
+        <p class="price"><b>$197</b><span>one-time</span></p>
+        <p class="plan-sub">The full course, at your own pace</p>
+        <ul class="ticks">
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>All 37 lessons, plus future lessons and updates</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Every project from the list above, start to finish</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Parts for grown-ups, badges and skill refreshers</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Showcase and lifetime access</span></li>
+        </ul>
+        <a class="btn btn-ghost" href="#pricing" data-link="creator">Get Creator</a>
+        <p class="fine">Secure checkout by Stripe. Login by email the same day.</p>
+      </article>
+      <article class="plan-card featured reveal" aria-labelledby="plan-homework">
+        <div class="badges"><span class="badge">Human feedback</span><span class="badge badge-soft">Most support</span></div>
+        <h3 id="plan-homework">Creator + Homework</h3>
+        <p class="price"><b>$297</b><span>one-time</span></p>
+        <p class="plan-sub">Everything in Creator, plus Anna checking every piece of work</p>
+        <ul class="ticks">
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Everything in Creator</span></li>
+          <li class="strong"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><mark>Personal review of every homework you send in — the same day</mark></span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Specific, encouraging feedback from Anna, not a template</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Priority answers to family questions</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span>Best if you plan to move at a steady pace: send work, get it back, move on</span></li>
+        </ul>
+        <a class="btn btn-ink" href="#pricing" data-link="homework">Get Creator + Homework</a>
+        <p class="fine">Secure checkout by Stripe. Login by email the same day.</p>
+      </article>
+    </div>
+    <div class="assure reveal">
+      <p class="guarantee">
+        <span class="ico"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.5s7.5-3.6 7.5-9.4V5.4L12 2.5 4.5 5.4v6.7c0 5.8 7.5 9.4 7.5 9.4z"/><path d="m9 12 2.2 2.2L15.5 10"/></svg></span>
+        <span><b>Finish the first lessons. Not right for your family? Full refund</b> — one email within 30 days is enough.</span>
+      </p>
+      <p class="small">Prices are in US dollars. The final price is always the one you see on the payment page.</p>
+      <p class="small">Still have a question? Write to <a href="mailto:nova@makeshowlab.com">nova@makeshowlab.com</a> — Anna answers personally.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOMEWORK REVIEW ============ -->
+<section class="section section-mist" id="review" aria-labelledby="review-title">
+  <div class="wrap review-grid">
+    <div class="reveal">
+      <p class="kicker"><span class="hl hl-kicker"><span>Creator + Homework</span></span></p>
+      <h2 id="review-title">What "homework review" <mark>actually looks like</mark></h2>
+      <p class="lead">On the Creator + Homework plan, your kid sends in what they made. Anna looks at it that day and writes back: what works, what to try next, and a question or two to keep them going.</p>
+      <ul class="review-points">
+        <li><b>Same-day replies.</b> Send a creation in the morning, hear back before bedtime.</li>
+        <li><b>Every lesson counts.</b> Send in one piece or all of them. Each gets a real reply.</li>
+        <li><b>Written to the kid, not about them.</b> Short, concrete, no grades.</li>
+        <li><b>Questions welcome.</b> Stuck on a tool, a prompt, a setting? Ask in the same thread.</li>
+      </ul>
+    </div>
+    <div class="reply reveal">
+      <span class="hl sticker"><span>Same day</span></span>
+      <div class="reply-head">
+        <span class="ico"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></span>
+        <div><b>A reply from Anna</b><span>written to your kid</span></div>
+      </div>
+      <ul>
+        <li><i aria-hidden="true">✓</i>What works</li>
+        <li><i aria-hidden="true">→</i>What to try next</li>
+        <li><i aria-hidden="true">?</i>A question or two to keep them going</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section" id="faq" aria-labelledby="faq-title">
+  <div class="wrap">
+    <header class="sec-head center reveal">
+      <p class="kicker"><span class="hl hl-kicker"><span>Q&amp;A</span></span></p>
+      <h2 id="faq-title">Questions <mark>parents ask</mark></h2>
+    </header>
+    <div class="faq reveal">
+      <details>
+        <summary>When do we get access?<i aria-hidden="true"></i></summary>
+        <p>The same day you pay. Your login arrives by email, and access does not expire.</p>
+      </details>
+      <details>
+        <summary>How much of my time does it take?<i aria-hidden="true"></i></summary>
+        <p>One lesson is a short video, then 15–20 minutes of making together. Most families finish a lesson in one sitting. There is no schedule — but if you keep a steady rhythm and finish in a couple of weeks, the skills stick better.</p>
+      </details>
+      <details>
+        <summary>Does my child need their own AI accounts?<i aria-hidden="true"></i></summary>
+        <p>No. Every tool runs on your account, so you are in the room for all of it and see everything your child makes.</p>
+      </details>
+      <details>
+        <summary>Do we have to pay for AI tools?<i aria-hidden="true"></i></summary>
+        <!-- TODO: заменить на ваш точный ответ из текущего лендинга (в PDF ответы FAQ были свернуты). -->
+        <p>The projects are made with ChatGPT, Gemini, Canva, Suno, CapCut, Higgsfield and a few more, all running on your account. Want to know exactly what you'll need before you buy? Write to <a href="mailto:nova@makeshowlab.com">nova@makeshowlab.com</a> — Anna answers personally.</p>
+      </details>
+      <details>
+        <summary>What's the difference between the two plans?<i aria-hidden="true"></i></summary>
+        <p>Both include all 37 lessons, every project, the grown-up parts and lifetime access. The only difference is whether a real person checks your kid's work: on Creator + Homework, Anna personally reviews every piece you send in, the same day.</p>
+      </details>
+      <details>
+        <summary>Won't AI just make my kid lazy?<i aria-hidden="true"></i></summary>
+        <p>Not here. Your kid has the ideas and gives the directions — AI is a helper, not a homework machine. They learn to describe what they want, check the result and ask again. If you want a course where the AI does the homework for the kid, this isn't it.</p>
+      </details>
+      <details>
+        <summary>What if it's not for us?<i aria-hidden="true"></i></summary>
+        <p>Finish the first lessons. Not right for your family? Full refund — one email within 30 days is enough.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REMIND / FOLLOW ============ -->
+<section class="band-sky remind" id="remind" aria-labelledby="remind-title">
+  <div class="cloud-edge top" aria-hidden="true"></div>
+  <div class="narrow reveal">
+    <h2 id="remind-title">Not ready <mark>today?</mark></h2>
+    <p class="lead">Leave your email and we'll remind you before founding prices end.</p>
+    <form class="remind-form" method="post" novalidate>
+      <label class="sr-only" for="remind-email">Parent's email</label>
+      <input id="remind-email" name="email" type="email" autocomplete="email" placeholder="Parent's email" required>
+      <button class="btn btn-ink" type="submit">Remind me</button>
+    </form>
+    <p class="remind-msg" role="status">No spam. One reminder, and you can unsubscribe anytime.</p>
+
+    <div class="follow">
+      <p>Or follow along while you decide</p>
+      <div class="socials">
+        <a href="#" data-link="instagram" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg>Instagram</a>
+        <a href="#" data-link="threads" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-threads"/></svg>Threads</a>
+        <a href="#" data-link="facebook" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-facebook"/></svg>Facebook</a>
+      </div>
+      <p class="ask">Have a question first? <a href="mailto:nova@makeshowlab.com">Ask Anna</a></p>
+    </div>
+  </div>
+  <div class="cloud-edge bottom" aria-hidden="true"></div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-row">
+    <div class="footer-brand"><img src="assets/img/logo.png" width="120" height="120" alt="" loading="lazy">© 2026 Make Show Lab · Tennessee, USA</div>
+    <nav aria-label="Footer">
+      <a href="#" data-link="instagram" target="_blank" rel="noopener">Instagram</a>
+      <a href="#" data-link="threads" target="_blank" rel="noopener">Threads</a>
+      <a href="#" data-link="facebook" target="_blank" rel="noopener">Facebook</a>
+      <a href="#" data-link="privacy">Privacy Policy</a>
+      <a href="#" data-link="terms">Terms of Service</a>
+      <a href="mailto:nova@makeshowlab.com">nova@makeshowlab.com</a>
+    </nav>
+  </div>
+</footer>
+
+<a class="pill sticky-cta" href="#pricing">Choose a course — from $197</a>
+
+<script>
+(function () {
+  'use strict';
+
+  // Ссылки, которые нужно вставить. Пустая строка = ссылка пока не подключена.
+  var LINKS = {
+    creator: '',    // Stripe Checkout: Creator ($197)
+    homework: '',   // Stripe Checkout: Creator + Homework ($297)
+    instagram: '',
+    threads: '',
+    facebook: '',
+    privacy: '',
+    terms: '',
+    reminder: ''    // адрес формы "Remind me" (Mailchimp, Kit и т.п.); пусто = письмо на nova@makeshowlab.com
+  };
+  var CONTACT = 'nova@makeshowlab.com';
+
+  var root = document.documentElement;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var $ = function (s, c) { return (c || document).querySelector(s); };
+  var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
+
+  $$('[data-link]').forEach(function (a) {
+    var url = LINKS[a.dataset.link];
+    if (url) a.href = url;
+    else if (a.getAttribute('href') === '#') a.removeAttribute('target');
+  });
+
+  /* ---------- Scene video (skipped under reduced motion) ---------- */
+  var video = $('.scene-video');
+  if (video && !reduce) {
+    video.addEventListener('playing', function () { video.classList.add('is-playing'); }, { once: true });
+    video.src = video.dataset.src;
+    var p = video.play();
+    if (p && p.catch) p.catch(function () {});
+  }
+
+  /* ---------- Entrance: one Web Animations timeline, run once ---------- */
+  function intro() {
+    if (!root.classList.contains('intro')) return;
+    var frame = $('.frame');
+    var u = frame.getBoundingClientRect().width / 1440;
+    var phone = window.matchMedia('(max-width: 820px)').matches;
+    var ease = 'cubic-bezier(.2,.75,.2,1)';
+    var anims = [];
+    var canPseudo = typeof KeyframeEffect !== 'undefined' && 'pseudoElement' in KeyframeEffect.prototype;
+
+    function run(el, frames, opts) {
+      if (!el) return;
+      opts.fill = 'both';
+      opts.easing = opts.easing || ease;
+      anims.push(el.animate(frames, opts));
+    }
+
+    // Logo and nav buttons fade in.
+    var navEls = [$('.nav-logo')].concat($$('.nav-links a'), [$('.nav-social'), $('.nav-pill'), $('.nav-menu')]);
+    navEls.forEach(function (el, i) {
+      run(el, [{ opacity: 0, transform: 'translateY(-6px)' }, { opacity: 1, transform: 'none' }],
+        { duration: 650, delay: 60 + i * 45 });
+    });
+
+    // A label is "marked in": the swipe runs left to right, then the word lands.
+    function markIn(label, at) {
+      if (!label) return;
+      if (canPseudo) {
+        run(label, [{ clipPath: 'inset(0 100% 0 0)' }, { clipPath: 'inset(0 0% 0 0)' }],
+          { duration: 460, delay: at, easing: 'cubic-bezier(.65,0,.35,1)', pseudoElement: '::before' });
+      }
+      run(label.firstElementChild,
+        [{ opacity: 0, transform: 'translateY(-0.45em) scale(1.18) rotate(-4deg)' },
+         { opacity: 1, transform: 'translateY(0.04em) scale(.98) rotate(0)', offset: .7 },
+         { opacity: 1, transform: 'none' }],
+        { duration: 420, delay: at + 330 });
+    }
+
+    markIn($('.copy-begin'), 350);
+    var blur = phone ? 14 : 14 * u;
+    run($('.headline'),
+      [{ opacity: 0, filter: 'blur(' + blur + 'px)', transform: 'scale(1.04)' },
+       { opacity: 1, filter: 'blur(0px)', transform: 'scale(1)' }],
+      { duration: 1100, delay: 700 });
+    markIn($('.copy-nocost'), 1450);
+    run($('.subline'),
+      [{ opacity: 0, filter: 'blur(6px)', transform: 'translateY(' + (phone ? 8 : 8 * u) + 'px)' },
+       { opacity: 1, filter: 'blur(0px)', transform: 'none' }],
+      { duration: 900, delay: 1850 });
+
+    var done = false;
+    function finish() {
+      if (done) return;
+      done = true;
+      root.classList.remove('intro');
+      anims.forEach(function (a) { a.cancel(); });
+    }
+    Promise.all(anims.map(function (a) { return a.finished; })).then(finish, finish);
+    setTimeout(finish, 4500);
+  }
+  try { intro(); } catch (e) { root.classList.remove('intro'); }
+
+  /* ---------- Nav: solid after the hero, phone menu ---------- */
+  var nav = $('#nav');
+  var hero = $('.hero');
+  var ticking = false;
+  function onScroll() {
+    ticking = false;
+    var limit = hero.offsetHeight - nav.offsetHeight - 10;
+    nav.classList.toggle('is-solid', window.scrollY > limit);
+  }
+  window.addEventListener('scroll', function () {
+    if (!ticking) { ticking = true; requestAnimationFrame(onScroll); }
+  }, { passive: true });
+  window.addEventListener('resize', onScroll);
+  onScroll();
+
+  var menuBtn = $('.nav-menu');
+  var panel = $('#nav-panel');
+  function setMenu(open) {
+    panel.hidden = !open;
+    menuBtn.setAttribute('aria-expanded', String(open));
+    menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    if (open) nav.classList.add('is-solid'); else onScroll();
+  }
+  menuBtn.addEventListener('click', function () { setMenu(panel.hidden); });
+  panel.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !panel.hidden) { setMenu(false); menuBtn.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (!panel.hidden && !e.target.closest('#nav')) setMenu(false);
+  });
+
+  /* ---------- Reveal on scroll ---------- */
+  var reveals = $$('.reveal');
+  if (reduce || !('IntersectionObserver' in window)) {
+    reveals.forEach(function (el) { el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: .08 });
+    reveals.forEach(function (el) { io.observe(el); });
+  }
+
+  /* ---------- Sticky CTA on phones ---------- */
+  var sticky = $('.sticky-cta');
+  if ('IntersectionObserver' in window) {
+    var seen = new Map();
+    var stickyIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { seen.set(en.target, en.isIntersecting); });
+      var blocked = false;
+      seen.forEach(function (v) { if (v) blocked = true; });
+      sticky.classList.toggle('is-on', !blocked);
+    });
+    [hero, $('#pricing'), $('#remind'), $('.footer')].forEach(function (el) { stickyIO.observe(el); });
+  }
+
+  /* ---------- Prompt playground: describe → check → ask again ---------- */
+  var CDN = 'https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/';
+  var EX = {
+    kitten: {
+      img: CDN + '02be94e0-6903-4edd-b5ec-a10eb62d166e.webp',
+      alt: 'AI picture: an orange kitten in a blue beanie and scarf',
+      first: 'a cat in a hat',
+      check: "Cute, but it's grey, and the hat is way too big.",
+      again: 'an orange kitten in a blue knitted beanie and a matching scarf, cozy and soft'
+    },
+    dog: {
+      img: CDN + 'fde79b9a-ae7c-439f-9a96-f727754defb7.webp',
+      alt: 'AI picture: a golden retriever in a cowboy hat and red bandana',
+      first: 'a dog with a hat',
+      check: 'Fine, but boring. What if he was a cowboy?',
+      again: 'a happy golden retriever in a cowboy hat and a red bandana, bright and sunny'
+    },
+    cottage: {
+      img: CDN + '37b0e4f8-9780-409b-9aa4-f855a9a4ef24.webp',
+      alt: 'AI picture: a cottage on a sea cliff',
+      first: 'a house by the sea',
+      check: 'Too plain. I wanted it high up, on a cliff.',
+      again: 'a little cottage on top of a sea cliff, waves below, storybook style'
+    },
+    succulent: {
+      img: CDN + '73e9f810-8b43-4548-a4b1-830b1b99cdfd.webp',
+      alt: 'AI picture: a smiling succulent in a terracotta pot',
+      first: 'a plant',
+      check: 'It needs a face! And a nice pot.',
+      again: 'a smiling succulent in a terracotta pot, happy cartoon face'
+    }
+  };
+  var tabs = $$('.pg-tab');
+  var out = {
+    first: $('[data-pg="first"]'),
+    check: $('[data-pg="check"]'),
+    again: $('[data-pg="again"]'),
+    img: $('[data-pg="img"]')
+  };
+  var token = 0;
+  var wait = function (ms) { return new Promise(function (r) { setTimeout(r, ms); }); };
+
+  function type(el, text, id) {
+    el.textContent = '';
+    el.classList.add('caret');
+    var i = 0;
+    return new Promise(function (resolve) {
+      (function step() {
+        if (id !== token) return resolve(false);
+        i += 1;
+        el.textContent = text.slice(0, i);
+        if (i >= text.length) { el.classList.remove('caret'); return resolve(true); }
+        setTimeout(step, 22 + Math.random() * 26);
+      })();
+    });
+  }
+
+  function show(key, animate) {
+    var ex = EX[key];
+    var id = ++token;
+    tabs.forEach(function (t) { t.setAttribute('aria-pressed', String(t.dataset.ex === key)); });
+    out.img.src = ex.img;
+    out.img.alt = ex.alt;
+    if (!animate || reduce) {
+      [out.first, out.check, out.again].forEach(function (el) { el.classList.remove('caret'); });
+      out.first.textContent = ex.first;
+      out.check.textContent = ex.check;
+      out.again.textContent = ex.again;
+      return;
+    }
+    out.check.textContent = '';
+    out.again.textContent = '';
+    var develop = out.img.animate(
+      [{ opacity: .15, filter: 'blur(14px)', transform: 'scale(1.04)' }, { opacity: .15, filter: 'blur(14px)', transform: 'scale(1.04)' }],
+      { duration: 1, fill: 'forwards' });
+    type(out.first, ex.first, id)
+      .then(function (ok) { return ok && wait(350).then(function () { return type(out.check, ex.check, id); }); })
+      .then(function (ok) { return ok && wait(350).then(function () { return type(out.again, ex.again, id); }); })
+      .then(function (ok) {
+        develop.cancel();
+        if (!ok) return;
+        out.img.animate(
+          [{ opacity: .15, filter: 'blur(14px)', transform: 'scale(1.04)' }, { opacity: 1, filter: 'blur(0px)', transform: 'scale(1)' }],
+          { duration: 1000, easing: 'cubic-bezier(.2,.75,.2,1)' });
+      });
+  }
+
+  tabs.forEach(function (t) {
+    t.addEventListener('click', function () { show(t.dataset.ex, true); });
+  });
+  if (!reduce && 'IntersectionObserver' in window) {
+    var pgIO = new IntersectionObserver(function (entries) {
+      if (entries[0].isIntersecting) { pgIO.disconnect(); show('kitten', true); }
+    }, { threshold: .45 });
+    pgIO.observe($('.pg-stage'));
+  }
+
+  /* ---------- Reminder form ---------- */
+  var form = $('.remind-form');
+  var msg = $('.remind-msg');
+  if (LINKS.reminder) form.action = LINKS.reminder;
+  form.addEventListener('submit', function (e) {
+    var email = form.email;
+    if (!email.checkValidity()) {
+      e.preventDefault();
+      msg.textContent = 'Please enter a valid email address.';
+      email.focus();
+      return;
+    }
+    if (LINKS.reminder) return; // native submit to the mailing service
+    e.preventDefault();
+    var subject = 'Remind me before founding prices end';
+    var body = 'Please send one reminder to: ' + email.value.trim();
+    window.location.href = 'mailto:' + CONTACT + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    msg.textContent = 'Your email app should open with the request ready to send.';
+  });
+})();
+</script>
+</body>
+</html>
