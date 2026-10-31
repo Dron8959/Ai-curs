@@ -1,0 +1,56 @@
+{
+  "name": "a1",
+  "footage_dir": "./footage",
+  "fps": 30,
+  "formats": ["9x16", "4x5"],
+
+  "style": { "font": "Poppins" },
+
+  "hooks": [
+    {
+      "id": "hook2",
+      "clips": [
+        { "file": "kamilla_couch.mp4", "in": 0.0, "out": 2.0 },
+        { "file": "kamilla_couch.mp4", "in": 5.0, "out": 7.0, "transition": { "type": "fade", "duration": 0.25 } }
+      ],
+      "transition_to_body": { "type": "fade", "duration": 0.3 },
+      "cards": [
+        { "text": "7:00 PM", "start": 0.0, "end": 1.9 },
+        { "text": "7:20 PM", "start": 2.0, "end": 3.7 }
+      ],
+      "subs_events": [
+        [0.1, 1.9, "Same couch. Same kid."],
+        [2.1, 3.7, "Different 20 minutes."]
+      ]
+    },
+    {
+      "id": "hook6",
+      "clips": [
+        { "file": "screen_game.mp4", "in": 0.0, "out": 3.0 }
+      ],
+      "transition_to_body": { "type": "wipeleft", "duration": 0.3 },
+      "cards": [
+        { "text": "She built a game.\\NThen beat me", "start": 0.0, "end": 2.8 }
+      ],
+      "subs_events": [
+        [0.1, 2.9, "One lesson. One laptop. She built a game."]
+      ]
+    }
+  ],
+
+  "body": [
+    { "file": "anna_talking.mp4", "in": 0.0, "out": 4.0 },
+    { "file": "screen_game.mp4", "in": 2.0, "out": 7.0, "transition": { "type": "fade", "duration": 0.25 } },
+    { "file": "anna_talking.mp4", "in": 6.0, "out": 9.0, "transition": { "type": "fade", "duration": 0.25 } }
+  ],
+
+  "body_cards": [
+    { "text": "Stop fighting screen time", "start": 0.3, "end": 3.5 },
+    { "text": "Her idea. Her game", "start": 4.5, "end": 8.0 },
+    { "text": "First lesson free", "start": 9.5, "end": 11.5 }
+  ],
+
+  "broll": [
+    { "file": "screen_game.mp4", "start": 5.0, "end": 7.0, "scale": 0.62, "y": "H*0.30" }
+  ]
+}
