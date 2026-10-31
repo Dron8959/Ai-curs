@@ -18,7 +18,7 @@ brew install ffmpeg          # mac
 #    скачать с Google Fonts и установить в систему
 
 # 3. субтитры из речи, локально
-pip install faster-whisper
+pip install -r requirements.txt   # faster-whisper + совместимый av
 ```
 
 Claude Code: открыть папку проекта, и всё — дальше просишь словами

@@ -1,0 +1,3 @@
+faster-whisper==1.2.1
+# av 16+ ломает faster-whisper 1.2.1 (metadata_errors)
+av<16
