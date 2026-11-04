@@ -1,0 +1,29 @@
+node_modules
+dist
+.DS_Store
+.env
+
+# Ignore the output video from Git but not videos you import into src/.
+out
+
+# Python venv for transcription (rebuild: see SETUP.md)
+.venv/
+__pycache__/
+
+# Heavy media stays out of git; folders are kept via .gitkeep
+public/clips/*
+public/sfx/*
+public/music/*
+refs/*
+!public/clips/.gitkeep
+!public/sfx/.gitkeep
+!public/music/.gitkeep
+!refs/.gitkeep
+*.mp4
+*.mov
+*.m4a
+*.wav
+*.mp3
+*.aac
+*.mkv
+*.webm
