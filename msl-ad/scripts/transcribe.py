@@ -10,6 +10,14 @@ import argparse
 import json
 import sys
 
+HF_ALIGN_FALLBACK = {
+    "en": "facebook/wav2vec2-base-960h",
+    "fr": "jonatasgrosman/wav2vec2-large-xlsr-53-french",
+    "de": "jonatasgrosman/wav2vec2-large-xlsr-53-german",
+    "es": "jonatasgrosman/wav2vec2-large-xlsr-53-spanish",
+    "it": "jonatasgrosman/wav2vec2-large-xlsr-53-italian",
+}
+
 
 def run_whisperx(path, model_name, lang):
     import whisperx
@@ -19,7 +27,15 @@ def run_whisperx(path, model_name, lang):
     result = model.transcribe(audio, batch_size=8)
     language = result["language"]
     try:
-        align_model, meta = whisperx.load_align_model(language_code=language, device="cpu")
+        try:
+            align_model, meta = whisperx.load_align_model(language_code=language, device="cpu")
+        except Exception:
+            # Default English/French/German/... align models download from download.pytorch.org,
+            # which the cloud network blocks; the same models exist on HuggingFace.
+            if language not in HF_ALIGN_FALLBACK:
+                raise
+            align_model, meta = whisperx.load_align_model(
+                language_code=language, device="cpu", model_name=HF_ALIGN_FALLBACK[language])
         result = whisperx.align(result["segments"], align_model, meta, audio, "cpu")
     except Exception as e:  # alignment model missing for language, network, etc.
         print(f"[warn] alignment skipped: {e}", file=sys.stderr)

@@ -6,10 +6,18 @@ Remotion 4.0.540 project (blank template) plus local transcription for captions.
 
 ```bash
 cd msl-ad
-npm install                       # node_modules is not in git
-python3 -m venv .venv             # .venv is not in git
-.venv/bin/pip install whisperx    # pulls torch (~several GB); fallback: pip install faster-whisper
+bash scripts/setup.sh   # npm install + .venv with whisperx + NLTK punkt_tab; ~10 min, ~8 GB
 ```
+
+`node_modules`, `.venv`, and the model caches (`~/.cache/huggingface`, `~/nltk_data`) are not in
+git and are lost when a cloud session ends.
+
+Cloud network notes (as of setup):
+- `download.pytorch.org` is blocked, so torch is installed from PyPI (CUDA build, works on CPU),
+  and English alignment falls back to `facebook/wav2vec2-base-960h` on HuggingFace (handled in
+  `scripts/transcribe.py`).
+- `nltk.download()` fails; `setup.sh` fetches `punkt_tab` with curl.
+- `remotion.media` is blocked (see below).
 
 Remotion skills for Claude Code live in `.agents/skills/` (symlinked from `.claude/skills/`)
 and are committed, so they need no reinstall. To refresh them: `npx remotion skills add`.
