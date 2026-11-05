@@ -12,6 +12,7 @@ fi
 .venv/bin/pip install --upgrade pip
 # whisperx pulls torch from PyPI (several GB). If it fails, faster-whisper alone is enough:
 .venv/bin/pip install whisperx || .venv/bin/pip install faster-whisper
+.venv/bin/pip install yt-dlp   # downloads reference videos by link
 
 # NLTK sentence splitter used by whisperx alignment. nltk.download() fails behind the
 # cloud proxy, so fetch the zip directly.
