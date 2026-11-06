@@ -5,48 +5,107 @@
   "slides": [
     {
       "type": "list",
-      "theme": "yellow",
       "kicker": "By the end of the course",
       "title": "6 things your kid\nwill **make**",
       "items": [
-        "Their own cartoon, with their voice in it",
-        "A song from their own words",
-        "A game their friends can play",
-        "A website with their name on it",
-        "A print for the fridge",
-        "A drawing, brought to life"
+        {
+          "icon": "clapperboard",
+          "text": "Their own cartoon, with their voice"
+        },
+        {
+          "icon": "music",
+          "text": "A song from their own words"
+        },
+        {
+          "icon": "gamepad-2",
+          "text": "A game their friends can play"
+        },
+        {
+          "icon": "globe",
+          "text": "A website with their name on it"
+        },
+        {
+          "icon": "image",
+          "text": "A print for the fridge"
+        },
+        {
+          "icon": "pencil",
+          "text": "A drawing, brought to life"
+        }
+      ],
+      "deco": [
+        {
+          "kind": "sparkle",
+          "x": 950,
+          "y": 330
+        },
+        {
+          "kind": "robo",
+          "x": 830,
+          "y": 1060,
+          "w": 160
+        }
       ]
     },
     {
       "type": "split",
-      "theme": "sand",
       "kicker": "Number 6",
       "title": "A drawing, _brought to life_",
       "left": {
         "image": "assets/img/drawing-6-year-old.webp",
-        "label": "Drawn by a 6-year-old"
+        "label": "drawn by a 6-year-old"
       },
       "right": {
         "image": "assets/img/now-a-cartoon.webp",
-        "label": "One lesson later"
+        "label": "one lesson later"
       }
     },
     {
       "type": "photo",
-      "theme": "light",
       "kicker": "Tested first by",
       "title": "Our 10-year-old _co-host_",
       "image": "assets/img/meet-kamilla.webp",
-      "tab": "Kamilla"
+      "picStyle": "top:340px;bottom:150px;left:150px;right:150px",
+      "deco": [
+        {
+          "kind": "sticker",
+          "name": "star",
+          "x": 880,
+          "y": 330,
+          "size": "sm"
+        }
+      ]
     },
     {
       "type": "cta",
-      "theme": "dark",
-      "title": "Results live on\nyour laptop, **not in a workbook**.",
-      "body": "A cartoon for Thanksgiving. A game for the cousins. A website for grandma.",
+      "theme": "navy",
+      "title": "Results live on\nyour laptop,\n**not in a workbook**.",
       "buttons": [
         "See all 37 lessons · link in bio"
-      ]
+      ],
+      "deco": [
+        {
+          "kind": "dot",
+          "x": 110,
+          "y": 260
+        },
+        {
+          "kind": "dot",
+          "x": 150,
+          "y": 1150,
+          "w": 16,
+          "gold": true
+        },
+        {
+          "kind": "sparkle",
+          "x": 860,
+          "y": 1150,
+          "white": true,
+          "size": "sm"
+        }
+      ],
+      "body": "A cartoon for Thanksgiving. A game for the cousins. A website for grandma.",
+      "bubble": "show grandma!"
     }
   ]
 }

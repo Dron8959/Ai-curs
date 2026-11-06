@@ -5,11 +5,47 @@
   "slides": [
     {
       "type": "cover",
-      "theme": "sand",
       "kicker": "The core skill",
       "title": "Words in,\n**art out.**",
-      "sub": "The AI skill your kid actually needs isn't coding. It's saying what they mean.",
-      "swipe": "Watch one try"
+      "sub": "The AI skill your kid actually needs is not coding. It is saying what they mean.",
+      "deco": [
+        {
+          "kind": "robo",
+          "x": 640,
+          "y": 760,
+          "w": 330
+        },
+        {
+          "kind": "bubble",
+          "text": "a cat\nin a hat?",
+          "x": 380,
+          "y": 700
+        },
+        {
+          "kind": "sticker",
+          "name": "wand-sparkles",
+          "x": 140,
+          "y": 900
+        },
+        {
+          "kind": "sticker",
+          "name": "palette",
+          "x": 300,
+          "y": 1080,
+          "size": "sm"
+        },
+        {
+          "kind": "sparkle",
+          "x": 960,
+          "y": 700
+        },
+        {
+          "kind": "sparkle",
+          "x": 560,
+          "y": 1120,
+          "size": "sm"
+        }
+      ]
     },
     {
       "type": "prompt",
@@ -27,7 +63,7 @@
           "text": "Cute, but it's grey. And the hat is way too big."
         },
         {
-          "role": "kid",
+          "role": "ask",
           "label": "Ask again",
           "text": "an orange kitten in a blue knitted beanie and a matching scarf, cozy and soft"
         },
@@ -36,22 +72,81 @@
           "label": "Result",
           "text": "That's the one!"
         }
+      ],
+      "deco": [
+        {
+          "kind": "sticker",
+          "name": "sparkles",
+          "x": 900,
+          "y": 330,
+          "size": "sm"
+        }
       ]
     },
     {
       "type": "step",
       "num": "↻",
       "title": "Describe → check →\n**ask again**",
-      "body": "That's the whole loop. It works for pictures, songs, games, and every tool that hasn't been invented yet."
+      "size": "md",
+      "body": "That is the whole loop. It works for pictures, songs, games, and every tool that has not been invented yet.",
+      "deco": [
+        {
+          "kind": "sticker",
+          "name": "image",
+          "x": 140,
+          "y": 1040
+        },
+        {
+          "kind": "sticker",
+          "name": "music",
+          "x": 290,
+          "y": 1080,
+          "size": "sm"
+        },
+        {
+          "kind": "sticker",
+          "name": "gamepad-2",
+          "x": 420,
+          "y": 1040
+        },
+        {
+          "kind": "robo",
+          "x": 800,
+          "y": 980,
+          "w": 190
+        }
+      ]
     },
     {
       "type": "cta",
-      "theme": "dark",
+      "theme": "navy",
       "title": "Try it tonight with\n**any animal** they pick.",
-      "body": "Your kid describes. You type. They decide when it's right.",
       "buttons": [
         "Save for tonight"
-      ]
+      ],
+      "deco": [
+        {
+          "kind": "dot",
+          "x": 110,
+          "y": 260
+        },
+        {
+          "kind": "dot",
+          "x": 150,
+          "y": 1150,
+          "w": 16,
+          "gold": true
+        },
+        {
+          "kind": "sparkle",
+          "x": 860,
+          "y": 1150,
+          "white": true,
+          "size": "sm"
+        }
+      ],
+      "body": "Your kid describes. You type. They decide when it is right.",
+      "bubble": "a dino in socks?"
     }
   ]
 }

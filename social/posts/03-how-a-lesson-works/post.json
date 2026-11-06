@@ -5,52 +5,175 @@
   "slides": [
     {
       "type": "cover",
-      "theme": "yellow",
       "kicker": "How it works",
+      "size": "lg",
       "title": "A short video.\n20 minutes together.\nOne **real thing**.",
-      "sub": "Here's what one lesson looks like.",
-      "swipe": "Swipe"
+      "deco": [
+        {
+          "kind": "photo",
+          "src": "social/media/crops/together-wide.jpg",
+          "x": 110,
+          "y": 640,
+          "w": 860,
+          "h": 540,
+          "rot": -2,
+          "pos": "55% center"
+        },
+        {
+          "kind": "sticker",
+          "name": "clock",
+          "x": 900,
+          "y": 560
+        },
+        {
+          "kind": "sparkle",
+          "x": 80,
+          "y": 600
+        },
+        {
+          "kind": "note",
+          "text": "at our desk",
+          "x": 700,
+          "y": 1190,
+          "rot": -4,
+          "gold": true
+        }
+      ],
+      "swipe": null
     },
     {
       "type": "step",
       "num": "1",
       "title": "**Watch**",
-      "body": "A short video shows the finished result first, so your kid knows exactly what they're about to make."
+      "body": "A short video shows the finished result first, so your kid knows exactly what they are about to make.",
+      "deco": [
+        {
+          "kind": "robo",
+          "x": 780,
+          "y": 990,
+          "w": 220
+        },
+        {
+          "kind": "bubble",
+          "text": "see the end\nfirst!",
+          "x": 500,
+          "y": 1010
+        },
+        {
+          "kind": "sticker",
+          "name": "clapperboard",
+          "x": 110,
+          "y": 1050
+        }
+      ]
     },
     {
       "type": "step",
       "num": "2",
       "title": "**Make**",
       "body": "Side by side, in one sitting. Your kid has the ideas and gives the directions.",
-      "example": "You're the hands on the keyboard. And sometimes the voice of reason."
+      "example": "You are the hands on the keyboard. And sometimes the voice of reason.",
+      "image": "social/media/crops/together-portrait.jpg",
+      "picStyle": "width:380px;height:470px;bottom:110px;right:100px",
+      "deco": [
+        {
+          "kind": "sparkle",
+          "x": 120,
+          "y": 1150,
+          "size": "sm"
+        }
+      ]
     },
     {
       "type": "step",
       "num": "3",
       "title": "**Show**",
-      "body": "They show it to the family, and can send it in for the course showcase."
+      "body": "They show it to the family, and can send it in for the course showcase.",
+      "image": "assets/img/now-a-cartoon.webp",
+      "picStyle": "width:360px;height:520px;bottom:110px;right:120px",
+      "deco": [
+        {
+          "kind": "note",
+          "text": "ta-da!",
+          "x": 170,
+          "y": 1030,
+          "rot": -8,
+          "gold": true
+        },
+        {
+          "kind": "sticker",
+          "name": "heart",
+          "x": 120,
+          "y": 1150,
+          "size": "sm"
+        }
+      ]
     },
     {
       "type": "list",
-      "theme": "sand",
       "kicker": "What's inside",
       "title": "The whole course",
       "items": [
-        "37 lessons, filmed and ready",
-        "A part for grown-ups in every lesson",
-        "Lessons unlock in order. No schedule",
-        "Every tool runs on your account",
-        "Access never expires"
+        {
+          "icon": "clapperboard",
+          "text": "37 lessons, filmed and ready"
+        },
+        {
+          "icon": "heart",
+          "text": "A part for grown-ups in every lesson"
+        },
+        {
+          "icon": "star",
+          "text": "Lessons unlock in order. No schedule"
+        },
+        {
+          "icon": "shield-check",
+          "text": "Every tool runs on your account"
+        },
+        {
+          "icon": "sparkles",
+          "text": "Access never expires"
+        }
+      ],
+      "deco": [
+        {
+          "kind": "robo",
+          "x": 800,
+          "y": 1010,
+          "w": 190
+        }
       ]
     },
     {
       "type": "cta",
-      "theme": "dark",
-      "title": "From **$197**.\nOne-time. Yours to keep.",
-      "body": "Finish the first lessons. Not right for your family? Full refund within 30 days.",
+      "theme": "navy",
+      "title": "From **$197**.\nOne-time.\nYours to keep.",
       "buttons": [
         "See the lessons · link in bio"
-      ]
+      ],
+      "deco": [
+        {
+          "kind": "dot",
+          "x": 110,
+          "y": 260
+        },
+        {
+          "kind": "dot",
+          "x": 150,
+          "y": 1150,
+          "w": 16,
+          "gold": true
+        },
+        {
+          "kind": "sparkle",
+          "x": 860,
+          "y": 1150,
+          "white": true,
+          "size": "sm"
+        }
+      ],
+      "body": "Not right for your family? Full refund within 30 days.",
+      "bubble": "no subscription"
     }
   ]
 }

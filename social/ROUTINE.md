@@ -8,6 +8,9 @@
 2. Прочитать: `social/config.json`, `social/brand/brand-profile.md`, `voice.md`, `facts.md`,
    `content-pillars.md`, `calendar.md`, `social/01-competitors-and-hooks.md`, последние 30 строк `social/log.md`.
 3. Посмотреть `social/media/` — новые фото и видео от Анны (файлы, которых нет в логе).
+4. `cd social/engine && npm install` (шрифты, GSAP, иконки), затем вернуться в корень репозитория.
+5. Визуальные правила: раздел «Визуальный бренд» в `brand-profile.md` и `social/engine/README.md`.
+   Каждый пост — настоящее фото (если подходит по смыслу), стикеры, рукописная подпись, Robo на финальном слайде.
 
 ## 1. Какие слоты пустые
 1. Metricool `getScheduledPosts` для `metricool_blog_id` на сегодня + `buffer_days` (таймзона из config).
@@ -43,6 +46,17 @@
 4. Если в выводе есть `OVERFLOW`, сократить текст и перерендерить.
 5. **Посмотреть каждый слайд** (Read на jpg): текст читается, ничего не обрезано, фото подходит к тексту.
 6. `caption.md` с frontmatter (pillar, slot, networks, type, ai_generated) и текстом подписи.
+
+## 4б. Рилсы
+Каждый день как минимум один слот — рилс с моушн-графикой:
+1. `social/reels/<YYYY-MM-DD>-<slot>-<slug>/reel.json` по схеме из `social/engine/README.md`
+   (12–18 секунд: hook 3 с → основная сцена → CTA 3 с). Тема — та же, что у поста дня, другим углом.
+2. `node social/engine/reel.mjs social/reels/<папка>` → `reel.mp4` и `cover.jpg`.
+3. Вытащить 8 кадров (`ffmpeg -ss`) и **посмотреть**: текст не перекрыт, ничего не обрезано,
+   важное между y=220 и y=1500.
+4. В Metricool: `instagramData.type` = `REEL`, `videoThumbnailUrl` = ссылка на `cover.jpg`,
+   `audioConfiguration.audioId` — поисковый запрос спокойной инструментальной музыки из библиотеки Instagram
+   (если Metricool вернул несколько вариантов, взять первый подходящий по настроению). Facebook: `REEL`.
 
 ## 5. Публикация
 1. `git add social && git commit && git push origin <branch>`, затем `SHA=$(git rev-parse HEAD)`.

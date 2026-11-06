@@ -5,50 +5,168 @@
   "slides": [
     {
       "type": "cover",
-      "theme": "sand",
       "kicker": "Parents ask",
+      "size": "lg",
       "title": "Is this right for\n**our family**?",
-      "sub": "Five honest answers.",
-      "swipe": "Swipe"
+      "sub": "Five honest answers from Anna.",
+      "deco": [
+        {
+          "kind": "photo",
+          "src": "social/media/crops/together-wide.jpg",
+          "x": 110,
+          "y": 620,
+          "w": 860,
+          "h": 540,
+          "rot": 2,
+          "pos": "60% center"
+        },
+        {
+          "kind": "note",
+          "text": "real people, real desk",
+          "x": 560,
+          "y": 1175,
+          "rot": -3,
+          "gold": true
+        },
+        {
+          "kind": "sparkle",
+          "x": 80,
+          "y": 580
+        }
+      ]
     },
     {
       "type": "step",
       "num": "?",
       "title": "How much time does it take?",
-      "body": "One short video, then 15–20 minutes of making together. Most families finish a lesson in one sitting."
+      "size": "md",
+      "body": "One short video, then 15–20 minutes of making together. Most families finish a lesson in one sitting.",
+      "deco": [
+        {
+          "kind": "sticker",
+          "name": "clock",
+          "x": 880,
+          "y": 190
+        },
+        {
+          "kind": "sparkle",
+          "x": 900,
+          "y": 1120
+        }
+      ]
     },
     {
       "type": "step",
       "num": "?",
       "title": "Does my kid need their own AI accounts?",
-      "body": "No. Every tool runs on your account, so you're in the room for all of it and see everything they make."
+      "size": "md",
+      "body": "No. Every tool runs on your account, so you are in the room for all of it and see everything they make.",
+      "deco": [
+        {
+          "kind": "sticker",
+          "name": "shield-check",
+          "x": 880,
+          "y": 190
+        },
+        {
+          "kind": "robo",
+          "x": 800,
+          "y": 1010,
+          "w": 170
+        }
+      ]
     },
     {
       "type": "step",
       "num": "?",
       "title": "Do we need to code?",
-      "body": "No. There's no coding anywhere in the course. Kids 6–14 can do every lesson with a grown-up."
+      "size": "md",
+      "body": "No. There is no coding anywhere in the course. Kids 6–14 can do every lesson with a grown-up.",
+      "deco": [
+        {
+          "kind": "sticker",
+          "name": "code-xml",
+          "x": 880,
+          "y": 190
+        },
+        {
+          "kind": "sparkle",
+          "x": 900,
+          "y": 1120
+        }
+      ]
     },
     {
       "type": "step",
       "num": "?",
       "title": "What's the difference between the plans?",
-      "body": "Both have all 37 lessons. On Creator + Homework, Anna personally reviews every piece your kid sends in, the same day."
+      "size": "md",
+      "body": "Both have all 37 lessons. On Creator + Homework, Anna personally reviews every piece your kid sends in, the same day.",
+      "deco": [
+        {
+          "kind": "sticker",
+          "name": "star",
+          "x": 880,
+          "y": 190
+        },
+        {
+          "kind": "robo",
+          "x": 800,
+          "y": 1010,
+          "w": 170
+        }
+      ]
     },
     {
       "type": "step",
       "num": "?",
       "title": "What if it's not for us?",
-      "body": "Finish the first lessons. Not right for your family? One email within 30 days and you get a full refund."
+      "size": "md",
+      "body": "Finish the first lessons. Not right for your family? One email within 30 days and you get a full refund.",
+      "deco": [
+        {
+          "kind": "sticker",
+          "name": "heart",
+          "x": 880,
+          "y": 190
+        },
+        {
+          "kind": "sparkle",
+          "x": 900,
+          "y": 1120
+        }
+      ]
     },
     {
       "type": "cta",
-      "theme": "dark",
-      "title": "Still have a question?\n**Anna answers personally.**",
-      "body": "nova@makeshowlab.com, or just DM us here.",
+      "theme": "navy",
+      "title": "Still have a question?\n**Anna answers\npersonally.**",
       "buttons": [
         "Send us a DM"
-      ]
+      ],
+      "deco": [
+        {
+          "kind": "dot",
+          "x": 110,
+          "y": 260
+        },
+        {
+          "kind": "dot",
+          "x": 150,
+          "y": 1150,
+          "w": 16,
+          "gold": true
+        },
+        {
+          "kind": "sparkle",
+          "x": 860,
+          "y": 1150,
+          "white": true,
+          "size": "sm"
+        }
+      ],
+      "body": "nova@makeshowlab.com, or just DM us here.",
+      "bubble": "ask away!"
     }
   ]
 }

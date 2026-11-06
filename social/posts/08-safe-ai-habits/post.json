@@ -5,37 +5,122 @@
   "slides": [
     {
       "type": "cover",
-      "theme": "dark",
+      "theme": "navy",
       "kicker": "Save this",
+      "size": "lg",
       "title": "5 safe AI habits.\nTeach them **while\nthey still listen.**",
-      "swipe": "Swipe"
+      "deco": [
+        {
+          "kind": "sun",
+          "x": 520,
+          "y": 760,
+          "w": 620
+        },
+        {
+          "kind": "robo",
+          "x": 560,
+          "y": 820,
+          "w": 380
+        },
+        {
+          "kind": "sticker",
+          "name": "shield-check",
+          "x": 180,
+          "y": 880
+        },
+        {
+          "kind": "sticker",
+          "name": "heart",
+          "x": 330,
+          "y": 1080,
+          "size": "sm"
+        },
+        {
+          "kind": "sparkle",
+          "x": 200,
+          "y": 720,
+          "white": true
+        },
+        {
+          "kind": "dot",
+          "x": 120,
+          "y": 1150,
+          "w": 14,
+          "gold": true
+        }
+      ]
     },
     {
       "type": "list",
-      "theme": "light",
-      "title": "The **boring** lessons that matter",
+      "title": "The **boring** lessons\nthat matter",
       "items": [
-        "AI runs on the grown-up's account. You see everything.",
-        "Never share full name, school, address or friends' photos.",
-        "AI can be wrong. Check before you believe it.",
-        "Spot a fake: ask who made it and why.",
-        "AI is a helper, not a homework machine."
+        {
+          "icon": "shield-check",
+          "text": "AI runs on the grown-up's account. You see everything."
+        },
+        {
+          "icon": "heart",
+          "text": "Never share full name, school, address or friends' photos."
+        },
+        {
+          "icon": "star",
+          "text": "AI can be wrong. Check before you believe it."
+        },
+        {
+          "icon": "image",
+          "text": "Spot a fake: ask who made it and why."
+        },
+        {
+          "icon": "wand-sparkles",
+          "text": "AI is a helper, not a homework machine."
+        }
       ]
     },
     {
       "type": "step",
       "num": "!",
       "title": "Why **early**?",
-      "body": "Kids are learning AI anyway, from friends and from YouTube. Get the safe habits in first, while the boring stuff still lands."
+      "body": "Kids are learning AI anyway, from friends and from YouTube. Get the safe habits in first, while the boring stuff still lands.",
+      "image": "social/media/crops/together-portrait.jpg",
+      "picStyle": "width:360px;height:440px;bottom:110px;right:100px",
+      "deco": [
+        {
+          "kind": "sparkle",
+          "x": 150,
+          "y": 1120
+        }
+      ]
     },
     {
       "type": "cta",
-      "theme": "dark",
+      "theme": "navy",
       "title": "Send this to a parent\nwho **needs it**.",
       "buttons": [
         "Share",
         "Save"
-      ]
+      ],
+      "deco": [
+        {
+          "kind": "dot",
+          "x": 110,
+          "y": 260
+        },
+        {
+          "kind": "dot",
+          "x": 150,
+          "y": 1150,
+          "w": 16,
+          "gold": true
+        },
+        {
+          "kind": "sparkle",
+          "x": 860,
+          "y": 1150,
+          "white": true,
+          "size": "sm"
+        }
+      ],
+      "bubble": "safety first!"
     }
   ]
 }

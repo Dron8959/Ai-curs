@@ -5,60 +5,204 @@
   "slides": [
     {
       "type": "stat",
-      "theme": "dark",
+      "theme": "navy",
       "kicker": "Worth knowing",
       "value": "9 in 10",
       "title": "American kids 9–17\nalready use AI.",
       "body": "Almost half have never talked about it with a parent.",
-      "source": "Common Sense Media, AI Census of tweens and teens, 2026"
+      "source": "Common Sense Media, AI Census of tweens and teens, 2026",
+      "deco": [
+        {
+          "kind": "dot",
+          "x": 120,
+          "y": 300
+        },
+        {
+          "kind": "dot",
+          "x": 960,
+          "y": 1120,
+          "w": 16,
+          "gold": true
+        },
+        {
+          "kind": "sparkle",
+          "x": 900,
+          "y": 980,
+          "white": true,
+          "size": "sm"
+        }
+      ]
     },
     {
       "type": "cover",
-      "theme": "yellow",
       "kicker": "So start here",
+      "size": "lg",
       "title": "5 questions to ask\nyour kid **tonight**",
       "sub": "No lecture needed. Just dinner.",
-      "swipe": "Swipe"
+      "deco": [
+        {
+          "kind": "photo",
+          "src": "social/media/crops/together-portrait.jpg",
+          "x": 470,
+          "y": 700,
+          "w": 470,
+          "h": 520,
+          "rot": 4
+        },
+        {
+          "kind": "robo",
+          "x": 130,
+          "y": 880,
+          "w": 260
+        },
+        {
+          "kind": "bubble",
+          "text": "ask me\nanything!",
+          "x": 130,
+          "y": 780,
+          "right": false
+        },
+        {
+          "kind": "sparkle",
+          "x": 950,
+          "y": 640
+        }
+      ]
     },
     {
       "type": "step",
       "num": "1",
       "title": "Which AI have you tried?",
-      "body": "No judgment. You're mapping the territory, not catching them out."
+      "size": "md",
+      "body": "No judgment. You are mapping the territory, not catching them out.",
+      "deco": [
+        {
+          "kind": "sticker",
+          "name": "gamepad-2",
+          "x": 880,
+          "y": 200
+        },
+        {
+          "kind": "robo",
+          "x": 820,
+          "y": 1000,
+          "w": 170
+        }
+      ]
     },
     {
       "type": "step",
       "num": "2",
       "title": "What did you make with it?",
-      "body": "Making something and copying an answer are very different things. Find out which one it was."
+      "size": "md",
+      "body": "Making something and copying an answer are very different things. Find out which one it was.",
+      "deco": [
+        {
+          "kind": "sticker",
+          "name": "palette",
+          "x": 880,
+          "y": 200
+        },
+        {
+          "kind": "sparkle",
+          "x": 900,
+          "y": 1120
+        }
+      ]
     },
     {
       "type": "step",
       "num": "3",
       "title": "Has it ever been wrong?",
-      "body": "Kids who have caught AI making a mistake learn to trust it the right amount."
+      "size": "md",
+      "body": "Kids who have caught AI making a mistake learn to trust it the right amount.",
+      "deco": [
+        {
+          "kind": "sticker",
+          "name": "star",
+          "x": 880,
+          "y": 200
+        },
+        {
+          "kind": "robo",
+          "x": 820,
+          "y": 1000,
+          "w": 170
+        }
+      ]
     },
     {
       "type": "step",
       "num": "4",
       "title": "What would you never tell it?",
-      "body": "Full name, school, address, photos of friends. If they don't know the list yet, now they do."
+      "size": "md",
+      "body": "Full name, school, address, photos of friends. If they do not know the list yet, now they do.",
+      "deco": [
+        {
+          "kind": "sticker",
+          "name": "shield-check",
+          "x": 880,
+          "y": 200
+        },
+        {
+          "kind": "sparkle",
+          "x": 900,
+          "y": 1120
+        }
+      ]
     },
     {
       "type": "step",
       "num": "5",
       "title": "What should we make together?",
-      "body": "The easiest way to stay in the loop is to sit in it. Pick a weekend project."
+      "size": "md",
+      "body": "The easiest way to stay in the loop is to sit in it. Pick a weekend project.",
+      "deco": [
+        {
+          "kind": "sticker",
+          "name": "heart",
+          "x": 880,
+          "y": 200
+        },
+        {
+          "kind": "robo",
+          "x": 820,
+          "y": 1000,
+          "w": 170
+        }
+      ]
     },
     {
       "type": "cta",
-      "theme": "dark",
+      "theme": "navy",
       "title": "Save this for\n**dinner tonight**.",
-      "body": "And send it to the other grown-up in the house.",
       "buttons": [
         "Save",
         "Share with your co-parent"
-      ]
+      ],
+      "deco": [
+        {
+          "kind": "dot",
+          "x": 110,
+          "y": 260
+        },
+        {
+          "kind": "dot",
+          "x": 150,
+          "y": 1150,
+          "w": 16,
+          "gold": true
+        },
+        {
+          "kind": "sparkle",
+          "x": 860,
+          "y": 1150,
+          "white": true,
+          "size": "sm"
+        }
+      ],
+      "body": "And send it to the other grown-up in the house.",
+      "bubble": "dinner talk!"
     }
   ]
 }

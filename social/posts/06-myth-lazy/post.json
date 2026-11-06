@@ -5,26 +5,74 @@
   "slides": [
     {
       "type": "myth",
-      "theme": "sand",
       "kicker": "Myth vs truth",
       "myth": "AI will make my kid lazy.",
-      "truth": "Only if the AI is the one with the ideas."
+      "truth": "Only if the AI is the one with the ideas.",
+      "image": "assets/img/meet-kamilla.webp",
+      "deco": [
+        {
+          "kind": "sparkle",
+          "x": 940,
+          "y": 640
+        }
+      ]
     },
     {
       "type": "step",
       "num": "→",
       "title": "Here, your kid\nis the **director**",
       "body": "They have the ideas and give the directions. They describe what they want, check the result and ask again.",
-      "example": "AI is a helper. Not a homework machine."
+      "example": "AI is a helper. Not a homework machine.",
+      "image": "social/media/crops/together-portrait.jpg",
+      "picStyle": "width:360px;height:420px;bottom:110px;right:100px",
+      "deco": [
+        {
+          "kind": "note",
+          "text": "the director",
+          "x": 150,
+          "y": 1110,
+          "rot": -5,
+          "gold": true
+        },
+        {
+          "kind": "arrow",
+          "dir": "right",
+          "x": 420,
+          "y": 1110,
+          "w": 130
+        }
+      ]
     },
     {
       "type": "cta",
-      "theme": "dark",
-      "title": "Want AI to do the homework?\n**This isn't it.**",
-      "body": "Want your kid to make things they're proud of? Follow along.",
+      "theme": "navy",
+      "title": "Want AI to do the homework?\n**This isn’t it.**",
       "buttons": [
         "Follow @make_showlab"
-      ]
+      ],
+      "deco": [
+        {
+          "kind": "dot",
+          "x": 110,
+          "y": 260
+        },
+        {
+          "kind": "dot",
+          "x": 150,
+          "y": 1150,
+          "w": 16,
+          "gold": true
+        },
+        {
+          "kind": "sparkle",
+          "x": 860,
+          "y": 1150,
+          "white": true,
+          "size": "sm"
+        }
+      ],
+      "body": "Want your kid to make things they are proud of? Follow along.",
+      "bubble": "kids direct!"
     }
   ]
 }

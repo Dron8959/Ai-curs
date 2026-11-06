@@ -1,0 +1,11 @@
+{
+  "name": "makeshowlab-social-engine",
+  "private": true,
+  "type": "module",
+  "description": "Renders Make Show Lab posts (JPG) and reels (MP4) from JSON specs.",
+  "dependencies": {
+    "@fontsource/caveat": "5.2.5",
+    "gsap": "3.12.5",
+    "lucide-static": "0.460.0"
+  }
+}

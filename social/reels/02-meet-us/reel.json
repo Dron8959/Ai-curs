@@ -1,0 +1,17 @@
+{
+  "fps": 30,
+  "coverAt": 1.6,
+  "scenes": [
+    { "type": "hook", "dur": 2.8, "theme": "navy", "kicker": "Hi, we're Make Show Lab", "title": "A mom and a daughter.\n**Not a studio.**",
+      "deco": [ { "kind": "sticker", "name": "gamepad-2", "x": 120, "y": 1380 }, { "kind": "sticker", "name": "music", "x": 860, "y": 1300 }, { "kind": "sparkle", "x": 880, "y": 480, "white": true } ] },
+    { "type": "photo", "dur": 4.6, "title": "This is the **desk**.", "image": "social/media/crops/together-portrait.jpg", "box": "left:120px;right:120px;top:560px;height:1060px",
+      "notes": [
+        { "text": "Kamilla, 10", "x": 90, "y": 1640, "rot": -5, "arrow": { "dir": "up-right", "x": 300, "y": 1500, "w": 150 } },
+        { "text": "Anna", "x": 820, "y": 470, "rot": 5, "gold": true, "arrow": { "dir": "down-left", "x": 690, "y": 520, "w": 140 } },
+        { "text": "the cat:\nnot consulted", "x": 700, "y": 1640, "rot": -4, "gold": true } ] },
+    { "type": "photo", "dur": 3.8, "kicker": "Meet Kamilla", "title": "She tries every\nproject **first**.", "image": "assets/img/meet-kamilla.webp", "box": "left:150px;right:150px;top:640px;height:960px",
+      "stickers": [ { "name": "star", "x": 860, "y": 600 } ] },
+    { "type": "cta", "theme": "navy", "dur": 3.4, "title": "We post what\nwe **make**.", "buttons": ["Follow along"],
+      "deco": [ { "kind": "sparkle", "x": 140, "y": 900, "white": true } ] }
+  ]
+}

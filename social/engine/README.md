@@ -1,39 +1,58 @@
-# Post renderer
+# Make Show Lab content engine
 
 ```bash
-node social/engine/render.mjs social/posts/<folder>
+cd social/engine && npm install      # once per machine: fonts (Caveat), GSAP, icons
+node social/engine/render.mjs social/posts/<folder>   # post.json -> slide-01.jpg …
+node social/engine/reel.mjs   social/reels/<folder>   # reel.json -> reel.mp4 + cover.jpg
 ```
 
-Reads `<folder>/post.json`, writes `slide-01.jpg`, `slide-02.jpg`, … (1080×1350 for `post`,
-1080×1080 for `square`, 1080×1920 for `story`). Fonts, colours and the highlighter swipe come from the landing page.
-Prints `OVERFLOW` next to a slide whose text runs into the header or footer: shorten it and render again.
+Playwright and Chromium are already installed in the cloud environment; ffmpeg is used for MP4.
 
-## post.json
+The look ("kitchen-table scrapbook") lives in `kit.mjs`: cream paper with grain, photos in white
+frames with tape, Caveat handwritten notes and hand-drawn arrows, colored icon stickers (lucide),
+sparkles, the navy card with the yellow sun, and **Robo** (the robot from the logo, as vector).
 
-```json
-{
-  "id": "2026-11-07-paper-to-screen",
-  "pillar": "P1",
-  "format": "post",
-  "slides": [ { "type": "cover", "...": "..." } ]
-}
-```
+## Text markup
+`**word**` yellow highlighter · `_word_` gold · `~word~` handwritten · `\n` line break.
 
-Text fields understand `**word**` (yellow highlighter), `_word_` (gold) and `\n` (line break).
-Every slide takes `theme`: `light` (default), `sand`, `yellow` or `dark`, and `align`: `center` (default) or `flex-start`.
-Images are repo paths, e.g. `assets/img/meet-kamilla.webp` or `social/media/xyz.jpg`.
+## post.json (1080×1350)
+`{ "id", "pillar", "format": "post", "slides": [ … ] }`. Each slide takes `theme` (`paper` default or
+`navy`), `size` (`xl` / `lg` / `md` for the title) and `deco` (free-placed extras, see below).
 
 | type | fields |
 |------|--------|
-| `cover` | `kicker`, `title`, `sub`, `image`, `ratio` (e.g. `"2/3"`), `tab`, `swipe` |
-| `split` | `kicker`, `title`, `left {image,label}`, `right {image,label}`, `sub` |
-| `step` | `num`, `title`, `body`, `example`, `image` |
-| `prompt` | `kicker`, `title`, `turns [{role: kid/check/win, label, text}]` |
+| `cover` | `kicker`, `title`, `sub`, `image`, `pos`, `picStyle`, `swipe` |
+| `hero` | navy card with the sun behind a photo: `kicker`, `title`, `sub`, `image`, `sunTop` |
+| `split` | `kicker`, `title`, `left {image,label}`, `right {image,label}` |
+| `step` | `num`, `title`, `body`, `example`, `image`, `picStyle` |
+| `prompt` | chat window: `kicker`, `title`, `turns [{role: kid/check/ask/win, label, text}]` |
 | `stat` | `kicker`, `value`, `title`, `body`, `source` |
-| `myth` | `kicker`, `myth`, `truth`, `body` |
-| `list` | `kicker`, `title`, `items []` |
-| `quote` | `quote`, `by`, `image` |
-| `photo` | `kicker`, `title`, `image`, `tab`, `sub` |
-| `cta` | `title`, `body`, `buttons []` |
+| `myth` | `kicker`, `myth`, `truth`, `image` |
+| `list` | `kicker`, `title`, `items [string | {icon, text}]` |
+| `quote` | `quote`, `by` |
+| `photo` | `kicker`, `title`, `image`, `pos`, `picStyle`, `sub` |
+| `cta` | navy with Robo waving: `title`, `body`, `buttons []`, `bubble` |
 
-Example: `social/posts/01-paper-to-screen/post.json`.
+`deco` items (`x`, `y` in px, optional `rot`): `photo {src,w,h,pos,tape}`, `sticker {name,size:'sm'}`,
+`note {text,gold}`, `arrow {dir: down-left/down-right/left/right/up-right, w, gold}`, `robo {w, wave}`,
+`bubble {text,right}`, `sparkle {white,size}`, `sun {w}`, `dot {w,gold}`.
+Sticker names are lucide icons: gamepad-2, music, clapperboard, code-xml, shirt, sparkles, heart,
+shield-check, globe, image, pencil, star, clock, palette, wand-sparkles.
+
+## reel.json (1080×1920, 30 fps)
+`{ "fps": 30, "coverAt": 1.8, "scenes": [ … ] }`. Every scene has `type`, `dur` (seconds), optional
+`theme` and `deco` (stickers float, sparkles twinkle). Titles pop in word by word, highlighters swipe in,
+scenes change with a circle wipe, Robo blinks, wiggles and waves.
+
+| type | fields |
+|------|--------|
+| `hook` | `kicker`, `title`, `sub`, `robo` (bool), `bubble` |
+| `reveal` | before → after: `title`, `before`, `after`, `beforeLabel`, `afterLabel` |
+| `photo` | Ken Burns photo with notes that draw on: `kicker`, `title`, `image`, `box`, `notes [{text,x,y,rot,gold,arrow{dir,x,y,w}}]`, `stickers` |
+| `list` | items slide in one by one: `kicker`, `title`, `items [{icon,text}]`, `robo` |
+| `stat` | number counts up: `kicker`, `value`, `to`, `title`, `source` |
+| `cta` | navy, Robo waving in the sun: `title`, `sub`, `buttons` |
+
+Keep the important text between y = 220 and y = 1500: Instagram covers the bottom ~350 px and the
+right edge with its own buttons. Reels render with a silent audio track; add music from the Instagram
+library when scheduling (Metricool `instagramData.audioConfiguration`) or in the app.

@@ -5,61 +5,198 @@
   "slides": [
     {
       "type": "cover",
-      "theme": "light",
-      "align": "flex-start",
       "kicker": "One lesson",
+      "size": "lg",
       "title": "Drawn in the morning.\nA **cartoon** one lesson later.",
-      "image": "assets/img/now-a-cartoon.webp",
-      "ratio": "2/3",
-      "tab": "Drawn by a 6-year-old",
-      "swipe": "See how"
+      "deco": [
+        {
+          "kind": "photo",
+          "src": "assets/img/drawing-6-year-old.webp",
+          "x": 80,
+          "y": 560,
+          "w": 380,
+          "h": 570,
+          "rot": -7
+        },
+        {
+          "kind": "photo",
+          "src": "assets/img/now-a-cartoon.webp",
+          "x": 500,
+          "y": 520,
+          "w": 470,
+          "h": 700,
+          "rot": 4,
+          "tape": false
+        },
+        {
+          "kind": "arrow",
+          "dir": "right",
+          "x": 380,
+          "y": 640,
+          "gold": true,
+          "w": 170
+        },
+        {
+          "kind": "sticker",
+          "name": "clapperboard",
+          "x": 900,
+          "y": 470
+        },
+        {
+          "kind": "sparkle",
+          "x": 470,
+          "y": 500
+        },
+        {
+          "kind": "sparkle",
+          "x": 960,
+          "y": 1150,
+          "size": "sm"
+        },
+        {
+          "kind": "note",
+          "text": "drawn by\na 6-year-old",
+          "x": 120,
+          "y": 1150,
+          "rot": -6
+        }
+      ]
     },
     {
       "type": "split",
-      "theme": "sand",
       "kicker": "Same scene",
       "title": "Paper in. _Cartoon_ out.",
       "left": {
         "image": "assets/img/drawing-6-year-old.webp",
-        "label": "The drawing"
+        "label": "the drawing"
       },
       "right": {
         "image": "assets/img/now-a-cartoon.webp",
-        "label": "One lesson later"
-      }
+        "label": "one lesson later"
+      },
+      "deco": [
+        {
+          "kind": "sparkle",
+          "x": 940,
+          "y": 330
+        },
+        {
+          "kind": "sparkle",
+          "x": 80,
+          "y": 360,
+          "size": "sm"
+        }
+      ]
     },
     {
       "type": "step",
       "num": "1",
-      "title": "Your kid **describes** the scene",
-      "body": "Out loud, in their own words. Who's in it, what's happening, what it should feel like.",
-      "example": "For example: “A monster truck, a pink monster and a snowman on a rainbow. At night, with stars.”",
-      "image": "assets/img/drawing-6-year-old.webp"
+      "title": "Your kid\n**describes** it",
+      "body": "Out loud, in their own words. Who is in it, what is happening, how it should feel.",
+      "image": "social/media/crops/together-portrait.jpg",
+      "picStyle": "width:440px;height:540px;bottom:110px",
+      "deco": [
+        {
+          "kind": "note",
+          "text": "our co-host\nat work",
+          "x": 110,
+          "y": 1010,
+          "rot": -5
+        },
+        {
+          "kind": "arrow",
+          "dir": "right",
+          "x": 300,
+          "y": 1040,
+          "w": 150
+        }
+      ]
     },
     {
       "type": "step",
       "num": "2",
-      "title": "You both **check** the result",
+      "title": "You both\n**check** it",
       "body": "Does it look like the drawing? Is anything missing? Your kid decides. You hold the keyboard.",
-      "example": "Things to look for: is everyone there? Is it the right time of day? Does it feel the way they wanted?"
+      "image": "assets/img/now-a-cartoon.webp",
+      "picStyle": "width:380px;height:540px;bottom:110px;right:110px",
+      "deco": [
+        {
+          "kind": "robo",
+          "x": 110,
+          "y": 960,
+          "w": 210
+        },
+        {
+          "kind": "bubble",
+          "text": "is the snowman\nthere?",
+          "x": 260,
+          "y": 900
+        }
+      ]
     },
     {
       "type": "step",
       "num": "3",
-      "title": "Then **ask again**",
-      "body": "One change at a time, until it matches what they imagined. That's the skill. Not the tool.",
+      "title": "Then\n**ask again**",
+      "body": "One change at a time, until it matches what they imagined. That is the skill. Not the tool.",
       "example": "For example: “Make the rainbow glow. Put lights in the sky.”",
-      "image": "assets/img/now-a-cartoon.webp"
+      "deco": [
+        {
+          "kind": "sticker",
+          "name": "wand-sparkles",
+          "x": 850,
+          "y": 180
+        },
+        {
+          "kind": "sparkle",
+          "x": 900,
+          "y": 1100
+        },
+        {
+          "kind": "sparkle",
+          "x": 150,
+          "y": 1150,
+          "size": "sm"
+        },
+        {
+          "kind": "robo",
+          "x": 780,
+          "y": 920,
+          "w": 220
+        }
+      ]
     },
     {
       "type": "cta",
-      "theme": "dark",
+      "theme": "navy",
       "title": "The idea is theirs.\nAI just **draws faster**.",
-      "body": "Try it this weekend with any drawing from the fridge.",
       "buttons": [
         "Save for the weekend",
         "37 lessons like this · link in bio"
-      ]
+      ],
+      "deco": [
+        {
+          "kind": "dot",
+          "x": 110,
+          "y": 260
+        },
+        {
+          "kind": "dot",
+          "x": 150,
+          "y": 1150,
+          "w": 16,
+          "gold": true
+        },
+        {
+          "kind": "sparkle",
+          "x": 860,
+          "y": 1150,
+          "white": true,
+          "size": "sm"
+        }
+      ],
+      "body": "Try it this weekend with any drawing from the fridge.",
+      "bubble": "your turn!"
     }
   ]
 }
