@@ -1,0 +1,56 @@
+{
+  "id": "02-meet-us",
+  "pillar": "P2",
+  "format": "post",
+  "slides": [
+    {
+      "type": "cover",
+      "theme": "dark",
+      "align": "flex-start",
+      "kicker": "Hi, we're Make Show Lab",
+      "title": "A mom and a daughter.\n**Not a studio.**",
+      "image": "assets/img/anna-and-kamilla-studio.webp",
+      "ratio": "1/1",
+      "tab": "This very desk",
+      "swipe": "Meet us"
+    },
+    {
+      "type": "photo",
+      "theme": "sand",
+      "kicker": "Meet Kamilla",
+      "title": "10 years old. _Co-host._",
+      "image": "assets/img/meet-kamilla.webp",
+      "tab": "Tries every project first",
+      "sub": "She is the kid on screen. She also argues with the script. Sometimes she wins."
+    },
+    {
+      "type": "step",
+      "num": "A",
+      "title": "Meet **Anna**",
+      "body": "She leads the course and reads every piece of homework herself. Every lesson was filmed by the two of us, at home.",
+      "example": "The cat was not consulted."
+    },
+    {
+      "type": "list",
+      "theme": "light",
+      "kicker": "What we built at this desk",
+      "title": "A course you do **side by side**",
+      "items": [
+        "For kids 6–14 and one grown-up",
+        "37 short lessons, all filmed and ready",
+        "Each one ends with a real thing to show",
+        "No coding anywhere"
+      ]
+    },
+    {
+      "type": "cta",
+      "theme": "dark",
+      "title": "Follow along.\nWe post what we **make**.",
+      "body": "Cartoons, songs, games, and the bloopers in between.",
+      "buttons": [
+        "Follow @make_showlab",
+        "The course · link in bio"
+      ]
+    }
+  ]
+}

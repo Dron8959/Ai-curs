@@ -1,0 +1,57 @@
+{
+  "id": "05-words-in-art-out",
+  "pillar": "P1",
+  "format": "post",
+  "slides": [
+    {
+      "type": "cover",
+      "theme": "sand",
+      "kicker": "The core skill",
+      "title": "Words in,\n**art out.**",
+      "sub": "The AI skill your kid actually needs isn't coding. It's saying what they mean.",
+      "swipe": "Watch one try"
+    },
+    {
+      "type": "prompt",
+      "kicker": "For example",
+      "title": "A cat in a hat",
+      "turns": [
+        {
+          "role": "kid",
+          "label": "First try",
+          "text": "a cat in a hat"
+        },
+        {
+          "role": "check",
+          "label": "Check",
+          "text": "Cute, but it's grey. And the hat is way too big."
+        },
+        {
+          "role": "kid",
+          "label": "Ask again",
+          "text": "an orange kitten in a blue knitted beanie and a matching scarf, cozy and soft"
+        },
+        {
+          "role": "win",
+          "label": "Result",
+          "text": "That's the one!"
+        }
+      ]
+    },
+    {
+      "type": "step",
+      "num": "↻",
+      "title": "Describe → check →\n**ask again**",
+      "body": "That's the whole loop. It works for pictures, songs, games, and every tool that hasn't been invented yet."
+    },
+    {
+      "type": "cta",
+      "theme": "dark",
+      "title": "Try it tonight with\n**any animal** they pick.",
+      "body": "Your kid describes. You type. They decide when it's right.",
+      "buttons": [
+        "Save for tonight"
+      ]
+    }
+  ]
+}

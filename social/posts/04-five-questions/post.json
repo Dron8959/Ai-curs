@@ -1,0 +1,64 @@
+{
+  "id": "04-five-questions",
+  "pillar": "P3",
+  "format": "post",
+  "slides": [
+    {
+      "type": "stat",
+      "theme": "dark",
+      "kicker": "Worth knowing",
+      "value": "9 in 10",
+      "title": "American kids 9–17\nalready use AI.",
+      "body": "Almost half have never talked about it with a parent.",
+      "source": "Common Sense Media, AI Census of tweens and teens, 2026"
+    },
+    {
+      "type": "cover",
+      "theme": "yellow",
+      "kicker": "So start here",
+      "title": "5 questions to ask\nyour kid **tonight**",
+      "sub": "No lecture needed. Just dinner.",
+      "swipe": "Swipe"
+    },
+    {
+      "type": "step",
+      "num": "1",
+      "title": "Which AI have you tried?",
+      "body": "No judgment. You're mapping the territory, not catching them out."
+    },
+    {
+      "type": "step",
+      "num": "2",
+      "title": "What did you make with it?",
+      "body": "Making something and copying an answer are very different things. Find out which one it was."
+    },
+    {
+      "type": "step",
+      "num": "3",
+      "title": "Has it ever been wrong?",
+      "body": "Kids who have caught AI making a mistake learn to trust it the right amount."
+    },
+    {
+      "type": "step",
+      "num": "4",
+      "title": "What would you never tell it?",
+      "body": "Full name, school, address, photos of friends. If they don't know the list yet, now they do."
+    },
+    {
+      "type": "step",
+      "num": "5",
+      "title": "What should we make together?",
+      "body": "The easiest way to stay in the loop is to sit in it. Pick a weekend project."
+    },
+    {
+      "type": "cta",
+      "theme": "dark",
+      "title": "Save this for\n**dinner tonight**.",
+      "body": "And send it to the other grown-up in the house.",
+      "buttons": [
+        "Save",
+        "Share with your co-parent"
+      ]
+    }
+  ]
+}

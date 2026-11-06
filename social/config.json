@@ -6,8 +6,23 @@
   "branch": "claude/intelligent-archimedes-3mess9",
   "repo_raw_base": "https://raw.githubusercontent.com/Dron8959/Ai-curs",
   "slots": {
-    "A": { "time": "08:30", "networks": ["instagram", "facebook"] },
-    "B": { "time": "19:30", "networks": ["threads"] }
+    "A": {
+      "time": "08:00",
+      "networks": [
+        "instagram",
+        "facebook"
+      ],
+      "why": "parents scroll before work and school drop-off"
+    },
+    "B": {
+      "time": "20:00",
+      "networks": [
+        "instagram",
+        "facebook",
+        "threads"
+      ],
+      "why": "after the kids are in bed, the most active parent window"
+    }
   },
   "buffer_days": 2
 }

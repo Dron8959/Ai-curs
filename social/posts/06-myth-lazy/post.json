@@ -1,0 +1,30 @@
+{
+  "id": "06-myth-lazy",
+  "pillar": "P3",
+  "format": "post",
+  "slides": [
+    {
+      "type": "myth",
+      "theme": "sand",
+      "kicker": "Myth vs truth",
+      "myth": "AI will make my kid lazy.",
+      "truth": "Only if the AI is the one with the ideas."
+    },
+    {
+      "type": "step",
+      "num": "→",
+      "title": "Here, your kid\nis the **director**",
+      "body": "They have the ideas and give the directions. They describe what they want, check the result and ask again.",
+      "example": "AI is a helper. Not a homework machine."
+    },
+    {
+      "type": "cta",
+      "theme": "dark",
+      "title": "Want AI to do the homework?\n**This isn't it.**",
+      "body": "Want your kid to make things they're proud of? Follow along.",
+      "buttons": [
+        "Follow @make_showlab"
+      ]
+    }
+  ]
+}

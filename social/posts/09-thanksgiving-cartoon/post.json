@@ -1,0 +1,53 @@
+{
+  "id": "09-thanksgiving-cartoon",
+  "pillar": "P1",
+  "format": "post",
+  "slides": [
+    {
+      "type": "cover",
+      "theme": "yellow",
+      "align": "flex-start",
+      "kicker": "Thanksgiving project",
+      "title": "This year, let your kid\nmake the **show**.",
+      "image": "assets/img/now-a-cartoon.webp",
+      "ratio": "2/3",
+      "tab": "A weekend project for you two",
+      "swipe": "How"
+    },
+    {
+      "type": "step",
+      "num": "1",
+      "title": "Pick a **family story**",
+      "body": "The year the pie fell. Grandpa's dog. The road trip nobody forgets."
+    },
+    {
+      "type": "step",
+      "num": "2",
+      "title": "Your kid **draws** one scene",
+      "body": "Paper and crayons. Their version of the story, not yours.",
+      "image": "assets/img/drawing-6-year-old.webp"
+    },
+    {
+      "type": "step",
+      "num": "3",
+      "title": "Bring it to **life**",
+      "body": "Turn the drawing into a short cartoon. Let them record the voice themselves.",
+      "example": "In our course, that's one lesson: “Their own cartoon. With their own voice in it.”"
+    },
+    {
+      "type": "step",
+      "num": "4",
+      "title": "**Play it** after dinner",
+      "body": "On the TV, for the whole table. Then watch grandma's face."
+    },
+    {
+      "type": "cta",
+      "theme": "dark",
+      "title": "Save this for\n**Thanksgiving week**.",
+      "buttons": [
+        "Save",
+        "The cartoon lesson · link in bio"
+      ]
+    }
+  ]
+}

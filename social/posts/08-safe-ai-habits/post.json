@@ -1,0 +1,41 @@
+{
+  "id": "08-safe-ai-habits",
+  "pillar": "P3",
+  "format": "post",
+  "slides": [
+    {
+      "type": "cover",
+      "theme": "dark",
+      "kicker": "Save this",
+      "title": "5 safe AI habits.\nTeach them **while\nthey still listen.**",
+      "swipe": "Swipe"
+    },
+    {
+      "type": "list",
+      "theme": "light",
+      "title": "The **boring** lessons that matter",
+      "items": [
+        "AI runs on the grown-up's account. You see everything.",
+        "Never share full name, school, address or friends' photos.",
+        "AI can be wrong. Check before you believe it.",
+        "Spot a fake: ask who made it and why.",
+        "AI is a helper, not a homework machine."
+      ]
+    },
+    {
+      "type": "step",
+      "num": "!",
+      "title": "Why **early**?",
+      "body": "Kids are learning AI anyway, from friends and from YouTube. Get the safe habits in first, while the boring stuff still lands."
+    },
+    {
+      "type": "cta",
+      "theme": "dark",
+      "title": "Send this to a parent\nwho **needs it**.",
+      "buttons": [
+        "Share",
+        "Save"
+      ]
+    }
+  ]
+}

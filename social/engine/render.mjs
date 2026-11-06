@@ -25,8 +25,8 @@ const esc = (s = '') =>
 // **word** -> yellow highlighter swipe, _word_ -> gold, \n -> line break
 const rich = (s = '') =>
   esc(s)
-    .replace(/\*\*(.+?)\*\*/g, '<span class="swipe">$1</span>')
-    .replace(/_(.+?)_/g, '<span class="gold">$1</span>')
+    .replace(/\*\*([\s\S]+?)\*\*/g, '<span class="swipe">$1</span>')
+    .replace(/_([\s\S]+?)_/g, '<span class="gold">$1</span>')
     .replace(/\n/g, '<br>');
 
 const img = (p, cls = '') => (p ? `<div class="photo ${cls}"><img src="${asset(p)}" alt=""></div>` : '');
@@ -124,7 +124,7 @@ body{font-family:Figtree,sans-serif;color:var(--text);background:var(--paper);-w
 .slide.sand{background:var(--sand)}
 .slide.yellow{background:var(--ysoft)}
 .slide.dark{background:var(--ink);color:rgba(255,255,255,.86)}
-.slide.dark::before{content:"";position:absolute;z-index:-1;width:520px;height:520px;border-radius:50%;background:var(--yellow);right:-210px;top:-230px}
+.slide.dark::before{content:"";position:absolute;z-index:-1;width:440px;height:440px;border-radius:50%;background:var(--yellow);right:-190px;top:-240px}
 .slide.dark::after{content:"";position:absolute;z-index:-1;inset:0;background:
  radial-gradient(circle at 9% 18%,#fff 0 5px,transparent 6px),radial-gradient(circle at 14% 84%,var(--yellow) 0 7px,transparent 8px),
  radial-gradient(circle at 91% 72%,#fff 0 5px,transparent 6px),radial-gradient(circle at 72% 93%,rgba(255,255,255,.6) 0 4px,transparent 5px)}
@@ -142,9 +142,8 @@ footer{position:absolute;bottom:48px;left:88px;right:88px;display:flex;justify-c
 .title{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.035em;line-height:1.0;color:var(--ink);text-wrap:balance}
 .dark .title{color:#fff}
 .title{font-size:92px}.title.xl{font-size:122px}.title.lg{font-size:84px}.title.md{font-size:70px;line-height:1.04}
-.swipe{position:relative;display:inline-block;isolation:isolate;padding:0 .08em}
-.swipe::before{content:"";position:absolute;left:-.04em;right:-.04em;top:.18em;bottom:.02em;z-index:-1;background:var(--swipe) center/100% 100% no-repeat}
-.dark .swipe{color:var(--ink)}
+.swipe{padding:0 .1em;margin:0 -.04em;background:var(--swipe) center 62%/100% 72% no-repeat;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.dark .swipe{background:none;color:var(--yellow);padding:0;margin:0}
 .gold{color:var(--gold)}.dark .gold{color:var(--yellow)}
 .sub{font-size:38px;line-height:1.35;color:var(--text);max-width:880px}.dark .sub{color:rgba(255,255,255,.82)}
 .sub.center{text-align:center;margin-inline:auto}

@@ -1,0 +1,54 @@
+{
+  "id": "10-parents-ask",
+  "pillar": "P5",
+  "format": "post",
+  "slides": [
+    {
+      "type": "cover",
+      "theme": "sand",
+      "kicker": "Parents ask",
+      "title": "Is this right for\n**our family**?",
+      "sub": "Five honest answers.",
+      "swipe": "Swipe"
+    },
+    {
+      "type": "step",
+      "num": "?",
+      "title": "How much time does it take?",
+      "body": "One short video, then 15–20 minutes of making together. Most families finish a lesson in one sitting."
+    },
+    {
+      "type": "step",
+      "num": "?",
+      "title": "Does my kid need their own AI accounts?",
+      "body": "No. Every tool runs on your account, so you're in the room for all of it and see everything they make."
+    },
+    {
+      "type": "step",
+      "num": "?",
+      "title": "Do we need to code?",
+      "body": "No. There's no coding anywhere in the course. Kids 6–14 can do every lesson with a grown-up."
+    },
+    {
+      "type": "step",
+      "num": "?",
+      "title": "What's the difference between the plans?",
+      "body": "Both have all 37 lessons. On Creator + Homework, Anna personally reviews every piece your kid sends in, the same day."
+    },
+    {
+      "type": "step",
+      "num": "?",
+      "title": "What if it's not for us?",
+      "body": "Finish the first lessons. Not right for your family? One email within 30 days and you get a full refund."
+    },
+    {
+      "type": "cta",
+      "theme": "dark",
+      "title": "Still have a question?\n**Anna answers personally.**",
+      "body": "nova@makeshowlab.com, or just DM us here.",
+      "buttons": [
+        "Send us a DM"
+      ]
+    }
+  ]
+}

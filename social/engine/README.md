@@ -36,4 +36,4 @@ Images are repo paths, e.g. `assets/img/meet-kamilla.webp` or `social/media/xyz.
 | `photo` | `kicker`, `title`, `image`, `tab`, `sub` |
 | `cta` | `title`, `body`, `buttons []` |
 
-Example: `social/posts/2026-11-07-paper-to-screen/post.json`.
+Example: `social/posts/01-paper-to-screen/post.json`.

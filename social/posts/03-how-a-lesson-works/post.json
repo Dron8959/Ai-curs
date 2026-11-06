@@ -1,0 +1,56 @@
+{
+  "id": "03-how-a-lesson-works",
+  "pillar": "P5",
+  "format": "post",
+  "slides": [
+    {
+      "type": "cover",
+      "theme": "yellow",
+      "kicker": "How it works",
+      "title": "A short video.\n20 minutes together.\nOne **real thing**.",
+      "sub": "Here's what one lesson looks like.",
+      "swipe": "Swipe"
+    },
+    {
+      "type": "step",
+      "num": "1",
+      "title": "**Watch**",
+      "body": "A short video shows the finished result first, so your kid knows exactly what they're about to make."
+    },
+    {
+      "type": "step",
+      "num": "2",
+      "title": "**Make**",
+      "body": "Side by side, in one sitting. Your kid has the ideas and gives the directions.",
+      "example": "You're the hands on the keyboard. And sometimes the voice of reason."
+    },
+    {
+      "type": "step",
+      "num": "3",
+      "title": "**Show**",
+      "body": "They show it to the family, and can send it in for the course showcase."
+    },
+    {
+      "type": "list",
+      "theme": "sand",
+      "kicker": "What's inside",
+      "title": "The whole course",
+      "items": [
+        "37 lessons, filmed and ready",
+        "A part for grown-ups in every lesson",
+        "Lessons unlock in order. No schedule",
+        "Every tool runs on your account",
+        "Access never expires"
+      ]
+    },
+    {
+      "type": "cta",
+      "theme": "dark",
+      "title": "From **$197**.\nOne-time. Yours to keep.",
+      "body": "Finish the first lessons. Not right for your family? Full refund within 30 days.",
+      "buttons": [
+        "See the lessons · link in bio"
+      ]
+    }
+  ]
+}

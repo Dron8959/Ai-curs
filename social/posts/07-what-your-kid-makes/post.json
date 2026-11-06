@@ -1,0 +1,52 @@
+{
+  "id": "07-what-your-kid-makes",
+  "pillar": "P4",
+  "format": "post",
+  "slides": [
+    {
+      "type": "list",
+      "theme": "yellow",
+      "kicker": "By the end of the course",
+      "title": "6 things your kid\nwill **make**",
+      "items": [
+        "Their own cartoon, with their voice in it",
+        "A song from their own words",
+        "A game their friends can play",
+        "A website with their name on it",
+        "A print for the fridge",
+        "A drawing, brought to life"
+      ]
+    },
+    {
+      "type": "split",
+      "theme": "sand",
+      "kicker": "Number 6",
+      "title": "A drawing, _brought to life_",
+      "left": {
+        "image": "assets/img/drawing-6-year-old.webp",
+        "label": "Drawn by a 6-year-old"
+      },
+      "right": {
+        "image": "assets/img/now-a-cartoon.webp",
+        "label": "One lesson later"
+      }
+    },
+    {
+      "type": "photo",
+      "theme": "light",
+      "kicker": "Tested first by",
+      "title": "Our 10-year-old _co-host_",
+      "image": "assets/img/meet-kamilla.webp",
+      "tab": "Kamilla"
+    },
+    {
+      "type": "cta",
+      "theme": "dark",
+      "title": "Results live on\nyour laptop, **not in a workbook**.",
+      "body": "A cartoon for Thanksgiving. A game for the cousins. A website for grandma.",
+      "buttons": [
+        "See all 37 lessons · link in bio"
+      ]
+    }
+  ]
+}
