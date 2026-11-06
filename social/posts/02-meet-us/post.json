@@ -104,38 +104,22 @@
       "type": "photo",
       "kicker": "And meet Anna",
       "title": "She reads every\n**homework** herself.",
-      "image": "social/media/crops/together-wide.jpg",
-      "pos": "60% center",
-      "picStyle": "top:470px;bottom:230px",
+      "image": "social/media/crops/anna-portrait.jpg",
+      "pos": "center 20%",
+      "picStyle": "top:430px;bottom:240px;left:190px;right:190px",
       "sub": "Every lesson was filmed by the two of us, at home.",
       "deco": [
         {
-          "kind": "note",
-          "text": "Anna",
-          "x": 820,
-          "y": 400,
-          "rot": 4,
-          "gold": true
-        },
-        {
-          "kind": "arrow",
-          "dir": "down-left",
-          "x": 740,
-          "y": 420,
-          "gold": true,
-          "w": 110
-        },
-        {
-          "kind": "note",
-          "text": "Kamilla",
-          "x": 90,
-          "y": 1040,
-          "rot": -5
+          "kind": "sticker",
+          "name": "heart",
+          "x": 110,
+          "y": 560,
+          "size": "sm"
         },
         {
           "kind": "sparkle",
-          "x": 960,
-          "y": 1080,
+          "x": 930,
+          "y": 1000,
           "size": "sm"
         }
       ]

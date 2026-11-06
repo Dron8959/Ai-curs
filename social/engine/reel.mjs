@@ -35,7 +35,7 @@ function scene(s, i) {
     case 'hook':
       inner = `<div class="mid"><div class="kick-wrap">${s.kicker ? `<span class="kick">${esc(s.kicker)}</span>` : ''}</div>
         <h1 class="title big-t">${words(s.title)}</h1>${s.sub ? `<p class="sub">${rich(s.sub)}</p>` : ''}</div>
-        ${s.robo ? robo('pop', 'left:700px;top:1340px;width:300px;height:325px', { wave: true }) : ''}
+        ${s.robo ? robo('pop', 'left:740px;top:1360px;width:240px') : ''}
         ${s.bubble ? `<span class="bubble r pop" style="left:560px;top:1220px">${rich(s.bubble)}</span>` : ''}`;
       break;
     case 'reveal':
@@ -59,7 +59,7 @@ function scene(s, i) {
     case 'list':
       inner = `<div class="top-text">${s.kicker ? `<span class="kick">${esc(s.kicker)}</span>` : ''}<h2 class="title mid-t">${words(s.title)}</h2></div>
         <ol class="items">${s.items.map((it) => `<li class="item">${sticker(it.icon, 'inline')}<span>${rich(it.text)}</span></li>`).join('')}</ol>
-        ${s.robo ? robo('pop', 'left:760px;top:1420px;width:240px;height:260px') : ''}`;
+        ${s.robo ? robo('pop', 'left:800px;top:1440px;width:200px') : ''}`;
       break;
     case 'stat':
       inner = `<div class="mid">${s.kicker ? `<div class="kick-wrap"><span class="kick">${esc(s.kicker)}</span></div>` : ''}
@@ -70,7 +70,7 @@ function scene(s, i) {
         <div class="mid up"><h2 class="title mid-t">${words(s.title)}</h2>${s.sub ? `<p class="sub">${rich(s.sub)}</p>` : ''}
         <div class="btns">${(s.buttons || []).map((b) => `<span class="btn pop">${esc(b)}</span>`).join('')}</div>
         <div class="handle pop"><img src="${asset('assets/img/logo.png')}" alt="">@make_showlab</div></div>
-        ${robo('pop', 'left:330px;top:1100px;width:420px;height:455px', { wave: true })}`;
+        ${robo('pop', 'left:390px;top:1200px;width:300px')}`;
       break;
     default:
       throw new Error(`Unknown scene type: ${s.type}`);
@@ -135,12 +135,10 @@ scenes.forEach((s, i) => {
   tl.from(q('.pop'), { scale: 0, opacity: 0, duration: .55, ease: 'back.out(2)', stagger: .12 }, at(.8));
   tl.from(q('.float'), { y: 30, duration: 1.6, ease: 'sine.inOut', yoyo: true, repeat: Math.max(1, Math.floor(s.dur / 1.6) - 1) }, at(.2));
   q('.sparkle.tw').forEach((sp, k) => tl.fromTo(sp, { scale: .3, rotation: 0 }, { scale: 1, rotation: 90, duration: .9, ease: 'sine.inOut', yoyo: true, repeat: Math.max(1, Math.floor(s.dur / .9) - 1) }, at(.1 * k)));
-  // Robo: antenna wiggle, blink, wave.
+  // Logo badge: a little bounce and wiggle.
   q('.robo').forEach((r) => {
-    tl.to(r.querySelector('.robo-antenna'), { rotation: 12, transformOrigin: '50% 100%', duration: .25, yoyo: true, repeat: 5, ease: 'sine.inOut' }, at(1));
-    tl.to(r.querySelector('.robo-eyes'), { scaleY: .1, transformOrigin: '50% 50%', duration: .08, yoyo: true, repeat: 1 }, at(Math.min(s.dur - .4, 2)));
-    const arm = r.querySelector('.robo-arm');
-    if (arm) tl.to(arm, { rotation: -22, transformOrigin: '0% 100%', duration: .3, yoyo: true, repeat: 5, ease: 'sine.inOut' }, at(1.1));
+    tl.to(r, { rotation: 8, duration: .22, yoyo: true, repeat: 5, ease: 'sine.inOut' }, at(1.2));
+    tl.to(r, { y: -24, duration: .3, yoyo: true, repeat: 1, ease: 'power1.out' }, at(Math.min(s.dur - .8, 2.4)));
   });
   if (s.type === 'reveal') {
     const a = el.querySelector('.card.a'), b = el.querySelector('.card.b');

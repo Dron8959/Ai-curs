@@ -26,7 +26,7 @@ export function deco(list = []) {
         case 'sparkle': return sparkle(`${d.white ? 'w' : ''} ${d.size === 'sm' ? 'sm' : ''}`, at);
         case 'note': return `<span class="note ${d.gold ? 'y' : ''}" style="${at}">${rich(d.text)}</span>`;
         case 'arrow': return arrow(d.dir, d.gold ? 'y' : '', at + (d.w ? `width:${d.w}px;height:${d.w * 0.87}px;` : ''));
-        case 'robo': return robo('', at + (d.w ? `width:${d.w}px;height:${d.w * 1.08}px;` : ''), { wave: d.wave });
+        case 'robo': return robo('', at + `width:${Math.min(d.w || 200, 280)}px;`);
         case 'bubble': return `<span class="bubble ${d.right ? 'r' : ''}" style="${at}">${rich(d.text)}</span>`;
         case 'sun': return `<span class="sun" style="${at}width:${d.w}px;height:${d.w}px"></span>`;
         case 'dot': return `<span class="dot" style="${at}width:${d.w || 12}px;height:${d.w || 12}px;${d.gold ? 'background:var(--yellow)' : ''}"></span>`;
@@ -99,8 +99,8 @@ function body(s) {
       return `<span class="sun" style="width:520px;height:520px;right:-170px;top:-200px"></span>
         <div class="col mid narrow">${kicker(s)}<h2 class="title t-lg">${rich(s.title)}</h2>${s.body ? `<p class="body">${rich(s.body)}</p>` : ''}
         <div class="buttons">${(s.buttons || []).map((b, i) => `<span class="btn ${i ? 'quiet' : ''}">${esc(b)}</span>`).join('')}</div></div>
-        ${robo('', 'right:70px;bottom:120px;width:260px;height:282px', { wave: true })}
-        ${s.bubble ? `<span class="bubble r" style="right:110px;bottom:430px">${rich(s.bubble)}</span>` : ''}`;
+        ${robo('', 'right:90px;bottom:150px;width:220px')}
+        ${s.bubble ? `<span class="bubble r" style="right:120px;bottom:410px">${rich(s.bubble)}</span>` : ''}`;
     default:
       throw new Error(`Unknown slide type: ${s.type}`);
   }

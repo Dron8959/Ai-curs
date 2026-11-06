@@ -12,26 +12,39 @@
       "deco": [
         {
           "kind": "photo",
-          "src": "social/media/crops/together-wide.jpg",
-          "x": 110,
-          "y": 620,
-          "w": 860,
-          "h": 540,
-          "rot": 2,
-          "pos": "60% center"
+          "src": "social/media/crops/anna-portrait.jpg",
+          "x": 300,
+          "y": 600,
+          "w": 480,
+          "h": 600,
+          "rot": 3,
+          "pos": "center 20%"
         },
         {
           "kind": "note",
-          "text": "real people, real desk",
-          "x": 560,
-          "y": 1175,
-          "rot": -3,
+          "text": "hi, I’m Anna",
+          "x": 700,
+          "y": 560,
+          "rot": 6,
           "gold": true
         },
         {
+          "kind": "sticker",
+          "name": "heart",
+          "x": 170,
+          "y": 760
+        },
+        {
+          "kind": "sticker",
+          "name": "star",
+          "x": 830,
+          "y": 1080,
+          "size": "sm"
+        },
+        {
           "kind": "sparkle",
-          "x": 80,
-          "y": 580
+          "x": 150,
+          "y": 1050
         }
       ]
     },

@@ -10,7 +10,8 @@ Playwright and Chromium are already installed in the cloud environment; ffmpeg i
 
 The look ("kitchen-table scrapbook") lives in `kit.mjs`: cream paper with grain, photos in white
 frames with tape, Caveat handwritten notes and hand-drawn arrows, colored icon stickers (lucide),
-sparkles, the navy card with the yellow sun, and **Robo** (the robot from the logo, as vector).
+sparkles, the navy card with the yellow sun, and the landing logo as a badge (`robo` in specs).
+The badge uses `social/media/brand/logo.png` if present, else an upscale of `assets/img/logo.png`.
 
 ## Text markup
 `**word**` yellow highlighter · `_word_` gold · `~word~` handwritten · `\n` line break.
@@ -31,10 +32,10 @@ sparkles, the navy card with the yellow sun, and **Robo** (the robot from the lo
 | `list` | `kicker`, `title`, `items [string | {icon, text}]` |
 | `quote` | `quote`, `by` |
 | `photo` | `kicker`, `title`, `image`, `pos`, `picStyle`, `sub` |
-| `cta` | navy with Robo waving: `title`, `body`, `buttons []`, `bubble` |
+| `cta` | navy with the logo badge: `title`, `body`, `buttons []`, `bubble` |
 
 `deco` items (`x`, `y` in px, optional `rot`): `photo {src,w,h,pos,tape}`, `sticker {name,size:'sm'}`,
-`note {text,gold}`, `arrow {dir: down-left/down-right/left/right/up-right, w, gold}`, `robo {w, wave}`,
+`note {text,gold}`, `arrow {dir: down-left/down-right/left/right/up-right, w, gold}`, `robo {w}` (logo badge, max 280 px),
 `bubble {text,right}`, `sparkle {white,size}`, `sun {w}`, `dot {w,gold}`.
 Sticker names are lucide icons: gamepad-2, music, clapperboard, code-xml, shirt, sparkles, heart,
 shield-check, globe, image, pencil, star, clock, palette, wand-sparkles.
@@ -42,7 +43,7 @@ shield-check, globe, image, pencil, star, clock, palette, wand-sparkles.
 ## reel.json (1080×1920, 30 fps)
 `{ "fps": 30, "coverAt": 1.8, "scenes": [ … ] }`. Every scene has `type`, `dur` (seconds), optional
 `theme` and `deco` (stickers float, sparkles twinkle). Titles pop in word by word, highlighters swipe in,
-scenes change with a circle wipe, Robo blinks, wiggles and waves.
+scenes change with a circle wipe, the logo badge bounces and wiggles.
 
 | type | fields |
 |------|--------|

@@ -3,7 +3,7 @@
 // photos in white frames, highlighter swipes) plus tape, handwritten notes and Robo,
 // the robot from the logo.
 
-import { readFileSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
@@ -60,29 +60,16 @@ export function arrow(dir = 'down-left', cls = '', style = '') {
     .join('')}</svg>`;
 }
 
-// Robo, the robot from the logo, redrawn as clean vector so it stays sharp at any size.
-export function robo(cls = '', style = '', { wave = false } = {}) {
-  return `<svg class="robo ${cls}" style="${style}" viewBox="0 0 240 260" aria-hidden="true">
-  <g class="robo-body">
-    <g class="robo-antenna"><path d="M120 52 V24" stroke="#141a33" stroke-width="8" stroke-linecap="round"/><circle cx="120" cy="20" r="13" fill="#22a6b3" stroke="#141a33" stroke-width="6"/></g>
-    <rect x="80" y="196" width="80" height="44" rx="18" fill="#fff" stroke="#141a33" stroke-width="8"/>
-    <path d="M98 206 V232 M112 206 V232 M128 206 V232 M142 206 V232" stroke="#f5a623" stroke-width="6"/>
-    <path d="M105 206 V232 M135 206 V232" stroke="#22a6b3" stroke-width="5"/>
-    ${wave ? `<g class="robo-arm"><path d="M172 196 C 196 180, 204 160, 206 138" fill="none" stroke="#141a33" stroke-width="10" stroke-linecap="round"/><circle cx="207" cy="130" r="13" fill="#fff" stroke="#141a33" stroke-width="7"/></g>` : ''}
-    <rect x="22" y="104" width="30" height="58" rx="15" fill="#22a6b3" stroke="#141a33" stroke-width="7"/>
-    <rect x="188" y="104" width="30" height="58" rx="15" fill="#22a6b3" stroke="#141a33" stroke-width="7"/>
-    <circle cx="120" cy="132" r="80" fill="#fff" stroke="#141a33" stroke-width="9"/>
-    <path d="M52 140 A68 68 0 0 1 188 140" fill="none" stroke="#f5a623" stroke-width="16" stroke-linecap="round"/>
-    <path d="M60 150 A60 60 0 0 1 180 150" fill="none" stroke="#141a33" stroke-width="4" opacity=".15"/>
-    <g class="robo-eyes">
-      <circle cx="93" cy="138" r="21" fill="#22a6b3" stroke="#141a33" stroke-width="6"/>
-      <circle cx="147" cy="138" r="21" fill="#22a6b3" stroke="#141a33" stroke-width="6"/>
-      <circle cx="86" cy="131" r="7" fill="#fff"/><circle cx="140" cy="131" r="7" fill="#fff"/>
-    </g>
-    <path d="M100 174 Q120 190 140 174" fill="none" stroke="#141a33" stroke-width="7" stroke-linecap="round"/>
-    <circle cx="74" cy="168" r="7" fill="#ffc533" opacity=".8"/><circle cx="166" cy="168" r="7" fill="#ffc533" opacity=".8"/>
-  </g>
-</svg>`;
+// The Make Show Lab logo from the landing page, used as the brand mascot badge.
+// Source is 120 px (assets/img/logo.png); social/media/crops/logo-480.png is a softened
+// upscale. Replace with a high-res master (social/media/brand/logo.png) when available.
+export function logoSrc() {
+  for (const p of ['social/media/brand/logo.png', 'social/media/crops/logo-480.png', 'assets/img/logo.png']) {
+    if (existsSync(resolve(repo, p))) return p;
+  }
+}
+export function robo(cls = '', style = '') {
+  return `<span class="robo ${cls}" style="${style}"><img src="${asset(logoSrc())}" alt=""></span>`;
 }
 
 export const photo = (src, { cls = '', tape = true, style = '', pos = 'center' } = {}) =>
@@ -127,7 +114,8 @@ body{font-family:Figtree,sans-serif;color:var(--text);-webkit-font-smoothing:ant
 .sticker.sm{width:78px;height:78px}.sticker.sm svg{width:38px;height:38px}
 .sparkle{position:absolute;z-index:4;width:54px;height:54px;fill:var(--yellow)}
 .sparkle.w{fill:#fff}.sparkle.sm{width:34px;height:34px}
-.robo{position:absolute;z-index:7;width:220px;height:240px;filter:drop-shadow(0 16px 18px rgba(20,26,51,.25))}
+.robo{position:absolute;z-index:7;width:200px;height:auto!important;aspect-ratio:1;transform-origin:50% 80%}
+.robo img{display:block;width:100%;height:100%;border-radius:24%;background:#fff;box-shadow:0 20px 34px -16px rgba(20,26,51,.45),0 0 0 6px #fff}
 .bubble{position:absolute;z-index:7;background:#fff;color:var(--ink);font-family:Caveat,cursive;font-weight:700;font-size:48px;line-height:1;padding:22px 30px 26px;border-radius:34px;box-shadow:0 18px 30px -18px rgba(20,26,51,.4);white-space:nowrap}
 .bubble::after{content:"";position:absolute;width:34px;height:34px;background:#fff;bottom:-12px;left:46px;transform:rotate(45deg);border-radius:6px}
 .bubble.r::after{left:auto;right:46px}
