@@ -1,0 +1,65 @@
+{
+  "id": "2026-11-07-paper-to-screen",
+  "pillar": "P1",
+  "format": "post",
+  "slides": [
+    {
+      "type": "cover",
+      "theme": "light",
+      "align": "flex-start",
+      "kicker": "One lesson",
+      "title": "Drawn in the morning.\nA **cartoon** one lesson later.",
+      "image": "assets/img/now-a-cartoon.webp",
+      "ratio": "2/3",
+      "tab": "Drawn by a 6-year-old",
+      "swipe": "See how"
+    },
+    {
+      "type": "split",
+      "theme": "sand",
+      "kicker": "Same scene",
+      "title": "Paper in. _Cartoon_ out.",
+      "left": {
+        "image": "assets/img/drawing-6-year-old.webp",
+        "label": "The drawing"
+      },
+      "right": {
+        "image": "assets/img/now-a-cartoon.webp",
+        "label": "One lesson later"
+      }
+    },
+    {
+      "type": "step",
+      "num": "1",
+      "title": "Your kid **describes** the scene",
+      "body": "Out loud, in their own words. Who's in it, what's happening, what it should feel like.",
+      "example": "For example: “A monster truck, a pink monster and a snowman on a rainbow. At night, with stars.”",
+      "image": "assets/img/drawing-6-year-old.webp"
+    },
+    {
+      "type": "step",
+      "num": "2",
+      "title": "You both **check** the result",
+      "body": "Does it look like the drawing? Is anything missing? Your kid decides. You hold the keyboard.",
+      "example": "Things to look for: is everyone there? Is it the right time of day? Does it feel the way they wanted?"
+    },
+    {
+      "type": "step",
+      "num": "3",
+      "title": "Then **ask again**",
+      "body": "One change at a time, until it matches what they imagined. That's the skill. Not the tool.",
+      "example": "For example: “Make the rainbow glow. Put lights in the sky.”",
+      "image": "assets/img/now-a-cartoon.webp"
+    },
+    {
+      "type": "cta",
+      "theme": "dark",
+      "title": "The idea is theirs.\nAI just **draws faster**.",
+      "body": "Try it this weekend with any drawing from the fridge.",
+      "buttons": [
+        "Save for the weekend",
+        "37 lessons like this · link in bio"
+      ]
+    }
+  ]
+}

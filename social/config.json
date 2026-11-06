@@ -1,0 +1,13 @@
+{
+  "mode": "draft",
+  "mode_help": "draft = posts land in Metricool as drafts for a human to approve; auto = they publish on their own at the scheduled time",
+  "metricool_blog_id": "7553201",
+  "timezone": "America/New_York",
+  "branch": "claude/intelligent-archimedes-3mess9",
+  "repo_raw_base": "https://raw.githubusercontent.com/Dron8959/Ai-curs",
+  "slots": {
+    "A": { "time": "08:30", "networks": ["instagram", "facebook"] },
+    "B": { "time": "19:30", "networks": ["threads"] }
+  },
+  "buffer_days": 2
+}
