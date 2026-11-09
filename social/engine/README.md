@@ -1,20 +1,21 @@
 # Make Show Lab content engine
 
 ```bash
-cd social/engine && npm install      # once per machine: fonts (Caveat), GSAP, icons
+cd social/engine && npm install      # once per machine: fonts (Archivo, Urbanist), GSAP, icons
 node social/engine/render.mjs social/posts/<folder>   # post.json -> slide-01.jpg …
 node social/engine/reel.mjs   social/reels/<folder>   # reel.json -> reel.mp4 + cover.jpg
 ```
 
 Playwright and Chromium are already installed in the cloud environment; ffmpeg is used for MP4.
 
-The look ("kitchen-table scrapbook") lives in `kit.mjs`: cream paper with grain, photos in white
-frames with tape, Caveat handwritten notes and hand-drawn arrows, colored icon stickers (lucide),
-sparkles, the navy card with the yellow sun, and the landing logo as a badge (`robo` in specs).
-The badge uses `social/media/brand/logo.png` if present, else an upscale of `assets/img/logo.png`.
+The look lives in `kit.mjs` and matches www.makeshowlab.com: deep-space page with stars, glowing
+italic Archivo caps, Urbanist body, orange gradient accent words, the orange planet horizon, real photos
+in rounded frames, orange tags, glowing icon stickers (lucide) and the astronaut boy: the logo badge
+(`robo` in specs, `social/media/landing/logo-180.png`) and the full figure (`astro` deco / reel `astro`).
+Slides take `q` (a parent's question in quotes, shown above the title) and `planet: false`.
 
 ## Text markup
-`**word**` yellow highlighter · `_word_` gold · `~word~` handwritten · `\n` line break.
+`**word**` orange glow · `_word_` gold · `~word~` soft italic · `\n` line break.
 
 ## post.json (1080×1350)
 `{ "id", "pillar", "format": "post", "slides": [ … ] }`. Each slide takes `theme` (`paper` default or
@@ -36,7 +37,7 @@ The badge uses `social/media/brand/logo.png` if present, else an upscale of `ass
 
 `deco` items (`x`, `y` in px, optional `rot`): `photo {src,w,h,pos,tape}`, `sticker {name,size:'sm'}`,
 `note {text,gold}`, `arrow {dir: down-left/down-right/left/right/up-right, w, gold}`, `robo {w}` (logo badge, max 280 px),
-`bubble {text,right}`, `sparkle {white,size}`, `sun {w}`, `dot {w,gold}`.
+`bubble {text,right}`, `astro {w,h}`, `review {src,name,role,tag,quote,w,h}`, `sparkle {white,size}`, `sun {w}`, `dot {w,gold}`.
 Sticker names are lucide icons: gamepad-2, music, clapperboard, code-xml, shirt, sparkles, heart,
 shield-check, globe, image, pencil, star, clock, palette, wand-sparkles.
 

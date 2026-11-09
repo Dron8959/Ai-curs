@@ -1,16 +1,14 @@
 ---
-pillar: P2
 networks: [instagram, facebook]
 type: carousel
 ai_generated: false
 ---
-We're Anna and Kamilla. A mom and a daughter, not a studio.
+We’re Anna and Kamilla. A mom and a daughter, not a corporation.
 
-Kamilla is 10. She tries every project first, and occasionally argues with the script.
-Anna leads the course and reads every piece of homework herself.
+Anna built every lesson herself and tested each one on Kamilla at our kitchen table. What didn’t hold a 10-year-old’s attention got cut. What’s left is what actually works.
 
-We built Make Show Lab at home, at this very desk: 37 short lessons where kids 6–14 make real things with AI, side by side with a grown-up. A cartoon, a song, a game, a website with their name on it. No coding.
+Anna leads the course and checks every homework the same day. Kamilla, 10, is the co-host: she shows the finished thing first, then your kid makes their own.
 
-This page is where we show what we make. Follow along.
+Follow along. We post what we make.
 
-#makeshowlab #creativekids #momanddaughter #aiforkids #familytime
+#makeshowlab #momanddaughter #aiforkids #creativekids #familytime

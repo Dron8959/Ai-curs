@@ -1,179 +1,124 @@
 {
   "id": "03-how-a-lesson-works",
-  "pillar": "P5",
+  "pillar": "",
   "format": "post",
   "slides": [
     {
       "type": "cover",
-      "kicker": "How it works",
-      "size": "lg",
-      "title": "A short video.\n20 minutes together.\nOne **real thing**.",
+      "q": "What exactly will we do?",
+      "size": "xl",
+      "title": "Watch.\nMake.\n**Show.**",
       "deco": [
         {
           "kind": "photo",
-          "src": "social/media/crops/together-wide.jpg",
-          "x": 110,
-          "y": 640,
-          "w": 860,
-          "h": 540,
-          "rot": -2,
-          "pos": "55% center"
+          "src": "social/media/landing/step-watch.jpg",
+          "x": 520,
+          "y": 520,
+          "w": 480,
+          "h": 360,
+          "pos": "center"
         },
         {
-          "kind": "sticker",
-          "name": "clock",
-          "x": 900,
-          "y": 560
+          "kind": "photo",
+          "src": "social/media/landing/step-make.jpg",
+          "x": 120,
+          "y": 800,
+          "w": 480,
+          "h": 360,
+          "pos": "center"
+        },
+        {
+          "kind": "photo",
+          "src": "social/media/landing/step-show.jpg",
+          "x": 560,
+          "y": 960,
+          "w": 420,
+          "h": 300,
+          "pos": "center 30%"
         },
         {
           "kind": "sparkle",
-          "x": 80,
-          "y": 600
+          "x": 940,
+          "y": 250,
+          "size": "sm"
         },
-        {
-          "kind": "note",
-          "text": "at our desk",
-          "x": 700,
-          "y": 1190,
-          "rot": -4,
-          "gold": true
-        }
-      ],
-      "swipe": null
-    },
-    {
-      "type": "step",
-      "num": "1",
-      "title": "**Watch**",
-      "body": "A short video shows the finished result first, so your kid knows exactly what they are about to make.",
-      "deco": [
-        {
-          "kind": "robo",
-          "x": 780,
-          "y": 990,
-          "w": 220
-        },
-        {
-          "kind": "bubble",
-          "text": "see the end\nfirst!",
-          "x": 500,
-          "y": 1010
-        },
-        {
-          "kind": "sticker",
-          "name": "clapperboard",
-          "x": 110,
-          "y": 1050
-        }
-      ]
-    },
-    {
-      "type": "step",
-      "num": "2",
-      "title": "**Make**",
-      "body": "Side by side, in one sitting. Your kid has the ideas and gives the directions.",
-      "example": "You are the hands on the keyboard. And sometimes the voice of reason.",
-      "image": "social/media/crops/together-portrait.jpg",
-      "picStyle": "width:380px;height:470px;bottom:110px;right:100px",
-      "deco": [
         {
           "kind": "sparkle",
           "x": 120,
-          "y": 1150,
+          "y": 330,
           "size": "sm"
+        },
+        {
+          "kind": "sparkle",
+          "x": 990,
+          "y": 620,
+          "size": "sm",
+          "white": true
         }
       ]
     },
     {
-      "type": "step",
-      "num": "3",
-      "title": "**Show**",
-      "body": "They show it to the family, and can send it in for the course showcase.",
-      "image": "assets/img/now-a-cartoon.webp",
-      "picStyle": "width:360px;height:520px;bottom:110px;right:120px",
+      "type": "photo",
+      "kicker": "Step 1 · Watch",
+      "title": "A short lesson.\n**6 to 20 minutes.**",
+      "image": "social/media/landing/step-watch.jpg",
+      "picStyle": "top:500px;bottom:300px",
+      "sub": "Kamilla shows the finished thing first, so your child knows where they’re going."
+    },
+    {
+      "type": "photo",
+      "kicker": "Step 2 · Make",
+      "title": "Your child builds it.\n**You sit next to them.**",
+      "image": "social/media/landing/step-make.jpg",
+      "picStyle": "top:500px;bottom:300px",
+      "sub": "A game, a cartoon, a voice-over. Right away, together."
+    },
+    {
+      "type": "photo",
+      "kicker": "Step 3 · Show",
+      "title": "It’s real.\n**And it’s theirs.**",
+      "image": "social/media/landing/step-show.jpg",
+      "pos": "center 30%",
+      "picStyle": "top:500px;bottom:300px",
+      "sub": "Show it to the family. Play it. Send it to grandma.",
       "deco": [
         {
           "kind": "note",
-          "text": "ta-da!",
-          "x": 170,
-          "y": 1030,
-          "rot": -8,
+          "text": "Sticker pack",
+          "x": 100,
+          "y": 960,
           "gold": true
-        },
-        {
-          "kind": "sticker",
-          "name": "heart",
-          "x": 120,
-          "y": 1150,
-          "size": "sm"
         }
       ]
     },
     {
-      "type": "list",
-      "kicker": "What's inside",
-      "title": "The whole course",
-      "items": [
-        {
-          "icon": "clapperboard",
-          "text": "37 lessons, filmed and ready"
-        },
-        {
-          "icon": "heart",
-          "text": "A part for grown-ups in every lesson"
-        },
-        {
-          "icon": "star",
-          "text": "Lessons unlock in order. No schedule"
-        },
-        {
-          "icon": "shield-check",
-          "text": "Every tool runs on your account"
-        },
-        {
-          "icon": "sparkles",
-          "text": "Access never expires"
-        }
-      ],
-      "deco": [
-        {
-          "kind": "robo",
-          "x": 800,
-          "y": 1010,
-          "w": 190
-        }
-      ]
+      "type": "quote",
+      "quote": "Every lesson ends with something she **made**.\nNot something she watched.",
+      "by": "Make Show Lab"
     },
     {
       "type": "cta",
       "theme": "navy",
-      "title": "From **$197**.\nOne-time.\nYours to keep.",
+      "title": "Try one lesson\n**free**.",
       "buttons": [
-        "See the lessons · link in bio"
+        "Free first lesson · link in bio"
       ],
       "deco": [
         {
-          "kind": "dot",
-          "x": 110,
-          "y": 260
-        },
-        {
-          "kind": "dot",
-          "x": 150,
-          "y": 1150,
-          "w": 16,
-          "gold": true
+          "kind": "sparkle",
+          "x": 940,
+          "y": 250,
+          "size": "sm"
         },
         {
           "kind": "sparkle",
-          "x": 860,
-          "y": 1150,
-          "white": true,
+          "x": 120,
+          "y": 330,
           "size": "sm"
         }
       ],
-      "body": "Not right for your family? Full refund within 30 days.",
-      "bubble": "no subscription"
+      "body": "Your kid builds a game tonight. No card.",
+      "bubble": "watch · make · show"
     }
   ]
 }

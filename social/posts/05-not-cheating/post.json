@@ -1,0 +1,74 @@
+{
+  "id": "05-not-cheating",
+  "pillar": "",
+  "format": "post",
+  "slides": [
+    {
+      "type": "myth",
+      "q": "Isn’t AI just cheating?",
+      "myth": "AI does the thinking for my kid.",
+      "truth": "Not when your kid is the one with the idea.",
+      "image": "social/media/landing/kamilla.jpg",
+      "pos": "center 25%"
+    },
+    {
+      "type": "prompt",
+      "kicker": "What it looks like",
+      "title": "The kid decides.\n**AI is the tool.**",
+      "turns": [
+        {
+          "role": "kid",
+          "label": "Kid: the idea",
+          "text": "A pixel park with a girl and her corgi"
+        },
+        {
+          "role": "check",
+          "label": "Kid: checks it",
+          "text": "The dog is too small. Make it a corgi, not a puppy."
+        },
+        {
+          "role": "ask",
+          "label": "Kid: fixes it",
+          "text": "Bigger corgi, next to the bench, sunny sky"
+        },
+        {
+          "role": "win",
+          "label": "Result",
+          "text": "Playable game, made by her"
+        }
+      ]
+    },
+    {
+      "type": "step",
+      "num": "→",
+      "title": "Decide. Tell.\nCheck. **Fix.**",
+      "size": "md",
+      "body": "In every lesson the child decides what to make, tells the AI, checks what comes back and fixes it. The thinking stays with your child.",
+      "image": "social/media/landing/game.jpg",
+      "picStyle": "width:470px;height:260px;bottom:140px"
+    },
+    {
+      "type": "cta",
+      "theme": "navy",
+      "title": "Don’t let AI think\nfor your child.\n**Teach them to think with it.**",
+      "buttons": [
+        "Free first lesson · link in bio"
+      ],
+      "deco": [
+        {
+          "kind": "sparkle",
+          "x": 940,
+          "y": 250,
+          "size": "sm"
+        },
+        {
+          "kind": "sparkle",
+          "x": 120,
+          "y": 330,
+          "size": "sm"
+        }
+      ],
+      "bubble": "kids decide"
+    }
+  ]
+}

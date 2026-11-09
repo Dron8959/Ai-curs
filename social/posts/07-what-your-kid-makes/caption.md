@@ -1,20 +1,19 @@
 ---
-pillar: P4
 networks: [instagram, facebook]
 type: carousel
 ai_generated: true
 ---
-Six things your kid will make, and actually show off:
+By the end of the course, your child can make:
 
-A cartoon, with their own voice in it.
+A playable game.
+An animated cartoon.
 A song from their own words.
-A game their friends can play.
-A website with their name on it.
-A print for the fridge.
-A drawing, brought to life.
+A website.
+A sticker pack with their own character.
+A voice-over in their own voice.
 
-Each one comes out of a single lesson. No coding anywhere.
+Kids don’t need more screen time. They need a reason to show you something.
 
 Which one would your kid start with?
 
-#creativekids #kidsart #aiforkids #kidsactivities #familytime
+#creativekids #aiforkids #kidsart #kidsactivities #familytime

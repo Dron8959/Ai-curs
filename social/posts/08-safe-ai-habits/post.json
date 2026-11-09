@@ -1,6 +1,6 @@
 {
   "id": "08-safe-ai-habits",
-  "pillar": "P3",
+  "pillar": "",
   "format": "post",
   "slides": [
     {
@@ -8,71 +8,51 @@
       "theme": "navy",
       "kicker": "Save this",
       "size": "lg",
-      "title": "5 safe AI habits.\nTeach them **while\nthey still listen.**",
+      "title": "The part parents\nask about first:\n**AI safety**",
       "deco": [
         {
-          "kind": "sun",
-          "x": 520,
-          "y": 760,
-          "w": 620
+          "kind": "astro",
+          "x": 240,
+          "y": 640,
+          "w": 600,
+          "h": 640
         },
         {
-          "kind": "robo",
-          "x": 560,
-          "y": 820,
-          "w": 380
-        },
-        {
-          "kind": "sticker",
-          "name": "shield-check",
-          "x": 180,
-          "y": 880
-        },
-        {
-          "kind": "sticker",
-          "name": "heart",
-          "x": 330,
-          "y": 1080,
+          "kind": "sparkle",
+          "x": 940,
+          "y": 250,
           "size": "sm"
         },
         {
           "kind": "sparkle",
-          "x": 200,
-          "y": 720,
-          "white": true
+          "x": 120,
+          "y": 330,
+          "size": "sm"
         },
         {
-          "kind": "dot",
-          "x": 120,
-          "y": 1150,
-          "w": 14,
-          "gold": true
+          "kind": "sparkle",
+          "x": 990,
+          "y": 620,
+          "size": "sm",
+          "white": true
         }
       ]
     },
     {
       "type": "list",
-      "title": "The **boring** lessons\nthat matter",
+      "title": "What kids learn\n**in the course**",
       "items": [
         {
           "icon": "shield-check",
-          "text": "AI runs on the grown-up's account. You see everything."
-        },
-        {
-          "icon": "heart",
-          "text": "Never share full name, school, address or friends' photos."
-        },
-        {
-          "icon": "star",
-          "text": "AI can be wrong. Check before you believe it."
+          "text": "Never click a suspicious link, and how to tell one"
         },
         {
           "icon": "image",
-          "text": "Spot a fake: ask who made it and why."
+          "text": "How to spot a fake: image, video or text"
         },
         {
-          "icon": "wand-sparkles",
-          "text": "AI is a helper, not a homework machine."
+          "icon": "heart",
+          "text": "What never to share with an AI, and why"
         }
       ]
     },
@@ -80,16 +60,9 @@
       "type": "step",
       "num": "!",
       "title": "Why **early**?",
-      "body": "Kids are learning AI anyway, from friends and from YouTube. Get the safe habits in first, while the boring stuff still lands.",
-      "image": "social/media/crops/together-portrait.jpg",
-      "picStyle": "width:360px;height:440px;bottom:110px;right:100px",
-      "deco": [
-        {
-          "kind": "sparkle",
-          "x": 150,
-          "y": 1120
-        }
-      ]
+      "body": "Kids are learning AI anyway, from friends and from YouTube. Get the safe habits in first, while you are sitting right next to them.",
+      "image": "social/media/landing/step-watch.jpg",
+      "picStyle": "width:460px;height:340px;bottom:120px"
     },
     {
       "type": "cta",
@@ -101,26 +74,19 @@
       ],
       "deco": [
         {
-          "kind": "dot",
-          "x": 110,
-          "y": 260
-        },
-        {
-          "kind": "dot",
-          "x": 150,
-          "y": 1150,
-          "w": 16,
-          "gold": true
+          "kind": "sparkle",
+          "x": 940,
+          "y": 250,
+          "size": "sm"
         },
         {
           "kind": "sparkle",
-          "x": 860,
-          "y": 1150,
-          "white": true,
+          "x": 120,
+          "y": 330,
           "size": "sm"
         }
       ],
-      "bubble": "safety first!"
+      "bubble": "safety first"
     }
   ]
 }

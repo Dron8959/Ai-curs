@@ -1,19 +1,16 @@
 ---
-pillar: P5
 networks: [instagram, facebook]
 type: carousel
 ai_generated: false
 ---
-What one lesson actually looks like:
+Every lesson is one short loop:
 
-1. Watch. A short video shows the finished result first.
-2. Make. 15–20 minutes, side by side. Your kid has the ideas, you hold the keyboard.
-3. Show. They show it to the family.
+Watch. A 6 to 20 minute lesson. Kamilla shows the finished thing first.
+Make. Your child builds it right away, with you next to them.
+Show. Show it to the family. Play it. Send it to grandma.
 
-Most families finish a lesson in one sitting. There are 37 of them, and each one ends with something real: a cartoon, a song, a game, a print for the fridge.
+It ends with a thing, not a quiz.
 
-One-time payment, lifetime access. Not right for your family? One email within 30 days and you get a full refund.
+First lesson free, no card. Link in bio.
 
-Link in bio.
-
-#aiforkids #kidsactivities #familyactivities #creativekids #homeschool
+#aiforkids #kidsactivities #familyactivities #creativekids #screentime

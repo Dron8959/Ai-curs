@@ -1,6 +1,6 @@
 {
   "id": "04-five-questions",
-  "pillar": "P3",
+  "pillar": "",
   "format": "post",
   "slides": [
     {
@@ -13,59 +13,53 @@
       "source": "Common Sense Media, AI Census of tweens and teens, 2026",
       "deco": [
         {
-          "kind": "dot",
-          "x": 120,
-          "y": 300
-        },
-        {
-          "kind": "dot",
-          "x": 960,
-          "y": 1120,
-          "w": 16,
-          "gold": true
+          "kind": "sparkle",
+          "x": 940,
+          "y": 250,
+          "size": "sm"
         },
         {
           "kind": "sparkle",
-          "x": 900,
-          "y": 980,
-          "white": true,
+          "x": 120,
+          "y": 330,
           "size": "sm"
         }
       ]
     },
     {
       "type": "cover",
-      "kicker": "So start here",
+      "q": "Is this about my child?",
       "size": "lg",
       "title": "5 questions to ask\nyour kid **tonight**",
-      "sub": "No lecture needed. Just dinner.",
+      "sub": "Answer machine or creative tool? Find out which one your kid is using.",
       "deco": [
         {
           "kind": "photo",
-          "src": "social/media/crops/together-portrait.jpg",
-          "x": 470,
-          "y": 700,
-          "w": 470,
-          "h": 520,
-          "rot": 4
-        },
-        {
-          "kind": "robo",
-          "x": 130,
-          "y": 880,
-          "w": 260
-        },
-        {
-          "kind": "bubble",
-          "text": "ask me\nanything!",
-          "x": 130,
-          "y": 780,
-          "right": false
+          "src": "social/media/landing/step-watch.jpg",
+          "x": 140,
+          "y": 760,
+          "w": 800,
+          "h": 440,
+          "pos": "center"
         },
         {
           "kind": "sparkle",
-          "x": 950,
-          "y": 640
+          "x": 940,
+          "y": 250,
+          "size": "sm"
+        },
+        {
+          "kind": "sparkle",
+          "x": 120,
+          "y": 330,
+          "size": "sm"
+        },
+        {
+          "kind": "sparkle",
+          "x": 990,
+          "y": 620,
+          "size": "sm",
+          "white": true
         }
       ]
     },
@@ -74,39 +68,28 @@
       "num": "1",
       "title": "Which AI have you tried?",
       "size": "md",
-      "body": "No judgment. You are mapping the territory, not catching them out.",
+      "body": "No judgment. You’re mapping the territory, not catching them out.",
       "deco": [
         {
           "kind": "sticker",
           "name": "gamepad-2",
           "x": 880,
-          "y": 200
-        },
-        {
-          "kind": "robo",
-          "x": 820,
-          "y": 1000,
-          "w": 170
+          "y": 190
         }
       ]
     },
     {
       "type": "step",
       "num": "2",
-      "title": "What did you make with it?",
+      "title": "Did you make something, or ask for an answer?",
       "size": "md",
-      "body": "Making something and copying an answer are very different things. Find out which one it was.",
+      "body": "Making something and copying an answer use the same screen. They are not the same thing.",
       "deco": [
         {
           "kind": "sticker",
           "name": "palette",
           "x": 880,
-          "y": 200
-        },
-        {
-          "kind": "sparkle",
-          "x": 900,
-          "y": 1120
+          "y": 190
         }
       ]
     },
@@ -121,13 +104,7 @@
           "kind": "sticker",
           "name": "star",
           "x": 880,
-          "y": 200
-        },
-        {
-          "kind": "robo",
-          "x": 820,
-          "y": 1000,
-          "w": 170
+          "y": 190
         }
       ]
     },
@@ -136,18 +113,13 @@
       "num": "4",
       "title": "What would you never tell it?",
       "size": "md",
-      "body": "Full name, school, address, photos of friends. If they do not know the list yet, now they do.",
+      "body": "Full name, school, address, photos of friends. If they don’t know the list yet, now they do.",
       "deco": [
         {
           "kind": "sticker",
           "name": "shield-check",
           "x": 880,
-          "y": 200
-        },
-        {
-          "kind": "sparkle",
-          "x": 900,
-          "y": 1120
+          "y": 190
         }
       ]
     },
@@ -156,19 +128,13 @@
       "num": "5",
       "title": "What should we make together?",
       "size": "md",
-      "body": "The easiest way to stay in the loop is to sit in it. Pick a weekend project.",
+      "body": "The easiest way to stay in the loop is to sit in it. Pick a project for tonight.",
       "deco": [
         {
           "kind": "sticker",
           "name": "heart",
           "x": 880,
-          "y": 200
-        },
-        {
-          "kind": "robo",
-          "x": 820,
-          "y": 1000,
-          "w": 170
+          "y": 190
         }
       ]
     },
@@ -182,27 +148,20 @@
       ],
       "deco": [
         {
-          "kind": "dot",
-          "x": 110,
-          "y": 260
-        },
-        {
-          "kind": "dot",
-          "x": 150,
-          "y": 1150,
-          "w": 16,
-          "gold": true
+          "kind": "sparkle",
+          "x": 940,
+          "y": 250,
+          "size": "sm"
         },
         {
           "kind": "sparkle",
-          "x": 860,
-          "y": 1150,
-          "white": true,
+          "x": 120,
+          "y": 330,
           "size": "sm"
         }
       ],
       "body": "And send it to the other grown-up in the house.",
-      "bubble": "dinner talk!"
+      "bubble": "dinner talk"
     }
   ]
 }

@@ -13,7 +13,7 @@ import { resolve, join } from 'node:path';
 import { pathToFileURL, fileURLToPath } from 'node:url';
 import { spawn } from 'node:child_process';
 import { dirname } from 'node:path';
-import { asset, esc, rich, sticker, sparkle, arrow, robo, photo, baseCss } from './kit.mjs';
+import { asset, esc, rich, sticker, sparkle, arrow, robo, astro, photo, baseCss, logoSrc } from './kit.mjs';
 
 const { chromium } = createRequire(import.meta.url)('playwright');
 const here = dirname(fileURLToPath(import.meta.url));
@@ -66,57 +66,58 @@ function scene(s, i) {
         <div class="count" data-to="${s.to}">${esc(s.value)}</div><h2 class="title mid-t">${words(s.title)}</h2>${s.source ? `<p class="source">${esc(s.source)}</p>` : ''}</div>`;
       break;
     case 'cta':
-      inner = `<span class="sun pop" style="width:760px;height:760px;left:160px;top:980px"></span>
+      inner = `
         <div class="mid up"><h2 class="title mid-t">${words(s.title)}</h2>${s.sub ? `<p class="sub">${rich(s.sub)}</p>` : ''}
         <div class="btns">${(s.buttons || []).map((b) => `<span class="btn pop">${esc(b)}</span>`).join('')}</div>
-        <div class="handle pop"><img src="${asset('assets/img/logo.png')}" alt="">@make_showlab</div></div>
+        <div class="handle pop"><img src="${asset(logoSrc())}" alt="">@make_showlab</div></div>
         ${robo('pop', 'left:390px;top:1200px;width:300px')}`;
       break;
     default:
       throw new Error(`Unknown scene type: ${s.type}`);
   }
-  return `<section class="scene ${theme} t-${s.type}" id="${id}">${inner}
+  return `<section class="scene ${theme} planet t-${s.type}" id="${id}">${s.astro ? astro('pop', s.astro) : ''}${inner}
     ${(s.deco || []).map((d) => (d.kind === 'sparkle' ? sparkle(`tw ${d.white ? 'w' : ''}`, `left:${d.x}px;top:${d.y}px`) : sticker(d.name, 'pop float', `left:${d.x}px;top:${d.y}px`))).join('')}
   </section>`;
 }
 
 function html(spec) {
   return `<!doctype html><html><head><meta charset="utf-8"><style>${baseCss()}
-html,body{width:${W}px;height:${H}px;background:#141a33}
+html,body{width:${W}px;height:${H}px;background:#02040D}
 .scene{position:absolute;inset:0;overflow:hidden;opacity:0;isolation:isolate}
 .mid{position:absolute;left:90px;right:90px;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;gap:36px}
 .mid.up{bottom:860px}
 .t-hook .mid{bottom:520px}
 .top-text{position:absolute;left:90px;right:90px;top:250px;display:flex;flex-direction:column;gap:26px;align-items:flex-start}
-.big-t{font-size:116px;line-height:1.0}.mid-t{font-size:96px;line-height:1.02}
+.big-t{font-size:118px;line-height:.95}.mid-t{font-size:92px;line-height:.96}
 .title .w{display:inline-block;font-style:normal;transform-origin:50% 80%}
-.swipe{background-position:left 62%;background-size:0% 72%}
-.navy .swipe{background:none}
-.sub{font-size:46px;line-height:1.3;color:var(--text)}.navy .sub{color:rgba(255,255,255,.85)}
+.title .w{white-space:nowrap}
+.title .swipe{background:none;filter:none;color:inherit;padding:0}
+.title .swipe .w{background:linear-gradient(180deg,#FFD08A 0%,#FF8A3D 100%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none;filter:drop-shadow(0 0 .18em rgba(255,138,61,.55));padding-right:.06em}
+.sub{font-size:44px;line-height:1.3;color:var(--muted);font-weight:500}
 .kick-wrap{min-height:10px}
 .stage{position:absolute;inset:0}
 .card{position:absolute;width:560px;height:840px;top:540px}
+.astro{z-index:1}
 .card.a{left:90px;transform:rotate(-5deg)}
 .card.b{left:430px;transform:rotate(4deg)}
 .kb{position:absolute;overflow:visible}
 .kb .pic{height:100%}
 .items{position:absolute;left:90px;right:90px;top:680px;list-style:none;display:flex;flex-direction:column;gap:40px}
-.item{display:flex;align-items:center;gap:30px;font-size:56px;line-height:1.15;font-weight:700;color:var(--ink);background:#fff;border-radius:38px;padding:30px 38px 30px 30px;box-shadow:0 26px 40px -30px rgba(60,40,10,.5)}
-.navy .item{background:rgba(255,255,255,.08);color:#fff;box-shadow:none}
+.item{display:flex;align-items:center;gap:30px;font-size:56px;line-height:1.15;font-weight:700;color:#fff;background:rgba(17,26,58,.9);border-radius:36px;padding:28px 36px 28px 28px;box-shadow:inset 0 0 0 1px var(--line)}
 .sticker.inline{position:static;flex:none}
-.count{font-family:'Bricolage Grotesque';font-weight:800;font-size:300px;line-height:.85;letter-spacing:-.05em;color:var(--yellow)}
-.source{font-size:30px;opacity:.65}
+.count{font-family:Archivo;font-style:italic;font-weight:900;font-stretch:94%;font-size:300px;line-height:.85;background:linear-gradient(180deg,#FFD08A,#FF8A3D);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 30px rgba(255,138,61,.5))}
+.source{font-size:30px;color:var(--muted2)}
 .btns{display:flex;flex-direction:column;gap:20px;align-items:flex-start}
-.btn{display:inline-flex;align-items:center;min-height:110px;padding:0 54px;border-radius:999px;background:#fff;color:var(--ink);font-weight:700;font-size:40px;box-shadow:0 22px 40px -18px rgba(255,197,51,.9),inset 0 0 0 3px rgba(255,197,51,.55)}
-.handle{display:flex;align-items:center;gap:18px;font-weight:800;font-size:48px;color:#fff;font-family:'Bricolage Grotesque'}
+.btn{display:inline-flex;align-items:center;min-height:110px;padding:0 54px;border-radius:999px;color:#1A0A02;background:linear-gradient(180deg,#FFD08A,#FF8A3D);font-weight:800;font-size:40px;box-shadow:0 14px 44px rgba(255,138,61,.45)}
+.handle{display:flex;align-items:center;gap:18px;font-weight:900;font-style:italic;font-size:48px;color:#fff;font-family:Archivo;text-transform:uppercase}
 .handle img{width:76px;height:76px;border-radius:20px}
-.note{font-size:70px}
+.note{font-size:34px}
 .arrow{stroke-width:8}
-.bubble{font-size:60px}
+.bubble{font-size:44px}
 .brandbar{position:absolute;z-index:20;top:110px;left:90px;opacity:.95}
 </style><script src="${pathToFileURL(resolve(here, 'node_modules/gsap/dist/gsap.min.js')).href}"></script></head><body>
 ${spec.scenes.map(scene).join('')}
-<div class="brandbar"><span class="chip"><img src="${asset('assets/img/logo.png')}" alt="">Make Show Lab</span></div>
+<div class="brandbar"><span class="chip"><img src="${asset(logoSrc())}" alt="">Make Show <b>Lab</b></span></div>
 <script>
 const scenes = ${JSON.stringify(spec.scenes.map((s) => ({ type: s.type, dur: s.dur })))};
 const tl = gsap.timeline({ paused: true });
@@ -129,7 +130,7 @@ scenes.forEach((s, i) => {
   if (i > 0) tl.fromTo(el, { clipPath: 'circle(0% at 50% 50%)' }, { clipPath: 'circle(80% at 50% 50%)', duration: .45, ease: 'power2.inOut' }, at(0));
   // Words pop in, highlights swipe across after them.
   tl.from(q('.title .w'), { y: 70, opacity: 0, scale: .85, duration: .5, ease: 'back.out(2)', stagger: .07 }, at(.25));
-  tl.to(q('.swipe'), { backgroundSize: '100% 72%', duration: .45, ease: 'power2.out' }, at(.25 + q('.title .w').length * .07));
+  tl.from(q('.swipe .w'), { scale: 1.25, duration: .5, ease: 'back.out(3)', stagger: .05 }, at(.25 + q('.title .w').length * .07));
   tl.from(q('.kick'), { scale: 0, rotation: -14, duration: .4, ease: 'back.out(2.4)' }, at(.1));
   tl.from(q('.sub'), { y: 30, opacity: 0, duration: .45 }, at(.9));
   tl.from(q('.pop'), { scale: 0, opacity: 0, duration: .55, ease: 'back.out(2)', stagger: .12 }, at(.8));

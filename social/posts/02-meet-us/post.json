@@ -1,201 +1,146 @@
 {
   "id": "02-meet-us",
-  "pillar": "P2",
+  "pillar": "",
   "format": "post",
   "slides": [
     {
       "type": "hero",
-      "theme": "navy",
-      "kicker": "Hi, we're Make Show Lab",
-      "title": "A mom and a daughter.\n**Not a studio.**",
-      "image": "social/media/crops/together-portrait.jpg",
-      "sunTop": 560,
-      "deco": [
-        {
-          "kind": "sticker",
-          "name": "gamepad-2",
-          "x": 110,
-          "y": 640
-        },
-        {
-          "kind": "sticker",
-          "name": "music",
-          "x": 890,
-          "y": 860
-        },
-        {
-          "kind": "sticker",
-          "name": "clapperboard",
-          "x": 120,
-          "y": 1020,
-          "size": "sm"
-        },
-        {
-          "kind": "sticker",
-          "name": "code-xml",
-          "x": 880,
-          "y": 1100,
-          "size": "sm"
-        },
-        {
-          "kind": "sparkle",
-          "x": 180,
-          "y": 520,
-          "white": true
-        },
-        {
-          "kind": "sparkle",
-          "x": 860,
-          "y": 560
-        },
-        {
-          "kind": "dot",
-          "x": 980,
-          "y": 760
-        },
-        {
-          "kind": "dot",
-          "x": 90,
-          "y": 900,
-          "w": 14,
-          "gold": true
-        },
-        {
-          "kind": "note",
-          "text": "the cat:\nnot consulted",
-          "x": 800,
-          "y": 430,
-          "rot": 6,
-          "gold": true
-        },
-        {
-          "kind": "arrow",
-          "dir": "down-left",
-          "x": 700,
-          "y": 555,
-          "gold": true,
-          "w": 150
-        }
-      ]
-    },
-    {
-      "type": "photo",
-      "kicker": "Meet Kamilla",
-      "title": "10 years old. _Co-host._",
-      "image": "assets/img/meet-kamilla.webp",
-      "picStyle": "top:340px;bottom:250px;left:150px;right:150px",
-      "sub": "She tries every project first. She also argues with the script. Sometimes she wins.",
-      "deco": [
-        {
-          "kind": "sticker",
-          "name": "star",
-          "x": 860,
-          "y": 300,
-          "size": "sm"
-        },
-        {
-          "kind": "sparkle",
-          "x": 930,
-          "y": 1000
-        }
-      ]
-    },
-    {
-      "type": "photo",
-      "kicker": "And meet Anna",
-      "title": "She reads every\n**homework** herself.",
-      "image": "social/media/crops/anna-portrait.jpg",
-      "pos": "center 20%",
-      "picStyle": "top:430px;bottom:240px;left:190px;right:190px",
-      "sub": "Every lesson was filmed by the two of us, at home.",
+      "q": "Who am I trusting my child with?",
+      "title": "A mom and a daughter.\n**Not a corporation.**",
+      "size": "md",
+      "image": "social/media/landing/together-game.jpg",
+      "sunTop": 520,
+      "picStyle": "left:100px;right:100px;top:640px;bottom:170px",
       "deco": [
         {
           "kind": "sticker",
           "name": "heart",
-          "x": 110,
-          "y": 560,
+          "x": 70,
+          "y": 500,
+          "size": "sm"
+        },
+        {
+          "kind": "sticker",
+          "name": "gamepad-2",
+          "x": 920,
+          "y": 1090,
           "size": "sm"
         },
         {
           "kind": "sparkle",
-          "x": 930,
-          "y": 1000,
+          "x": 940,
+          "y": 250,
           "size": "sm"
+        },
+        {
+          "kind": "sparkle",
+          "x": 120,
+          "y": 330,
+          "size": "sm"
+        },
+        {
+          "kind": "sparkle",
+          "x": 990,
+          "y": 620,
+          "size": "sm",
+          "white": true
+        }
+      ]
+    },
+    {
+      "type": "photo",
+      "kicker": "Meet Anna",
+      "title": "She built every\nlesson **herself**.",
+      "image": "social/media/landing/anna.jpg",
+      "pos": "center 25%",
+      "picStyle": "top:470px;bottom:260px;left:200px;right:200px",
+      "sub": "And she checks every homework the same day it’s sent.",
+      "deco": [
+        {
+          "kind": "note",
+          "text": "Mom · course lead",
+          "x": 620,
+          "y": 1000
+        },
+        {
+          "kind": "sparkle",
+          "x": 140,
+          "y": 620,
+          "size": "sm"
+        }
+      ]
+    },
+    {
+      "type": "photo",
+      "kicker": "Meet Kamilla, 10",
+      "title": "Co-host and\n**peer mentor**.",
+      "image": "social/media/landing/kamilla.jpg",
+      "pos": "center 25%",
+      "picStyle": "top:470px;bottom:260px;left:200px;right:200px",
+      "sub": "She shows the finished thing first. Then your kid makes their own.",
+      "deco": [
+        {
+          "kind": "note",
+          "text": "Tests every lesson",
+          "x": 590,
+          "y": 1000
+        },
+        {
+          "kind": "sparkle",
+          "x": 930,
+          "y": 620,
+          "size": "sm",
+          "white": true
         }
       ]
     },
     {
       "type": "list",
-      "kicker": "What we built at this desk",
-      "title": "A course you do\n**side by side**",
+      "kicker": "How the course was made",
+      "title": "Tested at our\n**kitchen table**",
       "items": [
         {
           "icon": "heart",
-          "text": "For kids 6–14 and one grown-up"
-        },
-        {
-          "icon": "clapperboard",
-          "text": "37 short lessons, all filmed and ready"
+          "text": "Anna built every lesson herself"
         },
         {
           "icon": "star",
-          "text": "Each one ends with a real thing to show"
+          "text": "Each one tested on Kamilla first"
         },
         {
-          "icon": "code-xml",
-          "text": "No coding anywhere"
-        }
-      ],
-      "deco": [
-        {
-          "kind": "photo",
-          "src": "social/media/crops/cat.jpg",
-          "x": 640,
-          "y": 1000,
-          "w": 330,
-          "h": 232,
-          "rot": 5
+          "icon": "clock",
+          "text": "What lost a 10-year-old’s attention got cut"
         },
         {
-          "kind": "note",
-          "text": "the cat helps\n(not really)",
-          "x": 330,
-          "y": 1080,
-          "rot": -4
+          "icon": "rocket",
+          "text": "What’s left is what actually works"
         }
       ]
     },
     {
       "type": "cta",
       "theme": "navy",
-      "title": "Follow along.\nWe post what we **make**.",
+      "title": "Follow along.\nWe post what\nwe **make**.",
       "buttons": [
         "Follow @make_showlab",
-        "The course · link in bio"
+        "Free first lesson · link in bio"
       ],
       "deco": [
         {
-          "kind": "dot",
-          "x": 110,
-          "y": 260
-        },
-        {
-          "kind": "dot",
-          "x": 150,
-          "y": 1150,
-          "w": 16,
-          "gold": true
+          "kind": "sparkle",
+          "x": 940,
+          "y": 250,
+          "size": "sm"
         },
         {
           "kind": "sparkle",
-          "x": 860,
-          "y": 1150,
-          "white": true,
+          "x": 120,
+          "y": 330,
           "size": "sm"
         }
       ],
-      "body": "Cartoons, songs, games, and the bloopers in between.",
-      "bubble": "say hi!"
+      "body": "Games, cartoons, songs, and the bloopers in between.",
+      "bubble": "hi!"
     }
   ]
 }

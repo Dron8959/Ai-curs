@@ -1,0 +1,63 @@
+{
+  "fps": 30,
+  "coverAt": 2.4,
+  "scenes": [
+    {
+      "type": "hook",
+      "dur": 3.2,
+      "kicker": "Is this safe?",
+      "title": "The only AI course\nbuilt for **the two of you**.",
+      "astro": "left:240px;top:1140px;width:600px;height:650px"
+    },
+    {
+      "type": "list",
+      "dur": 5,
+      "kicker": "Three promises",
+      "title": "How we keep\nit **safe**",
+      "items": [
+        {
+          "icon": "shield-check",
+          "text": "**Parent-owned** account"
+        },
+        {
+          "icon": "heart",
+          "text": "No chats with **strangers**"
+        },
+        {
+          "icon": "sparkles",
+          "text": "AI avatar always **disclosed**"
+        }
+      ]
+    },
+    {
+      "type": "list",
+      "dur": 5,
+      "kicker": "What kids learn",
+      "title": "AI safety,\n**taught early**",
+      "items": [
+        {
+          "icon": "globe",
+          "text": "Spot a **suspicious link**"
+        },
+        {
+          "icon": "image",
+          "text": "Spot a **fake**: image, video, text"
+        },
+        {
+          "icon": "mic",
+          "text": "What **never** to share with AI"
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "theme": "navy",
+      "dur": 3.4,
+      "title": "Safe enough\nto try **tonight**.",
+      "sub": "First lesson free. No card.",
+      "buttons": [
+        "Free lesson · link in bio"
+      ]
+    }
+  ]
+}

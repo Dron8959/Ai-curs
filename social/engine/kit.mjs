@@ -1,7 +1,7 @@
-// Shared visual kit for posts and reels: the warm "kitchen-table scrapbook" look
-// built from the landing page (navy card with a yellow sun, colored icon stickers,
-// photos in white frames, highlighter swipes) plus tape, handwritten notes and Robo,
-// the robot from the logo.
+// Shared visual kit for posts and reels, matched to the live landing (www.makeshowlab.com):
+// deep-space page (#02040D), glowing italic Archivo caps headlines, Urbanist body, the orange
+// planet horizon, orange gradient accents, teal dots, real family photos in rounded frames,
+// and the astronaut boy (logo + hero art).
 
 import { readFileSync, existsSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
@@ -15,7 +15,7 @@ const mod = (p) => pathToFileURL(resolve(here, 'node_modules', p)).href;
 export const esc = (s = '') =>
   String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
-// **word** highlighter · _word_ gold · ~word~ handwritten · \n line break
+// **word** orange glow · _word_ gold · ~word~ soft italic · \n line break
 export const rich = (s = '') =>
   esc(s)
     .replace(/\*\*([\s\S]+?)\*\*/g, '<span class="swipe">$1</span>')
@@ -23,11 +23,12 @@ export const rich = (s = '') =>
     .replace(/_([\s\S]+?)_/g, '<span class="gold">$1</span>')
     .replace(/\n/g, '<br>');
 
-// Sticker colours match the icon circles on the landing's "Meet Kamilla" card.
+// Icon colour per sticker, from the landing palette (orange, teal, gold, pale blue).
 export const STICKER = {
-  'gamepad-2': '#f2605a', music: '#4fc98a', clapperboard: '#ffffff', 'code-xml': '#ffffff', shirt: '#4fc98a',
-  sparkles: '#ffc533', heart: '#f2605a', 'shield-check': '#ffc533', globe: '#ffc533', image: '#ffc533',
-  pencil: '#ffc533', star: '#ffc533', clock: '#ffffff', palette: '#f2605a', 'wand-sparkles': '#ffc533',
+  'gamepad-2': '#FF8A3D', music: '#3FC7C0', clapperboard: '#FFC36B', 'code-xml': '#BFD4FF', shirt: '#3FC7C0',
+  sparkles: '#FFC36B', heart: '#FF8A3D', 'shield-check': '#3FC7C0', globe: '#BFD4FF', image: '#FFC36B',
+  pencil: '#FF8A3D', star: '#FFC36B', clock: '#BFD4FF', palette: '#FF8A3D', 'wand-sparkles': '#FFC36B',
+  mic: '#3FC7C0', sticker: '#FF8A3D', 'mail': '#FFC36B', rocket: '#FF8A3D',
 };
 const iconCache = {};
 export function icon(name) {
@@ -40,13 +41,12 @@ export function icon(name) {
   return iconCache[name];
 }
 export const sticker = (name, cls = '', style = '') =>
-  `<span class="sticker ${cls}" style="--c:${STICKER[name] || '#ffc533'};${style}">${icon(name)}</span>`;
+  `<span class="sticker ${cls}" style="--c:${STICKER[name] || '#FF8A3D'};${style}">${icon(name)}</span>`;
 
-// Four-point sparkle, as on the landing.
+// Four-point star.
 export const sparkle = (cls = '', style = '') =>
   `<svg class="sparkle ${cls}" style="${style}" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 0C21.5 12 28 18.5 40 20C28 21.5 21.5 28 20 40C18.5 28 12 21.5 0 20C12 18.5 18.5 12 20 0Z"/></svg>`;
 
-// Hand-drawn arrow; dir = 'down-left' | 'down-right' | 'left' | 'right' | 'up-right'
 export function arrow(dir = 'down-left', cls = '', style = '') {
   const paths = {
     'down-left': ['M150 10 C 140 70, 90 105, 22 112', 'M44 92 L 20 112 L 46 128'],
@@ -55,76 +55,85 @@ export function arrow(dir = 'down-left', cls = '', style = '') {
     left: ['M152 70 C 110 30, 60 30, 10 62', 'M34 40 L 8 64 L 40 76'],
     'up-right': ['M10 120 C 30 60, 80 30, 146 22', 'M122 8 L 148 22 L 126 42'],
   }[dir];
-  return `<svg class="arrow ${cls}" style="${style}" viewBox="0 0 160 140" aria-hidden="true">${paths
-    .map((d) => `<path d="${d}"/>`)
-    .join('')}</svg>`;
+  return `<svg class="arrow ${cls}" style="${style}" viewBox="0 0 160 140" aria-hidden="true">${paths.map((d) => `<path d="${d}"/>`).join('')}</svg>`;
 }
 
-// The Make Show Lab logo from the landing page, used as the brand mascot badge.
-// Source is 120 px (assets/img/logo.png); social/media/crops/logo-480.png is a softened
-// upscale. Replace with a high-res master (social/media/brand/logo.png) when available.
+// Logo: the astronaut boy's face in an orange ring (from the landing's touch icon).
 export function logoSrc() {
-  for (const p of ['social/media/brand/logo.png', 'social/media/crops/logo-480.png', 'assets/img/logo.png']) {
+  for (const p of ['social/media/brand/logo.png', 'social/media/landing/logo-180.png', 'assets/img/logo.png']) {
     if (existsSync(resolve(repo, p))) return p;
   }
 }
+// Mascot badge (kept under the old name "robo" so existing specs still work).
 export function robo(cls = '', style = '') {
   return `<span class="robo ${cls}" style="${style}"><img src="${asset(logoSrc())}" alt=""></span>`;
 }
+// The full astronaut from the landing hero, fading into space at the edges.
+export const astro = (cls = '', style = '') =>
+  `<span class="astro ${cls}" style="${style}"><img src="${asset('social/media/landing/astro.jpg')}" alt=""></span>`;
 
-export const photo = (src, { cls = '', tape = true, style = '', pos = 'center' } = {}) =>
-  src
-    ? `<figure class="pic ${cls}" style="${style}">${tape ? '<i class="tape t1"></i><i class="tape t2"></i>' : ''}<img src="${asset(src)}" style="object-position:${pos}" alt=""></figure>`
-    : '';
-
-const SWIPE = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 40' preserveAspectRatio='none'%3E%3Cpath fill='%23ffc533' d='M4 8L15 5L28 7L42 4L57 6L71 3L86 6L101 4L116 6L131 3L146 6L161 4L175 6L188 3L196 7L194 14L198 21L195 28L197 35L185 37L171 35L157 38L142 35L127 37L112 35L97 38L82 35L67 37L52 35L37 38L23 35L10 37L3 34L6 27L2 20L5 13Z'/%3E%3C/svg%3E")`;
-// Paper grain as an SVG turbulence filter, tiled.
-const GRAIN = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .36 0 0 0 0 .2 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E")`;
+export const photo = (src, { cls = '', style = '', pos = 'center' } = {}) =>
+  src ? `<figure class="pic ${cls}" style="${style}"><img src="${asset(src)}" style="object-position:${pos}" alt=""></figure>` : '';
 
 export function baseCss() {
   return `
-@font-face{font-family:'Bricolage Grotesque';font-weight:700 800;src:url(${asset('assets/fonts/bricolage-grotesque-latin.woff2')}) format('woff2')}
-@font-face{font-family:'Figtree';font-weight:400 700;src:url(${asset('assets/fonts/figtree-latin.woff2')}) format('woff2')}
-@font-face{font-family:'Caveat';font-weight:700;src:url(${mod('@fontsource/caveat/files/caveat-latin-700-normal.woff2')}) format('woff2')}
-:root{--cream:#fbf4e6;--cream2:#f6ead2;--paper:#fffaf0;--ink:#141a33;--navy:#141a33;--yellow:#ffc533;--ysoft:#fff1cf;--gold:#ab8422;
---text:#4a4f63;--coral:#f2605a;--mint:#4fc98a;--teal:#22a6b3;--line:#eadfc8;--swipe:${SWIPE};--grain:${GRAIN}}
+@font-face{font-family:'Archivo';font-style:italic;font-weight:100 900;font-stretch:62% 125%;src:url(${mod('@fontsource-variable/archivo/files/archivo-latin-wdth-italic.woff2')}) format('woff2')}
+@font-face{font-family:'Urbanist';font-weight:400;src:url(${mod('@fontsource/urbanist/files/urbanist-latin-400-normal.woff2')}) format('woff2')}
+@font-face{font-family:'Urbanist';font-weight:500;src:url(${mod('@fontsource/urbanist/files/urbanist-latin-500-normal.woff2')}) format('woff2')}
+@font-face{font-family:'Urbanist';font-weight:600;src:url(${mod('@fontsource/urbanist/files/urbanist-latin-600-normal.woff2')}) format('woff2')}
+@font-face{font-family:'Urbanist';font-weight:700;src:url(${mod('@fontsource/urbanist/files/urbanist-latin-700-normal.woff2')}) format('woff2')}
+@font-face{font-family:'Urbanist';font-weight:800;src:url(${mod('@fontsource/urbanist/files/urbanist-latin-800-normal.woff2')}) format('woff2')}
+:root{--page:#02040D;--panel:#0A1024;--panel2:#111A3A;--blue:#3B6CFF;--pale:#BFD4FF;--muted:#CDD2E6;--muted2:#8E96B8;
+--orange:#FF8A3D;--gold:#FFC36B;--teal:#3FC7C0;--red:#E62E2E;--line:rgba(205,210,230,.16);--ink:#FFFFFF;--text:#CDD2E6;
+--glow:0 0 .12em rgba(255,255,255,.65),0 0 .3em rgba(191,212,255,.5),0 0 .6em rgba(59,108,255,.45)}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Figtree,sans-serif;color:var(--text);-webkit-font-smoothing:antialiased;overflow:hidden}
-.paper{background:var(--grain),radial-gradient(1200px 700px at 85% -10%,#fff6dc 0,transparent 60%),radial-gradient(900px 700px at -10% 110%,#f8e3bd 0,transparent 55%),var(--cream)}
-.navy{background:var(--grain),radial-gradient(900px 900px at 50% 40%,#1c2448 0,var(--navy) 70%);color:rgba(255,255,255,.88)}
-.title{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.035em;line-height:1.0;color:var(--ink);text-wrap:balance}
-.navy .title{color:#fff}
-.swipe{padding:0 .1em;margin:0 -.04em;background:var(--swipe) center 62%/100% 72% no-repeat;-webkit-box-decoration-break:clone;box-decoration-break:clone;color:var(--ink)}
-.navy .swipe{background:none;color:var(--yellow);padding:0;margin:0}
-.gold{color:var(--gold)}.navy .gold{color:var(--yellow)}
-.hand{font-family:Caveat,cursive;font-weight:700;color:var(--gold);letter-spacing:0;font-size:1.12em}
-.navy .hand{color:var(--yellow)}
-.note{position:absolute;z-index:6;font-family:Caveat,cursive;font-weight:700;font-size:54px;line-height:.95;color:var(--ink);white-space:nowrap}
-.navy .note{color:#fff}
-.note.y{color:var(--gold)}.navy .note.y{color:var(--yellow)}
-.arrow{position:absolute;z-index:6;width:150px;height:130px;fill:none;stroke:var(--ink);stroke-width:7;stroke-linecap:round;stroke-linejoin:round}
-.navy .arrow,.arrow.y{stroke:var(--yellow)}
-.pic{position:relative;margin:0;background:#fff;padding:14px;border-radius:30px;box-shadow:0 46px 70px -40px rgba(60,40,10,.55),0 12px 26px -16px rgba(60,40,10,.35)}
-.pic img{display:block;width:100%;height:100%;object-fit:cover;border-radius:20px}
-.tape{position:absolute;z-index:3;width:150px;height:46px;background:rgba(255,214,110,.78);box-shadow:0 2px 6px rgba(80,60,10,.15);mix-blend-mode:multiply}
-.tape.t1{top:-18px;left:30px;transform:rotate(-8deg)}
-.tape.t2{bottom:-16px;right:36px;transform:rotate(6deg)}
-.sticker{position:absolute;z-index:5;display:grid;place-items:center;width:104px;height:104px;border-radius:50%;background:var(--c);box-shadow:0 14px 24px -12px rgba(20,26,51,.45)}
-.sticker svg{width:50px;height:50px;stroke:#141a33;stroke-width:2.2;fill:none}
-.sticker.sm{width:78px;height:78px}.sticker.sm svg{width:38px;height:38px}
-.sparkle{position:absolute;z-index:4;width:54px;height:54px;fill:var(--yellow)}
-.sparkle.w{fill:#fff}.sparkle.sm{width:34px;height:34px}
-.robo{position:absolute;z-index:7;width:200px;height:auto!important;aspect-ratio:1;transform-origin:50% 80%}
-.robo img{display:block;width:100%;height:100%;border-radius:24%;background:#fff;box-shadow:0 20px 34px -16px rgba(20,26,51,.45),0 0 0 6px #fff}
-.bubble{position:absolute;z-index:7;background:#fff;color:var(--ink);font-family:Caveat,cursive;font-weight:700;font-size:48px;line-height:1;padding:22px 30px 26px;border-radius:34px;box-shadow:0 18px 30px -18px rgba(20,26,51,.4);white-space:nowrap}
-.bubble::after{content:"";position:absolute;width:34px;height:34px;background:#fff;bottom:-12px;left:46px;transform:rotate(45deg);border-radius:6px}
-.bubble.r::after{left:auto;right:46px}
-.sun{position:absolute;z-index:0;border-radius:50%;background:var(--yellow)}
-.dot{position:absolute;z-index:1;border-radius:50%;background:#fff}
-.chip{display:inline-flex;align-items:center;gap:14px;padding:12px 24px 12px 14px;border-radius:999px;background:#fff;color:var(--ink);font-weight:700;font-size:26px;box-shadow:0 10px 22px -14px rgba(60,40,10,.5)}
-.chip img{width:40px;height:40px;border-radius:11px}
-.navy .chip{background:rgba(255,255,255,.1);color:#fff;box-shadow:none}
-.kick{position:relative;display:inline-block;isolation:isolate;padding:.45em .9em;font-weight:700;font-size:30px;line-height:1;color:var(--ink);transform:rotate(-2deg)}
-.kick::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--swipe) center/100% 100% no-repeat}
+body{font-family:Urbanist,system-ui,sans-serif;color:var(--text);-webkit-font-smoothing:antialiased;overflow:hidden;background:var(--page)}
+.paper{background:
+  radial-gradient(1.6px 1.6px at 12% 18%,rgba(255,255,255,.75),transparent 60%),radial-gradient(1.4px 1.4px at 78% 9%,rgba(255,255,255,.6),transparent 60%),
+  radial-gradient(1.2px 1.2px at 64% 34%,rgba(255,255,255,.5),transparent 60%),radial-gradient(1.8px 1.8px at 90% 46%,rgba(191,212,255,.7),transparent 60%),
+  radial-gradient(1.3px 1.3px at 30% 52%,rgba(255,255,255,.45),transparent 60%),radial-gradient(1.5px 1.5px at 6% 70%,rgba(255,255,255,.55),transparent 60%),
+  radial-gradient(1200px 800px at 50% -20%,rgba(59,108,255,.22),transparent 60%),var(--page)}
+.navy{background:radial-gradient(900px 700px at 80% -10%,rgba(255,138,61,.18),transparent 60%),radial-gradient(1000px 900px at 10% 110%,rgba(59,108,255,.22),transparent 60%),linear-gradient(180deg,var(--panel) 0%,var(--page) 100%)}
+.planet::after{content:"";position:absolute;z-index:0;left:-40%;right:-40%;bottom:-62%;height:80%;border-radius:50%;
+  background:radial-gradient(closest-side,var(--page) 96%,transparent 100%);
+  box-shadow:0 -2px 0 rgba(255,195,107,.85),0 -18px 60px -6px rgba(255,138,61,.75),0 -60px 160px -20px rgba(255,138,61,.45),inset 0 30px 80px -30px rgba(255,138,61,.35)}
+.title{font-family:Archivo,'Arial Black',sans-serif;font-style:italic;font-weight:900;font-stretch:94%;letter-spacing:-.02em;line-height:.95;
+  color:#fff;text-transform:uppercase;text-wrap:balance;text-shadow:var(--glow)}
+.swipe{background:linear-gradient(180deg,#FFD08A 0%,#FF8A3D 100%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none;
+  filter:drop-shadow(0 0 .18em rgba(255,138,61,.55));padding-right:.06em}
+.gold{color:var(--gold)}
+.hand{font-style:italic;color:var(--pale)}
+.note{position:absolute;z-index:6;display:inline-flex;align-items:center;gap:10px;padding:12px 22px;border-radius:999px;background:rgba(17,26,58,.92);
+  box-shadow:inset 0 0 0 1px var(--line),0 10px 30px -10px rgba(0,0,0,.6);font-family:Urbanist;font-weight:700;font-size:28px;line-height:1.1;color:#fff;white-space:nowrap}
+.note::before{content:"";width:12px;height:12px;border-radius:50%;background:var(--teal);box-shadow:0 0 10px var(--teal)}
+.note.y{background:linear-gradient(180deg,#FFD08A,#FF8A3D);color:#1A0A02;text-transform:uppercase;letter-spacing:.08em;font-size:24px;font-weight:800}
+.note.y::before{display:none}
+.arrow{position:absolute;z-index:6;width:150px;height:130px;fill:none;stroke:var(--teal);stroke-width:5;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 6px rgba(63,199,192,.6))}
+.arrow.y{stroke:var(--gold);filter:drop-shadow(0 0 6px rgba(255,138,61,.6))}
+.pic{position:relative;margin:0;border-radius:30px;overflow:hidden;background:var(--panel);box-shadow:inset 0 0 0 1px var(--line),0 40px 90px -40px rgba(59,108,255,.55),0 20px 40px -20px rgba(0,0,0,.7)}
+.pic img{display:block;width:100%;height:100%;object-fit:cover}
+.pic::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.14);pointer-events:none}
+.tape{display:none}
+.sticker{position:absolute;z-index:5;display:grid;place-items:center;width:100px;height:100px;border-radius:50%;background:radial-gradient(circle at 30% 25%,#1a2550,var(--panel));
+  box-shadow:inset 0 0 0 1.5px var(--line),0 0 30px -6px color-mix(in srgb,var(--c) 60%,transparent)}
+.sticker svg{width:46px;height:46px;stroke:var(--c);stroke-width:2.2;fill:none;filter:drop-shadow(0 0 6px color-mix(in srgb,var(--c) 70%,transparent))}
+.sticker.sm{width:76px;height:76px}.sticker.sm svg{width:34px;height:34px}
+.sparkle{position:absolute;z-index:4;width:40px;height:40px;fill:#fff;filter:drop-shadow(0 0 8px rgba(191,212,255,.9))}
+.sparkle.w{fill:var(--gold);filter:drop-shadow(0 0 8px rgba(255,138,61,.9))}.sparkle.sm{width:24px;height:24px}
+.robo{position:absolute;z-index:7;width:190px;height:auto!important;aspect-ratio:1;transform-origin:50% 80%}
+.robo img{display:block;width:100%;height:100%;border-radius:50%;box-shadow:0 0 0 4px rgba(255,138,61,.35),0 0 40px rgba(255,138,61,.55)}
+.astro{position:absolute;z-index:1;display:block;overflow:hidden;-webkit-mask-image:radial-gradient(ellipse 50% 55% at 50% 55%,#000 62%,transparent 100%);mask-image:radial-gradient(ellipse 50% 55% at 50% 55%,#000 62%,transparent 100%)}
+.astro img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;display:block}
+.bubble{position:absolute;z-index:7;background:#fff;color:#0A1024;font-family:Urbanist;font-weight:800;font-size:34px;line-height:1.05;padding:18px 26px;border-radius:28px;box-shadow:0 0 30px rgba(191,212,255,.35);white-space:nowrap}
+.bubble::after{content:"";position:absolute;width:28px;height:28px;background:#fff;bottom:-10px;left:40px;transform:rotate(45deg);border-radius:5px}
+.bubble.r::after{left:auto;right:40px}
+.sun{position:absolute;z-index:0;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(255,138,61,.5),rgba(255,138,61,.12) 45%,transparent 70%)}
+.dot{position:absolute;z-index:1;border-radius:50%;background:#fff;box-shadow:0 0 10px rgba(191,212,255,.9)}
+.chip{display:inline-flex;align-items:center;gap:14px;font-family:Archivo;font-style:italic;font-weight:900;font-stretch:94%;font-size:30px;letter-spacing:-.01em;color:#fff;text-transform:uppercase}
+.chip img{width:52px;height:52px;border-radius:50%}
+.chip b{color:var(--orange);font-weight:900}
+.kick{display:inline-flex;align-items:center;gap:14px;font-family:Urbanist;font-weight:700;font-size:24px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted)}
+.kick::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--orange);box-shadow:0 0 12px var(--orange)}
+.q{font-family:Urbanist;font-weight:500;font-size:32px;color:var(--muted2)}
 `;
 }

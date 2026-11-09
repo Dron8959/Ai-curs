@@ -1,54 +1,48 @@
 {
   "id": "09-thanksgiving-cartoon",
-  "pillar": "P1",
+  "pillar": "",
   "format": "post",
   "slides": [
     {
       "type": "cover",
-      "kicker": "Thanksgiving project",
+      "q": "A Thanksgiving idea",
       "size": "lg",
       "title": "This year, let your kid\nmake the **show**.",
       "deco": [
         {
           "kind": "photo",
-          "src": "assets/img/now-a-cartoon.webp",
-          "x": 320,
+          "src": "social/media/landing/cartoon-cat.jpg",
+          "x": 300,
           "y": 560,
-          "w": 460,
-          "h": 690,
-          "rot": 3,
-          "tape": true
-        },
-        {
-          "kind": "sticker",
-          "name": "heart",
-          "x": 170,
-          "y": 700
-        },
-        {
-          "kind": "sticker",
-          "name": "clapperboard",
-          "x": 850,
-          "y": 640
-        },
-        {
-          "kind": "sparkle",
-          "x": 230,
-          "y": 1000
-        },
-        {
-          "kind": "sparkle",
-          "x": 860,
-          "y": 1080,
-          "size": "sm"
+          "w": 480,
+          "h": 640,
+          "pos": "center"
         },
         {
           "kind": "note",
-          "text": "a weekend project",
-          "x": 70,
-          "y": 1150,
-          "rot": -5,
+          "text": "Cartoon",
+          "x": 330,
+          "y": 1130,
           "gold": true
+        },
+        {
+          "kind": "sparkle",
+          "x": 940,
+          "y": 250,
+          "size": "sm"
+        },
+        {
+          "kind": "sparkle",
+          "x": 120,
+          "y": 330,
+          "size": "sm"
+        },
+        {
+          "kind": "sparkle",
+          "x": 990,
+          "y": 620,
+          "size": "sm",
+          "white": true
         }
       ]
     },
@@ -56,83 +50,29 @@
       "type": "step",
       "num": "1",
       "title": "Pick a\n**family story**",
-      "body": "The year the pie fell. Grandpa’s dog. The road trip nobody forgets.",
-      "deco": [
-        {
-          "kind": "sticker",
-          "name": "heart",
-          "x": 860,
-          "y": 1000
-        },
-        {
-          "kind": "robo",
-          "x": 700,
-          "y": 1010,
-          "w": 170
-        }
-      ]
+      "body": "The year the pie fell. Grandpa’s dog. The road trip nobody forgets."
     },
     {
       "type": "step",
       "num": "2",
-      "title": "Your kid\n**draws** one scene",
-      "body": "Paper and crayons. Their version of the story, not yours.",
-      "image": "assets/img/drawing-6-year-old.webp",
-      "picStyle": "width:360px;height:520px;bottom:110px;right:120px",
-      "deco": [
-        {
-          "kind": "note",
-          "text": "crayons are\nperfect",
-          "x": 130,
-          "y": 1080,
-          "rot": -5
-        }
-      ]
+      "title": "Your kid\n**directs** it",
+      "body": "They decide who is in it and what happens. You sit next to them.",
+      "image": "social/media/landing/step-make.jpg",
+      "picStyle": "width:460px;height:340px;bottom:120px"
     },
     {
       "type": "step",
       "num": "3",
-      "title": "Bring it\nto **life**",
-      "body": "Turn the drawing into a short cartoon. Let them record the voice themselves.",
-      "example": "In our course, that is one lesson: “Their own cartoon. With their own voice in it.”",
-      "deco": [
-        {
-          "kind": "sticker",
-          "name": "clapperboard",
-          "x": 880,
-          "y": 190
-        },
-        {
-          "kind": "sticker",
-          "name": "music",
-          "x": 880,
-          "y": 320,
-          "size": "sm"
-        }
-      ]
+      "title": "Make the\n**cartoon**",
+      "body": "Characters, scenes, their own voice. Kamilla made hers with our cat in Paris.",
+      "image": "social/media/landing/cartoon-girl.jpg",
+      "picStyle": "width:360px;height:500px;bottom:110px;right:110px"
     },
     {
       "type": "step",
       "num": "4",
       "title": "**Play it**\nafter dinner",
-      "body": "On the TV, for the whole table. Then watch grandma’s face.",
-      "image": "assets/img/now-a-cartoon.webp",
-      "picStyle": "width:340px;height:480px;bottom:110px;right:130px",
-      "deco": [
-        {
-          "kind": "sparkle",
-          "x": 140,
-          "y": 1100
-        },
-        {
-          "kind": "note",
-          "text": "best part",
-          "x": 160,
-          "y": 1000,
-          "rot": -6,
-          "gold": true
-        }
-      ]
+      "body": "On the TV, for the whole table. Then watch grandma’s face."
     },
     {
       "type": "cta",
@@ -140,26 +80,19 @@
       "title": "Save this for\n**Thanksgiving week**.",
       "buttons": [
         "Save",
-        "The cartoon lesson · link in bio"
+        "Free first lesson · link in bio"
       ],
       "deco": [
         {
-          "kind": "dot",
-          "x": 110,
-          "y": 260
-        },
-        {
-          "kind": "dot",
-          "x": 150,
-          "y": 1150,
-          "w": 16,
-          "gold": true
+          "kind": "sparkle",
+          "x": 940,
+          "y": 250,
+          "size": "sm"
         },
         {
           "kind": "sparkle",
-          "x": 860,
-          "y": 1150,
-          "white": true,
+          "x": 120,
+          "y": 330,
           "size": "sm"
         }
       ],

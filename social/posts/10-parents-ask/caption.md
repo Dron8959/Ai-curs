@@ -1,17 +1,17 @@
 ---
-pillar: P5
 networks: [instagram, facebook]
 type: carousel
 ai_generated: false
 ---
-Questions parents ask before they join:
+Questions parents ask before they start:
 
-How much time? One short video, then 15–20 minutes together.
-Does my kid need their own AI accounts? No. Everything runs on yours.
-Do we need to code? No. Not once.
-What's the difference between the plans? On Creator + Homework, Anna reviews every piece of work the same day.
-What if it's not for us? Full refund within 30 days. One email is enough.
+Isn’t AI just cheating? Not when your kid is the one with the idea.
+Do I need to know AI myself? No. Everything starts from zero, for both of you.
+Which services? Gemini, Canva AI, Google Flow, Suno and ChatGPT, all on your account.
+How much screen time? 6 to 20 minutes of making per lesson.
+What age? 6 to 14.
+Privacy? Parent-owned accounts, nobody messages your child, the AI avatar is always disclosed.
 
 Anything else? DM us. Anna answers personally.
 
-#aiforkids #homeschool #kidsactivities #parentingtips #creativekids
+#aiforkids #parentingtips #homeschool #kidsactivities #creativekids

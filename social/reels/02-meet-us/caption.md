@@ -1,14 +1,12 @@
 ---
-pillar: P2
 networks: [instagram, facebook]
 type: reel
-ai_generated: false
-audio: add a warm acoustic instrumental from the Instagram library
+audio: calm, upbeat instrumental from the Instagram library
 ---
-Hi, we're Anna and Kamilla. A mom and a daughter, not a studio.
+A mom and a daughter. Not a corporation.
 
-This is the desk where we filmed all 37 lessons. Kamilla is 10, she tries every project first. The cat was not consulted.
+Anna built every lesson herself and tested each one on Kamilla at our kitchen table. What didn’t hold a 10-year-old’s attention got cut.
 
 Follow along. We post what we make.
 
-#makeshowlab #momanddaughter #creativekids #aiforkids #familytime
+#makeshowlab #momanddaughter #aiforkids #creativekids #familytime

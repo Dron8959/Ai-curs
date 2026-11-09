@@ -1,0 +1,145 @@
+{
+  "id": "11-first-families",
+  "pillar": "",
+  "format": "post",
+  "slides": [
+    {
+      "type": "cover",
+      "q": "Is it worth it?",
+      "size": "lg",
+      "title": "The first families\n**have tried it**.",
+      "sub": "Eight families got early access before launch and told us what happened at their table.",
+      "deco": [
+        {
+          "kind": "photo",
+          "src": "social/media/landing/reviews/emily.jpg",
+          "x": 110,
+          "y": 760,
+          "w": 270,
+          "h": 330,
+          "pos": "center"
+        },
+        {
+          "kind": "photo",
+          "src": "social/media/landing/reviews/rachel.jpg",
+          "x": 405,
+          "y": 800,
+          "w": 270,
+          "h": 330,
+          "pos": "center"
+        },
+        {
+          "kind": "photo",
+          "src": "social/media/landing/reviews/susan.jpg",
+          "x": 700,
+          "y": 760,
+          "w": 270,
+          "h": 330,
+          "pos": "center"
+        },
+        {
+          "kind": "sparkle",
+          "x": 940,
+          "y": 250,
+          "size": "sm"
+        },
+        {
+          "kind": "sparkle",
+          "x": 120,
+          "y": 330,
+          "size": "sm"
+        },
+        {
+          "kind": "sparkle",
+          "x": 990,
+          "y": 620,
+          "size": "sm",
+          "white": true
+        }
+      ]
+    },
+    {
+      "type": "photo",
+      "planet": false,
+      "deco": [
+        {
+          "kind": "review",
+          "src": "social/media/landing/reviews/margaret.jpg",
+          "name": "Margaret",
+          "role": "Grandmother of a 9-year-old",
+          "tag": "Cartoon",
+          "quote": "We made a little cartoon together, and he was so proud of it.",
+          "x": 80,
+          "y": 330,
+          "w": 440,
+          "h": 880
+        },
+        {
+          "kind": "review",
+          "src": "social/media/landing/reviews/jessica.jpg",
+          "name": "Jessica",
+          "role": "Mom of an 8-year-old",
+          "tag": "Song",
+          "quote": "I love that we actually make something at the end.",
+          "x": 560,
+          "y": 330,
+          "w": 440,
+          "h": 880
+        }
+      ]
+    },
+    {
+      "type": "photo",
+      "planet": false,
+      "deco": [
+        {
+          "kind": "review",
+          "src": "social/media/landing/reviews/linda.jpg",
+          "name": "Linda",
+          "role": "Grandmother of a 10-year-old",
+          "tag": "Gift",
+          "quote": "I was honestly surprised by how much we could create without knowing anything about AI.",
+          "x": 80,
+          "y": 330,
+          "w": 440,
+          "h": 880
+        },
+        {
+          "kind": "review",
+          "src": "social/media/landing/reviews/amanda.jpg",
+          "name": "Amanda",
+          "role": "Mom of a 10-year-old",
+          "tag": "Game",
+          "quote": "She created a little game and was so proud of herself.",
+          "x": 560,
+          "y": 330,
+          "w": 440,
+          "h": 880
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "theme": "navy",
+      "title": "Try the first\nlesson **free**.",
+      "buttons": [
+        "Free first lesson · link in bio"
+      ],
+      "deco": [
+        {
+          "kind": "sparkle",
+          "x": 940,
+          "y": 250,
+          "size": "sm"
+        },
+        {
+          "kind": "sparkle",
+          "x": 120,
+          "y": 330,
+          "size": "sm"
+        }
+      ],
+      "body": "They received the course free and shared honest feedback. Names and photos used with permission."
+    }
+  ]
+}

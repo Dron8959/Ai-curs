@@ -1,0 +1,94 @@
+{
+  "id": "06-is-it-safe",
+  "pillar": "",
+  "format": "post",
+  "slides": [
+    {
+      "type": "cover",
+      "q": "Is this safe?",
+      "size": "lg",
+      "title": "The only AI course\nbuilt for **the two of you**.",
+      "deco": [
+        {
+          "kind": "photo",
+          "src": "social/media/landing/step-make.jpg",
+          "x": 120,
+          "y": 620,
+          "w": 840,
+          "h": 560,
+          "pos": "center"
+        },
+        {
+          "kind": "sparkle",
+          "x": 940,
+          "y": 250,
+          "size": "sm"
+        },
+        {
+          "kind": "sparkle",
+          "x": 120,
+          "y": 330,
+          "size": "sm"
+        },
+        {
+          "kind": "sparkle",
+          "x": 990,
+          "y": 620,
+          "size": "sm",
+          "white": true
+        }
+      ]
+    },
+    {
+      "type": "list",
+      "kicker": "How we keep it safe",
+      "title": "Three promises",
+      "items": [
+        {
+          "icon": "shield-check",
+          "text": "Parent-owned account. Your child never signs up alone"
+        },
+        {
+          "icon": "heart",
+          "text": "No chats with strangers. No DMs, no comments"
+        },
+        {
+          "icon": "sparkles",
+          "text": "The AI avatar is always disclosed as AI"
+        }
+      ]
+    },
+    {
+      "type": "step",
+      "num": "✓",
+      "title": "You see\n**everything**",
+      "body": "You learn side by side, you see everything your child makes, and you decide what happens next.",
+      "image": "social/media/landing/step-watch.jpg",
+      "picStyle": "width:470px;height:360px;bottom:120px"
+    },
+    {
+      "type": "cta",
+      "theme": "navy",
+      "title": "Safe enough to try\n**tonight**.",
+      "buttons": [
+        "Free first lesson · link in bio"
+      ],
+      "deco": [
+        {
+          "kind": "sparkle",
+          "x": 940,
+          "y": 250,
+          "size": "sm"
+        },
+        {
+          "kind": "sparkle",
+          "x": 120,
+          "y": 330,
+          "size": "sm"
+        }
+      ],
+      "body": "First lesson free. No card.",
+      "bubble": "parents first"
+    }
+  ]
+}
