@@ -116,6 +116,10 @@ Preset*; DaVinci: сохранить как *Fusion macro / Power Bin*; CapCut: 
   **в безопасной зоне** (не нижние ~20% и не правые ~15% экрана — там UI Reels/TikTok).
 - Автосубтитры: Premiere *Speech to Text*, DaVinci *Create Subtitles from Audio* (Studio),
   CapCut «Автосубтитры» — **всегда вычитывать вручную**.
+- В CapCut с 2025 автосубтитры могут быть Pro-функцией или иметь лимит на бесплатном плане
+  (зависит от региона/версии). Бесплатные обходы: Instagram Edits / стикер «Субтитры» в Reels,
+  авто-субтитры TikTok, .srt из YouTube Studio (загрузить ролик «по ссылке») или локальный
+  Whisper → импорт .srt в монтажку.
 
 ## 8. Звук (половина «дорогого» ощущения)
 
