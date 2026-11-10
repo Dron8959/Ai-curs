@@ -3,8 +3,19 @@
 Позиционирование Make Show Lab: курс ИИ-творчества для детей 6–14 **вместе с родителем**,
 37 уроков, каждый заканчивается готовым результатом (мультик, песня, игра, сайт), без кода, от $197.
 
-Хэндлы в Instagram/Facebook не проверены — ищите бренд по названию в поиске
-конкурентов Metricool и сверяйте с ссылкой на сайте.
+## Instagram-аккаунты для Metricool (взяты со ссылок на официальных сайтах, 10.11.2026)
+
+| Вводить в Metricool | Бренд |
+|---|---|
+| `brightchamps` | BrightCHAMPS |
+| `codeyoung_global` | Codeyoung |
+| `jet_learn` | JetLearn |
+| `rocket.tech.school` | Rocket Tech School |
+| `codakid` | CodaKid (на сайте также указан `codakidacademy`, берите тот, где больше подписчиков) |
+| `codingal.education` | Codingal |
+| `varsitytutors` | Varsity Tutors |
+
+Не найдено на сайтах: Maven AI for Kids 101, Outschool, Create & Learn.
 
 | Бренд | Почему конкурент | Сайт |
 |---|---|---|
