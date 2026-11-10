@@ -1,0 +1,14 @@
+---
+post: 2
+rubric: make 01
+type: reel
+networks: [instagram, facebook, threads]
+ai_generated: false
+---
+The first lesson is free. It's in our bio.
+
+We're Anna and Kamilla, a mom and a daughter, not a corporation. I built every lesson of this AI course for kids myself and tested each one on Kamilla at our kitchen table. She's 10. What lost her attention got cut.
+
+In the course she goes first. She shows the finished thing, then your kid makes their own.
+
+#aiforkids #momanddaughter #kidsandai #familyactivities
