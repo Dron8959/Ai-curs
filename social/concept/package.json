@@ -1,0 +1,12 @@
+{
+  "name": "makeshowlab-instagram-concept",
+  "private": true,
+  "type": "module",
+  "description": "Renders the Make Show Lab Instagram concept: covers, sample slides, reel frames.",
+  "dependencies": {
+    "@fontsource/caveat-brush": "^5.2.5",
+    "@fontsource/sora": "^5.2.5",
+    "@fontsource/urbanist": "^5.2.5",
+    "lucide-static": "0.460.0"
+  }
+}
