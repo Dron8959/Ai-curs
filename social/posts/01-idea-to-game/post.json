@@ -1,0 +1,119 @@
+{
+  "id": "01-idea-to-game",
+  "pillar": "",
+  "format": "post",
+  "slides": [
+    {
+      "type": "cover",
+      "q": "Is the result real?",
+      "size": "lg",
+      "title": "Her idea at 7:02.\n**Playing it by 7:41.**",
+      "deco": [
+        {
+          "kind": "photo",
+          "src": "social/media/landing/together-game.jpg",
+          "x": 90,
+          "y": 560,
+          "w": 900,
+          "h": 620,
+          "pos": "center"
+        },
+        {
+          "kind": "note",
+          "text": "Made by Kamilla, 10",
+          "x": 120,
+          "y": 1110,
+          "gold": true
+        },
+        {
+          "kind": "sparkle",
+          "x": 940,
+          "y": 250,
+          "size": "sm"
+        },
+        {
+          "kind": "sparkle",
+          "x": 120,
+          "y": 330,
+          "size": "sm"
+        },
+        {
+          "kind": "sparkle",
+          "x": 990,
+          "y": 620,
+          "size": "sm",
+          "white": true
+        }
+      ]
+    },
+    {
+      "type": "photo",
+      "kicker": "The game",
+      "title": "A park, a girl,\nand her **corgi**.",
+      "image": "social/media/landing/game.jpg",
+      "picStyle": "top:520px;bottom:300px",
+      "sub": "Pixel art, a title screen, and it actually plays.",
+      "deco": [
+        {
+          "kind": "note",
+          "text": "Game",
+          "x": 100,
+          "y": 980,
+          "gold": true
+        },
+        {
+          "kind": "sparkle",
+          "x": 960,
+          "y": 470,
+          "size": "sm"
+        }
+      ]
+    },
+    {
+      "type": "step",
+      "num": "1",
+      "title": "She had\nthe **idea**",
+      "body": "Kamilla decided what to make and told the AI what she wanted, in her own words.",
+      "image": "social/media/landing/step-make.jpg",
+      "picStyle": "width:470px;height:360px;bottom:120px"
+    },
+    {
+      "type": "step",
+      "num": "2",
+      "title": "She checked\nand **fixed** it",
+      "body": "When something came back wrong, she said what to change. The AI is the tool. The thinking stayed with her."
+    },
+    {
+      "type": "step",
+      "num": "3",
+      "title": "Then we\n**played** it",
+      "body": "Against each other, at the kitchen table. That is the Show part of every lesson.",
+      "image": "social/media/landing/together-game.jpg",
+      "picStyle": "width:470px;height:330px;bottom:120px"
+    },
+    {
+      "type": "cta",
+      "theme": "navy",
+      "title": "Your kid builds\na game **tonight**.",
+      "buttons": [
+        "Free first lesson · link in bio"
+      ],
+      "deco": [
+        {
+          "kind": "sparkle",
+          "x": 940,
+          "y": 250,
+          "size": "sm"
+        },
+        {
+          "kind": "sparkle",
+          "x": 120,
+          "y": 330,
+          "size": "sm"
+        }
+      ],
+      "body": "First lesson free. No card, just your email.",
+      "bubble": "your turn!"
+    }
+  ]
+}

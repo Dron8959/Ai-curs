@@ -1,0 +1,149 @@
+{
+  "id": "10-parents-ask",
+  "pillar": "",
+  "format": "post",
+  "slides": [
+    {
+      "type": "cover",
+      "kicker": "Questions parents ask",
+      "size": "lg",
+      "title": "Is this right for\n**our family**?",
+      "sub": "Five honest answers from Anna.",
+      "deco": [
+        {
+          "kind": "photo",
+          "src": "social/media/landing/anna.jpg",
+          "x": 330,
+          "y": 620,
+          "w": 420,
+          "h": 560,
+          "pos": "center 22%"
+        },
+        {
+          "kind": "note",
+          "text": "Anna, course lead",
+          "x": 600,
+          "y": 1120
+        },
+        {
+          "kind": "sparkle",
+          "x": 940,
+          "y": 250,
+          "size": "sm"
+        },
+        {
+          "kind": "sparkle",
+          "x": 120,
+          "y": 330,
+          "size": "sm"
+        },
+        {
+          "kind": "sparkle",
+          "x": 990,
+          "y": 620,
+          "size": "sm",
+          "white": true
+        }
+      ]
+    },
+    {
+      "type": "step",
+      "num": "?",
+      "title": "Isn’t AI just cheating?",
+      "size": "md",
+      "body": "Not when your kid is the one with the idea. The child decides, tells the AI, checks and fixes.",
+      "deco": [
+        {
+          "kind": "sticker",
+          "name": "wand-sparkles",
+          "x": 880,
+          "y": 190
+        }
+      ]
+    },
+    {
+      "type": "step",
+      "num": "?",
+      "title": "Do I need to know AI myself?",
+      "size": "md",
+      "body": "No. Everything starts from zero, for both of you. You help them say what they want.",
+      "deco": [
+        {
+          "kind": "sticker",
+          "name": "heart",
+          "x": 880,
+          "y": 190
+        }
+      ]
+    },
+    {
+      "type": "step",
+      "num": "?",
+      "title": "Which services, and how much screen time?",
+      "size": "md",
+      "body": "Gemini, Canva AI, Google Flow, Suno and ChatGPT, on your account. 6 to 20 minutes of making per lesson.",
+      "deco": [
+        {
+          "kind": "sticker",
+          "name": "clock",
+          "x": 880,
+          "y": 190
+        }
+      ]
+    },
+    {
+      "type": "step",
+      "num": "?",
+      "title": "What age is it for?",
+      "size": "md",
+      "body": "6 to 14. A six-year-old talks and you type. A ten-year-old does most of it alone.",
+      "deco": [
+        {
+          "kind": "sticker",
+          "name": "star",
+          "x": 880,
+          "y": 190
+        }
+      ]
+    },
+    {
+      "type": "step",
+      "num": "?",
+      "title": "What about privacy?",
+      "size": "md",
+      "body": "Every account belongs to the parent, nobody messages your child, and the AI avatar is always disclosed.",
+      "deco": [
+        {
+          "kind": "sticker",
+          "name": "shield-check",
+          "x": 880,
+          "y": 190
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "theme": "navy",
+      "title": "Still have a question?\n**Anna answers\npersonally.**",
+      "buttons": [
+        "Send us a DM"
+      ],
+      "deco": [
+        {
+          "kind": "sparkle",
+          "x": 940,
+          "y": 250,
+          "size": "sm"
+        },
+        {
+          "kind": "sparkle",
+          "x": 120,
+          "y": 330,
+          "size": "sm"
+        }
+      ],
+      "body": "nova@makeshowlab.com, or just DM us here.",
+      "bubble": "ask away"
+    }
+  ]
+}

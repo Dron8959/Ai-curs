@@ -1,0 +1,89 @@
+{
+  "fps": 30,
+  "coverAt": 2.2,
+  "scenes": [
+    {
+      "type": "hook",
+      "dur": 3.4,
+      "kicker": "Is the result real?",
+      "title": "Her idea at 7:02.\n**Playing it by 7:41.**",
+      "astro": "left:190px;top:1080px;width:700px;height:760px",
+      "deco": [
+        {
+          "kind": "sparkle",
+          "x": 900,
+          "y": 420
+        }
+      ]
+    },
+    {
+      "type": "photo",
+      "dur": 3.6,
+      "kicker": "The game",
+      "title": "Made by **Kamilla, 10**",
+      "image": "social/media/landing/game.jpg",
+      "box": "left:70px;right:70px;top:760px;height:520px",
+      "notes": [
+        {
+          "text": "Game",
+          "x": 110,
+          "y": 1320,
+          "rot": 0,
+          "gold": true
+        }
+      ]
+    },
+    {
+      "type": "photo",
+      "dur": 4,
+      "kicker": "Then we played it",
+      "title": "Against each other.\n**Same table.**",
+      "image": "social/media/landing/together-game.jpg",
+      "box": "left:70px;right:70px;top:760px;height:640px",
+      "notes": [
+        {
+          "text": "Kamilla, 10",
+          "x": 100,
+          "y": 1440,
+          "rot": 0
+        },
+        {
+          "text": "Anna",
+          "x": 760,
+          "y": 1440,
+          "rot": 0
+        }
+      ]
+    },
+    {
+      "type": "list",
+      "dur": 4.2,
+      "kicker": "How",
+      "title": "The kid does\nthe **thinking**",
+      "items": [
+        {
+          "icon": "star",
+          "text": "She **decides** what to make"
+        },
+        {
+          "icon": "mic",
+          "text": "She **tells** the AI"
+        },
+        {
+          "icon": "wand-sparkles",
+          "text": "She **checks** and **fixes** it"
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "theme": "navy",
+      "dur": 3.6,
+      "title": "Your kid builds\na game **tonight**.",
+      "sub": "First lesson free. No card.",
+      "buttons": [
+        "Free lesson · link in bio"
+      ]
+    }
+  ]
+}

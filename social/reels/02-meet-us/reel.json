@@ -1,0 +1,74 @@
+{
+  "fps": 30,
+  "coverAt": 1.8,
+  "scenes": [
+    {
+      "type": "hook",
+      "dur": 3,
+      "kicker": "Who am I trusting my child with?",
+      "title": "A mom and a daughter.\n**Not a corporation.**",
+      "astro": "left:240px;top:1140px;width:600px;height:650px"
+    },
+    {
+      "type": "photo",
+      "dur": 3.6,
+      "kicker": "Meet Anna",
+      "title": "She built every\nlesson **herself**.",
+      "image": "social/media/landing/anna.jpg",
+      "pos": "center 25%",
+      "box": "left:170px;right:170px;top:700px;height:900px",
+      "notes": [
+        {
+          "text": "Checks every homework the same day",
+          "x": 110,
+          "y": 1640,
+          "rot": 0
+        }
+      ]
+    },
+    {
+      "type": "photo",
+      "dur": 3.6,
+      "kicker": "Meet Kamilla, 10",
+      "title": "Co-host and\n**peer mentor**.",
+      "image": "social/media/landing/kamilla.jpg",
+      "pos": "center 25%",
+      "box": "left:170px;right:170px;top:700px;height:900px",
+      "notes": [
+        {
+          "text": "Shows the finished thing first",
+          "x": 170,
+          "y": 1640,
+          "rot": 0
+        }
+      ]
+    },
+    {
+      "type": "photo",
+      "dur": 3.4,
+      "kicker": "Tested at our kitchen table",
+      "title": "What’s left is what\n**actually works**.",
+      "image": "social/media/landing/step-show.jpg",
+      "pos": "center 30%",
+      "box": "left:90px;right:90px;top:720px;height:760px",
+      "notes": [
+        {
+          "text": "Sticker pack",
+          "x": 120,
+          "y": 1520,
+          "rot": 0,
+          "gold": true
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "theme": "navy",
+      "dur": 3.4,
+      "title": "Follow along.\nWe post what\nwe **make**.",
+      "buttons": [
+        "Follow @make_showlab"
+      ]
+    }
+  ]
+}

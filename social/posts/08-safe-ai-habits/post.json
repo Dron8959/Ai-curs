@@ -1,0 +1,92 @@
+{
+  "id": "08-safe-ai-habits",
+  "pillar": "",
+  "format": "post",
+  "slides": [
+    {
+      "type": "cover",
+      "theme": "navy",
+      "kicker": "Save this",
+      "size": "lg",
+      "title": "The part parents\nask about first:\n**AI safety**",
+      "deco": [
+        {
+          "kind": "astro",
+          "x": 240,
+          "y": 640,
+          "w": 600,
+          "h": 640
+        },
+        {
+          "kind": "sparkle",
+          "x": 940,
+          "y": 250,
+          "size": "sm"
+        },
+        {
+          "kind": "sparkle",
+          "x": 120,
+          "y": 330,
+          "size": "sm"
+        },
+        {
+          "kind": "sparkle",
+          "x": 990,
+          "y": 620,
+          "size": "sm",
+          "white": true
+        }
+      ]
+    },
+    {
+      "type": "list",
+      "title": "What kids learn\n**in the course**",
+      "items": [
+        {
+          "icon": "shield-check",
+          "text": "Never click a suspicious link, and how to tell one"
+        },
+        {
+          "icon": "image",
+          "text": "How to spot a fake: image, video or text"
+        },
+        {
+          "icon": "heart",
+          "text": "What never to share with an AI, and why"
+        }
+      ]
+    },
+    {
+      "type": "step",
+      "num": "!",
+      "title": "Why **early**?",
+      "body": "Kids are learning AI anyway, from friends and from YouTube. Get the safe habits in first, while you are sitting right next to them.",
+      "image": "social/media/landing/step-watch.jpg",
+      "picStyle": "width:460px;height:340px;bottom:120px"
+    },
+    {
+      "type": "cta",
+      "theme": "navy",
+      "title": "Send this to a parent\nwho **needs it**.",
+      "buttons": [
+        "Share",
+        "Save"
+      ],
+      "deco": [
+        {
+          "kind": "sparkle",
+          "x": 940,
+          "y": 250,
+          "size": "sm"
+        },
+        {
+          "kind": "sparkle",
+          "x": 120,
+          "y": 330,
+          "size": "sm"
+        }
+      ],
+      "bubble": "safety first"
+    }
+  ]
+}

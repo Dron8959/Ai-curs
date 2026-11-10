@@ -1,0 +1,146 @@
+{
+  "id": "02-meet-us",
+  "pillar": "",
+  "format": "post",
+  "slides": [
+    {
+      "type": "hero",
+      "q": "Who am I trusting my child with?",
+      "title": "A mom and a daughter.\n**Not a corporation.**",
+      "size": "md",
+      "image": "social/media/landing/together-game.jpg",
+      "sunTop": 520,
+      "picStyle": "left:100px;right:100px;top:640px;bottom:170px",
+      "deco": [
+        {
+          "kind": "sticker",
+          "name": "heart",
+          "x": 70,
+          "y": 500,
+          "size": "sm"
+        },
+        {
+          "kind": "sticker",
+          "name": "gamepad-2",
+          "x": 920,
+          "y": 1090,
+          "size": "sm"
+        },
+        {
+          "kind": "sparkle",
+          "x": 940,
+          "y": 250,
+          "size": "sm"
+        },
+        {
+          "kind": "sparkle",
+          "x": 120,
+          "y": 330,
+          "size": "sm"
+        },
+        {
+          "kind": "sparkle",
+          "x": 990,
+          "y": 620,
+          "size": "sm",
+          "white": true
+        }
+      ]
+    },
+    {
+      "type": "photo",
+      "kicker": "Meet Anna",
+      "title": "She built every\nlesson **herself**.",
+      "image": "social/media/landing/anna.jpg",
+      "pos": "center 25%",
+      "picStyle": "top:470px;bottom:260px;left:200px;right:200px",
+      "sub": "And she checks every homework the same day it’s sent.",
+      "deco": [
+        {
+          "kind": "note",
+          "text": "Mom · course lead",
+          "x": 620,
+          "y": 1000
+        },
+        {
+          "kind": "sparkle",
+          "x": 140,
+          "y": 620,
+          "size": "sm"
+        }
+      ]
+    },
+    {
+      "type": "photo",
+      "kicker": "Meet Kamilla, 10",
+      "title": "Co-host and\n**peer mentor**.",
+      "image": "social/media/landing/kamilla.jpg",
+      "pos": "center 25%",
+      "picStyle": "top:470px;bottom:260px;left:200px;right:200px",
+      "sub": "She shows the finished thing first. Then your kid makes their own.",
+      "deco": [
+        {
+          "kind": "note",
+          "text": "Tests every lesson",
+          "x": 590,
+          "y": 1000
+        },
+        {
+          "kind": "sparkle",
+          "x": 930,
+          "y": 620,
+          "size": "sm",
+          "white": true
+        }
+      ]
+    },
+    {
+      "type": "list",
+      "kicker": "How the course was made",
+      "title": "Tested at our\n**kitchen table**",
+      "items": [
+        {
+          "icon": "heart",
+          "text": "Anna built every lesson herself"
+        },
+        {
+          "icon": "star",
+          "text": "Each one tested on Kamilla first"
+        },
+        {
+          "icon": "clock",
+          "text": "What lost a 10-year-old’s attention got cut"
+        },
+        {
+          "icon": "rocket",
+          "text": "What’s left is what actually works"
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "theme": "navy",
+      "title": "Follow along.\nWe post what\nwe **make**.",
+      "buttons": [
+        "Follow @make_showlab",
+        "Free first lesson · link in bio"
+      ],
+      "deco": [
+        {
+          "kind": "sparkle",
+          "x": 940,
+          "y": 250,
+          "size": "sm"
+        },
+        {
+          "kind": "sparkle",
+          "x": 120,
+          "y": 330,
+          "size": "sm"
+        }
+      ],
+      "body": "Games, cartoons, songs, and the bloopers in between.",
+      "bubble": "hi!"
+    }
+  ]
+}

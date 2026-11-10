@@ -1,0 +1,95 @@
+{
+  "id": "12-free-lesson",
+  "pillar": "",
+  "format": "post",
+  "slides": [
+    {
+      "type": "cover",
+      "q": "Can we try it first?",
+      "size": "lg",
+      "title": "First lesson free.\n**Your kid builds\na game tonight.**",
+      "deco": [
+        {
+          "kind": "photo",
+          "src": "social/media/landing/game.jpg",
+          "x": 110,
+          "y": 720,
+          "w": 860,
+          "h": 474,
+          "pos": "center"
+        },
+        {
+          "kind": "note",
+          "text": "Game",
+          "x": 140,
+          "y": 1140,
+          "gold": true
+        },
+        {
+          "kind": "sparkle",
+          "x": 940,
+          "y": 250,
+          "size": "sm"
+        },
+        {
+          "kind": "sparkle",
+          "x": 120,
+          "y": 330,
+          "size": "sm"
+        },
+        {
+          "kind": "sparkle",
+          "x": 990,
+          "y": 620,
+          "size": "sm",
+          "white": true
+        }
+      ]
+    },
+    {
+      "type": "step",
+      "num": "1",
+      "title": "Leave\nyour **email**",
+      "body": "No card. You go straight to the lesson. A laptop or a tablet, nothing to install."
+    },
+    {
+      "type": "step",
+      "num": "2",
+      "title": "10 to 20\n**minutes**",
+      "body": "Your child builds a playable game. You sit next to them; they do the making.",
+      "image": "social/media/landing/step-make.jpg",
+      "picStyle": "width:460px;height:340px;bottom:120px"
+    },
+    {
+      "type": "step",
+      "num": "3",
+      "title": "Play it\n**together**",
+      "body": "Against each other, on the same couch. Then decide.",
+      "image": "social/media/landing/together-game.jpg",
+      "picStyle": "width:460px;height:320px;bottom:120px"
+    },
+    {
+      "type": "cta",
+      "theme": "navy",
+      "title": "If it isn’t a fit,\nyou’ve lost nothing but\n**20 minutes on the couch**.",
+      "buttons": [
+        "Free first lesson · link in bio"
+      ],
+      "deco": [
+        {
+          "kind": "sparkle",
+          "x": 940,
+          "y": 250,
+          "size": "sm"
+        },
+        {
+          "kind": "sparkle",
+          "x": 120,
+          "y": 330,
+          "size": "sm"
+        }
+      ],
+      "bubble": "tonight?"
+    }
+  ]
+}

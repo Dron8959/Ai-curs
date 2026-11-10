@@ -1,0 +1,28 @@
+{
+  "mode": "draft",
+  "mode_help": "draft = posts land in Metricool as drafts for a human to approve; auto = they publish on their own at the scheduled time",
+  "metricool_blog_id": "7553201",
+  "timezone": "America/New_York",
+  "branch": "claude/pensive-allen-86govc",
+  "repo_raw_base": "https://raw.githubusercontent.com/Dron8959/Ai-curs",
+  "slots": {
+    "A": {
+      "time": "08:00",
+      "networks": [
+        "instagram",
+        "facebook"
+      ],
+      "why": "parents scroll before work and school drop-off"
+    },
+    "B": {
+      "time": "20:00",
+      "networks": [
+        "instagram",
+        "facebook",
+        "threads"
+      ],
+      "why": "after the kids are in bed, the most active parent window"
+    }
+  },
+  "buffer_days": 2
+}

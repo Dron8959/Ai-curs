@@ -1,0 +1,115 @@
+{
+  "id": "07-what-your-kid-makes",
+  "pillar": "",
+  "format": "post",
+  "slides": [
+    {
+      "type": "list",
+      "q": "What will my child get?",
+      "title": "By the end, your\nchild can **make**",
+      "items": [
+        {
+          "icon": "gamepad-2",
+          "text": "A playable game"
+        },
+        {
+          "icon": "clapperboard",
+          "text": "An animated cartoon"
+        },
+        {
+          "icon": "music",
+          "text": "A song from their own words"
+        },
+        {
+          "icon": "globe",
+          "text": "A website"
+        },
+        {
+          "icon": "sticker",
+          "text": "A sticker pack with their own character"
+        },
+        {
+          "icon": "mic",
+          "text": "A voice-over in their own voice"
+        }
+      ]
+    },
+    {
+      "type": "photo",
+      "kicker": "Cartoon",
+      "title": "Made by\n**Kamilla, 10**",
+      "image": "social/media/landing/cartoon-friends.jpg",
+      "picStyle": "top:470px;bottom:180px;left:220px;right:220px",
+      "deco": [
+        {
+          "kind": "note",
+          "text": "Cartoon",
+          "x": 250,
+          "y": 1080,
+          "gold": true
+        },
+        {
+          "kind": "note",
+          "text": "yes, that’s our cat",
+          "x": 560,
+          "y": 1000
+        }
+      ]
+    },
+    {
+      "type": "photo",
+      "kicker": "Website",
+      "title": "Made with Canva AI\nfrom **one prompt**",
+      "image": "social/media/landing/website-canva.jpg",
+      "picStyle": "top:560px;bottom:420px",
+      "deco": [
+        {
+          "kind": "note",
+          "text": "Website",
+          "x": 100,
+          "y": 960,
+          "gold": true
+        }
+      ]
+    },
+    {
+      "type": "photo",
+      "kicker": "Sticker pack",
+      "title": "Her own\n**character**",
+      "image": "social/media/landing/step-show.jpg",
+      "pos": "center 30%",
+      "picStyle": "top:470px;bottom:180px;left:160px;right:160px",
+      "deco": [
+        {
+          "kind": "note",
+          "text": "Stickers",
+          "x": 200,
+          "y": 1090,
+          "gold": true
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "theme": "navy",
+      "title": "Kids don’t need more screen time.\n**They need a reason to show you something.**",
+      "buttons": [
+        "Free first lesson · link in bio"
+      ],
+      "deco": [
+        {
+          "kind": "sparkle",
+          "x": 940,
+          "y": 250,
+          "size": "sm"
+        },
+        {
+          "kind": "sparkle",
+          "x": 120,
+          "y": 330,
+          "size": "sm"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "id": "04-five-questions",
+  "pillar": "",
+  "format": "post",
+  "slides": [
+    {
+      "type": "stat",
+      "theme": "navy",
+      "kicker": "Worth knowing",
+      "value": "9 in 10",
+      "title": "American kids 9–17\nalready use AI.",
+      "body": "Almost half have never talked about it with a parent.",
+      "source": "Common Sense Media, AI Census of tweens and teens, 2026",
+      "deco": [
+        {
+          "kind": "sparkle",
+          "x": 940,
+          "y": 250,
+          "size": "sm"
+        },
+        {
+          "kind": "sparkle",
+          "x": 120,
+          "y": 330,
+          "size": "sm"
+        }
+      ]
+    },
+    {
+      "type": "cover",
+      "q": "Is this about my child?",
+      "size": "lg",
+      "title": "5 questions to ask\nyour kid **tonight**",
+      "sub": "Answer machine or creative tool? Find out which one your kid is using.",
+      "deco": [
+        {
+          "kind": "photo",
+          "src": "social/media/landing/step-watch.jpg",
+          "x": 140,
+          "y": 760,
+          "w": 800,
+          "h": 440,
+          "pos": "center"
+        },
+        {
+          "kind": "sparkle",
+          "x": 940,
+          "y": 250,
+          "size": "sm"
+        },
+        {
+          "kind": "sparkle",
+          "x": 120,
+          "y": 330,
+          "size": "sm"
+        },
+        {
+          "kind": "sparkle",
+          "x": 990,
+          "y": 620,
+          "size": "sm",
+          "white": true
+        }
+      ]
+    },
+    {
+      "type": "step",
+      "num": "1",
+      "title": "Which AI have you tried?",
+      "size": "md",
+      "body": "No judgment. You’re mapping the territory, not catching them out.",
+      "deco": [
+        {
+          "kind": "sticker",
+          "name": "gamepad-2",
+          "x": 880,
+          "y": 190
+        }
+      ]
+    },
+    {
+      "type": "step",
+      "num": "2",
+      "title": "Did you make something, or ask for an answer?",
+      "size": "md",
+      "body": "Making something and copying an answer use the same screen. They are not the same thing.",
+      "deco": [
+        {
+          "kind": "sticker",
+          "name": "palette",
+          "x": 880,
+          "y": 190
+        }
+      ]
+    },
+    {
+      "type": "step",
+      "num": "3",
+      "title": "Has it ever been wrong?",
+      "size": "md",
+      "body": "Kids who have caught AI making a mistake learn to trust it the right amount.",
+      "deco": [
+        {
+          "kind": "sticker",
+          "name": "star",
+          "x": 880,
+          "y": 190
+        }
+      ]
+    },
+    {
+      "type": "step",
+      "num": "4",
+      "title": "What would you never tell it?",
+      "size": "md",
+      "body": "Full name, school, address, photos of friends. If they don’t know the list yet, now they do.",
+      "deco": [
+        {
+          "kind": "sticker",
+          "name": "shield-check",
+          "x": 880,
+          "y": 190
+        }
+      ]
+    },
+    {
+      "type": "step",
+      "num": "5",
+      "title": "What should we make together?",
+      "size": "md",
+      "body": "The easiest way to stay in the loop is to sit in it. Pick a project for tonight.",
+      "deco": [
+        {
+          "kind": "sticker",
+          "name": "heart",
+          "x": 880,
+          "y": 190
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "theme": "navy",
+      "title": "Save this for\n**dinner tonight**.",
+      "buttons": [
+        "Save",
+        "Share with your co-parent"
+      ],
+      "deco": [
+        {
+          "kind": "sparkle",
+          "x": 940,
+          "y": 250,
+          "size": "sm"
+        },
+        {
+          "kind": "sparkle",
+          "x": 120,
+          "y": 330,
+          "size": "sm"
+        }
+      ],
+      "body": "And send it to the other grown-up in the house.",
+      "bubble": "dinner talk"
+    }
+  ]
+}
