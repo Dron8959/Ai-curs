@@ -1,6 +1,6 @@
 ---
 pillar: P2
-networks: [instagram, facebook]
+networks: [instagram, facebook, threads]
 type: reel
 ai_generated: false
 ---
@@ -10,6 +10,6 @@ This is how every lesson looks at our house. Kamilla makes the thing, I sit next
 
 Not another screen to fight about. A screen you two share.
 
-First lesson free, 10 to 20 minutes. Link in bio.
+First lesson free, 10 to 20 minutes: makeshowlab.com
 
 #parentingtips #familytime #aiforkids #momanddaughter
