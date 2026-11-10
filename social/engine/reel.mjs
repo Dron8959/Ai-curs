@@ -56,6 +56,14 @@ function scene(s, i) {
           .join('')}
         ${(s.stickers || []).map((t) => sticker(t.name, 'pop', `left:${t.x}px;top:${t.y}px`)).join('')}`;
       break;
+    case 'clip':
+      inner = `<div class="top-text">${s.kicker ? `<span class="kick">${esc(s.kicker)}</span>` : ''}${s.title ? `<h2 class="title mid-t">${words(s.title)}</h2>` : ''}</div>
+        <div class="kb" style="${s.box || 'left:90px;right:90px;top:620px;height:980px'}"><figure class="pic fill"><video class="clipv" muted playsinline preload="auto" src="${s._webm}" data-from="${s.from || 0}" style="display:block;width:100%;height:100%;object-fit:cover;object-position:${s.pos || 'center'}"></video></figure></div>
+        ${(s.notes || [])
+          .map((n) => `<span class="note ${n.gold ? 'y' : ''} draw-note" style="left:${n.x}px;top:${n.y}px;transform:rotate(${n.rot || -4}deg)">${rich(n.text)}</span>`)
+          .join('')}
+        ${(s.stickers || []).map((t) => sticker(t.name, 'pop', `left:${t.x}px;top:${t.y}px`)).join('')}`;
+      break;
     case 'list':
       inner = `<div class="top-text">${s.kicker ? `<span class="kick">${esc(s.kicker)}</span>` : ''}<h2 class="title mid-t">${words(s.title)}</h2></div>
         <ol class="items">${s.items.map((it) => `<li class="item">${sticker(it.icon, 'inline')}<span>${rich(it.text)}</span></li>`).join('')}</ol>
@@ -122,6 +130,7 @@ ${spec.scenes.map(scene).join('')}
 const scenes = ${JSON.stringify(spec.scenes.map((s) => ({ type: s.type, dur: s.dur })))};
 const tl = gsap.timeline({ paused: true });
 let t0 = 0;
+const starts = [];
 scenes.forEach((s, i) => {
   const el = document.getElementById('s' + i);
   const q = (sel) => el.querySelectorAll(sel);
@@ -160,6 +169,10 @@ scenes.forEach((s, i) => {
       tl.fromTo(p, { strokeDashoffset: len }, { strokeDashoffset: 0, duration: .5, ease: 'power1.inOut' }, at(1.4 + Math.floor(k / 2) * .7 + (k % 2) * .4));
     });
   }
+  if (s.type === 'clip') {
+    tl.from(el.querySelector('.kb'), { y: 120, opacity: 0, rotation: -6, duration: .7, ease: 'power3.out' }, at(.3));
+    q('.draw-note').forEach((n, k) => tl.from(n, { opacity: 0, scale: .6, duration: .4, ease: 'back.out(2)' }, at(1.2 + k * .7)));
+  }
   if (s.type === 'list') {
     const items = q('.item');
     const gap = Math.max(.5, (s.dur - 1.8) / items.length);
@@ -176,10 +189,24 @@ scenes.forEach((s, i) => {
   if (s.type === 'cta') {
     tl.to(q('.btn'), { scale: 1.06, duration: .45, yoyo: true, repeat: 3, ease: 'sine.inOut' }, at(2));
   }
+  starts.push(t0);
   t0 += s.dur;
 });
 window.TOTAL = t0;
-window.seek = (t) => { tl.seek(t, false); };
+window.seek = async (t) => {
+  tl.seek(t, false);
+  const waits = [];
+  scenes.forEach((s, i) => {
+    if (s.type !== 'clip') return;
+    const local = t - starts[i];
+    if (local < 0 || local > s.dur) return;
+    const v = document.querySelector('#s' + i + ' video');
+    const target = +v.dataset.from + local;
+    if (Math.abs(v.currentTime - target) < 0.001 && v.readyState >= 2) return;
+    waits.push(new Promise((r) => { v.addEventListener('seeked', r, { once: true }); v.currentTime = target; }));
+  });
+  await Promise.all(waits);
+};
 </script></body></html>`;
 }
 
@@ -187,6 +214,16 @@ async function main() {
   const dir = resolve(process.argv[2] || '.');
   const spec = JSON.parse(readFileSync(join(dir, 'reel.json'), 'utf8'));
   const fps = spec.fps || 30;
+  const tmpFiles = [];
+  for (const [k, s] of spec.scenes.entries()) {
+    if (s.type !== 'clip') continue;
+    const src = resolve(here, '../..', s.video);
+    const webm = join(dir, `.clip-${k}.webm`);
+    await new Promise((res, rej) => spawn('ffmpeg', ['-y', '-loglevel', 'error', '-ss', String(s.from || 0), '-t', String(s.dur + 1), '-i', src,
+      '-an', '-vf', 'scale=1080:-2', '-c:v', 'libvpx-vp9', '-b:v', '4M', '-deadline', 'realtime', '-cpu-used', '8', '-g', '1', webm], { stdio: 'inherit' })
+      .on('close', (c) => (c ? rej(new Error('clip transcode failed')) : res())));
+    s._webm = pathToFileURL(webm).href; s.from = 0; tmpFiles.push(webm);
+  }
   const tmp = join(dir, '.reel.html');
   writeFileSync(tmp, html(spec));
   const browser = await chromium.launch();
@@ -194,6 +231,7 @@ async function main() {
   pg.on('pageerror', (e) => { console.error('page error:', e.message); process.exitCode = 1; });
   await pg.goto(pathToFileURL(tmp).href);
   await pg.evaluate(() => document.fonts.ready);
+  await pg.evaluate(() => Promise.all([...document.querySelectorAll('video')].map((v) => (v.readyState >= 2 ? 0 : new Promise((r) => v.addEventListener('loadeddata', r, { once: true }))))));
   const total = await pg.evaluate(() => window.TOTAL);
   const frames = Math.round(total * fps);
   const out = join(dir, 'reel.mp4');
@@ -203,7 +241,7 @@ async function main() {
     '-c:a', 'aac', '-b:a', '128k', '-movflags', '+faststart', out], { stdio: ['pipe', 'inherit', 'inherit'] });
   const done = new Promise((res, rej) => ff.on('close', (c) => (c ? rej(new Error(`ffmpeg exited ${c}`)) : res())));
   for (let f = 0; f < frames; f++) {
-    await pg.evaluate((t) => window.seek(t), f / fps);
+    await pg.evaluate(async (t) => { await window.seek(t); }, f / fps);
     const buf = await pg.screenshot({ type: 'jpeg', quality: 90 });
     if (!ff.stdin.write(buf)) await new Promise((r) => ff.stdin.once('drain', r));
     if (spec.covers?.includes(f / fps) || f === Math.round((spec.coverAt ?? 2) * fps)) writeFileSync(join(dir, 'cover.jpg'), buf);
@@ -212,6 +250,7 @@ async function main() {
   await done;
   await browser.close();
   unlinkSync(tmp);
+  tmpFiles.forEach((f) => unlinkSync(f));
   console.log(`${out} · ${frames} frames · ${total.toFixed(1)}s`);
 }
 

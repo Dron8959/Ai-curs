@@ -1,0 +1,17 @@
+{
+  "fps": 30,
+  "coverAt": 4.0,
+  "scenes": [
+    { "type": "hook", "dur": 2.8, "kicker": "Made by Kamilla, 10", "title": "What a kid makes\n**with AI.**", "sub": "No code. Real things to show.",
+      "deco": [ { "name": "clapperboard", "x": 820, "y": 1180 } ] },
+    { "type": "clip", "dur": 4.2, "kicker": "A cartoon", "title": "Her **characters.**", "video": "social/media/landing/cartoon.mp4", "from": 6,
+      "box": "left:270px;right:270px;top:600px;height:900px", "notes": [ { "text": "Her cartoon", "x": 120, "y": 1420, "gold": true } ] },
+    { "type": "clip", "dur": 3.6, "kicker": "Her story", "title": "Paris. **A cat.** A croissant.", "video": "social/media/landing/cartoon.mp4", "from": 14,
+      "box": "left:270px;right:270px;top:600px;height:900px" },
+    { "type": "photo", "dur": 3.0, "kicker": "A game", "title": "Then a **game.**", "image": "social/media/landing/game.jpg",
+      "box": "left:70px;right:70px;top:760px;height:560px", "notes": [ { "text": "Playable tonight", "x": 110, "y": 1360, "gold": true } ] },
+    { "type": "photo", "dur": 3.0, "kicker": "A website", "title": "One **prompt.**", "image": "social/media/landing/website-canva.jpg",
+      "box": "left:70px;right:70px;top:760px;height:640px" },
+    { "type": "cta", "dur": 3.4, "title": "Lessons of **6 to 20 min.**", "sub": "Each one ends with a thing to show.", "buttons": ["First lesson free"] }
+  ]
+}

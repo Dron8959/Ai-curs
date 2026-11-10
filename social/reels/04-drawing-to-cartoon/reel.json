@@ -1,0 +1,14 @@
+{
+  "fps": 30,
+  "coverAt": 5.4,
+  "scenes": [
+    { "type": "hook", "dur": 3.0, "kicker": "A 6-year-old drew this", "title": "Crayons on paper.\n**One lesson later?**",
+      "deco": [ { "name": "pencil", "x": 820, "y": 1180 }, { "kind": "sparkle", "x": 150, "y": 1250 } ] },
+    { "type": "reveal", "dur": 5.0, "title": "Her drawing.\n**Her cartoon.**",
+      "before": "social/media/works/rainbow-drawing.jpg", "after": "social/media/works/rainbow-cartoon.jpg",
+      "beforeLabel": "She drew it", "afterLabel": "AI followed her" },
+    { "type": "list", "dur": 4.6, "kicker": "Who did what", "title": "She **directed.**",
+      "items": [ { "icon": "pencil", "text": "Her idea, her characters" }, { "icon": "wand-sparkles", "text": "AI follows her drawing" }, { "icon": "heart", "text": "Parent right next to her" } ] },
+    { "type": "cta", "dur": 3.6, "title": "Try it **tonight.**", "sub": "First lesson free. No card.", "buttons": ["Link in bio"] }
+  ]
+}

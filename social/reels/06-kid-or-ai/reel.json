@@ -1,0 +1,17 @@
+{
+  "fps": 30,
+  "coverAt": 2.0,
+  "scenes": [
+    { "type": "hook", "dur": 2.8, "kicker": "Quick game", "title": "**Kid or AI?**", "sub": "Guess before the answer.",
+      "deco": [ { "name": "star", "x": 820, "y": 1150 }, { "kind": "sparkle", "x": 160, "y": 1260 } ] },
+    { "type": "photo", "dur": 3.2, "kicker": "Picture A", "title": "Who made **A?**", "image": "social/media/works/rainbow-cartoon.jpg",
+      "box": "left:150px;right:150px;top:640px;height:900px", "notes": [ { "text": "A", "x": 110, "y": 620, "gold": true } ] },
+    { "type": "photo", "dur": 3.2, "kicker": "Picture B", "title": "Who made **B?**", "image": "social/media/works/rainbow-drawing.jpg",
+      "box": "left:150px;right:150px;top:640px;height:900px", "notes": [ { "text": "B", "x": 110, "y": 620, "gold": true } ] },
+    { "type": "hook", "dur": 2.4, "kicker": "Comment now", "title": "**A** or **B?**", "sub": "Answer in 3, 2, 1" },
+    { "type": "reveal", "dur": 4.6, "title": "Trick question.\n**Both are hers.**",
+      "before": "social/media/works/rainbow-drawing.jpg", "after": "social/media/works/rainbow-cartoon.jpg",
+      "beforeLabel": "B: a 6-year-old", "afterLabel": "A: AI, following her" },
+    { "type": "cta", "dur": 3.4, "title": "The idea stays **hers.**", "sub": "First lesson free. No card.", "buttons": ["Link in bio"] }
+  ]
+}

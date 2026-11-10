@@ -1,0 +1,17 @@
+{
+  "fps": 30,
+  "coverAt": 2.2,
+  "scenes": [
+    { "type": "hook", "dur": 3.0, "kicker": "Not another screen fight", "title": "Same table.\n**Same screen.**", "sub": "Her ideas. My keyboard.",
+      "deco": [ { "name": "heart", "x": 830, "y": 1200 } ] },
+    { "type": "photo", "dur": 4.0, "kicker": "This is us", "title": "She **makes.**\nI'm next to her.", "image": "social/media/landing/together-game.jpg",
+      "box": "left:70px;right:70px;top:760px;height:640px",
+      "notes": [ { "text": "Kamilla, 10", "x": 100, "y": 1440, "rot": -3 }, { "text": "Anna, mom", "x": 700, "y": 1440, "rot": 3, "gold": true } ] },
+    { "type": "photo", "dur": 3.6, "kicker": "Then", "title": "We **play it.**\nAgainst each other.", "image": "social/media/landing/game.jpg",
+      "box": "left:70px;right:70px;top:760px;height:560px",
+      "notes": [ { "text": "Her game", "x": 110, "y": 1360, "gold": true } ] },
+    { "type": "list", "dur": 4.4, "kicker": "Made at our table", "title": "Things we **show.**",
+      "items": [ { "icon": "gamepad-2", "text": "A game" }, { "icon": "clapperboard", "text": "A cartoon" }, { "icon": "music", "text": "A song in her words" }, { "icon": "globe", "text": "A website" } ] },
+    { "type": "cta", "dur": 3.4, "title": "Your turn, **you two.**", "sub": "First lesson free. 10 to 20 minutes.", "buttons": ["Link in bio"] }
+  ]
+}
