@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <clipPath id="disc"><circle cx="470" cy="560" r="345"/></clipPath>
+  </defs>
+  <!-- sparkles (logo DNA) -->
+  <g fill="#FFC533">
+    <path d="M842 120 q10 52 58 62 q-48 10 -58 62 q-10 -52 -58 -62 q48 -10 58 -62z"/>
+    <path d="M920 240 q12 64 72 76 q-60 12 -72 76 q-12 -64 -72 -76 q60 -12 72 -76z"/>
+    <path d="M960 470 q7 36 40 43 q-33 7 -40 43 q-7 -36 -40 -43 q33 -7 40 -43z" transform="translate(-30 0)"/>
+  </g>
+  <!-- yellow ring + cream space -->
+  <circle cx="470" cy="560" r="412" fill="#FFC533"/>
+  <circle cx="470" cy="560" r="345" fill="#FFF4DC"/>
+  <g clip-path="url(#disc)">
+    <!-- soft planet glow -->
+    <circle cx="470" cy="1040" r="420" fill="#FFE2A8"/>
+    <!-- ponytail behind -->
+    <path d="M600 320 C 700 250, 810 300, 800 410 C 795 460, 760 490, 735 495 C 755 450, 745 405, 705 385 C 680 372, 650 372, 625 380 Z" fill="#B4532A" stroke="#141A33" stroke-width="20" stroke-linejoin="round"/>
+    <!-- suit: shoulders -->
+    <path d="M150 1000 C 160 860, 250 790, 470 790 C 690 790, 780 860, 790 1000 Z" fill="#FFFFFF" stroke="#141A33" stroke-width="22" stroke-linejoin="round"/>
+    <!-- suit chest panel with stripes (logo DNA) -->
+    <rect x="360" y="850" width="220" height="140" rx="22" fill="#5FE0A8" stroke="#141A33" stroke-width="18"/>
+    <g stroke="#141A33" stroke-width="14"><path d="M410 870v110M450 870v110M490 870v110M530 870v110"/></g>
+    <g fill="#FF6F4A"><rect x="417" y="882" width="26" height="90"/><rect x="497" y="882" width="26" height="90"/></g>
+    <!-- collar ring -->
+    <path d="M300 800 C 330 730, 610 730, 640 800 C 610 840, 330 840, 300 800 Z" fill="#FF8A3D" stroke="#141A33" stroke-width="20" stroke-linejoin="round"/>
+    <!-- neck -->
+    <path d="M425 680 L 425 770 C 440 790, 500 790, 515 770 L 515 680 Z" fill="#F6C9A8" stroke="#141A33" stroke-width="18" stroke-linejoin="round"/>
+    <!-- face -->
+    <ellipse cx="470" cy="520" rx="190" ry="205" fill="#FBD9BE" stroke="#141A33" stroke-width="22"/>
+    <!-- ears / headset (mint, like the robot's ear) -->
+    <circle cx="282" cy="545" r="52" fill="#5FE0A8" stroke="#141A33" stroke-width="20"/>
+    <circle cx="658" cy="545" r="52" fill="#5FE0A8" stroke="#141A33" stroke-width="20"/>
+    <!-- hair: top + bangs -->
+    <path d="M272 520 C 250 360, 360 268, 480 270 C 610 272, 690 360, 668 520 C 640 450, 600 410, 560 395 C 545 430, 500 455, 450 452 C 470 430, 478 410, 476 392 C 430 430, 360 455, 300 470 C 290 485, 280 500, 272 520 Z" fill="#B4532A" stroke="#141A33" stroke-width="20" stroke-linejoin="round"/>
+    <!-- hair tie -->
+    <circle cx="618" cy="338" r="24" fill="#FF6F4A" stroke="#141A33" stroke-width="16"/>
+    <!-- star clip (antenna replacement) -->
+    <path d="M360 330 l14 30 32 4 -24 22 7 32 -29 -16 -29 16 7 -32 -24 -22 32 -4z" fill="#FFC533" stroke="#141A33" stroke-width="12" stroke-linejoin="round"/>
+    <!-- eyes -->
+    <circle cx="400" cy="545" r="50" fill="#FFFFFF" stroke="#141A33" stroke-width="16"/>
+    <circle cx="545" cy="545" r="50" fill="#FFFFFF" stroke="#141A33" stroke-width="16"/>
+    <circle cx="408" cy="552" r="30" fill="#2FBF8A"/>
+    <circle cx="553" cy="552" r="30" fill="#2FBF8A"/>
+    <circle cx="410" cy="555" r="15" fill="#141A33"/>
+    <circle cx="555" cy="555" r="15" fill="#141A33"/>
+    <circle cx="420" cy="540" r="9" fill="#FFFFFF"/>
+    <circle cx="565" cy="540" r="9" fill="#FFFFFF"/>
+    <!-- brows -->
+    <path d="M355 478 q45 -26 90 -6" fill="none" stroke="#141A33" stroke-width="14" stroke-linecap="round"/>
+    <path d="M500 472 q45 -20 90 6" fill="none" stroke="#141A33" stroke-width="14" stroke-linecap="round"/>
+    <!-- cheeks + freckles -->
+    <ellipse cx="360" cy="625" rx="36" ry="20" fill="#FF9C86" opacity=".7"/>
+    <ellipse cx="585" cy="625" rx="36" ry="20" fill="#FF9C86" opacity=".7"/>
+    <g fill="#C9734B"><circle cx="452" cy="605" r="5"/><circle cx="470" cy="613" r="5"/><circle cx="488" cy="605" r="5"/></g>
+    <!-- smile -->
+    <path d="M425 650 q48 40 96 0" fill="none" stroke="#141A33" stroke-width="16" stroke-linecap="round"/>
+  </g>
+  <!-- outer navy ring on top -->
+  <circle cx="470" cy="560" r="412" fill="none" stroke="#141A33" stroke-width="28"/>
+  <circle cx="470" cy="560" r="345" fill="none" stroke="#141A33" stroke-width="20"/>
+</svg>
