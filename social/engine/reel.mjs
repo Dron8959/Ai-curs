@@ -13,7 +13,7 @@ import { resolve, join } from 'node:path';
 import { pathToFileURL, fileURLToPath } from 'node:url';
 import { spawn } from 'node:child_process';
 import { dirname } from 'node:path';
-import { asset, esc, rich, sticker, sparkle, arrow, robo, astro, photo, baseCss, logoSrc } from './kit.mjs';
+import { asset, esc, rich, sticker, sparkle, arrow, robo, astro, photo, baseCss, logoSrc, brandChip } from './kit.mjs';
 
 const { chromium } = createRequire(import.meta.url)('playwright');
 const here = dirname(fileURLToPath(import.meta.url));
@@ -77,7 +77,7 @@ function scene(s, i) {
       inner = `
         <div class="mid up"><h2 class="title mid-t">${words(s.title)}</h2>${s.sub ? `<p class="sub">${rich(s.sub)}</p>` : ''}
         <div class="btns">${(s.buttons || []).map((b) => `<span class="btn pop">${esc(b)}</span>`).join('')}</div>
-        <div class="handle pop"><img src="${asset(logoSrc())}" alt="">@make_showlab</div></div>
+        <div class="handle pop"><img src="${asset(logoSrc())}" alt="">makeshowlab.com</div><div class="site pop">@make_showlab</div></div>
         ${robo('pop', 'left:390px;top:1200px;width:300px')}`;
       break;
     default:
@@ -118,14 +118,15 @@ html,body{width:${W}px;height:${H}px;background:#02040D}
 .btns{display:flex;flex-direction:column;gap:20px;align-items:flex-start}
 .btn{display:inline-flex;align-items:center;min-height:110px;padding:0 54px;border-radius:999px;color:#1A0A02;background:linear-gradient(180deg,#FFD08A,#FF8A3D);font-weight:800;font-size:40px;box-shadow:0 14px 44px rgba(255,138,61,.45)}
 .handle{display:flex;align-items:center;gap:18px;font-weight:900;font-style:italic;font-size:48px;color:#fff;font-family:Archivo;text-transform:uppercase}
-.handle img{width:76px;height:76px;border-radius:20px}
+.handle img{width:84px;height:84px}
+.site{font-size:36px;font-weight:600;color:var(--muted)}
 .note{font-size:34px}
 .arrow{stroke-width:8}
 .bubble{font-size:44px}
 .brandbar{position:absolute;z-index:20;top:110px;left:90px;opacity:.95}
 </style><script src="${pathToFileURL(resolve(here, 'node_modules/gsap/dist/gsap.min.js')).href}"></script></head><body>
 ${spec.scenes.map(scene).join('')}
-<div class="brandbar"><span class="chip"><img src="${asset(logoSrc())}" alt="">Make Show <b>Lab</b></span></div>
+<div class="brandbar">${brandChip()}</div>
 <script>
 const scenes = ${JSON.stringify(spec.scenes.map((s) => ({ type: s.type, dur: s.dur })))};
 const tl = gsap.timeline({ paused: true });

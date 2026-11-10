@@ -9,7 +9,7 @@ import { createRequire } from 'node:module';
 import { readFileSync, writeFileSync, readdirSync, unlinkSync, existsSync } from 'node:fs';
 import { resolve, join } from 'node:path';
 import { pathToFileURL } from 'node:url';
-import { asset, esc, rich, sticker, sparkle, arrow, robo, astro, photo, baseCss, logoSrc } from './kit.mjs';
+import { asset, esc, rich, sticker, sparkle, arrow, robo, astro, photo, baseCss, logoSrc, brandChip } from './kit.mjs';
 
 // require() honours global installs (NODE_PATH), which ESM import does not.
 const { chromium } = createRequire(import.meta.url)('playwright');
@@ -178,7 +178,7 @@ export function page(s, i, total, format = 'post') {
   const ground = (s.theme === 'navy' ? 'navy' : 'paper') + (s.planet === false ? '' : ' planet');
   return `<!doctype html><html><head><meta charset="utf-8"><style>${baseCss()}
 html,body{width:${w}px;height:${h}px}${slideCss}</style></head><body><div class="slide ${ground}">
-<div class="head"><span class="chip"><img src="${asset(logoSrc())}" alt="">Make Show <b>Lab</b></span>${total > 1 ? `<span class="count">${i + 1}/${total}</span>` : ''}</div>
+<div class="head">${brandChip()}${total > 1 ? `<span class="count">${i + 1}/${total}</span>` : ''}</div>
 ${body(s)}
 ${deco(s.deco)}
 <div class="foot"><span>@make_showlab</span><span>${s.footer ? esc(s.footer) : 'makeshowlab.com'}</span></div>

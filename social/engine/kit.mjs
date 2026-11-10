@@ -58,19 +58,23 @@ export function arrow(dir = 'down-left', cls = '', style = '') {
   return `<svg class="arrow ${cls}" style="${style}" viewBox="0 0 160 140" aria-hidden="true">${paths.map((d) => `<path d="${d}"/>`).join('')}</svg>`;
 }
 
-// Logo: the astronaut boy's face in an orange ring (from the landing's touch icon).
+// Logo: the Make Show Lab robot in its yellow ring (social/media/brand, from the owner's logo file).
 export function logoSrc() {
-  for (const p of ['social/media/brand/logo.png', 'social/media/landing/logo-180.png', 'assets/img/logo.png']) {
+  for (const p of ['social/media/brand/logo-icon-512.png', 'social/media/brand/logo.png', 'social/media/landing/logo-180.png', 'assets/img/logo.png']) {
     if (existsSync(resolve(repo, p))) return p;
   }
 }
+export const wordmarkSrc = () => 'social/media/brand/wordmark.png';
+// Brand lock-up used in slide headers and the reel top bar: robot icon + "makeshowlab" wordmark.
+export const brandChip = () =>
+  `<span class="chip"><img class="ic" src="${asset(logoSrc())}" alt=""><img class="wm" src="${asset(wordmarkSrc())}" alt="makeshowlab"></span>`;
 // Mascot badge (kept under the old name "robo" so existing specs still work).
 export function robo(cls = '', style = '') {
   return `<span class="robo ${cls}" style="${style}"><img src="${asset(logoSrc())}" alt=""></span>`;
 }
 // The full astronaut from the landing hero, fading into space at the edges.
 export const astro = (cls = '', style = '') =>
-  `<span class="astro ${cls}" style="${style}"><img src="${asset('social/media/landing/astro.jpg')}" alt=""></span>`;
+  `<span class="astro ${cls}" style="${style}"><img src="${asset(logoSrc())}" alt=""></span>`;
 
 export const photo = (src, { cls = '', style = '', pos = 'center' } = {}) =>
   src ? `<figure class="pic ${cls}" style="${style}"><img src="${asset(src)}" style="object-position:${pos}" alt=""></figure>` : '';
@@ -121,16 +125,16 @@ body{font-family:Urbanist,system-ui,sans-serif;color:var(--text);-webkit-font-sm
 .sparkle{position:absolute;z-index:4;width:40px;height:40px;fill:#fff;filter:drop-shadow(0 0 8px rgba(191,212,255,.9))}
 .sparkle.w{fill:var(--gold);filter:drop-shadow(0 0 8px rgba(255,138,61,.9))}.sparkle.sm{width:24px;height:24px}
 .robo{position:absolute;z-index:7;width:190px;height:auto!important;aspect-ratio:1;transform-origin:50% 80%}
-.robo img{display:block;width:100%;height:100%;border-radius:50%;box-shadow:0 0 0 4px rgba(255,138,61,.35),0 0 40px rgba(255,138,61,.55)}
-.astro{position:absolute;z-index:1;display:block;overflow:hidden;-webkit-mask-image:radial-gradient(ellipse 50% 55% at 50% 55%,#000 62%,transparent 100%);mask-image:radial-gradient(ellipse 50% 55% at 50% 55%,#000 62%,transparent 100%)}
-.astro img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;display:block}
+.robo img{display:block;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 0 28px rgba(255,197,51,.45))}
+.astro{position:absolute;z-index:1;display:flex;align-items:center;justify-content:center}
+.astro img{width:78%;height:78%;object-fit:contain;display:block;filter:drop-shadow(0 0 50px rgba(255,197,51,.45))}
 .bubble{position:absolute;z-index:7;background:#fff;color:#0A1024;font-family:Urbanist;font-weight:800;font-size:34px;line-height:1.05;padding:18px 26px;border-radius:28px;box-shadow:0 0 30px rgba(191,212,255,.35);white-space:nowrap}
 .bubble::after{content:"";position:absolute;width:28px;height:28px;background:#fff;bottom:-10px;left:40px;transform:rotate(45deg);border-radius:5px}
 .bubble.r::after{left:auto;right:40px}
 .sun{position:absolute;z-index:0;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(255,138,61,.5),rgba(255,138,61,.12) 45%,transparent 70%)}
 .dot{position:absolute;z-index:1;border-radius:50%;background:#fff;box-shadow:0 0 10px rgba(191,212,255,.9)}
 .chip{display:inline-flex;align-items:center;gap:14px;font-family:Archivo;font-style:italic;font-weight:900;font-stretch:94%;font-size:30px;letter-spacing:-.01em;color:#fff;text-transform:uppercase}
-.chip img{width:52px;height:52px;border-radius:50%}
+.chip img.ic{width:62px;height:62px}.chip img.wm{height:30px;width:auto}
 .chip b{color:var(--orange);font-weight:900}
 .kick{display:inline-flex;align-items:center;gap:14px;font-family:Urbanist;font-weight:700;font-size:24px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted)}
 .kick::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--orange);box-shadow:0 0 12px var(--orange)}
