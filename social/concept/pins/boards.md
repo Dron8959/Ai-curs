@@ -12,7 +12,7 @@ Pins: 5, 6, 7, 10, 12
 
 AI safety rules for kids and families: house rules for AI tools, what never to share, how to spot a fake. Simple enough for the fridge.
 
-Pins: 3, 4
+Pins: 3, 4, 13, 14, 15
 
 ## Screen Time Ideas for Kids
 
@@ -24,7 +24,7 @@ Pins: 9
 
 Non-toy gift ideas for kids and grandkids: gifts you do together. A creative AI course for ages 6 to 14 that ends with things they made.
 
-Pins: 1, 2
+Pins: 1, 2, 16, 17, 18
 
 ## Homeschool Technology Ideas
 

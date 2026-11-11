@@ -21,7 +21,7 @@ import { createRequire } from 'node:module';
 import { writeFileSync, unlinkSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
-import { A, C, LOGO, M, css, here, star, card, ring, pill, char, icon } from './kit.mjs';
+import { A, C, LOGO, M, css, here, star, card, ring, pill, char, icon, tape } from './kit.mjs';
 
 const { chromium } = createRequire(import.meta.url)('playwright');
 const SITE = 'https://www.makeshowlab.com/';
@@ -207,6 +207,105 @@ export const pins = [
     ${ring({ l: 500, t: 800, d: 440, src: `${M}/landing/kamilla.jpg`, pos: '44% 19%', zoom: 215, z: 5 })}
     ${pill('Anna, mom', 90, 1060, -5, '', `background:${C.coral}`)}${pill('Kamilla, 10', 640, 1200, 4, '', `background:${C.mint}`)}
     ${site(true)}` },
+
+  // ---- batch 2: pins that are useful on their own (a parent saves them even without clicking).
+  // The course only sits in the link. Memo pins: 13-15. Christmas gift pins: 16-18 (season: up now).
+  { file: 'ai-rules-for-kids-poster', n: 13, batch: 2, board: 'safety', anchor: 'safe', variant: 'памятка', ai: false, theme: 'k',
+    phrase: 'AI rules for kids poster',
+    title: 'AI Rules for Kids Poster | 5 Family Rules With Why | Save and Print for the Fridge',
+    text: 'An AI rules for kids poster for the fridge: five family rules, each with one line on why. Save it, print it, read it together before the first AI project.',
+    alt: 'Cream pin with a taped paper sheet titled "Our family AI rules": five numbered rules, each with a short reason, such as the account is yours and every tool runs on a parent\'s account.',
+    why: 'Пин-польза: памятка целиком на картинке, её сохраняют и печатают. Правила те же, что в пине 3, добавлено «почему» в одну строку.',
+    html: `${brand()}
+    ${h('AI rules<br>for kids <mark>poster</mark>', { size: 112 })}
+    ${p('Save it. Print it. Fridge.', 420, 44, 'color:#141A33')}
+    ${card({ l: 56, t: 530, w: 888, h: 860, rot: -1.2, cls: 'paper', inner: `<div style="padding:48px 50px 0">
+      <p style="font:800 30px Urbanist;letter-spacing:.1em;text-transform:uppercase;color:#4B5070">Our family AI rules</p>
+      <div style="margin-top:34px;display:grid;gap:40px">${[
+        ['The account is yours', 'Every tool runs on a parent\'s account.'],
+        ['No chats with strangers', 'No messages, no comments.'],
+        ['Some things AI never hears', 'Ask a grown-up before you share.'],
+        ['Links get a second look', 'Not sure? Don\'t click. Ask.'],
+        ['Too perfect? Check it', 'Pictures and videos can be fake.'],
+      ].map(([r, y], i) => `<div style="display:flex;gap:24px;align-items:flex-start"><b style="flex:none;display:grid;place-items:center;width:74px;height:74px;border-radius:50%;background:${[C.coral, C.yellow, C.mint, C.coral, C.yellow][i]};border:4px solid #141A33;color:#141A33;font:800 40px Sora">${i + 1}</b>
+        <span><b style="display:block;font:800 44px/1.05 Urbanist;color:#141A33">${r}</b><span style="display:block;margin-top:6px;font:600 32px/1.15 Urbanist;color:#4B5070">${y}</span></span></div>`).join('')}</div></div>` })}
+    ${tape(420, 500, -4)}
+    <span style="position:absolute;z-index:6;left:60px;bottom:40px;font:800 30px Urbanist;color:#141A33">makeshowlab.com</span>` },
+
+  { file: 'what-kids-should-never-tell-ai', n: 14, batch: 2, board: 'safety', anchor: 'safe', variant: 'список', ai: false, theme: 'c',
+    hold: 'список «чего не говорить AI» сверить с уроком Анны про безопасность и получить её «ок»',
+    phrase: 'what kids should never tell AI',
+    title: 'What Kids Should Never Tell AI | 4 Things That Stay Private | Kids and AI Safety',
+    text: 'What kids should never tell AI: their full name, where they live or go to school, passwords, and where they are right now. Four things to go over before any AI tool.',
+    alt: 'Coral pin that reads "What kids should never tell AI" with a numbered list: full name, home address or school, passwords, where they are right now.',
+    why: 'Отвечает на конкретный страх родителя одним списком. Тема есть в курсе, но сам список нужно сверить с уроком.',
+    html: `${brand()}
+    ${h('What kids should<br><mark>never tell</mark> AI', { size: 104 })}
+    ${rowsCard(['Their full name', 'Home address or school', 'Passwords', 'Where they are right now'], 500, 650)}
+    ${p('Go over it once, together,<br>before the first AI tool.', 1210, 42, 'color:#141A33')}
+    ${star(80, '#fff', 'left:850px;top:1230px')}${star(40, '#fff', 'left:800px;top:1200px')}
+    ${site()}` },
+
+  { file: 'ai-safety-checklist-for-parents', n: 15, batch: 2, board: 'safety', anchor: 'safe', variant: 'чек-лист', ai: false, theme: 'm',
+    phrase: 'AI safety checklist for parents',
+    title: 'AI Safety Checklist for Parents | 5 Checks Before Your Kid Opens AI | Ages 6-14',
+    text: 'An AI safety checklist for parents: five quick checks before your kid opens any AI tool, from whose account it is to how to spot a fake picture.',
+    alt: 'Mint pin that reads "AI safety checklist for parents" with five tick boxes: the account is mine, chats and comments are off, we agreed what stays private, they ask before a link, they know pictures can be fake.',
+    why: 'Те же правила, но для родителя и в виде галочек: другой запрос, другой макет.',
+    html: `${brand()}
+    ${h('AI safety<br><mark>checklist</mark><br>for parents', { size: 110 })}
+    ${p('Before your kid opens any AI tool:', 520, 42, 'color:#141A33;font-weight:800')}
+    ${card({ l: 56, t: 610, w: 888, h: 720, rot: 1.2, inner: `<div style="padding:52px 48px 0;display:grid;gap:40px">${
+      ['The account is mine', 'Chats and comments are off', 'We agreed what stays private', 'They ask before a link', 'They know pictures can be fake']
+        .map((t) => `<div style="display:flex;align-items:center;gap:28px"><b style="flex:none;display:grid;place-items:center;width:78px;height:78px;border:5px solid #141A33;border-radius:16px;background:${C.mint};font:800 52px/1 Sora;color:#141A33">✓</b><span style="font:800 46px/1.06 Urbanist;color:#141A33">${t}</span></div>`).join('')}</div>` })}
+    ${site()}` },
+
+  { file: 'experience-gifts-for-kids', n: 16, batch: 2, board: 'gifts', anchor: 'works', variant: 'билет', ai: false, theme: 'y',
+    phrase: 'experience gifts for kids',
+    title: 'Experience Gifts for Kids | A Cartoon, a Game, a Song Made Together | Ages 6-14',
+    text: 'Experience gifts for kids 6 to 14: an AI creativity course you do side by side. Short lessons, and each one ends with something they made, like a game or a song.',
+    alt: 'Yellow pin that reads "Experience gifts for kids" with a gift ticket: good for one cartoon, one game, one song, made together.',
+    why: 'Рождественский запрос «подарок-впечатление». Билет на картинке говорит, что подарок это совместное время и готовые вещи.',
+    html: `${brand()}
+    ${h('Experience<br><mark>gifts</mark> for kids')}
+    ${p('Something you make together,<br>not another box.', 420, 44, 'color:#141A33')}
+    ${card({ l: 56, t: 600, w: 888, h: 620, rot: -2, inner: `<div style="position:absolute;inset:26px;border:5px dashed #141A33;border-radius:22px;padding:44px 46px">
+      <p style="font:800 34px Urbanist;letter-spacing:.14em;text-transform:uppercase;color:#4B5070">Good for</p>
+      ${['one cartoon', 'one game', 'one song'].map((t, i) => `<p style="margin-top:${i ? 10 : 22}px;font:800 84px/1.02 Sora;letter-spacing:-.04em;color:#141A33">${t}</p>`).join('')}
+      <p style="margin-top:30px;font:800 44px Urbanist;color:${C.coral}">made together</p></div>` })}
+    ${pill('ages 6 to 14', 600, 1180, 4)}
+    ${star(80, '#fff', 'left:830px;top:540px')}${star(40, '#fff', 'left:780px;top:600px')}
+    ${site()}` },
+
+  { file: 'christmas-gift-ideas-for-grandkids', n: 17, batch: 2, board: 'gifts', anchor: 'families', variant: 'цитата', ai: false, theme: 'n',
+    phrase: 'Christmas gift ideas for grandkids',
+    title: 'Christmas Gift Ideas for Grandkids | Make Something Together | Ages 6-14',
+    text: 'Christmas gift ideas for grandkids that are not another toy: a short AI course a grandparent does with them. They make a little game, a cartoon or a song.',
+    alt: 'Dark blue pin that reads "Christmas gift ideas for grandkids" with a grandmother\'s photo and her words: It was a gift we both enjoyed.',
+    why: 'Сезонный запрос к Рождеству. Отзыв Патриции дословный, конец цитаты, пометка про бесплатный доступ в описании.',
+    note: 'Patricia is an early-access tester. She received the course free and shared honest feedback.',
+    html: `${brand()}
+    ${h('Christmas<br><mark>gift ideas</mark><br>for grandkids', { size: 110 })}
+    ${card({ l: 56, t: 590, w: 888, h: 520, rot: 1.5, inner: `<div style="padding:50px 50px 0"><p style="font:700 54px/1.14 Urbanist;color:#141A33">“We created a little game together, and seeing her excitement was priceless. It was a gift we both enjoyed.”</p>
+      <p style="margin-top:30px;font:800 28px Urbanist;letter-spacing:.08em;text-transform:uppercase;color:#4B5070">Patricia, grandmother of a 7-year-old</p></div>` })}
+    ${ring({ l: 650, t: 1010, d: 290, src: `${M}/landing/reviews/patricia.jpg`, pos: '50% 25%', zoom: 175, z: 6, pad: 14 })}
+    ${p('Make something together.<br>Ages 6 to 14.', 1130, 42, 'right:380px')}
+    ${star(70, C.yellow, 'left:90px;top:1270px')}
+    ${site(true)}` },
+
+  { file: 'last-minute-gift-for-grandkids', n: 18, batch: 2, board: 'gifts', anchor: 'pricing', variant: 'шаги', ai: false, theme: 'm',
+    phrase: 'last minute gift for grandkids',
+    title: 'Last Minute Gift for Grandkids | Nothing to Ship, Starts Tonight | Ages 6-14',
+    text: 'A last minute gift for grandkids with nothing to ship: pay once, the login comes by email and the first lesson opens right away. You make it together.',
+    alt: 'Mint pin that reads "Last minute gift for grandkids. Nothing to ship, nothing to wrap" with three steps: pay once, the login comes by email, the first lesson opens right away.',
+    why: 'Запрос последних дней перед праздником. Всё на картинке из фактов: оплата один раз, логин на почту, первый урок сразу.',
+    html: `${brand()}
+    ${h('Last minute gift<br>for <mark>grandkids</mark>', { size: 106 })}
+    ${p('Nothing to ship. Nothing to wrap.', 420, 44, 'color:#141A33')}
+    ${rowsCard(['Pay once, no subscription', 'The login comes by email', 'Lesson one opens at once'], 540, 520)}
+    ${char('anna', 470, 1060, 420)}
+    ${pill('you do it together', 70, 1150, -3)}
+    ${site()}` },
 ];
 
 // ---------------------------------------------------------------------------------- checks, render, files
