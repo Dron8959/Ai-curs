@@ -36,7 +36,15 @@ export const boards = {
 };
 
 // ------------------------------------------------------------------------------------------- templates
-const brand = () => `<img src="${A(`${LOGO}/logo/icon-small.svg`)}" style="position:absolute;z-index:9;left:56px;top:48px;width:84px;height:84px" alt="">`;
+// The small mark used to sit in the pin layout (left 56, top 48). The brand now has its own band on top of
+// every pin (head() below): a big mark plus the Make Show Lab wordmark, and the layout is scaled into the rest.
+const brand = () => '';
+const HEAD = 190, S = 0.93;                     // band height; layout scale (its y=150 lands right under the band)
+const head = () => `<div style="position:absolute;z-index:20;left:44px;top:34px;display:flex;align-items:center;gap:22px">
+  <img src="${A(`${LOGO}/logo/icon.svg`)}" style="width:150px;height:150px;display:block" alt="">
+  <span style="display:flex;align-items:center;height:96px;padding:0 34px;border:5px solid #141A33;border-radius:999px;background:#fff;box-shadow:6px 6px 0 #141A33">
+  <img src="${A(`${LOGO}/logo/wordmark-light.svg`)}" style="height:50px;width:auto;display:block" alt="Make Show Lab"></span></div>`;
+const body = (html) => `<div style="position:absolute;inset:0;transform-origin:50% 0;transform:translateY(${HEAD + 8 - 150 * S}px) scale(${S})">${html}</div>`;
 const site = (dark = false) => `<span class="pill${dark ? '' : ' dark'}" style="left:56px;bottom:52px;height:66px;font-size:28px;letter-spacing:.04em;text-transform:none;box-shadow:none">makeshowlab.com</span>`;
 const h = (html, { top = 160, size = 118, style = '' } = {}) => `<h1 class="t" style="left:56px;right:56px;top:${top}px;font-size:${size}px;line-height:.96;${style}">${html}</h1>`;
 const p = (html, top, size = 44, style = '') => `<p class="sub" style="left:60px;right:60px;top:${top}px;font-size:${size}px;${style}">${html}</p>`;
@@ -331,7 +339,7 @@ if (process.argv[1] && process.argv[1].endsWith('pins.mjs')) {
   for (const pin of pins) {
     const pg = await (await browser.newContext({ viewport: { width: 1000, height: 1500 } })).newPage();
     const tmp = join(out, '.tmp.html');
-    writeFileSync(tmp, `<!doctype html><meta charset="utf-8"><style>${css()}.tile.pin{width:1000px;height:1500px}</style><div class="tile pin ${pin.theme}">${pin.html}</div>`);
+    writeFileSync(tmp, `<!doctype html><meta charset="utf-8"><style>${css()}.tile.pin{width:1000px;height:1500px}</style><div class="tile pin ${pin.theme}">${head(pin.theme)}${body(pin.html)}</div>`);
     await pg.goto(pathToFileURL(tmp).href);
     await pg.evaluate(() => document.fonts.ready);
     await pg.waitForTimeout(80);
