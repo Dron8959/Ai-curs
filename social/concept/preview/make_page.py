@@ -149,6 +149,11 @@ html = html[:a] + """<section id="next-sec">
       </section>
     """ + html[b:]
 
+# highlights: themed covers into n/, title stories into p/
+for hid in ('free-lesson', 'how-it-works', 'kid-made', 'is-it-safe', 'pricing', 'about-us'):
+    Image.open(os.path.join(os.path.dirname(HERE), 'out', f'highlight-{hid}.jpg')).convert('RGB').resize((200, 200), Image.LANCZOS).save(os.path.join(HERE, 'n', f'h-{hid}.jpg'), quality=86)
+    jpg(os.path.join(os.path.dirname(HERE), 'out', f'story-{hid}.jpg'), f'st-{hid}.jpg', (540, 960))
+
 # ============================================================ the other platforms (PLATFORMS.md)
 from html import escape as E
 C = os.path.dirname(HERE)
@@ -180,7 +185,7 @@ def pimg(path):                      # posts/05-reason-to-show/tile.jpg -> 05-ti
     parts = path.split('/'); k = parts[1][:2]; f = parts[2]
     return f'{k}-tile' if f.startswith('tile') else f"{k}-s{int(f[6:8])}"
 
-ANCH = {'families': 'отзывы', 'safe': 'безопасность', 'free': 'бесплатный урок', 'works': 'что делают дети', 'how': 'как устроен урок', 'problem': 'зачем курс', 'faq': 'вопросы', 'team': 'кто мы'}
+ANCH = {'families': 'отзывы', 'safe': 'безопасность', 'free': 'бесплатный урок', 'works': 'что делают дети', 'how': 'как устроен урок', 'problem': 'зачем курс', 'faq': 'вопросы', 'team': 'кто мы', 'pricing': 'цены', 'program': 'программа', 'start': 'начало'}
 seq = ','.join(f"pin-{p['n']:02d}" for p in D['pins'])
 def tpost(i, t):
     img = pimg(t.get('image'))
@@ -198,7 +203,7 @@ def tpost(i, t):
 thread = D['thread']
 boards = ''.join(f'<span class="chip">{E(b["name"])} · {sum(1 for p in D["pins"] if p["board"] == k)}</span>' for k, b in D['boards'].items())
 pins_html = ''.join(f"""<figure class="pinc"><button type="button" data-seq="{seq}" data-i="{k}" aria-label="Пин {p['n']}: {E(p['phrase'])}"><img src="p/pin-{p['n']:02d}.jpg" alt="{E(p['alt'])}" loading="lazy"></button>
-      <figcaption><b>{p['n']}. {E(p['phrase'])}</b><span>{E(D['boards'][p['board']]['name'])}</span><span>ведёт в раздел «{ANCH[p['anchor']]}»</span>{'<span class="chip pinned">ждёт подтверждения</span>' if p.get('hold') else ''}</figcaption></figure>"""
+      <figcaption><b>{p['n']}. {E(p['phrase'])}</b><span>{E(D['boards'][p['board']]['name'])}</span><span>ведёт в раздел «{ANCH.get(p['anchor'], p['anchor'])}»</span>{'<span class="chip pinned">ждёт подтверждения</span>' if p.get('hold') else ''}</figcaption></figure>"""
       for k, p in enumerate(D['pins']))
 pin_rows = ''.join(f"<tr><td>{p['n']}</td><td>{E(p['title'])}</td><td>{E(p['text'])}</td></tr>" for p in D['pins'])
 
@@ -328,3 +333,61 @@ html = html.replace(x, 'Слева Instagram, справа каждый из д�
 html = html.replace('<p class="eyebrow">@make_showlab · пересборка страницы</p>', '<p class="eyebrow">@make_showlab · Instagram и ещё шесть площадок</p>')
 open(os.path.join(HERE, 'profile.html'), 'w').write(html)
 print('posts', len(posts), 'files', len(os.listdir(P)), 'size', sum(os.path.getsize(os.path.join(P, f)) for f in os.listdir(P)) // 1024, 'KB')
+
+
+# ============================================================ lists and the Instagram package
+import zipfile
+HLS = [('free-lesson', 'Free lesson', 'заставка, затем слайды поста №10 (вертикальные, из posts/10-free-first-lesson/tiktok/)'),
+       ('how-it-works', 'How it works', 'заставка, затем ролик №6'), ('kid-made', 'Kid-made', 'заставка, затем ролики №7, №1 и №4'),
+       ('is-it-safe', 'Is it safe?', 'заставка, затем слайды поста №3 (вертикальные, из posts/03-ai-house-rules/tiktok/)'),
+       ('pricing', 'Pricing', 'заставка: обе цены стоят на ней'), ('about-us', 'About us', 'заставка, затем ролик №2 и отзывы из поста №9')]
+ids = {int(os.path.basename(d)[:2]): os.path.basename(d) for d in glob.glob(os.path.join(REPO, '*'))}
+WAIT = {1: 'ждёт подтверждения, что рисунок детский', 4: 'ждёт подтверждения истории «7:02 → 7:41»'}
+L = ['# Instagram: все креативы первой партии', '',
+     'Порядок публикации. Файлы лежат в `social/concept/posts/<папка>/`; тот же набор собран в архив `out/instagram-creatives.zip`.', '',
+     '| № | День | Креатив | Формат | Рубрика | Закреп | Файлы | Статус |', '|---|---|---|---|---|---|---|---|']
+for p in posts:
+    files = f"`reel.mp4`, `cover.jpg`, `caption.md`" if p.get('video') else f"`slide-01…{len(p['slides']):02d}.jpg`, `caption.md`"
+    kind = f"ролик, {p['dur']} с, со звуком" if p.get('video') else f"карусель, {len(p['slides'])} слайдов"
+    L.append(f"| {p['n']} | {p['day']} | **{p['title']}** | {kind} | {p['r']} {p['no']} | {'да' if p.get('pin') else ''} | `{ids[p['n']]}/`: {files} | {WAIT.get(p['n'], 'собран')} |")
+L += ['', '## Что внутри каждого', '']
+for p in posts:
+    L += [f"### {p['n']}. {p['title']}", f"Зачем: {p['why']} Перешлют: {p['send']}", ''] + [f"{i}. {x}" for i, x in enumerate(p['inside'], 1)] + ['']
+L += ['## Закрепы', '', 'Три поста закрепляются наверху сетки: №10 (как начать), №2 (кто мы), №7 (лучшее доказательство).', '',
+      '## Хайлайты', '', '| Хайлайт | Обложка | Заставка | Что внутри |', '|---|---|---|---|']
+L += [f"| {t} | `out/highlight-{h}.jpg` | `out/story-{h}.jpg` | {w} |" for h, t, w in HLS]
+L += ['', '## Шапка профиля', '', 'Имя: `Make Show Lab | AI for Kids`. Описание, ссылка и аватар: `PLAN.md`, раздел 4.', '']
+open(os.path.join(C, 'INSTAGRAM.md'), 'w').write('\n'.join(L))
+
+Mo = ['# Ролики с моушен-графикой', '',
+      'Семь роликов первой партии. Все собраны как графика из фото и работ с сайта: 1080×1920, 30 кадров в секунду, музыка и звуковые эффекты внутри, голоса пока нет.',
+      'Один и тот же файл идёт в Instagram, TikTok, Facebook и YouTube Shorts.', '',
+      '| № | Ролик | Длина | Сцен | Из чего собран | Что усилит | Статус | Файл |', '|---|---|---|---|---|---|---|---|']
+for p in posts:
+    if not p.get('video'): continue
+    Mo.append(f"| {p['n']} | **{p['title']}** | {p['dur']} с | {len(p['inside'])} | {p['src']} | {p['more'] or '—'} | {WAIT.get(p['n'], 'собран')} | `posts/{ids[p['n']]}/reel.mp4` |")
+Mo += ['', '## Сцены по порядку', '']
+for p in posts:
+    if not p.get('video'): continue
+    Mo += [f"### {p['n']}. {p['title']}", ''] + [f"{i}. {x}" for i, x in enumerate(p['inside'], 1)] + ['']
+Mo += ['## Что общего у всех семи', '',
+       '- Первая надпись на экране с первого кадра, не больше шести слов на карточку.',
+       '- Монтаж переставлен под ритм музыки: главный кадр попадает на вход основной темы, логотип на последний аккорд.',
+       '- Звук: одна музыкальная тема на серию и настоящие записи эффектов (бумага, хлопки, карандаш).',
+       '- Финальный кадр: логотип, «First lesson free» и адрес сайта.',
+       '- Тексты для озвучки с хронометражем: `sound/VOICEOVER.md`.', '']
+open(os.path.join(C, 'MOTION.md'), 'w').write('\n'.join(Mo))
+
+zp = os.path.join(C, 'out', 'instagram-creatives.zip')
+with zipfile.ZipFile(zp, 'w', zipfile.ZIP_STORED) as z:
+    z.write(os.path.join(C, 'INSTAGRAM.md'), 'instagram/00-list.md'); z.write(os.path.join(C, 'MOTION.md'), 'instagram/00-motion-reels.md')
+    z.write(os.path.join(os.path.dirname(os.path.dirname(C)), 'social/brand/logo/avatar/avatar-1080.png'), 'instagram/profile/avatar-1080.png')
+    z.writestr('instagram/profile/profile.txt', "Name: Make Show Lab | AI for Kids\nCategory: Education\n\nBio:\nYour kid makes a cartoon, a game, a song with AI. You sit next to them.\nAges 6-14. No code. By mom Anna & Kamilla, 10.\nFree first lesson\n\nLink: https://www.makeshowlab.com/#free\n\nPinned posts: 10, 2, 7\nHighlights: Free lesson, How it works, Kid-made, Is it safe?, Pricing, About us\n")
+    for h, t, w in HLS:
+        z.write(os.path.join(C, 'out', f'highlight-{h}.jpg'), f'instagram/profile/highlights/{h}-cover.jpg'); z.write(os.path.join(C, 'out', f'story-{h}.jpg'), f'instagram/profile/highlights/{h}-story.jpg')
+    for p in posts:
+        d = os.path.join(REPO, ids[p['n']]); name = f"instagram/{p['n']:02d}-{'reel' if p.get('video') else 'carousel'}-{ids[p['n']][3:]}"
+        for f in sorted(os.listdir(d)):
+            if f in ('reel.mp4', 'cover.jpg') or f.startswith('slide-'): z.write(os.path.join(d, f), f'{name}/{f}')
+        z.writestr(f'{name}/caption.txt', p['cap'] + '\n')
+print('lists written; zip', os.path.getsize(zp) // (1024 * 1024), 'MB')

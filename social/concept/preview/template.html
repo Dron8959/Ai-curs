@@ -13,10 +13,10 @@
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#0B0F24; --surface:#141A33; --ink:#FFF4DC; --muted:#A9B0D0; --line:#262E55; --soft:#1B2247;
-  --app:#000000; --app-fg:#F5F5F5; --app-muted:#A8A8B3; --app-line:#262626; --app-chip:#1C1C1F; color-scheme:dark}}
+  --app:#FFFFFF; --app-fg:#0C0C0F; --app-muted:#737380; --app-line:#E6E6EA; --app-chip:#EFEFF2; color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#0B0F24; --surface:#141A33; --ink:#FFF4DC; --muted:#A9B0D0; --line:#262E55; --soft:#1B2247;
-  --app:#000000; --app-fg:#F5F5F5; --app-muted:#A8A8B3; --app-line:#262626; --app-chip:#1C1C1F; color-scheme:dark}
+  --app:#FFFFFF; --app-fg:#0C0C0F; --app-muted:#737380; --app-line:#E6E6EA; --app-chip:#EFEFF2; color-scheme:dark}
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55}
 .wrap{max-width:1200px;margin:0 auto;padding-block:36px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
@@ -127,6 +127,7 @@ en,.en{font-family:var(--latin);font-weight:800;letter-spacing:-.035em}
   .field{grid-template-columns:minmax(0,1fr);gap:4px}.two{grid-template-columns:minmax(0,1fr)}.logos{grid-template-columns:96px minmax(0,1fr)}.logos figure:last-child{grid-column:1/-1}
   .phone{padding:0;border-radius:0;background:transparent;box-shadow:none}.screen{border-radius:18px;box-shadow:0 0 0 1px var(--line)}}
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+.hlin{margin:10px 0 0;padding-left:18px;font-size:14px}.hlin li{margin-bottom:3px}
 </style>
 
 <div class="wrap">
@@ -307,6 +308,8 @@ const byN = (n) => POSTS.find((p) => p.n === n);
 
 document.getElementById('hls').innerHTML = HL.map(([f,t]) => `<div class="hl"><img src="n/h-${f}.jpg" alt="">${esc(t)}</div>`).join('');
 document.getElementById('hlrow').innerHTML = HL.map(([f,t]) => `<figure><img src="n/h-${f}.jpg" alt="">${esc(t)}</figure>`).join('');
+const HLIN = {'free-lesson':'заставка, потом слайды поста №10','how-it-works':'заставка, потом ролик №6','kid-made':'заставка, потом ролики №7, №1 и №4','is-it-safe':'заставка, потом слайды поста №3','pricing':'заставка: обе цены на ней','about-us':'заставка, потом ролик №2 и отзывы из поста №9'};
+document.getElementById('hlrow').insertAdjacentHTML('afterend', '<div class="strip-h">Заставка каждого хайлайта и что внутри</div><div class="strip">' + HL.map(([f,t],i) => `<button type="button" data-seq="${HL.map((h) => 'st-' + h[0]).join(',')}" data-i="${i}" aria-label="Заставка: ${esc(t)}"><img src="p/st-${f}.jpg" alt="" loading="lazy"></button>`).join('') + '</div><ul class="hlin">' + HL.map(([f,t]) => `<li><b>${esc(t)}</b>: ${HLIN[f]}</li>`).join('') + '</ul>');
 document.getElementById('grid').innerHTML = GRID.map((n) => { const p = byN(n);
   return `<button class="tile" type="button" data-n="${n}" aria-label="Пост ${n}: ${esc(p.title)}"><img src="n/${p.img}.jpg" alt="">${p.fmt === 'Reel' ? IC.reel : IC.car}${p.pin ? IC.pin : ''}</button>`; }).join('');
 document.getElementById('rubrics').innerHTML = Object.values(R).map((r) =>

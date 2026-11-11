@@ -1,25 +1,47 @@
 #!/usr/bin/env node
-// Profile extras in the same system: six highlight covers, the Facebook cover, the X header and the YouTube banner.
+// Profile extras in the same system: six highlights (a themed cover and a title story each), the Facebook cover,
+// the X header and the YouTube banner.
 //   node social/concept/extras.mjs      -> social/concept/out/
 import { createRequire } from 'node:module';
 import { writeFileSync, unlinkSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
-import { A, C, LOGO, M, css, here, star, card, icon } from './kit.mjs';
+import { A, C, LOGO, M, css, here, star, card, ring, pill, icon, plate } from './kit.mjs';
 
 const { chromium } = createRequire(import.meta.url)('playwright');
 const out = join(here, 'out');
 mkdirSync(out, { recursive: true });
 
-const hl = [
-  ['free-lesson', C.mint, icon('gift', 190, '#141A33', 2)],
-  ['how-it-works', C.navy, icon('list-ordered', 190, C.yellow, 2)],
-  ['kid-made', C.yellow, icon('star', 190, '#141A33', 2)],
-  ['is-it-safe', C.coral, icon('shield-check', 190, '#141A33', 2)],
-  ['pricing', C.cream, icon('tag', 190, '#141A33', 2)],
-  ['about-us', C.navy, `<img src="${A(`${LOGO}/logo/icon-plain.svg`)}" style="width:300px" alt="">`],
+// Six highlights. Each gets a themed cover (what the round button shows) and a title story (the "заставка" that
+// opens the highlight). The cover keeps one bold thing in the middle: Instagram shows it 64 px wide.
+const small = 'height:54px;font-size:24px;padding:0 20px;box-shadow:4px 4px 0 #141A33';
+const HL = [
+  { id: 'free-lesson', theme: 'm', title: 'Free<br><mark>first lesson</mark>', sub: 'Your kid builds a game tonight.',
+    cover: `${card({ l: 62, t: 104, w: 276, h: 172, rot: -4, src: `${M}/landing/game.jpg`, cls: 'screen' })}${pill('free', 150, 250, 5, '', small)}`,
+    art: `${card({ l: 64, t: 1010, w: 786, h: 477, rot: -2, src: `${M}/landing/game.jpg`, cls: 'screen' })}${pill('10–20 minutes', 96, 1440, -4)}${pill('no card', 560, 1470, 4)}` },
+  { id: 'how-it-works', theme: 'n', title: 'How it<br><mark>works</mark>', sub: 'Watch. Make. Show.<br>6 to 20 minutes.',
+    cover: [C.cream, C.yellow, C.coral].map((c, i) => `<span class="num" style="left:${46 + i * 106}px;top:152px;width:96px;height:96px;font-size:56px;background:${c};box-shadow:5px 5px 0 #070A1F">${i + 1}</span>`).join(''),
+    art: [['Watch', C.cream], ['Make', C.yellow], ['Show', C.coral]].map(([w, c], i) => `<span class="num" style="left:${64 + i * 262}px;top:1040px;width:220px;height:220px;font-size:128px;background:${c};box-shadow:10px 10px 0 #070A1F">${i + 1}</span>${pill(w, 92 + i * 262, 1300, i % 2 ? 3 : -3)}`).join('') },
+  { id: 'kid-made', theme: 'y', title: 'Made<br>by <mark>kids</mark>', sub: 'Real work from real lessons.',
+    cover: `${card({ l: 108, t: 74, w: 184, h: 250, rot: -5, src: `${M}/landing/cartoon-cat.jpg`, pos: '50% 38%' })}${star(60, '#fff', 'left:286px;top:86px')}`,
+    art: `${card({ l: 64, t: 980, w: 330, h: 440, rot: -5, src: `${M}/landing/cartoon-cat.jpg`, pos: '50% 38%' })}${card({ l: 360, t: 1010, w: 490, h: 300, rot: 3, src: `${M}/landing/game.jpg`, cls: 'screen', z: 4 })}${card({ l: 300, t: 1290, w: 500, h: 320, rot: -2, src: `${M}/landing/step-show.jpg`, pos: '58% 80.3%', zoom: 330, z: 5 })}` },
+  { id: 'is-it-safe', theme: 'c', title: 'Is it<br><mark>safe?</mark>', sub: 'The account is yours.<br>No chats with strangers.',
+    cover: `<i class="badge" style="left:92px;top:92px;width:216px;height:216px;background:#FFF4DC;box-shadow:8px 8px 0 #141A33">${icon('shield-check', 124, '#141A33', 2.2)}</i>`,
+    art: `<i class="badge" style="left:200px;top:1060px;width:440px;height:440px;background:#FFF4DC;transform:rotate(-5deg)">${icon('shield-check', 240, '#141A33', 2.2)}</i>` },
+  { id: 'pricing', theme: 'k', title: 'One<br><mark>price</mark>', sub: 'No subscription. No sales calls.',
+    cover: `<h1 class="t" style="left:0;right:0;top:136px;text-align:center;font-size:100px"><mark>$197</mark></h1>`,
+    art: [['$197', 'Creator', 'the full course, every lesson and project'], ['$297', 'Creator + Homework', 'Anna checks homework the same day']].map(([p, n, d], i) =>
+      card({ l: 64, t: 1000 + i * 250, w: 786, h: 210, rot: i ? 1.5 : -1.5, inner: `<div style="display:flex;align-items:center;gap:30px;height:100%;padding:0 36px"><b style="font:800 86px Sora;letter-spacing:-.05em;color:#141A33">${p}</b><span style="font:800 40px/1.1 Urbanist;color:#141A33">${n}<br><span style="font:700 30px Urbanist;color:#4B5070">${d}</span></span></div>` })).join('') },
+  { id: 'about-us', theme: 'n', title: 'About<br><mark>us</mark>', sub: 'A mom and a daughter.<br>Not a corporation.',
+    cover: `${ring({ l: 44, t: 84, d: 200, src: `${M}/landing/anna.jpg`, pos: '50% 25%', zoom: 250, pad: 10 })}${ring({ l: 186, t: 150, d: 172, src: `${M}/landing/kamilla.jpg`, pos: '44% 19%', zoom: 215, z: 5, pad: 9 })}`,
+    art: `${ring({ l: 64, t: 990, d: 460, src: `${M}/landing/anna.jpg`, pos: '50% 25%', zoom: 250 })}${ring({ l: 440, t: 1150, d: 410, src: `${M}/landing/kamilla.jpg`, pos: '44% 19%', zoom: 215, z: 5 })}${pill('Anna, mom', 80, 1440, -5, '', `background:${C.coral}`)}${pill('Kamilla, 10', 560, 1560, 4, '', `background:${C.mint}`)}` },
 ];
-const pages = hl.map(([id, bg, inner]) => ({ file: `highlight-${id}.jpg`, w: 400, h: 400, html: `<div style="width:400px;height:400px;background:${bg};display:grid;place-items:center">${inner}</div>` }));
+const pages = [];
+for (const h of HL) {
+  pages.push({ file: `highlight-${h.id}.jpg`, w: 400, h: 400, html: `<div class="tile ${h.theme}" style="width:400px;height:400px">${h.cover}</div>` });
+  pages.push({ file: `story-${h.id}.jpg`, w: 1080, h: 1920, html: `<div class="tile reel ${h.theme}" style="width:1080px">${plate()}
+    <h1 class="t" style="top:440px;right:64px;font-size:156px">${h.title}</h1><p class="sub" style="top:800px;right:64px;font-size:56px">${h.sub}</p>${h.art}</div>` });
+}
 // Facebook cover, 1640×624: everything that matters sits in the middle 1100 px that phones keep
 pages.push({ file: 'facebook-cover.jpg', w: 1640, h: 624, html: `
   <div class="tile k" style="width:1640px;height:624px">
