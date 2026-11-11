@@ -8,7 +8,7 @@ x_characters: 211 of 280
 threads_characters: 328 of 500
 threads_topic: Parenting
 threads_rubric: You decide
-threads_media: not drawn yet (no photos on Threads)
+threads_media: social/concept/text/threads/07-by-age.mp4 (motion card drawn in code; still: .jpg)
 ---
 ## X
 

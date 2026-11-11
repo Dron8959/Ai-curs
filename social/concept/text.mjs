@@ -125,7 +125,7 @@ If you've said no to AI at home, I'd honestly like to hear why. What would chang
 Teen: you just need to be in the room.
 
 Same rule at every age: the idea is theirs.` },
-    threads: { rubric: 'You decide', topic: 'Parenting', text: `You decide: how young is too young for AI, if a parent is right there?
+    threads: { media: 'text/threads/07-by-age.mp4', rubric: 'You decide', topic: 'Parenting', text: `You decide: how young is too young for AI, if a parent is right there?
 
 Here's how it goes in our course. A six-year-old talks and you type. A ten-year-old does most of it alone. A teenager just needs you in the room. The idea is always theirs.
 

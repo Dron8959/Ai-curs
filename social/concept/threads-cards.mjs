@@ -174,6 +174,27 @@ const cards = {
       tl.to(d,{a:Math.PI*2*1.4,duration:5.2,ease:'none',onUpdate(){const a=d.a-Math.PI/2;
         const el=document.getElementById('dot');el.style.left=(186+290+230*Math.cos(a)-24)+'px';el.style.top=(290+230*Math.sin(a)-24)+'px';}},1.0)
         .from('.hl mark',{scale:0,duration:.4,ease:'back.out(3)'},.45);` },
+  // Three ages, three jobs for the parent. The kid's share of the keyboard grows with age.
+  '07-by-age': { theme: 'y', chip: 'You decide',
+    hl: `How young is<br><mark>too young</mark><br>for AI?`,
+    stage: `
+      ${[['6', 'They talk, you type.', .3], ['10', 'They do most of it.', .85], ['Teen', 'You stay in the room.', 1]].map(([age, t, v]) => `
+      <div class="box row" style="position:relative;height:180px;margin-bottom:30px;display:flex;align-items:center;gap:30px;padding:0 34px">
+        <div class="age" style="flex:none;width:126px;height:126px;border:6px solid #141A33;border-radius:50%;background:#FF6F4A;display:flex;align-items:center;justify-content:center;font:800 ${age.length > 2 ? 40 : 60}px Sora;letter-spacing:-.04em">${age}</div>
+        <div style="flex:1">
+          <div class="big lbl" style="font-size:44px;margin-bottom:16px">${t}</div>
+          <div style="height:30px;border:5px solid #141A33;border-radius:999px;background:#F1EBDA;overflow:hidden"><div class="bar" data-v="${v}" style="height:100%;width:${v * 100}%;background:#5FE0A8;border-right:5px solid #141A33"></div></div>
+          <div class="lab" style="font-size:20px;margin-top:10px;opacity:.6">kid at the keyboard</div>
+        </div>
+      </div>`).join('')}`,
+    tl: `
+      tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
+        .from('.hl mark',{scale:0,duration:.4,ease:'back.out(3)'},.45)
+        .from('.row',{x:-120,opacity:0,duration:.45,ease:'power3.out',stagger:.9},1.0)
+        .from('.age',{scale:0,duration:.4,ease:'back.out(2.6)',stagger:.9},1.15)
+        .from('.bar',{width:0,duration:.8,ease:'power2.out',stagger:.9},1.4)
+        .from('.lbl',{opacity:0,y:14,duration:.35,stagger:.9},1.3);` },
+
 };
 
 // ------------------------------------------------------------------------------------------ render

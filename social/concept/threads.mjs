@@ -25,14 +25,14 @@ I'm not saying screens are fine. I'm saying not all screen time is the same.
 
 So which one worries you more at your house, and why?` },
 
-  { id: 'threads-02-age-six', hook: 13, rubric: 'You decide', topic: 'Parenting', week: 3, day: 'Вт',
-    text: `If your kid is 6, here's your job with AI: they talk, you type.
+  { id: 'threads-02-age-eight', hook: 13, rubric: 'You decide', topic: 'Parenting', week: 3, day: 'Вт',
+    text: `If your kid is 8, here's your job with AI: sit next to them, not across the room.
 
-At 6 the ideas are big and the typing is slow. So the child describes, you type it in, and they decide if what comes back is right. At 10 most kids do it alone. A teenager just needs you in the room.
+At 8 the ideas often come faster than the typing. So they describe, you help get it in, and they decide if what comes back is right. By 10 most kids do it alone. A teenager just needs you in the room.
 
 The idea is always theirs.
 
-Parents of 6-year-olds: would you let yours try this, or is it too early?` },
+Parents of 8-year-olds: how much do you step in, and how much do you let them run?` },
 
   { id: 'threads-03-argue', hook: 1, rubric: 'Unpopular opinion', topic: 'AI for kids', week: 3, day: 'Ср',
     text: `Not many parents say this out loud, so I will: I'd rather my kid argue with an AI than obey it.
