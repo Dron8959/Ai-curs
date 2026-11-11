@@ -4,3 +4,5 @@ audio/assets/*/
 !audio/assets/manifests/
 # renders, stems, reports, caches
 out/
+
+__pycache__/

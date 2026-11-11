@@ -15,6 +15,8 @@ skill (real recordings, one licensed track, a deterministic mixer, measured inst
 | `tools/fetch.py` | downloads the recordings (they are not in the repository) |
 | `tools/events.py`, `tools/chords.py` | list the sounds inside a recording / the chord of every bar |
 | `build.sh` | mix, check and attach the soundtrack |
+| `VOICEOVER.md` | the voice: the options, the lines, the state of the one sample |
+| `tools/voice_clone.py`, `tools/voice_film.py`, `voice.sh` | a voiced version of a reel next to the published one (see `VOICEOVER.md`) |
 
 ## Rebuild
 ```
@@ -28,7 +30,7 @@ REAL_SOUND=<real-sound skill folder> SOUND_PY=<python with numpy scipy soundfile
 ## Change something
 - **Another track:** add it to `sources.json`, measure it (`analyze.py --music`, `arrange.py`), set `BPM`
   in `kit.mjs` to its tempo, write its bars into `music-edits.json`, re-render the reels and rebuild.
-- **A voice-over:** see `VOICEOVER.md`.
+- **A voice-over:** see `VOICEOVER.md`. Voice recordings and anything made from them are never committed.
 - **Levels:** the `gain_db` of a rule in `audio/design/*.json`.
 
 ## State on 11 November 2026
@@ -36,3 +38,6 @@ All seven reels pass: -14.0 LUFS, true peak -1.7 to -2.2 dBTP in the MP4, LRA 5.
 effect audible, every placement on its cue. Not done: listening by a person, and the skill's listening
 tools (earshot) were not available, so "is it a real recording" and "does it sound right" rest on the
 library's own description and on measurements.
+
+One voiced sample exists outside the repository (reel 05, Anna's voice cloned from her recording); the
+seven published reels have no voice. Details in `VOICEOVER.md`.
