@@ -8,6 +8,7 @@ x_characters: 209 of 280
 threads_characters: 378 of 500
 threads_topic: AI for kids
 threads_rubric: Unpopular opinion
+threads_media: social/concept/text/threads/05-will-ai-think.mp4 (motion card drawn in code; still: .jpg)
 ---
 ## X
 

@@ -29,7 +29,7 @@ They need a reason to show you something.
 
 A screen she makes on is not a screen she scrolls. I'd rather argue about that than about minutes.`,
       reply: `It's why every lesson we make ends with a thing to show, not a quiz. The first one is free: ${link('x', 'reason-to-show')}` },
-    threads: { rubric: 'Unpopular opinion', topic: 'Parenting', text: `Unpopular opinion: the screen-time fight is the wrong fight.
+    threads: { media: 'text/threads/01-reason-to-show.mp4', rubric: 'Unpopular opinion', topic: 'Parenting', text: `Unpopular opinion: the screen-time fight is the wrong fight.
 
 Kids don't need more minutes or fewer minutes. They need a reason to show you something. A screen she makes on is not a screen she scrolls.
 
@@ -42,7 +42,7 @@ Plenty of parents count minutes and it works for them. So tell me honestly: what
 Same AI, same screen, same kid. A completely different evening.
 
 Which one is it at your house right now?` },
-    threads: { rubric: 'You decide', topic: 'AI for kids', text: `You decide: is this a good use of AI or not?
+    threads: { media: 'text/threads/02-answer-machine.mp4', rubric: 'You decide', topic: 'AI for kids', text: `You decide: is this a good use of AI or not?
 
 Kid A asks a chatbot for the answer to a homework question. Kid B tells the same chatbot about a game she made up, and builds it.
 
@@ -59,7 +59,7 @@ Every tool runs on your account. Your kid never signs up for anything alone. You
 
 Boring rule. Fixes most of the scary stuff.`,
       reply: `The other four, and how the course is set up around them: ${link('x', 'rule-one', 'safe')}` },
-    threads: { rubric: 'Unpopular opinion', topic: 'AI safety', text: `Unpopular opinion: parental controls are not an AI safety plan.
+    threads: { media: 'text/threads/03-rule-one.mp4', rubric: 'Unpopular opinion', topic: 'AI safety', text: `Unpopular opinion: parental controls are not an AI safety plan.
 
 The rule that does the most in our house is boring. The account is mine, not hers. Every tool runs on the parent's account, my kid never signs up for anything alone, and I see everything she makes.
 
@@ -73,7 +73,7 @@ Settings get switched off. Ownership doesn't. Am I wrong? What's your one rule t
 If it lost her attention, it got cut.
 
 She's my daughter. She argues with the script.` },
-    threads: { rubric: 'Unpopular opinion', topic: 'Parenting', text: `Unpopular opinion: if a kids' course can't hold a 10-year-old's attention, it doesn't matter who designed it.
+    threads: { media: 'text/threads/04-kitchen-table.mp4', rubric: 'Unpopular opinion', topic: 'Parenting', text: `Unpopular opinion: if a kids' course can't hold a 10-year-old's attention, it doesn't matter who designed it.
 
 I built every lesson of ours myself, then tested each one on my daughter Kamilla at the kitchen table. She's 10 and she argues with the script. What lost her got cut.
 
@@ -89,7 +89,7 @@ Only if the AI is the one with the ideas.
 Kid decides what to make. Kid tells the AI. Kid checks what comes back. Kid fixes it.
 
 That's not outsourcing thinking. That's directing.` },
-    threads: { rubric: 'Unpopular opinion', topic: 'AI for kids', text: `Unpopular opinion: AI is not the reason a kid stops thinking.
+    threads: { media: 'text/threads/05-will-ai-think.mp4', rubric: 'Unpopular opinion', topic: 'AI for kids', text: `Unpopular opinion: AI is not the reason a kid stops thinking.
 
 A kid stops thinking when nobody asks what they think first. When the child decides what to make, tells the AI, checks what comes back and fixes it, the thinking stays with the child.
 
@@ -266,6 +266,7 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
   mkdirSync(out, { recursive: true });
   for (const [i, p] of posts.entries()) {
     if (p.image && !existsSync(join(here, p.image))) throw new Error(`${p.id}: no image ${p.image}`);
+    if (p.threads.media && !existsSync(join(here, p.threads.media))) throw new Error(`${p.id}: no Threads media ${p.threads.media} (node social/concept/threads-cards.mjs)`);
     const nx = check(p.id, 'x', p.x.text, 280, [[!/https?:\/\//.test(p.x.text), 'no link in the X post: it goes in the first reply'], [tags(p.x.text).length <= 1, 'one tag at most on X']]);
     const nr = p.x.reply ? check(p.id, 'x reply', p.x.reply, 280) : 0;
     const nt = check(p.id, 'threads', p.threads.text, 500, [[tags(p.threads.text).length === 0, 'Threads takes one topic tag, set in the app, not hashtags in the text'],
@@ -280,6 +281,7 @@ x_characters: ${nx} of 280${nr ? `\nx_reply_characters: ${nr} of 280` : ''}
 threads_characters: ${nt} of 500
 threads_topic: ${p.threads.topic}
 threads_rubric: ${p.threads.rubric || 'none'}
+threads_media: ${p.threads.media ? `social/concept/${p.threads.media} (motion card drawn in code; still: .jpg)` : 'not drawn yet (no photos on Threads)'}
 ---
 ## X
 

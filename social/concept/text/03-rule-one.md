@@ -9,6 +9,7 @@ x_reply_characters: 81 of 280
 threads_characters: 363 of 500
 threads_topic: AI safety
 threads_rubric: Unpopular opinion
+threads_media: social/concept/text/threads/03-rule-one.mp4 (motion card drawn in code; still: .jpg)
 ---
 ## X
 

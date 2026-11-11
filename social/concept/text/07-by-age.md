@@ -8,6 +8,7 @@ x_characters: 211 of 280
 threads_characters: 328 of 500
 threads_topic: Parenting
 threads_rubric: You decide
+threads_media: not drawn yet (no photos on Threads)
 ---
 ## X
 

@@ -9,6 +9,7 @@ x_reply_characters: 74 of 280
 threads_characters: 389 of 500
 threads_topic: AI safety
 threads_rubric: Unpopular opinion
+threads_media: not drawn yet (no photos on Threads)
 ---
 ## X
 

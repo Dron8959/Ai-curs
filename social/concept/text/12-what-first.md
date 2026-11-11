@@ -8,6 +8,7 @@ x_characters: 149 of 280
 threads_characters: 243 of 500
 threads_topic: AI for kids
 threads_rubric: You decide
+threads_media: not drawn yet (no photos on Threads)
 ---
 ## X
 

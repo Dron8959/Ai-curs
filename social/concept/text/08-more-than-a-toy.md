@@ -8,6 +8,7 @@ x_characters: 245 of 280
 threads_characters: 349 of 500
 threads_topic: Gift ideas
 threads_rubric: You decide
+threads_media: not drawn yet (no photos on Threads)
 ---
 ## X
 

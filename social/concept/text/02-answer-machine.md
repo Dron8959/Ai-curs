@@ -8,6 +8,7 @@ x_characters: 139 of 280
 threads_characters: 255 of 500
 threads_topic: AI for kids
 threads_rubric: You decide
+threads_media: social/concept/text/threads/02-answer-machine.mp4 (motion card drawn in code; still: .jpg)
 ---
 ## X
 

@@ -8,6 +8,7 @@ x_characters: 160 of 280
 threads_characters: 357 of 500
 threads_topic: Parenting
 threads_rubric: Unpopular opinion
+threads_media: social/concept/text/threads/04-kitchen-table.mp4 (motion card drawn in code; still: .jpg)
 ---
 ## X
 

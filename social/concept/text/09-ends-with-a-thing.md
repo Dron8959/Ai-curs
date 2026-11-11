@@ -8,6 +8,7 @@ x_characters: 230 of 280
 threads_characters: 379 of 500
 threads_topic: AI for kids
 threads_rubric: Unpopular opinion
+threads_media: not drawn yet (no photos on Threads)
 ---
 ## X
 

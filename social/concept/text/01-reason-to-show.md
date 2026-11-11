@@ -9,6 +9,7 @@ x_reply_characters: 115 of 280
 threads_characters: 333 of 500
 threads_topic: Parenting
 threads_rubric: Unpopular opinion
+threads_media: social/concept/text/threads/01-reason-to-show.mp4 (motion card drawn in code; still: .jpg)
 ---
 ## X
 
