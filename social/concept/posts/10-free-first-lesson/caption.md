@@ -2,7 +2,7 @@
 post: 10
 rubric: start
 type: carousel
-networks: [instagram, facebook, threads]
+network: instagram
 ai_generated: true
 alt: "Mint cover that reads \"Free first lesson. Your kid builds a game tonight\" over a pixel-art game made by a 10-year-old, with a button that says \"Build it tonight\"."
 ---

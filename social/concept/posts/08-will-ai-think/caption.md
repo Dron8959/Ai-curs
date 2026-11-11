@@ -2,7 +2,7 @@
 post: 8
 rubric: lab 03
 type: reel
-networks: [instagram, facebook, threads]
+network: instagram
 ai_generated: false
 ---
 Send this to a parent who is on the fence about AI.

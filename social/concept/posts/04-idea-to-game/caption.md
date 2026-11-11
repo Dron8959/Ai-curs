@@ -2,7 +2,7 @@
 post: 4
 rubric: show 02
 type: reel
-networks: [instagram, facebook, threads]
+network: instagram
 ai_generated: true
 ---
 Your kid can do this tonight. The first lesson is free, link in bio.

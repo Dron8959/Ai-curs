@@ -2,7 +2,7 @@
 post: 7
 rubric: show 03
 type: reel
-networks: [instagram, facebook, threads]
+network: instagram
 ai_generated: true
 ---
 The first lesson is free. Link in bio.

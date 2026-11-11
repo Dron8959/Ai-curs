@@ -20,6 +20,7 @@ import { spawn } from 'node:child_process';
 import { css, here, repo, RUBRIC, BPM, B, SYNC } from './kit.mjs';
 import { posts, byId } from './content.mjs';
 import { reels } from './reels.mjs';
+import { packaging } from './platforms.mjs';
 
 const { chromium } = createRequire(import.meta.url)('playwright');
 const [mode, only] = process.argv.slice(2);
@@ -36,6 +37,50 @@ async function shot(browser, html, file, w, h, dsf = 1) {
   await pg.screenshot({ path: file, type: 'jpeg', quality: 92 });
   await pg.context().close();
   unlinkSync(tmp);
+}
+
+// ------------------------------------------------------------------------- words for the other platforms
+const BANNED = /[\u2014\u2013\u2018\u2019\u201c\u201d]|\b(unlock|unleash|empower|revolutioni[sz]e|game-changer|cutting-edge|harness|delve|future-proof)\b|#fyp|#viral/i;
+const tagsIn = (t) => t.match(/#\w+/g) || [];
+function check(id, where, text, rules) {
+  const bad = [];
+  if (BANNED.test(text)) bad.push(`banned character or word: ${text.match(BANNED)[0]}`);
+  for (const [ok, msg] of rules) if (!ok) bad.push(msg);
+  if (bad.length) throw new Error(`${id} ${where}: ${bad.join('; ')}`);
+}
+const fm = (rows) => ['---', ...rows.filter(Boolean), '---'].join('\n');
+
+function writePlatforms(p, d) {
+  const k = packaging[p.id];
+  if (!k) return;
+  const kw = k.keyword.toLowerCase();
+  const media = p.slides ? `slide-01.jpg to slide-${String(p.slides.length).padStart(2, '0')}.jpg` : 'reel.mp4';
+  if (k.tiktok) {
+    const c = k.tiktok.caption.trim();
+    check(p.id, 'tiktok', c, [[c.slice(0, 110).toLowerCase().includes(kw), `the search phrase "${k.keyword}" must open the caption`],
+      [tagsIn(c).length >= 1 && tagsIn(c).length <= 5, 'one to five tags'], [c.length <= 2200, 'caption over 2200 characters']]);
+    writeFileSync(join(d, 'tiktok.md'), `${fm([`post: ${p.n}`, 'network: tiktok', `type: ${p.slides ? 'photo mode (9:16 slides in tiktok/)' : 'video'}`,
+      `media: ${p.slides ? `tiktok/${media}` : media}`, `search_phrase: "${k.keyword}"`, p.slides ? 'music: pick a calm track in the app (photo posts need one)' : 'cover: cover.jpg',
+      'comments: on', p.slides ? '' : 'duet: on', p.slides ? '' : 'stitch: on', 'privacy: public',
+      'disclosure: "Your brand" on (it promotes our own course); "Branded content" off', `ai_label: ${p.ai ? 'on' : 'off'}`])}\n${c}\n`);
+  }
+  if (k.youtube) {
+    const y = k.youtube;
+    check(p.id, 'youtube', `${y.title}\n${y.description}`, [[y.title.length <= 100, 'title over 100 characters'],
+      [y.title.toLowerCase().indexOf(kw) >= 0 && y.title.toLowerCase().indexOf(kw) + kw.length <= 45, `the search phrase "${k.keyword}" must sit in the first 40 characters of the title`],
+      [y.description.toLowerCase().includes(kw), 'the description must use the search phrase'], [y.tags[0] === kw, 'the first tag must be the exact search phrase'],
+      [tagsIn(y.description).length <= 3, 'at most three hashtags'], [!/https?:\/\//.test(y.description), 'no link in a Shorts description: it is not clickable, write the address as text']]);
+    writeFileSync(join(d, 'youtube.md'), `${fm([`post: ${p.n}`, 'network: youtube shorts', `title: "${y.title}"`, `title_length: ${y.title.length}`, 'media: reel.mp4',
+      'category: Education', 'privacy: public', 'made_for_kids: "No" (the videos speak to parents; the owner confirms this declaration)',
+      `altered_content: ${p.ai ? 'not required (stylised cartoon, nothing realistic); the description says AI made it' : 'no'}`, `tags: [${y.tags.join(', ')}]`])}\n${y.description.trim()}\n`);
+  }
+  if (k.facebook) {
+    const f = k.facebook;
+    check(p.id, 'facebook', `${f.caption}\n${f.comment}`, [[!/https?:\/\/|makeshowlab\.com/.test(f.caption), 'the link belongs in the first comment, not in the post'],
+      [/https:\/\/www\.makeshowlab\.com\//.test(f.comment), 'the first comment needs the link'], [tagsIn(f.caption).length <= 3, 'at most three tags']]);
+    writeFileSync(join(d, 'facebook.md'), `${fm([`post: ${p.n}`, 'network: facebook', `type: ${p.slides ? 'photo post (the slides as an album)' : 'reel'}`, `media: ${media}`,
+      `first_comment: "${f.comment}"`])}\n${f.caption.trim()}\n`);
+  }
 }
 
 async function renderStatic() {
@@ -57,9 +102,18 @@ async function renderStatic() {
       await shot(browser, doc(`<div class="frame ${theme}" style="width:1080px;height:1920px"><div class="tile ${theme}" style="left:0;top:240px">${p.tile}</div></div>`),
         join(d, 'cover.jpg'), 1080, 1920);
     }
-    const fm = ['---', `post: ${p.n}`, `rubric: ${p.rubric}${p.no ? ` ${p.no}` : ''}`, `type: ${p.format}`, 'networks: [instagram, facebook, threads]', `ai_generated: ${p.ai}`,
+    const head = ['---', `post: ${p.n}`, `rubric: ${p.rubric}${p.no ? ` ${p.no}` : ''}`, `type: ${p.format}`, 'network: instagram', `ai_generated: ${p.ai}`,
       ...(p.alt ? [`alt: "${p.alt.replace(/"/g, '\\"')}"`] : []), '---'].join('\n');
-    writeFileSync(join(d, 'caption.md'), `${fm}\n${p.caption.trim()}\n`);
+    writeFileSync(join(d, 'caption.md'), `${head}\n${p.caption.trim()}\n`);
+    writePlatforms(p, d);
+    if (p.slides && packaging[p.id]?.tiktok?.photo) {
+      // TikTok photo mode wants 9:16: the same composition on a tall frame of the slide's own colour
+      mkdirSync(join(d, 'tiktok'), { recursive: true });
+      for (const [i, s] of p.slides.entries()) {
+        await shot(browser, doc(`<div class="frame ${s.theme}" style="width:1080px;height:1920px"><div class="tile ${s.theme}" style="left:0;top:200px">${s.html}</div></div>`),
+          join(d, 'tiktok', `slide-${String(i + 1).padStart(2, '0')}.jpg`), 1080, 1920);
+      }
+    }
     console.log(p.id, p.slides ? `${p.slides.length} slides` : 'cover');
   }
   await browser.close();

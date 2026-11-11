@@ -161,9 +161,10 @@ export const foot = (handle = true) => `<div class="foot">${monoWordmark}${handl
 // Reel pieces: the plate that sits on every scene, and the closing card with the stacked logo.
 export const plate = () => `<img class="plate" src="${A(`${LOGO}/reels/plate.svg`)}" alt="">`;
 // The closing card lasts seven beats: the cut, then the logo on beat 1 (a bar line: the music's last chord lands
-// on it), the button on beat 3, the link line on beat 4.
+// on it), the button on beat 3, the site address on beat 4. It shows the address, not "link in bio", because the
+// same file goes to Instagram, TikTok, Facebook and YouTube Shorts and only the address is true on all four.
 export const endScene = (line) => ({ theme: 'n', beats: 7, wipe: '500,900', swish: true, end: true, html: `
   <h1 class="t"${an('words', 0.02)} style="top:320px;left:0;right:80px;text-align:center;font-size:96px">${line}</h1>
   <img${on('pop', 1, 'logo')} src="${A(`${LOGO}/reels/end-logo.svg`)}" style="position:absolute;z-index:5;left:140px;top:590px;width:720px" alt="">
   <span class="btn"${on('pop', 3)} style="left:170px;top:1220px;width:660px;justify-content:center;background:${C.yellow};color:#141A33;border-color:${C.yellow};box-shadow:12px 12px 0 #070A1F">First lesson free</span>
-  <p class="sub"${an('rise', +(4 * B).toFixed(4))} style="top:1380px;left:0;right:80px;text-align:center;font-size:50px;color:#FFF4DC">Link in bio</p>` });
+  <p class="sub"${an('rise', +(4 * B).toFixed(4))} style="top:1376px;left:0;right:80px;text-align:center;font-size:54px;font-weight:700;color:#FFF4DC">makeshowlab.com</p>` });

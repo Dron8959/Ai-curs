@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Profile extras in the same system: six highlight covers and the Facebook cover.
+// Profile extras in the same system: six highlight covers, the Facebook cover, the X header and the YouTube banner.
 //   node social/concept/extras.mjs      -> social/concept/out/
 import { createRequire } from 'node:module';
 import { writeFileSync, unlinkSync, mkdirSync } from 'node:fs';
@@ -29,6 +29,31 @@ pages.push({ file: 'facebook-cover.jpg', w: 1640, h: 624, html: `
     ${card({ l: 1000, t: 160, w: 216, h: 324, rot: -7, src: `${M}/works/rainbow-drawing.jpg`, cls: 'paper' })}
     ${card({ l: 1168, t: 118, w: 240, h: 360, rot: 5, src: `${M}/works/rainbow-cartoon.jpg`, z: 4 })}
     ${star(60, C.coral, 'left:1420px;top:80px')}${star(30, C.coral, 'left:1470px;top:150px')}${star(44, C.mint, 'left:210px;top:90px')}
+  </div>` });
+
+// X header, 1500×500. The round profile photo covers the lower left, so everything starts at x 330.
+pages.push({ file: 'x-header.jpg', w: 1500, h: 500, html: `
+  <div class="tile k" style="width:1500px;height:500px">
+    <i style="position:absolute;left:1000px;top:-170px;width:760px;height:760px;border-radius:50%;background:${C.yellow}"></i>
+    <img src="${A(`${LOGO}/logo/logo-horizontal-light.svg`)}" style="position:absolute;left:330px;top:92px;width:500px" alt="">
+    <p style="position:absolute;left:336px;top:262px;width:620px;font:800 36px/1.18 Urbanist;color:#141A33">Don’t let AI think for your child.<br>Teach them to think with it.</p>
+    <span class="pill dark" style="left:336px;top:382px;height:64px;font-size:25px;box-shadow:5px 5px 0 ${C.yellow}">First lesson free · makeshowlab.com</span>
+    ${card({ l: 1040, t: 150, w: 330, h: 198, rot: -5, src: `${M}/landing/game.jpg`, cls: 'screen' })}
+    ${card({ l: 1250, t: 96, w: 190, h: 290, rot: 6, src: `${M}/landing/cartoon-cat.jpg`, pos: '50% 38%', z: 4 })}
+    ${star(46, C.coral, 'left:960px;top:60px')}${star(26, C.coral, 'left:1010px;top:110px')}
+  </div>` });
+// YouTube banner, 2560×1440. Phones show only the middle 1546×423; desktops the full width of that strip; TVs all of it.
+pages.push({ file: 'youtube-banner.jpg', w: 2560, h: 1440, html: `
+  <div class="tile n" style="width:2560px;height:1440px">
+    <i style="position:absolute;left:-200px;top:1010px;width:2960px;height:1500px;border-radius:50%;background:#1F2A52"></i>
+    <img src="${A(`${LOGO}/logo/logo-horizontal-dark.svg`)}" style="position:absolute;left:560px;top:548px;width:760px" alt="">
+    <p style="position:absolute;left:1390px;top:560px;width:620px;font:800 46px/1.16 Urbanist;color:#FFF4DC">Your kid makes a cartoon, a game, a song with AI. You sit next to them.</p>
+    <span class="pill" style="left:1390px;top:800px;height:76px;font-size:29px;background:${C.yellow};box-shadow:6px 6px 0 #070A1F">First lesson free · makeshowlab.com</span>
+    ${card({ l: 70, t: 470, w: 380, h: 228, rot: -5, src: `${M}/landing/game.jpg`, cls: 'screen' })}
+    ${card({ l: 2130, t: 500, w: 250, h: 380, rot: 5, src: `${M}/landing/cartoon-cat.jpg`, pos: '50% 38%' })}
+    ${card({ l: 700, t: 130, w: 560, h: 330, rot: -3, src: `${M}/landing/together-game.jpg` })}
+    ${card({ l: 1400, t: 1010, w: 520, h: 340, rot: 3, src: `${M}/landing/step-show.jpg`, pos: '58% 80.3%', zoom: 330 })}
+    ${star(90, C.yellow, 'left:2010px;top:300px')}${star(50, C.yellow, 'left:1950px;top:250px')}${star(70, C.coral, 'left:420px;top:1050px')}
   </div>` });
 
 const browser = await chromium.launch();

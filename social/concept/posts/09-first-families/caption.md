@@ -2,7 +2,7 @@
 post: 9
 rubric: show 04
 type: carousel
-networks: [instagram, facebook, threads]
+network: instagram
 ai_generated: false
 alt: "Yellow cover that reads \"8 families tried it first\" with a quote from Emily, mom of a 9-year-old, and small round photos of the other families."
 ---

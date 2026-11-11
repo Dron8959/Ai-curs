@@ -2,7 +2,7 @@
 post: 1
 rubric: show 01
 type: reel
-networks: [instagram, facebook, threads]
+network: instagram
 ai_generated: true
 ---
 Send this to the parent whose fridge is covered in drawings.

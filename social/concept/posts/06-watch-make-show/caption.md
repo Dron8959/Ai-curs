@@ -2,7 +2,7 @@
 post: 6
 rubric: make 02
 type: reel
-networks: [instagram, facebook, threads]
+network: instagram
 ai_generated: false
 ---
 Save this for the night you try lesson one.

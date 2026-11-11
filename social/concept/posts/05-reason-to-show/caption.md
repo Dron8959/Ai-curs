@@ -2,7 +2,7 @@
 post: 5
 rubric: lab 02
 type: reel
-networks: [instagram, facebook, threads]
+network: instagram
 ai_generated: false
 ---
 Send this to the person you argue about screen time with.

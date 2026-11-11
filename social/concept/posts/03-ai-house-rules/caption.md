@@ -2,7 +2,7 @@
 post: 3
 rubric: lab 01
 type: carousel
-networks: [instagram, facebook, threads]
+network: instagram
 ai_generated: false
 alt: "Coral cover that reads \"5 AI house rules\" above a note card pinned with a magnet. The card lists the first rules: the account is yours, no chats with strangers, some things AI never hears."
 ---
