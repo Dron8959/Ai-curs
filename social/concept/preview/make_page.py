@@ -100,8 +100,10 @@ card = r"""document.getElementById('posts').innerHTML = POSTS.map((p) => `
 """
 html = html[:a] + card + html[b:]
 # 3. grid tiles and lightbox now read from p/
-html = html.replace('<img src="n/${p.img}.jpg" alt="">${p.fmt === \'Reel\' ? IC.reel : IC.car}', '<img src="p/${p.img}.jpg" alt="">${p.fmt === \'Reel\' ? IC.reel : IC.car}')
-html = html.replace("lbImg.src = 'n/' + seq[at] + '.jpg';", "lbImg.src = 'p/' + seq[at] + '.jpg';")
+for x, y in (('<img src="n/${p.img}.jpg" alt="">', '<img src="p/${p.img}.jpg" alt="">'),
+             ("lbImg.src = 'n/' + seq[at] + '.jpg';", "lbImg.src = 'p/' + seq[at] + '.jpg';")):
+    assert html.count(x) == 1, 'template.html changed, this patch no longer finds: ' + x
+    html = html.replace(x, y)
 # 4. styles
 html = html.replace('</style>', """.post{grid-template-columns:190px minmax(0,1fr)}
 .lead-media{align-self:start}
@@ -330,8 +332,13 @@ html = html[:a] + viewer + html[a:]
 x = 'Первые десять постов собраны: три карусели целиком и семь роликов. Слева профиль, справа каждый пост — ролик можно посмотреть, слайды пролистать, подпись прочитать. Нажмите на плитку, чтобы перейти к посту.'
 assert x in html
 html = html.replace(x, 'Слева Instagram, справа каждый из десяти постов: ролик можно посмотреть со звуком, слайды пролистать, подпись прочитать. Ниже остальные площадки: та же видеолента для TikTok, Facebook и YouTube Shorts, отдельная текстовая лента для Threads и X, и Pinterest.')
-html = html.replace('<p class="eyebrow">@make_showlab · пересборка страницы</p>', '<p class="eyebrow">@make_showlab · Instagram и ещё шесть площадок</p>')
+x = '<p class="eyebrow">@make_showlab · пересборка страницы</p>'
+assert x in html
+html = html.replace(x, '<p class="eyebrow">@make_showlab · Instagram и ещё шесть площадок</p>')
 open(os.path.join(HERE, 'profile.html'), 'w').write(html)
+# the phone alone, as a picture of how the profile will look (out/instagram-profile.png)
+if subprocess.run(['node', os.path.join(HERE, 'shot.cjs')]).returncode:
+    print('profile picture not retaken: shot.cjs failed (needs Playwright)')
 print('posts', len(posts), 'files', len(os.listdir(P)), 'size', sum(os.path.getsize(os.path.join(P, f)) for f in os.listdir(P)) // 1024, 'KB')
 
 
@@ -382,6 +389,7 @@ zp = os.path.join(C, 'out', 'instagram-creatives.zip')
 with zipfile.ZipFile(zp, 'w', zipfile.ZIP_STORED) as z:
     z.write(os.path.join(C, 'INSTAGRAM.md'), 'instagram/00-list.md'); z.write(os.path.join(C, 'MOTION.md'), 'instagram/00-motion-reels.md')
     z.write(os.path.join(os.path.dirname(os.path.dirname(C)), 'social/brand/logo/avatar/avatar-1080.png'), 'instagram/profile/avatar-1080.png')
+    z.write(os.path.join(C, 'out', 'instagram-profile.png'), 'instagram/profile/how-it-will-look.png')
     z.writestr('instagram/profile/profile.txt', "Name: Make Show Lab | AI for Kids\nCategory: Education\n\nBio:\nYour kid makes a cartoon, a game, a song with AI. You sit next to them.\nAges 6-14. No code. By mom Anna & Kamilla, 10.\nFree first lesson\n\nLink: https://www.makeshowlab.com/#free\n\nPinned posts: 10, 2, 7\nHighlights: Free lesson, How it works, Kid-made, Is it safe?, Pricing, About us\n")
     for h, t, w in HLS:
         z.write(os.path.join(C, 'out', f'highlight-{h}.jpg'), f'instagram/profile/highlights/{h}-cover.jpg'); z.write(os.path.join(C, 'out', f'story-{h}.jpg'), f'instagram/profile/highlights/{h}-story.jpg')

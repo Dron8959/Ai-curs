@@ -51,7 +51,8 @@
 
 ## Страница-превью
 Одна страница показывает всё сразу. Пересобрать после изменений:
-`python3 social/concept/preview/make_page.py`, затем опубликовать `social/concept/preview/profile.html`
+`python3 social/concept/preview/make_page.py` (он же переснимает вид профиля `out/instagram-profile.png` и собирает
+архив `out/instagram-creatives.zip`), затем опубликовать `social/concept/preview/profile.html`
 инструментом Artifact на тот же адрес (параметр `url`), вместе с изменившимися файлами из `p/`.
 Обычно это делает общий диалог: скажи владельцу, что страницу пора обновить.
 

@@ -56,7 +56,6 @@ en,.en{font-family:var(--latin);font-weight:800;letter-spacing:-.035em}
 .tile{position:relative;aspect-ratio:3/4;border:0;padding:0;margin:0;background:var(--app-chip);cursor:pointer;overflow:hidden;display:block;width:100%}
 .tile img{width:100%;height:100%;object-fit:cover;display:block}
 .tile .ic{position:absolute;top:5px;right:5px;width:17px;height:17px;color:#fff;filter:drop-shadow(0 1px 2px rgba(0,0,0,.65))}
-.tile .pin{right:auto;left:5px}
 .tile:focus-visible,.cover:focus-visible,.strip button:focus-visible,.lb button:focus-visible,.copy:focus-visible{outline:3px solid var(--coral);outline-offset:2px}
 .phone-note{color:var(--muted);font-size:13px;margin:12px 6px 0;text-align:center}
 
@@ -311,7 +310,7 @@ document.getElementById('hlrow').innerHTML = HL.map(([f,t]) => `<figure><img src
 const HLIN = {'free-lesson':'заставка, потом слайды поста №10','how-it-works':'заставка, потом ролик №6','kid-made':'заставка, потом ролики №7, №1 и №4','is-it-safe':'заставка, потом слайды поста №3','pricing':'заставка: обе цены на ней','about-us':'заставка, потом ролик №2 и отзывы из поста №9'};
 document.getElementById('hlrow').insertAdjacentHTML('afterend', '<div class="strip-h">Заставка каждого хайлайта и что внутри</div><div class="strip">' + HL.map(([f,t],i) => `<button type="button" data-seq="${HL.map((h) => 'st-' + h[0]).join(',')}" data-i="${i}" aria-label="Заставка: ${esc(t)}"><img src="p/st-${f}.jpg" alt="" loading="lazy"></button>`).join('') + '</div><ul class="hlin">' + HL.map(([f,t]) => `<li><b>${esc(t)}</b>: ${HLIN[f]}</li>`).join('') + '</ul>');
 document.getElementById('grid').innerHTML = GRID.map((n) => { const p = byN(n);
-  return `<button class="tile" type="button" data-n="${n}" aria-label="Пост ${n}: ${esc(p.title)}"><img src="n/${p.img}.jpg" alt="">${p.fmt === 'Reel' ? IC.reel : IC.car}${p.pin ? IC.pin : ''}</button>`; }).join('');
+  return `<button class="tile" type="button" data-n="${n}" aria-label="Пост ${n}: ${esc(p.title)}"><img src="n/${p.img}.jpg" alt="">${p.pin ? IC.pin : (p.fmt === 'Reel' ? IC.reel : IC.car)}</button>`; }).join('');
 document.getElementById('rubrics').innerHTML = Object.values(R).map((r) =>
   `<div class="rub ${r.name}"><b>${r.name}</b><span><strong>${esc(r.what)}.</strong> ${esc(r.text)}</span><span>${esc(r.why)}</span><small>${r.n}</small></div>`).join('');
 document.getElementById('posts').innerHTML = POSTS.map((p) => `
