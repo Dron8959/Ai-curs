@@ -1,0 +1,36 @@
+[
+ {
+  "id": "mk-12",
+  "category": "music",
+  "file": "audio/assets/music/mk-12_playground-fun.mp3",
+  "title": "Playground Fun",
+  "author": "Ahjay Stelino",
+  "source": "mixkit",
+  "page_url": "https://mixkit.co/free-stock-music/tag/children/",
+  "download_url": "https://assets.mixkit.co/music/12/12.mp3",
+  "license": "Mixkit Stock Music Free License",
+  "license_url": "https://mixkit.co/license/#musicFree",
+  "attribution": null,
+  "need": "music",
+  "rank": 1,
+  "best_segment": [
+   0.45,
+   181.4
+  ],
+  "notes": "The one track of the series. Listed on Mixkit's children / kids tag page as 'Playground Fun' by Ahjay Stelino, tagged Contemporary Folk, Happy, Relaxed, Double Bass, Mallets, Lifestyle, Homes. Measured: 130.0 BPM (arrange.py, grid residual 5 ms), C major, 181.8 s, -15.6 LUFS, 4 clipped samples in the MP3. Bars start at 0.4543 + 1.8462 n s. Used: bars 0-1, 36-42 and 93-97, cut at bar lines (audio/music-edits.json).",
+  "analysis": {
+   "duration": 181.846,
+   "codec": "mp3",
+   "kbps": 256,
+   "src_rate": 44100,
+   "channels": 2,
+   "peak_dbfs": 0.28,
+   "lufs": -15.59,
+   "noise_floor_dbfs": -29.2,
+   "clipped_samples": 4,
+   "attack_at": 0.438,
+   "centroid_hz": 1282,
+   "rolloff95_hz": 8354
+  }
+ }
+]

@@ -20,7 +20,16 @@ export const RUBRIC = { show: { theme: 'y', tint: C.yellow }, make: { theme: 'n'
 
 // Animation hook for reels: an('slap', .6) -> the element slaps in 0.6 s after its scene starts.
 // Types: pop, slap, rise, slide, write, draw, words, settle. Ignored by the static renderer.
-export const an = (type, at = 0) => ` data-in="${type}" data-at="${at}"`;
+// Reels are cut to the music. BPM is the tempo of the track (sound/audio/design), B one beat in seconds:
+// every scene lasts a whole number of beats and every entrance that makes a sound is read on a beat.
+export const BPM = 130;
+export const B = 60 / BPM;
+// from the start of an entrance to the frame the eye reads it: a pop at half its size, a card or a row on contact
+export const SYNC = { pop: 0.06, slap: 0.24, slide: 0.21 };
+// an(type, seconds): a free entrance.  on(type, beat): the entrance is read exactly on that beat of its scene.
+// cue names the sound class when it is not the default one ('none' = silent, 'logo', ...); see render.mjs.
+export const an = (type, at = 0, cue = '') => ` data-in="${type}" data-at="${at}"${cue ? ` data-cue="${cue}"` : ''}`;
+export const on = (type, beat, cue = '') => an(type, Math.max(0, +(beat * B - (SYNC[type] || 0)).toFixed(4)), cue);
 
 const face = (family, weight, file) =>
   `@font-face{font-family:'${family}';font-weight:${weight};src:url(${mod(file)}) format('woff2')}`;
@@ -151,8 +160,10 @@ export const foot = (handle = true) => `<div class="foot">${monoWordmark}${handl
 
 // Reel pieces: the plate that sits on every scene, and the closing card with the stacked logo.
 export const plate = () => `<img class="plate" src="${A(`${LOGO}/reels/plate.svg`)}" alt="">`;
-export const endScene = (line, dur = 3.6) => ({ theme: 'n', dur, wipe: '500,900', end: true, html: `
-  <h1 class="t"${an('words', 0.25)} style="top:320px;left:0;right:80px;text-align:center;font-size:96px">${line}</h1>
-  <img${an('pop', 0.7)} src="${A(`${LOGO}/reels/end-logo.svg`)}" style="position:absolute;z-index:5;left:140px;top:590px;width:720px" alt="">
-  <span class="btn"${an('pop', 1.25)} style="left:170px;top:1220px;width:660px;justify-content:center;background:${C.yellow};color:#141A33;border-color:${C.yellow};box-shadow:12px 12px 0 #070A1F">First lesson free</span>
-  <p class="sub"${an('rise', 1.6)} style="top:1380px;left:0;right:80px;text-align:center;font-size:50px;color:#FFF4DC">Link in bio</p>` });
+// The closing card lasts seven beats: the cut, then the logo on beat 1 (a bar line: the music's last chord lands
+// on it), the button on beat 3, the link line on beat 4.
+export const endScene = (line) => ({ theme: 'n', beats: 7, wipe: '500,900', swish: true, end: true, html: `
+  <h1 class="t"${an('words', 0.02)} style="top:320px;left:0;right:80px;text-align:center;font-size:96px">${line}</h1>
+  <img${on('pop', 1, 'logo')} src="${A(`${LOGO}/reels/end-logo.svg`)}" style="position:absolute;z-index:5;left:140px;top:590px;width:720px" alt="">
+  <span class="btn"${on('pop', 3)} style="left:170px;top:1220px;width:660px;justify-content:center;background:${C.yellow};color:#141A33;border-color:${C.yellow};box-shadow:12px 12px 0 #070A1F">First lesson free</span>
+  <p class="sub"${an('rise', +(4 * B).toFixed(4))} style="top:1380px;left:0;right:80px;text-align:center;font-size:50px;color:#FFF4DC">Link in bio</p>` });

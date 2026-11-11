@@ -1,0 +1,40 @@
+{
+ "_doc": "Music edit for 02-meet-anna-kamilla: see audio/music-edits.json. Written by tools/films.py.",
+ "music": {
+  "file": "audio/assets/music/mk-12_playground-fun.mp3",
+  "src_bpm": 130,
+  "target_bpm": 130,
+  "stretch": "none",
+  "gain_db": -5.0,
+  "eq": {
+   "hp": 30
+  },
+  "segments": [
+   {
+    "label": "film bars 1-2 = track bars 0-1 (C C: the opening under the two portraits)",
+    "src_from": 0.4543,
+    "src_to": 4.1467,
+    "at": 0.035,
+    "fade_in": 0.035,
+    "fade_out": 0.06
+   },
+   {
+    "label": "film bars 3-6 = track bars 39-42 (G | F F | Em: bar 40 on Anna's portrait)",
+    "src_from": 72.4565,
+    "src_to": 79.8414,
+    "at": 3.6923,
+    "fade_in": 0.008,
+    "fade_out": 0.06
+   },
+   {
+    "label": "film bars 7-11 = track bars 93-97 (C | F | G | C: the ending, last chord on the logo)",
+    "src_from": 172.1519,
+    "src_to": 181.383,
+    "at": 11.0769,
+    "fade_in": 0.008,
+    "fade_out": 0.06,
+    "tail_fade": 1.2
+   }
+  ]
+ }
+}

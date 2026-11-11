@@ -1,0 +1,104 @@
+[
+ {
+  "id": "mk-386",
+  "category": "paper",
+  "file": "audio/assets/paper/mk-386_newspaper-falling-to-the-floor.wav",
+  "title": "Newspaper falling to the floor",
+  "author": "Mixkit",
+  "source": "mixkit",
+  "page_url": "https://mixkit.co/free-sound-effects/paper/",
+  "download_url": "https://assets.mixkit.co/active_storage/sfx/386/386.wav",
+  "license": "Mixkit Sound Effects Free License",
+  "license_url": "https://mixkit.co/license/#sfxFree",
+  "attribution": null,
+  "need": "card_lands",
+  "rank": 1,
+  "best_segment": [
+   0.108,
+   0.4
+  ],
+  "notes": "A sheet of newspaper landing: a soft rustle, then the slap at 0.155 s. Used for every card or character that lands, placed by its loudest moment.",
+  "analysis": {
+   "duration": 0.614,
+   "codec": "pcm_s16le",
+   "kbps": 1411,
+   "src_rate": 44100,
+   "channels": 2,
+   "peak_dbfs": -0.31,
+   "lufs": -23.73,
+   "noise_floor_dbfs": -73.4,
+   "clipped_samples": 0,
+   "attack_at": 0.033,
+   "centroid_hz": 1940,
+   "rolloff95_hz": 9175
+  }
+ },
+ {
+  "id": "mk-2151",
+  "category": "paper",
+  "file": "audio/assets/paper/mk-2151_soft-quick-punch.wav",
+  "title": "Soft quick punch",
+  "author": "Mixkit",
+  "source": "mixkit",
+  "page_url": "https://mixkit.co/free-sound-effects/cartoon/",
+  "download_url": "https://assets.mixkit.co/active_storage/sfx/2151/2151.wav",
+  "license": "Mixkit Sound Effects Free License",
+  "license_url": "https://mixkit.co/license/#sfxFree",
+  "attribution": null,
+  "need": "card_lands_body",
+  "rank": 1,
+  "best_segment": [
+   0.098,
+   0.36
+  ],
+  "notes": "A soft thud (strongest partial 129 Hz). Low-passed at 500 Hz and used 5 dB under the paper slap as its body.",
+  "analysis": {
+   "duration": 0.48,
+   "codec": "pcm_s24le",
+   "kbps": 2117,
+   "src_rate": 44100,
+   "channels": 2,
+   "peak_dbfs": -0.17,
+   "lufs": -15.32,
+   "noise_floor_dbfs": -200.0,
+   "clipped_samples": 0,
+   "attack_at": 0.117,
+   "centroid_hz": 2794,
+   "rolloff95_hz": 10077
+  }
+ },
+ {
+  "id": "mk-1530",
+  "category": "paper",
+  "file": "audio/assets/paper/mk-1530_paper-slide.wav",
+  "title": "Paper slide",
+  "author": "Mixkit",
+  "source": "mixkit",
+  "page_url": "https://mixkit.co/free-sound-effects/paper/",
+  "download_url": "https://assets.mixkit.co/active_storage/sfx/1530/1530.wav",
+  "license": "Mixkit Sound Effects Free License",
+  "license_url": "https://mixkit.co/license/#sfxFree",
+  "attribution": null,
+  "need": "row_slides",
+  "rank": 1,
+  "best_segment": [
+   0.19,
+   0.452
+  ],
+  "notes": "A sheet sliding on a table, swelling and stopping at 0.444 s. The last 0.26 s is used, placed by its end on the frame the row stops.",
+  "analysis": {
+   "duration": 1.094,
+   "codec": "pcm_s16le",
+   "kbps": 1411,
+   "src_rate": 44100,
+   "channels": 2,
+   "peak_dbfs": -0.71,
+   "lufs": -24.47,
+   "noise_floor_dbfs": -97.1,
+   "clipped_samples": 0,
+   "attack_at": 0.167,
+   "centroid_hz": 6446,
+   "rolloff95_hz": 10217
+  }
+ }
+]

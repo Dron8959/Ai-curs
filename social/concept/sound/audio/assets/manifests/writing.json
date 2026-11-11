@@ -1,0 +1,36 @@
+[
+ {
+  "id": "mk-2376",
+  "category": "writing",
+  "file": "audio/assets/writing/mk-2376_short-pencil-writing.wav",
+  "title": "Short pencil writing",
+  "author": "Mixkit",
+  "source": "mixkit",
+  "page_url": "https://mixkit.co/free-sound-effects/writing/",
+  "download_url": "https://assets.mixkit.co/active_storage/sfx/2376/2376.wav",
+  "license": "Mixkit Sound Effects Free License",
+  "license_url": "https://mixkit.co/license/#sfxFree",
+  "attribution": null,
+  "need": "handwriting",
+  "rank": 1,
+  "best_segment": [
+   0.0,
+   0.66
+  ],
+  "notes": "Pencil strokes on paper, 0.9 s, quiet (peak -22.7 dBFS) but full band; the first 0.66 s is used under a note being written.",
+  "analysis": {
+   "duration": 0.915,
+   "codec": "pcm_s16le",
+   "kbps": 1411,
+   "src_rate": 44100,
+   "channels": 2,
+   "peak_dbfs": -22.72,
+   "lufs": -36.33,
+   "noise_floor_dbfs": -53.1,
+   "clipped_samples": 0,
+   "attack_at": 0.006,
+   "centroid_hz": 3449,
+   "rolloff95_hz": 9917
+  }
+ }
+]

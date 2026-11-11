@@ -1,0 +1,130 @@
+{
+ "_doc": "The music edit of every reel, written as bars of the track. tools/films.py turns it into the segment list the mixer reads. One track for the whole series: Playground Fun by Ahjay Stelino (Mixkit 12), 130 BPM, C major, bar n starts at t0 + n * bar seconds (measured by the real-sound arranger). Its harmony, bar by bar: 0-7 C C Am Am F F G G; 36-39 F F G G; 40-43 F F Em C (bar 40 is the track's big entrance); 93-97 C F G C C (its ending: the last chord is on bar 96). Every reel opens on bar 0, puts bar 40 on its reveal and bar 96 on the logo. Splices keep the harmony moving: C to G, Em to C (what the track plays there anyway), F to F, Em to G.",
+ "track": {
+  "file": "audio/assets/music/mk-12_playground-fun.mp3",
+  "bpm": 130,
+  "t0": 0.4543,
+  "bar": 1.846211
+ },
+ "films": {
+  "01-crayon-to-cartoon": [
+   [
+    0,
+    0,
+    "C: the track's opening under the hook"
+   ],
+   [
+    39,
+    41,
+    "G | F F: bar 40, the big entrance, on the cartoon landing"
+   ],
+   [
+    94,
+    97,
+    "F | G | C: the ending, last chord on the logo"
+   ]
+  ],
+  "02-meet-anna-kamilla": [
+   [
+    0,
+    1,
+    "C C: the opening under the two portraits"
+   ],
+   [
+    39,
+    42,
+    "G | F F | Em: bar 40 on Anna's portrait"
+   ],
+   [
+    93,
+    97,
+    "C | F | G | C: the ending, last chord on the logo"
+   ]
+  ],
+  "04-idea-to-game": [
+   [
+    0,
+    0,
+    "C: the opening under the idea"
+   ],
+   [
+    39,
+    42,
+    "G | F F | Em: bar 40 on the game landing"
+   ],
+   [
+    93,
+    97,
+    "C | F | G | C: the ending, last chord on the logo"
+   ]
+  ],
+  "05-reason-to-show": [
+   [
+    0,
+    1,
+    "C C: the opening under the hook"
+   ],
+   [
+    39,
+    42,
+    "G | F F | Em: bar 40 on her photo landing"
+   ],
+   [
+    95,
+    97,
+    "G | C: the ending, last chord on the logo"
+   ]
+  ],
+  "06-watch-make-show": [
+   [
+    0,
+    0,
+    "C: the opening under the title"
+   ],
+   [
+    39,
+    42,
+    "G | F F | Em: bar 40 on the first photo"
+   ],
+   [
+    93,
+    97,
+    "C | F | G | C: the ending, last chord on the logo"
+   ]
+  ],
+  "07-made-by-10-year-old": [
+   [
+    0,
+    0,
+    "C: the opening under the hook"
+   ],
+   [
+    39,
+    42,
+    "G | F F | Em: bar 40 on the cartoon landing"
+   ],
+   [
+    93,
+    97,
+    "C | F | G | C: the ending, last chord on the logo"
+   ]
+  ],
+  "08-will-ai-think": [
+   [
+    0,
+    1,
+    "C C: the opening under the question"
+   ],
+   [
+    36,
+    40,
+    "F F | G G | F: four bars that build, bar 40 on the answer"
+   ],
+   [
+    95,
+    97,
+    "G | C: the ending, last chord on the logo"
+   ]
+  ]
+ }
+}

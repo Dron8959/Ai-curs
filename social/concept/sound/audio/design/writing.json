@@ -1,0 +1,49 @@
+{
+ "_doc": "Handwritten notes are written on screen in about 0.6 s: a real pencil on paper for that long. Two recordings (Mixkit 2376 and 3196) so two notes in one reel do not sound identical.",
+ "samples": {
+  "wr.pencil.a": {
+   "file": "audio/assets/writing/mk-2376_short-pencil-writing.wav",
+   "start": 0.0,
+   "end": 0.66,
+   "mono": true,
+   "eq": {
+    "hp": 500
+   },
+   "norm_peak_db": -14,
+   "fade_in": 0.01,
+   "fade_out": 0.08
+  },
+  "wr.pencil.b": {
+   "file": "audio/assets/writing/mk-3196_fast-writing.wav",
+   "start": 0.0,
+   "end": 0.69,
+   "mono": true,
+   "eq": {
+    "hp": 500
+   },
+   "norm_peak_db": -14,
+   "fade_in": 0.01,
+   "fade_out": 0.06
+  }
+ },
+ "pools": {
+  "wr.pencil": [
+   "wr.pencil.a",
+   "wr.pencil.b"
+  ]
+ },
+ "rules": [
+  {
+   "name": "wr.note",
+   "match": {
+    "kind": "write"
+   },
+   "pool": "wr.pencil",
+   "mode": "cycle",
+   "gain_db": -3,
+   "pan": "cue",
+   "pan_scale": 0.15,
+   "align": "start"
+  }
+ ]
+}

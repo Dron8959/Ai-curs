@@ -1,0 +1,110 @@
+{
+ "_doc": "Written by render.mjs from the reel timeline. f = frame at 30 fps where the eye reads the event. Kinds: land (a card or character lands), pop (a label, badge or portrait pops in), slide (a row slides in), write (a handwritten note, dur frames), whoosh (a transition that gets an air sound), cut (a silent transition), logo (the stacked logo on the closing card).",
+ "fps": 30,
+ "bpm": 130,
+ "total": 415,
+ "acts": {
+  "s1": {
+   "from": 0,
+   "dur": 83.077
+  },
+  "s2": {
+   "from": 83.077,
+   "dur": 110.769
+  },
+  "s3": {
+   "from": 193.846,
+   "dur": 124.615
+  },
+  "s4": {
+   "from": 318.462,
+   "dur": 96.923
+  }
+ },
+ "cue": {
+  "reveal": 110.77,
+  "logo": 332.307
+ },
+ "events": [
+  {
+   "f": 13.845,
+   "kind": "land",
+   "id": "s1:land:0:card.paper",
+   "pan": -0.315,
+   "weight": 1.28
+  },
+  {
+   "f": 91.327,
+   "kind": "whoosh",
+   "id": "s2:wipe",
+   "pan": 0.111,
+   "weight": 1,
+   "dur": 16.5
+  },
+  {
+   "f": 110.77,
+   "kind": "land",
+   "id": "s2:land:0:card",
+   "pan": 0.139,
+   "weight": 1.37
+  },
+  {
+   "f": 152.308,
+   "kind": "pop",
+   "id": "s2:pop:1:pill",
+   "pan": -0.372,
+   "weight": 0.6
+  },
+  {
+   "f": 202.096,
+   "kind": "cut",
+   "id": "s3:wipe",
+   "pan": -0.63,
+   "weight": 1,
+   "dur": 16.5
+  },
+  {
+   "f": 221.539,
+   "kind": "slide",
+   "id": "s3:slide:0:card.row",
+   "pan": -0.178,
+   "weight": 0.82
+  },
+  {
+   "f": 249.232,
+   "kind": "slide",
+   "id": "s3:slide:1:card.row",
+   "pan": -0.141,
+   "weight": 0.8
+  },
+  {
+   "f": 276.922,
+   "kind": "slide",
+   "id": "s3:slide:2:card.row",
+   "pan": -0.178,
+   "weight": 0.78
+  },
+  {
+   "f": 326.712,
+   "kind": "whoosh",
+   "id": "s4:wipe",
+   "pan": -0.074,
+   "weight": 1,
+   "dur": 16.5
+  },
+  {
+   "f": 332.307,
+   "kind": "logo",
+   "id": "s4:logo:0:img",
+   "pan": -0.074,
+   "weight": 1.39
+  },
+  {
+   "f": 360,
+   "kind": "pop",
+   "id": "s4:pop:1:btn",
+   "pan": -0.074,
+   "weight": 0.65
+  }
+ ]
+}

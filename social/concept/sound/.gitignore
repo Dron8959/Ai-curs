@@ -1,0 +1,6 @@
+# The raw recordings are never committed: the Mixkit licences forbid passing the items on by themselves.
+# tools/fetch.py downloads them again from audio/assets/sources.json.
+audio/assets/*/
+!audio/assets/manifests/
+# renders, stems, reports, caches
+out/

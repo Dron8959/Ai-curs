@@ -1,0 +1,36 @@
+{
+ "_doc": "Air: two transitions per reel get a real air swish (Mixkit 1469), placed by its peak on the moment the circle wipe is fastest. Every other cut is silent: the music carries it.",
+ "samples": {
+  "mo.swish": {
+   "file": "audio/assets/motion/mk-1469_flying-fast-swoosh.wav",
+   "start": 0.2,
+   "end": 1.05,
+   "eq": {
+    "hp": 200,
+    "lp": 9000
+   },
+   "norm_peak_db": -9,
+   "fade_in": 0.12,
+   "fade_out": 0.3
+  }
+ },
+ "pools": {
+  "mo.swish": [
+   "mo.swish"
+  ]
+ },
+ "rules": [
+  {
+   "name": "mo.swish",
+   "match": {
+    "kind": "whoosh"
+   },
+   "pool": "mo.swish",
+   "mode": "fixed",
+   "gain_db": -11,
+   "pan": "cue",
+   "pan_scale": 0.4,
+   "align": "peak"
+  }
+ ]
+}

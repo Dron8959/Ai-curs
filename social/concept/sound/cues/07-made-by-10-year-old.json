@@ -1,0 +1,143 @@
+{
+ "_doc": "Written by render.mjs from the reel timeline. f = frame at 30 fps where the eye reads the event. Kinds: land (a card or character lands), pop (a label, badge or portrait pops in), slide (a row slides in), write (a handwritten note, dur frames), whoosh (a transition that gets an air sound), cut (a silent transition), logo (the stacked logo on the closing card).",
+ "fps": 30,
+ "bpm": 130,
+ "total": 526,
+ "acts": {
+  "s1": {
+   "from": 0,
+   "dur": 83.077
+  },
+  "s2": {
+   "from": 83.077,
+   "dur": 110.769
+  },
+  "s3": {
+   "from": 193.846,
+   "dur": 110.769
+  },
+  "s4": {
+   "from": 304.615,
+   "dur": 124.615
+  },
+  "s5": {
+   "from": 429.231,
+   "dur": 96.923
+  }
+ },
+ "cue": {
+  "reveal": 110.77,
+  "logo": 443.076
+ },
+ "events": [
+  {
+   "f": 13.845,
+   "kind": "land",
+   "id": "s1:land:1:char",
+   "pan": -0.185,
+   "weight": 1.42
+  },
+  {
+   "f": 34.614,
+   "kind": "pop",
+   "id": "s1:pop:0:pill.dark",
+   "pan": 0.089,
+   "weight": 0.6
+  },
+  {
+   "f": 91.327,
+   "kind": "whoosh",
+   "id": "s2:wipe",
+   "pan": -0.259,
+   "weight": 1,
+   "dur": 16.5
+  },
+  {
+   "f": 110.77,
+   "kind": "land",
+   "id": "s2:land:0:card",
+   "pan": -0.241,
+   "weight": 1.28
+  },
+  {
+   "f": 138.463,
+   "kind": "pop",
+   "id": "s2:pop:1:pill",
+   "pan": 0.249,
+   "weight": 0.6
+  },
+  {
+   "f": 202.096,
+   "kind": "cut",
+   "id": "s3:wipe",
+   "pan": -0.167,
+   "weight": 1,
+   "dur": 16.5
+  },
+  {
+   "f": 221.539,
+   "kind": "land",
+   "id": "s3:land:0:card.screen",
+   "pan": -0.154,
+   "weight": 1.41
+  },
+  {
+   "f": 249.232,
+   "kind": "pop",
+   "id": "s3:pop:1:pill",
+   "pan": 0.302,
+   "weight": 0.6
+  },
+  {
+   "f": 312.865,
+   "kind": "cut",
+   "id": "s4:wipe",
+   "pan": -0.167,
+   "weight": 1,
+   "dur": 16.5
+  },
+  {
+   "f": 332.308,
+   "kind": "land",
+   "id": "s4:land:0:card",
+   "pan": -0.233,
+   "weight": 1.36
+  },
+  {
+   "f": 360.001,
+   "kind": "pop",
+   "id": "s4:pop:1:card",
+   "pan": 0.102,
+   "weight": 0.91
+  },
+  {
+   "f": 373.846,
+   "kind": "pop",
+   "id": "s4:pop:2:pill",
+   "pan": 0.288,
+   "weight": 0.6
+  },
+  {
+   "f": 437.481,
+   "kind": "whoosh",
+   "id": "s5:wipe",
+   "pan": -0.074,
+   "weight": 1,
+   "dur": 16.5
+  },
+  {
+   "f": 443.076,
+   "kind": "logo",
+   "id": "s5:logo:0:img",
+   "pan": -0.074,
+   "weight": 1.39
+  },
+  {
+   "f": 470.769,
+   "kind": "pop",
+   "id": "s5:pop:1:btn",
+   "pan": -0.074,
+   "weight": 0.65
+  }
+ ]
+}

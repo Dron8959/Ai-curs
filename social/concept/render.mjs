@@ -2,8 +2,11 @@
 // Renders the posts in content.mjs / reels.mjs.
 //
 //   node social/concept/render.mjs static [id]   tiles (3:4), carousel slides (4:5), reel covers (9:16), captions
-//   node social/concept/render.mjs reel <id>     one reel -> posts/<id>/reel.mp4
+//   node social/concept/render.mjs reel <id>     one reel -> posts/<id>/reel.mp4 (picture, silent track) + its cue file
+//   node social/concept/render.mjs cues <id>     only the cue file -> sound/cues/<id>.json
 //
+// The cue file is the contract between picture and sound: the exact time of every entrance that makes a
+// sound, read from the same timeline that draws the frames. sound/build.sh mixes the soundtrack from it.
 // Slides are drawn on a 1152×1440 canvas and saved at 1080×1350: the 1080-wide composition sits in the
 // middle, so the 3:4 crop of the profile grid shows exactly the tile. Reels are HTML scenes driven by a
 // paused GSAP timeline; every frame is seeked, screenshotted and piped into ffmpeg, so the result is
@@ -14,7 +17,7 @@ import { writeFileSync, unlinkSync, mkdirSync, existsSync } from 'node:fs';
 import { resolve, join } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { spawn } from 'node:child_process';
-import { css, here, repo, RUBRIC } from './kit.mjs';
+import { css, here, repo, RUBRIC, BPM, B, SYNC } from './kit.mjs';
 import { posts, byId } from './content.mjs';
 import { reels } from './reels.mjs';
 
@@ -65,9 +68,11 @@ async function renderStatic() {
 // ------------------------------------------------------------------------------------------- reels
 const W = 1080, H = 1920, FPS = 30;
 const runtime = `
+const SYNC = ${JSON.stringify(SYNC)};
+const KIND = { pop: 'pop', slap: 'land', slide: 'slide', write: 'write' };   // entrance -> sound class
 const tl = gsap.timeline({ paused: true });
 const scenes = [...document.querySelectorAll('.scene')];
-const clips = [];
+const clips = [], CUES = [], ACTS = {}, MARK = {};
 function split(el) {
   const out = [];
   el.childNodes.forEach((n) => {
@@ -93,16 +98,35 @@ const IN = {
 };
 let t0 = 0;
 scenes.forEach((sc, i) => {
-  const dur = +sc.dataset.dur;
+  const dur = +sc.dataset.dur, name = 's' + (i + 1);
+  ACTS[name] = { from: t0, dur };
   if (i > 0) tl.set(sc, { visibility: 'visible' }, t0);
   if (i > 0) { const [x, y] = (sc.dataset.wipe || '540,960').split(',');
-    tl.fromTo(sc, { clipPath: 'circle(0px at ' + x + 'px ' + y + 'px)' }, { clipPath: 'circle(2300px at ' + x + 'px ' + y + 'px)', duration: .55, ease: 'power2.inOut' }, t0); }
-  sc.querySelectorAll('[data-in]').forEach((el) => IN[el.dataset.in](el, t0 + (+el.dataset.at || 0), dur));
+    tl.fromTo(sc, { clipPath: 'circle(0px at ' + x + 'px ' + y + 'px)' }, { clipPath: 'circle(2300px at ' + x + 'px ' + y + 'px)', duration: .55, ease: 'power2.inOut' }, t0);
+    // the wipe is fastest halfway through: that is where an air sound peaks. Only scenes marked swish get one.
+    CUES.push({ t: t0 + .275, kind: sc.dataset.swish ? 'whoosh' : 'cut', id: name + ':wipe', dur: .55, pan: +((x / 1080 - .5) * 2).toFixed(3), weight: 1 }); }
+  let n = 0;
+  sc.querySelectorAll('[data-in]').forEach((el) => {
+    const type = el.dataset.in, at = +el.dataset.at || 0;
+    const r = el.getBoundingClientRect();                      // measured before the entrance hides the element
+    IN[type](el, t0 + at, dur);
+    const kind = el.dataset.cue || KIND[type];
+    if (!kind || kind === 'none') return;
+    const t = t0 + at + (SYNC[type] || 0);                     // the frame the eye reads it
+    const what = (el.getAttribute('class') || el.tagName.toLowerCase()).trim().split(/\\s+/).slice(0, 2).join('.');
+    const e = { t, kind, id: name + ':' + kind + ':' + (n++) + ':' + what, pan: +(((r.left + r.width / 2) / 1080 - .5) * 2).toFixed(3),
+      weight: +Math.min(1.6, Math.max(.6, Math.sqrt(r.width * r.height) / 450)).toFixed(2) };
+    if (type === 'write') e.dur = .6;
+    CUES.push(e);
+    if (el.hasAttribute('data-reveal')) MARK.reveal = t;
+    if (kind === 'logo') MARK.logo = t;
+  });
   sc.querySelectorAll('[data-kb]').forEach((img) => tl.fromTo(img, { scale: 1 }, { scale: 1.1, duration: dur, ease: 'none' }, t0));
   sc.querySelectorAll('video[data-clip]').forEach((v) => clips.push({ v, start: t0 + (+v.dataset.at || 0), end: t0 + dur }));
   t0 += dur;
 });
 window.TOTAL = t0;
+window.SOUND = { cues: CUES.sort((a, b) => a.t - b.t), acts: ACTS, mark: MARK };
 window.seek = async (t) => {
   tl.seek(t, false);
   await Promise.all(clips.map(({ v, start, end }) => {
@@ -115,10 +139,10 @@ window.seek = async (t) => {
 
 const run = (cmd, args) => new Promise((res, rej) => spawn(cmd, args, { stdio: ['ignore', 'inherit', 'inherit'] }).on('close', (c) => (c ? rej(new Error(`${cmd} exited ${c}`)) : res())));
 
-async function renderReel(id) {
+async function renderReel(id, cuesOnly = false) {
   const p = byId(id);
-  const scenes = reels[p.id];
-  if (!scenes) throw new Error(`no reel scenes for ${id}`);
+  if (!p || !reels[p.id]) throw new Error(`no reel scenes for ${id}`);
+  const scenes = reels[p.id].map((s) => ({ ...s, dur: s.dur ?? s.beats * B }));   // scenes are written in beats
   const d = dirOf(p);
   const tmpFiles = [];
   // Chromium here has no H.264: clips are cut to all-keyframe VP9 so every frame can be seeked exactly
@@ -136,7 +160,7 @@ async function renderReel(id) {
     prepared.push({ ...s, html });
   }
   const body = `<div style="position:relative;width:${W}px;height:${H}px;overflow:hidden;background:#141A33">${prepared.map((s) =>
-    `<section class="tile reel scene ${s.theme}" data-dur="${s.dur}"${s.wipe ? ` data-wipe="${s.wipe}"` : ''}>${s.html}</section>`).join('')}</div>
+    `<section class="tile reel scene ${s.theme}" data-dur="${s.dur}"${s.wipe ? ` data-wipe="${s.wipe}"` : ''}${s.swish ? ' data-swish="1"' : ''}>${s.html}</section>`).join('')}</div>
     <script src="${pathToFileURL(resolve(repo, 'social/engine/node_modules/gsap/dist/gsap.min.js')).href}"></script><script>${runtime}</script>`;
   const tmp = join(d, '.reel.html');
   writeFileSync(tmp, doc(body, `html,body{width:${W}px;height:${H}px;overflow:hidden;background:#141A33}.scene{height:${H}px}`));
@@ -148,6 +172,25 @@ async function renderReel(id) {
   await pg.evaluate(() => Promise.all([...document.querySelectorAll('video')].map((v) => (v.readyState >= 2 ? 0 : new Promise((r) => v.addEventListener('loadeddata', r, { once: true }))))));
   const total = await pg.evaluate(() => window.TOTAL);
   const frames = Math.round(total * FPS);
+  // the cue file (the real-sound skill's format): frames are fractional, exactly where the timeline puts them
+  const snd = await pg.evaluate(() => window.SOUND);
+  const fr = (t) => +(t * FPS).toFixed(3);
+  const cueDir = join(here, 'sound', 'cues');
+  mkdirSync(cueDir, { recursive: true });
+  writeFileSync(join(cueDir, `${p.id}.json`), `${JSON.stringify({
+    _doc: 'Written by render.mjs from the reel timeline. f = frame at 30 fps where the eye reads the event. Kinds: land (a card or character lands), pop (a label, badge or portrait pops in), slide (a row slides in), write (a handwritten note, dur frames), whoosh (a transition that gets an air sound), cut (a silent transition), logo (the stacked logo on the closing card).',
+    fps: FPS, bpm: BPM, total: frames,
+    acts: Object.fromEntries(Object.entries(snd.acts).map(([k, v]) => [k, { from: fr(v.from), dur: fr(v.dur) }])),
+    cue: Object.fromEntries(Object.entries(snd.mark).map(([k, v]) => [k, fr(v)])),
+    events: snd.cues.map(({ t, dur, ...e }) => ({ f: fr(t), ...e, ...(dur ? { dur: fr(dur) } : {}) })),
+  }, null, 1)}\n`);
+  if (cuesOnly) {
+    await browser.close();
+    unlinkSync(tmp);
+    tmpFiles.forEach((f) => existsSync(f) && unlinkSync(f));
+    console.log(`${p.id} · cues · ${snd.cues.length} events · ${total.toFixed(2)} s · ${(total / B).toFixed(0)} beats`);
+    return;
+  }
   const outFile = join(d, 'reel.mp4');
   const ff = spawn('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'image2pipe', '-framerate', String(FPS), '-c:v', 'mjpeg', '-i', '-',
     '-f', 'lavfi', '-i', 'anullsrc=channel_layout=stereo:sample_rate=48000', '-shortest',
@@ -169,4 +212,5 @@ async function renderReel(id) {
 
 if (mode === 'static') await renderStatic();
 else if (mode === 'reel') await renderReel(only);
-else { console.error('usage: render.mjs static [id] | reel <id>'); process.exit(1); }
+else if (mode === 'cues') await renderReel(only, true);
+else { console.error('usage: render.mjs static [id] | reel <id> | cues <id>'); process.exit(1); }

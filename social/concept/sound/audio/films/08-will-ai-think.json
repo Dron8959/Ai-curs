@@ -1,0 +1,69 @@
+{
+ "_doc": "Soundtrack of the reel 08-will-ai-think (real-sound skill: recordings only, credited in CREDITS.md). Written by tools/films.py from the cue file and audio/music-edits.json; the sound palette is shared by every reel (audio/design/*.json).",
+ "duration": 17.5333,
+ "cues": "cues/08-will-ai-think.json",
+ "include": [
+  "audio/design/music-08-will-ai-think.json",
+  "audio/design/ui.json",
+  "audio/design/paper.json",
+  "audio/design/writing.json",
+  "audio/design/motion.json"
+ ],
+ "_buses_doc": "Two rides. Music: the opening sits 3.5 dB under the body and lifts over the last 0.3 s before the reveal (11.08 s), where the track's big entrance lands; its last chord is on the logo (14.77 s). Effects: 4 dB down from the logo on, so the button's pop does not stand over the chord that is ringing out.",
+ "buses": {
+  "music": {
+   "gain_db": 0.0,
+   "auto": [
+    [
+     0,
+     -3.5
+    ],
+    [
+     10.777,
+     -3.5
+    ],
+    [
+     11.057,
+     0.0
+    ],
+    [
+     17.533,
+     0.0
+    ]
+   ]
+  },
+  "amb": {
+   "gain_db": 0.0
+  },
+  "sfx": {
+   "gain_db": 0.0,
+   "eq": {
+    "hp": 40
+   },
+   "auto": [
+    [
+     0,
+     0.0
+    ],
+    [
+     14.719,
+     0.0
+    ],
+    [
+     14.919,
+     -4.0
+    ],
+    [
+     17.533,
+     -4.0
+    ]
+   ]
+  }
+ },
+ "_master_doc": "-14 LUFS for social video; ceiling 0.77 leaves room for the AAC encode (about -1 dBTP after the mux).",
+ "master": {
+  "lufs": -14,
+  "ceiling": 0.77,
+  "no_glue": true
+ }
+}

@@ -1,0 +1,36 @@
+[
+ {
+  "id": "mk-1469",
+  "category": "motion",
+  "file": "audio/assets/motion/mk-1469_flying-fast-swoosh.wav",
+  "title": "Flying fast swoosh",
+  "author": "Mixkit",
+  "source": "mixkit",
+  "page_url": "https://mixkit.co/free-sound-effects/swoosh/",
+  "download_url": "https://assets.mixkit.co/active_storage/sfx/1469/1469.wav",
+  "license": "Mixkit Sound Effects Free License",
+  "license_url": "https://mixkit.co/license/#sfxFree",
+  "attribution": null,
+  "need": "transition_air",
+  "rank": 1,
+  "best_segment": [
+   0.2,
+   1.05
+  ],
+  "notes": "An air pass-by, 0.9 s, peak at 0.535 s, no tonal sweep. Placed by its peak on the fastest moment of the circle wipe; two per reel.",
+  "analysis": {
+   "duration": 1.632,
+   "codec": "pcm_s24le",
+   "kbps": 2117,
+   "src_rate": 44100,
+   "channels": 2,
+   "peak_dbfs": -1.29,
+   "lufs": -15.93,
+   "noise_floor_dbfs": -83.5,
+   "clipped_samples": 0,
+   "attack_at": 0.348,
+   "centroid_hz": 2545,
+   "rolloff95_hz": 9593
+  }
+ }
+]

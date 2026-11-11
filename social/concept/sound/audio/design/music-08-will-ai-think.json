@@ -1,0 +1,40 @@
+{
+ "_doc": "Music edit for 08-will-ai-think: see audio/music-edits.json. Written by tools/films.py.",
+ "music": {
+  "file": "audio/assets/music/mk-12_playground-fun.mp3",
+  "src_bpm": 130,
+  "target_bpm": 130,
+  "stretch": "none",
+  "gain_db": -5.0,
+  "eq": {
+   "hp": 30
+  },
+  "segments": [
+   {
+    "label": "film bars 1-2 = track bars 0-1 (C C: the opening under the question)",
+    "src_from": 0.4543,
+    "src_to": 4.1467,
+    "at": 0.035,
+    "fade_in": 0.035,
+    "fade_out": 0.06
+   },
+   {
+    "label": "film bars 3-7 = track bars 36-40 (F F | G G | F: four bars that build, bar 40 on the answer)",
+    "src_from": 66.9179,
+    "src_to": 76.149,
+    "at": 3.6923,
+    "fade_in": 0.008,
+    "fade_out": 0.06
+   },
+   {
+    "label": "film bars 8-10 = track bars 95-97 (G | C: the ending, last chord on the logo)",
+    "src_from": 175.8443,
+    "src_to": 181.383,
+    "at": 12.9231,
+    "fade_in": 0.008,
+    "fade_out": 0.06,
+    "tail_fade": 1.2
+   }
+  ]
+ }
+}

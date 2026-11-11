@@ -1,0 +1,141 @@
+{
+ "_doc": "Written by render.mjs from the reel timeline. f = frame at 30 fps where the eye reads the event. Kinds: land (a card or character lands), pop (a label, badge or portrait pops in), slide (a row slides in), write (a handwritten note, dur frames), whoosh (a transition that gets an air sound), cut (a silent transition), logo (the stacked logo on the closing card).",
+ "fps": 30,
+ "bpm": 130,
+ "total": 582,
+ "acts": {
+  "s1": {
+   "from": 0,
+   "dur": 83.077
+  },
+  "s2": {
+   "from": 83.077,
+   "dur": 69.231
+  },
+  "s3": {
+   "from": 152.308,
+   "dur": 110.769
+  },
+  "s4": {
+   "from": 263.077,
+   "dur": 96.923
+  },
+  "s5": {
+   "from": 360,
+   "dur": 124.615
+  },
+  "s6": {
+   "from": 484.615,
+   "dur": 96.923
+  }
+ },
+ "cue": {
+  "reveal": 166.153,
+  "logo": 498.46
+ },
+ "events": [
+  {
+   "f": 13.845,
+   "kind": "pop",
+   "id": "s1:pop:0:ring",
+   "pan": -0.474,
+   "weight": 0.98
+  },
+  {
+   "f": 27.693,
+   "kind": "pop",
+   "id": "s1:pop:1:ring",
+   "pan": 0.167,
+   "weight": 0.89
+  },
+  {
+   "f": 41.538,
+   "kind": "pop",
+   "id": "s1:pop:2:pill",
+   "pan": -0.604,
+   "weight": 0.6
+  },
+  {
+   "f": 48.462,
+   "kind": "pop",
+   "id": "s1:pop:3:pill",
+   "pan": 0.209,
+   "weight": 0.6
+  },
+  {
+   "f": 91.327,
+   "kind": "cut",
+   "id": "s2:wipe",
+   "pan": -0.074,
+   "weight": 1,
+   "dur": 16.5
+  },
+  {
+   "f": 160.558,
+   "kind": "whoosh",
+   "id": "s3:wipe",
+   "pan": -0.444,
+   "weight": 1,
+   "dur": 16.5
+  },
+  {
+   "f": 166.153,
+   "kind": "pop",
+   "id": "s3:pop:0:ring",
+   "pan": -0.4,
+   "weight": 1.16
+  },
+  {
+   "f": 271.327,
+   "kind": "cut",
+   "id": "s4:wipe",
+   "pan": 0.111,
+   "weight": 1,
+   "dur": 16.5
+  },
+  {
+   "f": 276.922,
+   "kind": "pop",
+   "id": "s4:pop:0:ring",
+   "pan": 0.037,
+   "weight": 1.16
+  },
+  {
+   "f": 368.25,
+   "kind": "cut",
+   "id": "s5:wipe",
+   "pan": -0.167,
+   "weight": 1,
+   "dur": 16.5
+  },
+  {
+   "f": 387.693,
+   "kind": "land",
+   "id": "s5:land:0:card",
+   "pan": -0.159,
+   "weight": 1.49
+  },
+  {
+   "f": 492.865,
+   "kind": "whoosh",
+   "id": "s6:wipe",
+   "pan": -0.074,
+   "weight": 1,
+   "dur": 16.5
+  },
+  {
+   "f": 498.46,
+   "kind": "logo",
+   "id": "s6:logo:0:img",
+   "pan": -0.074,
+   "weight": 1.39
+  },
+  {
+   "f": 526.153,
+   "kind": "pop",
+   "id": "s6:pop:1:btn",
+   "pan": -0.074,
+   "weight": 0.65
+  }
+ ]
+}

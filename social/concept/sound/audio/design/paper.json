@@ -1,0 +1,118 @@
+{
+ "_doc": "Paper: the picture is built from sticker cards, so a card or a character that lands gets a real sheet of paper landing (Mixkit 386) with a soft low thud under it (Mixkit 2151, low-passed), and a row that slides in gets a sheet sliding to a stop (Mixkit 1530, placed by its end).",
+ "samples": {
+  "pa.land": {
+   "file": "audio/assets/paper/mk-386_newspaper-falling-to-the-floor.wav",
+   "start": 0.108,
+   "end": 0.4,
+   "mono": true,
+   "eq": {
+    "hp": 120
+   },
+   "norm_peak_db": -8,
+   "fade_in": 0.004,
+   "fade_out": 0.06
+  },
+  "pa.thud": {
+   "file": "audio/assets/paper/mk-2151_soft-quick-punch.wav",
+   "start": 0.098,
+   "end": 0.36,
+   "mono": true,
+   "eq": {
+    "hp": 55,
+    "lp": 500
+   },
+   "norm_peak_db": -12,
+   "fade_in": 0.003,
+   "fade_out": 0.08
+  },
+  "pa.slide": {
+   "file": "audio/assets/paper/mk-1530_paper-slide.wav",
+   "start": 0.19,
+   "end": 0.452,
+   "mono": true,
+   "eq": {
+    "hp": 400
+   },
+   "norm_peak_db": -14,
+   "fade_in": 0.06,
+   "fade_out": 0.02
+  }
+ },
+ "pools": {
+  "pa.land": [
+   "pa.land"
+  ],
+  "pa.thud": [
+   "pa.thud"
+  ],
+  "pa.slide": [
+   "pa.slide"
+  ]
+ },
+ "rules": [
+  {
+   "name": "pa.land",
+   "_doc": "placed by its loudest moment, 20 ms after contact, so the rustle of the sheet arriving leads in and the slap is never early",
+   "match": {
+    "kind": "land"
+   },
+   "pool": "pa.land",
+   "mode": "fixed",
+   "gain_db": -8,
+   "weight_db": 2.5,
+   "jitter_db": 1.0,
+   "pitch": [
+    -0.5,
+    0.5
+   ],
+   "pan": "cue",
+   "pan_scale": 0.15,
+   "align": "peak",
+   "offset": 0.02
+  },
+  {
+   "name": "pa.land body",
+   "match": {
+    "kind": "land"
+   },
+   "pool": "pa.thud",
+   "mode": "fixed",
+   "gain_db": -13,
+   "weight_db": 2.5,
+   "pan": "cue",
+   "pan_scale": 0.1,
+   "align": "attack",
+   "offset": -0.01,
+   "no_cue": true,
+   "jitter_db": 1.2,
+   "pitch": [
+    -0.6,
+    0.6
+   ]
+  },
+  {
+   "name": "pa.slide",
+   "_doc": "the sheet stops as the row stops: aligned by its end; three rows in a run climb a little",
+   "match": {
+    "kind": "slide"
+   },
+   "pool": "pa.slide",
+   "mode": "fixed",
+   "gain_db": -4,
+   "jitter_db": 1.0,
+   "pitch": [
+    -0.4,
+    0.4
+   ],
+   "pitch_ramp": [
+    0,
+    1.5
+   ],
+   "pan": "cue",
+   "pan_scale": 0.15,
+   "align": "end",
+   "offset": 0.03
+  }
+ ]
+}

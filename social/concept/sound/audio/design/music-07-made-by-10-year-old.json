@@ -1,0 +1,40 @@
+{
+ "_doc": "Music edit for 07-made-by-10-year-old: see audio/music-edits.json. Written by tools/films.py.",
+ "music": {
+  "file": "audio/assets/music/mk-12_playground-fun.mp3",
+  "src_bpm": 130,
+  "target_bpm": 130,
+  "stretch": "none",
+  "gain_db": -5.0,
+  "eq": {
+   "hp": 30
+  },
+  "segments": [
+   {
+    "label": "film bars 1-1 = track bars 0-0 (C: the opening under the hook)",
+    "src_from": 0.4543,
+    "src_to": 2.3005,
+    "at": 0.035,
+    "fade_in": 0.035,
+    "fade_out": 0.06
+   },
+   {
+    "label": "film bars 2-5 = track bars 39-42 (G | F F | Em: bar 40 on the cartoon landing)",
+    "src_from": 72.4565,
+    "src_to": 79.8414,
+    "at": 1.8462,
+    "fade_in": 0.008,
+    "fade_out": 0.06
+   },
+   {
+    "label": "film bars 6-10 = track bars 93-97 (C | F | G | C: the ending, last chord on the logo)",
+    "src_from": 172.1519,
+    "src_to": 181.383,
+    "at": 9.2308,
+    "fade_in": 0.008,
+    "fade_out": 0.06,
+    "tail_fade": 1.2
+   }
+  ]
+ }
+}

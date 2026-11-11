@@ -1,0 +1,70 @@
+[
+ {
+  "id": "mk-2359",
+  "category": "ui",
+  "file": "audio/assets/ui/mk-2359_silly-pop-cluster.wav",
+  "title": "Silly pop cluster",
+  "author": "Mixkit",
+  "source": "mixkit",
+  "page_url": "https://mixkit.co/free-sound-effects/pop/",
+  "download_url": "https://assets.mixkit.co/active_storage/sfx/2359/2359.wav",
+  "license": "Mixkit Sound Effects Free License",
+  "license_url": "https://mixkit.co/license/#sfxFree",
+  "attribution": null,
+  "need": "pop",
+  "rank": 1,
+  "best_segment": [
+   0.31,
+   0.47
+  ],
+  "notes": "A cluster of six single pops in one recording; five takes are trimmed out as the pop voice of the series (ui.pop.a-e). Instant attack (5 ms), each 0.12-0.26 s, floor -52.7 dBFS.",
+  "analysis": {
+   "duration": 1.47,
+   "codec": "pcm_s16le",
+   "kbps": 1411,
+   "src_rate": 44100,
+   "channels": 2,
+   "peak_dbfs": -3.01,
+   "lufs": -21.71,
+   "noise_floor_dbfs": -52.7,
+   "clipped_samples": 0,
+   "attack_at": 0.016,
+   "centroid_hz": 3037,
+   "rolloff95_hz": 9809
+  }
+ },
+ {
+  "id": "mk-2364",
+  "category": "ui",
+  "file": "audio/assets/ui/mk-2364_hard-pop-click.wav",
+  "title": "Hard pop click",
+  "author": "Mixkit",
+  "source": "mixkit",
+  "page_url": "https://mixkit.co/free-sound-effects/pop/",
+  "download_url": "https://assets.mixkit.co/active_storage/sfx/2364/2364.wav",
+  "license": "Mixkit Sound Effects Free License",
+  "license_url": "https://mixkit.co/license/#sfxFree",
+  "attribution": null,
+  "need": "pop_body",
+  "rank": 1,
+  "best_segment": [
+   0.0,
+   0.095
+  ],
+  "notes": "One short low pop (strongest partial about 580 Hz, centroid 945 Hz), used quietly under the big pops for weight, band-limited 120 Hz-3.5 kHz.",
+  "analysis": {
+   "duration": 1.175,
+   "codec": "pcm_s16le",
+   "kbps": 1411,
+   "src_rate": 44100,
+   "channels": 2,
+   "peak_dbfs": -0.12,
+   "lufs": -18.13,
+   "noise_floor_dbfs": -72.9,
+   "clipped_samples": 0,
+   "attack_at": 0.005,
+   "centroid_hz": 2725,
+   "rolloff95_hz": 9743
+  }
+ }
+]

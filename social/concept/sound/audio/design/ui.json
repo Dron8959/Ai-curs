@@ -1,0 +1,159 @@
+{
+ "_doc": "Pops: labels, badges, numbers, portraits and the button popping in. One voice for the whole series: three single mouth-pop takes cut from one Mixkit recording (2359, a cluster of six), so a repeated pop never plays the same take twice in a row. Big things (a portrait, a badge, a card) play the same takes three semitones lower with a short low 'pok' under them for weight.",
+ "samples": {
+  "ui.pop.a": {
+   "file": "audio/assets/ui/mk-2359_silly-pop-cluster.wav",
+   "start": 0.311,
+   "end": 0.47,
+   "mono": true,
+   "eq": {
+    "hp": 250
+   },
+   "norm_peak_db": -10,
+   "fade_in": 0.002,
+   "fade_out": 0.04
+  },
+  "ui.pop.b": {
+   "file": "audio/assets/ui/mk-2359_silly-pop-cluster.wav",
+   "start": 0.813,
+   "end": 0.975,
+   "mono": true,
+   "eq": {
+    "hp": 250
+   },
+   "norm_peak_db": -10,
+   "fade_in": 0.002,
+   "fade_out": 0.04
+  },
+  "ui.pop.c": {
+   "file": "audio/assets/ui/mk-2359_silly-pop-cluster.wav",
+   "start": 0.012,
+   "end": 0.15,
+   "mono": true,
+   "eq": {
+    "hp": 250,
+    "highshelf": [
+     6000,
+     -4
+    ]
+   },
+   "norm_peak_db": -10,
+   "fade_in": 0.002,
+   "fade_out": 0.05
+  },
+  "ui.pop.d": {
+   "file": "audio/assets/ui/mk-2359_silly-pop-cluster.wav",
+   "start": 0.51,
+   "end": 0.65,
+   "mono": true,
+   "eq": {
+    "hp": 250,
+    "highshelf": [
+     6000,
+     -4
+    ]
+   },
+   "norm_peak_db": -10,
+   "fade_in": 0.002,
+   "fade_out": 0.05
+  },
+  "ui.pop.e": {
+   "file": "audio/assets/ui/mk-2359_silly-pop-cluster.wav",
+   "start": 1.312,
+   "end": 1.468,
+   "mono": true,
+   "eq": {
+    "hp": 250
+   },
+   "norm_peak_db": -10,
+   "fade_in": 0.002,
+   "fade_out": 0.04
+  },
+  "ui.pok": {
+   "file": "audio/assets/ui/mk-2364_hard-pop-click.wav",
+   "start": 0.0,
+   "end": 0.095,
+   "mono": true,
+   "eq": {
+    "hp": 120,
+    "lp": 3500
+   },
+   "norm_peak_db": -12,
+   "fade_in": 0.001,
+   "fade_out": 0.03
+  }
+ },
+ "pools": {
+  "ui.pop": [
+   "ui.pop.a",
+   "ui.pop.b",
+   "ui.pop.c",
+   "ui.pop.d",
+   "ui.pop.e"
+  ],
+  "ui.pok": [
+   "ui.pok"
+  ]
+ },
+ "rules": [
+  {
+   "name": "ui.pop small",
+   "_doc": "labels, numbers and the button: a light pop, a little higher than recorded",
+   "match": {
+    "kind": "pop",
+    "id": ":(pill|num|btn)"
+   },
+   "pool": "ui.pop",
+   "mode": "cycle",
+   "gain_db": -4,
+   "jitter_db": 1.2,
+   "pitch": [
+    0.6,
+    1.4
+   ],
+   "pan": "cue",
+   "pan_scale": 0.15,
+   "align": "attack"
+  },
+  {
+   "name": "ui.pop big",
+   "_doc": "portraits, badges and cards: the same takes three semitones lower",
+   "match": {
+    "kind": "pop",
+    "id": ":(ring|card|badge)"
+   },
+   "pool": "ui.pop",
+   "mode": "cycle",
+   "cycle_start": 2,
+   "gain_db": -3,
+   "jitter_db": 1.0,
+   "pitch": [
+    -3.4,
+    -2.6
+   ],
+   "pan": "cue",
+   "pan_scale": 0.15,
+   "align": "attack"
+  },
+  {
+   "name": "ui.pop big body",
+   "_doc": "weight under the big pops",
+   "match": {
+    "kind": "pop",
+    "id": ":(ring|card|badge)"
+   },
+   "pool": "ui.pok",
+   "mode": "fixed",
+   "gain_db": -9,
+   "pan": "cue",
+   "pan_scale": 0.15,
+   "align": "attack",
+   "no_cue": true,
+   "jitter_db": 1.2,
+   "pitch": [
+    -0.6,
+    0.6
+   ]
+  }
+ ]
+}

@@ -1,0 +1,549 @@
+{
+ "_doc": "Every Mixkit recording considered for the reels. tools/fetch.py downloads them; the manifests in audio/assets/manifests say which ones are used and why.",
+ "items": [
+  {
+   "id": 12,
+   "kind": "music",
+   "category": "music",
+   "title": "Playground Fun",
+   "page_url": "https://mixkit.co/free-stock-music/tag/children/",
+   "author": "Ahjay Stelino"
+  },
+  {
+   "id": 1069,
+   "kind": "music",
+   "category": "music",
+   "title": "My Pride and Joy",
+   "page_url": "https://mixkit.co/free-stock-music/tag/children/",
+   "author": "Michael Ramir C."
+  },
+  {
+   "id": 2,
+   "kind": "music",
+   "category": "music",
+   "title": "Comical",
+   "page_url": "https://mixkit.co/free-stock-music/tag/children/",
+   "author": "Ahjay Stelino"
+  },
+  {
+   "id": 1037,
+   "kind": "music",
+   "category": "music",
+   "title": "My Little Star",
+   "page_url": "https://mixkit.co/free-stock-music/tag/children/",
+   "author": "Michael Ramir C."
+  },
+  {
+   "id": 10,
+   "kind": "music",
+   "category": "music",
+   "title": "Playful",
+   "page_url": "https://mixkit.co/free-stock-music/tag/children/",
+   "author": "Ahjay Stelino"
+  },
+  {
+   "id": 11,
+   "kind": "music",
+   "category": "music",
+   "title": "Just Kidding",
+   "page_url": "https://mixkit.co/free-stock-music/tag/children/",
+   "author": "Ahjay Stelino"
+  },
+  {
+   "id": 3,
+   "kind": "music",
+   "category": "music",
+   "title": "Dance with Me",
+   "page_url": "https://mixkit.co/free-stock-music/tag/children/",
+   "author": "Ahjay Stelino"
+  },
+  {
+   "id": 8,
+   "kind": "music",
+   "category": "music",
+   "title": "Jumping Around",
+   "page_url": "https://mixkit.co/free-stock-music/tag/children/",
+   "author": "Ahjay Stelino"
+  },
+  {
+   "id": 831,
+   "kind": "music",
+   "category": "music",
+   "title": "I Love You Mommy",
+   "page_url": "https://mixkit.co/free-stock-music/tag/children/",
+   "author": "Michael Ramir C."
+  },
+  {
+   "id": 847,
+   "kind": "music",
+   "category": "music",
+   "title": "It's April",
+   "page_url": "https://mixkit.co/free-stock-music/tag/children/",
+   "author": "Michael Ramir C."
+  },
+  {
+   "id": 1076,
+   "kind": "music",
+   "category": "music",
+   "title": "Smile",
+   "page_url": "https://mixkit.co/free-stock-music/tag/children/",
+   "author": "Michael Ramir C."
+  },
+  {
+   "id": 5,
+   "kind": "music",
+   "category": "music",
+   "title": "Feeling Happy",
+   "page_url": "https://mixkit.co/free-stock-music/tag/children/",
+   "author": "Ahjay Stelino"
+  },
+  {
+   "id": 2358,
+   "kind": "sfx",
+   "category": "ui",
+   "title": "Long pop",
+   "page_url": "https://mixkit.co/free-sound-effects/pop/"
+  },
+  {
+   "id": 2364,
+   "kind": "sfx",
+   "category": "ui",
+   "title": "Hard pop click",
+   "page_url": "https://mixkit.co/free-sound-effects/pop/"
+  },
+  {
+   "id": 2356,
+   "kind": "sfx",
+   "category": "ui",
+   "title": "Dry pop up notification alert",
+   "page_url": "https://mixkit.co/free-sound-effects/pop/"
+  },
+  {
+   "id": 2357,
+   "kind": "sfx",
+   "category": "ui",
+   "title": "Bubble pop up alert notification",
+   "page_url": "https://mixkit.co/free-sound-effects/pop/"
+  },
+  {
+   "id": 3005,
+   "kind": "sfx",
+   "category": "ui",
+   "title": "Explainer video pops whoosh light pop",
+   "page_url": "https://mixkit.co/free-sound-effects/pop/"
+  },
+  {
+   "id": 2925,
+   "kind": "sfx",
+   "category": "ui",
+   "title": "Soap bubble sound",
+   "page_url": "https://mixkit.co/free-sound-effects/pop/"
+  },
+  {
+   "id": 2359,
+   "kind": "sfx",
+   "category": "ui",
+   "title": "Silly pop cluster",
+   "page_url": "https://mixkit.co/free-sound-effects/pop/"
+  },
+  {
+   "id": 3192,
+   "kind": "sfx",
+   "category": "ui",
+   "title": "Egg bubble pop",
+   "page_url": "https://mixkit.co/free-sound-effects/bubble/"
+  },
+  {
+   "id": 731,
+   "kind": "sfx",
+   "category": "ui",
+   "title": "Cartoon bubble pop",
+   "page_url": "https://mixkit.co/free-sound-effects/bubble/"
+  },
+  {
+   "id": 732,
+   "kind": "sfx",
+   "category": "ui",
+   "title": "Cartoon bubbles popping",
+   "page_url": "https://mixkit.co/free-sound-effects/bubble/"
+  },
+  {
+   "id": 3069,
+   "kind": "sfx",
+   "category": "ui",
+   "title": "Game balloon or bubble pop",
+   "page_url": "https://mixkit.co/free-sound-effects/bubble/"
+  },
+  {
+   "id": 1124,
+   "kind": "sfx",
+   "category": "ui",
+   "title": "Plastic bubble click",
+   "page_url": "https://mixkit.co/free-sound-effects/bubble/"
+  },
+  {
+   "id": 1317,
+   "kind": "sfx",
+   "category": "ui",
+   "title": "Water bubble",
+   "page_url": "https://mixkit.co/free-sound-effects/bubble/"
+  },
+  {
+   "id": 3000,
+   "kind": "sfx",
+   "category": "ui",
+   "title": "Liquid bubble",
+   "page_url": "https://mixkit.co/free-sound-effects/bubble/"
+  },
+  {
+   "id": 1113,
+   "kind": "sfx",
+   "category": "ui",
+   "title": "Mouse click close",
+   "page_url": "https://mixkit.co/free-sound-effects/click/"
+  },
+  {
+   "id": 1117,
+   "kind": "sfx",
+   "category": "ui",
+   "title": "Classic click",
+   "page_url": "https://mixkit.co/free-sound-effects/click/"
+  },
+  {
+   "id": 1109,
+   "kind": "sfx",
+   "category": "ui",
+   "title": "Select click",
+   "page_url": "https://mixkit.co/free-sound-effects/click/"
+  },
+  {
+   "id": 2997,
+   "kind": "sfx",
+   "category": "ui",
+   "title": "Clear mouse clicks",
+   "page_url": "https://mixkit.co/free-sound-effects/click/"
+  },
+  {
+   "id": 1530,
+   "kind": "sfx",
+   "category": "paper",
+   "title": "Paper slide",
+   "page_url": "https://mixkit.co/free-sound-effects/paper/"
+  },
+  {
+   "id": 2380,
+   "kind": "sfx",
+   "category": "paper",
+   "title": "Paper quick movement",
+   "page_url": "https://mixkit.co/free-sound-effects/paper/"
+  },
+  {
+   "id": 2386,
+   "kind": "sfx",
+   "category": "paper",
+   "title": "Pages of paper moving",
+   "page_url": "https://mixkit.co/free-sound-effects/paper/"
+  },
+  {
+   "id": 1104,
+   "kind": "sfx",
+   "category": "paper",
+   "title": "Page turn single",
+   "page_url": "https://mixkit.co/free-sound-effects/paper/"
+  },
+  {
+   "id": 1105,
+   "kind": "sfx",
+   "category": "paper",
+   "title": "Big paper page turn",
+   "page_url": "https://mixkit.co/free-sound-effects/paper/"
+  },
+  {
+   "id": 2384,
+   "kind": "sfx",
+   "category": "paper",
+   "title": "Paper quick slice",
+   "page_url": "https://mixkit.co/free-sound-effects/paper/"
+  },
+  {
+   "id": 2383,
+   "kind": "sfx",
+   "category": "paper",
+   "title": "Paper scroll in an office",
+   "page_url": "https://mixkit.co/free-sound-effects/paper/"
+  },
+  {
+   "id": 386,
+   "kind": "sfx",
+   "category": "paper",
+   "title": "Newspaper falling to the floor",
+   "page_url": "https://mixkit.co/free-sound-effects/paper/"
+  },
+  {
+   "id": 1101,
+   "kind": "sfx",
+   "category": "paper",
+   "title": "Single book paging",
+   "page_url": "https://mixkit.co/free-sound-effects/paper/"
+  },
+  {
+   "id": 2151,
+   "kind": "sfx",
+   "category": "paper",
+   "title": "Soft quick punch",
+   "page_url": "https://mixkit.co/free-sound-effects/cartoon/"
+  },
+  {
+   "id": 1489,
+   "kind": "sfx",
+   "category": "motion",
+   "title": "Air woosh",
+   "page_url": "https://mixkit.co/free-sound-effects/whoosh/"
+  },
+  {
+   "id": 1490,
+   "kind": "sfx",
+   "category": "motion",
+   "title": "Fast whoosh transition",
+   "page_url": "https://mixkit.co/free-sound-effects/whoosh/"
+  },
+  {
+   "id": 1461,
+   "kind": "sfx",
+   "category": "motion",
+   "title": "Short wind swoosh",
+   "page_url": "https://mixkit.co/free-sound-effects/swoosh/"
+  },
+  {
+   "id": 1464,
+   "kind": "sfx",
+   "category": "motion",
+   "title": "Quick swoosh accent",
+   "page_url": "https://mixkit.co/free-sound-effects/swoosh/"
+  },
+  {
+   "id": 166,
+   "kind": "sfx",
+   "category": "motion",
+   "title": "Fast small sweep transition",
+   "page_url": "https://mixkit.co/free-sound-effects/swoosh/"
+  },
+  {
+   "id": 168,
+   "kind": "sfx",
+   "category": "motion",
+   "title": "Fast air sweep transition",
+   "page_url": "https://mixkit.co/free-sound-effects/swoosh/"
+  },
+  {
+   "id": 174,
+   "kind": "sfx",
+   "category": "motion",
+   "title": "Fast sweep transition",
+   "page_url": "https://mixkit.co/free-sound-effects/swoosh/"
+  },
+  {
+   "id": 164,
+   "kind": "sfx",
+   "category": "motion",
+   "title": "Fast sweeping transition",
+   "page_url": "https://mixkit.co/free-sound-effects/swoosh/"
+  },
+  {
+   "id": 3115,
+   "kind": "sfx",
+   "category": "motion",
+   "title": "Fast transitions swoosh",
+   "page_url": "https://mixkit.co/free-sound-effects/swoosh/"
+  },
+  {
+   "id": 1469,
+   "kind": "sfx",
+   "category": "motion",
+   "title": "Flying fast swoosh",
+   "page_url": "https://mixkit.co/free-sound-effects/swoosh/"
+  },
+  {
+   "id": 2161,
+   "kind": "sfx",
+   "category": "motion",
+   "title": "Air in a hit",
+   "page_url": "https://mixkit.co/free-sound-effects/swish/"
+  },
+  {
+   "id": 1494,
+   "kind": "sfx",
+   "category": "motion",
+   "title": "Sand swish",
+   "page_url": "https://mixkit.co/free-sound-effects/swish/"
+  },
+  {
+   "id": 175,
+   "kind": "sfx",
+   "category": "motion",
+   "title": "Short transition sweep",
+   "page_url": "https://mixkit.co/free-sound-effects/transition/"
+  },
+  {
+   "id": 2608,
+   "kind": "sfx",
+   "category": "motion",
+   "title": "Air zoom vacuum",
+   "page_url": "https://mixkit.co/free-sound-effects/transition/"
+  },
+  {
+   "id": 1168,
+   "kind": "sfx",
+   "category": "motion",
+   "title": "Woosh wind",
+   "page_url": "https://mixkit.co/free-sound-effects/transition/"
+  },
+  {
+   "id": 2376,
+   "kind": "sfx",
+   "category": "writing",
+   "title": "Short pencil writing",
+   "page_url": "https://mixkit.co/free-sound-effects/writing/"
+  },
+  {
+   "id": 3194,
+   "kind": "sfx",
+   "category": "writing",
+   "title": "Writing pencil",
+   "page_url": "https://mixkit.co/free-sound-effects/writing/"
+  },
+  {
+   "id": 2369,
+   "kind": "sfx",
+   "category": "writing",
+   "title": "Writing scribble on paper",
+   "page_url": "https://mixkit.co/free-sound-effects/writing/"
+  },
+  {
+   "id": 2367,
+   "kind": "sfx",
+   "category": "writing",
+   "title": "Writing with a pen on paper",
+   "page_url": "https://mixkit.co/free-sound-effects/writing/"
+  },
+  {
+   "id": 3011,
+   "kind": "sfx",
+   "category": "writing",
+   "title": "Explainer video writing pencil letters a",
+   "page_url": "https://mixkit.co/free-sound-effects/writing/"
+  },
+  {
+   "id": 3196,
+   "kind": "sfx",
+   "category": "writing",
+   "title": "Fast writing",
+   "page_url": "https://mixkit.co/free-sound-effects/writing/"
+  },
+  {
+   "id": 2998,
+   "kind": "sfx",
+   "category": "writing",
+   "title": "Pen marker line",
+   "page_url": "https://mixkit.co/free-sound-effects/marker/"
+  },
+  {
+   "id": 2368,
+   "kind": "sfx",
+   "category": "writing",
+   "title": "Signing on a paper",
+   "page_url": "https://mixkit.co/free-sound-effects/paper/"
+  },
+  {
+   "id": 3109,
+   "kind": "sfx",
+   "category": "logo",
+   "title": "Relaxing bell chime",
+   "page_url": "https://mixkit.co/free-sound-effects/bell/"
+  },
+  {
+   "id": 1791,
+   "kind": "sfx",
+   "category": "logo",
+   "title": "Cooking bell ding",
+   "page_url": "https://mixkit.co/free-sound-effects/bell/"
+  },
+  {
+   "id": 931,
+   "kind": "sfx",
+   "category": "logo",
+   "title": "Service bell",
+   "page_url": "https://mixkit.co/free-sound-effects/bell/"
+  },
+  {
+   "id": 586,
+   "kind": "sfx",
+   "category": "logo",
+   "title": "Attention bell ding",
+   "page_url": "https://mixkit.co/free-sound-effects/bell/"
+  },
+  {
+   "id": 938,
+   "kind": "sfx",
+   "category": "logo",
+   "title": "Uplifting bells notification",
+   "page_url": "https://mixkit.co/free-sound-effects/bell/"
+  },
+  {
+   "id": 601,
+   "kind": "sfx",
+   "category": "logo",
+   "title": "Happy bell alert",
+   "page_url": "https://mixkit.co/free-sound-effects/bell/"
+  },
+  {
+   "id": 937,
+   "kind": "sfx",
+   "category": "logo",
+   "title": "Happy bells notification",
+   "page_url": "https://mixkit.co/free-sound-effects/bell/"
+  },
+  {
+   "id": 933,
+   "kind": "sfx",
+   "category": "logo",
+   "title": "Bell notification",
+   "page_url": "https://mixkit.co/free-sound-effects/bell/"
+  },
+  {
+   "id": 600,
+   "kind": "sfx",
+   "category": "logo",
+   "title": "Achievement bell",
+   "page_url": "https://mixkit.co/free-sound-effects/bell/"
+  },
+  {
+   "id": 3108,
+   "kind": "sfx",
+   "category": "logo",
+   "title": "Crystal chime",
+   "page_url": "https://mixkit.co/free-sound-effects/chime/"
+  },
+  {
+   "id": 2015,
+   "kind": "sfx",
+   "category": "logo",
+   "title": "Winning chimes",
+   "page_url": "https://mixkit.co/free-sound-effects/chime/"
+  },
+  {
+   "id": 2820,
+   "kind": "sfx",
+   "category": "logo",
+   "title": "Magic marimba",
+   "page_url": "https://mixkit.co/free-sound-effects/marimba/"
+  },
+  {
+   "id": 699,
+   "kind": "sfx",
+   "category": "logo",
+   "title": "Greeting music box tone",
+   "page_url": "https://mixkit.co/free-sound-effects/music-box/"
+  }
+ ]
+}
