@@ -1,0 +1,355 @@
+<title>Make Show Lab Profile</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Sora:wght@700;800&family=Unbounded:wght@600;800&display=swap">
+<style>
+/* Layout: the phone with the rebuilt profile stays on the left; the reasoning scrolls on the right. */
+:root{
+  --bg:#FFF8EA; --surface:#FFFFFF; --ink:#141A33; --muted:#5B6180; --line:#E9E0CB; --soft:#FFF1D2;
+  --yellow:#FFC533; --coral:#FF6F4A; --mint:#5FE0A8; --navy:#141A33; --cream:#FFF4DC; --on-brand:#141A33;
+  --app:#FFFFFF; --app-fg:#0C0C0F; --app-muted:#737380; --app-line:#E6E6EA; --app-chip:#EFEFF2;
+  --display:'Unbounded','Arial Black',system-ui,sans-serif; --latin:'Sora','Arial Black',system-ui,sans-serif;
+  --body:'Onest',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0B0F24; --surface:#141A33; --ink:#FFF4DC; --muted:#A9B0D0; --line:#262E55; --soft:#1B2247;
+  --app:#000000; --app-fg:#F5F5F5; --app-muted:#A8A8B3; --app-line:#262626; --app-chip:#1C1C1F; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0B0F24; --surface:#141A33; --ink:#FFF4DC; --muted:#A9B0D0; --line:#262E55; --soft:#1B2247;
+  --app:#000000; --app-fg:#F5F5F5; --app-muted:#A8A8B3; --app-line:#262626; --app-chip:#1C1C1F; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55}
+.wrap{max-width:1200px;margin:0 auto;padding-block:36px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);font-weight:700;margin:0}
+h1{font-family:var(--latin);font-weight:800;font-size:clamp(40px,7vw,68px);letter-spacing:-.05em;line-height:1;margin:10px 0 16px}
+h1 .a{color:var(--ink)} h1 .b{color:#F2A200} h1 .c{color:var(--coral)} h1 i{font-style:normal;color:var(--muted);font-weight:700;margin:0 .12em}
+.lead{max-width:62ch;color:var(--muted);font-size:18px;margin:0 0 30px;text-wrap:pretty}
+.cols{display:grid;grid-template-columns:392px minmax(0,1fr);gap:44px;align-items:start}
+main{display:flex;flex-direction:column;gap:44px;min-width:0}
+h2{font-family:var(--display);font-weight:800;font-size:21px;letter-spacing:-.01em;line-height:1.2;margin:0 0 6px;text-wrap:balance}
+.h2note{color:var(--muted);margin:0 0 18px;max-width:64ch}
+h3{font-size:15px;margin:0 0 4px}
+p{margin:0 0 10px}
+en,.en{font-family:var(--latin);font-weight:800;letter-spacing:-.035em}
+
+/* phone */
+.phone-col{position:sticky;top:18px}
+.phone{border-radius:44px;padding:11px;background:#0B0D1C;box-shadow:0 40px 80px -34px rgba(20,26,51,.5)}
+.screen{border-radius:34px;overflow:hidden auto;background:var(--app);color:var(--app-fg);font-family:-apple-system,'Segoe UI',Roboto,var(--body);font-size:14px;line-height:1.35;height:min(800px,calc(100vh - 62px));scrollbar-width:none}
+.screen::-webkit-scrollbar{display:none}
+.bar{position:sticky;top:0;z-index:2;background:var(--app);display:flex;align-items:center;justify-content:space-between;padding:14px 16px 10px;font-weight:700;font-size:20px}
+.bar svg{width:24px;height:24px}
+.head{display:flex;align-items:center;gap:22px;padding:4px 16px 12px}
+.ava{flex:none;width:86px;height:86px;border-radius:50%;padding:3px;background:linear-gradient(45deg,#FFC533,#FF6F4A)}
+.ava img{width:100%;height:100%;border-radius:50%;border:3px solid var(--app);display:block}
+.stats{display:flex;flex:1;justify-content:space-around;text-align:center}
+.stats b{display:block;font-size:17px}.stats span{font-size:13px}
+.bio{padding:0 16px 12px}.bio .nm{font-weight:700}.bio .cat{color:var(--app-muted)}.bio a{color:#4F7CFF;font-weight:600;text-decoration:none}
+.btnrow{display:flex;gap:6px;padding:0 16px 14px}.btnrow span{flex:1;text-align:center;background:var(--app-chip);border-radius:9px;padding:8px 0;font-weight:600}
+.hls{display:flex;gap:12px;padding:2px 16px 16px;overflow-x:auto;scrollbar-width:none}
+.hl{flex:none;width:64px;text-align:center;font-size:11px;line-height:1.2}
+.hl img{width:64px;height:64px;border-radius:50%;border:1px solid var(--app-line);padding:3px;background:var(--app);display:block;margin-bottom:5px}
+.gtabs{display:flex;border-top:1px solid var(--app-line)}
+.gtabs span{flex:1;display:flex;justify-content:center;padding:10px 0;color:var(--app-muted)}
+.gtabs span.on{color:var(--app-fg);box-shadow:inset 0 -1.5px 0 var(--app-fg)}.gtabs svg{width:22px;height:22px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.tile{position:relative;aspect-ratio:3/4;border:0;padding:0;margin:0;background:var(--app-chip);cursor:pointer;overflow:hidden;display:block;width:100%}
+.tile img{width:100%;height:100%;object-fit:cover;display:block}
+.tile .ic{position:absolute;top:5px;right:5px;width:17px;height:17px;color:#fff;filter:drop-shadow(0 1px 2px rgba(0,0,0,.65))}
+.tile .pin{right:auto;left:5px}
+.tile:focus-visible,.cover:focus-visible,.strip button:focus-visible,.lb button:focus-visible,.copy:focus-visible{outline:3px solid var(--coral);outline-offset:2px}
+.phone-note{color:var(--muted);font-size:13px;margin:12px 6px 0;text-align:center}
+
+/* rubrics */
+.rubrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.rub{border-radius:18px;padding:16px 16px 14px;color:var(--on-brand);min-width:0}
+.rub b{display:block;font-family:var(--latin);font-weight:800;font-size:26px;letter-spacing:-.05em;line-height:1}
+.rub span{display:block;font-size:13.5px;line-height:1.4;margin-top:8px}
+.rub small{display:block;font-size:12.5px;margin-top:8px;opacity:.72;font-weight:600}
+.rub.show{background:var(--yellow)}.rub.lab{background:var(--coral)}.rub.start{background:var(--mint)}
+.rub.make{background:var(--navy);color:#FFF4DC;box-shadow:inset 0 0 0 1px #2A3260}
+.why{margin-top:16px;padding:14px 18px;border-radius:16px;background:var(--soft);color:var(--ink);font-size:15px;max-width:none}
+
+/* posts */
+.posts{display:flex;flex-direction:column;gap:14px}
+.post{display:grid;grid-template-columns:132px minmax(0,1fr);gap:18px;padding:16px;border:1px solid var(--line);border-radius:20px;background:var(--surface);scroll-margin-top:16px}
+.post.flash{box-shadow:0 0 0 3px var(--coral)}
+.cover{display:block;border:0;padding:0;background:none;cursor:zoom-in;border-radius:12px;overflow:hidden;align-self:start}
+.cover img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover}
+.meta{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:6px}
+.chip{font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;background:var(--soft);color:var(--ink);white-space:nowrap}
+.chip.r{font-family:var(--latin);font-weight:800;letter-spacing:-.03em;font-size:13px;color:var(--on-brand)}
+.chip.show{background:var(--yellow)}.chip.lab{background:var(--coral)}.chip.start{background:var(--mint)}.chip.make{background:var(--navy);color:#FFF4DC;box-shadow:inset 0 0 0 1px #2A3260}
+.chip.pinned{background:transparent;box-shadow:inset 0 0 0 1.5px var(--coral);color:var(--coral)}
+.post h3{font-family:var(--latin);font-weight:800;font-size:21px;letter-spacing:-.04em;line-height:1.15;margin:0 0 8px}
+.rows{display:grid;grid-template-columns:86px minmax(0,1fr);gap:5px 12px;font-size:14.5px;margin:0}
+.rows dt{color:var(--muted);font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;padding-top:3px}
+.rows dd{margin:0;min-width:0}
+.rows ol{margin:0;padding-left:18px}.rows .hook{font-style:italic}
+.strip{display:flex;gap:8px;overflow-x:auto;margin-top:12px;padding-bottom:4px}
+.strip button{flex:none;border:0;padding:0;background:none;cursor:zoom-in;border-radius:8px;overflow:hidden}
+.strip img{display:block;height:128px;width:auto}
+.strip-h{font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--muted);margin-top:12px}
+.week{font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--muted);margin:8px 2px -4px}
+
+/* header texts */
+.fields{display:grid;gap:10px}
+.field{display:grid;grid-template-columns:150px minmax(0,1fr);gap:14px;padding:12px 16px;border:1px solid var(--line);border-radius:14px;background:var(--surface);align-items:start}
+.field dt{color:var(--muted);font-size:13px;font-weight:600}.field dd{margin:0;min-width:0}
+.field pre{margin:0;font:inherit;white-space:pre-wrap}
+.hlrow{display:flex;flex-wrap:wrap;gap:14px}.hlrow figure{margin:0;text-align:center;font-size:12px;width:72px}.hlrow img{width:64px;height:64px;border-radius:50%;display:block;margin:0 auto 5px}
+
+/* style */
+.sw{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px}
+.sw div{font-size:12.5px}.sw i{display:block;width:92px;height:52px;border-radius:12px;margin-bottom:5px;box-shadow:inset 0 0 0 1px rgba(20,26,51,.14)}
+.sw b{display:block}.sw span{color:var(--muted)}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.box{border:1px solid var(--line);border-radius:18px;background:var(--surface);padding:16px;min-width:0}
+.box img{display:block;width:100%;border-radius:10px}
+.box ul{margin:0;padding-left:18px}.box li{margin-bottom:4px}
+.logos{display:grid;grid-template-columns:120px minmax(0,1.5fr) minmax(0,1fr);gap:14px;align-items:center}
+.logos figure{margin:0;font-size:12.5px;color:var(--muted);text-align:center}.logos img{display:block;width:100%;border-radius:12px;margin-bottom:6px}
+.logos .round img{border-radius:50%}
+.steps{margin:0;padding-left:20px}.steps li{margin-bottom:8px}
+
+/* lightbox */
+.lb[hidden]{display:none}
+.lb{position:fixed;inset:0;z-index:50;background:rgba(7,10,31,.88);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;
+  padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.lb img{max-width:100%;max-height:calc(100% - 70px);border-radius:14px;display:block}
+.lb .ctl{display:flex;gap:10px;align-items:center;color:#FFF4DC;font-size:14px}
+.lb button{border:0;border-radius:999px;background:#FFF4DC;color:#141A33;font:600 15px var(--body);padding:8px 16px;cursor:pointer}
+.lb button[disabled]{opacity:.35;cursor:default}
+
+@media (max-width:980px){.cols{grid-template-columns:minmax(0,1fr);gap:30px}.phone-col{position:static;max-width:420px;margin:0 auto;width:100%}.screen{height:auto;overflow:visible}.bar{position:static}
+  .rubrics{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.post{grid-template-columns:96px minmax(0,1fr);gap:12px;padding:12px}.rows{grid-template-columns:minmax(0,1fr)}.rows dt{padding-top:6px}
+  .field{grid-template-columns:minmax(0,1fr);gap:4px}.two{grid-template-columns:minmax(0,1fr)}.logos{grid-template-columns:96px minmax(0,1fr)}.logos figure:last-child{grid-column:1/-1}
+  .phone{padding:0;border-radius:0;background:transparent;box-shadow:none}.screen{border-radius:18px;box-shadow:0 0 0 1px var(--line)}}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+
+<div class="wrap">
+  <p class="eyebrow">@make_showlab · пересборка страницы</p>
+  <h1><span class="a">make</span><i>·</i><span class="b">show</span><i>·</i><span class="c">lab</span></h1>
+  <p class="lead">Три слова из названия становятся тремя рубриками, у каждой свой цвет из логотипа. Слева профиль с первыми десятью постами, справа — что внутри каждого и зачем он нужен. Нажмите на плитку, чтобы перейти к посту.</p>
+
+  <div class="cols">
+    <aside class="phone-col">
+      <div class="phone"><div class="screen">
+        <div class="bar"><span>make_showlab</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></div>
+        <div class="head">
+          <div class="ava"><img src="n/avatar.jpg" alt="Аватар: Аня и Камилла за ноутбуком"></div>
+          <div class="stats"><div><b>10</b><span>posts</span></div><div><b>7</b><span>followers</span></div><div><b>38</b><span>following</span></div></div>
+        </div>
+        <div class="bio">
+          <div class="nm">Make Show Lab | AI for Kids</div>
+          <div class="cat">Education</div>
+          <div>Your kid makes a cartoon, a game, a song with AI. You sit next to them.<br>Ages 6–14. No code. By mom Anna &amp; Kamilla, 10.<br>👇 Free first lesson</div>
+          <a href="https://www.makeshowlab.com/#free" target="_blank" rel="noopener">makeshowlab.com</a>
+        </div>
+        <div class="btnrow"><span>Follow</span><span>Message</span><span>Email</span></div>
+        <div class="hls" id="hls"></div>
+        <div class="gtabs">
+          <span class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="m10 8.5 5 3.5-5 3.5z"/></svg></span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="9" r="3.5"/><path d="M5 20c1.5-3.5 4-5 7-5s5.5 1.5 7 5"/></svg></span>
+        </div>
+        <div class="grid" id="grid"></div>
+      </div></div>
+      <p class="phone-note">Подписчики и подписки текущие. Три верхние плитки закреплены.</p>
+    </aside>
+
+    <main>
+      <section id="idea">
+        <h2>Четыре рубрики, четыре цвета</h2>
+        <p class="h2note">Посетитель приходит с одного ролика и за три секунды решает, остаться ли. Цвет плитки сразу говорит, о чём пост.</p>
+        <div class="rubrics" id="rubrics"></div>
+        <p class="why"><b>Почему не космос, как на лендинге.</b> Страницу читают мамы и бабушки, им ближе тёплый и человеческий тон, чем игровой. Новый логотип плоский и тёплый, и страница говорит на том же языке. У конкурентов сине-фиолетовое «техно», у родительских блогов бежевое, поэтому яркие плитки с тёмной обводкой заметны на обоих фонах. С лендингом страницу связывают тёмно-синий и логотип.</p>
+      </section>
+
+      <section id="posts-sec">
+        <h2>Первые 10 постов</h2>
+        <p class="h2note">Сейчас у страницы почти нет охвата: посты видят только свои. Поэтому семь из десяти — ролики, их Instagram показывает неподписчикам. Карусели стоят там, где нужны сохранения и пересылки. Порядок ниже — порядок публикации.</p>
+        <div class="posts" id="posts"></div>
+      </section>
+
+      <section id="header-sec">
+        <h2>Шапка профиля</h2>
+        <p class="h2note">Тексты можно копировать как есть. Имя — это поле, по которому ищет Instagram, поэтому в нём слова, которые вводят в поиске.</p>
+        <dl class="fields">
+          <div class="field"><dt>Имя</dt><dd class="en" style="font-size:17px">Make Show Lab | AI for Kids</dd></div>
+          <div class="field"><dt>Описание</dt><dd><pre>Your kid makes a cartoon, a game, a song with AI. You sit next to them.
+Ages 6–14. No code. By mom Anna &amp; Kamilla, 10.
+👇 Free first lesson</pre></dd></div>
+          <div class="field"><dt>Ссылка, одна</dt><dd>https://www.makeshowlab.com/#free</dd></div>
+          <div class="field"><dt>Хайлайты</dt><dd><div class="hlrow" id="hlrow"></div></dd></div>
+          <div class="field"><dt>Три закрепа</dt><dd>Как начать (№10), кто мы (№2), лучшее доказательство (№7). Без закрепа наверху окажется то, что вышло последним.</dd></div>
+        </dl>
+      </section>
+
+      <section id="style-sec">
+        <h2>Как это выглядит изнутри</h2>
+        <p class="h2note">Одна система на всё: обложки, слайды, ролики, хайлайты и шапка Facebook.</p>
+        <div class="sw">
+          <div><i style="background:#141A33"></i><b>Navy</b><span>#141A33</span></div>
+          <div><i style="background:#FFC533"></i><b>Yellow</b><span>#FFC533</span></div>
+          <div><i style="background:#FF6F4A"></i><b>Coral</b><span>#FF6F4A</span></div>
+          <div><i style="background:#5FE0A8"></i><b>Mint</b><span>#5FE0A8</span></div>
+          <div><i style="background:#FFF4DC"></i><b>Cream</b><span>#FFF4DC</span></div>
+        </div>
+        <div class="two">
+          <div class="box"><h3>Приёмы</h3><ul>
+            <li>Плашка рубрики как кусок логотипа: <span class="en">show 01</span></li>
+            <li>В заголовке не больше пяти слов, одно выделено</li>
+            <li>Фото и работы как наклейки с тёмной обводкой</li>
+            <li>Портреты в жёлтом кольце, как в логотипе</li>
+            <li>Рукописная пометка со стрелкой</li>
+            <li>Нарисованные Аня и Камилла ведут рубрику lab</li>
+          </ul></div>
+          <div class="box"><h3>Шрифты</h3>
+            <p class="en" style="font-size:26px;line-height:1.05;margin-bottom:6px">From crayon to cartoon.</p>
+            <p style="color:var(--muted);font-size:14px">Sora ExtraBold — заголовки, тот же шрифт, что в логотипе.<br>Urbanist — основной текст. Caveat Brush — пометки от руки.</p></div>
+        </div>
+        <div class="box" style="margin-top:14px"><h3>Шапка Facebook</h3><img src="n/fb.jpg" alt="Обложка страницы Facebook: логотип, строка про бесплатный урок, рисунок и мультик"></div>
+        <div class="box" style="margin-top:14px"><h3>Логотипы, первый этап готов</h3>
+          <div class="logos">
+            <figure class="round"><img src="n/avatar.jpg" alt="">Аватар</figure>
+            <figure><img src="n/plate.jpg" alt="">Плашка на каждый ролик</figure>
+            <figure><img src="n/endlogo.jpg" alt="">Финал ролика</figure>
+          </div></div>
+      </section>
+
+      <section id="next-sec">
+        <h2>Что дальше</h2>
+        <div class="two">
+          <div class="box"><h3>Нужно от вас</h3><ol class="steps">
+            <li>Сказать, подходит ли стиль и набор из десяти тем.</li>
+            <li>Поставить аватар в трёх сетях и вставить имя, описание и ссылку.</li>
+            <li>Подтвердить два факта: радугу нарисовал ребёнок шести лет; история «7:02 → 7:41» про игру Камиллы настоящая.</li>
+            <li>По возможности снять четыре коротких видео: руки рисуют, Аня говорит в камеру, Камилла показывает экран, запись экрана с игрой.</li>
+          </ol></div>
+          <div class="box"><h3>Что сделаю после утверждения</h3><ol class="steps">
+            <li>Соберу все десять постов целиком: слайды каруселей и ролики с плашкой и финальным логотипом.</li>
+            <li>Отрисую обложки хайлайтов и шапку Facebook в финальном размере.</li>
+            <li>Поставлю посты черновиками в Metricool по расписанию: пять в неделю, будни в 19:30 по Нью-Йорку.</li>
+          </ol></div>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Просмотр">
+  <img id="lb-img" src="" alt="">
+  <div class="ctl"><button type="button" id="lb-prev">Назад</button><span id="lb-n"></span><button type="button" id="lb-next">Вперёд</button><button type="button" id="lb-close">Закрыть</button></div>
+</div>
+
+<script>
+const R = {
+  show:  {name:'show',  what:'Что получилось',        text:'Работы детей, истории «идея → вещь», первые семьи.', why:'Охват и желание: «хочу, чтобы мой так же».', n:'4 из 10'},
+  make:  {name:'make',  what:'Кто и как это делает',  text:'Аня и Камилла, урок изнутри.',                        why:'Доверие и понимание, что это за курс.',      n:'2 из 10'},
+  lab:   {name:'lab',   what:'Заметки для родителей', text:'Безопасность, мифы, позиция по ИИ.',                  why:'Снять страхи. Такое сохраняют и пересылают.', n:'3 из 10'},
+  start: {name:'start', what:'Как начать',            text:'Бесплатный первый урок.',                             why:'Переход на сайт.',                           n:'1 из 10'},
+};
+const POSTS = [
+ {n:1, r:'show', no:'01', fmt:'Reel', type:'доказательство', day:'Пн', img:'c01', title:'From crayon to cartoon.', hook:'A 6-year-old drew this.',
+  inside:['Рисунок на бумаге во весь кадр','«One lesson later»: рядом появляется мультяшная версия','Кто что сделал: ребёнок придумал и нарисовал, ИИ пошёл за рисунком, родитель рядом','Финал с логотипом и бесплатным уроком'],
+  why:'Главное обещание курса видно за три секунды. Формат «рисунок ожил» лучше всего подтверждён в нише.', send:'Мама — папе или бабушке.',
+  mat:'Есть рисунок и мультик с лендинга. Сильнее с видео рук, которые рисуют.', frames:['r1','r2','r3','r4'], fl:'Кадры ролика'},
+ {n:2, r:'make', no:'01', fmt:'Reel', type:'история', day:'Вт', img:'c02', title:'Meet Anna & Kamilla.', hook:'A mom and a daughter. Not a corporation.', pin:true,
+  inside:['Аня сама сделала каждый урок и в тот же день проверяет домашку','Камилла, 10 лет, соведущая: первой показывает готовую вещь','«Tested at our kitchen table. What lost a 10-year-old’s attention got cut.»','Финал с логотипом'],
+  why:'Перед покупкой детского продукта родитель смотрит, кто за ним стоит.', send:'Мама — партнёру.',
+  mat:'Есть портреты. Сильнее с 15–20 секундами Ани в камеру.'},
+ {n:3, r:'lab', no:'01', fmt:'Карусель · 7 слайдов', type:'научить', day:'Ср', img:'c03', title:'5 AI house rules.', hook:'Five rules for kids and AI. Save it for the fridge.',
+  inside:['Аккаунт принадлежит родителю','Никаких чатов с незнакомцами','Есть вещи, которые ИИ не говорят','Ссылки проверяем','Слишком идеальное проверяем','«Save it. Send it to a parent.»'],
+  why:'Безопасность — первое возражение родителей. Справочный пост сохраняют и пересылают.', send:'Мама — в родительский чат и партнёру.',
+  mat:'Готово целиком.', frames:['s1','s2','s3','s4','s5','s6','s7'], fl:'Все слайды'},
+ {n:4, r:'show', no:'02', fmt:'Reel', type:'доказательство', day:'Чт', img:'c04', title:'Idea at 7:02. Game by 7:41.', hook:'Her idea at 7:02 pm.',
+  inside:['Время, когда появилась идея','Игра Камиллы на экране','Фото: играют друг против друга за одним столом','«She decided, told the AI, checked and fixed.»','Финал с логотипом'],
+  why:'Снимает «у меня нет времени»: один вечер, 39 минут.', send:'Мама — папе: «давай сегодня попробуем».',
+  mat:'Есть игра и фото. Сильнее с записью экрана игры.'},
+ {n:5, r:'lab', no:'02', fmt:'Reel', type:'позиция', day:'Сб', img:'c05', title:'A reason to show you.', hook:'Kids don’t need more screen time.',
+  inside:['«Kids don’t need more screen time.»','«They need a reason to show you something.» Камилла показывает свой экран','«A screen she makes on is not a screen she scrolls.»','Финал с логотипом'],
+  why:'Позиция, с которой соглашаются и которую пересылают. Отстраивает и от «экраны зло», и от «без ИИ отстанет».', send:'Мама — подруге или партнёру: «это про нас».',
+  mat:'Есть фото. Сильнее с видео, где Камилла показывает экран.'},
+ {n:6, r:'make', no:'02', fmt:'Reel', type:'научить', day:'Пн', img:'c06', title:'Watch. Make. Show.', hook:'What exactly happens in one lesson?',
+  inside:['Watch: Камилла сначала показывает готовое','Make: ребёнок делает, родитель рядом','Show: показать семье, сыграть, отправить бабушке','«6 to 20 minutes. Every lesson ends with a real thing.»','Финал с логотипом'],
+  why:'Объясняет курс за 15 секунд и убирает вопрос «а что мы будем делать».', send:'Мама — себе в сохранённое, чтобы показать ребёнку.',
+  mat:'Есть три фото шагов.'},
+ {n:7, r:'show', no:'03', fmt:'Reel', type:'доказательство', day:'Вт', img:'c07', title:'Made by a 10-year-old.', hook:'What a 10-year-old made with AI. No code.', pin:true,
+  inside:['Отрывок мультфильма Камиллы','Её игра','Сайт из одного запроса','Набор стикеров','Финал с логотипом'],
+  why:'Лучшее доказательство и желание: «мой бы тоже хотел».', send:'Мама — ребёнку или бабушке.',
+  mat:'Всё есть: мультфильм, игра, сайт, стикеры.'},
+ {n:8, r:'lab', no:'03', fmt:'Reel', type:'позиция', day:'Ср', img:'c08', title:'Will AI think for my kid?', hook:'Only if the AI is the one with the ideas.',
+  inside:['Вопрос родителя','Четыре шага: she decides → tells the AI → checks it → fixes it','«The thinking stays with your child.»','«Don’t let AI think for your child. Teach them to think with it.»','Финал с логотипом'],
+  why:'Второе возражение: «ИИ сделает его ленивым». Здесь же главная мысль бренда.', send:'Мама — скептичному партнёру или знакомой учительнице.',
+  mat:'Готово: графика и нарисованная Камилла.'},
+ {n:9, r:'show', no:'04', fmt:'Карусель · 7 слайдов', type:'доказательство', day:'Пт', img:'c09', title:'8 families tried it first.', hook:'Eight families got the course before anyone else.',
+  inside:['Обложка с цитатой Эмили','По слайду на семью: дословная цитата, фото и что сделали','Margaret — мультфильм, Jessica — песня, Amanda — игра, Rachel — сайт, Linda — подарок','Финал: курс они получили бесплатно, это написано прямо'],
+  why:'Отзывы людей, похожих на зрителя. Бабушки открывают тему подарка перед праздниками.', send:'Мама — своей маме.',
+  mat:'Есть восемь фото и цитат с лендинга.'},
+ {n:10, r:'start', no:'', fmt:'Карусель · 6 слайдов', type:'предложение', day:'Вс', img:'c10', title:'Free first lesson.', hook:'Your kid builds a game tonight.', pin:true,
+  inside:['Оставить почту, карта не нужна','10–20 минут: ребёнок делает игру, в которую можно играть','Сыграть вместе на одном диване','«If it isn’t a fit, you’ve lost nothing but 20 minutes on the couch.»','Кнопка на сайт'],
+  why:'Предложение сказано прямо. Сюда ведут все остальные посты.', send:'Мама — партнёру: «попробуем бесплатно».',
+  mat:'Есть игра. Сильнее с записью экрана первого урока.'},
+];
+const HL = [['free-lesson','Free lesson'],['how-it-works','How it works'],['kid-made','Kid-made'],['is-it-safe','Is it safe?'],['pricing','Pricing'],['about-us','About us']];
+const GRID = [10,2,7,9,8,6,5,4,3,1];
+const esc = (s) => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const IC = {
+  reel:'<svg class="ic" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l10.5-6.5z"/></svg>',
+  car:'<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="7" y="7" width="13" height="13" rx="2" fill="rgba(0,0,0,.25)"/><path d="M4 16V5a1 1 0 0 1 1-1h11"/></svg>',
+  pin:'<svg class="ic pin" viewBox="0 0 24 24" fill="currentColor"><path d="M15 3l6 6-3 1-4 4 1 5-2 2-4-4-5 5-1-1 5-5-4-4 2-2 5 1 4-4z"/></svg>'
+};
+const byN = (n) => POSTS.find((p) => p.n === n);
+
+document.getElementById('hls').innerHTML = HL.map(([f,t]) => `<div class="hl"><img src="n/h-${f}.jpg" alt="">${esc(t)}</div>`).join('');
+document.getElementById('hlrow').innerHTML = HL.map(([f,t]) => `<figure><img src="n/h-${f}.jpg" alt="">${esc(t)}</figure>`).join('');
+document.getElementById('grid').innerHTML = GRID.map((n) => { const p = byN(n);
+  return `<button class="tile" type="button" data-n="${n}" aria-label="Пост ${n}: ${esc(p.title)}"><img src="n/${p.img}.jpg" alt="">${p.fmt === 'Reel' ? IC.reel : IC.car}${p.pin ? IC.pin : ''}</button>`; }).join('');
+document.getElementById('rubrics').innerHTML = Object.values(R).map((r) =>
+  `<div class="rub ${r.name}"><b>${r.name}</b><span><strong>${esc(r.what)}.</strong> ${esc(r.text)}</span><span>${esc(r.why)}</span><small>${r.n}</small></div>`).join('');
+document.getElementById('posts').innerHTML = POSTS.map((p) => `
+  ${p.n === 1 ? '<div class="week">Неделя 1</div>' : p.n === 6 ? '<div class="week">Неделя 2</div>' : ''}
+  <article class="post" id="post-${p.n}">
+    <button class="cover" type="button" data-seq="${p.img}" data-i="0" aria-label="Открыть обложку поста ${p.n}"><img src="n/${p.img}.jpg" alt="Обложка: ${esc(p.title)}" loading="lazy"></button>
+    <div>
+      <div class="meta"><span class="chip">№${p.n} · ${p.day}</span><span class="chip r ${p.r}">${p.r}${p.no ? ' ' + p.no : ''}</span><span class="chip">${esc(p.fmt)}</span><span class="chip">${esc(p.type)}</span>${p.pin ? '<span class="chip pinned">закреп</span>' : ''}</div>
+      <h3>${esc(p.title)}</h3>
+      <dl class="rows">
+        <dt>Крючок</dt><dd class="hook">${esc(p.hook)}</dd>
+        <dt>Внутри</dt><dd><ol>${p.inside.map((s) => `<li>${esc(s)}</li>`).join('')}</ol></dd>
+        <dt>Зачем</dt><dd>${esc(p.why)}</dd>
+        <dt>Перешлют</dt><dd>${esc(p.send)}</dd>
+        <dt>Материал</dt><dd>${esc(p.mat)}</dd>
+      </dl>
+      ${p.frames ? `<div class="strip-h">${esc(p.fl)}</div><div class="strip">${p.frames.map((f,i) => `<button type="button" data-seq="${p.frames.join(',')}" data-i="${i}" aria-label="${esc(p.fl)}, ${i + 1}"><img src="n/${f}.jpg" alt="" loading="lazy"></button>`).join('')}</div>` : ''}
+    </div>
+  </article>`).join('');
+
+document.getElementById('grid').addEventListener('click', (e) => {
+  const t = e.target.closest('.tile'); if (!t) return;
+  const el = document.getElementById('post-' + t.dataset.n);
+  el.scrollIntoView({behavior:'smooth', block:'center'});
+  el.classList.add('flash'); setTimeout(() => el.classList.remove('flash'), 1600);
+});
+
+const lb = document.getElementById('lb'), lbImg = document.getElementById('lb-img'), lbN = document.getElementById('lb-n');
+let seq = [], at = 0;
+function show(){ lbImg.src = 'n/' + seq[at] + '.jpg'; lbN.textContent = seq.length > 1 ? (at + 1) + ' из ' + seq.length : '';
+  document.getElementById('lb-prev').disabled = at === 0; document.getElementById('lb-next').disabled = at === seq.length - 1;
+  document.getElementById('lb-prev').hidden = document.getElementById('lb-next').hidden = seq.length < 2; }
+document.addEventListener('click', (e) => {
+  const b = e.target.closest('[data-seq]'); if (!b) return;
+  seq = b.dataset.seq.split(','); at = +b.dataset.i; show(); lb.hidden = false; document.getElementById('lb-close').focus();
+});
+const close = () => { lb.hidden = true; lbImg.src = ''; };
+document.getElementById('lb-close').onclick = close;
+document.getElementById('lb-prev').onclick = () => { if (at > 0) { at--; show(); } };
+document.getElementById('lb-next').onclick = () => { if (at < seq.length - 1) { at++; show(); } };
+lb.addEventListener('click', (e) => { if (e.target === lb) close(); });
+document.addEventListener('keydown', (e) => { if (lb.hidden) return;
+  if (e.key === 'Escape') close(); if (e.key === 'ArrowRight' && at < seq.length - 1) { at++; show(); } if (e.key === 'ArrowLeft' && at > 0) { at--; show(); } });
+</script>

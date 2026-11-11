@@ -4,6 +4,21 @@
 свой файл в этой папке и своя зона в репозитории. Общий диалог («Соцсети, аналитика конкурентов и
 автоматизация») отвечает за то, что касается всех: стиль, шаблоны, звук, расписание, страницу-превью.
 
+## Диалоги отдела в Claude Code
+| Отдел | Диалог |
+|---|---|
+| Общий: стиль, шаблоны, звук, расписание, страница-превью | https://claude.ai/code/session_01DtGyjPrLYBdfsoFsnT7baz |
+| Instagram | https://claude.ai/code/session_01DtGyjSqHdVpz2CXmqnfjKT |
+| TikTok | https://claude.ai/code/session_01DtGyjPnB1RSRVySoguS2Fc |
+| Facebook | https://claude.ai/code/session_01DtGyjR1qZgrp95kBXuysqE |
+| YouTube Shorts | https://claude.ai/code/session_01DtGyjRGpiXcMMkWajbRbts |
+| Threads | https://claude.ai/code/session_01DtGyjTNHw2H24ziPzUQof3 |
+| X | https://claude.ai/code/session_01DtGyjQj5kufnsN2cUjGMaJ |
+| Pinterest | https://claude.ai/code/session_01DtGyjPj8iBxY3GMZhcrbkr |
+
+Все диалоги названы «Соцсети · <площадка>» и помечены меткой «соцсети». Тот же отдел в чатах claude.ai:
+`social/desks/CHATS.md`.
+
 ## Три ленты
 | Лента | Площадки | Откуда контент |
 |---|---|---|
@@ -33,6 +48,12 @@
    правила площадки и останавливается, если что-то нарушено.
 4. Показать владельцу результат. Публикация и постановка в Metricool только после его «ок».
 5. Обновить свой файл отдела (что готово, что ждёт), закоммитить, `git push`.
+
+## Страница-превью
+Одна страница показывает всё сразу. Пересобрать после изменений:
+`python3 social/concept/preview/make_page.py`, затем опубликовать `social/concept/preview/profile.html`
+инструментом Artifact на тот же адрес (параметр `url`), вместе с изменившимися файлами из `p/`.
+Обычно это делает общий диалог: скажи владельцу, что страницу пора обновить.
 
 ## Чего не может ни один отдел
 - Заводить аккаунты и подключать их к Metricool: это делает владелец. Сейчас подключены Instagram, Facebook, Threads.
