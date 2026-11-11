@@ -5,8 +5,9 @@ kind: вопрос
 day: Вт
 image: none
 x_characters: 139 of 280
-threads_characters: 253 of 500
+threads_characters: 255 of 500
 threads_topic: AI for kids
+threads_rubric: You decide
 ---
 ## X
 
@@ -18,8 +19,8 @@ Which one is it at your house right now?
 
 ## Threads
 
-Honest question for parents: when your kid opens an AI app, is it an answer machine or a creative tool?
+You decide: is this a good use of AI or not?
 
-Same screen, different use. Homework from a chatbot is one. A game they thought up and built is the other.
+Kid A asks a chatbot for the answer to a homework question. Kid B tells the same chatbot about a game she made up, and builds it.
 
-Which one is it at your house right now?
+Same app, same screen. Where's the line for you, and which kid would you stop?

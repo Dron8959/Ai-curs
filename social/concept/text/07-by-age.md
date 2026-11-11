@@ -5,8 +5,9 @@ kind: совет
 day: Пн
 image: none
 x_characters: 211 of 280
-threads_characters: 305 of 500
+threads_characters: 328 of 500
 threads_topic: Parenting
+threads_rubric: You decide
 ---
 ## X
 
@@ -20,10 +21,8 @@ Same rule at every age: the idea is theirs.
 
 ## Threads
 
-How hands-on does a parent need to be when a kid makes something with AI? It changes with age.
+You decide: how young is too young for AI, if a parent is right there?
 
-A six-year-old talks and you type. A ten-year-old does most of it alone. A teenager just needs you in the room.
+Here's how it goes in our course. A six-year-old talks and you type. A ten-year-old does most of it alone. A teenager just needs you in the room. The idea is always theirs.
 
-The part that never changes: the idea is theirs.
-
-How old is yours, and how much do you step in?
+I know some of you will say six is too early. Where do you draw the line, and why?

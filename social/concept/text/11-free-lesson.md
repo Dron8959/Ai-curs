@@ -6,8 +6,9 @@ day: Пт
 image: social/concept/posts/10-free-first-lesson/slide-01.jpg
 x_characters: 238 of 280
 x_reply_characters: 35 of 280
-threads_characters: 380 of 500
+threads_characters: 443 of 500
 threads_topic: AI for kids
+threads_rubric: Offer
 ---
 ## X
 
@@ -25,10 +26,10 @@ Here it is: https://www.makeshowlab.com/?utm_source=x&utm_medium=social&utm_camp
 
 ## Threads
 
-If you've been curious about making things with AI with your kid, the first lesson of our course is free. No card, one email.
+The fastest way to decide how you feel about kids and AI is not another article. It's one evening.
 
-Your kid builds a playable game in 10 to 20 minutes, then you play it against each other on the same couch.
+The first lesson of our course is free. No card, one email. Your kid builds a playable game in 10 to 20 minutes, then you play it against each other on the same couch.
 
 https://www.makeshowlab.com/?utm_source=threads&utm_medium=social&utm_campaign=free-lesson#free
 
-If you try it, tell me what the game was about.
+If you try it, come back and tell me: did it change your mind, or confirm it?

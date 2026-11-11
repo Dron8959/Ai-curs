@@ -6,8 +6,9 @@ day: Ср
 image: social/concept/posts/03-ai-house-rules/slide-03.jpg
 x_characters: 200 of 280
 x_reply_characters: 81 of 280
-threads_characters: 270 of 500
+threads_characters: 363 of 500
 threads_topic: AI safety
+threads_rubric: Unpopular opinion
 ---
 ## X
 
@@ -25,8 +26,8 @@ The other four, and how the course is set up around them: https://www.makeshowla
 
 ## Threads
 
-The most boring AI rule in our house is also the most useful one: the account is mine, not hers.
+Unpopular opinion: parental controls are not an AI safety plan.
 
-Every tool runs on the parent's account. Your kid never signs up for anything alone, and you see everything they make.
+The rule that does the most in our house is boring. The account is mine, not hers. Every tool runs on the parent's account, my kid never signs up for anything alone, and I see everything she makes.
 
-What's your one non-negotiable rule for kids and AI?
+Settings get switched off. Ownership doesn't. Am I wrong? What's your one rule that actually holds?

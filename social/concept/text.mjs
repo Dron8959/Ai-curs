@@ -29,11 +29,11 @@ They need a reason to show you something.
 
 A screen she makes on is not a screen she scrolls. I'd rather argue about that than about minutes.`,
       reply: `It's why every lesson we make ends with a thing to show, not a quiz. The first one is free: ${link('x', 'reason-to-show')}` },
-    threads: { topic: 'Parenting', text: `I don't think kids need more screen time. Or less.
+    threads: { rubric: 'Unpopular opinion', topic: 'Parenting', text: `Unpopular opinion: the screen-time fight is the wrong fight.
 
-They need a reason to show you something. A screen she makes on is not a screen she scrolls.
+Kids don't need more minutes or fewer minutes. They need a reason to show you something. A screen she makes on is not a screen she scrolls.
 
-What's the last thing your kid made on a screen, instead of watched?` } },
+Plenty of parents count minutes and it works for them. So tell me honestly: what matters more in your house, how long or what for?` } },
 
   { id: '02-answer-machine', kind: 'вопрос', day: 'Вт',
     why: 'Вопрос с лендинга. На него легко ответить одной строкой, а ответы и двигают пост.',
@@ -42,11 +42,11 @@ What's the last thing your kid made on a screen, instead of watched?` } },
 Same AI, same screen, same kid. A completely different evening.
 
 Which one is it at your house right now?` },
-    threads: { topic: 'AI for kids', text: `Honest question for parents: when your kid opens an AI app, is it an answer machine or a creative tool?
+    threads: { rubric: 'You decide', topic: 'AI for kids', text: `You decide: is this a good use of AI or not?
 
-Same screen, different use. Homework from a chatbot is one. A game they thought up and built is the other.
+Kid A asks a chatbot for the answer to a homework question. Kid B tells the same chatbot about a game she made up, and builds it.
 
-Which one is it at your house right now?` } },
+Same app, same screen. Where's the line for you, and which kid would you stop?` } },
 
   { id: '03-rule-one', kind: 'совет', day: 'Ср',
     why: 'Одно правило безопасности из пяти. Польза в одну строку, плюс картинка из карусели.',
@@ -59,11 +59,11 @@ Every tool runs on your account. Your kid never signs up for anything alone. You
 
 Boring rule. Fixes most of the scary stuff.`,
       reply: `The other four, and how the course is set up around them: ${link('x', 'rule-one', 'safe')}` },
-    threads: { topic: 'AI safety', text: `The most boring AI rule in our house is also the most useful one: the account is mine, not hers.
+    threads: { rubric: 'Unpopular opinion', topic: 'AI safety', text: `Unpopular opinion: parental controls are not an AI safety plan.
 
-Every tool runs on the parent's account. Your kid never signs up for anything alone, and you see everything they make.
+The rule that does the most in our house is boring. The account is mine, not hers. Every tool runs on the parent's account, my kid never signs up for anything alone, and I see everything she makes.
 
-What's your one non-negotiable rule for kids and AI?` } },
+Settings get switched off. Ownership doesn't. Am I wrong? What's your one rule that actually holds?` } },
 
   { id: '04-kitchen-table', kind: 'за кадром', day: 'Чт',
     why: 'Кто мы и как делался курс. Доверие к автору важнее рекламы, особенно для детского продукта.',
@@ -73,11 +73,11 @@ What's your one non-negotiable rule for kids and AI?` } },
 If it lost her attention, it got cut.
 
 She's my daughter. She argues with the script.` },
-    threads: { topic: 'Parenting', text: `How we decided what stays in our course: I built every lesson myself, then tested each one on Kamilla at our kitchen table.
+    threads: { rubric: 'Unpopular opinion', topic: 'Parenting', text: `Unpopular opinion: if a kids' course can't hold a 10-year-old's attention, it doesn't matter who designed it.
 
-She's 10 and she's my daughter, so she argues with the script. What didn't hold her attention got cut. What's left is what works.
+I built every lesson of ours myself, then tested each one on my daughter Kamilla at the kitchen table. She's 10 and she argues with the script. What lost her got cut.
 
-Parents who make things with their kids: who's the tougher critic at your table?` } },
+Who would you trust more to judge something made for kids: an expert or a kid?` } },
 
   { id: '05-will-ai-think', kind: 'позиция', day: 'Пт',
     why: 'Возражение «ИИ будет думать за ребёнка». Ответ бренда в четырёх шагах.',
@@ -89,11 +89,13 @@ Only if the AI is the one with the ideas.
 Kid decides what to make. Kid tells the AI. Kid checks what comes back. Kid fixes it.
 
 That's not outsourcing thinking. That's directing.` },
-    threads: { topic: 'AI for kids', text: `A question parents ask us: "Won't AI just think for my kid?"
+    threads: { rubric: 'Unpopular opinion', topic: 'AI for kids', text: `Unpopular opinion: AI is not the reason a kid stops thinking.
 
-Only if the AI is the one with the ideas. When the child decides what to make, tells the AI, checks what comes back and fixes it, the thinking stays with the child.
+A kid stops thinking when nobody asks what they think first. When the child decides what to make, tells the AI, checks what comes back and fixes it, the thinking stays with the child.
 
-Where do you land on this? I'm curious what worries you most.` } },
+Don't let AI think for your child. Teach them to think with it.
+
+Agree or not? I'd really like to hear from the parents who don't.` } },
 
   { id: '06-nine-in-ten', kind: 'цифра', day: 'Сб',
     why: 'Внешняя цифра с источником. На X картинка с данными работает лучше голого текста.',
@@ -106,11 +108,13 @@ Almost half have never talked about safety with a parent.
 
 The talk is shorter than you think. Five rules fit on a fridge.`,
       reply: `Our five, and how the course is built around them: ${link('x', 'nine-in-ten', 'safe')}` },
-    threads: { topic: 'AI safety', text: `A number that stuck with me: almost 9 in 10 American kids aged 9 to 17 already use AI, and almost half have never talked about safety with a parent (Common Sense Media, 2026).
+    threads: { rubric: 'Unpopular opinion', topic: 'AI safety', text: `Unpopular opinion: banning AI at home won't keep your kid away from it.
 
-We wrote our five house rules down so the talk is short. They fit on a fridge.
+Almost 9 in 10 American kids aged 9 to 17 already use AI. Almost half have never talked about safety with a parent (Common Sense Media, 2026).
 
-Have you had the AI talk yet? How did it go?` } },
+A ban mostly decides one thing: whether they learn it with you or without you.
+
+If you've said no to AI at home, I'd honestly like to hear why. What would change your mind?` } },
 
   { id: '07-by-age', kind: 'совет', day: 'Пн',
     why: 'Снимает вопрос «а сколько мне придётся делать самому». Родители отвечают возрастом ребёнка.',
@@ -121,13 +125,11 @@ Have you had the AI talk yet? How did it go?` } },
 Teen: you just need to be in the room.
 
 Same rule at every age: the idea is theirs.` },
-    threads: { topic: 'Parenting', text: `How hands-on does a parent need to be when a kid makes something with AI? It changes with age.
+    threads: { rubric: 'You decide', topic: 'Parenting', text: `You decide: how young is too young for AI, if a parent is right there?
 
-A six-year-old talks and you type. A ten-year-old does most of it alone. A teenager just needs you in the room.
+Here's how it goes in our course. A six-year-old talks and you type. A ten-year-old does most of it alone. A teenager just needs you in the room. The idea is always theirs.
 
-The part that never changes: the idea is theirs.
-
-How old is yours, and how much do you step in?` } },
+I know some of you will say six is too early. Where do you draw the line, and why?` } },
 
   { id: '08-more-than-a-toy', kind: 'отзыв', day: 'Вт',
     why: 'Дословный отзыв бабушки. Перед праздниками это разговор о подарках, и он идёт сам.',
@@ -139,13 +141,13 @@ How old is yours, and how much do you step in?` } },
 That's Linda. She got the course free and told us what happened at their table.
 
 Best non-toy gift you ever gave a kid?` },
-    threads: { topic: 'Gift ideas', text: `Linda is a grandmother from our early-access group. She got the course free and told us honestly how it went:
+    threads: { rubric: 'You decide', topic: 'Gift ideas', text: `You decide: do kids want a box to open, or time with you?
+
+Linda, a grandmother from our early-access group (she got the course free), told us:
 
 "I wanted to give my grandson something more meaningful than another toy. MakeShowLab gave us a fun way to spend time together."
 
-Time together as the gift.
-
-What's the best non-toy gift you ever gave a kid?` } },
+Plenty of kids would still pick the box. Honestly, which would yours pick?` } },
 
   { id: '09-ends-with-a-thing', kind: 'за кадром', day: 'Ср',
     why: 'Объясняет устройство урока через позицию: результат вместо теста.',
@@ -154,11 +156,11 @@ What's the best non-toy gift you ever gave a kid?` } },
 Not a video to sit through. Minutes of making, and it ends with a thing: a game, a cartoon, a song.
 
 A quiz tells you what a kid remembers. A thing they made tells you what they can do.` },
-    threads: { topic: 'AI for kids', text: `Why our lessons are 6 to 20 minutes: they're not videos to sit through. They're minutes of making, and each one ends with a thing. A game, a cartoon, a song.
+    threads: { rubric: 'Unpopular opinion', topic: 'AI for kids', text: `Unpopular opinion: a quiz is a weak way to check what a kid learned.
 
-A quiz tells you what a kid remembers. A thing they made tells you what they can do.
+A quiz tells you what a kid remembers. A thing they made tells you what they can do. That's why our lessons are 6 to 20 minutes of making, and each one ends with a game, a cartoon or a song instead of a test.
 
-What's something your kid finished lately, start to end?` } },
+Teachers and parents, push back on this one: what does a quiz show you that a finished thing can't?` } },
 
   { id: '10-is-it-cheating', kind: 'позиция', day: 'Чт',
     why: 'Самый спорный вопрос ниши. Короткий ответ бренда и приглашение не согласиться.',
@@ -169,11 +171,13 @@ Not when your kid is the one with the idea.
 The AI is the tool. The thinking stays with the child.
 
 Disagree? Tell me where the line is for you.` },
-    threads: { topic: 'AI for kids', text: `"Isn't AI just cheating?" Parents ask us this, and it's a fair question.
+    threads: { rubric: 'You decide', topic: 'AI for kids', text: `You decide: did she make it?
 
-My answer: not when your kid is the one with the idea. The AI is the tool. The thinking stays with the child.
+Say your 8-year-old describes a song in her own words. AI writes the music. She sings it for grandma.
 
-Where's the line for you? I'd like to hear from parents who see it differently.` } },
+Some will say the AI made it. Some will say she did. My answer: the idea and the words are hers, the AI is the tool.
+
+Yes or no, and where exactly is the line for you?` } },
 
   { id: '11-free-lesson', kind: 'предложение', day: 'Пт',
     why: 'Единственный пост с прямым предложением на две недели. На X ссылка уходит в ответ, в Threads стоит в тексте.',
@@ -186,13 +190,13 @@ Your kid builds a playable game in 10 to 20 minutes. Then you play it against ea
 
 If it isn't a fit, you've lost 20 minutes on the couch. Link below.`,
       reply: `Here it is: ${link('x', 'free-lesson')}` },
-    threads: { topic: 'AI for kids', text: `If you've been curious about making things with AI with your kid, the first lesson of our course is free. No card, one email.
+    threads: { rubric: 'Offer', topic: 'AI for kids', text: `The fastest way to decide how you feel about kids and AI is not another article. It's one evening.
 
-Your kid builds a playable game in 10 to 20 minutes, then you play it against each other on the same couch.
+The first lesson of our course is free. No card, one email. Your kid builds a playable game in 10 to 20 minutes, then you play it against each other on the same couch.
 
 ${link('threads', 'free-lesson')}
 
-If you try it, tell me what the game was about.` } },
+If you try it, come back and tell me: did it change your mind, or confirm it?` } },
 
   { id: '12-what-first', kind: 'выбор', day: 'Сб',
     why: 'Выбор из готовых вариантов: ответить проще всего. Заодно показывает, что делают на курсе.',
@@ -203,11 +207,11 @@ A game
 A cartoon
 A song from their own words
 A sticker pack of their own character` },
-    threads: { topic: 'AI for kids', text: `This or that for parents: if your kid had 20 minutes tonight to make one real thing, would they pick a game or a cartoon?
+    threads: { rubric: 'You decide', topic: 'AI for kids', text: `You decide: 20 minutes tonight. Your kid makes their own game, or learns to spot a fake picture?
 
-In our course they can end up with both, plus a song from their own words, a website, a sticker pack of their own character and a voice-over in their own voice.
+Both are in our course. One is pure fun. The other might matter more.
 
-Which one would yours choose first?` } },
+If you only had time for one this week, which would you pick for your kid?` } },
 ];
 
 // One thread for X: a list that needs more than one post. On Threads the same rules go out as post 03 and 06.
@@ -275,6 +279,7 @@ image: ${p.image ? `social/concept/${p.image}` : 'none'}
 x_characters: ${nx} of 280${nr ? `\nx_reply_characters: ${nr} of 280` : ''}
 threads_characters: ${nt} of 500
 threads_topic: ${p.threads.topic}
+threads_rubric: ${p.threads.rubric || 'none'}
 ---
 ## X
 
@@ -284,7 +289,7 @@ ${p.x.reply ? `\n### First reply (the link lives here, not in the post)\n\n${p.x
 
 ${p.threads.text}
 `);
-    console.log(`${p.id.padEnd(22)} x ${String(nx).padStart(3)}${nr ? ` +reply ${nr}` : ''}  threads ${nt}`);
+    console.log(`${p.id.padEnd(22)} x ${String(nx).padStart(3)}${nr ? ` +reply ${nr}` : ''}  threads ${nt} ${p.threads.rubric || ''}`);
   }
   const lens = thread.posts.map((t, k) => check(thread.id, `x thread ${k + 1}`, t, 280, [[!/https?:\/\//.test(t), 'no link inside the thread']]));
   writeFileSync(join(out, `${thread.id}.md`), `---

@@ -5,8 +5,9 @@ kind: за кадром
 day: Чт
 image: social/concept/posts/02-meet-anna-kamilla/tile.jpg
 x_characters: 160 of 280
-threads_characters: 336 of 500
+threads_characters: 357 of 500
 threads_topic: Parenting
+threads_rubric: Unpopular opinion
 ---
 ## X
 
@@ -18,8 +19,8 @@ She's my daughter. She argues with the script.
 
 ## Threads
 
-How we decided what stays in our course: I built every lesson myself, then tested each one on Kamilla at our kitchen table.
+Unpopular opinion: if a kids' course can't hold a 10-year-old's attention, it doesn't matter who designed it.
 
-She's 10 and she's my daughter, so she argues with the script. What didn't hold her attention got cut. What's left is what works.
+I built every lesson of ours myself, then tested each one on my daughter Kamilla at the kitchen table. She's 10 and she argues with the script. What lost her got cut.
 
-Parents who make things with their kids: who's the tougher critic at your table?
+Who would you trust more to judge something made for kids: an expert or a kid?
