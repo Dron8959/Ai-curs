@@ -4,7 +4,7 @@ slot: pm (8:40 PM New York)
 lever: раскол: два ребёнка
 topic: AI for kids
 characters: 145
-card: text/threads/02-answer-machine.mp4
+card: text/threads/v2-13-two-kids.mp4
 ---
 two kids, same chatbot.
 

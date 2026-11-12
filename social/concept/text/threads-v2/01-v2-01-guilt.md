@@ -4,7 +4,7 @@ slot: am (8:10 AM New York)
 lever: вина → разрешение
 topic: Parenting
 characters: 132
-card: none (text only)
+card: text/threads/v2-01-guilt.mp4
 ---
 the guilt about screen time is louder than the screen time.
 

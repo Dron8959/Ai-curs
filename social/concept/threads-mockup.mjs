@@ -74,7 +74,7 @@ body{background:#E9E6DF;font-family:Helvetica,Arial,'Liberation Sans',sans-serif
 <div class="title">Make Show Lab in Threads: the profile and the first 15 posts</div>
 <div class="sub">Mock-up drawn in code, not a screenshot. Read the phones as one long scroll: newest on the left (day 5), oldest on the right (day 1), newest at the top of each. Cards are video in the app; here you see the last frame. Follower counts are left out on purpose.</div>
 <div class="phones">${screens.map(([a, b], i) => `<div><div class="cap">Day ${5 - i}${i === 0 ? ' (newest, top of the profile)' : ''}</div><div class="phone"><div class="status"><span>9:41</span><span>5G</span></div><div class="scr">${a}${b}</div>${nav}</div></div>`).join('')}</div>
-<div class="note">Three posts a day, New York time: 8:10 AM short text, 12:40 PM "AI house rules" (one rule a day), 8:40 PM main post with a card. Profile text is a proposal (100 characters).</div>`;
+<div class="note">Three posts a day, New York time: 8:10 AM short post, 12:40 PM "AI house rules" (one rule a day), 8:40 PM main post. Every post has its own card, worded from its text. Profile text is a proposal (100 characters).</div>`;
 
 const tmp = join(OUT, '.mockup.html');
 writeFileSync(tmp, html);

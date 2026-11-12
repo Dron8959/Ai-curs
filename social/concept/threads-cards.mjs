@@ -304,7 +304,161 @@ const cards = {
         .from('.dot',{scale:0,duration:.3,ease:'back.out(2.6)',stagger:.15},2.4)
         .fromTo('.dot.cur',{scale:1},{scale:1.25,duration:.25,yoyo:true,repeat:3,ease:'sine.inOut'},3.6);` }])),
 
+  // ===================================================== v2 plan: one card per post, worded from that post
+  // 1. the guilt about screen time is louder than the screen time
+  'v2-01-guilt': { theme: 'k', chip: 'Unpopular opinion',
+    hl: `The guilt is<br><mark>louder</mark> than<br>the screen.`,
+    stage: `
+      ${[['20 min', 'making a game', .17], ['2 hours', 'watching videos', 1]].map(([t, d, v], i) => `
+      <div class="box gr" style="left:0;top:${i * 276}px;width:952px;height:250px;padding:22px 34px">
+        <div style="display:flex;align-items:baseline;gap:18px"><span class="big" style="font-size:54px">${t}</span><span class="lab" style="font-size:24px;letter-spacing:.06em">${d}</span></div>
+        ${[['time', v, '#5FE0A8'], ['guilt', .93, '#FF6F4A']].map(([l, w, c]) => `
+        <div style="display:flex;align-items:center;gap:20px;margin-top:20px"><span class="lab" style="width:90px;font-size:22px">${l}</span>
+          <div style="flex:1;height:40px;border:5px solid #141A33;border-radius:999px;background:#F1EBDA;overflow:hidden"><div class="${l}" style="height:100%;width:${w * 100}%;background:${c};border-right:5px solid #141A33"></div></div></div>`).join('')}
+      </div>`).join('')}
+      <div class="bub" id="why" style="left:770px;top:562px;font:800 46px Sora;padding:14px 34px;background:#141A33;color:#FFF4DC">why?</div>`,
+    tl: `
+      tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
+        .from('.hl mark',{scale:0,duration:.4,ease:'back.out(3)'},.45)
+        .from('.gr',{x:-100,opacity:0,duration:.45,ease:'power3.out',stagger:.35},.9)
+        .from('.time',{width:0,duration:1.1,ease:'power2.out',stagger:.5},1.7)
+        .from('.guilt',{width:0,duration:1.1,ease:'power2.out',stagger:.25},3.2)
+        .from('#why',{scale:0,duration:.4,ease:'back.out(3)'},4.6);` },
+
+  // 4. kids just say what they want. grown ups write three paragraphs first.
+  'v2-04-who-asks-better': { theme: 'y', chip: 'You decide',
+    hl: `Who asks AI<br><mark>better?</mark>`,
+    stage: `
+      <div class="box" style="left:0;top:0;width:400px;height:600px;padding:30px">
+        <div class="lab">Kid, 10</div>
+        <div class="bub" id="kq" style="position:relative;margin-top:24px;white-space:normal;background:#FFF4DC;font:700 36px/1.2 Urbanist">make a game where my cat is the boss</div>
+        <div class="bub" id="kt" style="left:30px;bottom:30px;font:800 34px Sora;background:#5FE0A8">1 line</div>
+      </div>
+      <div class="box" style="left:440px;top:0;width:512px;height:600px;padding:30px">
+        <div class="lab">Grown up</div>
+        ${[0, 1, 2].map((g) => `<div style="margin-top:${g ? 26 : 24}px">${[1, .92, .97, .6].map((w) => `<div class="ln" style="height:18px;border-radius:9px;background:#C9C3B2;margin-top:12px;width:${w * 100}%"></div>`).join('')}</div>`).join('')}
+        <div class="bub" id="gt" style="right:30px;bottom:30px;font:800 34px Sora;background:#FF6F4A">3 paragraphs</div>
+      </div>`,
+    tl: `
+      tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
+        .from('.hl mark',{scale:0,duration:.4,ease:'back.out(3)'},.45)
+        .from('#kq',{scale:0,transformOrigin:'0 0',duration:.4,ease:'back.out(2.4)'},1.0)
+        .from('#kt',{scale:0,duration:.35,ease:'back.out(2.6)'},1.6)
+        .from('.ln',{width:0,duration:.22,ease:'none',stagger:.18},1.4)
+        .from('#gt',{scale:0,duration:.35,ease:'back.out(2.6)'},4.0);` },
+
+  // 7. school says cheating, plenty of others say a skill, your kid sits in the middle
+  'v2-02-school-vs-world': { theme: 'm', chip: 'You decide',
+    hl: `Cheating<br>or a <mark>skill?</mark>`,
+    stage: `
+      <svg style="position:absolute;left:0;top:0" width="952" height="620" viewBox="0 0 952 620">
+        <path class="pull" d="M 300 190 L 400 380" stroke="#141A33" stroke-width="8" stroke-linecap="round" stroke-dasharray="230" stroke-dashoffset="230"/>
+        <path class="pull" d="M 652 190 L 552 380" stroke="#141A33" stroke-width="8" stroke-linecap="round" stroke-dasharray="230" stroke-dashoffset="230"/></svg>
+      <div class="box side" style="left:0;top:0;width:300px;height:250px;background:#FF6F4A;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px">${icon('x', 80, 3)}<div class="big" style="font-size:48px">Cheating</div><div class="lab" style="font-size:22px">school says</div></div>
+      <div class="box side" style="left:652px;top:0;width:300px;height:250px;background:#FFF4DC;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px">${icon('check', 80, 3)}<div class="big" style="font-size:48px">A skill</div><div class="lab" style="font-size:22px">others say</div></div>
+      <div id="kid" style="position:absolute;left:376px;top:330px;width:200px;height:200px;border:6px solid #141A33;border-radius:50%;background:#FFC533;display:flex;align-items:center;justify-content:center;box-shadow:10px 10px 0 #141A33">${icon('user-round', 110, 2.4)}</div>
+      <div class="lab" id="kl" style="position:absolute;left:376px;width:200px;top:552px;text-align:center">your kid</div>
+      <div class="bub" id="q" style="left:528px;top:300px;font:800 48px Sora;padding:6px 24px;background:#141A33;color:#FFF4DC">?</div>`,
+    tl: `
+      tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
+        .from('.hl mark',{scale:0,duration:.4,ease:'back.out(3)'},.45)
+        .from('.side',{y:-80,opacity:0,duration:.45,ease:'back.out(1.8)',stagger:.4},.9)
+        .from('#kid',{scale:0,duration:.45,ease:'back.out(2.4)'},1.9)
+        .from('#kl',{opacity:0,duration:.3},2.2)
+        .to('.pull',{strokeDashoffset:0,duration:.5,ease:'power2.out',stagger:.2},2.4)
+        .to('#kid',{x:-34,duration:.5,ease:'sine.inOut'},3.1)
+        .to('#kid',{x:34,duration:.9,ease:'sine.inOut'},3.6)
+        .to('#kid',{x:0,duration:.6,ease:'sine.inOut'},4.5)
+        .from('#q',{scale:0,duration:.4,ease:'back.out(3)'},4.9);` },
+
+  // 10. almost 9 in 10 US kids aged 9 to 17 already use it; a ban decides with you or without you
+  'v2-06-ban': { theme: 'n', chip: 'Unpopular opinion',
+    hl: `Almost <mark>9 in 10</mark><br>already use it.`,
+    stage: `
+      <div class="box" style="left:0;top:0;width:952px;height:380px;background:#FFF4DC;display:grid;grid-template-columns:repeat(5,1fr);gap:22px;padding:34px 60px">
+        ${Array.from({ length: 10 }, (_, i) => `<div class="kd${i < 9 ? ' on' : ''}" style="width:130px;height:130px;margin:auto;border:6px solid #141A33;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#FFF4DC">${icon('user-round', 70, 2.4)}</div>`).join('')}
+      </div>
+      <div class="lab" id="src" style="position:absolute;left:0;top:402px;color:#B9C0DE;font-size:22px;letter-spacing:.06em">US kids aged 9 to 17 · Common Sense Media, 2026</div>
+      <div class="big" id="bd" style="position:absolute;left:0;top:460px;font-size:44px;color:#FFF4DC">a ban only decides:</div>
+      <div class="bub ch" style="left:0;top:530px;font:800 38px Sora;background:#5FE0A8">with you</div>
+      <div class="bub ch" style="left:300px;top:530px;font:800 38px Sora;background:transparent;color:#FFF4DC;border-color:#FFF4DC">or without you</div>`,
+    tl: `
+      tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
+        .from('.hl mark',{scale:0,duration:.4,ease:'back.out(3)'},.45)
+        .from('.kd',{scale:0,duration:.3,ease:'back.out(2.4)',stagger:.08},.9)
+        .to('.kd.on',{backgroundColor:'#FFC533',duration:.2,stagger:.22},1.9)
+        .from('#src',{opacity:0,duration:.3},3.9)
+        .from('#bd',{opacity:0,y:16,duration:.35},4.4)
+        .from('.ch',{scale:0,duration:.35,ease:'back.out(2.6)',stagger:.35},4.8);` },
+
+  // 12. i tested every lesson on my 10-year-old at the kitchen table. if it lost her, it got cut.
+  'v2-09-kitchen-table': { theme: 'm', chip: 'Behind the scenes',
+    hl: `Tested on a<br><mark>10-year-old.</mark>`,
+    stage: `
+      <div class="box" style="left:0;top:0;width:952px;height:600px;padding:30px 40px;background:#FFFEF8">
+        <div class="lab">Every lesson · kitchen table test</div>
+        ${[0, 1, 2, 3, 4, 5].map((i) => `
+        <div class="ls${i === 1 || i === 4 ? ' cut' : ' keep'}" style="position:relative;display:flex;align-items:center;gap:22px;height:54px;margin-top:10px">
+          <span class="big" style="width:56px;font-size:34px">${i + 1}</span>
+          <div style="flex:1;height:22px;border-radius:11px;background:#C9D9CF"></div>
+          <div class="mk" style="width:110px;text-align:center;font:800 28px Sora;border:5px solid #141A33;border-radius:999px;padding:4px 0;background:${i === 1 || i === 4 ? '#FF6F4A' : '#5FE0A8'}">${i === 1 || i === 4 ? 'cut' : 'kept'}</div>
+          ${i === 1 || i === 4 ? `<div class="st" style="position:absolute;left:70px;right:140px;top:24px;height:6px;background:#FF6F4A;border-radius:3px"></div>` : ''}
+        </div>`).join('')}
+      </div>
+      <div class="bub" id="stamp" style="left:420px;top:500px;font:800 32px Sora;padding:14px 26px;background:#141A33;color:#FFF4DC;transform:rotate(-6deg)">if it lost her, it got cut</div>`,
+    tl: `
+      tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
+        .from('.hl mark',{scale:0,duration:.4,ease:'back.out(3)'},.45)
+        .from('.ls',{opacity:0,x:-40,duration:.3,stagger:.15},.9)
+        .from('.keep .mk',{scale:0,duration:.3,ease:'back.out(2.6)',stagger:.25},2.1)
+        .from('.cut .st',{scaleX:0,transformOrigin:'0 50%',duration:.4,stagger:.5},3.2)
+        .from('.cut .mk',{scale:0,duration:.3,ease:'back.out(2.6)',stagger:.5},3.5)
+        .to('.cut',{opacity:.45,duration:.3,stagger:.5},3.7)
+        .from('#stamp',{scale:2,opacity:0,duration:.35,ease:'power3.in'},4.8);` },
+
+  // 13. ask your kid at dinner what game they'd make; tell me what they said
+  'v2-16-dinner-prompt': { theme: 'c', chip: 'Try this tonight',
+    hl: `Ask at dinner<br><mark>tonight.</mark>`,
+    stage: `
+      <div class="box" id="qb" style="left:0;top:0;width:952px;height:270px;padding:34px 44px;display:flex;align-items:center;gap:34px">
+        <div style="flex:none">${icon('utensils', 100, 2.4)}</div>
+        <div class="big" style="font-size:50px;line-height:1.08">If you could make any game at all, what would it be?</div>
+      </div>
+      <div id="ab" style="position:absolute;left:120px;top:320px;width:832px;height:180px;border:6px dashed #141A33;border-radius:32px;background:rgba(255,244,220,.55);padding:28px 36px">
+        <div class="lab">their answer</div>
+        <div style="display:flex;align-items:center;gap:8px;margin-top:20px"><div style="width:420px;height:8px;background:#141A33;border-radius:4px;opacity:.25"></div><div id="cur" style="width:8px;height:56px;background:#141A33"></div></div>
+      </div>
+      <div class="bub" id="tm" style="left:330px;top:535px;font:800 32px Sora;background:#141A33;color:#FFF4DC">then tell me what they said</div>`,
+    tl: `
+      tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
+        .from('.hl mark',{scale:0,duration:.4,ease:'back.out(3)'},.45)
+        .from('#qb',{y:80,opacity:0,duration:.5,ease:'power3.out'},.9)
+        .from('#ab',{opacity:0,y:40,duration:.45},2.0)
+        .to('#cur',{opacity:0,duration:.01,repeat:9,yoyo:true,repeatDelay:.25},2.6)
+        .from('#tm',{scale:0,duration:.4,ease:'back.out(3)'},4.6);` },
+
+  // 15. first lesson free: one email, your kid builds a game in 10 to 20 minutes, you play it on the couch
+  'v2-15-offer': { theme: 'y', chip: 'First lesson free',
+    hl: `First lesson.<br><mark>Free.</mark>`,
+    stage: `
+      ${[['mail', 'One email', 'no card', '#FFF9EC'], ['gamepad-2', 'They build a game', '10 to 20 min', '#FF6F4A'], ['sofa', 'You play it', 'same couch', '#5FE0A8']].map(([n, t, d, c], i) => `
+      <div class="box of" style="left:${i * 326}px;top:20px;width:300px;height:400px;background:${c};display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;text-align:center;padding:0 18px">
+        <div style="width:54px;height:54px;border:5px solid #141A33;border-radius:50%;background:#fff;font:800 30px Sora;display:flex;align-items:center;justify-content:center">${i + 1}</div>
+        ${icon(n, 96, 2.4)}<div class="big" style="font-size:42px;line-height:1.05">${t}</div><div class="lab" style="font-size:22px">${d}</div>
+      </div>`).join('')}
+      <div class="bub" id="lk" style="left:250px;top:480px;font:800 40px Sora;padding:16px 34px;background:#141A33;color:#FFF4DC">makeshowlab.com</div>`,
+    tl: `
+      tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
+        .from('.hl mark',{scale:0,duration:.4,ease:'back.out(3)'},.45)
+        .from('.of',{y:120,opacity:0,duration:.5,ease:'back.out(1.6)',stagger:.6},1.0)
+        .from('#lk',{scale:0,duration:.4,ease:'back.out(3)'},3.4);` },
+
 };
+// v2 posts that reuse a card: same drawing, headline worded from the v2 text
+cards['v2-12-age'] = cards['07-by-age'];
+cards['v2-03-did-she-make-it'] = cards['10-is-it-cheating'];
+cards['v2-13-two-kids'] = { ...cards['02-answer-machine'], hl: `Same chatbot.<br>Which kid would<br>you <mark>stop?</mark>` };
+
 
 // ------------------------------------------------------------------------------------------ render
 const run = (cmd, args) => new Promise((res, rej) => spawn(cmd, args, { stdio: 'inherit' }).on('close', (c) => (c ? rej(new Error(`${cmd} ${c}`)) : res())));

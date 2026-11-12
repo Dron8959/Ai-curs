@@ -4,7 +4,7 @@ slot: am (8:10 AM New York)
 lever: задание (участие)
 topic: Parenting
 characters: 141
-card: none (text only)
+card: text/threads/v2-16-dinner-prompt.mp4
 ---
 try this at dinner tonight: ask your kid what game they'd make if they could make any game at all.
 

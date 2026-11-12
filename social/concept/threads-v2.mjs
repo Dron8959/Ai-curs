@@ -5,7 +5,7 @@
 //
 //   node social/concept/threads-v2.mjs     checks every post and writes text/threads-v2/<NN>-<id>.md
 //
-// Day shape: morning = short text, no card (a lever that splits or stings); noon = "AI house rules" series,
+// Day shape: morning = short text with a card worded from it (a lever that splits or stings); noon = "AI house rules" series,
 // one rule a day with the same card layout; evening = the main post with a motion card.
 // Rules: facts only from social/brand/facts.md; no invented stories or kid quotes; warm and calm, the
 // provocation is in the idea, never aimed at people; short (phone read); no "AI tells" (threads-lint.mjs);
@@ -22,7 +22,7 @@ export const SLOTS = { am: '8:10 AM', noon: '12:40 PM', pm: '8:40 PM' };   // Ne
 
 export const posts = [
   // ---------------------------------------------------------------- day 1
-  { id: 'v2-01-guilt', day: 1, slot: 'am', lever: 'вина → разрешение', topic: 'Parenting',
+  { id: 'v2-01-guilt', day: 1, slot: 'am', lever: 'вина → разрешение', topic: 'Parenting', media: 'v2-01-guilt',
     text: `the guilt about screen time is louder than the screen time.
 
 20 minutes making a game and 2 hours of videos get the same guilt. why?` },
@@ -32,7 +32,7 @@ export const posts = [
 rule 1: the account is yours. your kid never signs up for anything alone, and you see everything they make.
 
 want to guess rule 2?` },
-  { id: 'v2-12-age', day: 1, slot: 'pm', lever: 'раскол: возраст', topic: 'Parenting', media: '07-by-age',
+  { id: 'v2-12-age', day: 1, slot: 'pm', lever: 'раскол: возраст', topic: 'Parenting', media: 'v2-12-age',
     text: `how young is too young for AI, if you're sitting right there?
 
 6: they talk, you type
@@ -42,7 +42,7 @@ teen: you stay in the room
 where's your line?` },
 
   // ---------------------------------------------------------------- day 2
-  { id: 'v2-04-who-asks-better', day: 2, slot: 'am', lever: 'гордость и зеркало', topic: 'Parenting',
+  { id: 'v2-04-who-asks-better', day: 2, slot: 'am', lever: 'гордость и зеркало', topic: 'Parenting', media: 'v2-04-who-asks-better',
     text: `kids just say what they want. grown ups write three paragraphs first.
 
 be honest, who's better at asking an AI for what they want, you or your 10-year-old?` },
@@ -50,7 +50,7 @@ be honest, who's better at asking an AI for what they want, you or your 10-year-
     text: `rule 2 of 5: nobody you don't know gets to message your kid. our course has no chat between strangers at all, on purpose.
 
 does your kid's favorite app let strangers in?` },
-  { id: 'v2-13-two-kids', day: 2, slot: 'pm', lever: 'раскол: два ребёнка', topic: 'AI for kids', media: '02-answer-machine',
+  { id: 'v2-13-two-kids', day: 2, slot: 'pm', lever: 'раскол: два ребёнка', topic: 'AI for kids', media: 'v2-13-two-kids',
     text: `two kids, same chatbot.
 
 one asks for the homework answer. the other tells it about a game she made up, and builds it.
@@ -58,7 +58,7 @@ one asks for the homework answer. the other tells it about a game she made up, a
 which one would you stop?` },
 
   // ---------------------------------------------------------------- day 3
-  { id: 'v2-02-school-vs-world', day: 3, slot: 'am', lever: 'раскол: школа и мир', topic: 'AI for kids',
+  { id: 'v2-02-school-vs-world', day: 3, slot: 'am', lever: 'раскол: школа и мир', topic: 'AI for kids', media: 'v2-02-school-vs-world',
     text: `school says using AI is cheating. plenty of other people say it's a skill.
 
 your kid sits right in the middle. what do you tell them?` },
@@ -66,13 +66,13 @@ your kid sits right in the middle. what do you tell them?` },
     text: `rule 3 of 5: some things AI never hears. we teach kids what's on that list and why.
 
 what's the first thing on yours?` },
-  { id: 'v2-03-did-she-make-it', day: 3, slot: 'pm', lever: 'раскол: чья это работа', topic: 'AI for kids', media: '10-is-it-cheating',
+  { id: 'v2-03-did-she-make-it', day: 3, slot: 'pm', lever: 'раскол: чья это работа', topic: 'AI for kids', media: 'v2-03-did-she-make-it',
     text: `your 8-year-old describes a song in her own words. AI makes the music. she sings it for grandma.
 
 did she make it?` },
 
   // ---------------------------------------------------------------- day 4
-  { id: 'v2-06-ban', day: 4, slot: 'am', lever: 'против течения', topic: 'AI safety',
+  { id: 'v2-06-ban', day: 4, slot: 'am', lever: 'против течения', topic: 'AI safety', media: 'v2-06-ban',
     text: `banning AI at home won't keep your kid away from it. almost 9 in 10 US kids aged 9 to 17 already use it (Common Sense Media, 2026).
 
 a ban only decides whether they learn it with you or without you.
@@ -82,13 +82,13 @@ if you've said no at home, what would change your mind?` },
     text: `rule 4 of 5: links get a second look. kids learn what a suspicious link looks like before they ever click one.
 
 be honest, has your kid clicked something they shouldn't have?` },
-  { id: 'v2-09-kitchen-table', day: 4, slot: 'pm', lever: 'своя кухня (доверие)', topic: 'Parenting', media: '04-kitchen-table',
+  { id: 'v2-09-kitchen-table', day: 4, slot: 'pm', lever: 'своя кухня (доверие)', topic: 'Parenting', media: 'v2-09-kitchen-table',
     text: `i tested every lesson of our course on my 10-year-old at the kitchen table. if it lost her, it got cut.
 
 she argues with the script a lot. who's the toughest critic at your house?` },
 
   // ---------------------------------------------------------------- day 5
-  { id: 'v2-16-dinner-prompt', day: 5, slot: 'am', lever: 'задание (участие)', topic: 'Parenting',
+  { id: 'v2-16-dinner-prompt', day: 5, slot: 'am', lever: 'задание (участие)', topic: 'Parenting', media: 'v2-16-dinner-prompt',
     text: `try this at dinner tonight: ask your kid what game they'd make if they could make any game at all.
 
 then come back and tell me what they said` },
@@ -96,7 +96,7 @@ then come back and tell me what they said` },
     text: `rule 5 of 5: if it looks too perfect, check it. pictures, videos and texts can all be fake, and kids can learn to spot them.
 
 that's all five. which one would you add or swap at your house?` },
-  { id: 'v2-15-offer', day: 5, slot: 'pm', lever: 'предложение (раз в пять постов)', topic: 'AI for kids', media: 'threads-06-tuesday-night',
+  { id: 'v2-15-offer', day: 5, slot: 'pm', lever: 'предложение (раз в пять постов)', topic: 'AI for kids', media: 'v2-15-offer',
     text: `first lesson of our course is free. no card, just an email. your kid builds a playable game in 10 to 20 minutes, then you two play it on the same couch.
 
 ${url}

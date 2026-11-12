@@ -4,7 +4,7 @@ slot: am (8:10 AM New York)
 lever: гордость и зеркало
 topic: Parenting
 characters: 155
-card: none (text only)
+card: text/threads/v2-04-who-asks-better.mp4
 ---
 kids just say what they want. grown ups write three paragraphs first.
 
