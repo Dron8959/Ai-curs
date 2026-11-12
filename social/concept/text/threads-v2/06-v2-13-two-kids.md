@@ -6,8 +6,8 @@ topic: AI for kids
 characters: 145
 card: text/threads/v2-13-two-kids.mp4
 ---
-two kids, same chatbot.
+Two kids, same chatbot.
 
-one asks for the homework answer. the other tells it about a game she made up, and builds it.
+One asks for the homework answer. The other tells it about a game she made up, and builds it.
 
-which one would you stop?
+Which one would you stop?

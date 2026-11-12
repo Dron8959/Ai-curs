@@ -199,7 +199,7 @@ const cards = {
   '10-is-it-cheating': { theme: 'c', chip: 'You decide',
     hl: `Did she<br><mark>make it?</mark>`,
     stage: `
-      ${[['Idea', 'hers', 1], ['Words', 'hers', 1], ['Music', 'AI', 0], ['Sang it for grandma', 'hers', 1]].map(([t, who, mine], i) => `
+      ${[['Idea', 'Hers', 1], ['Words', 'Hers', 1], ['Music', 'AI', 0], ['Sang it for grandma', 'Hers', 1]].map(([t, who, mine], i) => `
       <div class="box wr" style="position:relative;height:122px;margin-bottom:22px;display:flex;align-items:center;justify-content:space-between;padding:0 34px">
         <span class="big" style="font-size:${t.length > 10 ? 38 : 50}px">${t}</span>
         <span class="tag" style="border:5px solid #141A33;border-radius:999px;padding:8px 28px;font:800 36px Sora;letter-spacing:-.03em;background:${mine ? '#5FE0A8' : '#141A33'};color:${mine ? '#141A33' : '#FFF4DC'}">${who}</span>
@@ -254,7 +254,7 @@ const cards = {
         ${icon(n, 100, 2.4)}<div class="big" style="font-size:58px">${t}</div><div class="lab" style="font-size:24px;letter-spacing:.04em;text-transform:none;font-weight:700">${d}</div>
       </div>`).join('')}
       <div class="bub" id="mn" style="left:250px;top:470px;font:800 40px Sora;padding:20px 34px">6 to 20 min</div>
-      <div class="bub" id="nq" style="left:100px;top:570px;font:700 32px Urbanist;background:#141A33;color:#FFF4DC;box-shadow:6px 6px 0 #FFFFFF">no quiz at the end</div>`,
+      <div class="bub" id="nq" style="left:100px;top:570px;font:700 32px Urbanist;background:#141A33;color:#FFF4DC;box-shadow:6px 6px 0 #FFFFFF">No quiz at the end</div>`,
     tl: `
       tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
         .from('.lp',{scale:.3,opacity:0,duration:.45,ease:'back.out(2.2)',stagger:.55},.8)
@@ -280,11 +280,11 @@ const cards = {
 
   // AI house rules, a five-day series: one rule a day at noon, the same layout every time so people know it.
   ...Object.fromEntries([
-    ['v2-r1-account', 'key-round', `The account<br>is <mark>yours.</mark>`, 'your kid never signs up alone'],
-    ['v2-r2-strangers', 'user-x', `Nobody new<br><mark>gets in.</mark>`, 'no chat with strangers'],
-    ['v2-r3-never-hears', 'lock', `Some things AI<br><mark>never hears.</mark>`, 'decide the list together'],
-    ['v2-r4-links', 'link', `Links get a<br><mark>second look.</mark>`, 'spot it before you click'],
-    ['v2-r5-too-perfect', 'search', `Too perfect?<br><mark>Check it.</mark>`, 'pictures, videos, texts can be fake'],
+    ['v2-r1-account', 'key-round', `The account<br>is <mark>yours.</mark>`, 'Your kid never signs up alone'],
+    ['v2-r2-strangers', 'user-x', `Nobody new<br><mark>gets in.</mark>`, 'No chat with strangers'],
+    ['v2-r3-never-hears', 'lock', `Some things AI<br><mark>never hears.</mark>`, 'Decide the list together'],
+    ['v2-r4-links', 'link', `Links get a<br><mark>second look.</mark>`, 'Spot it before you click'],
+    ['v2-r5-too-perfect', 'search', `Too perfect?<br><mark>Check it.</mark>`, 'Pictures, videos, texts can be fake'],
   ].map(([id, ic, hl, sub], k) => [id, { theme: 'n', chip: `AI house rules · ${k + 1}/5`,
     hl,
     stage: `
@@ -316,7 +316,7 @@ const cards = {
         <div style="display:flex;align-items:center;gap:20px;margin-top:20px"><span class="lab" style="width:90px;font-size:22px">${l}</span>
           <div style="flex:1;height:40px;border:5px solid #141A33;border-radius:999px;background:#F1EBDA;overflow:hidden"><div class="${l}" style="height:100%;width:${w * 100}%;background:${c};border-right:5px solid #141A33"></div></div></div>`).join('')}
       </div>`).join('')}
-      <div class="bub" id="why" style="left:770px;top:562px;font:800 46px Sora;padding:14px 34px;background:#141A33;color:#FFF4DC">why?</div>`,
+      <div class="bub" id="why" style="left:770px;top:562px;font:800 46px Sora;padding:14px 34px;background:#141A33;color:#FFF4DC">Why?</div>`,
     tl: `
       tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
         .from('.hl mark',{scale:0,duration:.4,ease:'back.out(3)'},.45)
@@ -331,7 +331,7 @@ const cards = {
     stage: `
       <div class="box" style="left:0;top:0;width:400px;height:600px;padding:30px">
         <div class="lab">Kid, 10</div>
-        <div class="bub" id="kq" style="position:relative;margin-top:24px;white-space:normal;background:#FFF4DC;font:700 36px/1.2 Urbanist">make a game where my cat is the boss</div>
+        <div class="bub" id="kq" style="position:relative;margin-top:24px;white-space:normal;background:#FFF4DC;font:700 36px/1.2 Urbanist">Make a game where my cat is the boss</div>
         <div class="bub" id="kt" style="left:30px;bottom:30px;font:800 34px Sora;background:#5FE0A8">1 line</div>
       </div>
       <div class="box" style="left:440px;top:0;width:512px;height:600px;padding:30px">
@@ -379,9 +379,9 @@ const cards = {
         ${Array.from({ length: 10 }, (_, i) => `<div class="kd${i < 9 ? ' on' : ''}" style="width:130px;height:130px;margin:auto;border:6px solid #141A33;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#FFF4DC">${icon('user-round', 70, 2.4)}</div>`).join('')}
       </div>
       <div class="lab" id="src" style="position:absolute;left:0;top:402px;color:#B9C0DE;font-size:22px;letter-spacing:.06em">US kids aged 9 to 17 · Common Sense Media, 2026</div>
-      <div class="big" id="bd" style="position:absolute;left:0;top:460px;font-size:44px;color:#FFF4DC">a ban only decides:</div>
-      <div class="bub ch" style="left:0;top:530px;font:800 38px Sora;background:#5FE0A8">with you</div>
-      <div class="bub ch" style="left:300px;top:530px;font:800 38px Sora;background:transparent;color:#FFF4DC;border-color:#FFF4DC">or without you</div>`,
+      <div class="big" id="bd" style="position:absolute;left:0;top:460px;font-size:44px;color:#FFF4DC">A ban only decides:</div>
+      <div class="bub ch" style="left:0;top:530px;font:800 38px Sora;background:#5FE0A8">With you</div>
+      <div class="bub ch" style="left:300px;top:530px;font:800 38px Sora;background:transparent;color:#FFF4DC;border-color:#FFF4DC">Or without you</div>`,
     tl: `
       tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
         .from('.hl mark',{scale:0,duration:.4,ease:'back.out(3)'},.45)
@@ -391,7 +391,7 @@ const cards = {
         .from('#bd',{opacity:0,y:16,duration:.35},4.4)
         .from('.ch',{scale:0,duration:.35,ease:'back.out(2.6)',stagger:.35},4.8);` },
 
-  // 12. i tested every lesson on my 10-year-old at the kitchen table. if it lost her, it got cut.
+  // 12. i tested every lesson on my 10-year-old at the kitchen table. If it lost her, it got cut.
   'v2-09-kitchen-table': { theme: 'm', chip: 'Behind the scenes',
     hl: `Tested on a<br><mark>10-year-old.</mark>`,
     stage: `
@@ -401,11 +401,11 @@ const cards = {
         <div class="ls${i === 1 || i === 4 ? ' cut' : ' keep'}" style="position:relative;display:flex;align-items:center;gap:22px;height:54px;margin-top:10px">
           <span class="big" style="width:56px;font-size:34px">${i + 1}</span>
           <div style="flex:1;height:22px;border-radius:11px;background:#C9D9CF"></div>
-          <div class="mk" style="width:110px;text-align:center;font:800 28px Sora;border:5px solid #141A33;border-radius:999px;padding:4px 0;background:${i === 1 || i === 4 ? '#FF6F4A' : '#5FE0A8'}">${i === 1 || i === 4 ? 'cut' : 'kept'}</div>
+          <div class="mk" style="width:110px;text-align:center;font:800 28px Sora;border:5px solid #141A33;border-radius:999px;padding:4px 0;background:${i === 1 || i === 4 ? '#FF6F4A' : '#5FE0A8'}">${i === 1 || i === 4 ? 'Cut' : 'Kept'}</div>
           ${i === 1 || i === 4 ? `<div class="st" style="position:absolute;left:70px;right:140px;top:24px;height:6px;background:#FF6F4A;border-radius:3px"></div>` : ''}
         </div>`).join('')}
       </div>
-      <div class="bub" id="stamp" style="left:420px;top:500px;font:800 32px Sora;padding:14px 26px;background:#141A33;color:#FFF4DC;transform:rotate(-6deg)">if it lost her, it got cut</div>`,
+      <div class="bub" id="stamp" style="left:420px;top:500px;font:800 32px Sora;padding:14px 26px;background:#141A33;color:#FFF4DC;transform:rotate(-6deg)">If it lost her, it got cut</div>`,
     tl: `
       tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
         .from('.hl mark',{scale:0,duration:.4,ease:'back.out(3)'},.45)
@@ -428,7 +428,7 @@ const cards = {
         <div class="lab">their answer</div>
         <div style="display:flex;align-items:center;gap:8px;margin-top:20px"><div style="width:420px;height:8px;background:#141A33;border-radius:4px;opacity:.25"></div><div id="cur" style="width:8px;height:56px;background:#141A33"></div></div>
       </div>
-      <div class="bub" id="tm" style="left:330px;top:535px;font:800 32px Sora;background:#141A33;color:#FFF4DC">then tell me what they said</div>`,
+      <div class="bub" id="tm" style="left:330px;top:535px;font:800 32px Sora;background:#141A33;color:#FFF4DC">Then tell me what they said</div>`,
     tl: `
       tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
         .from('.hl mark',{scale:0,duration:.4,ease:'back.out(3)'},.45)

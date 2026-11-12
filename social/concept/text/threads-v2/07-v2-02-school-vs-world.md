@@ -6,6 +6,6 @@ topic: AI for kids
 characters: 133
 card: text/threads/v2-02-school-vs-world.mp4
 ---
-school says using AI is cheating. plenty of other people say it's a skill.
+School says using AI is cheating. Plenty of other people say it's a skill.
 
-your kid sits right in the middle. what do you tell them?
+Your kid sits right in the middle. What do you tell them?

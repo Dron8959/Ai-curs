@@ -6,6 +6,6 @@ topic: AI safety
 characters: 169
 card: text/threads/v2-r2-strangers.mp4
 ---
-rule 2 of 5: nobody you don't know gets to message your kid. our course has no chat between strangers at all, on purpose.
+Rule 2 of 5: Nobody you don't know gets to message your kid. Our course has no chat between strangers at all, on purpose.
 
-does your kid's favorite app let strangers in?
+Does your kid's favorite app let strangers in?

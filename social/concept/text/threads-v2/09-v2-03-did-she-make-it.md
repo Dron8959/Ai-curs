@@ -6,6 +6,6 @@ topic: AI for kids
 characters: 114
 card: text/threads/v2-03-did-she-make-it.mp4
 ---
-your 8-year-old describes a song in her own words. AI makes the music. she sings it for grandma.
+Your 8-year-old describes a song in her own words. AI makes the music. She sings it for grandma.
 
-did she make it?
+Did she make it?

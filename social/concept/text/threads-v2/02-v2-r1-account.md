@@ -6,8 +6,8 @@ topic: AI safety
 characters: 189
 card: text/threads/v2-r1-account.mp4
 ---
-5 house rules before any kid opens an AI tool. one a day.
+5 house rules before any kid opens an AI tool. One a day.
 
-rule 1: the account is yours. your kid never signs up for anything alone, and you see everything they make.
+Rule 1: The account is yours. Your kid never signs up for anything alone, and you see everything they make.
 
-want to guess rule 2?
+Want to guess rule 2?

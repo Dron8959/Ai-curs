@@ -3,9 +3,9 @@ day: 5
 slot: am (8:10 AM New York)
 lever: задание (участие)
 topic: Parenting
-characters: 141
+characters: 142
 card: text/threads/v2-16-dinner-prompt.mp4
 ---
-try this at dinner tonight: ask your kid what game they'd make if they could make any game at all.
+Try this at dinner tonight: ask your kid what game they'd make if they could make any game at all.
 
-then come back and tell me what they said
+Then come back and tell me what they said.

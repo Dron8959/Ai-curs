@@ -23,121 +23,121 @@ export const SLOTS = { am: '8:10 AM', noon: '12:40 PM', pm: '8:40 PM' };   // Ne
 export const posts = [
   // ---------------------------------------------------------------- day 1
   { id: 'v2-01-guilt', day: 1, slot: 'am', lever: 'вина → разрешение', topic: 'Parenting', media: 'v2-01-guilt',
-    text: `the guilt about screen time is louder than the screen time.
+    text: `The guilt about screen time is louder than the screen time.
 
-20 minutes making a game and 2 hours of videos get the same guilt. why?` },
+20 minutes making a game and 2 hours of videos get the same guilt. Why?` },
   { id: 'v2-r1-account', day: 1, slot: 'noon', lever: 'серия: открытая петля', topic: 'AI safety', media: 'v2-r1-account',
-    text: `5 house rules before any kid opens an AI tool. one a day.
+    text: `5 house rules before any kid opens an AI tool. One a day.
 
-rule 1: the account is yours. your kid never signs up for anything alone, and you see everything they make.
+Rule 1: The account is yours. Your kid never signs up for anything alone, and you see everything they make.
 
-want to guess rule 2?` },
+Want to guess rule 2?` },
   { id: 'v2-12-age', day: 1, slot: 'pm', lever: 'раскол: возраст', topic: 'Parenting', media: 'v2-12-age',
-    text: `how young is too young for AI, if you're sitting right there?
+    text: `How young is too young for AI, if you're sitting right there?
 
-6: they talk, you type
-10: they do most of it
-teen: you stay in the room
+6: They talk, you type
+10: They do most of it
+Teen: You stay in the room
 
-where's your line?` },
+Where's your line?` },
 
   // ---------------------------------------------------------------- day 2
   { id: 'v2-04-who-asks-better', day: 2, slot: 'am', lever: 'гордость и зеркало', topic: 'Parenting', media: 'v2-04-who-asks-better',
-    text: `kids just say what they want. grown ups write three paragraphs first.
+    text: `Kids just say what they want. Grown ups write three paragraphs first.
 
-be honest, who's better at asking an AI for what they want, you or your 10-year-old?` },
+Be honest, who's better at asking an AI for what they want, you or your 10-year-old?` },
   { id: 'v2-r2-strangers', day: 2, slot: 'noon', lever: 'серия: открытая петля', topic: 'AI safety', media: 'v2-r2-strangers',
-    text: `rule 2 of 5: nobody you don't know gets to message your kid. our course has no chat between strangers at all, on purpose.
+    text: `Rule 2 of 5: Nobody you don't know gets to message your kid. Our course has no chat between strangers at all, on purpose.
 
-does your kid's favorite app let strangers in?` },
+Does your kid's favorite app let strangers in?` },
   { id: 'v2-13-two-kids', day: 2, slot: 'pm', lever: 'раскол: два ребёнка', topic: 'AI for kids', media: 'v2-13-two-kids',
-    text: `two kids, same chatbot.
+    text: `Two kids, same chatbot.
 
-one asks for the homework answer. the other tells it about a game she made up, and builds it.
+One asks for the homework answer. The other tells it about a game she made up, and builds it.
 
-which one would you stop?` },
+Which one would you stop?` },
 
   // ---------------------------------------------------------------- day 3
   { id: 'v2-02-school-vs-world', day: 3, slot: 'am', lever: 'раскол: школа и мир', topic: 'AI for kids', media: 'v2-02-school-vs-world',
-    text: `school says using AI is cheating. plenty of other people say it's a skill.
+    text: `School says using AI is cheating. Plenty of other people say it's a skill.
 
-your kid sits right in the middle. what do you tell them?` },
+Your kid sits right in the middle. What do you tell them?` },
   { id: 'v2-r3-never-hears', day: 3, slot: 'noon', lever: 'серия: участие', topic: 'AI safety', media: 'v2-r3-never-hears',
-    text: `rule 3 of 5: some things AI never hears. we teach kids what's on that list and why.
+    text: `Rule 3 of 5: Some things AI never hears. We teach kids what's on that list and why.
 
-what's the first thing on yours?` },
+What's the first thing on yours?` },
   { id: 'v2-03-did-she-make-it', day: 3, slot: 'pm', lever: 'раскол: чья это работа', topic: 'AI for kids', media: 'v2-03-did-she-make-it',
-    text: `your 8-year-old describes a song in her own words. AI makes the music. she sings it for grandma.
+    text: `Your 8-year-old describes a song in her own words. AI makes the music. She sings it for grandma.
 
-did she make it?` },
+Did she make it?` },
 
   // ---------------------------------------------------------------- day 4
   { id: 'v2-06-ban', day: 4, slot: 'am', lever: 'против течения', topic: 'AI safety', media: 'v2-06-ban',
-    text: `banning AI at home won't keep your kid away from it. almost 9 in 10 US kids aged 9 to 17 already use it (Common Sense Media, 2026).
+    text: `Banning AI at home won't keep your kid away from it. Almost 9 in 10 US kids aged 9 to 17 already use it (Common Sense Media, 2026).
 
-a ban only decides whether they learn it with you or without you.
+A ban only decides whether they learn it with you or without you.
 
-if you've said no at home, what would change your mind?` },
+If you've said no at home, what would change your mind?` },
   { id: 'v2-r4-links', day: 4, slot: 'noon', lever: 'серия: признание', topic: 'AI safety', media: 'v2-r4-links',
-    text: `rule 4 of 5: links get a second look. kids learn what a suspicious link looks like before they ever click one.
+    text: `Rule 4 of 5: Links get a second look. Kids learn what a suspicious link looks like before they ever click one.
 
-be honest, has your kid clicked something they shouldn't have?` },
+Be honest, has your kid clicked something they shouldn't have?` },
   { id: 'v2-09-kitchen-table', day: 4, slot: 'pm', lever: 'своя кухня (доверие)', topic: 'Parenting', media: 'v2-09-kitchen-table',
-    text: `i tested every lesson of our course on my 10-year-old at the kitchen table. if it lost her, it got cut.
+    text: `I tested every lesson of our course on my 10-year-old at the kitchen table. If it lost her, it got cut.
 
-she argues with the script a lot. who's the toughest critic at your house?` },
+She argues with the script a lot. Who's the toughest critic at your house?` },
 
   // ---------------------------------------------------------------- day 5
   { id: 'v2-16-dinner-prompt', day: 5, slot: 'am', lever: 'задание (участие)', topic: 'Parenting', media: 'v2-16-dinner-prompt',
-    text: `try this at dinner tonight: ask your kid what game they'd make if they could make any game at all.
+    text: `Try this at dinner tonight: ask your kid what game they'd make if they could make any game at all.
 
-then come back and tell me what they said` },
+Then come back and tell me what they said.` },
   { id: 'v2-r5-too-perfect', day: 5, slot: 'noon', lever: 'серия: итог', topic: 'AI safety', media: 'v2-r5-too-perfect',
-    text: `rule 5 of 5: if it looks too perfect, check it. pictures, videos and texts can all be fake, and kids can learn to spot them.
+    text: `Rule 5 of 5: If it looks too perfect, check it. Pictures, videos and texts can all be fake, and kids can learn to spot them.
 
-that's all five. which one would you add or swap at your house?` },
+That's all five. Which one would you add or swap at your house?` },
   { id: 'v2-15-offer', day: 5, slot: 'pm', lever: 'предложение (раз в пять постов)', topic: 'AI for kids', media: 'v2-15-offer',
-    text: `first lesson of our course is free. no card, just an email. your kid builds a playable game in 10 to 20 minutes, then you two play it on the same couch.
+    text: `First lesson of our course is free. No card, just an email. Your kid builds a playable game in 10 to 20 minutes, then you two play it on the same couch.
 
 ${url}
 
-if you try it, tell me what the game was about` },
+If you try it, tell me what the game was about.` },
 ];
 
 // Not in the first 15. Why each one waits is in the owner's doc.
 export const reserve = [
   { id: 'v2-05-alone-or-couch', lever: 'тревога → решение', why: 'схема «рискованный вариант / безопасный вариант» читается как шаблон; тревога без новой мысли',
-    text: `the risky version of kids and AI is a kid alone with it in their room. the safe version is the two of you on the same couch.
+    text: `The risky version of kids and AI is a kid alone with it in their room. The safe version is the two of you on the same couch.
 
-where does your kid use screens right now?` },
+Where does your kid use screens right now?` },
   { id: 'v2-08-quiz', lever: 'вызов привычному', why: 'вопрос к учителям, а читают родители; карточка готова, вернём, когда пойдёт тема школы',
-    text: `a quiz shows what a kid remembers. a finished thing shows what they can do. every lesson of ours ends with a game, a cartoon or a song.
+    text: `A quiz shows what a kid remembers. A finished thing shows what they can do. Every lesson of ours ends with a game, a cartoon or a song.
 
-teachers, what does a quiz show you that a finished project can't?` },
+Teachers, what does a quiz show you that a finished project can't?` },
   { id: 'v2-10-no-expert', lever: 'вина → разрешение', why: '«that\'s the whole job» звучит как поучение, «what\'s holding you back?» как продажа',
-    text: `you don't have to understand AI to sit next to your kid while they use it. that's the whole job.
+    text: `You don't have to understand AI to sit next to your kid while they use it. That's the whole job.
 
-what's holding you back?` },
+What's holding you back?` },
   { id: 'v2-11-gift', lever: 'тепло и подарки', why: 'хорош к праздникам: ставим ближе к концу ноября',
     text: `Linda, a grandmother from our early-access group (she got the course free), told us:
 
 "I wanted to give my grandson something more meaningful than another toy. MakeShowLab gave us a fun way to spend time together."
 
-a box to open or time together. which would your kid pick?` },
+A box to open or time together. Which would your kid pick?` },
   { id: 'v2-14-who-thinks', lever: 'страх → пересмотр', why: 'под видом мысли спрятана та же схема «не X, а Y»; абстрактно',
-    text: `people worry AI will think for their kid. it does when nobody asks the kid what they think first.
+    text: `People worry AI will think for their kid. It does when nobody asks the kid what they think first.
 
-when your kid decides what to make, tells the AI, checks it and fixes it, the thinking stays theirs.
+When your kid decides what to make, tells the AI, checks it and fixes it, the thinking stays theirs.
 
-where do you land on this?` },
+Where do you land on this?` },
   { id: 'v2-17-nine-pm', lever: 'раскол и самопроверка', why: 'новая идея, для второй недели',
-    text: `your kid asks you something you can't answer. you google it, ask an AI, or say "i don't know, let's find out".
+    text: `Your kid asks you something you can't answer. You google it, ask an AI, or say "I don't know, let's find out".
 
-which one teaches them the most?` },
+Which one teaches them the most?` },
   { id: 'v2-18-grandparents', lever: 'раскол: бабушки и дедушки', why: 'новая идея, для второй недели и праздников',
-    text: `grandparents, real question: would you sit next to your grandkid while they make a cartoon with AI?
+    text: `Grandparents, real question: would you sit next to your grandkid while they make a cartoon with AI?
 
-or is that a hard no at your house?` },
+Or is that a hard no at your house?` },
 ];
 
 const BANNED = /[—–‘’“”]|\b(unlock|unleash|empower|revolutioni[sz]e|game-changer|cutting-edge|harness|delve|future-proof|hack)\b|comment yes|follow for more|\b99%/i;
