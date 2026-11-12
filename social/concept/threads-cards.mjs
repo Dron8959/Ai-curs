@@ -455,7 +455,7 @@ const cards = {
 
 };
 // v2 posts that reuse a card: same drawing, headline worded from the v2 text
-cards['v2-12-age'] = cards['07-by-age'];
+cards['v2-12-age'] = { ...cards['07-by-age'], hl: `At what age can<br>your <mark>kid</mark> try AI?` };
 cards['v2-03-did-she-make-it'] = cards['10-is-it-cheating'];
 cards['v2-13-two-kids'] = { ...cards['02-answer-machine'], hl: `Same chatbot.<br>Which kid would<br>you <mark>stop?</mark>` };
 

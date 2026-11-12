@@ -33,13 +33,14 @@ Rule 1: The account is yours. Your kid never signs up for anything alone, and yo
 
 Want to guess rule 2?` },
   { id: 'v2-12-age', day: 1, slot: 'pm', lever: 'раскол: возраст', topic: 'Parenting', media: 'v2-12-age',
-    text: `How young is too young for AI, if you're sitting right there?
+    text: `At what age would you let your kid try AI, with you sitting right next to them?
 
-6: They talk, you type
-10: They do most of it
-Teen: You stay in the room
+Here's ours:
+6 years old: They talk, you type.
+10 years old: They do most of it.
+Teen: You just stay in the room.
 
-Where's your line?` },
+Where's yours?` },
 
   // ---------------------------------------------------------------- day 2
   { id: 'v2-04-who-asks-better', day: 2, slot: 'am', lever: 'гордость и зеркало', topic: 'Parenting', media: 'v2-04-who-asks-better',
