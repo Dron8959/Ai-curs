@@ -13,7 +13,9 @@ import { resolve, join } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { spawn } from 'node:child_process';
 import { css, here, repo } from './kit.mjs';
-import { posts } from './text.mjs';
+import { posts as shared } from './text.mjs';
+import { posts as threadsOnly } from './threads.mjs';
+const posts = [...shared.map((p) => ({ id: p.id })), ...threadsOnly.map((p) => ({ id: p.id }))];
 
 const { chromium } = createRequire(import.meta.url)('playwright');
 const W = 1080, H = 1350, FPS = 30, DUR = 7;
@@ -45,33 +47,6 @@ const foot = `<div class="foot"><img src="${LOGO}"><b>makeshowlab.com</b></div>`
 
 // ------------------------------------------------------------------------------------------ the cards
 const cards = {
-  // Same minutes, two screens: one scrolls forever, one builds something.
-  '01-reason-to-show': { theme: 'y', chip: 'Unpopular opinion',
-    hl: `Same minutes.<br><mark>Not the same</mark><br>screen.`,
-    stage: `
-      <div class="box" id="clock" style="left:316px;top:0;width:320px;height:110px;display:flex;align-items:center;justify-content:center;gap:14px;background:#141A33;color:#FFF4DC">${icon('timer', 52).replace('currentColor', '#FFC533')}<span class="big" id="min" style="color:#FFF4DC">0 min</span></div>
-      <div class="box" id="s1" style="left:0;top:160px;width:430px;height:440px">
-        <div class="lab" style="position:absolute;left:28px;top:22px">Scrolled</div>
-        <div style="position:absolute;left:28px;right:28px;top:80px;bottom:24px;overflow:hidden"><div id="feed">${Array.from({ length: 14 }, (_, i) => `<div style="height:58px;margin-bottom:18px;border-radius:14px;background:${['#FFD98A', '#E9E2CF', '#FFB8A6'][i % 3]}"></div>`).join('')}</div></div>
-      </div>
-      <div class="box" id="s2" style="left:522px;top:160px;width:430px;height:440px">
-        <div class="lab" style="position:absolute;left:28px;top:22px">Made</div>
-        <div style="position:absolute;left:65px;top:110px;width:300px;height:300px">
-          ${[[0, 200, '#FF6F4A'], [100, 200, '#5FE0A8'], [200, 200, '#FFC533'], [0, 100, '#5FE0A8'], [100, 100, '#141A33'], [200, 100, '#FF6F4A'], [100, 0, '#FFC533']]
-            .map(([x, y, c], i) => `<div class="blk" style="position:absolute;left:${x}px;top:${y}px;width:96px;height:96px;border:5px solid #141A33;border-radius:16px;background:${c}" data-i="${i}"></div>`).join('')}
-        </div>
-      </div>`,
-    tl: `
-      tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
-        .from('#clock',{scale:.4,opacity:0,duration:.45,ease:'back.out(2.4)'},.4)
-        .from('#s1',{x:-80,opacity:0,duration:.5,ease:'power3.out'},.6)
-        .from('#s2',{x:80,opacity:0,duration:.5,ease:'power3.out'},.75)
-        .to('#feed',{y:-560,duration:5.4,ease:'none'},1.1)
-        .from('.blk',{y:-420,opacity:0,duration:.5,ease:'bounce.out',stagger:.55},1.3);
-      const m={v:0};
-      tl.to(m,{v:45,duration:4.6,ease:'none',onUpdate(){document.getElementById('min').textContent=Math.round(m.v)+' min'}},1.1);
-      tl.from('.hl mark',{scale:0,duration:.4,ease:'back.out(3)'},.45);` },
-
   // Kid A gets an answer. Kid B gets a game. Which one would you stop?
   '02-answer-machine': { theme: 'c', chip: 'You decide',
     hl: `Same app.<br>Which kid would<br><mark>you stop?</mark>`,
@@ -194,6 +169,113 @@ const cards = {
         .from('.age',{scale:0,duration:.4,ease:'back.out(2.6)',stagger:.9},1.15)
         .from('.bar',{width:0,duration:.8,ease:'power2.out',stagger:.9},1.4)
         .from('.lbl',{opacity:0,y:14,duration:.35,stagger:.9},1.3);` },
+
+  // Quiz measures memory, a made thing measures skill.
+  '09-ends-with-a-thing': { theme: 'm', chip: 'Unpopular opinion',
+    hl: `Remembers<br>vs <mark>can do.</mark>`,
+    stage: `
+      <div class="box" id="q" style="left:0;top:0;width:440px;height:600px;padding:34px">
+        <div class="lab">A quiz</div>
+        ${[1, 2, 3, 4].map((i) => `<div class="qr" style="display:flex;align-items:center;gap:16px;margin-top:34px"><div style="width:38px;height:38px;border:5px solid #141A33;border-radius:10px;background:#fff"></div><div style="flex:1;height:18px;border-radius:9px;background:#D9E7DF"></div></div>`).join('')}
+        <div class="big" id="qt" style="position:absolute;left:34px;bottom:34px;right:34px;font-size:40px;line-height:1.05">what a kid<br>remembers</div>
+      </div>
+      <div class="box" id="t" style="left:512px;top:0;width:440px;height:600px;padding:34px;background:#FFF9EC">
+        <div class="lab">A thing they made</div>
+        ${[['gamepad-2', 'Game', '#FF6F4A'], ['clapperboard', 'Cartoon', '#FFC533'], ['music', 'Song', '#B9A5FF']].map(([n, t, c]) => `<div class="chp" style="display:flex;align-items:center;gap:16px;margin-top:26px;border:5px solid #141A33;border-radius:22px;background:${c};padding:14px 20px">${icon(n, 46, 2.4)}<span class="big" style="font-size:40px">${t}</span></div>`).join('')}
+        <div class="big" id="tt" style="position:absolute;left:34px;bottom:34px;right:34px;font-size:40px;line-height:1.05">what a kid<br>can do</div>
+      </div>`,
+    tl: `
+      tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
+        .from('.hl mark',{scale:0,duration:.4,ease:'back.out(3)'},.45)
+        .from('#q',{x:-90,opacity:0,duration:.5,ease:'power3.out'},.9)
+        .from('.qr',{opacity:0,x:-30,duration:.3,stagger:.2},1.3)
+        .from('#qt',{opacity:0,y:14,duration:.4},2.3)
+        .from('#t',{x:90,opacity:0,duration:.5,ease:'power3.out'},2.8)
+        .from('.chp',{scale:.4,opacity:0,duration:.4,ease:'back.out(2.4)',stagger:.35},3.3)
+        .from('#tt',{opacity:0,y:14,duration:.4},4.5);` },
+
+  // Who did what: the idea and the words are hers, the AI makes the music.
+  '10-is-it-cheating': { theme: 'c', chip: 'You decide',
+    hl: `Did she<br><mark>make it?</mark>`,
+    stage: `
+      ${[['Idea', 'hers', 1], ['Words', 'hers', 1], ['Music', 'AI', 0], ['Sang it for grandma', 'hers', 1]].map(([t, who, mine], i) => `
+      <div class="box wr" style="position:relative;height:122px;margin-bottom:22px;display:flex;align-items:center;justify-content:space-between;padding:0 34px">
+        <span class="big" style="font-size:${t.length > 10 ? 38 : 50}px">${t}</span>
+        <span class="tag" style="border:5px solid #141A33;border-radius:999px;padding:8px 28px;font:800 36px Sora;letter-spacing:-.03em;background:${mine ? '#5FE0A8' : '#141A33'};color:${mine ? '#141A33' : '#FFF4DC'}">${who}</span>
+      </div>`).join('')}`,
+    tl: `
+      tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
+        .from('.hl mark',{scale:0,duration:.4,ease:'back.out(3)'},.45)
+        .from('.wr',{x:-120,opacity:0,duration:.45,ease:'power3.out',stagger:.5},1.0)
+        .from('.tag',{scale:0,duration:.35,ease:'back.out(2.6)',stagger:.5},1.6);` },
+
+  // The four levels of a family with AI, as stairs.
+  'threads-04-ai-level': { theme: 'y', chip: 'You decide',
+    hl: `What's your<br><mark>AI level?</mark>`,
+    stage: `
+      ${[['1', 'Never tried it', 215], ['2', 'Homework answers', 325], ['3', 'Made something', 435], ['4', 'Showed someone', 545]].map(([n, t, h], i) => `
+      <div class="box st" style="left:${i * 242}px;bottom:0;width:224px;height:${h}px;padding:22px 20px;border-radius:28px;background:${['#FFF9EC', '#FFF9EC', '#FFF9EC', '#5FE0A8'][i]}">
+        <div style="width:72px;height:72px;border:5px solid #141A33;border-radius:50%;background:#FF6F4A;display:flex;align-items:center;justify-content:center;font:800 40px Sora">${n}</div>
+        <div class="big" style="font-size:31px;line-height:1.05;margin-top:16px;letter-spacing:-.03em">${t}</div>
+      </div>`).join('')}`,
+    tl: `
+      tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
+        .from('.hl mark',{scale:0,duration:.4,ease:'back.out(3)'},.45)
+        .from('.st',{y:300,opacity:0,duration:.5,ease:'back.out(1.5)',stagger:.55},1.0);` },
+
+  // Three things that can be fake. Each one gets checked.
+  'threads-05-fake-check': { theme: 'n', chip: 'Unpopular opinion',
+    hl: `Too perfect?<br><mark>Check it.</mark>`,
+    stage: `
+      ${[['image', 'Picture'], ['video', 'Video'], ['file-text', 'Text']].map(([n, t], i) => `
+      <div class="box fk" style="left:${i * 326}px;top:40px;width:300px;height:420px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px">
+        ${icon(n, 110, 2.2)}
+        <div class="big" style="font-size:44px">${t}</div>
+        <div class="chk" style="border:5px solid #141A33;border-radius:999px;padding:8px 24px;font:800 32px Urbanist;background:#FFC533;display:flex;align-items:center;gap:10px"><span class="q">fake?</span></div>
+      </div>`).join('')}`,
+    tl: `
+      tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
+        .from('.hl mark',{scale:0,duration:.4,ease:'back.out(3)'},.45)
+        .from('.fk',{y:90,opacity:0,duration:.45,ease:'power3.out',stagger:.3},1.0)
+        .from('.chk',{scale:0,duration:.35,ease:'back.out(2.6)',stagger:.3},1.6);
+      document.querySelectorAll('.chk').forEach((el,i)=>{
+        tl.to(el,{backgroundColor:'#5FE0A8',duration:.25},3.2+i*.6)
+          .call(()=>{el.innerHTML='checked'},null,3.3+i*.6);
+        tl.fromTo(el,{scale:1.25},{scale:1,duration:.3,ease:'back.out(3)'},3.3+i*.6);
+      });` },
+
+  // Watch, make, show: the loop every lesson runs on.
+  'threads-06-tuesday-night': { theme: 'y', chip: 'Unpopular opinion',
+    hl: `Watch.<br><mark>Make.</mark><br>Show.`,
+    stage: `
+      ${[['play', 'Watch', 'a finished thing', '#FFF9EC'], ['pencil', 'Make', 'your own', '#FF6F4A'], ['send', 'Show', 'someone', '#5FE0A8']].map(([n, t, d, c], i) => `
+      <div class="box lp" style="left:${i * 326}px;top:30px;width:300px;height:360px;background:${c};display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px">
+        ${icon(n, 100, 2.4)}<div class="big" style="font-size:58px">${t}</div><div class="lab" style="font-size:24px;letter-spacing:.04em;text-transform:none;font-weight:700">${d}</div>
+      </div>`).join('')}
+      <div class="bub" id="mn" style="left:250px;top:470px;font:800 40px Sora;padding:20px 34px">6 to 20 min</div>
+      <div class="bub" id="nq" style="left:100px;top:570px;font:700 32px Urbanist;background:#141A33;color:#FFF4DC;box-shadow:6px 6px 0 #FFFFFF">no quiz at the end</div>`,
+    tl: `
+      tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
+        .from('.lp',{scale:.3,opacity:0,duration:.45,ease:'back.out(2.2)',stagger:.55},.8)
+        .from('#mn',{scale:0,duration:.4,ease:'back.out(3)'},2.8)
+        .from('#nq',{scale:0,duration:.4,ease:'back.out(3)'},3.4);` },
+
+  // Say it, check it, ask again: a loop that returns to the start.
+  'threads-07-describe-check': { theme: 'k', chip: 'Unpopular opinion',
+    hl: `Say it.<br><mark>Check it.</mark><br>Ask again.`,
+    stage: `
+      ${[['Say what you want', '#FFC533'], ['Check what came back', '#FFFFFF'], ['Ask again', '#5FE0A8']].map(([t, c], i) => `
+      <div class="box ds" style="left:${i * 326}px;top:40px;width:300px;height:210px;background:${c};display:flex;align-items:center;justify-content:center;text-align:center;padding:0 22px">
+        <div class="big" style="font-size:40px;line-height:1.05">${t}</div></div>`).join('')}
+      <svg style="position:absolute;left:0;top:250px" width="952" height="330" viewBox="0 0 952 330"><path id="ret" d="M 800 0 C 800 260, 150 260, 150 14" fill="none" stroke="#141A33" stroke-width="8" stroke-linecap="round" stroke-dasharray="1400" stroke-dashoffset="1400"/><path id="head" d="M 120 44 L 150 6 L 180 44" fill="none" stroke="#141A33" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="0"/></svg>
+      <div class="bub" id="rp" style="left:370px;top:455px;font:800 38px Sora;padding:18px 34px">repeat</div>`,
+    tl: `
+      tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
+        .from('.hl mark',{scale:0,duration:.4,ease:'back.out(3)'},.45)
+        .from('.ds',{y:70,opacity:0,duration:.45,ease:'power3.out',stagger:.6},1.0)
+        .to('#ret',{strokeDashoffset:0,duration:1.6,ease:'power1.inOut'},3.0)
+        .to('#head',{opacity:1,duration:.2},4.5)
+        .from('#rp',{scale:0,duration:.4,ease:'back.out(3)'},3.6);` },
 
 };
 

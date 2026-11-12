@@ -4,16 +4,16 @@ hook_formula: 8 (text/threads-hooks.md)
 rubric: Unpopular opinion
 week: 4
 day: Пн
-threads_characters: 370 of 500
+threads_characters: 207 of 500
 threads_topic: AI for kids
-threads_media: not drawn yet (motion card in code, no photos)
+threads_media: social/concept/text/threads/threads-06-tuesday-night.mp4
 ---
 ## Threads
 
-Everyone says "teach your kids AI." Very few show what that looks like on a Tuesday night.
+everyone says "teach your kids AI". what it looks like at our house:
 
-Here's ours, in one loop. Watch: see a finished thing first. Make: your kid makes their own, you sit next to them. Show: play it, share it, send it to grandma.
+watch a finished thing. make your own. show someone.
 
-6 to 20 minutes, and it ends with a thing, not a quiz.
+6 to 20 minutes, no quiz at the end.
 
-What does "teaching AI" look like at your house, if anything?
+what does it look like at yours, if anything?

@@ -5,10 +5,10 @@ kind: за кадром
 day: Ср
 image: none
 x_characters: 230 of 280
-threads_characters: 379 of 500
+threads_characters: 228 of 500
 threads_topic: AI for kids
 threads_rubric: Unpopular opinion
-threads_media: not drawn yet (no photos on Threads)
+threads_media: social/concept/text/threads/09-ends-with-a-thing.mp4 (motion card drawn in code; still: .jpg)
 ---
 ## X
 
@@ -20,8 +20,8 @@ A quiz tells you what a kid remembers. A thing they made tells you what they can
 
 ## Threads
 
-Unpopular opinion: a quiz is a weak way to check what a kid learned.
+a quiz shows what a kid remembers. a thing they made shows what they can do.
 
-A quiz tells you what a kid remembers. A thing they made tells you what they can do. That's why our lessons are 6 to 20 minutes of making, and each one ends with a game, a cartoon or a song instead of a test.
+that's why every lesson of ours ends with a game, a cartoon or a song, not a test.
 
-Teachers and parents, push back on this one: what does a quiz show you that a finished thing can't?
+teachers, what does a quiz show you that a finished project can't?

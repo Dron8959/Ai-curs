@@ -5,7 +5,7 @@ kind: совет
 day: Пн
 image: none
 x_characters: 211 of 280
-threads_characters: 328 of 500
+threads_characters: 160 of 500
 threads_topic: Parenting
 threads_rubric: You decide
 threads_media: social/concept/text/threads/07-by-age.mp4 (motion card drawn in code; still: .jpg)
@@ -22,8 +22,10 @@ Same rule at every age: the idea is theirs.
 
 ## Threads
 
-You decide: how young is too young for AI, if a parent is right there?
+how young is too young for AI, if you're sitting right there?
 
-Here's how it goes in our course. A six-year-old talks and you type. A ten-year-old does most of it alone. A teenager just needs you in the room. The idea is always theirs.
+6: they talk, you type
+10: they do most of it
+teen: you just stay in the room
 
-I know some of you will say six is too early. Where do you draw the line, and why?
+where's your line?

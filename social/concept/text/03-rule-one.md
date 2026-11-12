@@ -6,7 +6,7 @@ day: Ср
 image: social/concept/posts/03-ai-house-rules/slide-03.jpg
 x_characters: 200 of 280
 x_reply_characters: 81 of 280
-threads_characters: 363 of 500
+threads_characters: 198 of 500
 threads_topic: AI safety
 threads_rubric: Unpopular opinion
 threads_media: social/concept/text/threads/03-rule-one.mp4 (motion card drawn in code; still: .jpg)
@@ -27,8 +27,8 @@ The other four, and how the course is set up around them: https://www.makeshowla
 
 ## Threads
 
-Unpopular opinion: parental controls are not an AI safety plan.
+parental controls aren't an AI safety plan. they get switched off.
 
-The rule that does the most in our house is boring. The account is mine, not hers. Every tool runs on the parent's account, my kid never signs up for anything alone, and I see everything she makes.
+what works at our house: the account is mine, not hers. she signs up for nothing alone.
 
-Settings get switched off. Ownership doesn't. Am I wrong? What's your one rule that actually holds?
+what's your one rule that actually holds?

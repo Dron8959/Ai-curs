@@ -17,59 +17,62 @@ const here = dirname(fileURLToPath(import.meta.url));
 
 export const posts = [
   { id: 'threads-01-honestly', hook: 5, rubric: 'Unpopular opinion', topic: 'Parenting', week: 3, day: 'Пн',
-    text: `Honestly, I don't get why an hour of scrolling feels normal and 20 minutes of making something with AI feels scary.
+    text: `honestly don't get why an hour of scrolling feels normal and 20 minutes of making something with AI feels scary.
 
-One ends with nothing. The other ends with a game, a cartoon or a song your kid can show you.
+one ends with nothing. the other ends with a game your kid can show you.
 
-I'm not saying screens are fine. I'm saying not all screen time is the same.
-
-So which one worries you more at your house, and why?` },
+which one worries you more?` },
 
   { id: 'threads-02-age-eight', hook: 13, rubric: 'You decide', topic: 'Parenting', week: 3, day: 'Вт',
-    text: `If your kid is 8, here's your job with AI: sit next to them, not across the room.
+    text: `if your kid is 8, your job with AI is to sit next to them. not across the room.
 
-At 8 the ideas often come faster than the typing. So they describe, you help get it in, and they decide if what comes back is right. By 10 most kids do it alone. A teenager just needs you in the room.
+the ideas come faster than the typing, so you help get them in. they decide if it's right.
 
-The idea is always theirs.
-
-Parents of 8-year-olds: how much do you step in, and how much do you let them run?` },
+how much do you step in?` },
 
   { id: 'threads-03-argue', hook: 1, rubric: 'Unpopular opinion', topic: 'AI for kids', week: 3, day: 'Ср',
-    text: `Not many parents say this out loud, so I will: I'd rather my kid argue with an AI than obey it.
+    text: `not many parents say this out loud: i'd rather my kid argue with an AI than obey it.
 
-AI gets things wrong. A picture comes out strange, an answer sounds sure and isn't. A kid who checks, pushes back and asks again is learning the most useful thing AI can teach.
+it gets things wrong. a kid who checks and asks again is learning the useful part.
 
-Do you want your kid to trust AI, or to question it?` },
+trust it or question it, which do you want?` },
 
   { id: 'threads-04-ai-level', hook: 20, rubric: 'You decide', topic: 'AI for kids', week: 3, day: 'Чт', poll: true,
-    text: `Quick check: what's your family's AI level right now?
+    media: 'text/threads/threads-04-ai-level.mp4',
+    text: `quick one. your family's AI level right now?
 
-1. Never tried it
-2. Homework answers
-3. My kid made something with it
-4. My kid showed it to someone
+1 never tried it
+2 homework answers
+3 my kid made something
+4 my kid showed it to someone
 
-No wrong answer. Which number are you, and would you like to move up a level or stay put?` },
+which number?` },
 
-  { id: 'threads-05-three-things', hook: 4, rubric: 'Unpopular opinion', topic: 'AI safety', week: 3, day: 'Пт',
-    text: `3 things to settle before your kid opens an AI app:
+  { id: 'threads-05-fake-check', hook: 4, rubric: 'Unpopular opinion', topic: 'AI safety', week: 3, day: 'Пт',
+    media: 'text/threads/threads-05-fake-check.mp4',
+    text: `if a picture looks too perfect, check it. same for videos and texts.
 
-1. The account is yours. They never sign up for anything alone.
-2. Some things AI never hears. Decide together what they are.
-3. If it looks too perfect, check it. Pictures, videos and texts can be fake.
+it's one of the AI safety lessons in our course.
 
-Settle these three, and the fight about minutes gets a lot smaller.
-
-What would you add as number 4?` },
+could your kid spot a fake today?` },
 
   { id: 'threads-06-tuesday-night', hook: 8, rubric: 'Unpopular opinion', topic: 'AI for kids', week: 4, day: 'Пн',
-    text: `Everyone says "teach your kids AI." Very few show what that looks like on a Tuesday night.
+    media: 'text/threads/threads-06-tuesday-night.mp4',
+    text: `everyone says "teach your kids AI". what it looks like at our house:
 
-Here's ours, in one loop. Watch: see a finished thing first. Make: your kid makes their own, you sit next to them. Show: play it, share it, send it to grandma.
+watch a finished thing. make your own. show someone.
 
-6 to 20 minutes, and it ends with a thing, not a quiz.
+6 to 20 minutes, no quiz at the end.
 
-What does "teaching AI" look like at your house, if anything?` },
+what does it look like at yours, if anything?` },
+
+  { id: 'threads-07-describe-check', hook: 10, rubric: 'Unpopular opinion', topic: 'AI for kids', week: 4, day: 'Вт',
+    media: 'text/threads/threads-07-describe-check.mp4',
+    text: `the whole skill of using AI, as far as i can tell: say what you want, check what came back, ask again.
+
+a 10-year-old can do that.
+
+when did you last tell an AI "no, try again"?` },
 ];
 
 // ------------------------------------------------------------------------------------ checks and files

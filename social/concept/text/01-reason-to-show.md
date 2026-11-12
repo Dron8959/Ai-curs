@@ -6,10 +6,10 @@ day: Пн
 image: social/concept/posts/05-reason-to-show/tile.jpg
 x_characters: 176 of 280
 x_reply_characters: 115 of 280
-threads_characters: 333 of 500
+threads_characters: 148 of 500
 threads_topic: Parenting
 threads_rubric: Unpopular opinion
-threads_media: social/concept/text/threads/01-reason-to-show.mp4 (motion card drawn in code; still: .jpg)
+threads_media: not drawn yet (no photos on Threads)
 ---
 ## X
 
@@ -25,8 +25,6 @@ It's why every lesson we make ends with a thing to show, not a quiz. The first o
 
 ## Threads
 
-Unpopular opinion: the screen-time fight is the wrong fight.
+screen time isn't really the problem. screens with nothing to show for them are.
 
-Kids don't need more minutes or fewer minutes. They need a reason to show you something. A screen she makes on is not a screen she scrolls.
-
-Plenty of parents count minutes and it works for them. So tell me honestly: what matters more in your house, how long or what for?
+what did your kid make on a screen this week, instead of watching?

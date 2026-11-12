@@ -5,7 +5,7 @@ kind: вопрос
 day: Вт
 image: none
 x_characters: 139 of 280
-threads_characters: 255 of 500
+threads_characters: 145 of 500
 threads_topic: AI for kids
 threads_rubric: You decide
 threads_media: social/concept/text/threads/02-answer-machine.mp4 (motion card drawn in code; still: .jpg)
@@ -20,8 +20,8 @@ Which one is it at your house right now?
 
 ## Threads
 
-You decide: is this a good use of AI or not?
+two kids, same chatbot.
 
-Kid A asks a chatbot for the answer to a homework question. Kid B tells the same chatbot about a game she made up, and builds it.
+one asks for the homework answer. the other tells it about a game she made up, and builds it.
 
-Same app, same screen. Where's the line for you, and which kid would you stop?
+which one would you stop?
