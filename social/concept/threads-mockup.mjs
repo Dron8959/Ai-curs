@@ -1,15 +1,15 @@
 #!/usr/bin/env node
-// A picture of how the Threads profile and the first five scheduled posts will look in the app.
+// A picture of how the Threads profile and the first 15 planned posts (threads-v2.mjs) will look in the app.
 // It is a mock-up for the owner, drawn in code: not a screenshot of the real app.
 //
-//   node social/concept/threads-mockup.mjs   -> text/threads/profile-mockup.png (+ one still per screen)
+//   node social/concept/threads-mockup.mjs   -> text/threads/profile-mockup.png
 
 import { createRequire } from 'node:module';
 import { readFileSync, writeFileSync, unlinkSync } from 'node:fs';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { here, repo } from './kit.mjs';
-import { posts } from './text.mjs';
+import { posts, SLOTS } from './threads-v2.mjs';
 
 const { chromium } = createRequire(import.meta.url)('playwright');
 const OUT = join(here, 'text', 'threads');
@@ -19,18 +19,17 @@ const AVATAR = pathToFileURL(join(repo, 'social/brand/logo/avatar/avatar-1080.pn
 
 const BIO = 'AI course for kids 6-14, done side by side with a parent. Cartoons, games, songs. First lesson free.';
 const LINK = 'makeshowlab.com';
-const order = [['07-by-age', 'Thu 8:40 PM'], ['02-answer-machine', 'Fri 8:40 PM'], ['03-rule-one', 'Sat 8:40 PM'], ['04-kitchen-table', 'Mon 8:40 PM'], ['05-will-ai-think', 'Tue 8:40 PM']];
 
 const esc = (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/\n/g, '<br>');
-const post = (id, when) => {
-  const p = posts.find((x) => x.id === id);
-  const img = pathToFileURL(join(OUT, `${id}.jpg`)).href;
+const post = (p) => {
+  const when = `Day ${p.day} · ${SLOTS[p.slot]}`;
+  const img = p.media ? pathToFileURL(join(OUT, `${p.media}.jpg`)).href : '';
   return `<div class="post">
     <img class="av" src="${AVATAR}">
     <div class="body">
-      <div class="head"><b>make_showlab</b><span class="topic">› ${p.threads.topic}</span><span class="when">${when}</span><span class="dots">${ic('ellipsis', 20)}</span></div>
-      <div class="txt">${esc(p.threads.text)}</div>
-      <img class="media" src="${img}">
+      <div class="head"><b>make_showlab</b><span class="topic">› ${p.topic}</span><span class="when">${when}</span><span class="dots">${ic('ellipsis', 20)}</span></div>
+      <div class="txt">${esc(p.text).replace(/(https:\/\/[^\s<]+)/, '<span class="url">makeshowlab.com</span>')}</div>
+      ${img ? `<img class="media" src="${img}">` : ''}
       <div class="acts"><span>${ic('heart')}</span><span>${ic('message-circle')}</span><span>${ic('repeat-2')}</span><span>${ic('send')}</span></div>
     </div></div>`;
 };
@@ -42,16 +41,14 @@ const profile = `<div class="prof">
   <div class="btns"><div class="btn">Follow</div><div class="btn">Mention</div></div>
   <div class="tabs"><span class="on">Threads</span><span>Replies</span><span>Media</span><span>Reposts</span></div></div>`;
 
-const screens = [
-  [profile, post(...order[0])],
-  [post(...order[1]), post(...order[2])],
-  [post(...order[3]), post(...order[4])],
-];
+// a profile shows the newest post first: day 5 evening on top, day 1 morning at the very bottom
+const days = [5, 4, 3, 2, 1].map((d) => posts.filter((p) => p.day === d).reverse());
+const screens = days.map((list, i) => [i === 0 ? profile : '', list.map(post).join('')]);
 const html = `<!doctype html><meta charset="utf-8"><style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:#E9E6DF;font-family:Helvetica,Arial,'Liberation Sans',sans-serif;color:#101010;padding:48px 56px;width:1640px}
+body{background:#E9E6DF;font-family:Helvetica,Arial,'Liberation Sans',sans-serif;color:#101010;padding:48px 56px;width:2712px}
 .title{font:700 26px Helvetica,Arial;margin-bottom:6px}.sub{font-size:17px;color:#555;margin-bottom:28px}
-.phones{display:flex;gap:44px;align-items:flex-start}
+.phones{display:flex;gap:40px;align-items:flex-start}.cap{font:700 20px Helvetica,Arial;margin:0 0 12px 8px;color:#333}.url{color:#2B6BE6}
 .phone{width:480px;background:#fff;border-radius:44px;border:10px solid #141A33;overflow:hidden;box-shadow:0 14px 40px rgba(0,0,0,.18);position:relative}
 .status{height:34px;display:flex;justify-content:space-between;align-items:center;padding:0 26px;font-size:14px;font-weight:700}
 .scr{padding:0 0 76px}
@@ -74,15 +71,15 @@ body{background:#E9E6DF;font-family:Helvetica,Arial,'Liberation Sans',sans-serif
 .acts{display:flex;gap:22px;padding:12px 2px 10px;color:#101010}
 .note{margin-top:26px;font-size:16px;color:#444;max-width:1500px;line-height:1.45}
 </style>
-<div class="title">How Make Show Lab will look in Threads</div>
-<div class="sub">Mock-up drawn in code. The cards are video in the real app and move; here you see the last frame. Follower counts are left out on purpose.</div>
-<div class="phones">${screens.map(([a, b]) => `<div class="phone"><div class="status"><span>9:41</span><span>5G</span></div><div class="scr">${a}${b}</div>${nav}</div>`).join('')}</div>
-<div class="note">Profile text is a proposal (100 characters). Posts: Thu Nov 12 to Tue Nov 17, 8:40 PM New York time.</div>`;
+<div class="title">Make Show Lab in Threads: the profile and the first 15 posts</div>
+<div class="sub">Mock-up drawn in code, not a screenshot. Read the phones as one long scroll: newest on the left (day 5), oldest on the right (day 1), newest at the top of each. Cards are video in the app; here you see the last frame. Follower counts are left out on purpose.</div>
+<div class="phones">${screens.map(([a, b], i) => `<div><div class="cap">Day ${5 - i}${i === 0 ? ' (newest, top of the profile)' : ''}</div><div class="phone"><div class="status"><span>9:41</span><span>5G</span></div><div class="scr">${a}${b}</div>${nav}</div></div>`).join('')}</div>
+<div class="note">Three posts a day, New York time: 8:10 AM short text, 12:40 PM "AI house rules" (one rule a day), 8:40 PM main post with a card. Profile text is a proposal (100 characters).</div>`;
 
 const tmp = join(OUT, '.mockup.html');
 writeFileSync(tmp, html);
 const browser = await chromium.launch();
-const pg = await (await browser.newContext({ viewport: { width: 1640, height: 900 }, deviceScaleFactor: 1.5 })).newPage();
+const pg = await (await browser.newContext({ viewport: { width: 2824, height: 900 }, deviceScaleFactor: 1.5 })).newPage();
 await pg.goto(pathToFileURL(tmp).href);
 await pg.evaluate(() => document.fonts.ready);
 await pg.waitForTimeout(300);

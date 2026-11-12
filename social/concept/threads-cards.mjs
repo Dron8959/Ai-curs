@@ -15,7 +15,8 @@ import { spawn } from 'node:child_process';
 import { css, here, repo } from './kit.mjs';
 import { posts as shared } from './text.mjs';
 import { posts as threadsOnly } from './threads.mjs';
-const posts = [...shared.map((p) => ({ id: p.id })), ...threadsOnly.map((p) => ({ id: p.id }))];
+import { posts as v2 } from './threads-v2.mjs';
+const posts = [...shared.map((p) => ({ id: p.id })), ...threadsOnly.map((p) => ({ id: p.id })), ...v2.map((p) => ({ id: p.id }))];
 
 const { chromium } = createRequire(import.meta.url)('playwright');
 const W = 1080, H = 1350, FPS = 30, DUR = 7;
@@ -245,7 +246,7 @@ const cards = {
       });` },
 
   // Watch, make, show: the loop every lesson runs on.
-  'threads-06-tuesday-night': { theme: 'y', chip: 'Unpopular opinion',
+  'threads-06-tuesday-night': { theme: 'y', chip: 'First lesson free',
     hl: `Watch.<br><mark>Make.</mark><br>Show.`,
     stage: `
       ${[['play', 'Watch', 'a finished thing', '#FFF9EC'], ['pencil', 'Make', 'your own', '#FF6F4A'], ['send', 'Show', 'someone', '#5FE0A8']].map(([n, t, d, c], i) => `
@@ -276,6 +277,32 @@ const cards = {
         .to('#ret',{strokeDashoffset:0,duration:1.6,ease:'power1.inOut'},3.0)
         .to('#head',{opacity:1,duration:.2},4.5)
         .from('#rp',{scale:0,duration:.4,ease:'back.out(3)'},3.6);` },
+
+  // AI house rules, a five-day series: one rule a day at noon, the same layout every time so people know it.
+  ...Object.fromEntries([
+    ['v2-r1-account', 'key-round', `The account<br>is <mark>yours.</mark>`, 'your kid never signs up alone'],
+    ['v2-r2-strangers', 'user-x', `Nobody new<br><mark>gets in.</mark>`, 'no chat with strangers'],
+    ['v2-r3-never-hears', 'lock', `Some things AI<br><mark>never hears.</mark>`, 'decide the list together'],
+    ['v2-r4-links', 'link', `Links get a<br><mark>second look.</mark>`, 'spot it before you click'],
+    ['v2-r5-too-perfect', 'search', `Too perfect?<br><mark>Check it.</mark>`, 'pictures, videos, texts can be fake'],
+  ].map(([id, ic, hl, sub], k) => [id, { theme: 'n', chip: `AI house rules · ${k + 1}/5`,
+    hl,
+    stage: `
+      <div class="box" id="rc" style="left:0;top:0;width:952px;height:400px;background:#FFC533;display:flex;align-items:center;gap:50px;padding:0 60px">
+        <div id="ri" style="flex:none;width:230px;height:230px;border:6px solid #141A33;border-radius:50%;background:#FFF4DC;display:flex;align-items:center;justify-content:center">${icon(ic, 130, 2.4)}</div>
+        <div><div class="lab" style="font-size:28px">Rule ${k + 1}</div><div class="big" id="rs" style="font-size:54px;line-height:1.05;margin-top:12px">${sub}</div></div>
+      </div>
+      <div style="position:absolute;left:0;right:0;top:470px;display:flex;gap:26px;justify-content:center">
+        ${[0, 1, 2, 3, 4].map((j) => `<div class="dot${j === k ? ' cur' : ''}" style="width:96px;height:96px;border:6px solid #FFF4DC;border-radius:50%;display:flex;align-items:center;justify-content:center;font:800 42px Sora;color:${j < k ? '#141A33' : j === k ? '#141A33' : '#FFF4DC'};background:${j < k ? '#5FE0A8' : j === k ? '#FFC533' : 'transparent'}">${j + 1}</div>`).join('')}
+      </div>`,
+    tl: `
+      tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
+        .from('.hl mark',{scale:0,duration:.4,ease:'back.out(3)'},.45)
+        .from('#rc',{y:120,opacity:0,duration:.5,ease:'power3.out'},1.0)
+        .from('#ri',{scale:0,rotation:-40,duration:.5,ease:'back.out(2.2)'},1.4)
+        .from('#rs',{opacity:0,x:30,duration:.4},1.8)
+        .from('.dot',{scale:0,duration:.3,ease:'back.out(2.6)',stagger:.15},2.4)
+        .fromTo('.dot.cur',{scale:1},{scale:1.25,duration:.25,yoyo:true,repeat:3,ease:'sine.inOut'},3.6);` }])),
 
 };
 

@@ -1,6 +1,7 @@
 ---
+day: 2
+slot: am (8:10 AM New York)
 lever: гордость и зеркало
-rubric: You decide
 topic: Parenting
 characters: 155
 card: none (text only)

@@ -1,6 +1,7 @@
 ---
+day: 1
+slot: am (8:10 AM New York)
 lever: вина → разрешение
-rubric: Unpopular opinion
 topic: Parenting
 characters: 132
 card: none (text only)

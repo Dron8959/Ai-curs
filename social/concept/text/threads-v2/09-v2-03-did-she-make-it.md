@@ -1,6 +1,7 @@
 ---
+day: 3
+slot: pm (8:40 PM New York)
 lever: раскол: чья это работа
-rubric: You decide
 topic: AI for kids
 characters: 114
 card: text/threads/10-is-it-cheating.mp4

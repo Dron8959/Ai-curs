@@ -1,6 +1,7 @@
 ---
+day: 4
+slot: pm (8:40 PM New York)
 lever: своя кухня (доверие)
-rubric: Unpopular opinion
 topic: Parenting
 characters: 179
 card: text/threads/04-kitchen-table.mp4

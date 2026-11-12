@@ -1,6 +1,7 @@
 ---
+day: 2
+slot: pm (8:40 PM New York)
 lever: раскол: два ребёнка
-rubric: You decide
 topic: AI for kids
 characters: 145
 card: text/threads/02-answer-machine.mp4
