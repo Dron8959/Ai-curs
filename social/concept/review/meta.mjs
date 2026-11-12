@@ -11,3 +11,24 @@ export const META = {
   9: { type: 'Proof', why: 'Reviews from people who look like the viewer. Grandmothers open the gift question before the holidays.', fwd: 'A mom to her own mom.' },
   10: { type: 'Offer', why: 'The offer said plainly. Every other post leads here. Pinned post.', fwd: 'Saved or tapped, not forwarded.' },
 };
+
+// The skills pass (caption-writer-sms, hook-writer-sms, social/brand/voice.md): what it found and the proposed caption.
+export const PASS = {
+  1: {
+    verdict: 'The caption is already close. Three small things.',
+    notes: [
+      'Hook (first line): 10 words, a forward-it ask, no hashtag, no emoji. Keeps the brand rule (12 words) and the Instagram share signal. Kept as is.',
+      '"That\'s how our AI course for kids works" is filler. Replaced with the same sentence in present tense, so "AI course for kids" stays once for search.',
+      '"You sit right next to them" becomes "You\'re side by side the whole time": "side by side" is a brand word (voice.md) and the line is shorter.',
+      'Facts: "6-year-old" is from the old landing and is the open question for Anna. "Crayons" is visible in the drawing. No gender guessed.',
+      'Left alone on purpose: one ask only (forwarding), 5 hashtags, no link, no long dash.',
+    ],
+    after: `Send this to the parent whose fridge is covered in drawings.
+
+A 6-year-old drew this rainbow with crayons. One lesson later it was a cartoon.
+
+In our AI course for kids, the kid has the idea and makes the drawing. The AI follows it. You're side by side the whole time.
+
+#aiforkids #kidsart #kidsdrawing #creativekids #familyactivities`,
+  },
+};
