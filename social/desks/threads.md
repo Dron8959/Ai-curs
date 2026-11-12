@@ -22,6 +22,15 @@
 `node social/concept/threads-lint.mjs`. Скиллы: `.claude/skills/mk-social`, `mk-marketing-psychology`,
 `mk-copywriting` (набор coreyhaines31/marketingskills, MIT). Настоящие истории только от Анны: вопросы в документе.
 
+## Профиль Threads (предложение, 12.11.2026)
+Описание (134 из 150): «A mom and her 10-year-old teaching kids 6-14 to make cartoons, games and songs with AI. Side by side with a parent. First lesson free.»
+Ссылка: https://www.makeshowlab.com/?utm_source=threads&utm_medium=social&utm_campaign=profile#free (показывается как makeshowlab.com).
+Имя: Make Show Lab. Аватар: `social/brand/logo/avatar/avatar-1080.png`. Вписывается вручную в приложении. Макет: `text/threads/review/profile.png`
+(`node social/concept/threads-profile.mjs`). Запасные описания: «AI for kids 6-14, side by side with a parent. Don't let AI think for your child. Teach them to think with it. First lesson free.» и «Cartoons, games and songs your kid makes with AI. A mom and her 10-year-old show how. First lesson free.»
+
+## Утверждено владельцем по одному
+Посты 1, 2, 3 (в версии 12.11.2026 вечер). Остальные идут по очереди, `threads-preview.mjs N`.
+
 ## Как пишем текст (решение владельца 12.11.2026)
 - Коротко: 150–200 знаков, максимум 300. Читают с телефона, длинное не дочитывают.
 - С большой буквы, как положено (владелец, 12.11.2026). Без «машинного» почерка: не каждый пост начинается с «Unpopular opinion:»

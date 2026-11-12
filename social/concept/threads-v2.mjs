@@ -46,7 +46,7 @@ Where's yours?` },
   { id: 'v2-04-who-asks-better', day: 2, slot: 'am', lever: 'гордость и зеркало', topic: 'Parenting', media: 'v2-04-who-asks-better',
     text: `Kids just say what they want. Grown ups write three paragraphs first.
 
-Be honest, who's better at asking an AI for what they want, you or your 10-year-old?` },
+Be honest: who asks an AI better, you or your 10-year-old?` },
   { id: 'v2-r2-strangers', day: 2, slot: 'noon', lever: 'серия: открытая петля', topic: 'AI safety', media: 'v2-r2-strangers',
     text: `Rule 2 of 5: Nobody you don't know gets to message your kid. Our course has no chat between strangers at all, on purpose.
 
