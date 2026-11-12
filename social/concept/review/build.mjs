@@ -42,7 +42,7 @@ function checks(caption) {
     [tags.length <= 5, `${tags.length} hashtags (max 5)`],
     [!/https?:\/\/|www\./i.test(caption), 'No links in the caption'],
     [!/[—–]/.test(caption), 'No long dashes'],
-    [(caption.match(/link in bio|send this|save this|send it/gi) || []).length >= 1, 'Has one call to action'],
+    [(caption.match(/in (our )?bio|send this|save this|send it|forward this/gi) || []).length >= 1, 'Has one call to action'],
   ];
 }
 const capHtml = (c, collapsed) => {
@@ -151,7 +151,7 @@ function page(p, live) {
       <b>Who forwards it</b><span>${esc(meta.fwd)}</span>
       <b>Music</b><span>${esc(music)}</span>
       <b>Voice</b><span>${voiced ? 'cloned voice (' + esc(vo.head.replace(/^\S+ · /, '').replace(/ · [\d.]+ s$/, '')) + ') is in this video; test version, the owner decides' : vo ? 'not in the reel yet' : reel ? 'none' : 'none (carousel)'}</span>
-      <b>AI label</b><span>${p.fm.ai_generated === 'true' ? 'ON when publishing (pictures are AI-made)' : 'off'}</span>
+      <b>AI label</b><span>${p.fm.ai_generated === 'true' ? 'ON when publishing (pictures are AI-made)' + (voiced ? ' and the voice is cloned' : '') : voiced ? 'ON when publishing: the voice in this version is cloned (the pictures are real)' : 'off'}</span>
       <b>Slot</b><span>${slot ? esc(slot.text) + ' (proposed, not set anywhere yet)' : ''}</span>
       ${p.fm.alt ? `<b>Alt text</b><span>${esc(p.fm.alt)}</span>` : ''}
     </div></div>

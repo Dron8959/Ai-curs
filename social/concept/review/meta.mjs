@@ -31,4 +31,25 @@ In our AI course for kids, the kid has the idea and makes the drawing. The AI fo
 
 #aiforkids #kidsart #kidsdrawing #creativekids #familyactivities`,
   },
+  2: {
+    verdict: 'Facts are clean. One structural fix, one question for you.',
+    notes: [
+      'Hook: "The first lesson is free. It\'s in our bio." is 9 words and is the one ask. Kept: the reel already opens with the face and the words on screen, so line 1 can do the offer.',
+      'The second paragraph is one long block (4 sentences). The voice rule is one thought per line, so it is split into three short paragraphs. Same words, nothing added.',
+      '"We" for who we are, "I" for what Anna built: kept on purpose, it is Anna talking.',
+      'Facts checked against facts.md: Anna built every lesson, tested each on Kamilla at the kitchen table, what lost her attention got cut, Kamilla goes first. All present. Nothing invented.',
+      'Question: scene 3 of the reel says "She checks homework the same day." On the site that is the Creator + Homework plan ($297), not the base course. The caption does not say it. Keep the line on screen, or drop it so nobody thinks homework checks come with every plan?',
+      'AI label: the pictures are real photos, but once the cloned voice is in the reel the label goes ON.',
+      'Voice: the lines are cloned and ready (Anna scenes 1, 3, 5; Kamilla scenes 2, 4). The last line is said by both together, so it is not made. Blocker: Anna\'s scene 5 line runs 0.5 s longer than its scene. Option A: add two beats to scene 5 (the reel becomes 0.9 s longer and I rebuild the music cut). Option B: voice only "We tested it all at our kitchen table." and leave "What lost her attention got cut." as text on screen.',
+    ],
+    after: `The first lesson is free. It's in our bio.
+
+We're Anna and Kamilla. A mom and a daughter, not a corporation.
+
+I built every lesson of this AI course for kids myself. Then I tested each one on Kamilla at our kitchen table. She's 10. What lost her attention got cut.
+
+In the course she goes first. She shows the finished thing, then your kid makes their own.
+
+#aiforkids #momanddaughter #kidsandai #familyactivities`,
+  },
 };
