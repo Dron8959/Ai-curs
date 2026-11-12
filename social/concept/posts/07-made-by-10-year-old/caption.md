@@ -7,8 +7,8 @@ ai_generated: true
 ---
 The first lesson is free. Link in bio.
 
-Everything in this video was made by Kamilla, who is 10: a cartoon with her own characters, a game you can play and a sticker pack of her own character. No code.
+Everything in this video was made by Kamilla. She's 10. A cartoon with her own characters, a game of her own and a sticker pack of her character. No code.
 
-That's what kids make in our AI course, with a parent sitting next to them.
+That's the kind of thing kids make in our course, with a parent right there.
 
 #aiforkids #kidscartoon #kidsgames #creativekids

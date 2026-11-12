@@ -9,6 +9,6 @@ Send this to the parent whose fridge is covered in drawings.
 
 A 6-year-old drew this rainbow with crayons. One lesson later it was a cartoon.
 
-That's how our AI course for kids works. The kid has the idea and makes the drawing. The AI follows it. You sit right next to them.
+In our AI course for kids, the kid has the idea and makes the drawing. The AI follows it, down to the truck on top. You're side by side the whole time.
 
 #aiforkids #kidsart #kidsdrawing #creativekids #familyactivities

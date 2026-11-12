@@ -11,26 +11,26 @@
   },
   "segments": [
    {
-    "label": "film bars 1-2 = track bars 0-1 (C C: the opening under the question)",
+    "label": "film bars 1-3 = track bars 0-2 (C C Am: the opening under the question (three bars: the reel grew by a bar for the spoken lines))",
     "src_from": 0.4543,
-    "src_to": 4.1467,
+    "src_to": 5.9929,
     "at": 0.035,
     "fade_in": 0.035,
     "fade_out": 0.06
    },
    {
-    "label": "film bars 3-7 = track bars 36-40 (F F | G G | F: four bars that build, bar 40 on the answer)",
+    "label": "film bars 4-8 = track bars 36-40 (F F | G G | F: four bars that build, bar 40 on the answer)",
     "src_from": 66.9179,
     "src_to": 76.149,
-    "at": 3.6923,
+    "at": 5.5385,
     "fade_in": 0.008,
     "fade_out": 0.06
    },
    {
-    "label": "film bars 8-10 = track bars 95-97 (G | C: the ending, last chord on the logo)",
+    "label": "film bars 9-11 = track bars 95-97 (G | C: the ending, last chord on the logo)",
     "src_from": 175.8443,
     "src_to": 181.383,
-    "at": 12.9231,
+    "at": 14.7692,
     "fade_in": 0.008,
     "fade_out": 0.06,
     "tail_fade": 1.2

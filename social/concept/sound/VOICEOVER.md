@@ -106,17 +106,17 @@ and the picture follows the voice, so these numbers are a starting point, not a 
 |---|---|---|---|
 | 1 | 0.0-2.8 | A six-year-old drew this. | 1.8 |
 | 2 | 2.8-6.5 | One lesson later, it's a cartoon. | 1.9 |
-| 3 | 6.5-10.6 | Kid's idea. AI follows the drawing. And you're right there. | 2.7 |
+| 3 | 6.5-10.6 | The kid draws it, the AI follows it, and you're right there. | 2.9 |
 | 4 | 10.6-13.8 | What will yours draw? | 1.5 |
 
 ### 02-meet-anna-kamilla · Anna and Kamilla · 19.4 s
 | scene | seconds | line | words/s |
 |---|---|---|---|
 | 1 | 0.0-2.8 | Anna: We're a mom and a daughter. | 2.6 |
-| 2 | 2.8-5.1 | Kamilla: Not a corporation. | 1.7 |
+| 2 | 2.8-5.1 | Kamilla: My mom and me. | 1.7 |
 | 3 | 5.1-8.8 | Anna: I'm Anna. I built every lesson myself. | 2.2 |
 | 4 | 8.8-12.0 | Kamilla: I'm Kamilla, I'm ten, and I go first. | 2.9 |
-| 5 | 12.0-16.2 | Anna: We tested it all at our kitchen table. What lost her attention got cut. | 3.8 (tight) |
+| 5 | 12.0-16.2 | Anna: We tested every lesson at our kitchen table. | 1.9 |
 | 6 | 16.2-19.4 | Both: A mom, a daughter, and you. | 2.2 |
 
 ### 04-idea-to-game · Anna · 17.5 s
@@ -139,28 +139,28 @@ and the picture follows the voice, so these numbers are a starting point, not a 
 ### 06-watch-make-show · Kamilla · 17.5 s
 | scene | seconds | line | words/s |
 |---|---|---|---|
-| 1 | 0.0-2.8 | One lesson. Three steps. | 1.8 |
-| 2 | 2.8-6.5 | Watch: I show you the finished thing. | 1.9 |
-| 3 | 6.5-10.2 | Make: you build yours, with a parent next to you. | 2.8 |
-| 4 | 10.2-14.3 | Show: play it, and send it to grandma. | 1.9 |
-| 5 | 14.3-17.5 | One lesson. One real thing. | 1.8 |
+| 1 | 0.0-2.8 | One lesson has three steps. | 1.8 |
+| 2 | 2.8-6.5 | First you watch. I show you the finished thing. | 2.4 |
+| 3 | 6.5-10.2 | Then you make yours, with a parent next to you. | 2.7 |
+| 4 | 10.2-14.3 | Then you show it. Play it, send it to grandma. | 2.4 |
+| 5 | 14.3-17.5 | One lesson, and you made a real thing. | 2.5 |
 
 ### 07-made-by-10-year-old · Kamilla · 17.5 s
 | scene | seconds | line | words/s |
 |---|---|---|---|
 | 1 | 0.0-2.8 | I'm ten, and I made all of this. | 3.5 (tight) |
 | 2 | 2.8-6.5 | A cartoon. My story, my characters. | 1.9 |
-| 3 | 6.5-10.2 | A game you can play. | 1.6 |
+| 3 | 6.5-10.2 | A game I made. | 1.1 |
 | 4 | 10.2-14.3 | And stickers of my own character. | 1.6 |
 | 5 | 14.3-17.5 | What would you make? | 1.5 |
 
-### 08-will-ai-think · Anna · 17.5 s
+### 08-will-ai-think · Anna · 19.4 s
 | scene | seconds | line | words/s |
 |---|---|---|---|
-| 1 | 0.0-2.8 | Will AI think for my kid? | 2.6 |
-| 2 | 2.8-6.5 | Only if the AI has the ideas. | 2.2 |
-| 3 | 6.5-10.6 | In every lesson she decides, tells the AI, checks it, fixes it. | 3.3 (tight) |
-| 4 | 10.6-14.3 | Don't let AI think for your child. Teach them to think with it. | 4.1 (tight) |
-| 5 | 14.3-17.5 | Let them do the thinking. | 1.8 |
+| 1 | 0.0-4.2 | Will AI think for my kid? | 1.7 |
+| 2 | 4.2-8.3 | Only if the AI has the ideas. | 1.9 |
+| 3 | 8.3-12.5 | She decides, tells the AI, checks it and fixes it. | 2.4 |
+| 4 | 12.5-16.2 | Don't let AI think for your child. | 1.9 |
+| 5 | 16.2-19.4 | Teach them to think with it. | 2.0 |
 
 Reel 04 is built on the 7:02 to 7:41 story, which still needs Anna's confirmation (see `social/brand/facts.md`).

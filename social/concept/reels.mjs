@@ -98,7 +98,6 @@ export const reels = {
     ${h1('Against each other.<br><mark>Same table.</mark>', { top: 1090, size: 72, a: an('words', at(2.5)) })}` },
     { theme: 'n', beats: 9, wipe: '300,600', html: `${plate()}
     ${['She decided.', 'She told the AI.', 'She checked.', '<mark>She fixed.</mark>'].map((l, i) => h1(l, { top: 470 + i * 104, size: 84, a: an('rise', at(1 + i)) })).join('')}
-    ${sub('The thinking stayed with her.', 930, an('rise', at(5.5)), 50)}
     ${char('kamilla', 230, 1040, 500, '', on('slap', 2))}` },
     endScene('Your kid’s <mark>idea.</mark><br>Tonight?'),
   ],
@@ -144,7 +143,7 @@ export const reels = {
     ${card({ l: 200, t: 700, w: 420, h: 732, rot: -2, a: reveal(on('slap', 2)), inner: `<video data-clip data-src="${M}/landing/cartoon.mp4" data-from="6" data-at="${at(1.5)}" muted playsinline preload="auto"></video>` })}
     ${pill('cartoon', 560, 760, 6, '', `background:${C.yellow}`, on('pop', 4))}` },
     { theme: 'y', beats: 8, wipe: '450,1000', html: `${plate()}
-    ${h1('A game you<br>can <mark>play.</mark>', { size: 104 })}
+    ${h1('A game<br>she <mark>made.</mark>', { size: 104 })}
     ${card({ l: 64, t: 760, w: 786, h: 477, rot: -2, src: `${M}/landing/game.jpg`, cls: 'screen', a: on('slap', 2), kb: true })}
     ${pill('game', 620, 1190, 5, '', '', on('pop', 4))}` },
     { theme: 'k', beats: 9, wipe: '450,1000', html: `${plate()}
@@ -155,19 +154,20 @@ export const reels = {
     endScene('What would<br>yours <mark>make?</mark>'),
   ],
 
-  // 38 beats, 17.5 s. The four steps pop on beats 16–19; the answer (Anna, beat 24) is the reveal; logo on beat 32.
+  // 42 beats, 19.4 s. The four steps pop on beats 20–23; the answer (Anna, beat 28) is the reveal; logo on beat 36.
+  // Scenes 1 and 2 are a beat longer than the picture needs so Anna's spoken lines fit (the picture follows the voice).
   '08-will-ai-think': [
-    { theme: 'c', beats: 6, html: `${plate()}
+    { theme: 'c', beats: 9, html: `${plate()}
     ${h1('Will AI think<br>for <mark>my kid?</mark>', { top: 500, size: 108, a: an('settle', 0) })}
     ${char('kamilla', 130, 820, 620, '', on('slap', 1))}` },
-    { theme: 'k', beats: 8, wipe: '450,800', html: `${plate()}
+    { theme: 'k', beats: 9, wipe: '450,800', html: `${plate()}
     ${h1('Only if the AI<br>has the <mark>ideas.</mark>', { top: 540, size: 100 })}
     <i class="badge"${on('pop', 2)} style="left:250px;top:880px;width:340px;height:340px;background:${C.mint};transform:rotate(-6deg)">${icon('lightbulb', 170, '#141A33', 2.2)}</i>` },
     { theme: 'c', beats: 9, wipe: '300,700', html: `${plate()}
     <p class="kick"${an('rise', 0.1)} style="top:480px;font-size:52px">In every lesson</p>
     ${['She decides', 'She tells the AI', 'She checks it', 'She fixes it'].map((s, i) =>
       pill(`<b>${i + 1}</b>${s}`, i % 2 ? 120 : 64, 590 + i * 150, [-3, 2, -2, 3][i], 'step', '', on('pop', 2 + i))).join('')}
-    <span class="note"${an('write', at(6))} style="left:80px;top:1230px;transform:rotate(-3deg);font-size:60px">the thinking stays with her</span>` },
+` },
     { theme: 'n', beats: 8, wipe: '450,700', swish: true, html: `${plate()}
     ${h1('Don’t let AI think<br>for your child.', { top: 500, size: 78 })}
     ${h1('Teach them to<br><mark>think with it.</mark>', { top: 700, size: 92, a: an('words', at(3)) })}

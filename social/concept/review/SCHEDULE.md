@@ -14,10 +14,10 @@ My slots do not collide with them (Instagram only, different days or hours).
 ## Week 1: the ten posts we have
 | Day | 08:00 | 12:30 | 19:30 |
 |---|---|---|---|
-| Mon 16 | 2 Meet Anna & Kamilla (Reel) | 3 AI house rules (carousel) | 5 A reason to show you (Reel) |
-| Tue 17 | 6 Watch. Make. Show. (Reel) | 7 Made by a 10-year-old (Reel) | 8 Will AI think for my kid? (Reel) |
-| Wed 18 | 9 8 families tried it first (carousel) | 10 Free first lesson (carousel) | NEW |
-| Thu 19 | 1 Crayon to cartoon (Reel, after Anna confirms the drawing) | 4 Idea to game (Reel, after Anna confirms 7:02-7:41) | NEW |
+| Mon 16 | 1 Crayon to cartoon (Reel) | 3 AI house rules (carousel) | 2 Meet Anna & Kamilla (Reel) |
+| Tue 17 | 5 A reason to show you (Reel) | 7 Made by a 10-year-old (Reel) | 8 Will AI think for my kid? (Reel) |
+| Wed 18 | 6 Watch. Make. Show. (Reel) | 9 8 families tried it first (carousel) | 10 Free first lesson (carousel) |
+| Thu 19 | 4 Idea to game (Reel, after Anna confirms 7:02-7:41) | NEW | NEW |
 | Fri 20 - Sun 22 | NEW x9 | | |
 
 Ten posts fill 3 days and a bit. 30 a week means **20 posts a week we do not have yet**.
@@ -29,4 +29,4 @@ Two ways to fill the gap (pick, or mix):
 ## Order logic
 - Two posts of the same type never sit next to each other (Proof, Teach, Opinion, Story, Offer).
 - Post 10 (the offer) goes on day 3, once people have seen who we are (2), the rules (3) and the proof (7, 9).
-- Posts 1 and 4 wait for Anna's yes on two facts.
+- Post 1 opens the week: the strongest proof, and Anna confirmed the fact on 12 Nov. Post 4 waits for her yes on the 7:02 to 7:41 story.

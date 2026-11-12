@@ -35,7 +35,7 @@ const family = ({ i, total, who, name, role, made, quote }) => ({ theme: 'k', ht
     <i class="badge" style="right:70px;bottom:150px;width:230px;height:230px;background:${C.yellow};transform:rotate(8deg)">${icon(MADE_ICON[made], 116, '#141A33', 2.2)}</i>
     ${foot()}` });
 
-const RULES = ['The account is yours, not theirs', 'No chats with strangers', 'Some things AI never hears', 'Links get a second look', 'Too perfect? Check it'];
+const RULES = ['The account is yours', 'No chats with strangers', 'Some things stay out of AI', 'Links get a second look', 'Too perfect? Check it'];
 const MADE = [['margaret', 'Margaret', 'cartoon'], ['susan', 'Susan', 'song'], ['linda', 'Linda', 'gift'], ['patricia', 'Patricia', 'game'], ['emily', 'Emily', 'cartoon'], ['jessica', 'Jessica', 'song'], ['amanda', 'Amanda', 'game'], ['rachel', 'Rachel', 'website']];
 
 // ---------------------------------------------------------------- the ten posts
@@ -55,7 +55,7 @@ export const posts = [
 
 A 6-year-old drew this rainbow with crayons. One lesson later it was a cartoon.
 
-That's how our AI course for kids works. The kid has the idea and makes the drawing. The AI follows it. You sit right next to them.
+In our AI course for kids, the kid has the idea and makes the drawing. The AI follows it, down to the truck on top. You're side by side the whole time.
 
 #aiforkids #kidsart #kidsdrawing #creativekids #familyactivities` },
 
@@ -71,7 +71,9 @@ That's how our AI course for kids works. The kid has the idea and makes the draw
     ${star(80, C.yellow, 'left:900px;top:700px')}${star(40, C.yellow, 'left:850px;top:660px')}${star(34, C.yellow, 'left:980px;top:800px')}`,
     caption: `The first lesson is free. It's in our bio.
 
-We're Anna and Kamilla, a mom and a daughter, not a corporation. I built every lesson of this AI course for kids myself and tested each one on Kamilla at our kitchen table. She's 10. What lost her attention got cut.
+We're Anna and Kamilla, a mom and her daughter. Not a corporation.
+
+I built every lesson of this AI course for kids myself. Then I tested each one on Kamilla at our kitchen table. She's 10. What lost her attention got cut.
 
 In the course she goes first. She shows the finished thing, then your kid makes their own.
 
@@ -95,8 +97,8 @@ In the course she goes first. She shows the finished thing, then your kid makes 
     ${char('kamilla', 540, 900, 600)}
     ${foot(false)}` },
       step({ rubric: 'lab', no: '01', i: 3, total: 9, n: 1, tint: C.coral, title: 'The account<br>is <mark>yours.</mark>', body: 'Every tool runs on the parent’s account. Your kid never signs up alone.', ic: 'user-round-check', icTint: C.mint }),
-      step({ rubric: 'lab', no: '01', i: 4, total: 9, n: 2, tint: C.coral, title: 'No chats with<br><mark>strangers.</mark>', body: 'No DMs. No comments.<br>Nobody your kid doesn’t know.', ic: 'message-circle-off', icTint: C.yellow }),
-      step({ rubric: 'lab', no: '01', i: 5, total: 9, n: 3, tint: C.coral, title: 'Some things AI<br><mark>never hears.</mark>', body: 'Kids learn what never to share with an AI. And why.', ic: 'lock', icTint: C.mint }),
+      step({ rubric: 'lab', no: '01', i: 4, total: 9, n: 2, tint: C.coral, title: 'No chats with<br><mark>strangers.</mark>', body: 'The course has no DMs and no comments, so no stranger can reach your kid there.', ic: 'message-circle-off', icTint: C.yellow }),
+      step({ rubric: 'lab', no: '01', i: 5, total: 9, n: 3, tint: C.coral, title: 'Some things<br>stay <mark>out of AI.</mark>', body: 'Kids learn what never to share with an AI, and why.', ic: 'lock', icTint: C.mint }),
       step({ rubric: 'lab', no: '01', i: 6, total: 9, n: 4, tint: C.coral, title: 'Links get a<br><mark>second look.</mark>', body: 'Never click a suspicious link. Kids learn how to tell one.', ic: 'link', icTint: C.yellow }),
       step({ rubric: 'lab', no: '01', i: 7, total: 9, n: 5, tint: C.coral, title: 'Too perfect?<br><mark>Check it.</mark>', body: 'A picture, a video, a text. Any of them can be fake.', ic: 'eye', icTint: C.mint }),
       { theme: 'c', html: `
@@ -107,7 +109,7 @@ In the course she goes first. She shows the finished thing, then your kid makes 
     ${foot()}` },
       { theme: 'c', html: `
     ${page('lab', '01', 9, 9)}
-    <h1 class="t" style="top:230px;font-size:124px">Send it to<br>a parent who<br><mark>needs it.</mark></h1>
+    <h1 class="t" style="top:230px;font-size:124px">Drop it in your<br>parents’ <mark>group chat.</mark></h1>
     <p class="sub" style="top:650px;font-size:52px;color:#141A33;right:120px">This is how every lesson in Make Show Lab is set up.</p>
     ${char('anna', 500, 800, 640)}
     ${foot(false)}` },
@@ -116,13 +118,13 @@ In the course she goes first. She shows the finished thing, then your kid makes 
 
 1. The account is the parent's.
 2. No chats with strangers.
-3. Some things AI never hears.
+3. Some things stay out of AI, and the kid knows which.
 4. Links get a second look.
 5. If it looks too perfect, check it.
 
-Almost 9 in 10 American kids aged 9 to 17 already use AI, and almost half have never talked about safety with a parent (Common Sense Media, 2026). These five are how every lesson of our AI course for kids is set up.
+Almost 9 in 10 American kids aged 9 to 17 already use AI, and almost half have never talked about safety with a parent (Common Sense Media, 2026). Every lesson of our AI course for kids is set up this way.
 
-Send it to a parent who needs it.
+Drop it in your parents' group chat.
 
 #aisafety #kidsandai #aiforkids #parentingtips #onlinesafety` },
 
@@ -155,9 +157,9 @@ She decided, told the AI, checked what came back and fixed it. No code. That's o
     ${arrow(100, 120, 'M20 6 C 6 50, 30 86, 76 104', 'M44 110 L80 106 L66 72', 'left:760px;top:540px')}`,
     caption: `Send this to the person you argue about screen time with.
 
-Kids don't need more screen time. They need a reason to show you something. A screen she makes on is not a screen she scrolls.
+Kids don't need more screen time. They need a reason to show you something.
 
-In our AI course for kids every lesson ends with a thing to show, like a game or a cartoon.
+In our course every lesson ends with something your kid made to show you: a game, a cartoon, a song.
 
 #screentime #parentingtips #aiforkids #kidsandai` },
 
@@ -173,9 +175,7 @@ In our AI course for kids every lesson ends with a thing to show, like a game or
     ${star(70, C.yellow, 'left:920px;top:760px')}${star(36, C.yellow, 'left:870px;top:720px')}`,
     caption: `Save this for the night you try lesson one.
 
-One lesson of our AI course for kids takes 6 to 20 minutes and has three steps. Watch: Kamilla shows the finished thing first. Make: your kid builds it and you sit next to them. Show: play it, show the family, send it to grandma.
-
-Every lesson ends with something your kid made.
+One lesson of our AI course for kids takes 6 to 20 minutes and has three steps. Watch: Kamilla shows the finished thing first. Make: your kid builds their own and you stay right there. Show: play it, show the family, send it to grandma.
 
 #aiforkids #kidsandai #familyactivities #homeschoolideas` },
 
@@ -193,9 +193,9 @@ Every lesson ends with something your kid made.
     ${pill('stickers', 850, 972, 4, '', 'height:58px;font-size:26px;padding:0 22px')}`,
     caption: `The first lesson is free. Link in bio.
 
-Everything in this video was made by Kamilla, who is 10: a cartoon with her own characters, a game you can play and a sticker pack of her own character. No code.
+Everything in this video was made by Kamilla. She's 10. A cartoon with her own characters, a game of her own and a sticker pack of her character. No code.
 
-That's what kids make in our AI course, with a parent sitting next to them.
+That's the kind of thing kids make in our course, with a parent right there.
 
 #aiforkids #kidscartoon #kidsgames #creativekids` },
 
@@ -209,11 +209,11 @@ That's what kids make in our AI course, with a parent sitting next to them.
     <span class="note" style="left:618px;top:1150px;transform:rotate(-3deg);font-size:60px">the thinking</span>
     <span class="note" style="left:618px;top:1214px;transform:rotate(-3deg);font-size:60px">stays with her</span>
     ${arrow(110, 80, 'M104 10 C 76 50, 46 62, 10 58', 'M36 34 L8 58 L40 76', 'left:640px;top:1290px')}`,
-    caption: `Send this to a parent who is on the fence about AI.
+    caption: `Know a parent who thinks AI makes kids lazy? Send them this.
 
-Will AI think for my kid? Only if the AI is the one with the ideas. In every lesson of our AI course for kids the child decides what to make, tells the AI, checks what comes back and fixes it.
+Will AI think for my kid? Only if the AI is the one with the ideas.
 
-The thinking stays with your child.
+In every lesson of our course the child decides what to make, tells the AI, checks what comes back and fixes it.
 
 #kidsandai #aiforkids #parentingtips #criticalthinking` },
 
@@ -277,7 +277,7 @@ The first lesson of our AI course for kids is free too. Link in bio.
     <p class="kick" style="top:462px">Your kid builds a game tonight.</p>
     ${card({ l: 86, t: 580, w: 908, h: 544, rot: 2, src: `${M}/landing/game.jpg`, cls: 'screen' })}
     <span class="btn" style="left:96px;top:1090px;transform:rotate(-3deg)">Build it tonight ${icon('arrow-right', 58, '#FFF4DC', 3)}</span>
-    ${pill('10–20 min', 760, 1150, 6)}
+    ${pill('10-20 min', 760, 1150, 6)}
     ${pill('no card, just email', 104, 1290, -2)}
     ${star(80, '#fff', 'left:900px;top:1270px')}${star(38, '#fff', 'left:850px;top:1240px')}${star(46, '#fff', 'left:960px;top:1210px')}` },
       { theme: 'k', html: `
@@ -288,12 +288,12 @@ The first lesson of our AI course for kids is free too. Link in bio.
     ${foot(false)}` },
       step({ rubric: 'start', no: '', i: 3, total: 7, n: 1, tint: C.mint, title: 'Leave your<br><mark>email.</mark>', body: 'No card. A laptop or a tablet. Nothing to install.', ic: 'gift', icTint: C.yellow }),
       step({ rubric: 'start', no: '', i: 4, total: 7, n: 2, tint: C.mint, title: 'Your kid builds<br><mark>a game.</mark>', body: '10 to 20 minutes. You sit next to them. They do the making.', ic: 'star', icTint: C.coral }),
-      step({ rubric: 'start', no: '', i: 5, total: 7, n: 3, tint: C.mint, title: 'Play it<br><mark>together.</mark>', body: 'Against each other, on the same couch. Then decide.', ic: 'heart', icTint: C.yellow }),
+      step({ rubric: 'start', no: '', i: 5, total: 7, n: 3, tint: C.mint, title: 'Play it<br><mark>together.</mark>', body: 'Against each other, on the same couch. Then decide if you want the rest.', ic: 'heart', icTint: C.yellow }),
       { theme: 'm', html: `
     ${page('start', '', 6, 7)}
     <h1 class="t" style="font-size:112px">Tonight, in<br><mark>three steps.</mark></h1>
     ${listCard(['Leave your email', 'Your kid builds a game', 'Play it together'], 560, 520)}${magnet(492, 522)}
-    ${pill('10–20 min', 120, 1160, -4)}${pill('no card', 480, 1190, 5)}
+    ${pill('10-20 min', 120, 1160, -4)}${pill('no card', 480, 1190, 5)}
     ${foot()}` },
       { theme: 'm', html: `
     ${page('start', '', 7, 7)}

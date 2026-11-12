@@ -7,8 +7,8 @@ ai_generated: false
 ---
 Send this to the person you argue about screen time with.
 
-Kids don't need more screen time. They need a reason to show you something. A screen she makes on is not a screen she scrolls.
+Kids don't need more screen time. They need a reason to show you something.
 
-In our AI course for kids every lesson ends with a thing to show, like a game or a cartoon.
+In our course every lesson ends with something your kid made to show you: a game, a cartoon, a song.
 
 #screentime #parentingtips #aiforkids #kidsandai

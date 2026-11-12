@@ -10,12 +10,12 @@ Five rules we set before any kid touches an AI tool.
 
 1. The account is the parent's.
 2. No chats with strangers.
-3. Some things AI never hears.
+3. Some things stay out of AI, and the kid knows which.
 4. Links get a second look.
 5. If it looks too perfect, check it.
 
-Almost 9 in 10 American kids aged 9 to 17 already use AI, and almost half have never talked about safety with a parent (Common Sense Media, 2026). These five are how every lesson of our AI course for kids is set up.
+Almost 9 in 10 American kids aged 9 to 17 already use AI, and almost half have never talked about safety with a parent (Common Sense Media, 2026). Every lesson of our AI course for kids is set up this way.
 
-Send it to a parent who needs it.
+Drop it in your parents' group chat.
 
 #aisafety #kidsandai #aiforkids #parentingtips #onlinesafety
