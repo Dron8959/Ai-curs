@@ -28,6 +28,13 @@
 Имя: Make Show Lab | AI for Kids (как в Instagram). Аватар: `social/brand/logo/avatar/avatar-1080.png`. Вписывается вручную в приложении. Макет: `text/threads/review/profile.png`
 (`node social/concept/threads-profile.mjs`). Запасные описания: «AI for kids 6-14, side by side with a parent. Don't let AI think for your child. Teach them to think with it. First lesson free.» и «Cartoons, games and songs your kid makes with AI. A mom and her 10-year-old show how. First lesson free.»
 
+## Неделя из 30 постов (12.11.2026, поздний вечер)
+Владелец остановил поштучную выдачу. Новый порядок: написать всё → самокритика по скиллам → переписать → отдать пакетом.
+Источник: `threads-week.mjs` (21 пост в сетке 7 дней × 3 + 9 в запасе; заменяет threads-v2.mjs). Проверки: threads-lint
+(чёрный список машинных фраз), 25 формул владельца, 8 рычагов, голос и факты бренда; формат-лекция «Rule N of 5:» запрещён
+и ловится сборкой. Посты 1–4 утверждены ранее и вошли без изменений. Пост «правило 2» (сухая лекция) удалён и написан заново
+как задание «проверь, кто может писать твоему ребёнку в DM».
+
 ## Утверждено владельцем по одному
 Посты 1, 2, 3, 4 (в версии 12.11.2026 вечер). Остальные идут по очереди, `threads-preview.mjs N`.
 
