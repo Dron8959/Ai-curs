@@ -50,9 +50,11 @@ Now ask your kid. A flying dog that runs a pizza shop, probably.
 
 Who's using it better?` },
   { id: 'v2-r2-strangers', day: 2, slot: 'noon', lever: 'серия: открытая петля', topic: 'AI safety', media: 'v2-r2-strangers',
-    text: `Rule 2 of 5: Nobody you don't know gets to message your kid. Our course has no chat between strangers at all, on purpose.
+    text: `Rule 2 of 5: Strangers don't get to message your kid.
 
-Does your kid's favorite app let strangers in?` },
+Our course has no chats and no comments at all, on purpose.
+
+Can strangers message your kid in their favorite app?` },
   { id: 'v2-13-two-kids', day: 2, slot: 'pm', lever: 'раскол: два ребёнка', topic: 'AI for kids', media: 'v2-13-two-kids',
     text: `Two kids, same chatbot.
 

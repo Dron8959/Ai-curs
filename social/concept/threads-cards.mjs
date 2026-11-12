@@ -281,7 +281,7 @@ const cards = {
   // AI house rules, a five-day series: one rule a day at noon, the same layout every time so people know it.
   ...Object.fromEntries([
     ['v2-r1-account', 'key-round', `The account<br>is <mark>yours.</mark>`, 'Your kid never signs up alone'],
-    ['v2-r2-strangers', 'user-x', `Nobody new<br><mark>gets in.</mark>`, 'No chat with strangers'],
+    ['v2-r2-strangers', 'user-x', `Strangers can't<br><mark>message</mark> your kid.`, 'No chats or comments in our course'],
     ['v2-r3-never-hears', 'lock', `Some things AI<br><mark>never hears.</mark>`, 'Decide the list together'],
     ['v2-r4-links', 'link', `Links get a<br><mark>second look.</mark>`, 'Spot it before you click'],
     ['v2-r5-too-perfect', 'search', `Too perfect?<br><mark>Check it.</mark>`, 'Pictures, videos, texts can be fake'],
