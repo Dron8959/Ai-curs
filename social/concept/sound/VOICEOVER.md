@@ -13,7 +13,10 @@ history of that decision and what turns a phone recording into a voiced reel.
   nothing about life, which is exactly what was missing. The cloned voice is not used for any published reel.
   The tools stay (`tools/voice_clone.py`) as a scratch voice for trying a line's length, never for publishing.
 - **12 Nov:** Anna and Kamilla record every line live, with expression. A real voice also needs no AI label
-  (the pictures that are AI-made keep theirs). Kamilla is a child and her voice is never cloned.
+  (the pictures that are AI-made keep theirs).
+- **12 Nov, the owner's plan:** if they speak with real emotion, the cloned voice made from that recording may come
+  out alive too, and then new reels can be voiced without them. That is what scales; live recording does not.
+  See "A voice that does not depend on them" below.
 
 ## What each of them records
 Two briefs, one PDF each: `social/concept/out/voice-brief-anna.pdf` and `voice-brief-kamilla.pdf`
@@ -53,6 +56,40 @@ that this word arrives with the first thing that lands in the scene. On the clos
 after the logo. Under a line the music is held 13 dB below its full level, lower if the measurement asks for it
 (`tools/voice_film.py` explains the rules). The published `reel.mp4` is never touched: the voiced reel is written
 next to it (`social/concept/out/voice-sample-NN.mp4`, not committed) until the owner approves it.
+
+## A voice that does not depend on them
+The goal: a generated voice that can read lines Anna and Kamilla never recorded. The first sample failed, and the
+measurements say why it is worth another try rather than giving up:
+- The voice model takes the **manner of speaking** from the first 6 s of its reference (its style prompt), the
+  timbre from the first 10 s, the speaker's identity from the whole file (read from its source, `chatterbox/tts.py`).
+- The first reference opened with a flat script reading. Anna's voice moved **6.6 semitones** in it (10th to 90th
+  percentile of pitch, spread 2.5). The cloned lines moved 7.0-7.5: as much as the reference, no more. The sample
+  copied a flat reading.
+- Turning the model's own knobs up (exaggeration .8-1.1, cfg .3, temperature .8-.9) on the same recording gave no
+  steady gain (6 lines: range 5.2-10.6 semitones, run-to-run spread as big as the effect) and two lines with wrong
+  words ("reading" for "reason"). The lever is the reference, not the knobs.
+
+So when the live recordings arrive:
+1. **Measure whether they acted:** `$VOICE_PY tools/voice_ref.py <recording>` prints how far the voice moves against
+   the 6.6 of the first recording. Much higher means expression; about the same means a second reading. This is
+   pitch only, not taste.
+2. **Cut the live version** (above).
+3. **Clone from the most lively 10 s** of the same recordings: `$VOICE_PY tools/voice_clone.py 05` (`--who Kamilla
+   --ref <her recording>` for her). It writes the reference itself (`voice_ref.py` picks it) and checks every take
+   word for word.
+4. **Compare by ear:** the live reel and the cloned one, same reel. Only ears say whether it is alive.
+
+Extra for the recording, optional: 1-2 minutes of **free speech** at the end (Anna: what the course is, as to a
+friend; Kamilla: the game she made), emotions and laughter allowed. Free speech has the manner a reading lacks, and
+it is the best reference there is.
+
+If a 10-second reference is not enough, the usual next step is one longer recording session (30-60 minutes of
+varied speech) to train a proper voice, with an open model or a paid service. It is one session instead of one per
+reel. A paid service means Anna's voice leaves this machine: only with the owner's go-ahead and Anna's consent.
+
+**Kamilla is a child.** Her voice is cloned only with her mother's explicit consent. The recording and the voice
+made from it stay private, never in git, never given to a service without that consent. Anything with a cloned
+voice carries the platform's AI label.
 
 Not built yet: noise removal (add it only if the real recordings need it), and the voice for reel 02's joint
 line is cut from whichever recording holds it.

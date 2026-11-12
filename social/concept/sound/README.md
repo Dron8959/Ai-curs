@@ -18,7 +18,8 @@ skill (real recordings, one licensed track, a deterministic mixer, measured inst
 | `VOICEOVER.md` | the voice: the options, the lines, the state of the one sample |
 | `tools/voice_brief.mjs` | the recording briefs for Anna and Kamilla (PDF) |
 | `tools/voice_cut.py`, `tools/voice_film.py`, `voice.sh` | live recordings -> lines -> a voiced version of a reel next to the published one |
-| `tools/voice_clone.py` | a scratch voice cloned from a recording; rejected for publishing (see `VOICEOVER.md`) |
+| `tools/voice_ref.py` | measures how far a recording's voice moves, picks the best 10 s as a cloning reference |
+| `tools/voice_clone.py` | a voice cloned from a recording; the first sample was rejected, a second try from lively recordings is planned (see `VOICEOVER.md`) |
 
 ## Rebuild
 ```

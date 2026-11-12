@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Anna's lines for one reel in her own voice, cloned from her recording (open model Chatterbox, MIT, runs on a CPU).
+"""One speaker's lines of one reel in her own voice, cloned from her recording (open model Chatterbox, MIT, runs on a CPU).
 
-    $VOICE_PY tools/voice_clone.py 05 [--ref ../../media/voice/anna-sample.mp3] [--tries 4]
+    $VOICE_PY tools/voice_clone.py 05 [--who Anna] [--ref ../../media/voice/anna-sample.mp3] [--tries 4]
     $VOICE_PY tools/voice_clone.py 05 --heard ../out/voice-sample-05.mp4     the finished mix, transcribed again
 
 VOICE_PY is a Python with chatterbox-tts, transformers and librosa (about 2 GB, plus 4 GB of models on the first run).
@@ -12,8 +12,14 @@ measurements, not ears: the owner listens and decides. Output, never committed: 
 --heard is the last check of a voiced reel: the same speech model listens to the finished file, music and effects
 included, and every line has to come back word for word.
 
-Only Anna's lines are made here. Kamilla is a child: her voice is not cloned, she records her lines herself.
-The recording and everything made from it stay out of git (the repository is public).
+The reference is the most lively 10 seconds of the recording (tools/voice_ref.py explains why and measures it);
+--ref-first takes the first 28 s instead, as the first sample did. A line said by two voices at once ("Both") is not made.
+The model's own knobs (--exaggeration, --cfg, --temperature) are exposed for trying; on the first recording turning
+them up gave no steady gain and some wrong words, so the defaults stay.
+
+Kamilla is a child: her voice is cloned only with her mother's explicit consent, and the recording and the voice made
+from it stay private. The recording and everything made from it stay out of git (the repository is public).
+A reel with a cloned voice carries the platform's AI label.
 """
 import argparse, difflib, json, logging, os, re, subprocess, sys, time, warnings
 from pathlib import Path
@@ -23,8 +29,8 @@ logging.disable(logging.WARNING)
 ROOT = Path(__file__).resolve().parent.parent
 VOICE = ROOT / os.environ.get('VOICE_DIR', 'out/voice')   # where the lines go (a folder per reel); VOICE_DIR overrides it, e.g. for tests
 SEEDS = [7, 11, 23, 42, 5, 19, 31, 3]
-SET = {'exaggeration': 0.45, 'cfg_weight': 0.5, 'temperature': 0.7}
-# the reference: rumble out, pauses over 0.45 s closed, level evened, first 28 s (the model reads the first 10)
+SET = {'exaggeration': 0.45, 'cfg_weight': 0.5, 'temperature': 0.7}   # the knobs of the first sample; see --exaggeration etc.
+# the first sample's reference: rumble out, pauses over 0.45 s closed, level evened, first 28 s (--ref-first)
 REF_AF = ('highpass=f=70,silenceremove=start_periods=1:start_threshold=-40dB:stop_periods=-1:stop_duration=0.45:'
           'stop_threshold=-40dB,loudnorm=I=-18:TP=-2')
 LEVEL_DB, PEAK_DB = -20.0, -1.5          # every line: speech at -20 dBFS RMS, peaks under -1.5 dBFS
@@ -78,7 +84,12 @@ def heard_in_mix(rid, film):
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split('\n')[0])
     ap.add_argument('reel', help='reel id or its first digits, e.g. 05')
-    ap.add_argument('--ref', default=str(ROOT / '../../media/voice/anna-sample.mp3'), help="Anna's recording")
+    ap.add_argument('--who', default='Anna', choices=['Anna', 'Kamilla'], help='whose lines')
+    ap.add_argument('--ref', help="the speaker's recording (default for Anna: ../../media/voice/anna-sample.mp3)")
+    ap.add_argument('--ref-first', action='store_true', help='reference = the first 28 s, not the most lively 10 s')
+    ap.add_argument('--exaggeration', type=float, default=SET['exaggeration'])
+    ap.add_argument('--cfg', type=float, default=SET['cfg_weight'])
+    ap.add_argument('--temperature', type=float, default=SET['temperature'])
     ap.add_argument('--tries', type=int, default=4, help='takes per line before the closest one is kept and flagged')
     ap.add_argument('--heard', metavar='FILE', help='transcribe a finished voiced reel and compare it with the lines')
     a = ap.parse_args()
@@ -88,20 +99,29 @@ def main():
     if len(ids) != 1:
         sys.exit(f'"{a.reel}" matches {ids or "no reel"} in VOICEOVER.md')
     rid = ids[0]
-    lines = [l for l in reels[rid]['lines'] if l['who'] == 'Anna']
-    others = [l for l in reels[rid]['lines'] if l['who'] != 'Anna']
+    lines = [l for l in reels[rid]['lines'] if l['who'] == a.who]
+    others = [l for l in reels[rid]['lines'] if l['who'] != a.who]
     if not lines:
-        sys.exit(f'{rid}: no line is Anna\'s. Kamilla records her own lines; her voice is not cloned.')
+        sys.exit(f'{rid}: no line is {a.who}\'s ("Both" lines, two voices at once, are not made here)')
     if a.heard:
         return heard_in_mix(rid, Path(a.heard).resolve())
-    ref = Path(a.ref).resolve()
+    if a.who == 'Kamilla':
+        print("Kamilla is a child: this voice is made only with her mother's consent; keep the files private.")
+    ref = Path(a.ref or (ROOT / '../../media/voice/anna-sample.mp3' if a.who == 'Anna' else '')).resolve()
+    if not a.ref and a.who != 'Anna':
+        sys.exit('--ref: the recording of the voice to clone')
     if not ref.exists():
         sys.exit(f'no recording at {ref}')
+    SET.update(exaggeration=a.exaggeration, cfg_weight=a.cfg, temperature=a.temperature)
     out = VOICE / rid
     out.mkdir(parents=True, exist_ok=True)
-    refwav = VOICE / 'ref.wav'
-    subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-i', str(ref), '-af', REF_AF, '-ar', '24000', '-ac', '1',
-                    '-t', '28', str(refwav)], check=True)
+    refwav = VOICE / f'ref-{a.who.lower()}.wav'
+    if a.ref_first:
+        subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-i', str(ref), '-af', REF_AF, '-ar', '24000', '-ac', '1',
+                        '-t', '28', str(refwav)], check=True)
+    else:
+        import voice_ref
+        voice_ref.report(ref.name, voice_ref.analyse(ref, write=refwav))
 
     import numpy as np, torch, librosa, soundfile as sf
     from chatterbox.tts import ChatterboxTTS
@@ -122,7 +142,7 @@ def main():
 
     ref16, _ = librosa.load(refwav, sr=16000, mono=True)
     e_ref, half = embed(ref16), len(ref16) // 2
-    scale = {'anna_vs_anna': round(cos(embed(ref16[:half]), embed(ref16[half:])), 3)}
+    scale = {'halves_of_the_recording': round(cos(embed(ref16[:half]), embed(ref16[half:])), 3)}
     if tts.conds is not None:  # the model's stock voice says the first line: what "a different person" scores
         torch.manual_seed(SEEDS[0])
         scale['another_voice'] = round(cos(embed(to16(tts.generate(lines[0]['text'], **SET).squeeze(0).numpy())), e_ref), 3)
@@ -162,7 +182,7 @@ def main():
               f"{flag}  | {take['text']}", flush=True)
 
     (out / 'lines.json').write_text(json.dumps({
-        '_doc': "Anna's voice cloned from her own recording, for the owner to judge. Personal data: never committed, "
+        '_doc': f"{a.who}'s voice cloned from her own recording, for the owner to judge. Personal data: never committed, "
                 'never published without her consent and the AI label.',
         'reel': rid, 'model': 'ResembleAI/chatterbox', 'settings': SET, 'checked_with': 'openai/whisper-small',
         'resemblance_scale': scale, 'lines': done,
