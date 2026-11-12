@@ -281,7 +281,7 @@ const cards = {
   // AI house rules, a five-day series: one rule a day at noon, the same layout every time so people know it.
   ...Object.fromEntries([
     ['v2-r1-account', 'key-round', `The account<br>is <mark>yours.</mark>`, 'Your kid never signs up alone'],
-    ['v2-r2-strangers', 'user-x', `Strangers can't<br><mark>message</mark> your kid.`, 'No chats or comments in our course'],
+    ['v2-r2-strangers', 'user-x', `Who can <mark>DM</mark><br>your kid?`, 'Check their favorite app tonight'],
     ['v2-r3-never-hears', 'lock', `Some things AI<br><mark>never hears.</mark>`, 'Decide the list together'],
     ['v2-r4-links', 'link', `Links get a<br><mark>second look.</mark>`, 'Spot it before you click'],
     ['v2-r5-too-perfect', 'search', `Too perfect?<br><mark>Check it.</mark>`, 'Pictures, videos, texts can be fake'],
@@ -465,13 +465,114 @@ cards['v2-12-age'] = { ...cards['07-by-age'], hl: `At what age can<br>your <mark
 cards['v2-03-did-she-make-it'] = cards['10-is-it-cheating'];
 cards['v2-13-two-kids'] = { ...cards['02-answer-machine'], hl: `Same chatbot.<br>Which kid would<br>you <mark>stop?</mark>` };
 
+// ---------------------------------------------------- week pack: cards for posts 16, 17, 19, 20, 21
+cards['wk-16-lets-find-out'] = { theme: 'k', chip: 'You decide',
+  hl: `What do you<br><mark>reach for?</mark>`,
+  stage: `
+    ${[['search', 'Google it quietly', '#FFF9EC', ''], ['bot', 'Ask an AI', '#FFF9EC', ''], ['users', '"I don\'t know, let\'s find out together"', '#5FE0A8', 'our pick']].map(([ic, t, bg, tag], i) => `
+    <div class="box op" style="left:0;top:${i * 200}px;width:952px;height:170px;background:${bg};display:flex;align-items:center;gap:34px;padding:0 40px">
+      <div style="flex:none;width:96px;height:96px;border:5px solid #141A33;border-radius:50%;background:#FFC533;display:flex;align-items:center;justify-content:center">${icon(ic, 54, 2.4)}</div>
+      <div class="big" style="font-size:${t.length > 24 ? 38 : 46}px;line-height:1.1">${t}</div>
+      ${tag ? `<div class="bub pk" style="position:absolute;right:30px;top:-24px;font:800 30px Sora;background:#141A33;color:#FFF4DC">${tag}</div>` : ''}
+    </div>`).join('')}`,
+  tl: `
+    tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
+      .from('.hl mark',{scale:0,duration:.4,ease:'back.out(3)'},.45)
+      .from('.op',{x:-110,opacity:0,duration:.45,ease:'power3.out',stagger:.55},.9)
+      .from('.pk',{scale:0,duration:.4,ease:'back.out(3)'},3.2)
+      .fromTo('.op:nth-child(3)',{scale:1},{scale:1.03,duration:.3,yoyo:true,repeat:3,ease:'sine.inOut'},3.8);` };
+
+cards['wk-17-song-for-grandma'] = { theme: 'c', chip: 'One lesson, 6 to 20 min',
+  hl: `Her words.<br>Now it's a <mark>song.</mark>`,
+  stage: `
+    <div class="box" id="ph" style="left:176px;top:0;width:600px;height:560px;background:#141A33;border-radius:44px;padding:40px 40px 0">
+      <div class="lab" style="color:#B9C0DE">Grandma's phone</div>
+      <div style="margin-top:36px;border:5px solid #FFF4DC;border-radius:28px;background:#FFF9EC;padding:30px">
+        <div style="display:flex;align-items:center;gap:22px">
+          <div id="pl" style="flex:none;width:84px;height:84px;border:5px solid #141A33;border-radius:50%;background:#FF6F4A;display:flex;align-items:center;justify-content:center">${icon('play', 42, 2.6)}</div>
+          <div><div class="big" style="font-size:36px">A song by your kid</div><div class="lab" style="font-size:20px;margin-top:6px">from her own words</div></div>
+        </div>
+        <div style="margin-top:28px;height:18px;border:4px solid #141A33;border-radius:9px;background:#F1EBDA;overflow:hidden"><div id="pr" style="height:100%;width:62%;background:#5FE0A8;border-right:4px solid #141A33"></div></div>
+      </div>
+      ${[0, 1, 2].map((i) => `<div class="nt" style="position:absolute;right:${60 + i * 90}px;top:${-10 + (i % 2) * 30}px;color:#FFC533">${icon('music', 44 + i * 8, 2.4).replace('currentColor', '#FFC533')}</div>`).join('')}
+    </div>`,
+  tl: `
+    tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
+      .from('.hl mark',{scale:0,duration:.4,ease:'back.out(3)'},.45)
+      .from('#ph',{y:140,opacity:0,duration:.55,ease:'back.out(1.5)'},.9)
+      .from('#pl',{scale:0,duration:.4,ease:'back.out(2.6)'},1.6)
+      .from('#pr',{width:0,duration:3.4,ease:'none'},1.9)
+      .from('.nt',{y:40,opacity:0,duration:.5,ease:'back.out(2)',stagger:.4},2.2);` };
+
+cards['wk-19-two-evenings'] = { theme: 'n', chip: 'You decide',
+  hl: `Same AI. Two<br>different <mark>evenings.</mark>`,
+  stage: `
+    <div class="box ev" style="left:0;top:0;width:460px;height:480px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;text-align:center;padding:0 30px">
+      <div class="lab">Evening 1</div>${icon('messages-square', 90, 2.2)}
+      <div class="big" style="font-size:40px;line-height:1.1">Homework answers, pulled out</div>
+    </div>
+    <div class="box ev" style="left:492px;top:0;width:460px;height:480px;background:#FFC533;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;text-align:center;padding:0 30px">
+      <div class="lab">Evening 2</div>${icon('clapperboard', 90, 2.2)}
+      <div class="big" style="font-size:40px;line-height:1.1">A cartoon, built</div>
+    </div>
+    <div class="bub" id="tn" style="left:300px;top:530px;font:800 36px Sora;background:#5FE0A8">Which one is tonight?</div>`,
+  tl: `
+    tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
+      .from('.hl mark',{scale:0,duration:.4,ease:'back.out(3)'},.45)
+      .from('.ev',{y:110,opacity:0,duration:.5,ease:'back.out(1.6)',stagger:.5},.9)
+      .from('#tn',{scale:0,duration:.4,ease:'back.out(3)'},2.6);` };
+
+cards['wk-20-gift'] = { theme: 'y', chip: 'Gift season',
+  hl: `A box to open, or<br><mark>time together?</mark>`,
+  stage: `
+    <div class="box gf" style="left:0;top:0;width:460px;height:430px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px">${icon('gift', 110, 2.2)}<div class="big" style="font-size:44px">Another toy</div></div>
+    <div class="box gf" style="left:492px;top:0;width:460px;height:430px;background:#5FE0A8;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px">${icon('sofa', 110, 2.2)}<div class="big" style="font-size:44px">Time together</div></div>
+    <div class="bub" id="ld" style="left:120px;top:490px;font:700 30px/1.2 Urbanist;white-space:normal;max-width:720px;background:#FFF9EC">"...something more meaningful than another toy." Linda, early-access grandma</div>`,
+  tl: `
+    tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
+      .from('.hl mark',{scale:0,duration:.4,ease:'back.out(3)'},.45)
+      .from('.gf',{y:110,opacity:0,duration:.5,ease:'back.out(1.6)',stagger:.5},.9)
+      .from('#ld',{scale:0,transformOrigin:'20% 0',duration:.45,ease:'back.out(2)'},2.4);` };
+
+cards['wk-21-fridge'] = { theme: 'm', chip: 'Why we exist',
+  hl: `A reason to<br><mark>show you</mark><br>something.`,
+  stage: `
+    <div class="box" id="fr" style="left:40px;top:20px;width:400px;height:520px;background:#FFF9EC;padding:26px">
+      <div class="lab">Paper drawings had</div>
+      <div style="position:relative;margin:26px auto 0;width:280px;height:360px;border:6px solid #141A33;border-radius:18px;background:#EDEFF4">
+        <div style="position:absolute;left:24px;top:60px;width:230px;height:170px;background:#FFFEF8;border:4px solid #141A33;border-radius:6px;transform:rotate(-3deg)">
+          <div style="margin:18px;height:8px;border-radius:4px;background:#FF6F4A;width:70%"></div>
+          <div style="margin:18px;height:8px;border-radius:4px;background:#5FE0A8;width:50%"></div>
+          <div style="margin:18px;height:8px;border-radius:4px;background:#FFC533;width:60%"></div>
+        </div>
+        <div id="mg" style="position:absolute;left:128px;top:44px;width:28px;height:28px;border:4px solid #141A33;border-radius:50%;background:#FF6F4A"></div>
+      </div>
+      <div class="big" style="text-align:center;font-size:34px;margin-top:18px">the fridge door</div>
+    </div>
+    <div class="box" id="tv" style="left:512px;top:20px;width:400px;height:520px;background:#FFF9EC;padding:26px">
+      <div class="lab">Screens can have</div>
+      <div style="margin:26px auto 0;width:300px;height:220px;border:6px solid #141A33;border-radius:18px;background:#BFE9FF;position:relative;overflow:hidden">
+        <div style="position:absolute;left:0;right:0;bottom:0;height:40px;background:#5FE0A8;border-top:5px solid #141A33"></div>
+        ${[[30, 90, '#FFC533'], [120, 120, '#FF6F4A'], [210, 70, '#141A33']].map(([x, y, c]) => `<div class="bl" style="position:absolute;left:${x}px;top:${y}px;width:56px;height:56px;border:4px solid #141A33;border-radius:10px;background:${c}"></div>`).join('')}
+      </div>
+      <div class="bub" id="lk" style="position:relative;margin:30px auto 0;width:fit-content;font:800 32px Sora;background:#FFC533">"Look what I made!"</div>
+    </div>`,
+  tl: `
+    tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
+      .from('.hl mark',{scale:0,duration:.4,ease:'back.out(3)'},.45)
+      .from('#fr',{x:-120,opacity:0,duration:.5,ease:'power3.out'},.9)
+      .from('#mg',{scale:0,duration:.3,ease:'back.out(3)'},1.5)
+      .from('#tv',{x:120,opacity:0,duration:.5,ease:'power3.out'},2.0)
+      .from('.bl',{y:-200,opacity:0,duration:.5,ease:'bounce.out',stagger:.35},2.6)
+      .from('#lk',{scale:0,duration:.4,ease:'back.out(3)'},4.2);` };
+
 
 // ------------------------------------------------------------------------------------------ render
 const run = (cmd, args) => new Promise((res, rej) => spawn(cmd, args, { stdio: 'inherit' }).on('close', (c) => (c ? rej(new Error(`${cmd} ${c}`)) : res())));
 
 async function render(browser, id) {
   const c = cards[id];
-  if (!posts.find((p) => p.id === id)) throw new Error(`${id}: not a post in text.mjs`);
+  if (!posts.find((p) => p.id === id) && !cards[id]) throw new Error(`${id}: unknown card`);
   const html = `<!doctype html><meta charset="utf-8"><style>${css()}${style}</style>
     <div class="tile ${c.theme}">${chip(c.chip)}<div class="hl"${c.hlSize ? ` style="font-size:${c.hlSize}px"` : ''}>${c.hl}</div><div class="stage">${c.stage}</div>${foot}</div>
     <script src="${GSAP}"></script>
