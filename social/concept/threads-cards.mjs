@@ -325,27 +325,33 @@ const cards = {
         .from('.guilt',{width:0,duration:1.1,ease:'power2.out',stagger:.25},3.2)
         .from('#why',{scale:0,duration:.4,ease:'back.out(3)'},4.6);` },
 
-  // 4. kids just say what they want. grown ups write three paragraphs first.
+  // 4. what do you ask an AI? something useful. now ask your kid: a flying dog that runs a pizza shop
   'v2-04-who-asks-better': { theme: 'y', chip: 'You decide',
-    hl: `Who asks AI<br><mark>better?</mark>`,
+    hl: `What would<br>your <mark>kid</mark> ask?`,
     stage: `
-      <div class="box" style="left:0;top:0;width:400px;height:600px;padding:30px">
-        <div class="lab">Kid, 10</div>
-        <div class="bub" id="kq" style="position:relative;margin-top:24px;white-space:normal;background:#FFF4DC;font:700 36px/1.2 Urbanist">Make a game where my cat is the boss</div>
-        <div class="bub" id="kt" style="left:30px;bottom:30px;font:800 34px Sora;background:#5FE0A8">1 line</div>
+      <div class="box" id="you" style="left:0;top:0;width:420px;height:600px;padding:30px">
+        <div class="lab">You ask</div>
+        <div class="bub yb" style="position:relative;margin-top:30px;white-space:normal;background:#EFEAD8;font:700 34px/1.2 Urbanist">A meal plan for the week</div>
+        <div class="bub yb" style="position:relative;margin-top:22px;white-space:normal;background:#EFEAD8;font:700 34px/1.2 Urbanist">Fix this email</div>
+        <div class="lab" id="yl" style="position:absolute;left:30px;bottom:30px;opacity:.55">useful. fine.</div>
       </div>
-      <div class="box" style="left:440px;top:0;width:512px;height:600px;padding:30px">
-        <div class="lab">Grown up</div>
-        ${[0, 1, 2].map((g) => `<div style="margin-top:${g ? 26 : 24}px">${[1, .92, .97, .6].map((w) => `<div class="ln" style="height:18px;border-radius:9px;background:#C9C3B2;margin-top:12px;width:${w * 100}%"></div>`).join('')}</div>`).join('')}
-        <div class="bub" id="gt" style="right:30px;bottom:30px;font:800 34px Sora;background:#FF6F4A">3 paragraphs</div>
+      <div class="box" id="kd" style="left:460px;top:0;width:492px;height:600px;padding:30px;background:#FFF9EC">
+        <div class="lab">Your kid asks</div>
+        <div class="bub" id="kb" style="position:relative;margin-top:30px;white-space:normal;background:#FF6F4A;font:800 42px/1.12 Sora;padding:22px 26px">A flying dog that runs a pizza shop</div>
+        <div id="ki" style="display:flex;gap:26px;margin-top:34px">
+          <div class="kic" style="width:120px;height:120px;border:5px solid #141A33;border-radius:50%;background:#FFC533;display:flex;align-items:center;justify-content:center">${icon('dog', 70, 2.4)}</div>
+          <div class="kic" style="width:120px;height:120px;border:5px solid #141A33;border-radius:50%;background:#5FE0A8;display:flex;align-items:center;justify-content:center">${icon('pizza', 70, 2.4)}</div>
+        </div>
       </div>`,
     tl: `
       tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
         .from('.hl mark',{scale:0,duration:.4,ease:'back.out(3)'},.45)
-        .from('#kq',{scale:0,transformOrigin:'0 0',duration:.4,ease:'back.out(2.4)'},1.0)
-        .from('#kt',{scale:0,duration:.35,ease:'back.out(2.6)'},1.6)
-        .from('.ln',{width:0,duration:.22,ease:'none',stagger:.18},1.4)
-        .from('#gt',{scale:0,duration:.35,ease:'back.out(2.6)'},4.0);` },
+        .from('#you',{x:-90,opacity:0,duration:.5,ease:'power3.out'},.9)
+        .from('.yb',{scale:0,transformOrigin:'0 0',duration:.35,ease:'back.out(2.4)',stagger:.4},1.5)
+        .from('#yl',{opacity:0,duration:.3},2.6)
+        .from('#kd',{x:90,opacity:0,duration:.5,ease:'power3.out'},3.0)
+        .from('#kb',{scale:0,transformOrigin:'0 0',duration:.45,ease:'back.out(2.4)'},3.6)
+        .from('.kic',{scale:0,duration:.4,ease:'back.out(2.6)',stagger:.3},4.3);` },
 
   // 7. school says cheating, plenty of others say a skill, your kid sits in the middle
   'v2-02-school-vs-world': { theme: 'm', chip: 'You decide',

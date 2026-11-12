@@ -23,9 +23,9 @@
 `mk-copywriting` (набор coreyhaines31/marketingskills, MIT). Настоящие истории только от Анны: вопросы в документе.
 
 ## Профиль Threads (предложение, 12.11.2026)
-Описание (134 из 150): «A mom and her 10-year-old teaching kids 6-14 to make cartoons, games and songs with AI. Side by side with a parent. First lesson free.»
+Описание (137 из 150, взято из описания Instagram): «Your kid makes a cartoon, a game, a song with AI. You sit next to them. Ages 6-14. No code. By mom Anna & Kamilla, 10. Free first lesson.»
 Ссылка: https://www.makeshowlab.com/?utm_source=threads&utm_medium=social&utm_campaign=profile#free (показывается как makeshowlab.com).
-Имя: Make Show Lab. Аватар: `social/brand/logo/avatar/avatar-1080.png`. Вписывается вручную в приложении. Макет: `text/threads/review/profile.png`
+Имя: Make Show Lab | AI for Kids (как в Instagram). Аватар: `social/brand/logo/avatar/avatar-1080.png`. Вписывается вручную в приложении. Макет: `text/threads/review/profile.png`
 (`node social/concept/threads-profile.mjs`). Запасные описания: «AI for kids 6-14, side by side with a parent. Don't let AI think for your child. Teach them to think with it. First lesson free.» и «Cartoons, games and songs your kid makes with AI. A mom and her 10-year-old show how. First lesson free.»
 
 ## Утверждено владельцем по одному

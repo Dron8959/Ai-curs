@@ -18,9 +18,9 @@ const OUT = join(CARDS, 'review');
 mkdirSync(OUT, { recursive: true });
 
 export const PROFILE = {
-  name: 'Make Show Lab',
+  name: 'Make Show Lab | AI for Kids',
   handle: 'make_showlab',
-  bio: 'A mom and her 10-year-old teaching kids 6-14 to make cartoons, games and songs with AI. Side by side with a parent. First lesson free.',
+  bio: 'Your kid makes a cartoon, a game, a song with AI. You sit next to them. Ages 6-14. No code. By mom Anna & Kamilla, 10. Free first lesson.',
   linkText: 'makeshowlab.com',
   linkUrl: 'https://www.makeshowlab.com/?utm_source=threads&utm_medium=social&utm_campaign=profile#free',
 };
