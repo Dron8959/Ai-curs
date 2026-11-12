@@ -15,12 +15,13 @@ included, and every line has to come back word for word.
 Only Anna's lines are made here. Kamilla is a child: her voice is not cloned, she records her lines herself.
 The recording and everything made from it stay out of git (the repository is public).
 """
-import argparse, difflib, json, logging, re, subprocess, sys, time, warnings
+import argparse, difflib, json, logging, os, re, subprocess, sys, time, warnings
 from pathlib import Path
 
 warnings.filterwarnings('ignore')
 logging.disable(logging.WARNING)
 ROOT = Path(__file__).resolve().parent.parent
+VOICE = ROOT / os.environ.get('VOICE_DIR', 'out/voice')   # where the lines go (a folder per reel); VOICE_DIR overrides it, e.g. for tests
 SEEDS = [7, 11, 23, 42, 5, 19, 31, 3]
 SET = {'exaggeration': 0.45, 'cfg_weight': 0.5, 'temperature': 0.7}
 # the reference: rumble out, pauses over 0.45 s closed, level evened, first 28 s (the model reads the first 10)
@@ -58,8 +59,8 @@ def heard_in_mix(rid, film):
     """the finished mix through the speech model: is every line still there, word for word, over the music?"""
     import librosa
     from transformers import pipeline
-    take = json.loads((ROOT / 'out/voice' / rid / 'lines.json').read_text())
-    wav = ROOT / 'out/voice' / rid / 'heard.wav'
+    take = json.loads((VOICE / rid / 'lines.json').read_text())
+    wav = VOICE / rid / 'heard.wav'
     subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-i', str(film), '-vn', '-ar', '16000', '-ac', '1', str(wav)], check=True)
     y, _ = librosa.load(wav, sr=16000, mono=True)
     asr = pipeline('automatic-speech-recognition', model='openai/whisper-small', device='cpu')
@@ -96,9 +97,9 @@ def main():
     ref = Path(a.ref).resolve()
     if not ref.exists():
         sys.exit(f'no recording at {ref}')
-    out = ROOT / 'out/voice' / rid
+    out = VOICE / rid
     out.mkdir(parents=True, exist_ok=True)
-    refwav = ROOT / 'out/voice/ref.wav'
+    refwav = VOICE / 'ref.wav'
     subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-i', str(ref), '-af', REF_AF, '-ar', '24000', '-ac', '1',
                     '-t', '28', str(refwav)], check=True)
 
@@ -169,7 +170,7 @@ def main():
     for l in others:
         print(f"scene {l['scene']}  not made ({l['who']} records it)  | {l['text']}")
     bad = [t['scene'] for t in done if not t['exact']]
-    print(f"{rid}: {len(done)} lines in {out.relative_to(ROOT)}" + (f', check scenes {bad} by ear' if bad else ', all heard word for word'))
+    print(f"{rid}: {len(done)} lines in {out}" + (f', check scenes {bad} by ear' if bad else ', all heard word for word'))
 
 
 if __name__ == '__main__':

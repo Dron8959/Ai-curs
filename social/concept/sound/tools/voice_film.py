@@ -22,10 +22,11 @@ Effects stay as they are.
 The voice sits on the mixer's spare bus (amb), centred. Its tone: rumble under 100 Hz out, a little less weight at
 200 Hz, 3 dB more around 2.5 kHz. Anna's recording is 3-4 dB darker there than average speech.
 """
-import json, sys
+import json, os, sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+V = os.environ.get('VOICE_DIR', 'out/voice')   # where the lines are (a folder per reel), relative to sound/ or absolute
 LEAD, AFTER_LOGO, GAP, TAIL = 0.35, 0.40, 0.12, 0.3
 UNDER, FLOOR, DOWN, UP = -13.0, -20.0, 0.20, 0.45
 MARGIN, MARGIN_C = 10.0, 8.0
@@ -35,8 +36,8 @@ VOICE_EQ, VOICE_GAIN = {'hp': 100, 'lowshelf': [200, -2], 'peq': [[2500, 0.7, 3.
 def load(rid):
     film = json.loads((ROOT / f'audio/films/{rid}.json').read_text())
     cues = json.loads((ROOT / f'cues/{rid}.json').read_text())
-    take = json.loads((ROOT / f'out/voice/{rid}/lines.json').read_text())
-    hold = ROOT / f'out/voice/{rid}/hold.json'
+    take = json.loads((ROOT / V / rid / 'lines.json').read_text())
+    hold = ROOT / V / rid / 'hold.json'
     return film, cues, take, (json.loads(hold.read_text()) if hold.exists() else {})
 
 
@@ -63,7 +64,9 @@ def placement(film, cues, take, hold):
         by = end[n] - GAP if n != order[-1] else film['duration'] - TAIL
         if at + dur > by:
             at, why = max(start[n] + 0.05, by - dur), why + ', pulled earlier to fit'
-        rows.append({'scene': n, 'at': round(at, 3), 'dur': dur, 'why': why, 'fits': at + dur <= by + 1e-6,
+        over = max(0.0, at + dur - by)
+        rows.append({'scene': n, 'at': round(at, 3), 'dur': dur, 'why': why, 'fits': over < 1e-6,
+                     'beats': -(-over // (60 / cues.get('bpm', 130))) if over else 0,
                      'file': ln['file'], 'text': ln['text'], 'under': float(hold.get(str(n), UNDER))})
     return rows
 
@@ -101,7 +104,7 @@ def margins(rid, rows):
     """per line: voice level, bed level, voice over the bed (whole band) and between 1 and 4 kHz"""
     import numpy as np, soundfile as sf
     from scipy import signal
-    stems = ROOT / f'out/voice/{rid}/stems'
+    stems = ROOT / V / rid / 'stems'
     amb, sr = sf.read(stems / 'amb.wav')
     bed = sf.read(stems / 'music.wav')[0] + sf.read(stems / 'sfx.wav')[0]
     sos = signal.butter(4, [1000, 4000], btype='band', fs=sr, output='sos')
@@ -122,7 +125,7 @@ def fit(rid, rows):
         if need:
             print(f"scene {r['scene']}  music held {need:.1f} dB lower, at {hold[str(r['scene'])]} dB "
                   f"(the voice stood {over:.1f} dB over it, {over_c:.1f} dB between 1 and 4 kHz)")
-    (ROOT / f'out/voice/{rid}/hold.json').write_text(json.dumps(hold))
+    (ROOT / V / rid / 'hold.json').write_text(json.dumps(hold))
 
 
 def check(rid, rows):
@@ -150,23 +153,27 @@ def main():
     if '--check' in sys.argv:
         sys.exit(0 if check(rid, rows) else 1)
 
-    V = f'out/voice/{rid}'
+    D = f'{V}/{rid}'
     design = {
         '_doc': 'Voice lines of the voiced version. Not part of the real-recordings soundtrack and not committed: '
                 "a real person's voice, published only with her consent and, if it is cloned, with the AI label.",
-        'samples': {f"vo.{r['scene']}": {'file': f"{V}/{r['file']}", 'mono': True, 'eq': VOICE_EQ, 'fade_in': 0.005,
+        'samples': {f"vo.{r['scene']}": {'file': f"{D}/{r['file']}", 'mono': True, 'eq': VOICE_EQ, 'fade_in': 0.005,
                                          'fade_out': 0.06} for r in rows},
         'place': [{'sample': f"vo.{r['scene']}", 'at': r['at'], 'align': 'start', 'gain_db': VOICE_GAIN, 'pan': 0,
                    'bus': 'amb'} for r in rows]}
-    (ROOT / V / 'design.json').write_text(json.dumps(design, indent=1))
+    (ROOT / D / 'design.json').write_text(json.dumps(design, indent=1))
     film['_doc'] = 'VOICED VERSION (see tools/voice_film.py). ' + film['_doc']
-    film['include'] = film['include'] + [f'{V}/design.json']
+    film['include'] = film['include'] + [f'{D}/design.json']
     film['buses']['music']['auto'] = ducked(film['buses']['music']['auto'], rows, film['duration'])
-    (ROOT / V / 'film.json').write_text(json.dumps(film, indent=1))
+    (ROOT / D / 'film.json').write_text(json.dumps(film, indent=1))
     for r in rows:
         print(f"scene {r['scene']}  {r['at']:6.2f}-{r['at'] + r['dur']:5.2f} s  {r['why']}{'' if r['fits'] else '  DOES NOT FIT'}  | {r['text']}")
     if not all(r['fits'] for r in rows):
-        sys.exit(f'{rid}: a line is longer than its scene. Shorten the line in VOICEOVER.md or give the scene a beat.')
+        for r in rows:
+            if not r['fits']:
+                print(f"scene {r['scene']}: the line is too long for the scene, give the scene {int(r['beats'])} more beat(s) in reels.mjs")
+        sys.exit(f'{rid}: a line is longer than its scene. The picture follows the voice: add the beats, re-render the reel '
+                 '(node render.mjs reel <id>) and run this again; or shorten the line in VOICEOVER.md.')
 
 
 if __name__ == '__main__':

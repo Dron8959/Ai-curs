@@ -1,70 +1,67 @@
 # Voice-over: lines and timing
 
-The published reels have music and effects and no voice. A voice is the owner's call. This file is what a
-voice needs: the line for every scene and the seconds it has. One sample exists, reel 05 (see "State").
+The published reels have music and effects and no voice yet. The voice will be two real people: Anna and
+Kamilla record the lines themselves (the owner's decision, 12 November 2026). This file holds the lines, the
+history of that decision and what turns a phone recording into a voiced reel.
 
-## Four ways to do it
-1. **Anna and Kamilla record it.** The brand is a mom and a daughter, not a corporation, and their real
-   voices say that better than any design. A real voice also needs no AI label. A phone is enough: a quiet
-   room, the phone 15-20 cm from the mouth, one voice memo per reel, each line said twice with a breath
-   between. The files go to `social/media/voice/` (any format; that folder never reaches git). They get cut
-   to the scenes, the music is held down under each line, and the reel is mastered again.
-2. **Anna's own voice, cloned from her recording.** On 11 November 2026 the owner sent a recording of Anna
-   for this (85 s, English). An open model (Chatterbox, MIT licence) reads her lines in her voice on this
-   machine; the recording is not uploaded to any service. Three conditions:
-   - Anna agrees to it, and hears every reel before it goes out;
-   - every reel with it carries the platform's AI label. That is the brand's own rule (AI is always
-     labelled), and the platforms ask for it when a synthetic voice sounds real;
-   - the recording and everything made from it stay out of git: this repository is public.
+## How the decision was made
+- **11 Nov:** one sample, reel 05 with Anna's voice cloned from her recording by an open model (Chatterbox,
+  MIT, run on this machine). By measurement it was fine: every line heard word for word, resemblance 0.86-0.90
+  to her recording (two halves of her own recording score 0.97, a stranger's voice 0.54), the voice 12-25 dB
+  over the music.
+- **12 Nov:** the owner listened: weak, not how a person speaks, no life in it. Rejected. Measurements say
+  nothing about life, which is exactly what was missing. The cloned voice is not used for any published reel.
+  The tools stay (`tools/voice_clone.py`) as a scratch voice for trying a line's length, never for publishing.
+- **12 Nov:** Anna and Kamilla record every line live, with expression. A real voice also needs no AI label
+  (the pictures that are AI-made keep theirs). Kamilla is a child and her voice is never cloned.
 
-   Only Anna. Kamilla is a child and her voice is not cloned. Her lines (reels 02, 06, 07) she records
-   herself, or those reels stay without a voice.
-3. **A neutral AI narrator.** A stock voice saying "I'm Anna" would not be true, so it could only read
-   lines that do not speak as Anna or Kamilla. The weakest option for this brand.
-4. **No voice.** Text on screen, music and effects. This is what the reels are now.
+## What each of them records
+Two briefs, one PDF each: `social/concept/out/voice-brief-anna.pdf` and `voice-brief-kamilla.pdf`
+(`node social/concept/sound/tools/voice_brief.mjs` builds them from this file; it stops if a line here and in
+the brief differ). First page: how to record on a phone. Then a page per reel: every line, what it means in
+Russian, how to say it, boxes for the takes.
+- **Anna:** reels 02, 05, 08. **Kamilla:** reels 02, 06, 07. The last line of 02 they say together, into one phone.
+- **Reels 01 and 04 wait.** They stand on two facts the owner has not confirmed (the 6-year-old's drawing, the
+  7:02 to 7:41 story). Recording before that risks recording twice.
+- One recording per reel, any phone voice-memo app (not a messenger's voice message: it is squeezed), 5 s of
+  silence first, every line twice with a pause between. No names or numbers need to be said.
 
-Routes 1 and 2 work together: the clone is quick for trying a line and its timing, and Anna can record the
-final take once the words are settled.
-
-## State on 11 November 2026: one sample
-Reel 05 has a voiced version for the owner to judge: `social/concept/out/voice-sample-05.mp4` (not in the
-repository). Route 2, four lines by Anna. What was measured:
-- **Words.** Every take, and then the finished file with music and effects, went through an open speech
-  model (Whisper small). All four lines came back word for word both times.
-- **Resemblance.** By the voice model's own speaker encoder, where 1.0 is the same voice: the four lines
-  score 0.86-0.90 against Anna's recording. For scale, two halves of her own recording score 0.97 against
-  each other, and the model's stock voice scores 0.54.
-- **Levels.** The voice stands 12-25 dB over music and effects, and 8-20 dB over them between 1 and 4 kHz,
-  where consonants live. The MP4 is at -14.0 LUFS, true peak -2.2 dBTP.
-- **Not measured: whether it sounds like her, and alive rather than read out.** Nobody has listened. That is
-  for Anna and the owner. Known limits: the model works at 24 kHz, so the voice is a little duller than a
-  good recording; her recording is dark by itself (3-4 dB less than average speech between 1 and 5 kHz), so
-  the voice gets 3 dB around 2.5 kHz in the mix.
-- The voice model stamps its output with an inaudible watermark (Resemble Perth). Whether it survives the
-  mix and the AAC encode was not tested.
-
-Nothing else is voiced until the owner approves this one.
-
-## Making a voiced version
+## From recording to voiced reel
 ```
-python3 -m venv v && v/bin/pip install torch==2.6.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cpu \
-  && v/bin/pip install chatterbox-tts                           # once: VOICE_PY=v/bin/python, about 2 GB + 4 GB of models
-$VOICE_PY social/concept/sound/tools/voice_clone.py 05          # Anna's lines of reel 05; each take checked word for word
+# 1. the recordings go to social/media/voice/ (any names, any format; that folder never reaches git)
+# 2. cut them into lines: needs a Python with torch, transformers, librosa, soundfile, scipy (VOICE_PY)
+$VOICE_PY social/concept/sound/tools/voice_cut.py            # or: ... voice_cut.py --reel 05
+# 3. place the lines on the reel, hold the music down under them, mix, check, mux
 REAL_SOUND=<skill folder> SOUND_PY=<as for build.sh> VOICE_PY=<as above> social/concept/sound/voice.sh 05
+# 4. a take sounds better than the automatic choice? swap it and repeat 3
+$VOICE_PY social/concept/sound/tools/voice_cut.py --use 05:3=2
 ```
-`voice.sh` places the lines, holds the music down under them, mixes, checks and writes
-`social/concept/out/voice-sample-05.mp4`. The published `reel.mp4` is not touched. A reel takes a few minutes
-on a CPU. Cutting a real recording into lines (route 1) is not built yet; placing and mixing are shared.
+`voice_cut.py` finds the phrases, has an open speech model (Whisper small, local, nothing uploaded) write each
+down with word times, and matches them against the lines below, so recordings need no names. A line said twice
+gives two takes, a false start is skipped, a breath before a line is dropped. The cuts go to
+`out/voice/<reel>/<scene>.wav` (takes in `takes/`). The automatic choice: heard word for word, then not clipped,
+then cleaner, then the later one. Which take sounds best is for ears. Anything doubtful is printed: a line not
+found, noise, clipping, an edge cut by guess. `--model openai/whisper-medium` hears kids and accents better.
 
-Where a line starts: 0.35 s after its scene begins. A word in *stars* lands on the picture: the line is
-placed so that this word arrives with the first thing that lands in the scene. On the closing card the line
-waits 0.4 s after the logo. Under a line the music is held 13 dB below its full level, lower if the
-measurement asks for it (`tools/voice_film.py` explains the rules).
+**The picture follows the voice.** A person says a line slower than a scene allows. When a line is longer than
+its scene, `voice.sh` stops and says how many beats the scene needs; add them in `reels.mjs`, re-render the reel
+(`node social/concept/render.mjs reel 05`) and run it again. The music cut of the reel (`music-edits.json`)
+follows the length, so a longer reel means rebuilding that reel's sound. This is manual for now.
+
+Where a line starts: 0.35 s after its scene begins. A word in *stars* lands on the picture: the line is placed so
+that this word arrives with the first thing that lands in the scene. On the closing card the line waits 0.4 s
+after the logo. Under a line the music is held 13 dB below its full level, lower if the measurement asks for it
+(`tools/voice_film.py` explains the rules). The published `reel.mp4` is never touched: the voiced reel is written
+next to it (`social/concept/out/voice-sample-NN.mp4`, not committed) until the owner approves it.
+
+Not built yet: noise removal (add it only if the real recordings need it), and the voice for reel 02's joint
+line is cut from whichever recording holds it.
 
 ## Lines
-Every fact is the same as in the captions (`social/brand/facts.md`). Aim for 2.5 words a second or fewer;
-lines marked (tight) are over 3 and want a brisk read or a trim. Anna speaks reels 01, 04, 05 and 08,
-Kamilla 06 and 07, both of them 02.
+Every fact is the same as in the captions (`social/brand/facts.md`). Anna speaks reels 01, 04, 05 and 08,
+Kamilla 06 and 07, both of them 02. The seconds are the scene lengths of the reels today. A person with
+expression is slower than a scene made for a machine voice (lines marked (tight) are over 3 words a second),
+and the picture follows the voice, so these numbers are a starting point, not a limit.
 
 
 ### 01-crayon-to-cartoon · Anna · 13.8 s

@@ -16,7 +16,9 @@ skill (real recordings, one licensed track, a deterministic mixer, measured inst
 | `tools/events.py`, `tools/chords.py` | list the sounds inside a recording / the chord of every bar |
 | `build.sh` | mix, check and attach the soundtrack |
 | `VOICEOVER.md` | the voice: the options, the lines, the state of the one sample |
-| `tools/voice_clone.py`, `tools/voice_film.py`, `voice.sh` | a voiced version of a reel next to the published one (see `VOICEOVER.md`) |
+| `tools/voice_brief.mjs` | the recording briefs for Anna and Kamilla (PDF) |
+| `tools/voice_cut.py`, `tools/voice_film.py`, `voice.sh` | live recordings -> lines -> a voiced version of a reel next to the published one |
+| `tools/voice_clone.py` | a scratch voice cloned from a recording; rejected for publishing (see `VOICEOVER.md`) |
 
 ## Rebuild
 ```
@@ -39,5 +41,5 @@ effect audible, every placement on its cue. Not done: listening by a person, and
 tools (earshot) were not available, so "is it a real recording" and "does it sound right" rest on the
 library's own description and on measurements.
 
-One voiced sample exists outside the repository (reel 05, Anna's voice cloned from her recording); the
-seven published reels have no voice. Details in `VOICEOVER.md`.
+The seven published reels have no voice. Anna and Kamilla record the lines themselves; a cloned sample
+was tried and rejected as lifeless. Details in `VOICEOVER.md`.
