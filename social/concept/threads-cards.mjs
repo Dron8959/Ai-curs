@@ -539,8 +539,8 @@ cards['wk-21-fridge'] = { theme: 'm', chip: 'Why we exist',
   stage: `
     <div class="box" id="fr" style="left:40px;top:20px;width:400px;height:520px;background:#FFF9EC;padding:26px">
       <div class="lab">Paper drawings had</div>
-      <div style="position:relative;margin:26px auto 0;width:280px;height:360px;border:6px solid #141A33;border-radius:18px;background:#EDEFF4">
-        <div style="position:absolute;left:24px;top:60px;width:230px;height:170px;background:#FFFEF8;border:4px solid #141A33;border-radius:6px;transform:rotate(-3deg)">
+      <div style="position:relative;margin:26px auto 0;width:280px;height:290px;border:6px solid #141A33;border-radius:18px;background:#EDEFF4">
+        <div style="position:absolute;left:24px;top:52px;width:230px;height:160px;background:#FFFEF8;border:4px solid #141A33;border-radius:6px;transform:rotate(-3deg)">
           <div style="margin:18px;height:8px;border-radius:4px;background:#FF6F4A;width:70%"></div>
           <div style="margin:18px;height:8px;border-radius:4px;background:#5FE0A8;width:50%"></div>
           <div style="margin:18px;height:8px;border-radius:4px;background:#FFC533;width:60%"></div>
@@ -555,7 +555,7 @@ cards['wk-21-fridge'] = { theme: 'm', chip: 'Why we exist',
         <div style="position:absolute;left:0;right:0;bottom:0;height:40px;background:#5FE0A8;border-top:5px solid #141A33"></div>
         ${[[30, 90, '#FFC533'], [120, 120, '#FF6F4A'], [210, 70, '#141A33']].map(([x, y, c]) => `<div class="bl" style="position:absolute;left:${x}px;top:${y}px;width:56px;height:56px;border:4px solid #141A33;border-radius:10px;background:${c}"></div>`).join('')}
       </div>
-      <div class="bub" id="lk" style="position:relative;margin:30px auto 0;width:fit-content;font:800 32px Sora;background:#FFC533">"Look what I made!"</div>
+      <div class="bub" id="lk" style="position:relative;margin:30px auto 0;width:fit-content;font:800 26px Sora;background:#FFC533">"Look what I made!"</div>
     </div>`,
   tl: `
     tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
