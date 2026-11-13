@@ -27,10 +27,10 @@ export const BATCH2 = [
   { n: 14, series: 'Made by a kid', rubric: 'show', format: 'Reel', slot: 'Fri 20 Nov, 12:30',
     hook: 'A 10-year-old made this cartoon. How?', paradox: 'She didn\'t draw a single frame.',
     visual: 'Kamilla\'s cartoon playing, with each step stamped over it: idea, characters, scenes, voice.',
-    answer: '[NEED: steps, tool and minutes from Anna]',
+    answer: 'She told the AI her story and her characters, checked every scene, and fixed the ones that came out wrong. About 20 minutes, two or three tries per scene.',
     bridge: 'Your kid can start with the same lesson.',
     ask: ['send', 'Send this to someone who thinks kids just watch cartoons.'],
-    note: 'Нужны цифры от Ани: каким сервисом, сколько минут, сколько попыток. Без них не публикуем. «9 лет и 20 минут» из примера не используем, пока это не подтверждено.' },
+    note: 'Владелец 13.11: около 20 минут, обычно 2-3 попытки. Сервис не называем, он не нужен для поста. Пишем «about 20 minutes», не точное число.' },
   { n: 15, series: 'How it works', rubric: 'make', format: 'Carousel', slot: 'Fri 20 Nov, 19:30',
     hook: 'How much AI at 6, 10 and 14?', paradox: 'The younger the kid, the less they touch the keyboard.',
     visual: 'Three cards with a keyboard bar that grows with age.',
@@ -82,9 +82,18 @@ export const BATCH2 = [
     note: 'Все факты из раздела «Бесплатный урок» в facts.md.' },
 ];
 
-export const QUESTIONS = [
+export const DONE = [
+  'Слово в комментарии: пока отвечаем сами. Тексты ответов и порядок в social/concept/DM.md, автоматизация потом (Meta Business Suite бесплатно или ManyChat).',
+  'Минимум 3 поста каждый день, 21 в неделю.',
+  'Пост 14: около 20 минут, 2-3 попытки (владелец).',
+  'Памятка RULES картинкой: готова, ниже.',
+];
+
+export const QUESTIONS_OLD = [
   'Кто отвечает на слово в комментарии? Нужен ManyChat (комментарий со словом → сообщение со ссылкой) или человек, который отвечает вручную в течение часа. Без этого посты со словом не выходят.',
   'Три поста в день это 21 в неделю, а не 30. Оставляем 21 или нужно 4-5 постов в день?',
   'Для поста 14 нужны цифры от Ани: каким сервисом Камилла сделала мультфильм, сколько минут, сколько попыток.',
   'Памятка «5 AI house rules» для холодильника: картинкой или PDF? Делаю из слайда 8 поста 3.',
 ];
+
+export const QUESTIONS = ['Ок на план постов 11-21 целиком или правки по номерам. После этого собираю их.'];

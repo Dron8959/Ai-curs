@@ -9,7 +9,7 @@ import { fileURLToPath } from 'node:url';
 import { slotOf } from './schedule.mjs';
 import { META } from './meta.mjs';
 import { PASS, COMMON } from './pass.mjs';
-import { BATCH2, QUESTIONS } from './batch2.mjs';
+import { BATCH2, QUESTIONS, DONE } from './batch2.mjs';
 
 const concept = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const site = join(concept, 'out', 'review', 'site');
@@ -61,7 +61,11 @@ const posts = readdirSync(join(concept, 'posts')).filter((d) => /^\d\d-/.test(d)
     ai: fm.ai_generated === 'true', alt: fm.alt || '', meta: META[n], pass: PASS[n], slot: slot ? slot.text : '' };
 });
 
-const DATA = JSON.stringify({ posts, common: COMMON, plan: BATCH2, questions: QUESTIONS });
+copyFileSync(join(concept, 'out', 'rules-card.png'), join(site, 'm', 'rules-card.png'));
+const DM = readFileSync(join(concept, 'DM.md'), 'utf8');
+const block = (h) => (DM.split(h)[1] || '').split('```')[1].trim();
+const DMS = { game: block('## GAME'), rules: block('## RULES') };
+const DATA = JSON.stringify({ posts, common: COMMON, plan: BATCH2, questions: QUESTIONS, done: DONE, dms: DMS });
 const html = `<title>Make Show Lab Instagram</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Sora:wght@700;800&display=swap">
@@ -110,6 +114,7 @@ table{border-collapse:collapse;width:100%;font-size:13.5px}td{border-top:1px sol
 .head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}.head .n{background:#141A33;color:#FFC533;border-radius:8px;padding:0 10px;font:800 20px var(--display)}.head h3{margin:0;font:800 20px var(--display);letter-spacing:-.02em}.head span{color:var(--mut);font-size:13.5px}
 details{border-top:1px solid var(--line);padding-top:10px;margin-top:4px}summary{cursor:pointer;font-weight:600;color:var(--mut)}
 .views{display:flex;gap:6px;margin:0 0 14px;flex-wrap:wrap}.views button{font:600 14px var(--body);border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:20px;padding:7px 14px;cursor:pointer}.views button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}.views button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.dmrow{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:12px;margin-bottom:14px}@media (max-width:860px){.dmrow{grid-template-columns:1fr}}
 .rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-bottom:14px}.rules .card p{margin:0;font-size:14px}
 .pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}.pc{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
 .pc .top{display:flex;align-items:center;gap:8px;padding:10px 14px;font-size:12.5px;font-weight:700;color:#141A33}.pc .top .n{background:#141A33;color:#FFC533;border-radius:6px;padding:0 7px;font:800 13px var(--display)}.pc .top span:last-child{margin-left:auto;font-weight:600;opacity:.75}
@@ -188,7 +193,10 @@ function plan(){
  ['Broad AI topics','Why AI draws six fingers, how it draws from words, why it sounds sure when wrong. Interesting to the kid and the parent at once.'],
  ['Something to do after','Comment a word and get the free lesson or the fridge card in DMs, save it, or send it to a named person. One ask per post.']];
  document.getElementById('planview').innerHTML='<div class="rules">'+rules.map(([h,t])=>'<div class="card"><h2>'+esc(h)+'</h2><p>'+esc(t)+'</p></div>').join('')+'</div>'+
- '<div class="card hold" style="margin-bottom:14px"><h2>Needs your answer before I build these</h2><ul class="notes">'+D.questions.map(q=>'<li>'+esc(q)+'</li>').join('')+'</ul></div>'+
+ '<div class="card hold" style="margin-bottom:14px"><h2>Needs your answer</h2><ul class="notes">'+D.questions.map(q=>'<li>'+esc(q)+'</li>').join('')+'</ul></div>'+
+ '<div class="card pass" style="margin-bottom:14px"><h2>Decided 13 Nov</h2><ul class="notes">'+D.done.map(q=>'<li>'+esc(q)+'</li>').join('')+'</ul></div>'+
+ '<div class="dmrow"><div class="card"><h2>RULES card (sent in DMs)</h2><img src="m/rules-card.png" alt="5 AI house rules card" style="width:100%;border-radius:12px;display:block"></div>'+
+ '<div class="card"><h2>DM for GAME</h2><div class="full">'+esc(D.dms.game)+'</div><h2 style="margin-top:14px">DM for RULES</h2><div class="full">'+esc(D.dms.rules)+'</div></div></div>'+
  '<div class="pgrid">'+D.plan.map(p=>'<article class="pc"><div class="top r-'+p.rubric+'"><span class="n">'+p.n+'</span><span>'+esc(p.series)+' · '+esc(p.format)+'</span><span>'+esc(p.slot)+'</span></div><div class="body">'+
  '<h4>'+esc(p.hook)+'</h4><div><span class="lbl">Paradox</span>'+esc(p.paradox)+'</div><div><span class="lbl">One visual</span>'+esc(p.visual)+'</div>'+
  '<div><span class="lbl">Answer</span>'+esc(p.answer).replace(/\\[NEED:[^\\]]*\\]/g,m=>'<span class="need">'+m+'</span>')+'</div><div><span class="lbl">Back to the course</span>'+esc(p.bridge)+'</div>'+
