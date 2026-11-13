@@ -9,6 +9,7 @@ import { fileURLToPath } from 'node:url';
 import { slotOf } from './schedule.mjs';
 import { META } from './meta.mjs';
 import { PASS, COMMON } from './pass.mjs';
+import { BATCH2, QUESTIONS } from './batch2.mjs';
 
 const concept = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const site = join(concept, 'out', 'review', 'site');
@@ -60,7 +61,7 @@ const posts = readdirSync(join(concept, 'posts')).filter((d) => /^\d\d-/.test(d)
     ai: fm.ai_generated === 'true', alt: fm.alt || '', meta: META[n], pass: PASS[n], slot: slot ? slot.text : '' };
 });
 
-const DATA = JSON.stringify({ posts, common: COMMON });
+const DATA = JSON.stringify({ posts, common: COMMON, plan: BATCH2, questions: QUESTIONS });
 const html = `<title>Make Show Lab Instagram</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Sora:wght@700;800&display=swap">
@@ -108,14 +109,24 @@ table{border-collapse:collapse;width:100%;font-size:13.5px}td{border-top:1px sol
 .vo{display:grid;grid-template-columns:86px 1fr;gap:3px 10px;font-size:14px}.vo b{color:var(--mut);font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
 .head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}.head .n{background:#141A33;color:#FFC533;border-radius:8px;padding:0 10px;font:800 20px var(--display)}.head h3{margin:0;font:800 20px var(--display);letter-spacing:-.02em}.head span{color:var(--mut);font-size:13.5px}
 details{border-top:1px solid var(--line);padding-top:10px;margin-top:4px}summary{cursor:pointer;font-weight:600;color:var(--mut)}
+.views{display:flex;gap:6px;margin:0 0 14px;flex-wrap:wrap}.views button{font:600 14px var(--body);border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:20px;padding:7px 14px;cursor:pointer}.views button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}.views button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-bottom:14px}.rules .card p{margin:0;font-size:14px}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}.pc{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.pc .top{display:flex;align-items:center;gap:8px;padding:10px 14px;font-size:12.5px;font-weight:700;color:#141A33}.pc .top .n{background:#141A33;color:#FFC533;border-radius:6px;padding:0 7px;font:800 13px var(--display)}.pc .top span:last-child{margin-left:auto;font-weight:600;opacity:.75}
+.r-show{background:#FFC533}.r-lab{background:#FF8A6B}.r-make{background:#C9CFEA}.r-start{background:#5FE0A8}
+.pc .body{padding:12px 14px 14px;display:grid;gap:8px;font-size:14px}.pc h4{margin:0;font:800 19px/1.2 var(--display);letter-spacing:-.02em;text-wrap:balance}
+.pc .lbl{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mut);font-weight:700;display:block}.pc .ask{border-radius:10px;padding:7px 10px;background:var(--soft);font-weight:600}.pc .ask.keyword{background:var(--okbg);color:var(--ok)}
+.pc .nt{color:var(--mut);font-size:13px;border-top:1px solid var(--line);padding-top:8px}.need{background:var(--hold);color:var(--holdfg);border-radius:6px;padding:0 4px}
 @media (max-width:860px){.cols{grid-template-columns:1fr}.phonecol{position:static;max-width:372px;margin:0 auto}.pick{grid-template-columns:repeat(5,1fr)}}
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
 </style>
 <div class="wrap">
 <h1>Make Show Lab Instagram</h1>
-<p class="lead">The first ten posts of @make_showlab, each as it will look in the app. Tap a post. Reels play with their voice (tap the sound button), carousels swipe. Nothing here is published yet.</p>
-<div class="pick" id="pick" role="tablist" aria-label="Posts"></div>
-<div class="cols"><div class="phonecol"><div class="phone"><div class="screen" id="screen"></div></div><p class="note" id="note"></p></div><div class="side" id="side"></div></div>
+<p class="lead">The first ten posts of @make_showlab as they will look in the app, and the plan for the next eleven. Reels play with their voice (tap the sound button), carousels swipe. Nothing here is published yet.</p>
+<div class="views"><button id="v-posts" class="on">Posts 1-10</button><button id="v-plan">Next 11: plan to approve</button></div>
+<div id="postsview"><div class="pick" id="pick" role="tablist" aria-label="Posts"></div>
+<div class="cols"><div class="phonecol"><div class="phone"><div class="screen" id="screen"></div></div><p class="note" id="note"></p></div><div class="side" id="side"></div></div></div>
+<div id="planview" hidden></div>
 </div>
 <script>
 const D=${DATA};
@@ -158,8 +169,9 @@ function panel(p){
  (ps.screen.length?'<details open><summary>Changed on screen and in the voice</summary><table>'+ps.screen.map(([w,a,c])=>'<tr><td>'+esc(w)+'</td><td class="old">'+esc(a)+'</td><td class="nw">'+esc(c)+'</td></tr>').join('')+'</table></details>':'')+'</div>':'')+
  '<div class="card"><h2>Across all ten</h2><ul class="notes">'+D.common.map(t=>'<li>'+esc(t)+'</li>').join('')+'</ul></div>';
 }
+let cur=0;
 function show(i){
- const p=D.posts[i];[...pick.children].forEach((b,j)=>{b.classList.toggle('on',i===j);b.setAttribute('aria-selected',i===j)});
+ cur=i;const p=D.posts[i];[...pick.children].forEach((b,j)=>{b.classList.toggle('on',i===j);b.setAttribute('aria-selected',i===j)});
  screen.innerHTML=phone(p);side.innerHTML=panel(p);
  note.textContent=p.reel?(p.voiced?'The reel plays silently until you tap for sound.':'Reel without voice yet.'):'Swipe the slides, '+p.slides.length+' of them.';
  if(p.reel){const v=document.getElementById('v'),s=document.getElementById('snd');s.onclick=()=>{v.muted=false;v.currentTime=0;v.play().catch(()=>{});s.hidden=true}}
@@ -169,7 +181,24 @@ function show(i){
 }
 function fromHash(){const m=location.hash.match(/^#post(\\d+)$/);if(m){const i=D.posts.findIndex(p=>p.n===+m[1]);if(i>=0)return i}return -1}
 let start=fromHash();if(start<0){try{start=+localStorage.getItem('msl-post')||0}catch(e){start=0}}if(!(start>=0&&start<D.posts.length))start=0;
-show(start);addEventListener('hashchange',()=>{const i=fromHash();if(i>=0)show(i)});
+function plan(){
+ const ask={keyword:'Comment keyword',save:'Save',send:'Send to someone'};
+ const rules=[['Series with one frame','Every post belongs to a series and keeps its frame: show yellow, lab coral, make navy, start mint. One glance tells which series it is.'],
+ ['Question + paradox + one visual','A question a kid or a parent asks, the part that does not add up, one picture that explains it, a plain answer, one line back to the course.'],
+ ['Broad AI topics','Why AI draws six fingers, how it draws from words, why it sounds sure when wrong. Interesting to the kid and the parent at once.'],
+ ['Something to do after','Comment a word and get the free lesson or the fridge card in DMs, save it, or send it to a named person. One ask per post.']];
+ document.getElementById('planview').innerHTML='<div class="rules">'+rules.map(([h,t])=>'<div class="card"><h2>'+esc(h)+'</h2><p>'+esc(t)+'</p></div>').join('')+'</div>'+
+ '<div class="card hold" style="margin-bottom:14px"><h2>Needs your answer before I build these</h2><ul class="notes">'+D.questions.map(q=>'<li>'+esc(q)+'</li>').join('')+'</ul></div>'+
+ '<div class="pgrid">'+D.plan.map(p=>'<article class="pc"><div class="top r-'+p.rubric+'"><span class="n">'+p.n+'</span><span>'+esc(p.series)+' · '+esc(p.format)+'</span><span>'+esc(p.slot)+'</span></div><div class="body">'+
+ '<h4>'+esc(p.hook)+'</h4><div><span class="lbl">Paradox</span>'+esc(p.paradox)+'</div><div><span class="lbl">One visual</span>'+esc(p.visual)+'</div>'+
+ '<div><span class="lbl">Answer</span>'+esc(p.answer).replace(/\\[NEED:[^\\]]*\\]/g,m=>'<span class="need">'+m+'</span>')+'</div><div><span class="lbl">Back to the course</span>'+esc(p.bridge)+'</div>'+
+ '<div class="ask '+p.ask[0]+'"><span class="lbl">'+ask[p.ask[0]]+'</span>'+esc(p.ask[1])+'</div><div class="nt">'+esc(p.note)+'</div></div></article>').join('')+'</div>';
+}
+plan();
+const vp=document.getElementById('v-posts'),vl=document.getElementById('v-plan'),pv=document.getElementById('postsview'),lv=document.getElementById('planview');
+function view(w){const isPlan=w==='plan';pv.hidden=isPlan;lv.hidden=!isPlan;vp.classList.toggle('on',!isPlan);vl.classList.toggle('on',isPlan);if(isPlan){const v=document.getElementById('v');if(v)v.pause();if(location.hash!=='#plan')history.replaceState(null,'','#plan')}else show(cur)}
+vp.onclick=()=>view('posts');vl.onclick=()=>view('plan');
+show(start);if(location.hash==='#plan')view('plan');addEventListener('hashchange',()=>{const i=fromHash();if(i>=0)show(i)});
 </script>`;
 writeFileSync(join(site, 'instagram.html'), html);
 const files = readdirSync(join(site, 'm')).map((f) => `m/${f}`);
