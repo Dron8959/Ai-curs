@@ -567,6 +567,96 @@ cards['wk-21-fridge'] = { theme: 'm', chip: 'Why we exist',
       .from('#lk',{scale:0,duration:.4,ease:'back.out(3)'},4.2);` };
 
 
+// ---------------------------------------------------- useful layer (threads-extra.mjs): question + paradox + one visual
+cards['ex-6-fingers'] = { theme: 'y', chip: 'Ask your kid',
+  hl: `It paints dragons.<br>It can't count <mark>fingers.</mark>`,
+  stage: `
+    <svg style="position:absolute;left:0;top:0" width="952" height="620" viewBox="0 0 952 620">
+      ${[[300, 150], [356, 95], [412, 80], [468, 92], [524, 125], [580, 190]].map(([x, y], i) => `
+        <rect class="fg" x="${x}" y="${y}" width="50" height="${400 - y}" rx="25" fill="#FFF4DC" stroke="#141A33" stroke-width="7" style="transform-origin:${x + 25}px 400px"/>
+        <g class="nb" style="transform-origin:${x + 25}px ${y - 40}px"><circle cx="${x + 25}" cy="${y - 40}" r="26" fill="${i === 5 ? '#FF6F4A' : '#141A33'}"/><text x="${x + 25}" y="${y - 30}" text-anchor="middle" font-family="Sora" font-weight="800" font-size="28" fill="#FFF4DC">${i + 1}</text></g>`).join('')}
+      <rect x="290" y="330" width="350" height="240" rx="80" fill="#FFF4DC" stroke="#141A33" stroke-width="7"/>
+      <rect x="296" y="320" width="338" height="40" fill="#FFF4DC"/>
+    </svg>
+    <div class="bub" id="q6" style="left:680px;top:130px;font:800 54px Sora;padding:8px 30px;background:#FF6F4A">6?</div>`,
+  tl: `
+    tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
+      .from('.hl mark',{scale:0,duration:.4,ease:'back.out(3)'},.45)
+      .from('.fg',{scaleY:0,duration:.35,ease:'back.out(1.6)',stagger:.15},.9)
+      .from('.nb',{scale:0,duration:.3,ease:'back.out(3)',stagger:.4},2.0)
+      .from('#q6',{scale:0,rotation:-20,duration:.45,ease:'back.out(3)'},4.6);` };
+
+const noise = (n, seed, size, pal) => { let s = seed; const r = () => ((s = (s * 9301 + 49297) % 233280) / 233280);
+  return Array.from({ length: n }, () => `<div style="position:absolute;left:${(r() * 92).toFixed(1)}%;top:${(r() * 92).toFixed(1)}%;width:${size}px;height:${size}px;background:${pal[Math.floor(r() * pal.length)]}"></div>`).join(''); };
+cards['ex-words-to-picture'] = { theme: 'n', chip: 'How it works',
+  hl: `From static<br>to a <mark>picture.</mark>`,
+  stage: `
+    <div class="bub" id="pw" style="left:0;top:0;font:800 34px Sora;background:#FFC533">"an orange cat in a red hat"</div>
+    ${[0, 1, 2, 3].map((i) => `
+    <div class="box fr" style="left:${i * 243}px;top:130px;width:220px;height:220px;padding:0;background:#FFF4DC">
+      ${i === 0 ? noise(260, 7, 12, ['#141A33', '#6B7090', '#B9C0DE', '#FFF4DC']) : ''}
+      ${i === 1 ? `<div style="position:absolute;inset:0;filter:blur(7px)">${noise(90, 11, 26, ['#6B7090', '#FF9A6A', '#B9C0DE', '#FF6F4A'])}</div>` : ''}
+      ${i === 2 ? `<div style="position:absolute;inset:0;filter:blur(5px)"><div style="position:absolute;left:55px;top:80px;width:110px;height:100px;border-radius:50%;background:#FF9A4A"></div><div style="position:absolute;left:70px;top:35px;width:80px;height:50px;border-radius:10px;background:#E8483A"></div></div>` : ''}
+      ${i === 3 ? `<svg width="208" height="208" viewBox="0 0 208 208" style="position:absolute;left:0;top:0">
+        <polygon points="62,96 70,58 92,86" fill="#FF9A4A" stroke="#141A33" stroke-width="5"/><polygon points="146,96 138,58 116,86" fill="#FF9A4A" stroke="#141A33" stroke-width="5"/>
+        <ellipse cx="104" cy="128" rx="58" ry="52" fill="#FF9A4A" stroke="#141A33" stroke-width="5"/>
+        <rect x="70" y="44" width="68" height="34" rx="6" fill="#E8483A" stroke="#141A33" stroke-width="5"/><rect x="56" y="74" width="96" height="12" rx="6" fill="#E8483A" stroke="#141A33" stroke-width="5"/>
+        <circle cx="84" cy="124" r="7" fill="#141A33"/><circle cx="124" cy="124" r="7" fill="#141A33"/><path d="M96 144 Q104 152 112 144" fill="none" stroke="#141A33" stroke-width="5" stroke-linecap="round"/></svg>` : ''}
+    </div>
+    <div class="lab st" style="position:absolute;left:${i * 243}px;width:220px;top:372px;text-align:center;color:#FFF4DC">${['static', 'cleaning', 'almost', 'done'][i]}</div>`).join('')}
+    <div class="big" id="nt" style="position:absolute;left:0;right:0;top:450px;font-size:40px;line-height:1.15;color:#FFF4DC">Each step nudged toward<br>your kid's words.</div>`,
+  tl: `
+    tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
+      .from('.hl mark',{scale:0,duration:.4,ease:'back.out(3)'},.45)
+      .from('#pw',{scale:0,transformOrigin:'0 50%',duration:.4,ease:'back.out(2.4)'},.9)
+      .from('.fr',{scale:.5,opacity:0,duration:.45,ease:'back.out(2)',stagger:.7},1.5)
+      .from('.st',{opacity:0,y:12,duration:.3,stagger:.7},1.8)
+      .from('#nt',{opacity:0,y:20,duration:.45},4.6);` };
+
+cards['ex-9yo-cartoon'] = { theme: 'c', chip: 'Early-access family',
+  hl: `A 9-year-old made<br>a <mark>cartoon.</mark> How?`,
+  stage: `
+    ${[['play', 'Watch', 'Kamilla shows hers'], ['sparkles', 'Make', 'He makes his own'], ['heart', 'Show', 'He shows the family']].map(([ic, t, d], i) => `
+    <div class="box sp" style="left:${i * 326}px;top:0;width:300px;height:250px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;text-align:center">
+      <div style="width:44px;height:44px;border:4px solid #141A33;border-radius:50%;background:#FFC533;font:800 24px Sora;display:flex;align-items:center;justify-content:center">${i + 1}</div>
+      ${icon(ic, 60, 2.4)}<div class="big" style="font-size:38px;line-height:1">${t}</div><div class="lab" style="font-size:19px">${d}</div></div>`).join('')}
+    <div class="bub" id="qt" style="left:0;top:300px;max-width:952px;white-space:normal;font:700 34px/1.25 Urbanist;background:#FFF9EC;padding:26px 32px">"We made our own little cartoon together, and he was so excited to show it to his dad."<div class="lab" style="margin-top:14px;font-size:20px">Emily, mom of a 9-year-old · got the course free</div></div>`,
+  tl: `
+    tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
+      .from('.hl mark',{scale:0,duration:.4,ease:'back.out(3)'},.45)
+      .from('.sp',{y:90,opacity:0,duration:.45,ease:'back.out(1.8)',stagger:.45},.9)
+      .from('#qt',{scale:0,transformOrigin:'10% 0',duration:.5,ease:'back.out(2)'},3.0);` };
+
+cards['ex-5-safe-ways'] = { theme: 'm', chip: 'Save this',
+  hl: `5 safe ways to<br>start with <mark>AI.</mark>`,
+  stage: `
+    ${['Your account, you next to them', 'Make something first', 'A never-share list', 'Check every result together', 'No strangers can message'].map((t, i) => `
+    <div class="box sw5" style="left:0;top:${i * 122}px;width:952px;height:104px;display:flex;align-items:center;gap:26px;padding:0 30px">
+      <div style="flex:none;width:62px;height:62px;border:5px solid #141A33;border-radius:50%;background:${['#FFC533', '#FF6F4A', '#FFC533', '#FF6F4A', '#FFC533'][i]};font:800 32px Sora;display:flex;align-items:center;justify-content:center">${i + 1}</div>
+      <div class="big" style="font-size:40px">${t}</div></div>`).join('')}`,
+  tl: `
+    tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
+      .from('.hl mark',{scale:0,duration:.4,ease:'back.out(3)'},.45)
+      .from('.sw5',{x:-120,opacity:0,duration:.4,ease:'power3.out',stagger:.45},.9);` };
+
+cards['ex-sure-and-wrong'] = { theme: 'k', chip: 'Teach this one',
+  hl: `Sounds sure.<br><mark>Still check.</mark>`,
+  stage: `
+    <div class="box" style="left:0;top:0;width:952px;height:600px;padding:34px 40px;background:#FFFFFF">
+      <div class="bub" id="uq" style="position:relative;margin-left:auto;width:fit-content;background:#FFC533;font:700 34px Urbanist">How many legs does a spider have?</div>
+      <div class="bub" id="aa" style="position:relative;margin-top:30px;width:fit-content;background:#EFEAD8;font:700 36px Urbanist">Spiders have 6 legs.</div>
+      <div style="display:flex;align-items:center;gap:18px;margin-top:34px"><span class="lab" style="font-size:22px">AI confidence</span>
+        <div style="flex:1;height:34px;border:5px solid #141A33;border-radius:999px;background:#F1EBDA;overflow:hidden"><div id="cf" style="height:100%;width:100%;background:#5FE0A8;border-right:5px solid #141A33"></div></div><span class="big" style="font-size:34px">100%</span></div>
+      <div class="bub" id="st" style="position:absolute;right:40px;bottom:40px;font:800 46px Sora;background:#FF6F4A;transform:rotate(-6deg)">Wrong. It's 8.</div>
+    </div>`,
+  tl: `
+    tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
+      .from('.hl mark',{scale:0,duration:.4,ease:'back.out(3)'},.45)
+      .from('#uq',{scale:0,transformOrigin:'100% 0',duration:.4,ease:'back.out(2.4)'},.9)
+      .from('#aa',{scale:0,transformOrigin:'0 0',duration:.4,ease:'back.out(2.4)'},1.7)
+      .from('#cf',{width:0,duration:1.0,ease:'power2.out'},2.3)
+      .from('#st',{scale:2.2,opacity:0,duration:.35,ease:'power3.in'},3.9);` };
+
 // ------------------------------------------------------------------------------------------ render
 const run = (cmd, args) => new Promise((res, rej) => spawn(cmd, args, { stdio: 'inherit' }).on('close', (c) => (c ? rej(new Error(`${cmd} ${c}`)) : res())));
 
