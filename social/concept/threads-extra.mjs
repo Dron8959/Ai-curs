@@ -18,6 +18,8 @@ import { lint } from './threads-lint.mjs';
 const here = dirname(fileURLToPath(import.meta.url));
 
 // when: New York time. kind: question (broad AI topic) | useful (save-worthy) | story (real review)
+// removed 14.11: ex-sure-and-wrong (owner didn't like it, Metricool draft 427864136);
+// ex-words-to-picture moved to threads-week2.mjs (Fri 20.11, 12:40)
 export const posts = [
   { id: 'ex-6-fingers', when: '2026-11-14T15:10', kind: 'question', topic: 'AI for kids', media: 'ex-6-fingers',
     text: `AI can paint a dragon in seconds. So why does it sometimes give people six fingers?
@@ -25,13 +27,6 @@ export const posts = [
 It learned from millions of photos where hands are half hidden or holding things. It copies what hands look like. It doesn't count them.
 
 Next AI picture you see, have your kid count the fingers. Catch any?` },
-
-  { id: 'ex-words-to-picture', when: '2026-11-20T15:10', kind: 'question', topic: 'AI for kids', media: 'ex-words-to-picture',
-    text: `How does AI turn your kid's words into a picture?
-
-It starts with pure static, like an old TV. Then it cleans the noise away step by step, each step nudged toward the words it was given.
-
-That's why better words make better pictures. What would your kid describe first?` },
 
   { id: 'ex-9yo-cartoon', when: '2026-11-17T15:10', kind: 'story', topic: 'AI for kids', media: 'ex-9yo-cartoon',
     text: `A 9-year-old made his own cartoon with AI. How does a kid that age even start?
@@ -53,12 +48,6 @@ What would your kid's cartoon be about?` },
 
 Which one would you add?` },
 
-  { id: 'ex-sure-and-wrong', when: '2026-11-19T15:10', kind: 'question', topic: 'AI safety', media: 'ex-sure-and-wrong',
-    text: `Why does AI sound so sure even when it's wrong?
-
-It writes the most likely next words, and confident words are very likely. It has no feeling of "I'm not sure" unless it was trained to say so.
-
-So we teach kids one habit: sounds sure, still check. Does your kid double-check AI?` },
 ];
 
 // week 2: more broad questions and posts spun out of "5 safe ways", one way per post

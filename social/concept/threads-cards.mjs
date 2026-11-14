@@ -568,40 +568,76 @@ cards['wk-21-fridge'] = { theme: 'm', chip: 'Why we exist',
 
 
 // ---------------------------------------------------- useful layer (threads-extra.mjs): question + paradox + one visual
+const HAND = (() => {
+  const d = Math.PI / 180, pal = 310, py = 330;
+  // thumb + five fingers: [base x, base y, angle deg, length, width]
+  const F = [[300, 455, -58, 125, 66], [318, 352, -24, 150, 54], [372, 340, -10, 185, 54], [428, 336, 2, 198, 54], [484, 340, 14, 182, 54], [536, 356, 27, 150, 52]];
+  const shape = (f, extra) => { const [x, y, a, L, w] = f; return `<rect x="${x - w / 2}" y="${y - L}" width="${w}" height="${L + 40}" rx="${w / 2}" transform="rotate(${a} ${x} ${y})" ${extra}/>`; };
+  const tip = (f, k) => { const [x, y, a, L] = f; return [x + (L + k) * Math.sin(a * d), y - (L + k) * Math.cos(a * d)]; };
+  const palm = (extra) => `<rect x="${pal - 40}" y="${py}" width="330" height="250" rx="110" ${extra}/>`;
+  const skin = '#FFD2A6', ink = '#141A33';
+  const outline = `<g fill="${ink}" stroke="${ink}" stroke-width="16" stroke-linejoin="round">${F.map((f) => shape(f, '')).join('')}${palm('')}</g>`;
+  const fill = `<g fill="${skin}">${F.map((f) => shape(f, '')).join('')}${palm('')}</g>`;
+  const nails = F.map((f) => { const [x, y] = tip(f, -30); return `<ellipse cx="${x}" cy="${y}" rx="${f[4] / 2 - 11}" ry="15" fill="#FFE9D6" stroke="#E8A87C" stroke-width="3" transform="rotate(${f[2]} ${x} ${y})"/>`; }).join('');
+  const creases = `<path d="M372 470 Q425 500 470 460" fill="none" stroke="#E8A87C" stroke-width="6" stroke-linecap="round"/><path d="M350 420 Q400 440 420 420" fill="none" stroke="#E8A87C" stroke-width="5" stroke-linecap="round"/>`;
+  const cuff = `<rect x="330" y="540" width="230" height="72" rx="18" fill="#6C8CFF" stroke="${ink}" stroke-width="8"/><rect x="330" y="540" width="230" height="22" rx="10" fill="#8FA8FF" stroke="${ink}" stroke-width="8"/>`;
+  const badges = F.map((f, i) => { const [x, y] = tip(f, 46); return `<g class="nb" style="transform-origin:${x}px ${y}px"><circle cx="${x}" cy="${y}" r="27" fill="${i === 5 ? '#FF6F4A' : ink}" stroke="#FFF4DC" stroke-width="4"/><text x="${x}" y="${y + 10}" text-anchor="middle" font-family="Sora" font-weight="800" font-size="28" fill="#FFF4DC">${i + 1}</text></g>`; }).join('');
+  return `<svg style="position:absolute;left:0;top:0" width="952" height="620" viewBox="0 0 952 620">
+    <g id="hand" style="transform-origin:445px 600px">${outline}${fill}${nails}${creases}${cuff}</g>${badges}</svg>`;
+})();
 cards['ex-6-fingers'] = { theme: 'y', chip: 'Ask your kid',
   hl: `It paints dragons.<br>It can't count <mark>fingers.</mark>`,
-  stage: `
-    <svg style="position:absolute;left:0;top:0" width="952" height="620" viewBox="0 0 952 620">
-      ${[[300, 150], [356, 95], [412, 80], [468, 92], [524, 125], [580, 190]].map(([x, y], i) => `
-        <rect class="fg" x="${x}" y="${y}" width="50" height="${400 - y}" rx="25" fill="#FFF4DC" stroke="#141A33" stroke-width="7" style="transform-origin:${x + 25}px 400px"/>
-        <g class="nb" style="transform-origin:${x + 25}px ${y - 40}px"><circle cx="${x + 25}" cy="${y - 40}" r="26" fill="${i === 5 ? '#FF6F4A' : '#141A33'}"/><text x="${x + 25}" y="${y - 30}" text-anchor="middle" font-family="Sora" font-weight="800" font-size="28" fill="#FFF4DC">${i + 1}</text></g>`).join('')}
-      <rect x="290" y="330" width="350" height="240" rx="80" fill="#FFF4DC" stroke="#141A33" stroke-width="7"/>
-      <rect x="296" y="320" width="338" height="40" fill="#FFF4DC"/>
-    </svg>
-    <div class="bub" id="q6" style="left:680px;top:130px;font:800 54px Sora;padding:8px 30px;background:#FF6F4A">6?</div>`,
+  stage: `${HAND}
+    <div class="bub" id="ai" style="left:640px;top:40px;font:800 30px Sora;background:#FFF9EC;display:flex;align-items:center;gap:10px;white-space:nowrap">${icon('sparkles', 30, 2.4)} AI drew this</div>
+    <div class="bub" id="q6" style="left:700px;top:250px;font:800 76px Sora;padding:6px 34px;background:#FF6F4A">6?</div>
+    <div class="lab" id="cn" style="position:absolute;left:640px;top:410px;width:300px;font-size:22px;line-height:1.35">Count with your kid.<br>Catch any?</div>`,
   tl: `
     tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
       .from('.hl mark',{scale:0,duration:.4,ease:'back.out(3)'},.45)
-      .from('.fg',{scaleY:0,duration:.35,ease:'back.out(1.6)',stagger:.15},.9)
-      .from('.nb',{scale:0,duration:.3,ease:'back.out(3)',stagger:.4},2.0)
-      .from('#q6',{scale:0,rotation:-20,duration:.45,ease:'back.out(3)'},4.6);` };
+      .from('#hand',{y:120,scale:.8,opacity:0,duration:.6,ease:'back.out(1.6)'},.8)
+      .from('#ai',{scale:0,transformOrigin:'0 50%',duration:.4,ease:'back.out(2.4)'},1.3)
+      .from('.nb',{scale:0,duration:.3,ease:'back.out(3)',stagger:.38},2.0)
+      .from('#q6',{scale:0,rotation:-20,duration:.45,ease:'back.out(3)'},4.3)
+      .from('#cn',{opacity:0,y:16,duration:.4},4.9);` };
 
+const CAT_SCENE = `<svg width="208" height="208" viewBox="0 0 200 200" style="position:absolute;left:0;top:0">
+  <rect width="200" height="200" fill="#9EDBFF"/>
+  <ellipse cx="44" cy="40" rx="26" ry="11" fill="#FFFFFF"/><ellipse cx="62" cy="34" rx="16" ry="11" fill="#FFFFFF"/>
+  <circle cx="168" cy="34" r="17" fill="#FFD84A" stroke="#141A33" stroke-width="3"/>
+  <rect y="150" width="200" height="50" fill="#86DB8E"/>
+  <g fill="#FF6F9A"><circle cx="22" cy="170" r="5"/><circle cx="182" cy="176" r="5"/><circle cx="38" cy="186" r="4"/></g>
+  <path d="M140 160 Q182 150 168 108" fill="none" stroke="#141A33" stroke-width="15" stroke-linecap="round"/>
+  <path d="M140 160 Q182 150 168 108" fill="none" stroke="#FF9A3C" stroke-width="8" stroke-linecap="round"/>
+  <ellipse cx="104" cy="150" rx="44" ry="34" fill="#FF9A3C" stroke="#141A33" stroke-width="4"/>
+  <ellipse cx="104" cy="158" rx="22" ry="18" fill="#FFE2C2"/>
+  <ellipse cx="84" cy="182" rx="13" ry="8" fill="#FF9A3C" stroke="#141A33" stroke-width="4"/><ellipse cx="124" cy="182" rx="13" ry="8" fill="#FF9A3C" stroke="#141A33" stroke-width="4"/>
+  <ellipse cx="146" cy="116" rx="10" ry="22" fill="#FF9A3C" stroke="#141A33" stroke-width="4" transform="rotate(32 146 116)"/>
+  <circle cx="156" cy="98" r="10" fill="#FF9A3C" stroke="#141A33" stroke-width="4"/>
+  <polygon points="66,80 60,46 88,66" fill="#FF9A3C" stroke="#141A33" stroke-width="4" stroke-linejoin="round"/>
+  <polygon points="134,80 140,46 112,66" fill="#FF9A3C" stroke="#141A33" stroke-width="4" stroke-linejoin="round"/>
+  <circle cx="100" cy="98" r="36" fill="#FF9A3C" stroke="#141A33" stroke-width="4"/>
+  <path d="M92 70 l3 9 M100 68 v10 M108 70 l-3 9" stroke="#D86A1C" stroke-width="4" stroke-linecap="round"/>
+  <ellipse cx="87" cy="114" rx="9" ry="6" fill="#FF8FA8" opacity=".55"/><ellipse cx="113" cy="114" rx="9" ry="6" fill="#FF8FA8" opacity=".55"/>
+  <circle cx="87" cy="98" r="6.5" fill="#141A33"/><circle cx="113" cy="98" r="6.5" fill="#141A33"/><circle cx="89" cy="96" r="2" fill="#FFFFFF"/><circle cx="115" cy="96" r="2" fill="#FFFFFF"/>
+  <polygon points="95,106 105,106 100,112" fill="#FF6F9A"/>
+  <path d="M92 114 Q100 122 108 114" fill="none" stroke="#141A33" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M78 108 L50 103 M78 114 L50 117 M122 108 L150 103 M122 114 L150 117" stroke="#141A33" stroke-width="2.5" stroke-linecap="round"/>
+  <g transform="rotate(-8 100 50)">
+    <ellipse cx="100" cy="64" rx="42" ry="8" fill="#E8483A" stroke="#141A33" stroke-width="4"/>
+    <rect x="77" y="22" width="46" height="42" rx="5" fill="#E8483A" stroke="#141A33" stroke-width="4"/>
+    <rect x="77" y="48" width="46" height="9" fill="#141A33"/>
+  </g>
+</svg>`;
 const noise = (n, seed, size, pal) => { let s = seed; const r = () => ((s = (s * 9301 + 49297) % 233280) / 233280);
   return Array.from({ length: n }, () => `<div style="position:absolute;left:${(r() * 92).toFixed(1)}%;top:${(r() * 92).toFixed(1)}%;width:${size}px;height:${size}px;background:${pal[Math.floor(r() * pal.length)]}"></div>`).join(''); };
 cards['ex-words-to-picture'] = { theme: 'n', chip: 'How it works',
   hl: `From static<br>to a <mark>picture.</mark>`,
   stage: `
-    <div class="bub" id="pw" style="left:0;top:0;font:800 34px Sora;background:#FFC533">"an orange cat in a red hat"</div>
+    <div class="bub" id="pw" style="left:0;top:0;font:800 34px Sora;background:#FFC533">"an orange cat in a red hat, waving"</div>
     ${[0, 1, 2, 3].map((i) => `
-    <div class="box fr" style="left:${i * 243}px;top:130px;width:220px;height:220px;padding:0;background:#FFF4DC">
-      ${i === 0 ? noise(260, 7, 12, ['#141A33', '#6B7090', '#B9C0DE', '#FFF4DC']) : ''}
-      ${i === 1 ? `<div style="position:absolute;inset:0;filter:blur(7px)">${noise(90, 11, 26, ['#6B7090', '#FF9A6A', '#B9C0DE', '#FF6F4A'])}</div>` : ''}
-      ${i === 2 ? `<div style="position:absolute;inset:0;filter:blur(5px)"><div style="position:absolute;left:55px;top:80px;width:110px;height:100px;border-radius:50%;background:#FF9A4A"></div><div style="position:absolute;left:70px;top:35px;width:80px;height:50px;border-radius:10px;background:#E8483A"></div></div>` : ''}
-      ${i === 3 ? `<svg width="208" height="208" viewBox="0 0 208 208" style="position:absolute;left:0;top:0">
-        <polygon points="62,96 70,58 92,86" fill="#FF9A4A" stroke="#141A33" stroke-width="5"/><polygon points="146,96 138,58 116,86" fill="#FF9A4A" stroke="#141A33" stroke-width="5"/>
-        <ellipse cx="104" cy="128" rx="58" ry="52" fill="#FF9A4A" stroke="#141A33" stroke-width="5"/>
-        <rect x="70" y="44" width="68" height="34" rx="6" fill="#E8483A" stroke="#141A33" stroke-width="5"/><rect x="56" y="74" width="96" height="12" rx="6" fill="#E8483A" stroke="#141A33" stroke-width="5"/>
-        <circle cx="84" cy="124" r="7" fill="#141A33"/><circle cx="124" cy="124" r="7" fill="#141A33"/><path d="M96 144 Q104 152 112 144" fill="none" stroke="#141A33" stroke-width="5" stroke-linecap="round"/></svg>` : ''}
+    <div class="box fr" style="left:${i * 243}px;top:130px;width:220px;height:220px;padding:0;background:#FFF4DC;overflow:hidden">
+      <div style="position:absolute;inset:0;filter:blur(${[14, 8, 2.5, 0][i]}px) saturate(${[0.4, 0.8, 1, 1][i]})">${CAT_SCENE}</div>
+      ${i < 3 ? `<svg width="220" height="220" style="position:absolute;left:0;top:0;opacity:${[1, 0.62, 0.28][i]}"><filter id="tv${i}"><feTurbulence type="fractalNoise" baseFrequency="${[0.9, 0.75, 0.95][i]}" numOctaves="2" seed="${i * 7 + 3}"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncR type="linear" slope="2.4" intercept="-0.7"/><feFuncG type="linear" slope="2.4" intercept="-0.7"/><feFuncB type="linear" slope="2.4" intercept="-0.7"/><feFuncA type="linear" slope="0" intercept="1"/></feComponentTransfer></filter><rect width="220" height="220" filter="url(#tv${i})"/></svg>` : ''}
     </div>
     <div class="lab st" style="position:absolute;left:${i * 243}px;width:220px;top:372px;text-align:center;color:#FFF4DC">${['static', 'cleaning', 'almost', 'done'][i]}</div>`).join('')}
     <div class="big" id="nt" style="position:absolute;left:0;right:0;top:450px;font-size:40px;line-height:1.15;color:#FFF4DC">Each step nudged toward<br>your kid's words.</div>`,
@@ -656,6 +692,93 @@ cards['ex-sure-and-wrong'] = { theme: 'k', chip: 'Teach this one',
       .from('#aa',{scale:0,transformOrigin:'0 0',duration:.4,ease:'back.out(2.4)'},1.7)
       .from('#cf',{width:0,duration:1.0,ease:'power2.out'},2.3)
       .from('#st',{scale:2.2,opacity:0,duration:.35,ease:'power3.in'},3.9);` };
+
+// ---------------------------------------------------- week 2 (threads-week2.mjs)
+cards['w2-01-things-made'] = { theme: 'c', chip: 'House rules?',
+  hl: `Count hours<br>or things <mark>made?</mark>`,
+  stage: `
+    <div class="box" id="hb" style="left:0;top:20px;width:400px;height:500px;display:flex;flex-direction:column;align-items:center;gap:22px;padding-top:40px">
+      ${icon('clock', 90, 2.2)}<div class="big" style="font-size:44px">Hours</div>
+      <div style="width:300px;height:44px;border:5px solid #141A33;border-radius:999px;background:#F1EBDA;overflow:hidden"><div id="hbar" style="height:100%;width:100%;background:#141A33"></div></div>
+      <div class="big" id="hcount" style="font-size:56px">2:00</div></div>
+    <div class="big" style="position:absolute;left:414px;top:240px;width:72px;text-align:center;font-size:40px">or</div>
+    <div class="box" id="mb" style="left:500px;top:20px;width:452px;height:500px;padding:40px 36px;background:#FFF9EC">
+      <div class="big" style="font-size:44px;margin-bottom:26px">Things made</div>
+      ${[['gamepad-2', 'A game'], ['music', 'A song'], ['clapperboard', 'A cartoon']].map(([ic, t]) => `
+      <div class="mk" style="display:flex;align-items:center;gap:20px;margin-bottom:22px">${icon(ic, 52, 2.4)}<span class="big" style="font-size:40px;flex:1">${t}</span>
+        <span class="ck" style="width:52px;height:52px;border:5px solid #141A33;border-radius:12px;background:#5FE0A8;display:flex;align-items:center;justify-content:center">${icon('check', 34, 3.4)}</span></div>`).join('')}
+      <div class="bub" id="off" style="position:relative;display:inline-block;margin-top:6px;font:800 34px Sora;background:#FFC533;transform:rotate(-4deg)">Then screens off</div></div>`,
+  tl: `
+    tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
+      .from('.hl mark',{scale:0,duration:.4,ease:'back.out(3)'},.45)
+      .from('#hb',{x:-80,opacity:0,duration:.45,ease:'back.out(1.8)'},.9)
+      .to('#hbar',{width:'8%',duration:2.2,ease:'none'},1.4)
+      .from('#mb',{x:80,opacity:0,duration:.45,ease:'back.out(1.8)'},1.6)
+      .from('.mk',{y:30,opacity:0,duration:.35,stagger:.45},2.1)
+      .from('.ck',{scale:0,duration:.3,ease:'back.out(3)',stagger:.45},2.4)
+      .from('#off',{scale:0,duration:.4,ease:'back.out(3)'},4.2);` };
+
+cards['w2-03-ai-kamilla'] = { theme: 'm', chip: 'Our rule',
+  hl: `Real or <mark>AI?</mark><br>We always say.`,
+  stage: `
+    ${[['user-round', 'Kamilla, 10', 'REAL', '#5FE0A8', '#FFF9EC'], ['bot', 'Kamilla, AI version', 'AI', '#FF6F4A', '#E9EDFF']].map(([ic, n, tag, tc, bg], i) => `
+    <div class="box pc" style="left:${i * 486}px;top:10px;width:466px;height:400px;background:${bg};display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px">
+      <div style="width:170px;height:170px;border:6px solid #141A33;border-radius:50%;background:#FFC533;display:flex;align-items:center;justify-content:center">${icon(ic, 110, 2)}</div>
+      <div class="big" style="font-size:40px">${n}</div>
+      <div class="tg" style="font:800 30px Sora;padding:6px 24px;border:5px solid #141A33;border-radius:999px;background:${tc}">${tag}</div></div>`).join('')}
+    <div class="bub" id="say" style="left:0;top:450px;width:952px;text-align:center;font:800 38px Sora;background:#FFC533">Every time it's AI, we tell you.</div>`,
+  tl: `
+    tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
+      .from('.hl mark',{scale:0,duration:.4,ease:'back.out(3)'},.45)
+      .from('.pc',{y:80,opacity:0,duration:.45,ease:'back.out(1.8)',stagger:.6},.9)
+      .from('.tg',{scale:0,duration:.35,ease:'back.out(3)',stagger:.6},1.6)
+      .from('#say',{scale:0,duration:.45,ease:'back.out(2.4)'},3.2);` };
+
+const BLUR = (w) => `<span style="display:inline-block;width:${w}px;height:30px;border-radius:8px;background:#9AA2C4;filter:blur(3px);vertical-align:middle"></span>`;
+cards['w2-04-last-question'] = { theme: 'y', chip: 'Quick one',
+  hl: `What did your kid<br><mark>ask</mark> AI this week?`,
+  stage: `
+    <div class="box" style="left:150px;top:0;width:652px;height:510px;padding:26px 34px;background:#FFFFFF;border-radius:44px">
+      <div class="lab" style="text-align:center;font-size:20px;margin-bottom:24px">Your kid's chat · this week</div>
+      ${[['how do I ', 170], ['is it normal to ', 150], ['write a song about ', 120], ['why does my mom ', 160]].map(([t, w]) => `
+      <div class="bub kq" style="position:relative;margin:0 0 18px auto;width:fit-content;font:700 32px Urbanist;background:#FFC533">${t}${BLUR(w)}</div>`).join('')}
+    </div>
+    <div class="bub" id="dk" style="left:60px;top:530px;font:800 46px Sora;background:#FF6F4A;transform:rotate(-5deg)">Do you know?</div>`,
+  tl: `
+    tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
+      .from('.hl mark',{scale:0,duration:.4,ease:'back.out(3)'},.45)
+      .from('.kq',{scale:0,transformOrigin:'100% 50%',duration:.4,ease:'back.out(2.4)',stagger:.55},1.0)
+      .from('#dk',{scale:2,opacity:0,duration:.35,ease:'power3.in'},3.8);` };
+
+const CLUES = [
+  ['Hands', `<g fill="#141A33" stroke="#141A33" stroke-width="10" stroke-linejoin="round">${[[62, -26], [80, -12], [98, 0], [116, 12], [134, 24], [50, -60]].map(([x, a], i) => `<rect x="${i === 5 ? 34 : x - 8}" y="${i === 5 ? 82 : 30}" width="16" height="${i === 5 ? 44 : 64}" rx="8" transform="rotate(${a} ${i === 5 ? 50 : x} ${i === 5 ? 110 : 90})"/>`).join('')}<rect x="44" y="76" width="96" height="70" rx="32"/></g>
+    <g fill="#FFD2A6">${[[62, -26], [80, -12], [98, 0], [116, 12], [134, 24], [50, -60]].map(([x, a], i) => `<rect x="${i === 5 ? 34 : x - 8}" y="${i === 5 ? 82 : 30}" width="16" height="${i === 5 ? 44 : 64}" rx="8" transform="rotate(${a} ${i === 5 ? 50 : x} ${i === 5 ? 110 : 90})"/>`).join('')}<rect x="44" y="76" width="96" height="70" rx="32"/></g>`, [98, 40, 66]],
+  ['Words on signs', `<rect x="20" y="40" width="160" height="70" rx="10" fill="#FFF9EC" stroke="#141A33" stroke-width="5"/><rect x="40" y="110" width="8" height="40" fill="#141A33"/><rect x="152" y="110" width="8" height="40" fill="#141A33"/>
+    <text x="100" y="88" text-anchor="middle" font-family="Sora" font-weight="800" font-size="34" fill="#E8483A">PIZZZA</text>`, [112, 75, 38]],
+  ['Earrings', `<path d="M50 70 Q50 20 100 20 Q150 20 150 70 L150 90 L50 90 Z" fill="#5A3A2A"/>
+    <circle cx="52" cy="84" r="12" fill="#FFD2A6" stroke="#141A33" stroke-width="4"/><circle cx="148" cy="84" r="12" fill="#FFD2A6" stroke="#141A33" stroke-width="4"/>
+    <circle cx="100" cy="80" r="46" fill="#FFD2A6" stroke="#141A33" stroke-width="5"/><path d="M58 64 Q100 30 142 64 Q130 40 100 36 Q70 40 58 64 Z" fill="#5A3A2A"/>
+    <circle cx="84" cy="80" r="5" fill="#141A33"/><circle cx="116" cy="80" r="5" fill="#141A33"/><path d="M86 100 Q100 110 114 100" fill="none" stroke="#141A33" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="52" cy="110" r="11" fill="none" stroke="#E0A800" stroke-width="6"/><polygon points="148,98 160,124 136,124" fill="#6C8CFF" stroke="#141A33" stroke-width="4"/>`, [148, 113, 22]],
+  ['Shadows', `<circle cx="36" cy="34" r="20" fill="#FFD84A" stroke="#141A33" stroke-width="4"/><rect x="0" y="120" width="200" height="40" fill="#86DB8E"/>
+    <rect x="120" y="50" width="16" height="72" fill="#8A5A3C" stroke="#141A33" stroke-width="4"/><circle cx="128" cy="48" r="30" fill="#4CC38A" stroke="#141A33" stroke-width="4"/>
+    <ellipse cx="78" cy="126" rx="52" ry="9" fill="#2E7A52" opacity=".75"/>`, [80, 126, 54]],
+];
+cards['w2-05-spot-the-fake'] = { theme: 'n', chip: 'Try tonight',
+  hl: `Too perfect is<br>the first <mark>clue.</mark>`,
+  stage: `
+    ${CLUES.map(([t, art, [cx, cy, r]], i) => `
+    <div class="box cl" style="left:${(i % 2) * 486}px;top:${Math.floor(i / 2) * 300}px;width:466px;height:280px;padding:0;background:#FFF4DC">
+      <svg width="300" height="200" viewBox="0 0 200 160" style="position:absolute;left:20px;top:10px">${art}
+        <circle class="ring" cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="#FF6F4A" stroke-width="6" style="transform-origin:${cx}px ${cy}px"/></svg>
+      <div class="big" style="position:absolute;left:24px;bottom:18px;font-size:34px">${t}</div>
+      <div class="fd" style="position:absolute;right:20px;top:20px;font:800 24px Sora;padding:4px 16px;border:4px solid #141A33;border-radius:999px;background:#FF6F4A">${['6 fingers', 'ZZZ', "don't match", 'wrong way'][i]}</div></div>`).join('')}`,
+  tl: `
+    tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
+      .from('.hl mark',{scale:0,duration:.4,ease:'back.out(3)'},.45)
+      .from('.cl',{scale:.6,opacity:0,duration:.4,ease:'back.out(2)',stagger:.3},.9)
+      .from('.ring',{scale:0,opacity:0,duration:.35,ease:'back.out(3)',stagger:.55},2.4)
+      .from('.fd',{scale:0,duration:.3,ease:'back.out(3)',stagger:.55},2.6);` };
 
 // ------------------------------------------------------------------------------------------ render
 const run = (cmd, args) => new Promise((res, rej) => spawn(cmd, args, { stdio: 'inherit' }).on('close', (c) => (c ? rej(new Error(`${cmd} ${c}`)) : res())));
