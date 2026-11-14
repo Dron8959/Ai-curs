@@ -19,14 +19,14 @@ const here = dirname(fileURLToPath(import.meta.url));
 
 // when: New York time. kind: question (broad AI topic) | useful (save-worthy) | story (real review)
 export const posts = [
-  { id: 'ex-6-fingers', when: '2026-11-13T15:10', kind: 'question', topic: 'AI for kids', media: 'ex-6-fingers',
+  { id: 'ex-6-fingers', when: '2026-11-14T15:10', kind: 'question', topic: 'AI for kids', media: 'ex-6-fingers',
     text: `AI can paint a dragon in seconds. So why does it sometimes give people six fingers?
 
 It learned from millions of photos where hands are half hidden or holding things. It copies what hands look like. It doesn't count them.
 
 Next AI picture you see, have your kid count the fingers. Catch any?` },
 
-  { id: 'ex-words-to-picture', when: '2026-11-14T15:10', kind: 'question', topic: 'AI for kids', media: 'ex-words-to-picture',
+  { id: 'ex-words-to-picture', when: '2026-11-20T15:10', kind: 'question', topic: 'AI for kids', media: 'ex-words-to-picture',
     text: `How does AI turn your kid's words into a picture?
 
 It starts with pure static, like an old TV. Then it cleans the noise away step by step, each step nudged toward the words it was given.

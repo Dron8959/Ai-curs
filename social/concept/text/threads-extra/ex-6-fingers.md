@@ -1,6 +1,6 @@
 ---
 group: scheduled
-when: 2026-11-13T15:10 (New York)
+when: 2026-11-14T15:10 (New York)
 kind: question
 topic: AI for kids
 characters: 291
