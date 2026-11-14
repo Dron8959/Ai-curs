@@ -32,6 +32,7 @@ export const boards = {
   safety: { name: 'AI Safety for Kids', about: 'AI safety rules for kids and families: house rules for AI tools, what never to share, how to spot a fake. Simple enough for the fridge.' },
   screen: { name: 'Screen Time Ideas for Kids', about: 'Creative screen time ideas for kids: screens they make on instead of scroll on. Short projects a parent and child finish together.' },
   gifts: { name: 'Non-Toy Gift Ideas for Kids', about: 'Non-toy gift ideas for kids and grandkids: gifts you do together. A creative AI course for ages 6 to 14 that ends with things they made.' },
+  ai: { name: 'How AI Works for Kids', about: 'How AI works, explained for kids and parents: why AI draws six fingers, how it makes a picture from words, why it sounds sure when it is wrong. Short answers a parent can say out loud.' },
   homeschool: { name: 'Homeschool Technology Ideas', about: 'Homeschool technology and AI lesson ideas for ages 6 to 14: short lessons that end with a finished project, done side by side with a parent.' },
 };
 
@@ -40,10 +41,12 @@ export const boards = {
 // every pin (head() below): a big mark plus the Make Show Lab wordmark, and the layout is scaled into the rest.
 const brand = () => '';
 const HEAD = 190, S = 0.93;                     // band height; layout scale (its y=150 lands right under the band)
-const head = () => `<div style="position:absolute;z-index:20;left:44px;top:34px;display:flex;align-items:center;gap:22px">
+const SERIES = { ask: 'ASK AI', safe: 'SAFE AI', kid: 'BY A KID', how: 'HOW IT WORKS', free: 'FREE LESSON' };   // SERIES.md in this folder's parent
+const head = (series) => `<div style="position:absolute;z-index:20;left:44px;top:34px;display:flex;align-items:center;gap:22px">
   <img src="${A(`${LOGO}/logo/icon.svg`)}" style="width:150px;height:150px;display:block" alt="">
-  <span style="display:flex;align-items:center;height:96px;padding:0 34px;border:5px solid #141A33;border-radius:999px;background:#fff;box-shadow:6px 6px 0 #141A33">
-  <img src="${A(`${LOGO}/logo/wordmark-light.svg`)}" style="height:50px;width:auto;display:block" alt="Make Show Lab"></span></div>`;
+  <span style="display:flex;align-items:center;height:90px;padding:0 30px;border:5px solid #141A33;border-radius:999px;background:#fff;box-shadow:6px 6px 0 #141A33">
+  <img src="${A(`${LOGO}/logo/wordmark-light.svg`)}" style="height:42px;width:auto;display:block" alt="Make Show Lab"></span></div>
+  <span style="position:absolute;z-index:20;right:44px;top:62px;display:flex;align-items:center;height:62px;padding:0 24px;border:5px solid #141A33;border-radius:999px;background:#FFC533;box-shadow:5px 5px 0 #141A33;font:800 25px Urbanist;letter-spacing:.08em;color:#141A33">${SERIES[series]}</span>`;
 const body = (html) => `<div style="position:absolute;inset:0;transform-origin:50% 0;transform:translateY(${HEAD + 8 - 150 * S}px) scale(${S})">${html}</div>`;
 const site = (dark = false) => `<span class="pill${dark ? '' : ' dark'}" style="left:56px;bottom:52px;height:66px;font-size:28px;letter-spacing:.04em;text-transform:none;box-shadow:none">makeshowlab.com</span>`;
 const h = (html, { top = 160, size = 118, style = '' } = {}) => `<h1 class="t" style="left:56px;right:56px;top:${top}px;font-size:${size}px;line-height:.96;${style}">${html}</h1>`;
@@ -316,6 +319,127 @@ export const pins = [
     ${site()}` },
 ];
 
+
+// ---- batch 3: pins built on the Instagram series (SERIES.md): one question or promise, one picture that explains it,
+// one idea per pin. Series colours: Ask AI + Safe AI coral, By a kid yellow, How it works navy, Free lesson mint.
+const hand = () => {
+  const cx = 350, cy = 470, ang = [-72, -43, -14, 14, 43, 72], len = [250, 300, 330, 330, 300, 250];
+  const fing = ang.map((a, i) => {
+    const r = a * Math.PI / 180, bx = cx + Math.sin(r) * 80, by = cy - Math.cos(r) * 80, tx = cx + Math.sin(r) * (len[i] + 60), ty = cy - Math.cos(r) * (len[i] + 60);
+    return `<line x1="${bx}" y1="${by}" x2="${tx}" y2="${ty}" stroke="#141A33" stroke-width="86" stroke-linecap="round"/>`;
+  }).join('');
+  const fill = ang.map((a, i) => {
+    const r = a * Math.PI / 180, bx = cx + Math.sin(r) * 80, by = cy - Math.cos(r) * 80, tx = cx + Math.sin(r) * (len[i] + 60), ty = cy - Math.cos(r) * (len[i] + 60);
+    return `<line x1="${bx}" y1="${by}" x2="${tx}" y2="${ty}" stroke="${i === 5 ? '#FFC533' : '#FFF4DC'}" stroke-width="64" stroke-linecap="round"/>`;
+  }).join('');
+  const nums = ang.map((a, i) => {
+    const r = a * Math.PI / 180, tx = cx + Math.sin(r) * (len[i] + 10), ty = cy - Math.cos(r) * (len[i] + 10);
+    return `<circle cx="${tx}" cy="${ty}" r="25" fill="#141A33"/><text x="${tx}" y="${ty + 12}" text-anchor="middle" font-family="Sora" font-weight="800" font-size="34" fill="#FFF4DC">${i + 1}</text>`;
+  }).join('');
+  return `<svg viewBox="0 0 700 700" style="position:absolute;left:130px;top:590px;width:740px;height:740px;z-index:3">${fing}<ellipse cx="${cx}" cy="${cy + 40}" rx="215" ry="190" fill="#141A33"/>${fill}<ellipse cx="${cx}" cy="${cy + 40}" rx="199" ry="174" fill="#FFF4DC"/>${nums}</svg>`;
+};
+const noiseFrame = (l, t, op, label, rot) => card({ l, t, w: 200, h: 300, rot, src: `${M}/works/rainbow-cartoon.jpg`, inner:
+  `<svg style="position:absolute;inset:0;width:100%;height:100%;opacity:${op}"><filter id="nz${l}"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="4"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(#nz${l})"/></svg>
+   <div style="position:absolute;inset:0;background:#7B8099;opacity:${op * 0.55}"></div>` }) + pill(label, l + 20, t + 262, rot, '', 'height:54px;font-size:24px;z-index:8');
+
+pins.push(
+  { file: 'why-does-ai-draw-six-fingers', n: 19, board: 'ai', anchor: 'how', variant: 'один визуал', ai: false,
+    phrase: 'why does AI draw six fingers',
+    title: 'Why Does AI Draw Six Fingers | It Learned How Hands Look, Not How to Count | Kids and AI',
+    text: 'Why does AI draw six fingers? It learned what hands look like from millions of pictures, where hands are half hidden. It copies the look and never counts. Teach kids to check.',
+    alt: 'Coral pin that reads "Why does AI draw six fingers?" with a drawn hand: five fingers in cream and a sixth in yellow, numbered one to six.',
+    why: 'Серия Ask AI: вопрос, парадокс (рисует лицо как фото, но не считает пальцы) и одна картинка. Рука нарисована в коде, чужих картинок нет.',
+    html: `${h('Why does AI draw <mark>six fingers</mark>?', { size: 104 })}
+    ${p('It paints a face like a photo.<br>It can\'t count to five.', 500, 44, 'color:#141A33')}
+    ${hand()}
+    ${pill('check the hands', 600, 1290, 4, '', 'height:70px;font-size:30px;z-index:8')}
+    ${site()}` },
+
+  { file: 'how-ai-draws-pictures-for-kids', n: 20, board: 'ai', anchor: 'how', variant: 'один визуал', ai: true,
+    phrase: 'how AI draws pictures for kids',
+    title: 'How AI Draws Pictures for Kids | It Starts With TV Static, Not a Blank Page | Easy Explainer',
+    text: 'How AI draws pictures for kids, in plain words: it starts from random noise like TV static, then cleans it up a little at a time until the picture matches the words.',
+    alt: 'Navy pin that reads "How AI draws pictures for kids" with four frames of one rainbow cartoon, from grey static to a clear picture: static, cleaning, almost, done.',
+    why: 'Серия Ask AI: как ИИ рисует из слов. Радуга из поста 1 проявляется из шума. Объяснение общее, без названий моделей.',
+    html: `${h('How AI <mark>draws</mark> pictures<br>for kids', { size: 100 })}
+    ${p('It starts as TV static.<br>Then it cleans up, a little at a time.', 500, 44)}
+    ${noiseFrame(56, 720, 0.95, 'static', -3)}${noiseFrame(280, 750, 0.72, 'cleaning', 2)}${noiseFrame(504, 720, 0.38, 'almost', -2)}${noiseFrame(728, 750, 0, 'done', 3)}
+    ${p('The words are your kid\'s idea.', 1150, 46, 'color:#FFC533;font-weight:800')}
+    ${site(true)}` },
+
+  { file: 'why-ai-sounds-sure-when-wrong', n: 21, board: 'ai', anchor: 'how', variant: 'чат', ai: false,
+    phrase: 'why AI sounds sure when wrong',
+    title: 'Why AI Sounds Sure When Wrong | It Guesses the Next Word, It Does Not Look It Up | Kids',
+    text: 'Why AI sounds sure when wrong: a chatbot writes the most likely next words, and confident words are very likely. Teach your kid one habit: sounds sure, still check.',
+    alt: 'Coral pin that reads "Why AI sounds sure when wrong" with a chat: how many legs does a spider have, the AI says 6 and that it is 100 percent sure, and a stamp says wrong, it is 8.',
+    why: 'Серия Ask AI: парадокс (ИИ не ищет ответ, а угадывает следующее слово). Пример про паука общеизвестный.',
+    html: `${h('Why AI <mark>sounds sure</mark><br>when wrong', { size: 92 })}
+    ${p('It isn\'t looking it up.<br>It\'s guessing the next word.', 440, 44, 'color:#141A33')}
+    ${card({ l: 56, t: 640, w: 700, h: 170, rot: -1.5, inner: `<p style="padding:34px 40px;font:700 46px/1.15 Urbanist;color:#141A33">How many legs does a spider have?</p>` })}
+    ${card({ l: 244, t: 850, w: 700, h: 190, rot: 1.5, cls: '', inner: `<p style="padding:30px 40px;font:700 48px/1.15 Urbanist;color:#141A33"><b style="font-family:Sora;color:${C.coral}">AI</b> &nbsp;6. I\'m 100% sure.</p>` })}
+    ${pill('WRONG. It\'s 8.', 430, 1090, -6, 'dark', 'height:96px;font-size:48px;padding:0 44px;z-index:8')}
+    ${p('Sounds sure? Still check.', 1260, 46, 'color:#141A33;font-weight:800')}
+    ${site()}` },
+
+  { file: 'spot-a-fake-ai-picture', n: 22, board: 'safety', anchor: 'safe', variant: 'четыре проверки', ai: true,
+    phrase: 'spot a fake AI picture',
+    title: 'Spot a Fake AI Picture | 4 Checks to Teach Your Kid | Kids and AI Safety',
+    text: 'Spot a fake AI picture with your kid: check hands and fingers, letters on signs, shadows that point different ways, and edges that melt into the background.',
+    alt: 'Coral pin that reads "Spot a fake AI picture" with a glowing rainbow cartoon marked with four numbered circles, and a list: hands, letters on signs, shadows, edges.',
+    why: 'Серия Safe AI: сохраняемая шпаргалка. В курсе есть урок про фейки (facts.md); сами приметы общие знания.',
+    html: `${h('Spot a <mark>fake</mark> AI<br>picture', { size: 112 })}
+    ${card({ l: 56, t: 500, w: 440, h: 660, rot: -3, src: `${M}/works/rainbow-cartoon.jpg`, inner: [[70, 90], [290, 210], [90, 420], [300, 520]].map(([x, y], i) =>
+      `<b style="position:absolute;left:${x}px;top:${y}px;display:grid;place-items:center;width:72px;height:72px;border-radius:50%;border:6px solid #fff;background:#141A33;color:#fff;font:800 36px Sora;box-shadow:0 0 0 4px #141A33">${i + 1}</b>`).join('') })}
+    <div style="position:absolute;left:530px;top:520px;width:420px;display:grid;gap:44px">${['Hands and fingers', 'Letters on signs', 'Shadows that disagree', 'Edges that melt'].map((t, i) =>
+      `<div style="display:flex;gap:18px;align-items:center"><b style="flex:none;display:grid;place-items:center;width:64px;height:64px;border-radius:50%;background:#141A33;color:#fff;font:800 34px Sora">${i + 1}</b><span style="font:800 42px/1.05 Urbanist;color:#141A33">${t}</span></div>`).join('')}</div>
+    ${p('Too perfect? Check it.', 1220, 46, 'color:#141A33;font-weight:800')}
+    ${site()}` },
+
+  { file: 'what-grandmas-made-with-grandkids', n: 23, board: 'gifts', anchor: 'families', variant: 'четыре портрета', ai: false,
+    phrase: 'what grandmas made with grandkids',
+    title: 'What Grandmas Made With Grandkids | A Cartoon, a Song, a Gift, a Game | Ages 6-14',
+    text: 'What grandmas made with grandkids: a cartoon, a song, a gift and a game, all in an AI course done side by side. A gift idea that is time together, not another toy.',
+    alt: 'Yellow pin that reads "What grandmas made with grandkids" with four round portraits of grandmothers and what each made: Margaret a cartoon, Susan a song, Linda a gift, Patricia a game.',
+    note: 'Margaret, Susan, Linda and Patricia are early-access testers. They received the course free and shared honest feedback.',
+    why: 'Серия By a kid, сезон подарков. Имена, фото и проекты из таблицы отзывов в facts.md; цитат на картинке нет, только что сделали. Пометка про бесплатный курс в описании.',
+    html: `${h('What grandmas<br>made with <mark>grandkids</mark>', { size: 100 })}
+    ${p('A cartoon, a song, a gift, a game.', 505, 46, 'color:#141A33')}
+    ${[['margaret', 'Margaret', 'a cartoon', 70, 610], ['susan', 'Susan', 'a song', 520, 650], ['linda', 'Linda', 'a gift', 70, 970], ['patricia', 'Patricia', 'a game', 520, 1010]].map(([f, n, w, l, t], i) =>
+      `${ring({ l, t, d: 360, src: `${M}/landing/reviews/${f}.jpg`, pos: '50% 25%', zoom: 175, z: 4, pad: 12 })}${pill(`${n}: ${w}`, l + 20, t + 300, [-4, 3, 4, -3][i], '', 'height:62px;font-size:28px;z-index:8')}`).join('')}
+    ${site()}` },
+
+  { file: 'kid-made-a-cartoon-with-ai', n: 24, board: 'activities', anchor: 'works', variant: 'шаги', ai: true,
+    phrase: 'kid made a cartoon with AI',
+    title: 'Kid Made a Cartoon With AI | 4 Steps a 10-Year-Old Followed | Easy Kids Project',
+    text: 'A kid made a cartoon with AI: a 10-year-old told it her story and characters, checked every scene and fixed the ones that came out wrong. About 20 minutes, a parent next to her.',
+    alt: 'Yellow pin that reads "Kid made a cartoon with AI" with a cartoon cat and four steps: idea, characters, scenes, voice.',
+    why: 'Серия By a kid: как сделан мультфильм, по шагам. «About 20 minutes» и «2-3 попытки» это ответ владельца от 13.11 (запись в desks/instagram.md), в facts.md цифры пока нет.',
+    html: `${h('Kid made a<br><mark>cartoon</mark> with AI', { size: 112 })}
+    ${card({ l: 56, t: 520, w: 420, h: 700, rot: -3, src: `${M}/landing/cartoon-cat.jpg`, pos: '50% 35%' })}
+    <div style="position:absolute;left:520px;top:540px;width:430px;display:grid;gap:50px">${['An idea', 'Her characters', 'Every scene, checked', 'Her own voice'].map((t, i) =>
+      `<div style="display:flex;gap:18px;align-items:center"><b style="flex:none;display:grid;place-items:center;width:70px;height:70px;border-radius:50%;background:#141A33;color:#FFF4DC;font:800 38px Sora">${i + 1}</b><span style="font:800 44px/1.05 Urbanist;color:#141A33">${t}</span></div>`).join('')}</div>
+    ${p('A 10-year-old.<br>About 20 minutes.', 1260, 44, 'right:300px;color:#141A33;font-weight:800')}
+    ${site()}` },
+);
+
+// Series frame (SERIES.md): colour and chip per pin. Ask AI + Safe AI coral, By a kid yellow, How it works navy, Free lesson mint.
+const FRAME = { c: ['c'], y: ['y'], n: ['n'], m: ['m'] };
+const SERIES_OF = {
+  'non-toy-gift-idea-for-kids': ['kid', 'y'], 'gift-ideas-for-grandkids': ['kid', 'y'],
+  'ai-safety-rules-for-kids': ['safe', 'c'], 'ai-house-rules-for-families': ['safe', 'c'],
+  'free-ai-lesson-for-kids': ['free', 'm'], 'turn-kids-drawings-into-cartoons': ['kid', 'y'],
+  'ai-projects-for-kids': ['kid', 'y'], 'how-to-teach-kids-ai': ['how', 'n'],
+  'creative-screen-time-ideas-for-kids': ['kid', 'y'], 'kids-make-stickers-with-ai': ['kid', 'y'],
+  'ai-for-kids-by-age': ['how', 'n'], 'ai-course-for-kids-and-parents': ['how', 'n'],
+  'ai-rules-for-kids-poster': ['safe', 'c'], 'what-kids-should-never-tell-ai': ['safe', 'c'],
+  'ai-safety-checklist-for-parents': ['safe', 'c'], 'experience-gifts-for-kids': ['kid', 'y'],
+  'christmas-gift-ideas-for-grandkids': ['kid', 'y'], 'last-minute-gift-for-grandkids': ['free', 'm'],
+  'why-does-ai-draw-six-fingers': ['ask', 'c'], 'how-ai-draws-pictures-for-kids': ['ask', 'n'],
+  'why-ai-sounds-sure-when-wrong': ['ask', 'c'], 'spot-a-fake-ai-picture': ['safe', 'c'],
+  'what-grandmas-made-with-grandkids': ['kid', 'y'], 'kid-made-a-cartoon-with-ai': ['kid', 'y'],
+};
+for (const pin of pins) [pin.series, pin.theme] = SERIES_OF[pin.file];
+
 // ---------------------------------------------------------------------------------- checks, render, files
 const BANNED = /[—‘’“”]|\b(unlock|unleash|empower|revolutioni[sz]e|game-changer|cutting-edge|harness|delve|future-proof)\b|#\w/i;
 function check(pin) {
@@ -339,7 +463,7 @@ if (process.argv[1] && process.argv[1].endsWith('pins.mjs')) {
   for (const pin of pins) {
     const pg = await (await browser.newContext({ viewport: { width: 1000, height: 1500 } })).newPage();
     const tmp = join(out, '.tmp.html');
-    writeFileSync(tmp, `<!doctype html><meta charset="utf-8"><style>${css()}.tile.pin{width:1000px;height:1500px}</style><div class="tile pin ${pin.theme}">${head(pin.theme)}${body(pin.html)}</div>`);
+    writeFileSync(tmp, `<!doctype html><meta charset="utf-8"><style>${css()}.tile.pin{width:1000px;height:1500px}</style><div class="tile pin ${pin.theme}">${head(pin.series)}${body(pin.html)}</div>`);
     await pg.goto(pathToFileURL(tmp).href);
     await pg.evaluate(() => document.fonts.ready);
     await pg.waitForTimeout(80);
