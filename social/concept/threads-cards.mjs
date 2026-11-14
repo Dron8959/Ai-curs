@@ -718,15 +718,17 @@ cards['w2-01-things-made'] = { theme: 'c', chip: 'House rules?',
       .from('.ck',{scale:0,duration:.3,ease:'back.out(3)',stagger:.45},2.4)
       .from('#off',{scale:0,duration:.4,ease:'back.out(3)'},4.2);` };
 
+// Kamilla's portrait (social/media/landing/kamilla.jpg) and her own sticker, cropped from step-show.jpg
+const IMG = (f, mime) => `data:${mime};base64,${readFileSync(join(here, 'text/threads/src', f)).toString('base64')}`;
 cards['w2-03-ai-kamilla'] = { theme: 'm', chip: 'Our rule',
   hl: `Real or <mark>AI?</mark><br>We always say.`,
   stage: `
-    ${[['user-round', 'Kamilla, 10', 'REAL', '#5FE0A8', '#FFF9EC'], ['bot', 'Kamilla, AI version', 'AI', '#FF6F4A', '#E9EDFF']].map(([ic, n, tag, tc, bg], i) => `
-    <div class="box pc" style="left:${i * 486}px;top:10px;width:466px;height:400px;background:${bg};display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px">
-      <div style="width:170px;height:170px;border:6px solid #141A33;border-radius:50%;background:#FFC533;display:flex;align-items:center;justify-content:center">${icon(ic, 110, 2)}</div>
-      <div class="big" style="font-size:40px">${n}</div>
+    ${[[IMG('kamilla-photo.jpg', 'image/jpeg'), 'Kamilla, 10', 'REAL', '#5FE0A8', '#FFF9EC', '50% 30%'], [IMG('kamilla-sticker.png', 'image/png'), 'Kamilla, AI version', 'AI', '#FF6F4A', '#E9EDFF', '50% 40%']].map(([src, n, tag, tc, bg, pos], i) => `
+    <div class="box pc" style="left:${i * 486}px;top:0;width:466px;height:420px;background:${bg};display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px">
+      <div style="width:220px;height:240px;border:6px solid #141A33;border-radius:32px;overflow:hidden;background:#FFC533"><img src="${src}" style="width:100%;height:100%;object-fit:cover;object-position:${pos}"></div>
+      <div class="big" style="font-size:38px">${n}</div>
       <div class="tg" style="font:800 30px Sora;padding:6px 24px;border:5px solid #141A33;border-radius:999px;background:${tc}">${tag}</div></div>`).join('')}
-    <div class="bub" id="say" style="left:0;top:450px;width:952px;text-align:center;font:800 38px Sora;background:#FFC533">Every time it's AI, we tell you.</div>`,
+    <div class="bub" id="say" style="left:0;top:460px;width:952px;text-align:center;font:800 38px Sora;background:#FFC533">Every time it's AI, we tell you.</div>`,
   tl: `
     tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
       .from('.hl mark',{scale:0,duration:.4,ease:'back.out(3)'},.45)
@@ -779,6 +781,71 @@ cards['w2-05-spot-the-fake'] = { theme: 'n', chip: 'Try tonight',
       .from('.cl',{scale:.6,opacity:0,duration:.4,ease:'back.out(2)',stagger:.3},.9)
       .from('.ring',{scale:0,opacity:0,duration:.35,ease:'back.out(3)',stagger:.55},2.4)
       .from('.fd',{scale:0,duration:.3,ease:'back.out(3)',stagger:.55},2.6);` };
+
+// ---------------------------------------------------- useful posts for 15, 16, 19.11 (threads-extra.mjs)
+cards['ex-two-answers'] = { theme: 'c', chip: 'Try tonight',
+  hl: `Same question.<br>Two <mark>answers.</mark>`,
+  stage: `
+    <div class="bub" id="oq" style="left:auto;right:0;top:0;font:700 36px Urbanist;background:#FFF9EC">"Tell me a fact about octopuses"</div>
+    ${[['Answer 1', 'Octopuses have three hearts.', '#FFF9EC'], ['Answer 2', 'An octopus can taste with its arms.', '#E9EDFF']].map(([l, t, bg], i) => `
+    <div class="box an" style="left:${i * 486}px;top:120px;width:466px;height:300px;background:${bg};padding:30px 32px;display:flex;flex-direction:column;gap:18px">
+      <div style="display:flex;align-items:center;gap:14px">${icon('bot', 46, 2.4)}<span class="lab" style="font-size:22px">${l}</span></div>
+      <div class="big" style="font-size:42px;line-height:1.12">${t}</div></div>`).join('')}
+    <div class="big" id="vs" style="position:absolute;left:446px;top:240px;width:60px;height:60px;border:5px solid #141A33;border-radius:50%;background:#FFC533;font-size:30px;display:flex;align-items:center;justify-content:center">≠</div>
+    <div class="bub" id="ck" style="left:0;top:470px;font:800 40px Sora;background:#FFC533;display:flex;align-items:center;gap:14px">${icon('search', 40, 3)} Check one together</div>`,
+  tl: `
+    tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
+      .from('.hl mark',{scale:0,duration:.4,ease:'back.out(3)'},.45)
+      .from('#oq',{scale:0,transformOrigin:'100% 50%',duration:.4,ease:'back.out(2.4)'},.9)
+      .from('.an',{y:60,opacity:0,duration:.45,ease:'back.out(1.8)',stagger:.8},1.5)
+      .from('#vs',{scale:0,rotation:-90,duration:.4,ease:'back.out(3)'},3.0)
+      .from('#ck',{scale:0,transformOrigin:'0 50%',duration:.45,ease:'back.out(2.4)'},4.0);` };
+
+cards['ex-is-it-alive'] = { theme: 'y', chip: 'Ask your kid',
+  hl: `It talks like a friend.<br>Is it <mark>alive?</mark>`,
+  stage: `
+    <div class="bub" id="hi" style="left:0;top:0;font:700 38px Urbanist;background:#FFF9EC;display:flex;align-items:center;gap:16px">${icon('bot', 50, 2.4)} "I'm so happy you're here!"</div>
+    <div class="box" style="left:0;top:120px;width:952px;height:360px;padding:26px 40px;background:#FFF9EC">
+      ${[['Eats', 0], ['Sleeps', 0], ['Misses you', 0], ['Learned from lots of text', 1]].map(([t, ok]) => `
+      <div class="rw" style="display:flex;align-items:center;gap:24px;height:77px;border-bottom:3px dashed #D9CDB0">
+        <span class="mk" style="flex:none;width:54px;height:54px;border:5px solid #141A33;border-radius:12px;background:${ok ? '#5FE0A8' : '#FF6F4A'};display:flex;align-items:center;justify-content:center">${icon(ok ? 'check' : 'x', 34, 3.4)}</span>
+        <span class="big" style="font-size:40px">${t}</span></div>`).join('')}
+    </div>
+    <div class="bub" id="na" style="left:auto;right:20px;top:500px;font:800 46px Sora;background:#141A33;color:#FFF4DC;transform:rotate(-4deg)">Not alive</div>`,
+  tl: `
+    tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
+      .from('.hl mark',{scale:0,duration:.4,ease:'back.out(3)'},.45)
+      .from('#hi',{scale:0,transformOrigin:'0 50%',duration:.4,ease:'back.out(2.4)'},.9)
+      .from('.rw',{x:-60,opacity:0,duration:.35,stagger:.45},1.6)
+      .from('.mk',{scale:0,duration:.3,ease:'back.out(3)',stagger:.45},1.8)
+      .from('#na',{scale:2,opacity:0,duration:.35,ease:'power3.in'},4.2);` };
+
+const DOG = (fur, ear2, sock) => `<svg width="300" height="260" viewBox="0 0 200 175">
+  <ellipse cx="100" cy="150" rx="60" ry="22" fill="${fur}" stroke="#141A33" stroke-width="5"/>
+
+  ${ear2 ? `<polygon points="144,62 150,18 118,44" fill="${fur}" stroke="#141A33" stroke-width="5" stroke-linejoin="round"/>` : ''}
+  <circle cx="100" cy="86" r="50" fill="${fur}" stroke="#141A33" stroke-width="5"/>
+  ${ear2 ? `<path d="M60 50 Q34 62 40 112 Q60 110 70 66 Z" fill="#6B3E22" stroke="#141A33" stroke-width="5" stroke-linejoin="round"/>` : `<path d="M60 50 Q34 62 40 112 Q60 110 70 66 Z" fill="#8E93A6" stroke="#141A33" stroke-width="5" stroke-linejoin="round"/><path d="M140 50 Q166 62 160 112 Q140 110 130 66 Z" fill="#8E93A6" stroke="#141A33" stroke-width="5" stroke-linejoin="round"/>`}
+  ${ear2 ? `<circle cx="122" cy="76" r="16" fill="#FFF4DC" opacity=".9"/>` : ''}
+  <circle cx="82" cy="78" r="6.5" fill="#141A33"/><circle cx="120" cy="78" r="6.5" fill="#141A33"/>
+  <ellipse cx="100" cy="104" rx="26" ry="18" fill="#FFF4DC" stroke="#141A33" stroke-width="4"/>
+  <ellipse cx="100" cy="96" rx="9" ry="6" fill="#141A33"/>
+  ${sock ? `<g transform="rotate(-12 120 128)"><rect x="96" y="114" width="62" height="22" rx="10" fill="#FF6F9A" stroke="#141A33" stroke-width="4"/><rect x="140" y="114" width="18" height="34" rx="9" fill="#FF6F9A" stroke="#141A33" stroke-width="4"/><rect x="104" y="114" width="10" height="22" fill="#FFF4DC"/></g>` : `<path d="M90 114 Q100 122 110 114" fill="none" stroke="#141A33" stroke-width="4" stroke-linecap="round"/>`}
+</svg>`;
+cards['ex-our-dog'] = { theme: 'n', chip: 'Try tonight',
+  hl: `Millions of dogs.<br>Not <mark>yours.</mark>`,
+  stage: `
+    ${[['"our dog"', DOG('#C9CCD6', false, false), 'A random dog', '#FFF4DC'], ['your kid describes it', DOG('#C98A4B', true, true), 'Your dog', '#FFF9EC']].map(([p, art, cap, bg], i) => `
+    <div class="box dg" style="left:${i * 486}px;top:0;width:466px;height:540px;background:${bg};padding:24px;display:flex;flex-direction:column;align-items:center">
+      <div class="bub" style="position:relative;font:700 28px Urbanist;background:${i ? '#FFC533' : '#E9EDFF'}">${p}</div>
+      ${i ? `<div class="lab dd" style="margin-top:16px;font-size:19px;text-align:center;line-height:1.5">brown · one floppy ear<br>always holding a sock</div>` : '<div style="height:73px"></div>'}
+      <div style="margin-top:6px">${art}</div>
+      <div class="big" style="font-size:36px">${cap}</div></div>`).join('')}`,
+  tl: `
+    tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
+      .from('.hl mark',{scale:0,duration:.4,ease:'back.out(3)'},.45)
+      .from('.dg',{y:80,opacity:0,duration:.5,ease:'back.out(1.8)',stagger:1.4},.9)
+      .from('.dd',{opacity:0,y:10,duration:.4},2.6);` };
 
 // ------------------------------------------------------------------------------------------ render
 const run = (cmd, args) => new Promise((res, rej) => spawn(cmd, args, { stdio: 'inherit' }).on('close', (c) => (c ? rej(new Error(`${cmd} ${c}`)) : res())));

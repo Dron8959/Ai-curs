@@ -48,6 +48,26 @@ What would your kid's cartoon be about?` },
 
 Which one would you add?` },
 
+
+  // added 14.11 at the owner's ask: one useful post every day (they take the 15:10 slot)
+  { id: 'ex-two-answers', when: '2026-11-15T15:10', kind: 'try', topic: 'AI for kids', media: 'ex-two-answers',
+    text: `Ask an AI the same question twice. You'll often get two different answers.
+
+It picks its words with a bit of chance each time, so no two answers come out exactly the same.
+
+Try it tonight: "Tell me a fact about octopuses", twice. Then check one fact together. What did yours say?` },
+  { id: 'ex-is-it-alive', when: '2026-11-16T15:10', kind: 'how', topic: 'AI for kids', media: 'ex-is-it-alive',
+    text: `Is AI alive? It talks like a friend, so it's a fair question for a kid.
+
+It learned how people write by reading a huge amount of text, so it sounds like a person. It doesn't eat, sleep or miss anyone.
+
+How would your kid answer: alive or not?` },
+  { id: 'ex-our-dog', when: '2026-11-19T15:10', kind: 'try', topic: 'AI for kids', media: 'ex-our-dog',
+    text: `AI has seen millions of dogs. It has never seen yours.
+
+Ask it to draw "our dog" and you get a random dog. Now let your kid describe yours: the color, the ears, the silly thing it always does.
+
+How close did it get?` },
 ];
 
 // week 2: more broad questions and posts spun out of "5 safe ways", one way per post
@@ -84,7 +104,7 @@ Make it a game: the first one to find the mistake picks dessert.
 Who won at your house?` },
 ];
 
-const LIMITS = { question: 300, story: 450, useful: 450 };
+const LIMITS = { question: 300, story: 450, useful: 450, how: 450, try: 450, save: 450, case: 450 };
 const BANNED = /[—–‘’“”]|\b(unlock|unleash|empower|revolutioni[sz]e|game-changer|cutting-edge|harness|delve|future-proof|hack)\b|comment yes|follow for more|\b99%/i;
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
