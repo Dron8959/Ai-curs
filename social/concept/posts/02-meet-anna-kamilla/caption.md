@@ -3,7 +3,7 @@ post: 2
 rubric: make 01
 type: reel
 network: instagram
-ai_generated: false
+ai_generated: true
 ---
 The first lesson is free. It's in our bio.
 

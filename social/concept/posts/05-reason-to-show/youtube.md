@@ -7,7 +7,7 @@ media: reel.mp4
 category: Education
 privacy: public
 made_for_kids: "No" (the videos speak to parents; the owner confirms this declaration)
-altered_content: no
+altered_content: not required (stylised cartoon, nothing realistic); the description says AI made it
 tags: [screen time for kids, healthy screen time, screen time ideas, ai for kids, parenting tips]
 ---
 Kids don't need more screen time. They need a reason to show you something.

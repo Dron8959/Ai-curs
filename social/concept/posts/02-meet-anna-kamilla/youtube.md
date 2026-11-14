@@ -7,7 +7,7 @@ media: reel.mp4
 category: Education
 privacy: public
 made_for_kids: "No" (the videos speak to parents; the owner confirms this declaration)
-altered_content: no
+altered_content: not required (stylised cartoon, nothing realistic); the description says AI made it
 tags: [ai course for kids and parents, ai for kids, kids and ai, learn ai with your kid, make show lab]
 ---
 We're a mom and a daughter, not a corporation.

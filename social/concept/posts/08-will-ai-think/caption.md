@@ -3,7 +3,7 @@ post: 8
 rubric: lab 03
 type: reel
 network: instagram
-ai_generated: false
+ai_generated: true
 ---
 Know a parent who thinks AI makes kids lazy? Send them this.
 

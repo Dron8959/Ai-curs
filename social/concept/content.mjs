@@ -59,7 +59,7 @@ In our AI course for kids, the kid has the idea and makes the drawing. The AI fo
 
 #aiforkids #kidsart #kidsdrawing #creativekids #familyactivities` },
 
-  { id: '02-meet-anna-kamilla', n: 2, rubric: 'make', no: '01', format: 'reel', ai: false, title: 'Meet Anna & Kamilla.',
+  { id: '02-meet-anna-kamilla', n: 2, rubric: 'make', no: '01', format: 'reel', ai: true, title: 'Meet Anna & Kamilla.',
     tile: `
     ${top('make', '01')}
     <h1 class="t">Meet Anna<br>&amp; <mark>Kamilla.</mark></h1>
@@ -146,7 +146,7 @@ She decided, told the AI, checked what came back and fixed it. No code. That's o
 
 #aiforkids #kidsgames #kidsandai #familygamenight` },
 
-  { id: '05-reason-to-show', n: 5, rubric: 'lab', no: '02', format: 'reel', ai: false, title: 'A reason to show you.',
+  { id: '05-reason-to-show', n: 5, rubric: 'lab', no: '02', format: 'reel', ai: true, title: 'A reason to show you.',
     tile: `
     ${top('lab', '02')}
     <p class="kick" style="top:182px">Not more screen time.</p>
@@ -163,7 +163,7 @@ In our course every lesson ends with something your kid made to show you: a game
 
 #screentime #parentingtips #aiforkids #kidsandai` },
 
-  { id: '06-watch-make-show', n: 6, rubric: 'make', no: '02', format: 'reel', ai: false, title: 'Watch. Make. Show.',
+  { id: '06-watch-make-show', n: 6, rubric: 'make', no: '02', format: 'reel', ai: true, title: 'Watch. Make. Show.',
     tile: `
     ${top('make', '02')}
     <h1 class="t">Watch.<br><span style="color:${C.yellow}">Make.</span><br><span style="color:${C.coral}">Show.</span></h1>
@@ -199,7 +199,7 @@ That's the kind of thing kids make in our course, with a parent right there.
 
 #aiforkids #kidscartoon #kidsgames #creativekids` },
 
-  { id: '08-will-ai-think', n: 8, rubric: 'lab', no: '03', format: 'reel', ai: false, title: 'Will AI think for my kid?',
+  { id: '08-will-ai-think', n: 8, rubric: 'lab', no: '03', format: 'reel', ai: true, title: 'Will AI think for my kid?',
     tile: `
     ${top('lab', '03')}
     <h1 class="t" style="font-size:124px">Will AI think<br>for <mark>my kid?</mark></h1>

@@ -7,7 +7,7 @@ media: reel.mp4
 category: Education
 privacy: public
 made_for_kids: "No" (the videos speak to parents; the owner confirms this declaration)
-altered_content: no
+altered_content: not required (stylised cartoon, nothing realistic); the description says AI made it
 tags: [ai lesson for kids, how to teach kids ai, ai for kids, homeschool technology, kids and ai]
 ---
 What happens in one AI lesson for kids: three steps, 6 to 20 minutes.

@@ -10,7 +10,7 @@ duet: on
 stitch: on
 privacy: public
 disclosure: "Your brand" on (it promotes our own course); "Branded content" off
-ai_label: off
+ai_label: on
 ---
 AI course for kids and parents, made by a mom and her 10-year-old daughter. I'm Anna. I built every lesson myself and tested each one on Kamilla at our kitchen table. What lost her attention got cut. She goes first, then your kid makes their own.
 

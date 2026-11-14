@@ -3,7 +3,7 @@ post: 6
 rubric: make 02
 type: reel
 network: instagram
-ai_generated: false
+ai_generated: true
 ---
 Save this for the night you try lesson one.
 
