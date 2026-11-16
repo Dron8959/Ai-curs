@@ -4,14 +4,14 @@
 
 | № | День | Креатив | Формат | Рубрика | Закреп | Файлы | Статус |
 |---|---|---|---|---|---|---|---|
-| 1 | Пн | **From crayon to cartoon.** | ролик, 14 с, со звуком | show 01 |  | `01-crayon-to-cartoon/`: `reel.mp4`, `cover.jpg`, `caption.md` | ждёт подтверждения, что рисунок детский |
+| 1 | Пн | **From crayon to cartoon.** | ролик, 14 с, со звуком | show 01 |  | `01-crayon-to-cartoon/`: `reel.mp4`, `cover.jpg`, `caption.md` | собран |
 | 2 | Вт | **Meet Anna & Kamilla.** | ролик, 19 с, со звуком | make 01 | да | `02-meet-anna-kamilla/`: `reel.mp4`, `cover.jpg`, `caption.md` | собран |
 | 3 | Ср | **5 AI house rules.** | карусель, 9 слайдов | lab 01 |  | `03-ai-house-rules/`: `slide-01…09.jpg`, `caption.md` | собран |
-| 4 | Чт | **Idea at 7:02. Game by 7:41.** | ролик, 18 с, со звуком | show 02 |  | `04-idea-to-game/`: `reel.mp4`, `cover.jpg`, `caption.md` | ждёт подтверждения истории «7:02 → 7:41» |
+| 4 | Чт | **Idea at 7:02. Game by 7:41.** | ролик, 18 с, со звуком | show 02 |  | `04-idea-to-game/`: `reel.mp4`, `cover.jpg`, `caption.md` | собран |
 | 5 | Сб | **A reason to show you.** | ролик, 16 с, со звуком | lab 02 |  | `05-reason-to-show/`: `reel.mp4`, `cover.jpg`, `caption.md` | собран |
 | 6 | Пн | **Watch. Make. Show.** | ролик, 18 с, со звуком | make 02 |  | `06-watch-make-show/`: `reel.mp4`, `cover.jpg`, `caption.md` | собран |
 | 7 | Вт | **Made by a 10-year-old.** | ролик, 18 с, со звуком | show 03 | да | `07-made-by-10-year-old/`: `reel.mp4`, `cover.jpg`, `caption.md` | собран |
-| 8 | Ср | **Will AI think for my kid?** | ролик, 18 с, со звуком | lab 03 |  | `08-will-ai-think/`: `reel.mp4`, `cover.jpg`, `caption.md` | собран |
+| 8 | Ср | **Will AI think for my kid?** | ролик, 19 с, со звуком | lab 03 |  | `08-will-ai-think/`: `reel.mp4`, `cover.jpg`, `caption.md` | собран |
 | 9 | Пт | **8 families tried it first.** | карусель, 9 слайдов | show 04 |  | `09-first-families/`: `slide-01…09.jpg`, `caption.md` | собран |
 | 10 | Вс | **Free first lesson.** | карусель, 7 слайдов | start  | да | `10-free-first-lesson/`: `slide-01…07.jpg`, `caption.md` | собран |
 

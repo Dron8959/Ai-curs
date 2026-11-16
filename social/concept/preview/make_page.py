@@ -349,7 +349,7 @@ HLS = [('free-lesson', 'Free lesson', 'заставка, затем слайды
        ('is-it-safe', 'Is it safe?', 'заставка, затем слайды поста №3 (вертикальные, из posts/03-ai-house-rules/tiktok/)'),
        ('pricing', 'Pricing', 'заставка: обе цены стоят на ней'), ('about-us', 'About us', 'заставка, затем ролик №2 и отзывы из поста №9')]
 ids = {int(os.path.basename(d)[:2]): os.path.basename(d) for d in glob.glob(os.path.join(REPO, '*'))}
-WAIT = {1: 'ждёт подтверждения, что рисунок детский', 4: 'ждёт подтверждения истории «7:02 → 7:41»'}
+WAIT = {}   # {post number: why it waits}; empty since the owner confirmed both facts (12 and 16 Nov 2026)
 L = ['# Instagram: все креативы первой партии', '',
      'Порядок публикации. Файлы лежат в `social/concept/posts/<папка>/`; тот же набор собран в архив `out/instagram-creatives.zip`.', '',
      '| № | День | Креатив | Формат | Рубрика | Закреп | Файлы | Статус |', '|---|---|---|---|---|---|---|---|']

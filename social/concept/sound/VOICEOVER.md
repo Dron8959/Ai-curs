@@ -1,8 +1,15 @@
 # Voice-over: lines and timing
 
-The published reels have music and effects and no voice yet. The voice will be two real people: Anna and
-Kamilla record the lines themselves (the owner's decision, 12 November 2026). This file holds the lines, the
-history of that decision and what turns a phone recording into a voiced reel.
+Since 14 November 2026 the reels carry a voice: clones of Anna's and Kamilla's voices made from their recordings,
+approved by the owner (see "How it went" below). This file holds the lines, the history of that decision and the
+tools for turning a recording into a voiced reel.
+
+## How it went
+- **12-14 Nov**, from the Instagram desk's journal (`social/desks/instagram.md`): the owner sent recordings of Anna and
+  Kamilla; the voices made from them were liked; Anna agreed to a clone of Kamilla's voice; the lines of all ten
+  posts were remade on 12 Nov; on 14 Nov the owner approved the voices and every reel carries a voice, with the
+  AI label. So the plan of 12 Nov below (a brief for live recording, a second try at cloning) played out in
+  another chat. What follows is the reasoning, kept for the next time a voice is made.
 
 ## How the decision was made
 - **11 Nov:** one sample, reel 05 with Anna's voice cloned from her recording by an open model (Chatterbox,
@@ -24,8 +31,8 @@ Two briefs, one PDF each: `social/concept/out/voice-brief-anna.pdf` and `voice-b
 the brief differ). First page: how to record on a phone. Then a page per reel: every line, what it means in
 Russian, how to say it, boxes for the takes.
 - **Anna:** reels 02, 05, 08. **Kamilla:** reels 02, 06, 07. The last line of 02 they say together, into one phone.
-- **Reels 01 and 04 wait.** They stand on two facts the owner has not confirmed (the 6-year-old's drawing, the
-  7:02 to 7:41 story). Recording before that risks recording twice.
+- **Reels 01 and 04 waited** for two facts. Both are confirmed now: the drawing by a 6-year-old (Anna, relayed
+  by the owner on 12 Nov) and the 7:02 to 7:41 story (the owner, 16 Nov).
 - One recording per reel, any phone voice-memo app (not a messenger's voice message: it is squeezed), 5 s of
   silence first, every line twice with a pause between. No names or numbers need to be said.
 
@@ -87,7 +94,8 @@ If a 10-second reference is not enough, the usual next step is one longer record
 varied speech) to train a proper voice, with an open model or a paid service. It is one session instead of one per
 reel. A paid service means Anna's voice leaves this machine: only with the owner's go-ahead and Anna's consent.
 
-**Kamilla is a child.** Her voice is cloned only with her mother's explicit consent. The recording and the voice
+**Kamilla is a child.** Her voice is cloned only with her mother's explicit consent (Anna agreed on 12 Nov 2026,
+relayed by the owner). The recording and the voice
 made from it stay private, never in git, never given to a service without that consent. Anything with a cloned
 voice carries the platform's AI label.
 
@@ -163,4 +171,8 @@ and the picture follows the voice, so these numbers are a starting point, not a 
 | 4 | 12.5-16.2 | Don't let AI think for your child. | 1.9 |
 | 5 | 16.2-19.4 | Teach them to think with it. | 2.0 |
 
-Reel 04 is built on the 7:02 to 7:41 story, which still needs Anna's confirmation (see `social/brand/facts.md`).
+Reel 04 is built on the 7:02 to 7:41 story, which the owner confirmed on 16 November 2026 (see `social/brand/facts.md`).
+
+The briefs (`out/voice-brief-*.pdf`) carry the lines of 11 November. The lines were remade on 12 Nov, so
+`tools/voice_brief.mjs` now stops with "the lines here and in VOICEOVER.md differ" until its data is brought up to
+date; the PDFs in `out/` are out of date. They are only needed if new recordings are wanted.
