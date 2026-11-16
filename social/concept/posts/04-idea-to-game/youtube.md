@@ -14,6 +14,7 @@ Her idea at 7:02 pm: a park, a girl and her corgi. By 7:41 we were playing it ag
 
 This is how kids make a game with AI and no code: she decided what to make, told the AI, checked what came back and fixed it. The thinking stayed with her.
 
-First lesson free: makeshowlab.com
+First lesson free, no card: makeshowlab.com
+The full course is $197, paid once. No subscription.
 
 #kidsgames #aiforkids #nocode

@@ -29,7 +29,8 @@ export const packaging = {
 
 Kids drawing to cartoon with AI, in one lesson: the kid has the idea and makes the drawing, the AI follows it, and you're side by side the whole time.
 
-First lesson free: makeshowlab.com
+First lesson free, no card: makeshowlab.com
+The full course is $197, paid once. No subscription.
 
 #kidsdrawing #aiforkids #kidsart`,
       tags: ['kids drawing to cartoon with ai', 'ai for kids', 'kids art ideas', 'ai art for kids', 'things to do with kids'] },
@@ -52,7 +53,8 @@ Whose drawing would you turn into a cartoon first?
 
 Make Show Lab is an AI course for kids and parents: ages 6 to 14, done side by side. Anna built every lesson and tested each one on Kamilla, 10, at their kitchen table. Kamilla shows the finished thing first, then your kid makes their own.
 
-First lesson free: makeshowlab.com
+First lesson free, no card: makeshowlab.com
+The full course is $197, paid once. No subscription.
 
 #aiforkids #kidsandai #momanddaughter`,
       tags: ['ai course for kids and parents', 'ai for kids', 'kids and ai', 'learn ai with your kid', 'make show lab'] },
@@ -83,7 +85,8 @@ Say hi in the comments. How old is your kid?
 
 Almost 9 in 10 American kids aged 9 to 17 already use AI, and almost half have never talked about safety with a parent (Common Sense Media, 2026). Every lesson of our course is set up this way.
 
-First lesson free: makeshowlab.com
+First lesson free, no card: makeshowlab.com
+The full course is $197, paid once. No subscription.
 
 #aisafety #kidsandai #parentingtips`,
       tags: ['ai safety rules for kids', 'ai safety for kids', 'kids and ai', 'online safety for kids', 'parenting tips'] },
@@ -112,7 +115,8 @@ Share it with a parent or a grandparent who needs it.
 
 This is how kids make a game with AI and no code: she decided what to make, told the AI, checked what came back and fixed it. The thinking stayed with her.
 
-First lesson free: makeshowlab.com
+First lesson free, no card: makeshowlab.com
+The full course is $197, paid once. No subscription.
 
 #kidsgames #aiforkids #nocode`,
       tags: ['kids make a game with ai', 'no code game for kids', 'ai for kids', 'game making for kids', 'family game night'] },
@@ -135,7 +139,8 @@ What would your kid's game be about?
 
 A different look at screen time for kids: a screen she makes on is not a screen she scrolls. In our AI course every lesson ends with a thing your kid made and wants to show, like a game or a cartoon.
 
-First lesson free: makeshowlab.com
+First lesson free, no card: makeshowlab.com
+The full course is $197, paid once. No subscription.
 
 #screentime #parenting #kidsandai`,
       tags: ['screen time for kids', 'healthy screen time', 'screen time ideas', 'ai for kids', 'parenting tips'] },
@@ -158,7 +163,8 @@ What was the last thing your kid made on a screen instead of watching?
 
 Watch: Kamilla shows the finished thing first. Make: your kid builds it and you stay right there. Show: play it, show the family, send it to grandma.
 
-First lesson free: makeshowlab.com
+First lesson free, no card: makeshowlab.com
+The full course is $197, paid once. No subscription.
 
 #aiforkids #kidsandai #homeschool`,
       tags: ['ai lesson for kids', 'how to teach kids ai', 'ai for kids', 'homeschool technology', 'kids and ai'] },
@@ -183,7 +189,8 @@ Save this for the night you try the first one.
 
 Three AI projects for kids from our course: a cartoon with her own characters, a game she made and a sticker pack of her own character. No code. She had the ideas and gave the directions, with a parent right there.
 
-First lesson free: makeshowlab.com
+First lesson free, no card: makeshowlab.com
+The full course is $197, paid once. No subscription.
 
 #aiforkids #kidsprojects #creativekids`,
       tags: ['ai projects for kids', 'what kids can make with ai', 'ai for kids', 'kids cartoon maker', 'creative kids'] },
@@ -208,7 +215,8 @@ What would your kid make first: a cartoon, a game or stickers?
 
 In every lesson the child decides what to make, tells the AI, checks what comes back and fixes it. The AI is the tool. Don't let AI think for your child. Teach them to think with it.
 
-First lesson free: makeshowlab.com
+First lesson free, no card: makeshowlab.com
+The full course is $197, paid once. No subscription.
 
 #kidsandai #parenting #criticalthinking`,
       tags: ['will ai think for my kid', 'kids and ai', 'ai and critical thinking', 'ai for kids', 'parenting tips'] },
@@ -235,7 +243,8 @@ Four grandmothers and four moms, kids from 7 to 10. They made cartoons, songs, g
 
 They received the course free and shared honest feedback. Names and photos are used with their permission.
 
-First lesson free: makeshowlab.com
+First lesson free, no card: makeshowlab.com
+The full course is $197, paid once. No subscription.
 
 #aiforkids #kidsandai #grandparents`,
       tags: ['ai course for kids reviews', 'ai course for kids', 'ai for kids', 'kids and ai', 'family activities'] },
@@ -264,7 +273,8 @@ Who would you do this with: a kid or a grandkid?
 
 If it isn't a fit for your family, you've lost nothing but 20 minutes. It's the first lesson of our AI course for kids 6 to 14, on a laptop or a tablet, with nothing to install.
 
-First lesson free: makeshowlab.com
+First lesson free, no card: makeshowlab.com
+The full course is $197, paid once. No subscription.
 
 #aiforkids #kidsgames #kidsandai`,
       tags: ['free ai lesson for kids', 'ai for kids', 'kids games', 'kids and ai', 'family activities'] },

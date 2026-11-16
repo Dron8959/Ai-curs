@@ -14,6 +14,7 @@ Everything in this video was made by Kamilla, who is 10.
 
 Three AI projects for kids from our course: a cartoon with her own characters, a game she made and a sticker pack of her own character. No code. She had the ideas and gave the directions, with a parent right there.
 
-First lesson free: makeshowlab.com
+First lesson free, no card: makeshowlab.com
+The full course is $197, paid once. No subscription.
 
 #aiforkids #kidsprojects #creativekids

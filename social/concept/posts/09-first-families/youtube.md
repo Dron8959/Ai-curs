@@ -16,6 +16,7 @@ Four grandmothers and four moms, kids from 7 to 10. They made cartoons, songs, g
 
 They received the course free and shared honest feedback. Names and photos are used with their permission.
 
-First lesson free: makeshowlab.com
+First lesson free, no card: makeshowlab.com
+The full course is $197, paid once. No subscription.
 
 #aiforkids #kidsandai #grandparents

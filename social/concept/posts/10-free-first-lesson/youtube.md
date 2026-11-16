@@ -18,6 +18,7 @@ A free AI lesson for kids: your kid builds a game tonight.
 
 If it isn't a fit for your family, you've lost nothing but 20 minutes. It's the first lesson of our AI course for kids 6 to 14, on a laptop or a tablet, with nothing to install.
 
-First lesson free: makeshowlab.com
+First lesson free, no card: makeshowlab.com
+The full course is $197, paid once. No subscription.
 
 #aiforkids #kidsgames #kidsandai

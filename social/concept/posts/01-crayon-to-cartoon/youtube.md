@@ -14,6 +14,7 @@ A 6-year-old drew this rainbow with crayons. One lesson later it was a cartoon.
 
 Kids drawing to cartoon with AI, in one lesson: the kid has the idea and makes the drawing, the AI follows it, and you're side by side the whole time.
 
-First lesson free: makeshowlab.com
+First lesson free, no card: makeshowlab.com
+The full course is $197, paid once. No subscription.
 
 #kidsdrawing #aiforkids #kidsart

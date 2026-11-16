@@ -20,6 +20,7 @@ AI safety rules for kids: the five we set before any kid opens an AI tool.
 
 Almost 9 in 10 American kids aged 9 to 17 already use AI, and almost half have never talked about safety with a parent (Common Sense Media, 2026). Every lesson of our course is set up this way.
 
-First lesson free: makeshowlab.com
+First lesson free, no card: makeshowlab.com
+The full course is $197, paid once. No subscription.
 
 #aisafety #kidsandai #parentingtips

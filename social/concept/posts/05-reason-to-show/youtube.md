@@ -14,6 +14,7 @@ Kids don't need more screen time. They need a reason to show you something.
 
 A different look at screen time for kids: a screen she makes on is not a screen she scrolls. In our AI course every lesson ends with a thing your kid made and wants to show, like a game or a cartoon.
 
-First lesson free: makeshowlab.com
+First lesson free, no card: makeshowlab.com
+The full course is $197, paid once. No subscription.
 
 #screentime #parenting #kidsandai

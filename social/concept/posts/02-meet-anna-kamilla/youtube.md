@@ -14,6 +14,7 @@ We're a mom and a daughter, not a corporation.
 
 Make Show Lab is an AI course for kids and parents: ages 6 to 14, done side by side. Anna built every lesson and tested each one on Kamilla, 10, at their kitchen table. Kamilla shows the finished thing first, then your kid makes their own.
 
-First lesson free: makeshowlab.com
+First lesson free, no card: makeshowlab.com
+The full course is $197, paid once. No subscription.
 
 #aiforkids #kidsandai #momanddaughter

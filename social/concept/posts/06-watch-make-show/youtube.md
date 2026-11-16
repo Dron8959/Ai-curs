@@ -14,6 +14,7 @@ What happens in one AI lesson for kids: three steps, 6 to 20 minutes.
 
 Watch: Kamilla shows the finished thing first. Make: your kid builds it and you stay right there. Show: play it, show the family, send it to grandma.
 
-First lesson free: makeshowlab.com
+First lesson free, no card: makeshowlab.com
+The full course is $197, paid once. No subscription.
 
 #aiforkids #kidsandai #homeschool
