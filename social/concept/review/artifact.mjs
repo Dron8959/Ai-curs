@@ -11,6 +11,7 @@ import { META } from './meta.mjs';
 import { PASS, COMMON } from './pass.mjs';
 import { DONE } from './batch2.mjs';
 import { WEEK2, QUESTIONS, STAGES, STAGE, SLOTS, DAYS, DONE2 } from './week2.mjs';
+import { TEXTS } from './week2-texts.mjs';
 
 const concept = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const site = join(concept, 'out', 'review', 'site');
@@ -63,7 +64,7 @@ const posts = readdirSync(join(concept, 'posts')).filter((d) => /^\d\d-/.test(d)
 });
 
 copyFileSync(join(concept, 'out', 'rules-card.png'), join(site, 'm', 'rules-card.png'));
-for (const p of WEEK2) { const f = join(concept, 'out', 'week2', `${p.n}.jpg`); if (existsSync(f)) { execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', f, '-vf', 'scale=540:-2', '-q:v', '4', join(site, 'm', `w2-${p.n}.jpg`)]); p.img = `m/w2-${p.n}.jpg`; } }
+for (const p of WEEK2) { p.texts = TEXTS[p.n] || null; const f = join(concept, 'out', 'week2', `${p.n}.jpg`); if (existsSync(f)) { execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', f, '-vf', 'scale=540:-2', '-q:v', '4', join(site, 'm', `w2-${p.n}.jpg`)]); p.img = `m/w2-${p.n}.jpg`; } }
 const DM = readFileSync(join(concept, 'DM.md'), 'utf8');
 const block = (h) => (DM.split(h)[1] || '').split('```')[1].trim();
 const DMS = { game: block('## GAME'), rules: block('## RULES') };
@@ -117,6 +118,7 @@ table{border-collapse:collapse;width:100%;font-size:13.5px}td{border-top:1px sol
 details{border-top:1px solid var(--line);padding-top:10px;margin-top:4px}summary{cursor:pointer;font-weight:600;color:var(--mut)}
 .views{display:flex;gap:6px;margin:0 0 14px;flex-wrap:wrap}.views button{font:600 14px var(--body);border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:20px;padding:7px 14px;cursor:pointer}.views button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}.views button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
 .stages{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin-bottom:14px}.st{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:9px 11px;font-size:12.5px;color:var(--mut)}.st b{display:block;color:var(--ink);font-size:13.5px}.st.now{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}.st.done{opacity:.6}
+.tx summary{cursor:pointer;font-weight:700;color:var(--accent)}.tx ol{margin:4px 0 8px;padding-left:20px;font-size:13.5px;display:grid;gap:3px}.tx .lbl{margin-top:8px}
 .sum{color:var(--mut);margin:0 0 12px;font-size:14px}.week{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}.day{display:grid;gap:10px;align-content:start}.day h3{margin:0;font:800 16px var(--display)}
 @media (max-width:860px){.stages{grid-template-columns:1fr 1fr}}
 .dmrow{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:12px;margin-bottom:14px}@media (max-width:860px){.dmrow{grid-template-columns:1fr}}
@@ -205,7 +207,7 @@ function plan(){
  '<p class="sum">Thu 19 to Wed 25 Nov · 21 posts, 3 a day at '+D.slots.join(', ')+' New York · '+reels+' reels, '+(D.plan.length-reels)+' carousels · asks: '+cnt('keyword')+' comment a word, '+cnt('save')+' save, '+cnt('send')+' send</p>'+
  '<div class="week">'+D.days.map((d,di)=>'<section class="day"><h3>'+esc(d)+'</h3>'+D.plan.filter(p=>p.day===di).sort((x,y)=>x.slot-y.slot).map(p=>
  '<article class="pc"><div class="top r-'+p.rubric+'"><span class="n">'+p.n+'</span><span>'+esc(p.series)+' · '+esc(p.format)+'</span><span>'+D.slots[p.slot]+'</span></div><div class="body">'+
- (p.img?'<img src="'+p.img+'" alt="" style="width:100%;border-radius:10px;border:1px solid var(--line);display:block">':'')+'<h4>'+esc(p.hook)+'</h4><div>'+esc(p.angle)+'</div><div class="ask '+p.ask[0]+'"><span class="lbl">'+ask[p.ask[0]]+'</span>'+esc(p.ask[1])+'</div><div class="nt">'+esc(p.note)+'</div></div></article>').join('')+'</section>').join('')+'</div>'+
+ (p.img?'<img src="'+p.img+'" alt="" style="width:100%;border-radius:10px;border:1px solid var(--line);display:block">':'')+'<h4>'+esc(p.hook)+'</h4><div>'+esc(p.angle)+'</div><div class="ask '+p.ask[0]+'"><span class="lbl">'+ask[p.ask[0]]+'</span>'+esc(p.ask[1])+'</div><div class="nt">'+esc(p.note)+'</div>'+(p.texts?'<details class="tx"><summary>Texts</summary>'+(p.texts.voice?'<span class="lbl">Voice ('+esc(p.texts.who)+')</span><ol>'+p.texts.voice.map(v=>'<li>'+esc(v)+'</li>').join('')+'</ol>':'')+(p.texts.slides?'<span class="lbl">Slides</span><ol>'+p.texts.slides.map(([h,b])=>'<li><b>'+esc(h)+'</b> '+esc(b)+'</li>').join('')+'</ol>':'')+'<span class="lbl">Caption</span><div class="full" style="font-size:13.5px">'+tag(p.texts.caption)+'</div></details>':'')+'</div></article>').join('')+'</section>').join('')+'</div>'+
  '<details class="card" style="margin-top:14px"><summary>Series rules and DM replies</summary><div class="rules" style="margin-top:12px">'+rules.map(([h,t])=>'<div class="card"><h2>'+esc(h)+'</h2><p>'+esc(t)+'</p></div>').join('')+'</div>'+
  '<div class="card pass" style="margin-bottom:14px"><h2>Decided 13 Nov</h2><ul class="notes">'+D.done.map(q=>'<li>'+esc(q)+'</li>').join('')+'</ul></div>'+
  '<div class="dmrow"><div class="card"><h2>RULES card (sent in DMs)</h2><img src="m/rules-card.png" alt="5 AI house rules card" style="width:100%;border-radius:12px;display:block"></div>'+

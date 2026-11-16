@@ -20,19 +20,37 @@ const listBox = (rows, l, t, w, gap = 26) => `<div class="card" style="left:${l}
 const row = (left, text, size = 44) => `<div style="display:flex;align-items:center;gap:24px">${left}<span style="font:800 ${size}px/1.1 Urbanist;color:#141A33">${text}</span></div>`;
 const numDot = (n) => `<b style="flex:none;display:grid;place-items:center;width:70px;height:70px;border-radius:50%;background:#141A33;color:#FFF4DC;font:800 36px Sora">${n}</b>`;
 
-// a cartoon hand with six fingers, counted
+// a hand drawn close to a real one: skin shading, knuckles, nails; thumb plus five fingers, counted above the tips
 const hand = (l, t) => {
-  const f = [[40, 250, 120, -28], [150, 120, 160, -12], [262, 70, 175, -2], [372, 85, 170, 8], [478, 140, 150, 18], [560, 250, 120, 34]];
-  return `<svg style="position:absolute;z-index:5;left:${l}px;top:${t}px;width:720px;height:820px;overflow:visible" viewBox="0 0 720 820">
-    <g fill="#FFD3B0" stroke="#141A33" stroke-width="12" stroke-linejoin="round">
-    ${f.map(([x, y, hgt, r]) => `<rect x="${x}" y="${y}" width="104" height="${hgt + 300}" rx="52" transform="rotate(${r} ${x + 52} ${y + hgt + 300})"/>`).join('')}
-    <rect x="90" y="400" width="540" height="400" rx="170"/></g>
-    ${f.map(([x, y, , r], i) => `<g transform="rotate(${r} ${x + 52} ${y + 420})"><circle cx="${x + 52}" cy="${y + 36}" r="40" fill="${i === 5 ? '#FF6F4A' : '#141A33'}"/><text x="${x + 52}" y="${y + 52}" text-anchor="middle" font-family="Sora" font-weight="800" font-size="46" fill="#FFF4DC">${i + 1}</text></g>`).join('')}
+  // [base x, base y, length, width, angle]
+  const F = [[222, 470, 250, 70, -11], [296, 455, 290, 72, -4], [368, 458, 270, 70, 2], [436, 468, 245, 66, 8], [500, 488, 200, 60, 15]];
+  const TH = [215, 660, 255, 88, -50];
+  const g = ([x, y, L, w, r], body) => `<g transform="rotate(${r} ${x} ${y})">${body(x, y, L, w)}</g>`;
+  const cap = (x, y, L, w) => `<rect x="${x - w / 2}" y="${y - L}" width="${w}" height="${L + 90}" rx="${w / 2}"/>`;
+  const palm = 'M150 500 C150 450 185 430 230 432 L520 445 C565 450 585 480 580 525 L566 690 C556 790 495 840 420 850 L290 850 C205 840 165 780 158 700 Z';
+  const detail = (x, y, L, w) => `
+    <ellipse cx="${x}" cy="${y - L + w * 0.62}" rx="${w * 0.3}" ry="${w * 0.42}" fill="#F7D9C4" stroke="#C98D6E" stroke-width="2.5"/>
+    <path d="M${x - w * 0.28} ${y - L * 0.62} q${w * 0.28} ${-w * 0.12} ${w * 0.56} 0" stroke="#C47E5C" stroke-width="3" fill="none" opacity=".7"/>
+    <path d="M${x - w * 0.3} ${y - L * 0.32} q${w * 0.3} ${-w * 0.14} ${w * 0.6} 0" stroke="#C47E5C" stroke-width="3" fill="none" opacity=".7"/>
+    <path d="M${x - w * 0.36} ${y - L + w * 0.5} L${x - w * 0.36} ${y - L * 0.18}" stroke="#FFF" stroke-width="6" opacity=".22" stroke-linecap="round"/>`;
+  const tips = [...F.map(([x, y, L, , r]) => [x + Math.sin(r * Math.PI / 180) * (L + 46), y - Math.cos(r * Math.PI / 180) * (L + 46)]),
+    [TH[0] + Math.sin(TH[4] * Math.PI / 180) * (TH[2] + 46), TH[1] - Math.cos(TH[4] * Math.PI / 180) * (TH[2] + 46)]];
+  const order = [5, 0, 1, 2, 3, 4];  // count from the thumb
+  return `<svg style="position:absolute;z-index:5;left:${l}px;top:${t}px;width:720px;height:880px;overflow:visible" viewBox="0 0 720 880">
+  <defs><linearGradient id="skin" gradientUnits="userSpaceOnUse" x1="120" y1="150" x2="620" y2="860"><stop offset="0" stop-color="#F8CFB3"/><stop offset=".55" stop-color="#EDB08F"/><stop offset="1" stop-color="#D99576"/></linearGradient>
+  <radialGradient id="palmshade" gradientUnits="userSpaceOnUse" cx="370" cy="640" r="260"><stop offset="0" stop-color="#FFE3CF" stop-opacity=".55"/><stop offset="1" stop-color="#FFE3CF" stop-opacity="0"/></radialGradient></defs>
+  <g fill="#A8684A" stroke="#8E5539" stroke-width="10" stroke-linejoin="round">${F.map((f) => g(f, cap)).join('')}${g(TH, cap)}<path d="${palm}"/></g>
+  <g fill="url(#skin)"><path d="${palm}"/>${F.map((f) => g(f, cap)).join('')}${g(TH, cap)}</g><path d="${palm}" fill="url(#palmshade)"/>
+  ${F.map((f) => g(f, detail)).join('')}${g(TH, detail)}
+  <path d="M215 560 C300 600 420 590 545 545" stroke="#C47E5C" stroke-width="4" fill="none" opacity=".55"/>
+  <path d="M205 620 C290 660 380 670 470 650" stroke="#C47E5C" stroke-width="4" fill="none" opacity=".45"/>
+  <path d="M300 820 C300 740 330 680 380 640" stroke="#C47E5C" stroke-width="4" fill="none" opacity=".4"/>
+  ${order.map((k, i) => { const [x, y] = tips[k]; return `<circle cx="${x}" cy="${y}" r="34" fill="${i === 5 ? '#141A33' : '#FFF4DC'}" stroke="#141A33" stroke-width="6"/><text x="${x}" y="${y + 15}" text-anchor="middle" font-family="Sora" font-weight="800" font-size="40" fill="${i === 5 ? '#FFC533' : '#141A33'}">${i + 1}</text>`; }).join('')}
   </svg>`;
 };
 
 export const TILES = {
-  11: { theme: 'c', html: `${top('lab')}${h1('Why does AI draw<br><mark>six fingers?</mark>')}${hand(170, 560)}
+  11: { theme: 'c', html: `${top('lab')}${h1('Why does AI draw<br><mark>six fingers?</mark>')}${hand(150, 520)}
     <span class="note" style="left:760px;top:520px;transform:rotate(6deg)">wait, 6?</span>${star(70, '#fff', 'left:900px;top:640px')}` },
   12: { theme: 'n', html: `${top('make')}${h1('How much AI at<br><mark>6, 10 and 14?</mark>', 190, 112)}
     ${[['6', 'they talk, you type', 90], ['10', 'they do most of it', 420], ['14', 'you stay in the room', 640]].map(([a, t, w], i) =>
@@ -78,7 +96,7 @@ export const TILES = {
   22: { theme: 'c', html: `${top('lab')}${h1('Is AI <mark>alive?</mark>', 190, 138)}
     ${bubble('I’m so happy you’re here!', 90, 440, 720)}
     ${listBox([['eats', false], ['sleeps', false], ['misses you', false], ['learned from tons of text', true]].map(([t, ok]) => row(tick(ok), t, 46)).join(''), 84, 780, 912, 22)}` },
-  23: { theme: 'm', html: `${top('start')}${h1('A cartoon for grandma,<br><mark>before Thursday.</mark>', 190, 100)}
+  23: { theme: 'm', html: `${top('start')}${h1('A cartoon for grandma<br><mark>this Thanksgiving.</mark>', 190, 100)}
     ${card({ l: 70, t: 560, w: 400, h: 600, rot: -6, src: `${M}/works/rainbow-drawing.jpg`, cls: 'paper' })}${tape(190, 534, -10)}
     ${card({ l: 500, t: 600, w: 470, h: 700, rot: 4, src: `${M}/works/rainbow-cartoon.jpg`, z: 4 })}
     ${pill('Thanksgiving gift', 90, 1230, -3)}${star(80, '#fff', 'left:900px;top:520px')}` },
