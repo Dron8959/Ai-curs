@@ -12,7 +12,7 @@ tags: [kids drawing to cartoon with ai, ai for kids, kids art ideas, ai art for 
 ---
 A 6-year-old drew this rainbow with crayons. One lesson later it was a cartoon.
 
-Kids drawing to cartoon with AI, in one lesson: the kid has the idea and makes the drawing, the AI follows it, and a parent sits right next to them.
+Kids drawing to cartoon with AI, in one lesson: the kid has the idea and makes the drawing, the AI follows it, and you're side by side the whole time.
 
 First lesson free: makeshowlab.com
 

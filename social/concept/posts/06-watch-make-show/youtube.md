@@ -12,7 +12,7 @@ tags: [ai lesson for kids, how to teach kids ai, ai for kids, homeschool technol
 ---
 What happens in one AI lesson for kids: three steps, 6 to 20 minutes.
 
-Watch: Kamilla shows the finished thing first. Make: your kid builds it and you sit next to them. Show: play it, show the family, send it to grandma. Every lesson ends with something your kid made.
+Watch: Kamilla shows the finished thing first. Make: your kid builds it and you stay right there. Show: play it, show the family, send it to grandma.
 
 First lesson free: makeshowlab.com
 

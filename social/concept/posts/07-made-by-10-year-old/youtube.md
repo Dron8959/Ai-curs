@@ -12,7 +12,7 @@ tags: [ai projects for kids, what kids can make with ai, ai for kids, kids carto
 ---
 Everything in this video was made by Kamilla, who is 10.
 
-Three AI projects for kids from our course: a cartoon with her own characters, a game you can play and a sticker pack of her own character. No code. She had the ideas and gave the directions, with a parent next to her.
+Three AI projects for kids from our course: a cartoon with her own characters, a game she made and a sticker pack of her own character. No code. She had the ideas and gave the directions, with a parent right there.
 
 First lesson free: makeshowlab.com
 

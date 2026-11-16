@@ -27,7 +27,7 @@ export const packaging = {
     youtube: { title: 'Kids Drawing to Cartoon With AI: One Lesson Later',
       description: `A 6-year-old drew this rainbow with crayons. One lesson later it was a cartoon.
 
-Kids drawing to cartoon with AI, in one lesson: the kid has the idea and makes the drawing, the AI follows it, and a parent sits right next to them.
+Kids drawing to cartoon with AI, in one lesson: the kid has the idea and makes the drawing, the AI follows it, and you're side by side the whole time.
 
 First lesson free: makeshowlab.com
 
@@ -142,7 +142,7 @@ What was the last thing your kid made on a screen instead of watching?
     youtube: { title: 'AI Lesson for Kids in 3 Steps: Watch, Make, Show',
       description: `What happens in one AI lesson for kids: three steps, 6 to 20 minutes.
 
-Watch: Kamilla shows the finished thing first. Make: your kid builds it and you sit next to them. Show: play it, show the family, send it to grandma. Every lesson ends with something your kid made.
+Watch: Kamilla shows the finished thing first. Make: your kid builds it and you stay right there. Show: play it, show the family, send it to grandma.
 
 First lesson free: makeshowlab.com
 
@@ -167,7 +167,7 @@ Every lesson ends with something your kid made. Save this for the night you try 
     youtube: { title: 'AI Projects for Kids: What a 10-Year-Old Made (No Code)',
       description: `Everything in this video was made by Kamilla, who is 10.
 
-Three AI projects for kids from our course: a cartoon with her own characters, a game you can play and a sticker pack of her own character. No code. She had the ideas and gave the directions, with a parent next to her.
+Three AI projects for kids from our course: a cartoon with her own characters, a game she made and a sticker pack of her own character. No code. She had the ideas and gave the directions, with a parent right there.
 
 First lesson free: makeshowlab.com
 
@@ -192,7 +192,7 @@ What would your kid make first: a cartoon, a game or stickers?
     youtube: { title: 'Will AI Think for My Kid? Only If the AI Has the Ideas',
       description: `Will AI think for my kid? Only if the AI is the one with the ideas.
 
-In every lesson the child decides what to make, tells the AI, checks what comes back and fixes it. The AI is the tool. The thinking stays with your child. Don't let AI think for your child. Teach them to think with it.
+In every lesson the child decides what to make, tells the AI, checks what comes back and fixes it. The AI is the tool. Don't let AI think for your child. Teach them to think with it.
 
 First lesson free: makeshowlab.com
 
