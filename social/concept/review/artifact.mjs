@@ -9,7 +9,8 @@ import { fileURLToPath } from 'node:url';
 import { slotOf } from './schedule.mjs';
 import { META } from './meta.mjs';
 import { PASS, COMMON } from './pass.mjs';
-import { BATCH2, QUESTIONS, DONE } from './batch2.mjs';
+import { DONE } from './batch2.mjs';
+import { WEEK2, QUESTIONS, STAGES, STAGE, SLOTS, DAYS } from './week2.mjs';
 
 const concept = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const site = join(concept, 'out', 'review', 'site');
@@ -65,7 +66,7 @@ copyFileSync(join(concept, 'out', 'rules-card.png'), join(site, 'm', 'rules-card
 const DM = readFileSync(join(concept, 'DM.md'), 'utf8');
 const block = (h) => (DM.split(h)[1] || '').split('```')[1].trim();
 const DMS = { game: block('## GAME'), rules: block('## RULES') };
-const DATA = JSON.stringify({ posts, common: COMMON, plan: BATCH2, questions: QUESTIONS, done: DONE, dms: DMS });
+const DATA = JSON.stringify({ posts, common: COMMON, plan: WEEK2, questions: QUESTIONS, done: DONE, stages: STAGES, stage: STAGE, slots: SLOTS, days: DAYS, dms: DMS });
 const html = `<title>Make Show Lab Instagram</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Sora:wght@700;800&display=swap">
@@ -114,6 +115,9 @@ table{border-collapse:collapse;width:100%;font-size:13.5px}td{border-top:1px sol
 .head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}.head .n{background:#141A33;color:#FFC533;border-radius:8px;padding:0 10px;font:800 20px var(--display)}.head h3{margin:0;font:800 20px var(--display);letter-spacing:-.02em}.head span{color:var(--mut);font-size:13.5px}
 details{border-top:1px solid var(--line);padding-top:10px;margin-top:4px}summary{cursor:pointer;font-weight:600;color:var(--mut)}
 .views{display:flex;gap:6px;margin:0 0 14px;flex-wrap:wrap}.views button{font:600 14px var(--body);border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:20px;padding:7px 14px;cursor:pointer}.views button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}.views button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.stages{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin-bottom:14px}.st{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:9px 11px;font-size:12.5px;color:var(--mut)}.st b{display:block;color:var(--ink);font-size:13.5px}.st.now{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}.st.done{opacity:.6}
+.sum{color:var(--mut);margin:0 0 12px;font-size:14px}.week{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}.day{display:grid;gap:10px;align-content:start}.day h3{margin:0;font:800 16px var(--display)}
+@media (max-width:860px){.stages{grid-template-columns:1fr 1fr}}
 .dmrow{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:12px;margin-bottom:14px}@media (max-width:860px){.dmrow{grid-template-columns:1fr}}
 .rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-bottom:14px}.rules .card p{margin:0;font-size:14px}
 .pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}.pc{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
@@ -127,8 +131,8 @@ details{border-top:1px solid var(--line);padding-top:10px;margin-top:4px}summary
 </style>
 <div class="wrap">
 <h1>Make Show Lab Instagram</h1>
-<p class="lead">The first ten posts of @make_showlab as they will look in the app, and the plan for the next eleven. Reels play with their voice (tap the sound button), carousels swipe. Nothing here is published yet.</p>
-<div class="views"><button id="v-posts" class="on">Posts 1-10</button><button id="v-plan">Next 11: plan to approve</button></div>
+<p class="lead">The first ten posts of @make_showlab as they will look in the app, and the pack for next week. Reels play with their voice (tap the sound button), carousels swipe. Nothing here is published yet.</p>
+<div class="views"><button id="v-posts" class="on">Posts 1-10</button><button id="v-plan">Next week: 21 posts</button></div>
 <div id="postsview"><div class="pick" id="pick" role="tablist" aria-label="Posts"></div>
 <div class="cols"><div class="phonecol"><div class="phone"><div class="screen" id="screen"></div></div><p class="note" id="note"></p></div><div class="side" id="side"></div></div></div>
 <div id="planview" hidden></div>
@@ -188,19 +192,22 @@ function fromHash(){const m=location.hash.match(/^#post(\\d+)$/);if(m){const i=D
 let start=fromHash();if(start<0){try{start=+localStorage.getItem('msl-post')||0}catch(e){start=0}}if(!(start>=0&&start<D.posts.length))start=0;
 function plan(){
  const ask={keyword:'Comment keyword',save:'Save',send:'Send to someone'};
- const rules=[['Series with one frame','Every post belongs to a series and keeps its frame: show yellow, lab coral, make navy, start mint. One glance tells which series it is.'],
+ const rules=[['Series with one frame','Every post belongs to a series and keeps its frame: show yellow, lab coral, make navy, start mint.'],
  ['Question + paradox + one visual','A question a kid or a parent asks, the part that does not add up, one picture that explains it, a plain answer, one line back to the course.'],
- ['Broad AI topics','Why AI draws six fingers, how it draws from words, why it sounds sure when wrong. Interesting to the kid and the parent at once.'],
- ['Something to do after','Comment a word and get the free lesson or the fridge card in DMs, save it, or send it to a named person. One ask per post.']];
- document.getElementById('planview').innerHTML='<div class="rules">'+rules.map(([h,t])=>'<div class="card"><h2>'+esc(h)+'</h2><p>'+esc(t)+'</p></div>').join('')+'</div>'+
- '<div class="card hold" style="margin-bottom:14px"><h2>Needs your answer</h2><ul class="notes">'+D.questions.map(q=>'<li>'+esc(q)+'</li>').join('')+'</ul></div>'+
+ ['Broad AI topics','Interesting to the kid and the parent at once.'],
+ ['Something to do after','Comment a word for the free lesson or the fridge card, save it, or send it to a named person. One ask per post.']];
+ const cnt=(k)=>D.plan.filter(p=>p.ask[0]===k).length, reels=D.plan.filter(p=>p.format==='Reel').length;
+ document.getElementById('planview').innerHTML=
+ '<div class="stages">'+D.stages.map(([h,t],i)=>'<div class="st'+(i===D.stage?' now':i<D.stage?' done':'')+'"><b>'+(i+1)+'. '+esc(h)+'</b><span>'+esc(t)+'</span></div>').join('')+'</div>'+
+ '<div class="card hold" style="margin-bottom:14px"><h2>Stage 1: your answer</h2><ul class="notes">'+D.questions.map(q=>'<li>'+esc(q)+'</li>').join('')+'</ul></div>'+
+ '<p class="sum">Thu 19 to Wed 25 Nov · 21 posts, 3 a day at '+D.slots.join(', ')+' New York · '+reels+' reels, '+(D.plan.length-reels)+' carousels · asks: '+cnt('keyword')+' comment a word, '+cnt('save')+' save, '+cnt('send')+' send</p>'+
+ '<div class="week">'+D.days.map((d,di)=>'<section class="day"><h3>'+esc(d)+'</h3>'+D.plan.filter(p=>p.day===di).sort((x,y)=>x.slot-y.slot).map(p=>
+ '<article class="pc"><div class="top r-'+p.rubric+'"><span class="n">'+p.n+'</span><span>'+esc(p.series)+' · '+esc(p.format)+'</span><span>'+D.slots[p.slot]+'</span></div><div class="body">'+
+ '<h4>'+esc(p.hook)+'</h4><div>'+esc(p.angle)+'</div><div class="ask '+p.ask[0]+'"><span class="lbl">'+ask[p.ask[0]]+'</span>'+esc(p.ask[1])+'</div><div class="nt">'+esc(p.note)+'</div></div></article>').join('')+'</section>').join('')+'</div>'+
+ '<details class="card" style="margin-top:14px"><summary>Series rules and DM replies</summary><div class="rules" style="margin-top:12px">'+rules.map(([h,t])=>'<div class="card"><h2>'+esc(h)+'</h2><p>'+esc(t)+'</p></div>').join('')+'</div>'+
  '<div class="card pass" style="margin-bottom:14px"><h2>Decided 13 Nov</h2><ul class="notes">'+D.done.map(q=>'<li>'+esc(q)+'</li>').join('')+'</ul></div>'+
  '<div class="dmrow"><div class="card"><h2>RULES card (sent in DMs)</h2><img src="m/rules-card.png" alt="5 AI house rules card" style="width:100%;border-radius:12px;display:block"></div>'+
- '<div class="card"><h2>DM for GAME</h2><div class="full">'+esc(D.dms.game)+'</div><h2 style="margin-top:14px">DM for RULES</h2><div class="full">'+esc(D.dms.rules)+'</div></div></div>'+
- '<div class="pgrid">'+D.plan.map(p=>'<article class="pc"><div class="top r-'+p.rubric+'"><span class="n">'+p.n+'</span><span>'+esc(p.series)+' · '+esc(p.format)+'</span><span>'+esc(p.slot)+'</span></div><div class="body">'+
- '<h4>'+esc(p.hook)+'</h4><div><span class="lbl">Paradox</span>'+esc(p.paradox)+'</div><div><span class="lbl">One visual</span>'+esc(p.visual)+'</div>'+
- '<div><span class="lbl">Answer</span>'+esc(p.answer).replace(/\\[NEED:[^\\]]*\\]/g,m=>'<span class="need">'+m+'</span>')+'</div><div><span class="lbl">Back to the course</span>'+esc(p.bridge)+'</div>'+
- '<div class="ask '+p.ask[0]+'"><span class="lbl">'+ask[p.ask[0]]+'</span>'+esc(p.ask[1])+'</div><div class="nt">'+esc(p.note)+'</div></div></article>').join('')+'</div>';
+ '<div class="card"><h2>DM for GAME</h2><div class="full">'+esc(D.dms.game)+'</div><h2 style="margin-top:14px">DM for RULES</h2><div class="full">'+esc(D.dms.rules)+'</div></div></div></details>';
 }
 plan();
 const vp=document.getElementById('v-posts'),vl=document.getElementById('v-plan'),pv=document.getElementById('postsview'),lv=document.getElementById('planview');
