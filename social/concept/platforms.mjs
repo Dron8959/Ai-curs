@@ -72,7 +72,21 @@ Say hi in the comments. How old is your kid?
     tiktok: { photo: true, caption: `AI safety rules for kids: 5 house rules to set before your kid opens any AI tool. The account is yours, nobody chats with strangers, some things stay out of AI, links get a second look, and anything that looks too perfect gets checked. Drop it in your parents' group chat.
 
 #aisafety #kidsandai #onlinesafety #parentingtips` },
-    youtube: null,
+    youtube: { title: 'AI Safety Rules for Kids: 5 House Rules Before Any AI Tool',
+      description: `AI safety rules for kids: the five we set before any kid opens an AI tool.
+
+1. The account is yours.
+2. No chats with strangers.
+3. Some things stay out of AI, and the kid knows which.
+4. Links get a second look.
+5. If it looks too perfect, check it.
+
+Almost 9 in 10 American kids aged 9 to 17 already use AI, and almost half have never talked about safety with a parent (Common Sense Media, 2026). Every lesson of our course is set up this way.
+
+First lesson free: makeshowlab.com
+
+#aisafety #kidsandai #parentingtips`,
+      tags: ['ai safety rules for kids', 'ai safety for kids', 'kids and ai', 'online safety for kids', 'parenting tips'] },
     facebook: { caption: `Five rules we set before any kid touches an AI tool.
 
 1. The account is yours.
@@ -214,7 +228,17 @@ Do you agree, or does AI at home still worry you? Tell us why.
     tiktok: { photo: true, caption: `AI course for kids reviews: the first 8 families tried it before launch. Four grandmothers and four moms, kids from 7 to 10. They made cartoons, songs, games and a website. They received the course free and shared honest feedback.
 
 #aiforkids #grandparents #familyactivities` },
-    youtube: null,
+    youtube: { title: 'AI Course for Kids Reviews: 8 Families Tried It First',
+      description: `AI course for kids reviews from the first eight families. They got the course free before launch, and we asked them to tell us what really happened at their table.
+
+Four grandmothers and four moms, kids from 7 to 10. They made cartoons, songs, games and a website.
+
+They received the course free and shared honest feedback. Names and photos are used with their permission.
+
+First lesson free: makeshowlab.com
+
+#aiforkids #kidsandai #grandparents`,
+      tags: ['ai course for kids reviews', 'ai course for kids', 'ai for kids', 'kids and ai', 'family activities'] },
     facebook: { caption: `Eight families tried our course before anyone else. They paid nothing, and we asked them to tell us what really happened at their table.
 
 Four grandmothers and four moms, kids from 7 to 10. They made cartoons, songs, games and a website. Their own words are in the pictures.
@@ -231,7 +255,19 @@ Who would you do this with: a kid or a grandkid?
     tiktok: { photo: true, caption: `Free AI lesson for kids: your kid can build a game tonight. Leave your email, no card. The game takes 10 to 20 minutes, and you sit next to them. Then you play it together on the same couch. makeshowlab.com
 
 #aiforkids #kidsgames #freelesson` },
-    youtube: null,
+    youtube: { title: 'Free AI Lesson for Kids: Build a Game Tonight, No Card',
+      description: `A free AI lesson for kids: your kid builds a game tonight.
+
+1. Leave your email. No card.
+2. Your kid builds a game in 10 to 20 minutes, with you right there.
+3. You play it together, on the same couch.
+
+If it isn't a fit for your family, you've lost nothing but 20 minutes. It's the first lesson of our AI course for kids 6 to 14, on a laptop or a tablet, with nothing to install.
+
+First lesson free: makeshowlab.com
+
+#aiforkids #kidsgames #kidsandai`,
+      tags: ['free ai lesson for kids', 'ai for kids', 'kids games', 'kids and ai', 'family activities'] },
     facebook: { caption: `Your kid can build a game tonight. The first lesson is free.
 
 1. Leave your email. No card.
