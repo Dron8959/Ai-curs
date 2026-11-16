@@ -10,6 +10,6 @@ privacy: public
 disclosure: "Your brand" on (it promotes our own course); "Branded content" off
 ai_label: off
 ---
-AI safety rules for kids: 5 house rules to set before your kid opens any AI tool. The account is the parent's. No chats with strangers. Some things AI never hears. Links get a second look. Too perfect? Check it. Save it for the fridge.
+AI safety rules for kids: 5 house rules to set before your kid opens any AI tool. The account is yours, nobody chats with strangers, some things stay out of AI, links get a second look, and anything that looks too perfect gets checked. Drop it in your parents' group chat.
 
 #aisafety #kidsandai #onlinesafety #parentingtips

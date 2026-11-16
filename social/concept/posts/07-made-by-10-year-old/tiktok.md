@@ -12,6 +12,6 @@ privacy: public
 disclosure: "Your brand" on (it promotes our own course); "Branded content" off
 ai_label: on
 ---
-AI projects for kids: everything here was made by Kamilla, who is 10. A cartoon with her own characters. A game you can play. A sticker pack of her own character. No code. She had the ideas and gave the directions.
+AI projects for kids: everything here was made by Kamilla, who is 10: a cartoon with her own characters, a game of her own and a sticker pack of her character. No code. She had the ideas and gave the directions.
 
 #aiforkids #kidsprojects #creativekids

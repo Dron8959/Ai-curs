@@ -12,6 +12,6 @@ privacy: public
 disclosure: "Your brand" on (it promotes our own course); "Branded content" off
 ai_label: on
 ---
-Kids drawing to cartoon with AI: a 6-year-old drew this rainbow, and one lesson later it was a cartoon. The kid has the idea and makes the drawing. The AI follows it. You sit right next to them. First lesson is free at makeshowlab.com
+Kids drawing to cartoon with AI: a 6-year-old drew this rainbow, and one lesson later it was a cartoon. The kid has the idea and makes the drawing. The AI follows it, down to the truck on top. You're side by side the whole time. First lesson is free at makeshowlab.com
 
 #kidsdrawing #aiforkids #kidsart #creativekids

@@ -21,7 +21,7 @@ const fbComment = (campaign, anchor = 'free', text = 'The first lesson is free. 
 export const packaging = {
   '01-crayon-to-cartoon': {
     keyword: 'kids drawing to cartoon with AI',
-    tiktok: { caption: `Kids drawing to cartoon with AI: a 6-year-old drew this rainbow, and one lesson later it was a cartoon. The kid has the idea and makes the drawing. The AI follows it. You sit right next to them. First lesson is free at makeshowlab.com
+    tiktok: { caption: `Kids drawing to cartoon with AI: a 6-year-old drew this rainbow, and one lesson later it was a cartoon. The kid has the idea and makes the drawing. The AI follows it, down to the truck on top. You're side by side the whole time. First lesson is free at makeshowlab.com
 
 #kidsdrawing #aiforkids #kidsart #creativekids` },
     youtube: { title: 'Kids Drawing to Cartoon With AI: One Lesson Later',
@@ -69,7 +69,7 @@ Say hi in the comments. How old is your kid?
 
   '03-ai-house-rules': {
     keyword: 'AI safety rules for kids',
-    tiktok: { photo: true, caption: `AI safety rules for kids: 5 house rules to set before your kid opens any AI tool. The account is the parent's. No chats with strangers. Some things AI never hears. Links get a second look. Too perfect? Check it. Save it for the fridge.
+    tiktok: { photo: true, caption: `AI safety rules for kids: 5 house rules to set before your kid opens any AI tool. The account is yours, nobody chats with strangers, some things stay out of AI, links get a second look, and anything that looks too perfect gets checked. Drop it in your parents' group chat.
 
 #aisafety #kidsandai #onlinesafety #parentingtips` },
     youtube: null,
@@ -113,7 +113,7 @@ What would your kid's game be about?
 
   '05-reason-to-show': {
     keyword: 'screen time for kids',
-    tiktok: { caption: `Screen time for kids, turned around: kids don't need more screen time. They need a reason to show you something. A screen she makes on is not a screen she scrolls. Every lesson of ours ends with a thing to show.
+    tiktok: { caption: `Screen time for kids, turned around: kids don't need more screen time. They need a reason to show you something. In our course every lesson ends with a thing to show, like a game or a cartoon.
 
 #screentime #parentingtips #kidsandai` },
     youtube: { title: 'Screen Time for Kids: A Screen She Makes On, Not Scrolls',
@@ -136,7 +136,7 @@ What was the last thing your kid made on a screen instead of watching?
 
   '06-watch-make-show': {
     keyword: 'AI lesson for kids',
-    tiktok: { caption: `AI lesson for kids in three steps: Watch, Make, Show. Kamilla shows the finished thing first. Your kid builds it and you sit next to them. Then you play it, show the family, send it to grandma. 6 to 20 minutes, and it ends with a real thing.
+    tiktok: { caption: `AI lesson for kids in three steps: Watch, Make, Show. Kamilla shows the finished thing first. Your kid builds their own and you stay right there. Then you play it, show the family, send it to grandma. 6 to 20 minutes, and it ends with a real thing.
 
 #aiforkids #kidsandai #homeschool` },
     youtube: { title: 'AI Lesson for Kids in 3 Steps: Watch, Make, Show',
@@ -161,7 +161,7 @@ Save this for the night you try the first one.
 
   '07-made-by-10-year-old': {
     keyword: 'AI projects for kids',
-    tiktok: { caption: `AI projects for kids: everything here was made by Kamilla, who is 10. A cartoon with her own characters. A game you can play. A sticker pack of her own character. No code. She had the ideas and gave the directions.
+    tiktok: { caption: `AI projects for kids: everything here was made by Kamilla, who is 10: a cartoon with her own characters, a game of her own and a sticker pack of her character. No code. She had the ideas and gave the directions.
 
 #aiforkids #kidsprojects #creativekids` },
     youtube: { title: 'AI Projects for Kids: What a 10-Year-Old Made (No Code)',
@@ -186,7 +186,7 @@ What would your kid make first: a cartoon, a game or stickers?
 
   '08-will-ai-think': {
     keyword: 'will AI think for my kid',
-    tiktok: { caption: `Will AI think for my kid? Only if the AI has the ideas. In every lesson of our course the child decides what to make, tells the AI, checks what comes back and fixes it. The AI is the tool. The thinking stays with your kid.
+    tiktok: { caption: `Will AI think for my kid? Only if the AI has the ideas. In every lesson of our course the child decides what to make, tells the AI, checks what comes back and fixes it.
 
 #kidsandai #parentingtips #criticalthinking` },
     youtube: { title: 'Will AI Think for My Kid? Only If the AI Has the Ideas',
@@ -228,7 +228,7 @@ Who would you do this with: a kid or a grandkid?
 
   '10-free-first-lesson': {
     keyword: 'free AI lesson for kids',
-    tiktok: { photo: true, caption: `Free AI lesson for kids: your kid builds a game tonight. Leave your email, no card. Your kid builds a game in 10 to 20 minutes while you sit next to them. Then you play it against each other on the same couch. makeshowlab.com
+    tiktok: { photo: true, caption: `Free AI lesson for kids: your kid can build a game tonight. Leave your email, no card. The game takes 10 to 20 minutes, and you sit next to them. Then you play it together on the same couch. makeshowlab.com
 
 #aiforkids #kidsgames #freelesson` },
     youtube: null,
