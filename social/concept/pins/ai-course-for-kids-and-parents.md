@@ -8,7 +8,7 @@ link: https://www.makeshowlab.com/?utm_source=pinterest&utm_medium=social&utm_ca
 variant: портреты
 ai_disclosure: no
 title_length: 70 of 100
-description_length: 147
+description_length: 175
 ---
 ## Title
 
@@ -16,7 +16,7 @@ AI Course for Kids and Parents | By a Mom and Her Daughter | Ages 6-14
 
 ## Description
 
-An AI course for kids and parents, built by a mom and tested on her 10-year-old daughter at their kitchen table. Short lessons you do side by side.
+An AI course for kids and parents, built by a mom and tested on her 10-year-old daughter at their kitchen table. Short lessons you do side by side. First lesson free, no card.
 
 ## Alt text
 

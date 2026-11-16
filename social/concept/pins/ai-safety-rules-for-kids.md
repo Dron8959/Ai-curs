@@ -8,7 +8,7 @@ link: https://www.makeshowlab.com/?utm_source=pinterest&utm_medium=social&utm_ca
 variant: список
 ai_disclosure: no
 title_length: 70 of 100
-description_length: 157
+description_length: 185
 ---
 ## Title
 
@@ -16,7 +16,7 @@ AI Safety Rules for Kids | 5 House Rules to Set First | For the Fridge
 
 ## Description
 
-Five AI safety rules for kids to set before they open any AI tool: the account is the parent's, no chats with strangers, and three more that fit on a fridge.
+Five AI safety rules for kids to set before they open any AI tool: the account is the parent's, no chats with strangers, and three more that fit on a fridge. First lesson free, no card.
 
 ## Alt text
 

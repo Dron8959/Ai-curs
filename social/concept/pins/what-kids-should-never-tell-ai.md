@@ -9,7 +9,7 @@ variant: список
 ai_disclosure: no
 hold: список «чего не говорить AI» сверить с уроком Анны про безопасность и получить её «ок»
 title_length: 80 of 100
-description_length: 165
+description_length: 193
 ---
 ## Title
 
@@ -17,7 +17,7 @@ What Kids Should Never Tell AI | 4 Things That Stay Private | Kids and AI Safety
 
 ## Description
 
-What kids should never tell AI: their full name, where they live or go to school, passwords, and where they are right now. Four things to go over before any AI tool.
+What kids should never tell AI: their full name, where they live or go to school, passwords, and where they are right now. Four things to go over before any AI tool. First lesson free, no card.
 
 ## Alt text
 

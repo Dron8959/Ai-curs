@@ -8,7 +8,7 @@ link: https://www.makeshowlab.com/?utm_source=pinterest&utm_medium=social&utm_ca
 variant: шаги
 ai_disclosure: no
 title_length: 72 of 100
-description_length: 150
+description_length: 178
 ---
 ## Title
 
@@ -16,7 +16,7 @@ How to Teach Kids AI | Watch, Make, Show in 20 Minutes | Homeschool Idea
 
 ## Description
 
-How to teach kids AI in short lessons: watch the finished thing, make your own with a parent next to you, show it to the family. 6 to 20 minutes each.
+How to teach kids AI in short lessons: watch the finished thing, make your own with a parent next to you, show it to the family. 6 to 20 minutes each. First lesson free, no card.
 
 ## Alt text
 

@@ -12,7 +12,7 @@ Pins: 5, 6, 7, 10, 12, 24
 
 AI safety rules for kids and families: house rules for AI tools, what never to share, how to spot a fake. Simple enough for the fridge.
 
-Pins: 3, 4, 13, 14, 15, 22
+Pins: 3, 13, 14, 15, 22
 
 ## Screen Time Ideas for Kids
 
@@ -36,4 +36,4 @@ Pins: 19, 20, 21
 
 Homeschool technology and AI lesson ideas for ages 6 to 14: short lessons that end with a finished project, done side by side with a parent.
 
-Pins: 8, 11
+Pins: 4, 8, 11

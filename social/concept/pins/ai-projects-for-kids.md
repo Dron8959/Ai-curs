@@ -8,7 +8,7 @@ link: https://www.makeshowlab.com/?utm_source=pinterest&utm_medium=social&utm_ca
 variant: коллаж
 ai_disclosure: yes, the picture shows AI-made work: switch the AI label on
 title_length: 68 of 100
-description_length: 157
+description_length: 185
 ---
 ## Title
 
@@ -16,7 +16,7 @@ AI Projects for Kids | A Cartoon, a Game, a Sticker Pack | No Coding
 
 ## Description
 
-AI projects for kids, made by a 10-year-old: a cartoon with her own characters, a game you can play and a sticker pack. No coding, with a parent next to her.
+AI projects for kids, made by a 10-year-old: a cartoon with her own characters, a game you can play and a sticker pack. No coding, with a parent next to her. First lesson free, no card.
 
 ## Alt text
 

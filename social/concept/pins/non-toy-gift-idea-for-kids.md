@@ -8,7 +8,7 @@ link: https://www.makeshowlab.com/?utm_source=pinterest&utm_medium=social&utm_ca
 variant: цитата
 ai_disclosure: no
 title_length: 77 of 100
-description_length: 156
+description_length: 184
 ---
 ## Title
 
@@ -16,7 +16,7 @@ Non-Toy Gift Idea for Kids | An AI Course You Do Together | From Grandparents
 
 ## Description
 
-A non-toy gift idea for kids 6 to 14: a short AI creativity course a grandparent or parent does side by side with them. They make a cartoon, a game, a song.
+A non-toy gift idea for kids 6 to 14: a short AI creativity course a grandparent or parent does side by side with them. They make a cartoon, a game, a song. First lesson free, no card.
 
 Linda is an early-access tester. She received the course free and shared honest feedback.
 

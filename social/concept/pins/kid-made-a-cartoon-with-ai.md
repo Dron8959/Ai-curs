@@ -8,7 +8,7 @@ link: https://www.makeshowlab.com/?utm_source=pinterest&utm_medium=social&utm_ca
 variant: шаги
 ai_disclosure: yes, the picture shows AI-made work: switch the AI label on
 title_length: 79 of 100
-description_length: 177
+description_length: 205
 ---
 ## Title
 
@@ -16,7 +16,7 @@ Kid Made a Cartoon With AI | 4 Steps a 10-Year-Old Followed | Easy Kids Project
 
 ## Description
 
-A kid made a cartoon with AI: a 10-year-old told it her story and characters, checked every scene and fixed the ones that came out wrong. About 20 minutes, a parent next to her.
+A kid made a cartoon with AI: a 10-year-old told it her story and characters, checked every scene and fixed the ones that came out wrong. About 20 minutes, a parent next to her. First lesson free, no card.
 
 ## Alt text
 

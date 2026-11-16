@@ -8,7 +8,7 @@ link: https://www.makeshowlab.com/?utm_source=pinterest&utm_medium=social&utm_ca
 variant: билет
 ai_disclosure: no
 title_length: 79 of 100
-description_length: 161
+description_length: 189
 ---
 ## Title
 
@@ -16,7 +16,7 @@ Experience Gifts for Kids | A Cartoon, a Game, a Song Made Together | Ages 6-14
 
 ## Description
 
-Experience gifts for kids 6 to 14: an AI creativity course you do side by side. Short lessons, and each one ends with something they made, like a game or a song.
+Experience gifts for kids 6 to 14: an AI creativity course you do side by side. Short lessons, and each one ends with something they made, like a game or a song. First lesson free, no card.
 
 ## Alt text
 

@@ -8,7 +8,7 @@ link: https://www.makeshowlab.com/?utm_source=pinterest&utm_medium=social&utm_ca
 variant: список
 ai_disclosure: no
 title_length: 72 of 100
-description_length: 139
+description_length: 167
 ---
 ## Title
 
@@ -16,7 +16,7 @@ AI for Kids by Age | What a Parent Does at 6, 10 and With a Teen | Guide
 
 ## Description
 
-AI for kids by age: a six-year-old talks and the parent types, a ten-year-old does most of it alone, a teenager just needs you in the room.
+AI for kids by age: a six-year-old talks and the parent types, a ten-year-old does most of it alone, a teenager just needs you in the room. First lesson free, no card.
 
 ## Alt text
 

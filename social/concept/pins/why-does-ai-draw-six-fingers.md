@@ -8,7 +8,7 @@ link: https://www.makeshowlab.com/?utm_source=pinterest&utm_medium=social&utm_ca
 variant: один визуал
 ai_disclosure: no
 title_length: 88 of 100
-description_length: 175
+description_length: 203
 ---
 ## Title
 
@@ -16,7 +16,7 @@ Why Does AI Draw Six Fingers | It Learned How Hands Look, Not How to Count | Kid
 
 ## Description
 
-Why does AI draw six fingers? It learned what hands look like from millions of pictures, where hands are half hidden. It copies the look and never counts. Teach kids to check.
+Why does AI draw six fingers? It learned what hands look like from millions of pictures, where hands are half hidden. It copies the look and never counts. Teach kids to check. First lesson free, no card.
 
 ## Alt text
 

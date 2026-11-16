@@ -8,7 +8,7 @@ link: https://www.makeshowlab.com/?utm_source=pinterest&utm_medium=social&utm_ca
 variant: чек-лист
 ai_disclosure: no
 title_length: 79 of 100
-description_length: 144
+description_length: 172
 ---
 ## Title
 
@@ -16,7 +16,7 @@ AI Safety Checklist for Parents | 5 Checks Before Your Kid Opens AI | Ages 6-14
 
 ## Description
 
-An AI safety checklist for parents: five quick checks before your kid opens any AI tool, from whose account it is to how to spot a fake picture.
+An AI safety checklist for parents: five quick checks before your kid opens any AI tool, from whose account it is to how to spot a fake picture. First lesson free, no card.
 
 ## Alt text
 

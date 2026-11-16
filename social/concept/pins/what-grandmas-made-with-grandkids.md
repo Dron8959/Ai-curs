@@ -8,7 +8,7 @@ link: https://www.makeshowlab.com/?utm_source=pinterest&utm_medium=social&utm_ca
 variant: четыре портрета
 ai_disclosure: no
 title_length: 81 of 100
-description_length: 163
+description_length: 191
 ---
 ## Title
 
@@ -16,7 +16,7 @@ What Grandmas Made With Grandkids | A Cartoon, a Song, a Gift, a Game | Ages 6-1
 
 ## Description
 
-What grandmas made with grandkids: a cartoon, a song, a gift and a game, all in an AI course done side by side. A gift idea that is time together, not another toy.
+What grandmas made with grandkids: a cartoon, a song, a gift and a game, all in an AI course done side by side. A gift idea that is time together, not another toy. First lesson free, no card.
 
 Margaret, Susan, Linda and Patricia are early-access testers. They received the course free and shared honest feedback.
 

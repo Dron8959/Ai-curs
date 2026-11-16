@@ -8,7 +8,7 @@ link: https://www.makeshowlab.com/?utm_source=pinterest&utm_medium=social&utm_ca
 variant: памятка
 ai_disclosure: no
 title_length: 82 of 100
-description_length: 154
+description_length: 182
 ---
 ## Title
 
@@ -16,7 +16,7 @@ AI Rules for Kids Poster | 5 Family Rules With Why | Save and Print for the Frid
 
 ## Description
 
-An AI rules for kids poster for the fridge: five family rules, each with one line on why. Save it, print it, read it together before the first AI project.
+An AI rules for kids poster for the fridge: five family rules, each with one line on why. Save it, print it, read it together before the first AI project. First lesson free, no card.
 
 ## Alt text
 

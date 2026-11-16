@@ -7,9 +7,8 @@ board: "AI Activities for Kids"
 link: https://www.makeshowlab.com/?utm_source=pinterest&utm_medium=social&utm_campaign=turn-kids-drawings-into-cartoons#works
 variant: было и стало
 ai_disclosure: yes, the picture shows AI-made work: switch the AI label on
-hold: ждёт подтверждения, что рисунок детский (как пост №1)
 title_length: 73 of 100
-description_length: 172
+description_length: 200
 ---
 ## Title
 
@@ -17,7 +16,7 @@ Turn Kids Drawings Into Cartoons | With AI, in One Lesson | Kids Art Idea
 
 ## Description
 
-Turn kids drawings into cartoons with AI: the child has the idea and makes the drawing, the AI follows it, and a parent sits next to them. A kids art idea for ages 6 to 14.
+Turn kids drawings into cartoons with AI: the child has the idea and makes the drawing, the AI follows it, and a parent sits next to them. A kids art idea for ages 6 to 14. First lesson free, no card.
 
 ## Alt text
 

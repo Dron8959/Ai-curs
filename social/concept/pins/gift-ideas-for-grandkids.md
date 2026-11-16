@@ -8,7 +8,7 @@ link: https://www.makeshowlab.com/?utm_source=pinterest&utm_medium=social&utm_ca
 variant: фото
 ai_disclosure: no
 title_length: 72 of 100
-description_length: 154
+description_length: 182
 ---
 ## Title
 
@@ -16,7 +16,7 @@ Gift Ideas for Grandkids | Make a Game or a Cartoon Together | Ages 6-14
 
 ## Description
 
-Gift ideas for grandkids that are not another toy: an AI creativity course you do side by side. Short lessons, and each one ends with something they made.
+Gift ideas for grandkids that are not another toy: an AI creativity course you do side by side. Short lessons, and each one ends with something they made. First lesson free, no card.
 
 ## Alt text
 

@@ -8,7 +8,7 @@ link: https://www.makeshowlab.com/?utm_source=pinterest&utm_medium=social&utm_ca
 variant: четыре проверки
 ai_disclosure: yes, the picture shows AI-made work: switch the AI label on
 title_length: 72 of 100
-description_length: 156
+description_length: 184
 ---
 ## Title
 
@@ -16,7 +16,7 @@ Spot a Fake AI Picture | 4 Checks to Teach Your Kid | Kids and AI Safety
 
 ## Description
 
-Spot a fake AI picture with your kid: check hands and fingers, letters on signs, shadows that point different ways, and edges that melt into the background.
+Spot a fake AI picture with your kid: check hands and fingers, letters on signs, shadows that point different ways, and edges that melt into the background. First lesson free, no card.
 
 ## Alt text
 

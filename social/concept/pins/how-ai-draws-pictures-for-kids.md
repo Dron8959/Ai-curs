@@ -8,7 +8,7 @@ link: https://www.makeshowlab.com/?utm_source=pinterest&utm_medium=social&utm_ca
 variant: один визуал
 ai_disclosure: yes, the picture shows AI-made work: switch the AI label on
 title_length: 92 of 100
-description_length: 165
+description_length: 193
 ---
 ## Title
 
@@ -16,7 +16,7 @@ How AI Draws Pictures for Kids | It Starts With TV Static, Not a Blank Page | Ea
 
 ## Description
 
-How AI draws pictures for kids, in plain words: it starts from random noise like TV static, then cleans it up a little at a time until the picture matches the words.
+How AI draws pictures for kids, in plain words: it starts from random noise like TV static, then cleans it up a little at a time until the picture matches the words. First lesson free, no card.
 
 ## Alt text
 

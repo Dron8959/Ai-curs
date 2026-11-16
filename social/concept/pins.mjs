@@ -44,11 +44,15 @@ const HEAD = 190, S = 0.93;                     // band height; layout scale (it
 const SERIES = { ask: 'ASK AI', safe: 'SAFE AI', kid: 'BY A KID', how: 'HOW IT WORKS', free: 'FREE LESSON' };   // SERIES.md in this folder's parent
 const head = (series) => `<div style="position:absolute;z-index:20;left:44px;top:34px;display:flex;align-items:center;gap:22px">
   <img src="${A(`${LOGO}/logo/icon.svg`)}" style="width:150px;height:150px;display:block" alt="">
-  <span style="display:flex;align-items:center;height:90px;padding:0 30px;border:5px solid #141A33;border-radius:999px;background:#fff;box-shadow:6px 6px 0 #141A33">
-  <img src="${A(`${LOGO}/logo/wordmark-light.svg`)}" style="height:42px;width:auto;display:block" alt="Make Show Lab"></span></div>
+  <div><span style="display:flex;align-items:center;width:max-content;height:90px;padding:0 30px;border:5px solid #141A33;border-radius:999px;background:#fff;box-shadow:6px 6px 0 #141A33">
+  <img src="${A(`${LOGO}/logo/wordmark-light.svg`)}" style="height:42px;width:auto;display:block" alt="Make Show Lab"></span>
+  <p style="margin:12px 0 0 8px;font:800 27px Urbanist;color:var(--ink);white-space:nowrap">AI course for kids 6-14, with a parent</p></div></div>
   <span style="position:absolute;z-index:20;right:44px;top:62px;display:flex;align-items:center;height:62px;padding:0 24px;border:5px solid #141A33;border-radius:999px;background:#FFC533;box-shadow:5px 5px 0 #141A33;font:800 25px Urbanist;letter-spacing:.08em;color:#141A33">${SERIES[series]}</span>`;
+// Footer on every pin: the next step, not only the address. Bottom-left, ends well before the bottom-right corner Pinterest uses.
+const cta = (theme) => `<span style="position:absolute;z-index:20;left:52px;bottom:92px;display:flex;align-items:center;gap:14px;height:74px;padding:0 32px;border-radius:999px;font:800 31px Urbanist;white-space:nowrap;${theme === 'n' ? 'background:#FFC533;color:#141A33' : 'background:#141A33;color:#FFF4DC'}">
+  <b style="color:${theme === 'n' ? '#141A33' : '#FFC533'}">Free first lesson</b><i style="font-style:normal;opacity:.6">|</i><span style="font-weight:700">makeshowlab.com</span></span>`;
 const body = (html) => `<div style="position:absolute;inset:0;transform-origin:50% 0;transform:translateY(${HEAD + 8 - 150 * S}px) scale(${S})">${html}</div>`;
-const site = (dark = false) => `<span class="pill${dark ? '' : ' dark'}" style="left:56px;bottom:52px;height:66px;font-size:28px;letter-spacing:.04em;text-transform:none;box-shadow:none">makeshowlab.com</span>`;
+const site = () => '';   // the common footer (cta) is drawn by the renderer
 const h = (html, { top = 160, size = 118, style = '' } = {}) => `<h1 class="t" style="left:56px;right:56px;top:${top}px;font-size:${size}px;line-height:.96;${style}">${html}</h1>`;
 const p = (html, top, size = 44, style = '') => `<p class="sub" style="left:60px;right:60px;top:${top}px;font-size:${size}px;${style}">${html}</p>`;
 const rowsCard = (items, t, hgt, numBg = '#141A33') => card({ l: 56, t, w: 888, h: hgt, rot: -1.5, inner: `<div style="padding:54px 46px 0;display:grid;gap:38px">${
@@ -96,18 +100,17 @@ export const pins = [
     <i style="position:absolute;z-index:6;left:454px;top:462px;width:92px;height:92px;border-radius:50%;background:${C.mint};border:6px solid #141A33;box-shadow:6px 6px 0 #141A33"></i>
     ${site()}` },
 
-  { file: 'ai-house-rules-for-families', n: 4, board: 'safety', anchor: 'safe', variant: 'текст', ai: false, theme: 'k',
-    phrase: 'AI house rules for families',
-    title: 'AI House Rules for Families | Start With the Parent\'s Account | Kids and AI',
-    text: 'AI house rules for families start with one thing: every tool runs on the parent\'s account, so your kid never signs up alone and you see everything they make.',
-    alt: 'Cream pin that reads "AI house rules for families. Rule one: the account is yours" with a friendly drawn mom character.',
-    why: 'Тот же раздел сайта, но другой запрос и другой макет: одно правило крупно, с персонажем.',
-    html: `${brand()}
-    ${h('AI <mark>house rules</mark><br>for families', { size: 116 })}
-    <span class="num" style="left:56px;top:470px;width:150px;height:150px;font-size:92px;background:${C.coral}">1</span>
-    ${p('The account is yours.<br>Your kid never signs up alone.', 498, 46, 'left:236px;color:#141A33')}
-    ${char('anna', 190, 690, 640)}
-    ${site()}` },
+  { file: 'ai-lessons-for-kids-at-home', n: 4, board: 'homeschool', anchor: 'free', variant: 'фото + шаги', ai: false, theme: 'm',
+    phrase: 'AI lessons for kids at home',
+    title: 'AI Lessons for Kids at Home | First One Free, No Card, 10-20 Minutes | Ages 6-14',
+    text: 'AI lessons for kids at home that fit one evening: watch the finished thing, make your own with a parent next to you, then play it together. The first lesson is free, no card.',
+    alt: 'Mint pin that reads "AI lessons for kids at home" with three steps: email only, they build a game tonight, you play it together, above a photo of a mom and daughter playing the game at a kitchen table.',
+    why: 'Заменил пин про домашние правила (он повторял пины 3 и 13). Этот объясняет бесплатный урок по шагам: что нужно, сколько времени, чем кончается.',
+    html: `${h('AI lessons for<br><mark>kids at home</mark>', { size: 108 })}
+    ${p('The first one is free.', 410, 46, 'color:#141A33;font-weight:800')}
+    ${rowsCard(['Email only, no card', 'They build a game tonight', 'You play it together'], 500, 470)}
+    ${card({ l: 56, t: 1000, w: 888, h: 330, rot: 1.5, src: `${M}/landing/together-game.jpg`, pos: '50% 45%' })}
+    ${pill('10 to 20 minutes', 600, 960, -4)}` },
 
   { file: 'free-ai-lesson-for-kids', n: 5, board: 'activities', anchor: 'free', variant: 'фото', ai: true, theme: 'm',
     phrase: 'free AI lesson for kids',
@@ -123,7 +126,7 @@ export const pins = [
     ${star(80, '#fff', 'left:820px;top:1180px')}${star(40, '#fff', 'left:770px;top:1150px')}
     ${site()}` },
 
-  { file: 'turn-kids-drawings-into-cartoons', n: 6, board: 'activities', anchor: 'works', variant: 'было и стало', ai: true, theme: 'y', hold: 'ждёт подтверждения, что рисунок детский (как пост №1)',
+  { file: 'turn-kids-drawings-into-cartoons', n: 6, board: 'activities', anchor: 'works', variant: 'было и стало', ai: true, theme: 'y',
     phrase: 'turn kids drawings into cartoons',
     title: 'Turn Kids Drawings Into Cartoons | With AI, in One Lesson | Kids Art Idea',
     text: 'Turn kids drawings into cartoons with AI: the child has the idea and makes the drawing, the AI follows it, and a parent sits next to them. A kids art idea for ages 6 to 14.',
@@ -148,8 +151,7 @@ export const pins = [
     ${card({ l: 430, t: 560, w: 514, h: 320, rot: 3, src: `${M}/landing/game.jpg`, cls: 'screen', z: 4 })}
     ${card({ l: 300, t: 930, w: 620, h: 400, rot: -2, src: `${M}/landing/step-show.jpg`, pos: '58% 80.3%', zoom: 330, z: 5 })}
     ${pill('cartoon', 60, 1010, -5)}${pill('game', 790, 520, 5)}${pill('stickers', 730, 1290, 4)}
-    ${pill('made by a 10-year-old', 56, 1300, -3, 'dark', 'height:64px;font-size:27px')}
-    <span style="position:absolute;z-index:6;left:60px;bottom:66px;font:800 30px Urbanist;color:#141A33">makeshowlab.com</span>` },
+    ${pill('made by a 10-year-old', 56, 1300, -3, 'dark', 'height:64px;font-size:27px')}` },
 
   { file: 'how-to-teach-kids-ai', n: 8, board: 'homeschool', anchor: 'how', variant: 'шаги', ai: false, theme: 'n',
     phrase: 'how to teach kids AI',
@@ -174,8 +176,10 @@ export const pins = [
     html: `${brand()}
     ${h('Creative<br><mark>screen time</mark><br>ideas for kids', { size: 110 })}
     ${p('A screen they make on is not<br>a screen they scroll.', 540, 46, 'color:#141A33')}
-    ${char('kamilla', 170, 720, 680)}
-    ${site()}` },
+    ${card({ l: 56, t: 680, w: 390, h: 540, rot: -3, inner: `<div style="padding:60px 40px;display:grid;gap:26px">${[90, 70, 100, 60, 85].map((w) => `<i style="display:block;height:34px;width:${w}%;border-radius:17px;background:#C9CCDA"></i>`).join('')}</div>` })}
+    ${card({ l: 480, t: 740, w: 464, h: 460, rot: 3, src: `${M}/landing/game.jpg`, cls: 'screen', z: 4 })}
+    ${pill('scroll', 100, 1170, -4, '', 'background:#fff')}${pill('make', 640, 1170, 4, 'dark')}
+    ${p('Ends with something to show you.', 1260, 42, 'color:#141A33;font-weight:800')}` },
 
   { file: 'kids-make-stickers-with-ai', n: 10, board: 'activities', anchor: 'works', variant: 'фото', ai: true, theme: 'y',
     phrase: 'kids make stickers with AI',
@@ -210,13 +214,14 @@ export const pins = [
     title: 'AI Course for Kids and Parents | By a Mom and Her Daughter | Ages 6-14',
     text: 'An AI course for kids and parents, built by a mom and tested on her 10-year-old daughter at their kitchen table. Short lessons you do side by side.',
     alt: 'Dark blue pin that reads "AI course for kids and parents" with round portraits of Anna, a mom, and Kamilla, her 10-year-old daughter.',
-    why: 'Кто стоит за курсом. Для детского продукта это вопрос доверия.',
+    why: 'Кто стоит за курсом и чем это доказано: Анна сделала уроки и проверила каждый на Камилле (facts.md). Для детского продукта это вопрос доверия.',
     html: `${brand()}
     ${h('AI course for<br><mark>kids and parents</mark>', { size: 104 })}
     ${p('By a mom and her daughter.', 420, 46)}
-    ${ring({ l: 56, t: 560, d: 540, src: `${M}/landing/anna.jpg`, pos: '50% 25%', zoom: 250 })}
-    ${ring({ l: 500, t: 800, d: 440, src: `${M}/landing/kamilla.jpg`, pos: '44% 19%', zoom: 215, z: 5 })}
-    ${pill('Anna, mom', 90, 1060, -5, '', `background:${C.coral}`)}${pill('Kamilla, 10', 640, 1200, 4, '', `background:${C.mint}`)}
+    ${ring({ l: 56, t: 520, d: 440, src: `${M}/landing/anna.jpg`, pos: '50% 25%', zoom: 250 })}
+    ${ring({ l: 540, t: 640, d: 380, src: `${M}/landing/kamilla.jpg`, pos: '44% 19%', zoom: 215, z: 5 })}
+    ${pill('Anna, mom', 90, 880, -5, '', `background:${C.coral}`)}${pill('Kamilla, 10', 640, 1000, 4, '', `background:${C.mint}`)}
+    ${p('Every lesson was tested on Kamilla<br>at the kitchen table. What lost her got cut.', 1100, 38, 'color:#FFF4DC')}
     ${site(true)}` },
 
   // ---- batch 2: pins that are useful on their own (a parent saves them even without clicking).
@@ -240,8 +245,7 @@ export const pins = [
         ['Too perfect? Check it', 'Pictures and videos can be fake.'],
       ].map(([r, y], i) => `<div style="display:flex;gap:24px;align-items:flex-start"><b style="flex:none;display:grid;place-items:center;width:74px;height:74px;border-radius:50%;background:${[C.coral, C.yellow, C.mint, C.coral, C.yellow][i]};border:4px solid #141A33;color:#141A33;font:800 40px Sora">${i + 1}</b>
         <span><b style="display:block;font:800 44px/1.05 Urbanist;color:#141A33">${r}</b><span style="display:block;margin-top:6px;font:600 32px/1.15 Urbanist;color:#4B5070">${y}</span></span></div>`).join('')}</div></div>` })}
-    ${tape(420, 500, -4)}
-    <span style="position:absolute;z-index:6;left:60px;bottom:40px;font:800 30px Urbanist;color:#141A33">makeshowlab.com</span>` },
+    ${tape(420, 500, -4)}` },
 
   { file: 'what-kids-should-never-tell-ai', n: 14, batch: 2, board: 'safety', anchor: 'safe', variant: 'список', ai: false, theme: 'c',
     hold: 'список «чего не говорить AI» сверить с уроком Анны про безопасность и получить её «ок»',
@@ -426,7 +430,7 @@ pins.push(
 const FRAME = { c: ['c'], y: ['y'], n: ['n'], m: ['m'] };
 const SERIES_OF = {
   'non-toy-gift-idea-for-kids': ['kid', 'y'], 'gift-ideas-for-grandkids': ['kid', 'y'],
-  'ai-safety-rules-for-kids': ['safe', 'c'], 'ai-house-rules-for-families': ['safe', 'c'],
+  'ai-safety-rules-for-kids': ['safe', 'c'], 'ai-lessons-for-kids-at-home': ['free', 'm'],
   'free-ai-lesson-for-kids': ['free', 'm'], 'turn-kids-drawings-into-cartoons': ['kid', 'y'],
   'ai-projects-for-kids': ['kid', 'y'], 'how-to-teach-kids-ai': ['how', 'n'],
   'creative-screen-time-ideas-for-kids': ['kid', 'y'], 'kids-make-stickers-with-ai': ['kid', 'y'],
@@ -455,6 +459,12 @@ function check(pin) {
   if (bad.length) throw new Error(`${pin.file}: ${bad.join('; ')}`);
 }
 
+// Every description ends with the next step (pinterest-seo: a CTA), unless it already says it or the pin sells the gift itself.
+for (const pin of pins) {
+  if (/free/i.test(pin.text) || pin.file === 'last-minute-gift-for-grandkids') continue;
+  for (const c of [' First lesson free, no card.', ' First lesson free.']) if (pin.text.length + c.length <= 220) { pin.text += c; break; }
+}
+
 if (process.argv[1] && process.argv[1].endsWith('pins.mjs')) {
   const out = join(here, 'pins');
   mkdirSync(out, { recursive: true });
@@ -463,7 +473,7 @@ if (process.argv[1] && process.argv[1].endsWith('pins.mjs')) {
   for (const pin of pins) {
     const pg = await (await browser.newContext({ viewport: { width: 1000, height: 1500 } })).newPage();
     const tmp = join(out, '.tmp.html');
-    writeFileSync(tmp, `<!doctype html><meta charset="utf-8"><style>${css()}.tile.pin{width:1000px;height:1500px}</style><div class="tile pin ${pin.theme}">${head(pin.series)}${body(pin.html)}</div>`);
+    writeFileSync(tmp, `<!doctype html><meta charset="utf-8"><style>${css()}.tile.pin{width:1000px;height:1500px}</style><div class="tile pin ${pin.theme}">${head(pin.series)}${body(pin.html)}${cta(pin.theme)}</div>`);
     await pg.goto(pathToFileURL(tmp).href);
     await pg.evaluate(() => document.fonts.ready);
     await pg.waitForTimeout(80);

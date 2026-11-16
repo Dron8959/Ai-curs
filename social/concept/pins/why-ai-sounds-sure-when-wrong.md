@@ -8,7 +8,7 @@ link: https://www.makeshowlab.com/?utm_source=pinterest&utm_medium=social&utm_ca
 variant: чат
 ai_disclosure: no
 title_length: 87 of 100
-description_length: 164
+description_length: 192
 ---
 ## Title
 
@@ -16,7 +16,7 @@ Why AI Sounds Sure When Wrong | It Guesses the Next Word, It Does Not Look It Up
 
 ## Description
 
-Why AI sounds sure when wrong: a chatbot writes the most likely next words, and confident words are very likely. Teach your kid one habit: sounds sure, still check.
+Why AI sounds sure when wrong: a chatbot writes the most likely next words, and confident words are very likely. Teach your kid one habit: sounds sure, still check. First lesson free, no card.
 
 ## Alt text
 
