@@ -171,7 +171,7 @@ export const pins = [
     phrase: 'creative screen time ideas for kids',
     title: 'Creative Screen Time Ideas for Kids | Make, Don\'t Scroll | Ages 6-14',
     text: 'Creative screen time ideas for kids: a screen they make on is not a screen they scroll. Short AI projects that end with a game or a cartoon to show you.',
-    alt: 'Coral pin that reads "Creative screen time ideas for kids. A screen they make on is not a screen they scroll" with a happy drawn girl in headphones.',
+    alt: 'Coral pin that reads "Creative screen time ideas for kids. A screen they make on is not a screen they scroll" with a scroll-versus-make picture: a grey feed next to a pixel game.',
     why: 'Запрос про экранное время: туда приходят родители с нашей главной болью.',
     html: `${brand()}
     ${h('Creative<br><mark>screen time</mark><br>ideas for kids', { size: 110 })}
