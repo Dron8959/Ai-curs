@@ -7,7 +7,7 @@ first_comment: "The first lesson is free. No card, just an email: https://www.ma
 ---
 A 6-year-old drew this rainbow with crayons. One lesson later it was a cartoon.
 
-The idea and the drawing are the kid's. The AI only follows it. And a grown-up sits right next to them the whole time.
+The idea and the drawing are the kid's. The AI only follows it. And you're side by side the whole time.
 
 Whose drawing would you turn into a cartoon first?
 

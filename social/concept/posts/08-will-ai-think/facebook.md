@@ -9,7 +9,7 @@ first_comment: "The first lesson is free. No card, just an email: https://www.ma
 
 Only if the AI is the one with the ideas.
 
-In every lesson the child decides what to make, tells the AI, checks what comes back and fixes it. The AI is the tool. The thinking stays with your child.
+In every lesson the child decides what to make, tells the AI, checks what comes back and fixes it. The AI is the tool.
 
 Do you agree, or does AI at home still worry you? Tell us why.
 

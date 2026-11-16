@@ -7,7 +7,7 @@ first_comment: "See what kids make in the course: https://www.makeshowlab.com/?u
 ---
 Everything in this video was made by Kamilla. She's 10.
 
-A cartoon with her own characters. A game you can play. A sticker pack of her own character. No code.
+A cartoon with her own characters. A game of her own. A sticker pack of her own character. No code.
 
 She had the ideas and gave the directions. That's the part we care about.
 

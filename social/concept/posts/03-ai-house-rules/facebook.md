@@ -7,9 +7,9 @@ first_comment: "How the course keeps kids safe: https://www.makeshowlab.com/?utm
 ---
 Five rules we set before any kid touches an AI tool.
 
-1. The account is the parent's.
+1. The account is yours.
 2. No chats with strangers.
-3. Some things AI never hears.
+3. Some things stay out of AI.
 4. Links get a second look.
 5. If it looks too perfect, check it.
 

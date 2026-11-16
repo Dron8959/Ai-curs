@@ -35,7 +35,7 @@ First lesson free: makeshowlab.com
       tags: ['kids drawing to cartoon with ai', 'ai for kids', 'kids art ideas', 'ai art for kids', 'things to do with kids'] },
     facebook: { caption: `A 6-year-old drew this rainbow with crayons. One lesson later it was a cartoon.
 
-The idea and the drawing are the kid's. The AI only follows it. And a grown-up sits right next to them the whole time.
+The idea and the drawing are the kid's. The AI only follows it. And you're side by side the whole time.
 
 Whose drawing would you turn into a cartoon first?
 
@@ -56,7 +56,7 @@ First lesson free: makeshowlab.com
 
 #aiforkids #kidsandai #momanddaughter`,
       tags: ['ai course for kids and parents', 'ai for kids', 'kids and ai', 'learn ai with your kid', 'make show lab'] },
-    facebook: { caption: `Hi, we're Anna and Kamilla. A mom and a daughter, not a corporation.
+    facebook: { caption: `Hi, we're Anna and Kamilla, a mom and her daughter.
 
 I built every lesson of our AI course myself and tested each one on Kamilla at our kitchen table. She's 10. If a lesson lost her attention, it got cut.
 
@@ -75,9 +75,9 @@ Say hi in the comments. How old is your kid?
     youtube: null,
     facebook: { caption: `Five rules we set before any kid touches an AI tool.
 
-1. The account is the parent's.
+1. The account is yours.
 2. No chats with strangers.
-3. Some things AI never hears.
+3. Some things stay out of AI.
 4. Links get a second look.
 5. If it looks too perfect, check it.
 
@@ -151,10 +151,10 @@ First lesson free: makeshowlab.com
     facebook: { caption: `What actually happens in one of our AI lessons? Three steps, 6 to 20 minutes.
 
 Watch: Kamilla shows the finished thing first.
-Make: your kid builds it, and you sit next to them.
+Make: your kid builds their own, and you stay right there.
 Show: play it, show the family, send it to grandma.
 
-Every lesson ends with something your kid made. Save this for the night you try the first one.
+Save this for the night you try the first one.
 
 #aiforkids #familytime`, comment: fbComment('06-watch-make-show') },
   },
@@ -175,7 +175,7 @@ First lesson free: makeshowlab.com
       tags: ['ai projects for kids', 'what kids can make with ai', 'ai for kids', 'kids cartoon maker', 'creative kids'] },
     facebook: { caption: `Everything in this video was made by Kamilla. She's 10.
 
-A cartoon with her own characters. A game you can play. A sticker pack of her own character. No code.
+A cartoon with her own characters. A game of her own. A sticker pack of her own character. No code.
 
 She had the ideas and gave the directions. That's the part we care about.
 
@@ -202,7 +202,7 @@ First lesson free: makeshowlab.com
 
 Only if the AI is the one with the ideas.
 
-In every lesson the child decides what to make, tells the AI, checks what comes back and fixes it. The AI is the tool. The thinking stays with your child.
+In every lesson the child decides what to make, tells the AI, checks what comes back and fixes it. The AI is the tool.
 
 Do you agree, or does AI at home still worry you? Tell us why.
 

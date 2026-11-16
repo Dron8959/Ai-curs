@@ -8,9 +8,9 @@ first_comment: "The first lesson is free. No card, just an email: https://www.ma
 What actually happens in one of our AI lessons? Three steps, 6 to 20 minutes.
 
 Watch: Kamilla shows the finished thing first.
-Make: your kid builds it, and you sit next to them.
+Make: your kid builds their own, and you stay right there.
 Show: play it, show the family, send it to grandma.
 
-Every lesson ends with something your kid made. Save this for the night you try the first one.
+Save this for the night you try the first one.
 
 #aiforkids #familytime
