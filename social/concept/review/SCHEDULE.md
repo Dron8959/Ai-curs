@@ -18,7 +18,7 @@ My slots do not collide with them (Instagram only, different days or hours).
 | Sun 15 | 12:30 №2 Meet Anna & Kamilla (Reel) | 19:30 №5 A reason to show you (Reel) |
 | Mon 16 | 12:30 №7 Made by a 10-year-old (Reel) | 19:30 №8 Will AI think for my kid? (Reel) |
 | Tue 17 | 12:30 №6 Watch. Make. Show. (Reel) | 19:30 №9 8 families tried it first (carousel) |
-| Wed 18 | 12:30 №10 Free first lesson (carousel) | 19:30 №4 Idea to game (Reel, DRAFT until Anna confirms 7:02-7:41) |
+| Wed 18 | 12:30 №10 Free first lesson (carousel) | 19:30 №4 Idea to game (Reel; story confirmed by the owner 16 Nov) |
 
 Metricool ids are in `schedule.mjs`. Instagram only: Facebook, TikTok and YouTube are set by their own desks.
 All reels carry Instagram's AI label (cloned voice or AI pictures); carousels 3 and 9 do not, 10 does.
