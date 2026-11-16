@@ -20,4 +20,4 @@ An AI safety checklist for parents: five quick checks before your kid opens any 
 
 ## Alt text
 
-Mint pin that reads "AI safety checklist for parents" with five tick boxes: the account is mine, chats and comments are off, we agreed what stays private, they ask before a link, they know pictures can be fake.
+Coral pin that reads "AI safety checklist for parents" with five tick boxes: the account is mine, chats and comments are off, we agreed what stays private, they ask before a link, they know pictures can be fake.

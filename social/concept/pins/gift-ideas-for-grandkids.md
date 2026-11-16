@@ -20,4 +20,4 @@ Gift ideas for grandkids that are not another toy: an AI creativity course you d
 
 ## Alt text
 
-Dark blue pin that reads "Gift ideas for grandkids" above a photo of a mom and daughter playing a game the child built, at a kitchen table.
+Yellow pin that reads "Gift ideas for grandkids" above a photo of a mom and daughter playing a game the child built, at a kitchen table.

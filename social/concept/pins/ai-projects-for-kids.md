@@ -20,4 +20,4 @@ AI projects for kids, made by a 10-year-old: a cartoon with her own characters, 
 
 ## Alt text
 
-Cream pin that reads "AI projects for kids" with three pictures made by a 10-year-old: a cartoon cat, a pixel-art game and a sheet of stickers.
+Yellow pin that reads "AI projects for kids" with three pictures made by a 10-year-old: a cartoon cat, a pixel-art game and a sheet of stickers.

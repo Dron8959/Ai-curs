@@ -22,4 +22,4 @@ Patricia is an early-access tester. She received the course free and shared hone
 
 ## Alt text
 
-Dark blue pin that reads "Christmas gift ideas for grandkids" with a grandmother's photo and her words: It was a gift we both enjoyed.
+Yellow pin that reads "Christmas gift ideas for grandkids" with a grandmother's photo and her words: It was a gift we both enjoyed.

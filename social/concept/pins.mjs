@@ -443,6 +443,9 @@ const SERIES_OF = {
   'what-grandmas-made-with-grandkids': ['kid', 'y'], 'kid-made-a-cartoon-with-ai': ['kid', 'y'],
 };
 for (const pin of pins) [pin.series, pin.theme] = SERIES_OF[pin.file];
+// the alt text names the background colour, which follows the series frame
+const COLOUR = { y: 'Yellow', c: 'Coral', n: 'Dark blue', m: 'Mint', k: 'Cream' };
+for (const pin of pins) pin.alt = pin.alt.replace(/^(Yellow|Coral|Dark blue|Mint|Cream) pin/, `${COLOUR[pin.theme]} pin`);
 
 // ---------------------------------------------------------------------------------- checks, render, files
 const BANNED = /[—‘’“”]|\b(unlock|unleash|empower|revolutioni[sz]e|game-changer|cutting-edge|harness|delve|future-proof)\b|#\w/i;

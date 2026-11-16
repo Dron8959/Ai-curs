@@ -20,4 +20,4 @@ Creative screen time ideas for kids: a screen they make on is not a screen they 
 
 ## Alt text
 
-Coral pin that reads "Creative screen time ideas for kids. A screen they make on is not a screen they scroll" with a happy drawn girl in headphones.
+Yellow pin that reads "Creative screen time ideas for kids. A screen they make on is not a screen they scroll" with a happy drawn girl in headphones.

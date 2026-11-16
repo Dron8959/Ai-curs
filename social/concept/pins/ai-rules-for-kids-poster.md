@@ -20,4 +20,4 @@ An AI rules for kids poster for the fridge: five family rules, each with one lin
 
 ## Alt text
 
-Cream pin with a taped paper sheet titled "Our family AI rules": five numbered rules, each with a short reason, such as the account is yours and every tool runs on a parent's account.
+Coral pin with a taped paper sheet titled "Our family AI rules": five numbered rules, each with a short reason, such as the account is yours and every tool runs on a parent's account.

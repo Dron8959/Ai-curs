@@ -20,4 +20,4 @@ AI for kids by age: a six-year-old talks and the parent types, a ten-year-old do
 
 ## Alt text
 
-Mint pin that reads "AI for kids by age" with three rows: age 6, they talk and you type; age 10, mostly on their own; teen, you are in the room.
+Dark blue pin that reads "AI for kids by age" with three rows: age 6, they talk and you type; age 10, mostly on their own; teen, you are in the room.
