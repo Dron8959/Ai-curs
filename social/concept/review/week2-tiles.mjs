@@ -7,6 +7,7 @@ import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { css, here } from '../kit.mjs';
 import { TILES } from './week2-art.mjs';
+import { KW } from './week2.mjs';
 const { chromium } = createRequire(import.meta.url)('playwright');
 const out = join(here, 'out', 'week2');
 mkdirSync(out, { recursive: true });
@@ -17,7 +18,7 @@ const pg = await (await b.newContext({ viewport: { width: 1080, height: 1440 } }
 for (const n of only) {
   const t = TILES[n];
   const tmp = join(out, `.${n}.html`);
-  writeFileSync(tmp, `<!doctype html><meta charset="utf-8"><style>${css()}</style><div class="tile ${t.theme}">${t.html}</div>`);
+  writeFileSync(tmp, `<!doctype html><meta charset="utf-8"><style>${css()}</style><div class="tile ${t.theme}">${t.html}${KW[n] ? `<span class="btn" style="right:56px;bottom:46px;height:84px;padding:0 34px;font-size:36px;box-shadow:8px 8px 0 #fff;z-index:12">Comment ${KW[n]}</span>` : ''}</div>`);
   await pg.goto(pathToFileURL(tmp).href); await pg.evaluate(() => document.fonts.ready); await pg.waitForTimeout(120);
   await pg.screenshot({ path: join(out, `${n}.jpg`), type: 'jpeg', quality: 90 }); unlinkSync(tmp);
 }

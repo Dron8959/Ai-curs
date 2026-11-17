@@ -13,6 +13,9 @@ const row = (left, text, size = 44) => `<div style="display:flex;align-items:cen
 const numDot = (n) => `<b style="flex:none;display:grid;place-items:center;width:70px;height:70px;border-radius:50%;background:#141A33;color:#FFF4DC;font:800 36px Sora">${n}</b>`;
 
 // a hand drawn close to a real one: skin shading, knuckles, nails; thumb plus five fingers, counted above the tips
+// a dark band behind the headline so it reads over a full-bleed frame
+const shade = `<i style="position:absolute;inset:0 0 auto 0;height:620px;background:linear-gradient(180deg,rgba(20,26,51,.0),rgba(255,197,51,.0))"></i><i style="position:absolute;left:0;right:0;top:0;height:560px;background:linear-gradient(180deg,rgba(255,197,51,.96) 0,rgba(255,197,51,.85) 70%,rgba(255,197,51,0) 100%)"></i>`;
+
 export const hand = (l, t) => {
   // [base x, base y, length, width, angle]
   const F = [[222, 470, 250, 70, -11], [296, 455, 290, 72, -4], [368, 458, 270, 70, 2], [436, 468, 245, 66, 8], [500, 488, 200, 60, 15]];
@@ -55,16 +58,14 @@ export const TILES = {
     ${pill('How?', 700, 470, 6, 'dark', 'height:110px;font-size:52px;text-transform:none;letter-spacing:-.02em')}
     ${pill('about 20 minutes', 90, 1200, -3)}${pill('2-3 tries a scene', 560, 1230, 3)}` },
   14: { theme: 'c', html: `${top('lab')}${h1('5 safe ways<br>to give your<br>kid <mark>AI</mark>', 190, 104)}
-    ${listBox(['Your account, not theirs', 'You sit side by side', 'No chats with strangers', 'Some things stay out of AI', 'Too perfect? Check it'].map((t) => row(tick(true), t)).join(''), 84, 600, 912)}
-    <span class="note" style="left:600px;top:1300px;transform:rotate(-4deg);font-size:58px">comment RULES</span>` },
+    ${listBox(['Your account, not theirs', 'You sit side by side', 'No chats with strangers', 'Some things stay out of AI', 'Too perfect? Check it'].map((t) => row(tick(true), t)).join(''), 84, 600, 912)}` },
   15: { theme: 'k', html: `${top('lab')}${h1('How does AI draw<br><mark>from words?</mark>', 190, 104)}
-    ${[['noise', -5, 'step 1'], ['half', 2, 'step 20'], ['almost', -2, 'step 40']].map(([f, r, s], i) => card({ l: 60 + i * 330, t: 610 + (i % 2) * 40, w: 300, h: 450, rot: r, src: `${W2}/${f}.jpg`, z: 3 + i })).join('')}
-    ${[['step 1', 90], ['step 20', 420], ['the end', 750]].map(([s, l]) => pill(s, l, 1130, -2)).join('')}
+    ${[['c-noise', -5], ['c-half', 2], ['c-end', -2]].map(([f, r], i) => card({ l: 60 + i * 330, t: 610 + (i % 2) * 40, w: 300, h: 520, rot: r, src: `${W2}/${f}.jpg`, z: 3 + i })).join('')}
+    ${[['step 1', 90], ['step 20', 420], ['her cartoon', 730]].map(([s, l]) => pill(s, l, 1200, -2)).join('')}
     <span class="note" style="left:90px;top:470px;transform:rotate(-3deg);font-size:56px">it starts with TV static</span>` },
   16: { theme: 'm', html: `${top('start')}${h1('Tonight: a game<br><mark>your kid made.</mark>', 190, 112)}
     ${card({ l: 86, t: 540, w: 908, h: 560, rot: 2, src: `${M}/landing/game.jpg`, cls: 'screen' })}
-    ${pill('10-20 min', 90, 1150, -4)}${pill('no card, just email', 450, 1180, 3)}
-    <span class="btn" style="left:120px;top:1270px;transform:rotate(-2deg);height:100px;font-size:44px">Comment GAME</span>` },
+    ${pill('10-20 min', 90, 1150, -4)}${pill('no card, just email', 450, 1180, 3)}` },
   17: { theme: 'y', html: `${top('show')}${h1('What 4 grandmothers<br><mark>made</mark> with AI', 190, 104)}
     ${[['margaret', 'cartoon', '50% 30%'], ['susan', 'song', '55% 30%'], ['linda', 'gift', '50% 25%'], ['patricia', 'game', '55% 25%']].map(([w, m, p], i) =>
       `${ring({ l: 70 + (i % 2) * 480, t: 500 + Math.floor(i / 2) * 420, d: 340, src: `${M}/landing/reviews/${w}.jpg`, pos: p, zoom: 175, pad: 16 })}${pill(m, 250 + (i % 2) * 480, 780 + Math.floor(i / 2) * 420, i % 2 ? 4 : -4)}`).join('')}
@@ -124,5 +125,17 @@ export const TILES = {
   31: { theme: 'm', html: `${top('start')}${h1('Worst case:<br><mark>20 minutes</mark><br>on the couch.', 190, 112)}
     ${card({ l: 380, t: 760, w: 620, h: 400, rot: 3, src: `${M}/landing/game.jpg`, cls: 'screen' })}
     ${char('anna', 40, 900, 420)}${pill('first lesson free', 430, 1220, -3)}` },
+
+  // ---- Kamilla's cartoon series: a frame of her cartoon full bleed, one line about AI and cartoons on top
+  32: { theme: 'y', html: `<img src="${A('social/concept/out/week2/frames/f5.jpg')}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">${shade}${top('show')}
+    ${h1('A cat with a croissant?<br><mark>Her idea.</mark>', 190, 100)}${pill('made by Kamilla, 10', 70, 1290, -3)}` },
+  33: { theme: 'y', html: `<img src="${A('social/concept/out/week2/frames/f11.jpg')}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">${shade}${top('show')}
+    ${h1('Paris, drawn by AI.<br><mark>Directed by a kid.</mark>', 190, 92)}${pill('her story, her characters', 70, 1290, -3)}` },
+  34: { theme: 'y', html: `<img src="${A('social/concept/out/week2/frames/f8.jpg')}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">${shade}${top('show')}
+    ${h1('Every character here<br>came from a <mark>10-year-old.</mark>', 190, 88)}${pill('her characters', 70, 1290, -3)}` },
+  35: { theme: 'y', html: `<img src="${A('social/concept/out/week2/frames/f14.jpg')}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">${shade}${top('show')}
+    ${h1('2-3 tries a scene.<br><mark>About 20 minutes.</mark>', 190, 96)}${pill('her first cartoon', 70, 1290, -3)}` },
+  36: { theme: 'y', html: `<img src="${A('social/concept/out/week2/frames/f22.jpg')}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">${shade}${top('show')}
+    ${h1('What would your kid’s<br><mark>cartoon be about?</mark>', 190, 92)}${pill('first lesson free', 70, 1290, -3)}` },
 };
 

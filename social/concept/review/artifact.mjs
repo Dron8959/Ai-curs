@@ -10,7 +10,7 @@ import { slotOf } from './schedule.mjs';
 import { META } from './meta.mjs';
 import { PASS, COMMON } from './pass.mjs';
 import { DONE } from './batch2.mjs';
-import { WEEK2, QUESTIONS, STAGES, STAGE, SLOTS, DAYS, DONE2, TRIAL } from './week2.mjs';
+import { WEEK2, QUESTIONS, STAGES, STAGE, SLOTS, DAYS, DONE2, TRIAL, EXTRA } from './week2.mjs';
 import { TEXTS } from './week2-texts.mjs';
 
 const concept = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -68,7 +68,7 @@ for (const p of WEEK2) { p.texts = TEXTS[p.n] || null; p.trial = TRIAL(p); const
 const DM = readFileSync(join(concept, 'DM.md'), 'utf8');
 const block = (h) => (DM.split(h)[1] || '').split('```')[1].trim();
 const DMS = { game: block('## GAME'), rules: block('## RULES') };
-const DATA = JSON.stringify({ posts, common: COMMON, plan: WEEK2, questions: QUESTIONS, done: DONE, stages: STAGES, stage: STAGE, done2: DONE2, slots: SLOTS, days: DAYS, dms: DMS });
+const DATA = JSON.stringify({ posts, common: COMMON, plan: WEEK2, extra: EXTRA.map((e) => { const f = join(concept, 'out', 'week2', `${e.n}.jpg`); execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', f, '-vf', 'scale=540:-2', '-q:v', '4', join(site, 'm', `w2-${e.n}.jpg`)]); return { ...e, img: `m/w2-${e.n}.jpg` }; }), questions: QUESTIONS, done: DONE, stages: STAGES, stage: STAGE, done2: DONE2, slots: SLOTS, days: DAYS, dms: DMS });
 const html = `<title>Make Show Lab Instagram</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Sora:wght@700;800&display=swap">
@@ -208,6 +208,7 @@ function plan(){
  '<div class="week">'+D.days.map((d,di)=>'<section class="day"><h3>'+esc(d)+'</h3>'+D.plan.filter(p=>p.day===di).sort((x,y)=>x.slot-y.slot).map(p=>
  '<article class="pc"><div class="top r-'+p.rubric+'"><span class="n">'+p.n+'</span><span>'+esc(p.series)+' · '+esc(p.format)+(p.trial?' · <b class="trial">TRIAL</b>':' · grid')+'</span><span>'+D.slots[p.slot]+'</span></div><div class="body">'+
  (p.img?'<img src="'+p.img+'" alt="" style="width:100%;border-radius:10px;border:1px solid var(--line);display:block">':'')+'<h4>'+esc(p.hook)+'</h4><div>'+esc(p.angle)+'</div><div class="ask '+p.ask[0]+'"><span class="lbl">'+ask[p.ask[0]]+'</span>'+esc(p.ask[1])+'</div><div class="nt">'+esc(p.note)+'</div>'+(p.texts?'<details class="tx"><summary>Texts</summary>'+(p.texts.voice?'<span class="lbl">Voice ('+esc(p.texts.who)+')</span><ol>'+p.texts.voice.map(v=>'<li>'+esc(v)+'</li>').join('')+'</ol>':'')+(p.texts.slides?'<span class="lbl">Slides</span><ol>'+p.texts.slides.map(([h,b])=>'<li><b>'+esc(h)+'</b> '+esc(b)+'</li>').join('')+'</ol>':'')+'<span class="lbl">Caption</span><div class="full" style="font-size:13.5px">'+tag(p.texts.caption)+'</div></details>':'')+'</div></article>').join('')+'</section>').join('')+'</div>'+
+ '<h3 style="margin:22px 0 10px;font:800 18px var(--display)">Proposed: Kamilla’s cartoon series</h3><div class="week">'+D.extra.map(e=>'<article class="pc"><div class="top r-show"><span class="n">'+e.n+'</span><span>Made by a kid · cartoon frame</span><span>proposed</span></div><div class="body"><img src="'+e.img+'" alt="" style="width:100%;border-radius:10px;display:block"><h4>'+esc(e.hook)+'</h4></div></article>').join('')+'</div>'+
  '<details class="card" style="margin-top:14px"><summary>Series rules and DM replies</summary><div class="rules" style="margin-top:12px">'+rules.map(([h,t])=>'<div class="card"><h2>'+esc(h)+'</h2><p>'+esc(t)+'</p></div>').join('')+'</div>'+
  '<div class="card pass" style="margin-bottom:14px"><h2>Decided 13 Nov</h2><ul class="notes">'+D.done.map(q=>'<li>'+esc(q)+'</li>').join('')+'</ul></div>'+
  '<div class="dmrow"><div class="card"><h2>RULES card (sent in DMs)</h2><img src="m/rules-card.png" alt="5 AI house rules card" style="width:100%;border-radius:12px;display:block"></div>'+

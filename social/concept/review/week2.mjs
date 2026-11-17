@@ -16,6 +16,10 @@ export const SLOTS = ['08:00', '12:30', '19:30'];
 // Owner, 17 Nov: the profile grid stays about the first ten posts; every reel goes out as an Instagram Trial Reel
 // (shown to non-followers only, not in the grid or the followers' feed until shared). Carousels cannot be trial.
 export const TRIAL = (p) => p.format === 'Reel';
+// Owner, 17 Nov: every post carries one word to comment, by topic; each word gets a DM by hand (social/concept/DM.md).
+export const KW = { 11: 'LESSON', 12: 'LESSON', 13: 'CARTOON', 14: 'RULES', 15: 'CARTOON', 16: 'GAME', 17: 'GIFT', 18: 'LESSON', 19: 'GAME', 20: 'RULES',
+  21: 'STICKERS', 22: 'LESSON', 23: 'CARTOON', 24: 'RULES', 25: 'LESSON', 26: 'GAME', 27: 'SONG', 28: 'RULES', 29: 'CARTOON', 30: 'PRICE', 31: 'GAME',
+  32: 'CARTOON', 33: 'CARTOON', 34: 'CARTOON', 35: 'CARTOON', 36: 'CARTOON' };
 export const DAYS = ['Thu 19 Nov', 'Fri 20 Nov', 'Sat 21 Nov', 'Sun 22 Nov', 'Mon 23 Nov', 'Tue 24 Nov', 'Wed 25 Nov'];
 
 // ask: [kind, text]; kind = keyword (GAME or RULES in comments, answered by hand: DM.md), save, send
@@ -82,7 +86,16 @@ export const DONE2 = [
 ];
 
 export const QUESTIONS = [
+  'Серия по мультфильму Камиллы (32-36, ниже): добавить к 21 посту сверху или заменить ими какие-то темы? Сколько таких в неделю?',
+  'Слово в комментарии на каждом посте: LESSON, GAME, CARTOON, RULES, STICKERS, SONG, GIFT, PRICE. Все, кроме RULES, отвечаем ссылкой на бесплатный урок и строкой по теме.',
   'Карусели (12, 17, 20, 24, 30) пробными быть не могут. Оставить их в сетке (тогда в ней будет 10 + 5 = 15) или пересобрать в короткие ролики-слайдшоу и тоже пустить пробными (сетка остаётся 10)?',
   'Тексты всех 21 поста готовы (откройте «Texts» в карточке). Можно поправить сейчас, до озвучки; если правок нет, я собираю ролики и карусели, и вы утверждаете всё целиком на этапе 4.',
   'Пост 23: обещать «до четверга» рискованно (мультфильм в курсе идёт не в первом уроке), поэтому в обложке и голосе теперь «this Thanksgiving».',
+];
+
+// Owner, 17 Nov: many more posts like 13, on frames of Kamilla's cartoon with a line about AI and cartoons. Proposed, not in the week yet.
+export const EXTRA = [
+  { n: 32, hook: 'A cat with a croissant? Her idea.' }, { n: 33, hook: 'Paris, drawn by AI. Directed by a kid.' },
+  { n: 34, hook: 'Every character here came from a 10-year-old.' }, { n: 35, hook: '2-3 tries a scene. About 20 minutes.' },
+  { n: 36, hook: 'What would your kid\'s cartoon be about?' },
 ];
