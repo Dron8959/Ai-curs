@@ -103,21 +103,21 @@ Build a game with your kid tonight: leave your email, no card, and your kid buil
 #aiforkids #kidsgames #familygamenight #kidsandai
 ```
 
-## 17 — carousel, 4 grandmothers (7 slides)
+## 17 — carousel, 4 grandmothers with their grandkids (8 slides) — updated 17.11, owner rewrote: grandkid had the idea, grandma sat with them
 ```
 ---
 post: 17
 network: tiktok
 type: photo mode (9:16 slides in tiktok/)
-media: tiktok/slide-01.jpg to slide-07.jpg
-search_phrase: "what did 4 grandmothers make with AI"
+media: tiktok/slide-01.jpg to slide-08.jpg
+search_phrase: "what 4 grandmothers made with their grandkids"
 music: pick a calm track in the app (photo posts need one)
 comments: on
 privacy: public
 disclosure: "Your brand" on (it promotes our own course); "Branded content" off
 ai_label: off
 ---
-What did 4 grandmothers make with AI before our course launched? A cartoon, a song, a game and a gift that wasn't another toy, each with their grandkid.
+What 4 grandmothers made with their grandkids, 7 to 10: a cartoon, a song, a game. Linda wanted to give her grandson "something more meaningful than another toy." What they got was a thing the kid made and wanted to show the family, and an evening side by side.
 
 They received the course free and shared honest feedback. Names and photos are used with their permission.
 
@@ -356,7 +356,7 @@ A 6-year-old drew this rainbow in one of our lessons.
 #kidsart #aiforkids #kidsdrawing #creativekids
 ```
 
-## 30 — carousel, pricing (6 slides, sales post)
+## 30 — carousel, pricing, what's included (6 slides, sales post) — updated 17.11, owner: spell out what's in each plan
 ```
 ---
 post: 30
@@ -370,9 +370,11 @@ privacy: public
 disclosure: "Your brand" on (it promotes our own course); "Branded content" off
 ai_label: off
 ---
-How much does our AI course for kids cost? Creator is $197, paid once: every lesson and project, for you and your kid, at your own pace. Creator + Homework is $297: the same, plus Anna checks homework the same day.
+How much does our AI course for kids cost? Creator is $197 paid once: every lesson, 6 to 20 minutes each, and every project, a game, a cartoon, a song, a website, a sticker pack, a voiceover in your kid's own voice. Plus the AI safety lessons. For you and your kid, at your own pace.
 
-Both are paid once, and nobody will call to sell you anything. The first lesson is free.
+Creator + Homework is $297: all of that, plus homework, and Anna checks it the same day.
+
+No subscription, and nobody will call to sell you anything. The first lesson is free.
 
 #aiforkids #kidsandai #homeschool #parentingtips
 ```
@@ -419,6 +421,52 @@ ai_label: on
 A cat with a croissant was Kamilla's idea. She's 10. She told the AI her characters and her story, then fixed the scenes that came out wrong. The AI drew, she directed.
 
 Making a cartoon is one of the projects in our AI course for kids 6 to 14.
+
+#aiforkids #kidscartoon #creativekids #kidsandai
+```
+
+## 33 — Kamilla, AI drew Paris, she directed it (replaces published №11, чт 08:00)
+```
+---
+post: 33
+network: tiktok
+type: video
+media: reel.mp4
+search_phrase: "how do kids direct an AI cartoon"
+cover: cover.jpg
+comments: on
+duet: on
+stitch: on
+privacy: public
+disclosure: "Your brand" on (it promotes our own course); "Branded content" off
+ai_label: on
+---
+How do kids direct an AI cartoon instead of drawing it? In this one, the AI drew every street of Paris, but Kamilla, 10, decided where her characters go and what happens there, and asked again when a scene came out wrong.
+
+Making a cartoon is one of the projects in our AI course for kids 6 to 14.
+
+#aiforkids #kidscartoon #creativekids #kidsandai
+```
+
+## 35 — Kamilla, two or three tries a scene (replaces published №18, сб 12:30)
+```
+---
+post: 35
+network: tiktok
+type: video
+media: reel.mp4
+search_phrase: "how many tries does it take to fix an AI cartoon scene"
+cover: cover.jpg
+comments: on
+duet: on
+stitch: on
+privacy: public
+disclosure: "Your brand" on (it promotes our own course); "Branded content" off
+ai_label: on
+---
+How many tries does it take to fix an AI cartoon scene? Kamilla, 10, took two or three tries a scene for her cartoon. Not every scene comes out right the first time, so she looks and tells the AI what to fix. The whole thing took about 20 minutes.
+
+Checking and fixing what the AI makes is part of every lesson in our course.
 
 #aiforkids #kidscartoon #creativekids #kidsandai
 ```
