@@ -33,7 +33,7 @@ const checks = (c) => {
 };
 copyFileSync(join(concept, 'preview', 'n', 'avatar.jpg'), join(site, 'm', 'avatar.jpg'));
 
-const posts = readdirSync(join(concept, 'posts')).filter((d) => /^\d\d-/.test(d) && existsSync(join(concept, 'posts', d, 'caption.md')) && existsSync(join(concept, 'posts', d, 'tile.jpg')) && (process.env.W2 || +d.slice(0, 2) <= 12 || d.startsWith('18-'))).sort().map((dir) => {
+const posts = readdirSync(join(concept, 'posts')).filter((d) => /^\d\d-/.test(d) && existsSync(join(concept, 'posts', d, 'caption.md')) && existsSync(join(concept, 'posts', d, 'tile.jpg')) && (+d.slice(0, 2) <= 12 || d.startsWith('18-') || (process.env.W2 || '').split(',').includes(d.slice(0, 2)))).sort().map((dir) => {
   const { fm, caption } = parse(dir);
   const n = +fm.post, id = dir, nn = dir.slice(0, 2), reel = fm.type === 'reel';
   const pdir = join(concept, 'posts', dir);

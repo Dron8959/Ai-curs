@@ -1,6 +1,6 @@
 {
  "_doc": "Soundtrack of the reel 15-draw-from-words (real-sound skill: recordings only, credited in CREDITS.md). Written by tools/films.py from the cue file and audio/music-edits.json; the sound palette is shared by every reel (audio/design/*.json).",
- "duration": 19.8333,
+ "duration": 20.7667,
  "cues": "cues/15-draw-from-words.json",
  "include": [
   "audio/design/music-15-draw-from-words.json",
@@ -27,7 +27,7 @@
      0.0
     ],
     [
-     19.833,
+     20.767,
      0.0
     ]
    ]
@@ -54,7 +54,7 @@
      -4.0
     ],
     [
-     19.833,
+     20.767,
      -4.0
     ]
    ]

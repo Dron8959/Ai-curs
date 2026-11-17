@@ -37,7 +37,11 @@ const clip = (from, line, { reveal = false, beats = 9, wipe, swish } = {}) => ({
 // scene 1: the cover itself, so the first frame is the tile people saw in the grid
 const cover = (n) => ({ theme: TILES[n].theme, beats: 9, html: `${cartoonBg(...(['f3', 1]))}<div${an('settle', 0)} style="position:absolute;z-index:2;left:0;top:240px;width:1080px;height:1440px;overflow:hidden" class="tile ${TILES[n].theme}">${tileHtml(n, KW[n])}</div>` });
 
-const W = (n, scenes, end) => [cover(n), ...scenes.map((s, i) => ({ ...s, wipe: ['450,800', '300,700', '450,700'][i], swish: i === 2 })), endScene(end)];
+// LONG: where a voice line is longer than its scene, that scene gets more beats (scene 4 by a whole bar, so the
+// reveal and the logo stay on bar lines; the closing card simply holds longer after the logo)
+const LONG = { 15: { end: 9 }, 21: { end: 9 }, 23: { end: 9 }, 19: { s4: 12 }, 26: { s4: 12 } };
+const W = (n, scenes, end) => [cover(n), ...scenes.map((s, i) => ({ ...s, wipe: ['450,800', '300,700', '450,700'][i], swish: i === 2,
+  ...(i === 2 && LONG[n]?.s4 ? { beats: LONG[n].s4 } : {}) })), { ...endScene(end), ...(LONG[n]?.end ? { beats: LONG[n].end } : {}) }];
 
 // [frame of the cartoon behind Anna's scenes]
 export const reels = {

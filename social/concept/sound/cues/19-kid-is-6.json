@@ -2,7 +2,7 @@
  "_doc": "Written by render.mjs from the reel timeline. f = frame at 30 fps where the eye reads the event. Kinds: land (a card or character lands), pop (a label, badge or portrait pops in), slide (a row slides in), write (a handwritten note, dur frames), whoosh (a transition that gets an air sound), cut (a silent transition), logo (the stacked logo on the closing card).",
  "fps": 30,
  "bpm": 130,
- "total": 595,
+ "total": 637,
  "acts": {
   "s1": {
    "from": 0,
@@ -18,16 +18,16 @@
   },
   "s4": {
    "from": 373.846,
-   "dur": 124.615
+   "dur": 166.154
   },
   "s5": {
-   "from": 498.462,
+   "from": 540,
    "dur": 96.923
   }
  },
  "cue": {
   "reveal": 401.539,
-  "logo": 512.307
+  "logo": 553.845
  },
  "events": [
   {
@@ -76,7 +76,7 @@
    "weight": 1.45
   },
   {
-   "f": 506.712,
+   "f": 548.25,
    "kind": "whoosh",
    "id": "s5:wipe",
    "pan": -0.074,
@@ -84,14 +84,14 @@
    "dur": 16.5
   },
   {
-   "f": 512.307,
+   "f": 553.845,
    "kind": "logo",
    "id": "s5:logo:0:img",
    "pan": -0.074,
    "weight": 1.39
   },
   {
-   "f": 540,
+   "f": 581.538,
    "kind": "pop",
    "id": "s5:pop:1:btn",
    "pan": -0.074,
