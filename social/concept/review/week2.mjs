@@ -13,6 +13,9 @@ export const STAGES = [
 export const STAGE = 2;
 
 export const SLOTS = ['08:00', '12:30', '19:30'];
+// Owner, 17 Nov: the profile grid stays about the first ten posts; every reel goes out as an Instagram Trial Reel
+// (shown to non-followers only, not in the grid or the followers' feed until shared). Carousels cannot be trial.
+export const TRIAL = (p) => p.format === 'Reel';
 export const DAYS = ['Thu 19 Nov', 'Fri 20 Nov', 'Sat 21 Nov', 'Sun 22 Nov', 'Mon 23 Nov', 'Tue 24 Nov', 'Wed 25 Nov'];
 
 // ask: [kind, text]; kind = keyword (GAME or RULES in comments, answered by hand: DM.md), save, send
@@ -75,9 +78,11 @@ export const DONE2 = [
   'Картинки утверждены (16.11). Пост 11: рука перерисована ближе к настоящей.',
   'Продающие посты: №26 и №30 говорят цены, в №31 одна строка с ценой. Итого 3 из 21.',
   'Пост 19: остаётся рисованная девочка и фото шага Make.',
+  'Все 16 роликов ставим пробными (Trial Reels): их видят только неподписчики, в сетку не попадают (17.11).',
 ];
 
 export const QUESTIONS = [
+  'Карусели (12, 17, 20, 24, 30) пробными быть не могут. Оставить их в сетке (тогда в ней будет 10 + 5 = 15) или пересобрать в короткие ролики-слайдшоу и тоже пустить пробными (сетка остаётся 10)?',
   'Тексты всех 21 поста готовы (откройте «Texts» в карточке). Можно поправить сейчас, до озвучки; если правок нет, я собираю ролики и карусели, и вы утверждаете всё целиком на этапе 4.',
   'Пост 23: обещать «до четверга» рискованно (мультфильм в курсе идёт не в первом уроке), поэтому в обложке и голосе теперь «this Thanksgiving».',
 ];
