@@ -99,7 +99,7 @@ h1{font:800 26px/1.1 var(--display);letter-spacing:-.03em;margin:0 0 4px}.lead{c
 .rb{position:absolute;z-index:3;left:12px;right:64px;bottom:14px}.who{display:flex;align-items:center;gap:7px;font-size:13.5px;font-weight:700}.who img{width:30px;height:30px;border-radius:50%;border:1.5px solid #fff}
 .fol{border:1px solid #fff;border-radius:7px;padding:2px 8px;font-size:11.5px;font-weight:600}.rcap{margin-top:8px;font-size:13px}.rcap .tag{color:#fff}.more{color:#ccc}
 .rmus{display:flex;align-items:center;gap:6px;margin-top:8px;font-size:12px}.rmus svg{width:13px;height:13px}
-.snd{white-space:nowrap;position:absolute;z-index:4;left:50%;top:44%;transform:translateX(-50%);background:rgba(20,20,24,.78);color:#fff;border:0;border-radius:24px;padding:10px 18px;font:600 14px var(--body);cursor:pointer}.snd:focus-visible{outline:3px solid #FFC533}
+.snd{white-space:nowrap;position:absolute;z-index:4;left:50%;top:44%;transform:translateX(-50%);background:rgba(20,20,24,.78);color:#fff;border:0;border-radius:24px;padding:16px 24px;font:700 17px var(--body);cursor:pointer;box-shadow:0 4px 18px rgba(0,0,0,.35)}.snd:focus-visible{outline:3px solid #FFC533}
 .ph{display:flex;align-items:center;gap:9px;padding:11px 12px 9px}.ph img{width:32px;height:32px;border-radius:50%}.ph b{font-size:13.5px}.ph .d{margin-left:auto;width:20px}
 .sw{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;aspect-ratio:4/5;background:#eee;position:relative}.sw::-webkit-scrollbar{display:none}.sw img{flex:none;width:100%;height:100%;object-fit:cover;scroll-snap-align:start}
 .cnt{position:absolute;right:12px;top:12px;background:rgba(20,20,24,.72);color:#fff;border-radius:12px;padding:3px 10px;font-size:12px;font-weight:600;z-index:2}
@@ -161,7 +161,7 @@ function phone(p){
  if(p.reel)return '<div class="rv"><video id="v" src="'+p.video+'" poster="'+p.poster+'" autoplay muted loop playsinline></video><div class="rtop">Reels<span>Friends</span></div>'+
  '<div class="rail"><div>'+I.heart+'Like</div><div>'+I.comment+'Comment</div><div>'+I.send+'Send</div><div>'+I.dots+'</div></div>'+
  '<div class="rb"><div class="who"><img src="m/avatar.jpg" alt="">make_showlab <span class="fol">Follow</span></div><div class="rcap">'+short(p.caption)+'</div><div class="rmus">'+I.music+'make_showlab · Original audio</div></div>'+
- '<button class="snd" id="snd">Tap for sound</button></div>';
+ '<button class="snd" id="snd">🔊 Нажмите, чтобы включить звук</button></div>';
  return '<div class="ph"><img src="m/avatar.jpg" alt=""><b>make_showlab</b><span class="d">'+I.dots+'</span></div><div class="fw"><div class="sw" id="sw">'+p.slides.map(s=>'<img src="'+s+'" alt="">').join('')+'</div><span class="cnt" id="cnt">1/'+p.slides.length+'</span></div>'+
  '<div class="acts"><span>'+I.heart+'</span><span>'+I.comment+'</span><span>'+I.send+'</span><i class="dots" id="dots">'+p.slides.map((s,i)=>'<u class="'+(i?'':'on')+'"></u>').join('')+'</i><span class="sv">'+I.save+'</span></div>'+
  '<div class="cap"><b>make_showlab</b> '+short(p.caption)+'</div>';
