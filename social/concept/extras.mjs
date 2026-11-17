@@ -48,8 +48,7 @@ pages.push({ file: 'facebook-cover.jpg', w: 1640, h: 624, html: `
     <i style="position:absolute;left:930px;top:-130px;width:800px;height:800px;border-radius:50%;background:${C.yellow}"></i>
     <img src="${A(`${LOGO}/logo/logo-horizontal-light.svg`)}" style="position:absolute;left:286px;top:150px;width:590px" alt="">
     <span class="pill dark" style="left:300px;top:392px;height:76px;font-size:28px;box-shadow:6px 6px 0 ${C.yellow}">First lesson free · makeshowlab.com</span>
-    ${card({ l: 1000, t: 160, w: 216, h: 324, rot: -7, src: `${M}/works/rainbow-drawing.jpg`, cls: 'paper' })}
-    ${card({ l: 1168, t: 118, w: 240, h: 360, rot: 5, src: `${M}/works/rainbow-cartoon.jpg`, z: 4 })}
+    ${card({ l: 1060, t: 84, w: 300, h: 440, rot: 4, src: `${M}/works/cartoon-paris.jpg`, pos: '50% 62%', z: 4 })}
     ${star(60, C.coral, 'left:1420px;top:80px')}${star(30, C.coral, 'left:1470px;top:150px')}${star(44, C.mint, 'left:210px;top:90px')}
   </div>` });
 
