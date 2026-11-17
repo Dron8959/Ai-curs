@@ -47,7 +47,9 @@ ${PRICE}
 #aiforkids #kidsgames #familygamenight` },
   17: { kind: 'carousel', ai: false, kw: 'gift ideas for grandkids', title: 'Gift Ideas for Grandkids: What 4 Grandmothers Made',
     tags: ['gift ideas for grandkids', 'grandparent activities', 'ai for kids', 'family activities', 'non toy gifts'],
-    body: `Gift ideas for grandkids that aren't another toy: four grandmothers tried our course with their grandkids before launch. They made a cartoon, a song, a game and a gift.
+    body: `Gift ideas for grandkids: four grandmothers sat down with their grandkids, 7 to 10, and made something together. A cartoon, a song, a game. Linda wanted to give her grandson "something more meaningful than another toy."
+
+What they got was a thing the kid made and wanted to show the family, and an evening side by side.
 
 They received the course free and shared honest feedback. Names and photos are used with their permission.
 
@@ -146,9 +148,13 @@ ${foot}
 #kidsart #aiforkids #kidsdrawing` },
   30: { kind: 'carousel', ai: false, kw: 'ai course for kids price', title: 'AI Course for Kids Price: What You Pay and What You Get',
     tags: ['ai course for kids price', 'ai course for kids', 'ai for kids', 'homeschool ideas', 'parenting tips'],
-    body: `AI course for kids price: Creator is $197, paid once. That's the whole course, every lesson and project, for you and your kid, at your own pace. Creator + Homework is $297: the same, plus Anna checks homework the same day.
+    body: `AI course for kids price, and what's in it.
 
-Both are paid once, and nobody will call to sell you anything. The first lesson is free.
+Creator, $197 paid once: every lesson (6 to 20 minutes each) and every project: a game, a cartoon, a song, a website, a sticker pack, a voiceover in your kid's own voice. Plus the AI safety lessons. For you and your kid, at your own pace.
+
+Creator + Homework, $297: all of that, plus homework, and Anna checks it the same day.
+
+No subscription, and nobody will call to sell you anything. The first lesson is free.
 
 ${FREE}
 
@@ -176,6 +182,24 @@ ${foot}
     body: `Kids make a cartoon with AI: every character in this one came from Kamilla, 10. The girls, the cat, the trip to Paris. She told the AI who they are and tried again when a scene came out wrong.
 
 Ask your kid who would be in their cartoon. Making one is a project in our AI course.
+
+${foot}
+
+#aiforkids #kidscartoon #creativekids` },
+  33: { kind: 'reel', ai: true, kw: 'kids cartoon made with ai', title: 'Kids Cartoon Made With AI: Paris, Directed by a 10-Year-Old',
+    tags: ['kids cartoon made with ai', 'kids cartoon maker', 'ai for kids', 'kids and ai', 'creative kids'],
+    body: `A kids cartoon made with AI: the AI drew every street of this Paris. Kamilla, 10, decided where her characters go and what happens there, and asked again when a scene came out wrong.
+
+Making a cartoon is one of the projects in our AI course for kids 6 to 14.
+
+${foot}
+
+#aiforkids #kidscartoon #creativekids` },
+  35: { kind: 'reel', ai: true, kw: 'how long does an ai cartoon take', title: "How Long Does an AI Cartoon Take? A 10-Year-Old's Answer",
+    tags: ['how long does an ai cartoon take', 'kids cartoon maker', 'ai for kids', 'kids and ai', 'creative kids'],
+    body: `How long does an AI cartoon take? Kamilla, 10, needed two or three tries a scene, and the whole cartoon took about 20 minutes. Not every scene comes out right the first time, so she looks and tells the AI what to fix.
+
+Checking and fixing what the AI makes is part of every lesson in our course.
 
 ${foot}
 
