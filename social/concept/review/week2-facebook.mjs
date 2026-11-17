@@ -2,7 +2,7 @@
 // Owner's rule, 17 Nov: one post, four platforms; every platform writes its caption before approval.
 // Facebook differs from Instagram: no comment keyword (the link sits in the first comment), the post ends on a real
 // question or a share, never both; a little warmer (grandparents read here); two hashtags. Facts are the same as in
-// the Instagram caption, nothing added. Posts 11 and 18 are already live on Facebook (posts/<id>/facebook.md).
+// the Instagram caption, nothing added. Posts 11 and 18 went out on 17 Nov (posts/<id>/facebook.md); 33 and 35 took their slots (Instagram, 17 Nov).
 //   node social/concept/review/week2-facebook.mjs   -> checks the rules and prints the count
 
 const SITE = 'https://www.makeshowlab.com/';
@@ -50,9 +50,11 @@ Who would win at your house?
 
 #aiforkids #familygamenight`, comment: `Start the free lesson here: ${link(16)}` },
 
-  17: { caption: `Four grandmothers tried our course with their grandkids before launch.
+  17: { caption: `4 grandmas, 4 grandkids. What they made together.
 
-They made a cartoon, a song, a game and a gift that wasn't another toy. Their own words are in the pictures.
+Four grandmothers sat down with their grandkids, 7 to 10, and made something side by side: a cartoon, a song, a game. Linda wanted to give her grandson "something more meaningful than another toy."
+
+What they got was a thing the kid made and wanted to show the family, and an evening together.
 
 They received the course free and shared honest feedback. Names and photos are used with their permission.
 
@@ -156,9 +158,11 @@ Share this with the parent whose fridge is covered in drawings.
 
   30: { caption: `What the course costs, and what you get.
 
-Creator is $197, paid once: the whole course, every lesson and project, for you and your kid, at your own pace. Creator + Homework is $297: the same, plus Anna checks homework the same day.
+Creator, $197 paid once: every lesson (6 to 20 minutes each), and every project: a game, a cartoon, a song, a website, a sticker pack, a voiceover in your kid's own voice. Plus the AI safety lessons. For you and your kid, at your own pace.
 
-Both are paid once, and nobody will call to sell you anything. The first lesson is free.
+Creator + Homework, $297: all of that, plus homework, and Anna checks it the same day.
+
+No subscription, and nobody will call to sell you anything. The first lesson is free.
 
 Which would fit your family better?
 
@@ -173,6 +177,21 @@ If you like it, the full course is $197, paid once.
 Got 20 minutes this week?
 
 #aiforkids #familytime`, comment: `Start the free lesson here: ${link(31)}` },
+  33: { caption: `This is Paris in Kamilla's cartoon.
+
+The AI drew every street. Kamilla, 10, decided where her characters go and what happens there, and asked again when a scene came out wrong.
+
+Where would your kid's cartoon go?
+
+#aiforkids #kidscartoon`, comment: FREE(33) },
+
+  35: { caption: `Two or three tries a scene.
+
+Not every scene in Kamilla's cartoon came out right the first time. So she looked and told the AI what to fix. The whole cartoon took about 20 minutes.
+
+Checking and fixing what the AI makes is part of every lesson in our course. Would your kid fix it, or keep it?
+
+#aiforkids #kidscartoon`, comment: FREE(35) },
 };
 
 // Checks: no link and no long dash in the post, no comment keyword, two hashtags, a link in the comment.

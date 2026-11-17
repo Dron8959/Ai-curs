@@ -45,7 +45,7 @@ node social/concept/render.mjs static   # пишет facebook.md и провер
 YouTube Shorts на 7 дней вперёд и закрывает пропуски. Правило: `README.md`, раздел «Видеолента».
 
 ## Пак 19-25.11 (вторая неделя)
-Подписи Facebook ко всем 19 постам пака: `social/concept/review/week2-facebook.mjs` (номер → подпись и первый
+Подписи Facebook ко всем 21 посту пака (с №33 и №35 вместо вышедших №11 и №18): `social/concept/review/week2-facebook.mjs` (номер → подпись и первый
 комментарий; проверка правил: `node social/concept/review/week2-facebook.mjs`). Отличия от Instagram: без слова для
 комментария, ссылка в первом комментарии, в конце вопрос или просьба поделиться. Ставит отдел Instagram вместе с остальными.
 
