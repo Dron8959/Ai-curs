@@ -231,7 +231,7 @@ date; the PDFs in `out/` are out of date. They are only needed if new recordings
 | 2 | 4.2-8.3 | Leave your email. No card. | 1.2 |
 | 3 | 8.3-12.5 | Ten to twenty minutes, on a laptop or a tablet. | 2.4 |
 | 4 | 12.5-16.2 | Then you play it against each other. | 1.9 |
-| 5 | 16.2-19.4 | Comment game and I'll send you the link. | 2.5 |
+| 5 | 16.2-19.4 | Type game in the comments for the link. | 2.5 |
 
 ### 19-kid-is-6 · Anna · 19.4 s
 | scene | seconds | line | words/s |
@@ -312,7 +312,7 @@ date; the PDFs in `out/` are out of date. They are only needed if new recordings
 | 2 | 4.2-8.3 | Leave your email. No card. | 1.2 |
 | 3 | 8.3-12.5 | Your kid builds a game, and you play it together. | 2.4 |
 | 4 | 12.5-16.2 | If it isn't a fit, that's all you lose. | 2.4 |
-| 5 | 16.2-19.4 | Comment game and I'll send you the link. | 2.5 |
+| 5 | 16.2-19.4 | Type game in the comments for the link. | 2.5 |
 
 ### 32-cat-croissant · Kamilla · 19.4 s
 | scene | seconds | line | words/s |

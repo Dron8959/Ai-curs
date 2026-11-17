@@ -39,7 +39,7 @@ const cover = (n) => ({ theme: TILES[n].theme, beats: 9, html: `${cartoonBg(...(
 
 // LONG: where a voice line is longer than its scene, that scene gets more beats (scene 4 by a whole bar, so the
 // reveal and the logo stay on bar lines; the closing card simply holds longer after the logo)
-const LONG = { 15: { end: 9 }, 21: { end: 9 }, 23: { end: 9 }, 19: { s4: 12 }, 26: { s4: 12 } };
+const LONG = { 15: { end: 10 }, 21: { end: 10 }, 23: { end: 9 }, 19: { s4: 12 }, 26: { s4: 12 } };
 const W = (n, scenes, end) => [cover(n), ...scenes.map((s, i) => ({ ...s, wipe: ['450,800', '300,700', '450,700'][i], swish: i === 2,
   ...(i === 2 && LONG[n]?.s4 ? { beats: LONG[n].s4 } : {}) })), { ...endScene(end), ...(LONG[n]?.end ? { beats: LONG[n].end } : {}) }];
 

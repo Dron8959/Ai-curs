@@ -84,7 +84,7 @@ In our AI course for kids the words are your kid's idea.
       'Leave your email. No card.',
       'Ten to twenty minutes, on a laptop or a tablet.',
       'Then you play it against each other.',
-      'Comment game and I\'ll send you the link.'],
+      'Type game in the comments for the link.'],
     caption: `Comment "GAME" and I'll send you the link to the free first lesson.
 
 Leave your email, no card. Your kid builds a game in 10 to 20 minutes on a laptop or a tablet, with you right there. Then you play it against each other on the couch.
@@ -312,7 +312,7 @@ Save this for when you decide.
       'Leave your email. No card.',
       'Your kid builds a game, and you play it together.',
       'If it isn\'t a fit, that\'s all you lose.',
-      'Comment game and I\'ll send you the link.'],
+      'Type game in the comments for the link.'],
     caption: `Comment "GAME" and I'll send you the free first lesson.
 
 If it isn't a fit for your family, you've lost nothing but 20 minutes on the couch. Leave your email, no card. Your kid builds a game, then you play it against each other.
