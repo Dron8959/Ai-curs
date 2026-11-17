@@ -213,7 +213,7 @@ date; the PDFs in `out/` are out of date. They are only needed if new recordings
 | 2 | 4.2-8.3 | Say yes, with one rule. | 1.2 |
 | 3 | 8.3-12.5 | It's your account, not theirs. They never sign up alone. | 2.4 |
 | 4 | 12.5-16.2 | You sit next to them and see everything they make. | 2.7 |
-| 5 | 16.2-19.4 | More rules on the fridge card. Comment RULES. | 2.5 |
+| 5 | 16.2-19.4 | More rules on the fridge card. Comment rules. | 2.5 |
 
 ### 15-draw-from-words · Anna · 19.4 s
 | scene | seconds | line | words/s |
@@ -231,7 +231,7 @@ date; the PDFs in `out/` are out of date. They are only needed if new recordings
 | 2 | 4.2-8.3 | Leave your email. No card. | 1.2 |
 | 3 | 8.3-12.5 | Ten to twenty minutes, on a laptop or a tablet. | 2.4 |
 | 4 | 12.5-16.2 | Then you play it against each other. | 1.9 |
-| 5 | 16.2-19.4 | Comment GAME and I'll send you the link. | 2.5 |
+| 5 | 16.2-19.4 | Comment game and I'll send you the link. | 2.5 |
 
 ### 19-kid-is-6 · Anna · 19.4 s
 | scene | seconds | line | words/s |
@@ -240,7 +240,7 @@ date; the PDFs in `out/` are out of date. They are only needed if new recordings
 | 2 | 4.2-8.3 | They don't need to read or type. | 1.7 |
 | 3 | 8.3-12.5 | They talk, and you type. | 1.2 |
 | 4 | 12.5-16.2 | The idea is theirs. The keyboard is yours. | 2.2 |
-| 5 | 16.2-19.4 | Comment GAME for the free first lesson. | 2.2 |
+| 5 | 16.2-19.4 | Comment game for the free first lesson. | 2.2 |
 
 ### 21-stickers · Kamilla · 19.4 s
 | scene | seconds | line | words/s |
@@ -267,7 +267,7 @@ date; the PDFs in `out/` are out of date. They are only needed if new recordings
 | 2 | 4.2-8.3 | Your kid draws it. Crayons are fine. | 1.7 |
 | 3 | 8.3-12.5 | Then the AI turns the drawing into a cartoon. | 2.1 |
 | 4 | 12.5-16.2 | The idea and the drawing stay theirs. | 1.9 |
-| 5 | 16.2-19.4 | Start with the free first lesson. Comment CARTOON. | 2.5 |
+| 5 | 16.2-19.4 | Start with the free first lesson. Comment cartoon. | 2.5 |
 
 ### 26-know-ai-first · Anna · 19.4 s
 | scene | seconds | line | words/s |
@@ -312,7 +312,7 @@ date; the PDFs in `out/` are out of date. They are only needed if new recordings
 | 2 | 4.2-8.3 | Leave your email. No card. | 1.2 |
 | 3 | 8.3-12.5 | Your kid builds a game, and you play it together. | 2.4 |
 | 4 | 12.5-16.2 | If it isn't a fit, that's all you lose. | 2.4 |
-| 5 | 16.2-19.4 | Comment GAME and I'll send you the link. | 2.5 |
+| 5 | 16.2-19.4 | Comment game and I'll send you the link. | 2.5 |
 
 ### 32-cat-croissant · Kamilla · 19.4 s
 | scene | seconds | line | words/s |

@@ -56,7 +56,7 @@ Send this to someone who thinks kids just watch cartoons.
       'Say yes, with one rule.',
       'It\'s your account, not theirs. They never sign up alone.',
       'You sit next to them and see everything they make.',
-      'More rules on the fridge card. Comment RULES.'],
+      'More rules on the fridge card. Comment rules.'],
     caption: `Comment "RULES" and I'll send you the fridge card.
 
 Your kid asks for ChatGPT because everyone at school has it. You can say yes, with one rule: it's your account, not theirs. They never sign up anywhere alone, and you sit next to them, so you see everything they make.
@@ -84,7 +84,7 @@ In our AI course for kids the words are your kid's idea.
       'Leave your email. No card.',
       'Ten to twenty minutes, on a laptop or a tablet.',
       'Then you play it against each other.',
-      'Comment GAME and I\'ll send you the link.'],
+      'Comment game and I\'ll send you the link.'],
     caption: `Comment "GAME" and I'll send you the link to the free first lesson.
 
 Leave your email, no card. Your kid builds a game in 10 to 20 minutes on a laptop or a tablet, with you right there. Then you play it against each other on the couch.
@@ -131,7 +131,7 @@ Send this to the parent whose kid uses ChatGPT for homework.
       'They don\'t need to read or type.',
       'They talk, and you type.',
       'The idea is theirs. The keyboard is yours.',
-      'Comment GAME for the free first lesson.'],
+      'Comment game for the free first lesson.'],
     caption: `Comment "GAME" and I'll send you the free first lesson.
 
 A 6-year-old doesn't need to read or type to make something with AI. They talk, you type, and the idea stays theirs.
@@ -192,7 +192,7 @@ Ask your kid first, then send this to them.
       'Your kid draws it. Crayons are fine.',
       'Then the AI turns the drawing into a cartoon.',
       'The idea and the drawing stay theirs.',
-      'Start with the free first lesson. Comment CARTOON.'],
+      'Start with the free first lesson. Comment cartoon.'],
     caption: `Comment "CARTOON" and I'll send you the free first lesson.
 
 Thursday is Thanksgiving. A drawing your kid made, turned into a cartoon, is a gift grandma will keep. In our course the kid has the idea and makes the drawing, and the AI follows it.
@@ -207,7 +207,7 @@ The first lesson is free and ends with a game. The cartoon comes later in the co
       ['The chatbot didn\'t do anything wrong', 'But you can\'t take back what you typed.'],
       ['So say it out loud', 'Name with school, address, passwords and face photos stay out.'],
       ['Make the list together', 'So they know why each thing is on it.'],
-      ['Comment RULES', 'I\'ll send you the fridge card.']],
+      ['Comment “RULES”', 'I\'ll send you the fridge card.']],
     caption: `Comment "RULES" and I'll send you the fridge card.
 
 Your kid is chatting with an AI, it feels like a friend, and they type the name of their school. On its own a school is harmless. Next to a full name, it points to one real kid, and you can't take back what you typed.
@@ -312,7 +312,7 @@ Save this for when you decide.
       'Leave your email. No card.',
       'Your kid builds a game, and you play it together.',
       'If it isn\'t a fit, that\'s all you lose.',
-      'Comment GAME and I\'ll send you the link.'],
+      'Comment game and I\'ll send you the link.'],
     caption: `Comment "GAME" and I'll send you the free first lesson.
 
 If it isn't a fit for your family, you've lost nothing but 20 minutes on the couch. Leave your email, no card. Your kid builds a game, then you play it against each other.

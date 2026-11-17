@@ -90,6 +90,11 @@ const slide = (theme, frame, head, body, extra = '') => ({ theme, html: `${carto
     <h1 class="t" style="top:200px;font-size:96px">${head}</h1>
     <p class="sub" style="top:600px;font-size:58px;right:110px">${body}</p>${extra}${foot(false)}` });
 const S = TEXTS;
+const badge = (name, bg) => `<i class="badge" style="left:600px;top:930px;width:330px;height:330px;background:${bg};transform:rotate(-6deg)">${icon(name, 160, '#141A33', 2.2)}</i>`;
+const BADGES = { 20: [['eye-off', C.mint], null, ['type', C.yellow], ['users', C.mint], ['bookmark', C.yellow]],
+  24: [['school', C.yellow], ['undo-2', C.mint], ['megaphone', C.yellow], ['list-checks', C.mint], ['mail', C.yellow]],
+  30: [null, ['pencil', C.mint], ['phone-off', C.yellow], ['clock', C.mint], ['gift', C.yellow]] };
+const bx = (n, i) => (BADGES[n][i] ? badge(...BADGES[n][i]) : '');
 const photo = (who, pos) => ring({ l: 600, t: 860, d: 380, src: `${M}/landing/reviews/${who}.jpg`, pos, zoom: 175, pad: 14 });
 export const carousels = {
   17: [{ theme: 'y', html: tileHtml(17, KW[17]) },
@@ -100,11 +105,11 @@ export const carousels = {
     slide('n', 'f14', S[17].slides[7][0], S[17].slides[7][1])],
   20: [{ theme: 'k', html: tileHtml(20, KW[20]) },
     ...S[20].slides.slice(1).map(([h, b], i) => slide(['k', 'c', 'k', 'c', 'n'][i], ['f1', 'f8', 'f17', 'f5', 'f14'][i], h, b,
-      i === 2 ? `<div style="position:absolute;inset:0;z-index:4;transform:scale(.62);transform-origin:620px 1400px">${hand(150, 520)}</div>` : ''))],
+      i === 1 ? `<div style="position:absolute;inset:0;z-index:4;transform:scale(.62);transform-origin:620px 1400px">${hand(150, 520)}</div>` : bx(20, i)))],
   24: [{ theme: 'c', html: tileHtml(24, KW[24]) },
-    ...S[24].slides.slice(1).map(([h, b], i) => slide(['k', 'c', 'k', 'c', 'n'][i], ['f19', 'f3', 'f11', 'f22', 'f9'][i], h, b))],
+    ...S[24].slides.slice(1).map(([h, b], i) => slide(['k', 'c', 'k', 'c', 'n'][i], ['f19', 'f3', 'f11', 'f22', 'f9'][i], h, b, bx(24, i)))],
   30: [{ theme: 'n', html: tileHtml(30, KW[30]) },
-    ...S[30].slides.slice(1).map(([h, b], i) => slide(['k', 'y', 'k', 'n', 'm'][i], ['f14', 'f5', 'f11', 'f3', 'f19'][i], h, b))],
+    ...S[30].slides.slice(1).map(([h, b], i) => slide(['k', 'y', 'k', 'n', 'm'][i], ['f14', 'f5', 'f11', 'f3', 'f19'][i], h, b, bx(30, i)))],
 };
 
 // ------------------------------------------------------------------ the posts for content.mjs
