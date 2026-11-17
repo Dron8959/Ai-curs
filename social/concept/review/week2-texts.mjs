@@ -10,11 +10,13 @@ export const TEXTS = {
       'But in its photos, hands are half hidden.',
       'It knows how a hand looks. Not how many fingers.',
       'So kids count the fingers.'],
-    caption: `Send this to the kid who asks you everything.
+    caption: `Comment LESSON and I'll send you the free first lesson.
 
 AI can paint a face that looks like a photo and still give someone six fingers. It learned hands from millions of pictures where they're half hidden, holding a cup or tucked in a pocket. It knows how a hand looks, not how many fingers it has.
 
 In our lessons kids check what the AI makes. Counting fingers is a good start.
+
+Send this to the kid who asks you everything.
 
 #aiforkids #kidsandai #aiart #curiouskids` },
 
@@ -39,29 +41,27 @@ That's how our AI course for kids 6 to 14 is set up. Save this for the first les
       'I told the AI my story and my characters.',
       'Then I checked every scene and fixed the ones that came out wrong.',
       'About twenty minutes. Two or three tries a scene.'],
-    caption: `Send this to someone who thinks kids just watch cartoons.
+    caption: `Comment CARTOON and I'll send you the free first lesson.
 
 Kamilla is 10. She made this cartoon without drawing a single frame. She told the AI her story and her characters, checked every scene and fixed the ones that came out wrong. About 20 minutes, two or three tries a scene.
 
 That's one project in our AI course for kids.
 
+Send this to someone who thinks kids just watch cartoons.
+
 #aiforkids #kidscartoon #creativekids #kidsandai` },
 
   14: { who: 'Anna', voice: [
-      'Five safe ways to give your kid AI.',
-      'One. It\'s your account, not theirs.',
-      'Two. You sit side by side. Three. No chats with strangers.',
-      'Four. Some things never go into an AI. Five. Too perfect? Check it.',
-      'Comment RULES and I\'ll send you the fridge card.'],
+      'Your kid asks for ChatGPT. Everyone at school has it.',
+      'Say yes, with one rule.',
+      'It\'s your account, not theirs. They never sign up alone.',
+      'You sit next to them and see everything they make.',
+      'Four more rules on the fridge card. Comment RULES.'],
     caption: `Comment RULES and I'll send you the fridge card.
 
-1. Your account, not theirs. Your kid never signs up alone.
-2. You sit side by side.
-3. No chats with strangers.
-4. Some things stay out of AI: full name with school, address, passwords.
-5. If it looks too perfect, check it.
+Your kid asks for ChatGPT because everyone at school has it. You can say yes, with one rule: it's your account, not theirs. They never sign up anywhere alone, and you sit next to them, so you see everything they make.
 
-Every lesson of our AI course for kids is set up this way.
+That's how every lesson of our AI course for kids works. The other four rules are on the fridge card.
 
 #aisafety #kidsandai #parentingtips #onlinesafety #aiforkids` },
 
@@ -71,7 +71,7 @@ Every lesson of our AI course for kids is set up this way.
       'Step by step it removes a little noise, nudged toward the words.',
       'Until the picture matches what you asked for.',
       'In our lessons, the words are your kid\'s idea.'],
-    caption: `Comment GAME and I'll send you the free first lesson.
+    caption: `Comment CARTOON and I'll send you the free first lesson.
 
 AI doesn't draw on a blank page. It starts with pure static, like an old TV, and removes a little noise at a time, each step nudged toward the words it was given. That's why better words make better pictures.
 
@@ -99,11 +99,13 @@ Leave your email, no card. Your kid builds a game in 10 to 20 minutes on a lapto
       ['Linda · gift', '“I wanted to give my grandson something more meaningful than another toy.”'],
       ['Patricia · game', '“We created a little game together, and seeing her excitement was priceless.”'],
       ['Send this to your mom before the holidays.', 'They received the course free and shared honest feedback. Names and photos are used with their permission.']],
-    caption: `Send this to your mom before the holidays.
+    caption: `Comment GIFT and I'll send you the free first lesson.
 
 Four grandmothers tried our course with their grandkids before launch. They made a cartoon, a song, a game and a gift that wasn't another toy.
 
 They received the course free and shared honest feedback. Names and photos are used with their permission.
+
+Send this to your mom before the holidays.
 
 #grandparents #aiforkids #giftideas #familyactivities` },
 
@@ -113,11 +115,13 @@ They received the course free and shared honest feedback. Names and photos are u
       'It writes the most likely next word, again and again.',
       'Likely and true aren\'t the same thing.',
       'So kids check what comes back.'],
-    caption: `Send this to the parent whose kid uses ChatGPT for homework.
+    caption: `Comment LESSON and I'll send you the free first lesson.
 
 A chatbot doesn't look anything up. It writes the most likely next word, again and again. Likely and true aren't the same thing, and it sounds just as calm either way.
 
 In every lesson of our course kids check what the AI gives back, then fix it.
+
+Send this to the parent whose kid uses ChatGPT for homework.
 
 #kidsandai #aiforkids #criticalthinking #parentingtips` },
 
@@ -136,17 +140,19 @@ Our AI course is for kids 6 to 14, made side by side with a parent. Lessons take
 #aiforkids #kidsactivities #kidsandai #parentingtips` },
 
   20: { slides: [
-      ['Is this picture real? 4 checks', 'Fakes hide in the boring parts.'],
-      ['1 · Hands', 'Count the fingers. Look at how they hold things.'],
-      ['2 · Letters', 'Signs, labels and logos. AI often scrambles the words.'],
-      ['3 · Shadows', 'Light comes from one place. Shadows should agree.'],
-      ['4 · Edges', 'Hair, ears, fences. Look for things melting into the background.'],
-      ['Save this for the next picture that looks too perfect.', 'No single check is proof. Together they are a good start.']],
-    caption: `Save this for the next picture that looks too perfect.
+      ['“Mom, is this real?”', 'Your kid holds up the phone. The picture looks perfect.'],
+      ['Skip the face', 'Faces are what AI draws best. Look at the hands.'],
+      ['Count the fingers', 'Six fingers, or a cup held by nothing. That\'s your answer.'],
+      ['Hands look fine?', 'Read any sign or label. AI often scrambles the letters.'],
+      ['Check it together', 'Your kid counts, you read. Next time they start without you.'],
+      ['Save this for the next “is this real?”', 'Spotting fakes is one of the safety lessons in our course.']],
+    caption: `Comment RULES and I'll send you the fridge card.
 
-Four quick checks: hands and fingers, letters on signs, shadows that point different ways, edges melting into the background. None of them is proof on its own, but together they're a good start.
+Your kid holds up the phone and asks if the picture is real. Skip the face, AI draws faces best. Look at the hands: six fingers or a cup held by nothing is your answer. If the hands look fine, read any sign in the picture. AI often scrambles the letters.
 
 Spotting fakes is one of the safety lessons in our AI course for kids.
+
+Save this for the next "is this real?"
 
 #aisafety #kidsandai #medialiteracy #parentingtips` },
 
@@ -156,11 +162,13 @@ Spotting fakes is one of the safety lessons in our AI course for kids.
       'Happy, surprised, silly. A whole pack.',
       'That was one lesson.',
       'What would your character be?'],
-    caption: `Send this to the family group chat.
+    caption: `Comment STICKERS and I'll send you the free first lesson.
 
 Kamilla, 10, made her own character and turned it into a sticker pack. Happy, surprised, silly, a whole set.
 
 That's one of the projects in our AI course for kids.
+
+Send this to the family group chat.
 
 #aiforkids #stickers #creativekids #kidsandai` },
 
@@ -170,9 +178,11 @@ That's one of the projects in our AI course for kids.
       'So it sounds like a person.',
       'But it doesn\'t eat, or sleep, or miss you.',
       'Ask your kid what they think.'],
-    caption: `Ask your kid first, then send this to them.
+    caption: `Comment LESSON and I'll send you the free first lesson.
 
 AI talks like a friend because it learned from a huge amount of text that people wrote. So it sounds like a person. It doesn't eat, sleep or miss anyone.
+
+Ask your kid first, then send this to them.
 
 #kidsandai #aiforkids #curiouskids #parentingtips` },
 
@@ -181,8 +191,8 @@ AI talks like a friend because it learned from a huge amount of text that people
       'Your kid draws it. Crayons are fine.',
       'Then the AI turns the drawing into a cartoon.',
       'The idea and the drawing stay theirs.',
-      'Start with the free first lesson. Comment GAME.'],
-    caption: `Comment GAME and I'll send you the free first lesson.
+      'Start with the free first lesson. Comment CARTOON.'],
+    caption: `Comment CARTOON and I'll send you the free first lesson.
 
 Thursday is Thanksgiving. A drawing your kid made, turned into a cartoon, is a gift grandma will keep. In our course the kid has the idea and makes the drawing, and the AI follows it.
 
@@ -191,17 +201,17 @@ The first lesson is free and ends with a game. The cartoon comes later in the co
 #thanksgiving #giftsforgrandma #aiforkids #kidsart` },
 
   24: { slides: [
-      ['What your kid should never tell an AI', 'The chatbot is friendly. Kids tell friends everything.'],
-      ['Full name with their school', 'Together they point to one real kid.'],
-      ['Home address', 'Or where they are right now.'],
-      ['Passwords and codes', 'Not even “just to test it”.'],
-      ['Photos of their face', 'Pictures stay with the family.'],
-      ['Make the list together', 'So they know why each thing is on it. Comment RULES for the fridge card.']],
+      ['Your kid told a chatbot their school', 'It felt like talking to a friend.'],
+      ['On its own, a school is harmless', 'Next to a full name, it points to one real kid.'],
+      ['The chatbot didn\'t do anything wrong', 'But you can\'t take back what you typed.'],
+      ['So say it out loud', 'Name with school, address, passwords and face photos stay out.'],
+      ['Make the list together', 'So they know why each thing is on it.'],
+      ['Comment RULES', 'I\'ll send you the fridge card.']],
     caption: `Comment RULES and I'll send you the fridge card.
 
-A chatbot is friendly, and kids tell friends everything. Four things stay out: full name with their school, home address or where they are right now, passwords, photos of their face.
+Your kid is chatting with an AI, it feels like a friend, and they type the name of their school. On its own a school is harmless. Next to a full name, it points to one real kid, and you can't take back what you typed.
 
-What never to share with an AI is one of the safety lessons in our course.
+What never to tell an AI is one of the safety lessons in our course. Make the list together, so your kid knows why each thing is on it.
 
 #aisafety #onlinesafety #kidsandai #parentingtips` },
 
@@ -237,11 +247,13 @@ The full course is $197, paid once, no subscription. With Anna checking homework
       'Susan, a grandmother, made one with her granddaughter.',
       'Here\'s what she told us.',
       'Send this to grandma.'],
-    caption: `Send this to grandma.
+    caption: `Comment SONG and I'll send you the free first lesson.
 
 In one of our lessons your kid writes the words and the AI makes the music. Susan, grandmother of an 8-year-old, told us: "We made a song together, and she wanted to show it to everyone in the family!"
 
 Susan's family got the course free before launch and shared honest feedback.
+
+Send this to grandma.
 
 #aiforkids #grandparents #kidsmusic #familyactivities` },
 
@@ -251,9 +263,11 @@ Susan's family got the course free before launch and shared honest feedback.
       'Every time.',
       'Kids should always know who they\'re talking to.',
       'One rule for every app.'],
-    caption: `Save this. It's a rule for every app, not just ours.
+    caption: `Comment RULES and I'll send you the fridge card.
 
 If a lesson in our course is led by an AI version of Kamilla, the lesson says so. Kids should always know whether they're talking to a person or to an AI.
+
+Save this. It's a rule for every app, not just ours.
 
 #aisafety #kidsandai #aiforkids #parentingtips` },
 
@@ -263,11 +277,13 @@ If a lesson in our course is led by an AI version of Kamilla, the lesson says so
       'It keeps the shapes and redraws them in a new style.',
       'That\'s why the truck on the rainbow is still there.',
       'The idea stays the kid\'s.'],
-    caption: `Send this to the parent whose fridge is covered in drawings.
+    caption: `Comment CARTOON and I'll send you the free first lesson.
 
 When AI turns a kid's drawing into a cartoon, it doesn't start over. It starts from the drawing, keeps the shapes and redraws them in a new style. That's why the monster truck on top of the rainbow is still there.
 
 A 6-year-old drew this rainbow in one of our lessons.
+
+Send this to the parent whose fridge is covered in drawings.
 
 #kidsart #aiforkids #kidsdrawing #creativekids` },
 
@@ -278,11 +294,13 @@ A 6-year-old drew this rainbow in one of our lessons.
       ['No subscription', 'No sales calls. Payment through Stripe.'],
       ['Less than a month of tutoring', 'Most families do a lesson every day or two and finish in about two weeks.'],
       ['Start free', 'The first lesson is free. No card, just an email.']],
-    caption: `Save this for when you decide.
+    caption: `Comment PRICE and I'll send you what each plan includes.
 
 Creator is $197, paid once: the whole course, every lesson and project, for you and your kid, at your own pace. Creator + Homework is $297: the same, plus Anna checks homework the same day.
 
 Both are paid once, and nobody will call to sell you anything. The first lesson is free.
+
+Save this for when you decide.
 
 #aiforkids #kidsandai #homeschool #parentingtips` },
 
@@ -299,4 +317,33 @@ If it isn't a fit for your family, you've lost nothing but 20 minutes on the cou
 If you like it, the full course is $197, paid once.
 
 #aiforkids #kidsgames #familytime #kidsandai` },
+
+  32: { who: 'Kamilla', voice: [
+      'A cat with a croissant?',
+      'That was my idea.',
+      'I told the AI my characters and my story.',
+      'Then I fixed the scenes that came out wrong.',
+      'What would your cartoon be about?'],
+    caption: `Comment CARTOON and I'll send you the free first lesson.
+
+A cat with a croissant was Kamilla's idea. She's 10. She told the AI her characters and her story, then fixed the scenes that came out wrong. The AI drew, she directed.
+
+Making a cartoon is one of the projects in our AI course for kids 6 to 14.
+
+#aiforkids #kidscartoon #creativekids #kidsandai` },
+
+  34: { who: 'Kamilla', voice: [
+      'Every character here, I made up.',
+      'The girls, the cat, the trip to Paris.',
+      'I told the AI who they are. It drew them.',
+      'When a scene came out wrong, I tried again.',
+      'Who would be in your cartoon?'],
+    caption: `Comment CARTOON and I'll send you the free first lesson.
+
+Every character in this cartoon came from Kamilla, 10. The girls, the cat, the trip to Paris. She told the AI who they are and tried again when a scene came out wrong.
+
+Ask your kid who would be in their cartoon. Making one is a project in our AI course for kids.
+
+#aiforkids #kidscartoon #creativekids #kidsandai` },
+
 };

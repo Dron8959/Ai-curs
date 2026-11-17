@@ -27,15 +27,15 @@ export const WEEK2 = [
   // Thu 19
   { n: 11, day: 0, slot: 0, series: 'Ask AI', rubric: 'lab', format: 'Reel', hook: 'Why does AI draw six fingers?',
     angle: 'Рисует лицо как фото и не может сосчитать до пяти. Учился на фото, где руки спрятаны.', ask: ['send', 'Send this to the kid who asks you everything.'], note: 'Общее знание.' },
-  { n: 12, day: 0, slot: 1, series: 'How it works', rubric: 'make', format: 'Carousel', hook: 'How much AI at 6, 10 and 14?',
-    angle: 'Чем младше ребёнок, тем меньше он трогает клавиатуру. Шпаргалка по возрастам.', ask: ['save', 'Save this for the first lesson.'], note: 'facts.md, возраст.' },
+  { n: 32, day: 0, slot: 1, series: 'Made by a kid', rubric: 'show', format: 'Reel', hook: 'A cat with a croissant? Her idea.',
+    angle: 'Вместо слабого №12 (списки по возрастам). Кадр мультфильма Камиллы, её голос: идея её, ИИ рисует, она правит сцены.', ask: ['keyword', 'Comment CARTOON and I\'ll send you the free first lesson.'], note: 'Серия по мультфильму (17.11). Факты: Камилле 10, персонажи и история её.' },
   { n: 13, day: 0, slot: 2, series: 'Made by a kid', rubric: 'show', format: 'Reel', hook: 'A 10-year-old made this cartoon. How?',
     angle: 'Она не нарисовала ни одного кадра: рассказала историю, проверила сцены, переделала. Около 20 минут, 2-3 попытки.', ask: ['send', 'Send this to someone who thinks kids just watch cartoons.'], note: 'Цифры от владельца 13.11. Мультфильм Камиллы есть.' },
   // Fri 20
-  { n: 14, day: 1, slot: 0, series: 'Safe AI', rubric: 'lab', format: 'Reel', hook: '5 safe ways to give your kid AI',
-    angle: 'Самая безопасная схема та, где ребёнок нигде не регистрируется сам.', ask: ['keyword', 'Comment RULES and I\'ll send you the fridge card.'], note: 'facts.md, безопасность. Памятка готова.' },
+  { n: 14, day: 1, slot: 0, series: 'Safe AI', rubric: 'lab', format: 'Reel', hook: 'Your kid asks for ChatGPT. Say yes, with one rule.',
+    angle: 'Было списком «5 способов». Теперь одна сцена: ребёнок просит ChatGPT, вы отвечаете одним правилом (аккаунт ваш). Остальные четыре в памятке.', ask: ['keyword', 'Comment RULES and I\'ll send you the fridge card.'], note: 'facts.md, безопасность. Памятка готова.' },
   { n: 15, day: 1, slot: 1, series: 'Ask AI', rubric: 'lab', format: 'Reel', hook: 'How does AI draw from words?',
-    angle: 'Начинает не с белого листа, а с телевизионного «снега», и убирает шум шаг за шагом.', ask: ['keyword', 'Comment GAME and I\'ll send you the free first lesson.'], note: 'Общее знание (диффузия), без названий моделей.' },
+    angle: 'Начинает не с белого листа, а с телевизионного «снега», и убирает шум шаг за шагом.', ask: ['keyword', 'Comment CARTOON and I\'ll send you the free first lesson.'], note: 'Общее знание (диффузия), без названий моделей.' },
   { n: 16, day: 1, slot: 2, series: 'Free lesson', rubric: 'start', format: 'Reel', hook: 'Tonight: a game your kid made',
     angle: 'Это быстрее ужина: почта без карты, 10-20 минут, потом играете друг против друга.', ask: ['keyword', 'Comment GAME and I\'ll send you the link.'], note: 'facts.md, бесплатный урок. Пятница вечером, впереди выходные.' },
   // Sat 21
@@ -46,19 +46,19 @@ export const WEEK2 = [
   { n: 19, day: 2, slot: 2, series: 'How it works', rubric: 'make', format: 'Reel', hook: 'Your kid is 6. Can they do this?',
     angle: 'Читать и печатать не нужно: ребёнок говорит, вы печатаете. Идея его.', ask: ['keyword', 'Comment GAME and I\'ll send you the free first lesson.'], note: 'facts.md, возраст.' },
   // Sun 22
-  { n: 20, day: 3, slot: 0, series: 'Safe AI', rubric: 'lab', format: 'Carousel', hook: 'Is this picture real? 4 checks',
-    angle: 'Фейк легче всего поймать в скучных местах: руки, буквы, тени, края.', ask: ['save', 'Save this for the next picture that looks too perfect.'], note: 'В курсе есть урок про фейки. Приметы общие.' },
+  { n: 20, day: 3, slot: 0, series: 'Safe AI', rubric: 'lab', format: 'Carousel', hook: '“Mom, is this real?”',
+    angle: 'Было списком «4 проверки». Теперь одна сцена: ребёнок показывает картинку, вы смотрите на руки, потом на буквы.', ask: ['save', 'Save this for the next “is this real?”'], note: 'В курсе есть урок про фейки. Приметы общие.' },
   { n: 21, day: 3, slot: 1, series: 'Made by a kid', rubric: 'show', format: 'Reel', hook: 'Her own character, as stickers',
     angle: 'Камилла придумала персонажа, и теперь он живёт в семейном чате.', ask: ['send', 'Send this to the family group chat.'], note: 'Стикерпак Камиллы есть (step-show.jpg).' },
   { n: 22, day: 3, slot: 2, series: 'Ask AI', rubric: 'lab', format: 'Reel', hook: 'Is AI alive? It talks like a friend.',
     angle: 'Говорит как человек, потому что учился на текстах людей. Не ест, не спит, не скучает.', ask: ['send', 'Ask your kid, then send this to them.'], note: 'Общее знание. Вопрос, который задают дети.' },
   // Mon 23
   { n: 23, day: 4, slot: 0, series: 'Free lesson', rubric: 'start', format: 'Reel', hook: 'A cartoon for grandma this Thanksgiving',
-    angle: 'В четверг День благодарения. Мультфильм из рисунка ребёнка как подарок бабушке.', ask: ['keyword', 'Comment GAME and I\'ll send you the free first lesson.'], note: 'Сезон (26.11). Подарок из PLAN.md. Что сделать в первом уроке, проверить: первый урок про игру, не мультфильм.' },
-  { n: 24, day: 4, slot: 1, series: 'Safe AI', rubric: 'lab', format: 'Carousel', hook: 'What your kid should never tell an AI',
-    angle: 'Чатбот дружелюбный, в этом и проблема. Имя со школой, адрес, пароли, фото лица.', ask: ['keyword', 'Comment RULES and I\'ll send you the fridge card.'], note: 'Урок «что не сообщать ИИ» есть (facts.md). Список общий.' },
-  { n: 25, day: 4, slot: 2, series: 'Ask AI', rubric: 'lab', format: 'Reel', hook: 'Same question, two answers. Why?',
-    angle: 'ИИ выбирает слова с долей случайности, поэтому каждый раз отвечает по-другому. Проверяйте вместе.', ask: ['save', 'Save this and try it tonight with your kid.'], note: 'Общее знание.' },
+    angle: 'В четверг День благодарения. Мультфильм из рисунка ребёнка как подарок бабушке.', ask: ['keyword', 'Comment CARTOON and I\'ll send you the free first lesson.'], note: 'Сезон (26.11). Подарок из PLAN.md. Что сделать в первом уроке, проверить: первый урок про игру, не мультфильм.' },
+  { n: 24, day: 4, slot: 1, series: 'Safe AI', rubric: 'lab', format: 'Carousel', hook: 'Your kid told a chatbot their school.',
+    angle: 'Было списком. Теперь одна сцена: ребёнок пишет чатботу название школы, как другу. Почему это важно и список вместе.', ask: ['keyword', 'Comment RULES and I\'ll send you the fridge card.'], note: 'Урок «что не сообщать ИИ» есть (facts.md). Список общий.' },
+  { n: 34, day: 4, slot: 2, series: 'Made by a kid', rubric: 'show', format: 'Reel', hook: 'Every character? Made up by a kid.',
+    angle: 'Вместо слабого №25. Все персонажи придуманы Камиллой; в конце вопрос ребёнку: кто был бы в твоём мультфильме?', ask: ['keyword', 'Comment CARTOON and I\'ll send you the free first lesson.'], note: 'Серия по мультфильму (17.11).' },
   // Tue 24
   { n: 26, day: 5, slot: 0, series: 'How it works', rubric: 'make', format: 'Reel', hook: 'Do I need to know AI first?',
     angle: 'Нет. Всё с нуля для вас обоих, ноутбук или планшет, ничего не ставить.', ask: ['keyword', 'Comment GAME and I\'ll send you the free first lesson.'], note: 'facts.md, «О курсе».' },
@@ -83,19 +83,22 @@ export const DONE2 = [
   'Продающие посты: №26 и №30 говорят цены, в №31 одна строка с ценой. Итого 3 из 21.',
   'Пост 19: остаётся рисованная девочка и фото шага Make.',
   'Все 16 роликов ставим пробными (Trial Reels): их видят только неподписчики, в сетку не попадают (17.11).',
+  'Пробных роликов 3-5 в день, не больше (17.11): лимит Instagram неофициальный, перебор грозит блокировкой пробных.',
+  'Слабые №12 и №25 заменены роликами по мультфильму №32 и №34 (17.11). №33, 35, 36 в запасе на следующую неделю.',
+  'Посты-списки №14, 20, 24 переписаны в «одну историю»: одна сцена с ребёнком вместо перечня (17.11).',
 ];
 
 export const QUESTIONS = [
-  'Серия по мультфильму Камиллы (32-36, ниже): добавить к 21 посту сверху или заменить ими какие-то темы? Сколько таких в неделю?',
+  'Серия по мультфильму: в этой неделе два (32, 34) плюс №13. Сколько таких ставить в следующие недели? В запасе 33, 35, 36.',
   'Слово в комментарии на каждом посте: LESSON, GAME, CARTOON, RULES, STICKERS, SONG, GIFT, PRICE. Все, кроме RULES, отвечаем ссылкой на бесплатный урок и строкой по теме.',
-  'Карусели (12, 17, 20, 24, 30) пробными быть не могут. Оставить их в сетке (тогда в ней будет 10 + 5 = 15) или пересобрать в короткие ролики-слайдшоу и тоже пустить пробными (сетка остаётся 10)?',
+  'Карусели (17, 20, 24, 30) пробными быть не могут. Оставить их в сетке (тогда в ней будет 10 + 4 = 14) или пересобрать в короткие ролики-слайдшоу и тоже пустить пробными (сетка остаётся 10)?',
   'Тексты всех 21 поста готовы (откройте «Texts» в карточке). Можно поправить сейчас, до озвучки; если правок нет, я собираю ролики и карусели, и вы утверждаете всё целиком на этапе 4.',
   'Пост 23: обещать «до четверга» рискованно (мультфильм в курсе идёт не в первом уроке), поэтому в обложке и голосе теперь «this Thanksgiving».',
 ];
 
 // Owner, 17 Nov: many more posts like 13, on frames of Kamilla's cartoon with a line about AI and cartoons. Proposed, not in the week yet.
 export const EXTRA = [
-  { n: 32, hook: 'A cat with a croissant? Her idea.' }, { n: 33, hook: 'Paris, drawn by AI. Directed by a kid.' },
-  { n: 34, hook: 'Every character here came from a 10-year-old.' }, { n: 35, hook: '2-3 tries a scene. About 20 minutes.' },
+  { n: 33, hook: 'Paris, drawn by AI. Directed by a kid.' },
+  { n: 35, hook: '2-3 tries a scene. About 20 minutes.' },
   { n: 36, hook: 'What would your kid\'s cartoon be about?' },
 ];

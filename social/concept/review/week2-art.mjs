@@ -14,7 +14,7 @@ const numDot = (n) => `<b style="flex:none;display:grid;place-items:center;width
 
 // a hand drawn close to a real one: skin shading, knuckles, nails; thumb plus five fingers, counted above the tips
 // a dark band behind the headline so it reads over a full-bleed frame
-const shade = `<i style="position:absolute;inset:0 0 auto 0;height:620px;background:linear-gradient(180deg,rgba(20,26,51,.0),rgba(255,197,51,.0))"></i><i style="position:absolute;left:0;right:0;top:0;height:560px;background:linear-gradient(180deg,rgba(255,197,51,.96) 0,rgba(255,197,51,.85) 70%,rgba(255,197,51,0) 100%)"></i>`;
+const shade_unused = `<i style="position:absolute;inset:0 0 auto 0;height:620px;background:linear-gradient(180deg,rgba(20,26,51,.0),rgba(255,197,51,.0))"></i><i style="position:absolute;left:0;right:0;top:0;height:560px;background:linear-gradient(180deg,rgba(255,197,51,.96) 0,rgba(255,197,51,.85) 70%,rgba(255,197,51,0) 100%)"></i>`;
 
 export const hand = (l, t) => {
   // [base x, base y, length, width, angle]
@@ -57,8 +57,10 @@ export const TILES = {
     ${card({ l: 90, t: 520, w: 900, h: 640, rot: -2, src: `${M}/landing/cartoon-friends.jpg`, pos: '50% 35%' })}
     ${pill('How?', 700, 470, 6, 'dark', 'height:110px;font-size:52px;text-transform:none;letter-spacing:-.02em')}
     ${pill('about 20 minutes', 90, 1200, -3)}${pill('2-3 tries a scene', 560, 1230, 3)}` },
-  14: { theme: 'c', html: `${top('lab')}${h1('5 safe ways<br>to give your<br>kid <mark>AI</mark>', 190, 104)}
-    ${listBox(['Your account, not theirs', 'You sit side by side', 'No chats with strangers', 'Some things stay out of AI', 'Too perfect? Check it'].map((t) => row(tick(true), t)).join(''), 84, 600, 912)}` },
+  14: { theme: 'c', html: `${top('lab')}${h1('Your kid asks<br>for ChatGPT.<br><mark>Say yes,</mark><br><mark>with one rule.</mark>', 190, 96)}
+    ${bubble('Can I use ChatGPT? Everyone has it.', 84, 680, 760, { rot: -2, size: 52 })}
+    ${bubble('Yes. On my account, next to me.', 236, 940, 760, { me: true, rot: 2, size: 52 })}
+    ${pill('one rule', 90, 1200, -3)}` },
   15: { theme: 'k', html: `${top('lab')}${h1('How does AI draw<br><mark>from words?</mark>', 190, 104)}
     ${[['c-noise', -5], ['c-half', 2], ['c-end', -2]].map(([f, r], i) => card({ l: 60 + i * 330, t: 610 + (i % 2) * 40, w: 300, h: 520, rot: r, src: `${W2}/${f}.jpg`, z: 3 + i })).join('')}
     ${[['step 1', 90], ['step 20', 420], ['her cartoon', 730]].map(([s, l]) => pill(s, l, 1200, -2)).join('')}
@@ -79,10 +81,8 @@ export const TILES = {
     ${char('kamilla', 60, 820, 470)}${bubble('“a dragon who bakes cookies”', 470, 560, 520, { rot: 2, size: 44 })}
     ${card({ l: 520, t: 900, w: 470, h: 330, rot: -3, src: `${M}/landing/step-make.jpg` })}
     ${pill('they talk, you type', 540, 1270, -3)}` },
-  20: { theme: 'k', html: `${top('lab')}${h1('Is this picture<br><mark>real?</mark>', 190, 124)}
-    ${card({ l: 120, t: 520, w: 840, h: 760, rot: -1.5, src: `${M}/landing/cartoon-cat.jpg`, pos: '50% 40%' })}
-    ${[[260, 600], [720, 640], [300, 1080], [760, 1110]].map(([l, t], i) => `<span class="num" style="left:${l}px;top:${t}px;width:96px;height:96px;font-size:54px;background:${C.coral}">${i + 1}</span>`).join('')}
-    ${pill('4 checks', 700, 470, 6, 'dark')}` },
+  20: { theme: 'k', html: `${top('lab')}${h1('“Mom, is this<br><mark>real?</mark>”', 190, 124)}${hand(150, 520)}
+    <span class="note" style="left:600px;top:470px;transform:rotate(6deg)">look at the hands</span>` },
   21: { theme: 'y', html: `${top('show')}${h1('Her own character,<br><mark>as stickers.</mark>', 190, 108)}
     ${card({ l: 70, t: 540, w: 940, h: 640, rot: -2, src: `${M}/landing/step-show.jpg`, pos: '58% 80.6%', zoom: 330 })}
     ${pill('sticker pack', 600, 500, 5)}${pill('made by Kamilla, 10', 90, 1220, -3)}` },
@@ -93,9 +93,10 @@ export const TILES = {
     ${card({ l: 70, t: 560, w: 400, h: 600, rot: -6, src: `${M}/works/rainbow-drawing.jpg`, cls: 'paper' })}${tape(190, 534, -10)}
     ${card({ l: 500, t: 600, w: 470, h: 700, rot: 4, src: `${M}/works/rainbow-cartoon.jpg`, z: 4 })}
     ${pill('Thanksgiving gift', 90, 1230, -3)}${star(80, '#fff', 'left:900px;top:520px')}` },
-  24: { theme: 'c', html: `${top('lab')}${h1('What your kid should<br>never <mark>tell an AI</mark>', 190, 106)}
-    ${bubble(`Hi! I’m ${bar(220)} and I go to ${bar(260)}. My password is ${bar(240)}`, 84, 560, 900, { size: 50 })}
-    ${pill('name + school', 90, 1060, -3)}${pill('address', 520, 1090, 3)}${pill('passwords', 120, 1190, 2)}${pill('photos of their face', 470, 1210, -2)}` },
+  24: { theme: 'c', html: `${top('lab')}${h1('Your kid told a chatbot<br><mark>their school.</mark>', 190, 100)}
+    ${bubble(`I’m ${bar(200)} and I go to ${bar(240)} Elementary!`, 84, 560, 900, { size: 52 })}
+    ${bubble('That’s so cool! What grade are you in?', 236, 860, 760, { me: true, rot: 2, size: 48 })}
+    ${pill('it felt like a friend', 90, 1190, -3)}` },
   25: { theme: 'c', html: `${top('lab')}${h1('Same question.<br><mark>Two answers.</mark>', 190, 116)}
     ${bubble('Tell me a fact about octopuses', 360, 520, 640, { me: true, size: 42 })}
     ${bubble('Octopuses have three hearts.', 70, 760, 700, { size: 44, rot: -1.5 })}${bubble('An octopus can taste with its arms.', 220, 1000, 760, { size: 44, rot: 1.5 })}
@@ -126,16 +127,21 @@ export const TILES = {
     ${card({ l: 380, t: 760, w: 620, h: 400, rot: 3, src: `${M}/landing/game.jpg`, cls: 'screen' })}
     ${char('anna', 40, 900, 420)}${pill('first lesson free', 430, 1220, -3)}` },
 
-  // ---- Kamilla's cartoon series: a frame of her cartoon full bleed, one line about AI and cartoons on top
-  32: { theme: 'y', html: `<img src="${A('social/concept/out/week2/frames/f5.jpg')}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">${shade}${top('show')}
-    ${h1('A cat with a croissant?<br><mark>Her idea.</mark>', 190, 100)}${pill('made by Kamilla, 10', 70, 1290, -3)}` },
-  33: { theme: 'y', html: `<img src="${A('social/concept/out/week2/frames/f11.jpg')}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">${shade}${top('show')}
-    ${h1('Paris, drawn by AI.<br><mark>Directed by a kid.</mark>', 190, 92)}${pill('her story, her characters', 70, 1290, -3)}` },
-  34: { theme: 'y', html: `<img src="${A('social/concept/out/week2/frames/f8.jpg')}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">${shade}${top('show')}
-    ${h1('Every character here<br>came from a <mark>10-year-old.</mark>', 190, 88)}${pill('her characters', 70, 1290, -3)}` },
-  35: { theme: 'y', html: `<img src="${A('social/concept/out/week2/frames/f14.jpg')}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">${shade}${top('show')}
-    ${h1('2-3 tries a scene.<br><mark>About 20 minutes.</mark>', 190, 96)}${pill('her first cartoon', 70, 1290, -3)}` },
-  36: { theme: 'y', html: `<img src="${A('social/concept/out/week2/frames/f22.jpg')}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">${shade}${top('show')}
-    ${h1('What would your kid’s<br><mark>cartoon be about?</mark>', 190, 92)}${pill('first lesson free', 70, 1290, -3)}` },
+  // ---- Kamilla's cartoon series: a frame of her cartoon full bleed, faces clear, the line on a sticker card at the bottom
+  32: { theme: 'y', html: `<img src="${A('social/concept/out/week2/frames/f5.jpg')}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%">${top('show')}
+    <div class="card" style="left:56px;right:56px;top:auto;bottom:150px;width:auto;height:auto;padding:38px 44px;background:#FFC533;transform:rotate(-1.5deg)"><p style="font:800 76px/1.02 Sora;letter-spacing:-.045em;color:#141A33">A cat with a croissant?<br><mark style="background:#fff;border-radius:16px;padding:0 .12em">Her idea.</mark></p></div>
+    ${pill('made by Kamilla, 10', 70, 1010, -3)}` },
+  33: { theme: 'y', html: `<img src="${A('social/concept/out/week2/frames/f11.jpg')}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%">${top('show')}
+    <div class="card" style="left:56px;right:56px;top:auto;bottom:150px;width:auto;height:auto;padding:38px 44px;background:#FFC533;transform:rotate(-1.5deg)"><p style="font:800 76px/1.02 Sora;letter-spacing:-.045em;color:#141A33">Paris, drawn by AI.<br>Directed by a kid.</p></div>
+    ${pill('her story, her characters', 70, 1010, -3)}` },
+  34: { theme: 'y', html: `<img src="${A('social/concept/out/week2/frames/f8.jpg')}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 35%">${top('show')}
+    <div class="card" style="left:56px;right:56px;top:auto;bottom:150px;width:auto;height:auto;padding:38px 44px;background:#FFC533;transform:rotate(-1.5deg)"><p style="font:800 76px/1.02 Sora;letter-spacing:-.045em;color:#141A33">Every character? Made up by a kid.</p></div>
+    ${pill('her characters', 70, 1010, -3)}` },
+  35: { theme: 'y', html: `<img src="${A('social/concept/out/week2/frames/f14.jpg')}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%">${top('show')}
+    <div class="card" style="left:56px;right:56px;top:auto;bottom:150px;width:auto;height:auto;padding:38px 44px;background:#FFC533;transform:rotate(-1.5deg)"><p style="font:800 76px/1.02 Sora;letter-spacing:-.045em;color:#141A33">2-3 tries a scene.<br>About 20 minutes.</p></div>
+    ${pill('her first cartoon', 70, 1010, -3)}` },
+  36: { theme: 'y', html: `<img src="${A('social/concept/out/week2/frames/f17.jpg')}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%">${top('show')}
+    <div class="card" style="left:56px;right:56px;top:auto;bottom:150px;width:auto;height:auto;padding:38px 44px;background:#FFC533;transform:rotate(-1.5deg)"><p style="font:800 76px/1.02 Sora;letter-spacing:-.045em;color:#141A33">What would your kid’s cartoon be about?</p></div>
+    ${pill('first lesson free', 70, 1010, -3)}` },
 };
 
