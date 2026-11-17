@@ -1,10 +1,10 @@
 ---
-when: 2026-11-20 08:10 (New York)
+when: 2026-11-20 17:00 (New York)
 kind: ours
 lever: раскол привычного правила
 topic: Parenting
 characters: 165
-card: text/threads/w2-01-things-made.mp4
+card: none (text only)
 ---
 Screen time rules usually count hours.
 

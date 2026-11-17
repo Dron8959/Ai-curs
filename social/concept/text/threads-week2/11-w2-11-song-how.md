@@ -1,10 +1,10 @@
 ---
-when: 2026-11-23 12:40 (New York)
+when: 2026-11-23 17:45 (New York)
 kind: how
 lever: любопытство: как это работает
 topic: AI for kids
 characters: 377
-card: to draw: слова ребёнка (4 строки) превращаются в звуковую волну; ноты проступают из шума, как в картинке по словам
+card: none (text only)
 ---
 AI has no ears and has never danced to a song. So how does it make music from your kid's words?
 

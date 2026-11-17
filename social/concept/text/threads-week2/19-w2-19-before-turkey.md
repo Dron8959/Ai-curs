@@ -4,7 +4,7 @@ kind: ours
 lever: благодарность
 topic: Parenting
 characters: 155
-card: to draw: утренний стол и три вопроса-облачка: card / song / cartoon
+card: none (text only)
 ---
 Before the turkey, one question for your kid: what would you make for the whole family this season?
 

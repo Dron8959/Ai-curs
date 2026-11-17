@@ -1,10 +1,10 @@
 ---
-when: 2026-11-21 08:10 (New York)
+when: 2026-11-21 17:00 (New York)
 kind: ours
 lever: любопытство и лёгкая тревога
 topic: Parenting
 characters: 173
-card: text/threads/w2-04-last-question.mp4
+card: none (text only)
 ---
 Quick one: do you know the last thing your kid asked an AI?
 

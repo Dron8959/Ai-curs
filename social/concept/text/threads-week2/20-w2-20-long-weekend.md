@@ -1,10 +1,10 @@
 ---
-when: 2026-11-26 12:40 (New York)
+when: 2026-11-26 17:00 (New York)
 kind: save
 lever: польза: список, который сохраняют
 topic: AI for kids
 characters: 220
-card: to draw: пять значков-проектов в ряд (игра, песня, мультфильм, сайт, стикеры) с цифрами 1 до 5; чип «Save this»
+card: none (text only)
 ---
 Save this for the long weekend: 5 things a kid can make with AI.
 

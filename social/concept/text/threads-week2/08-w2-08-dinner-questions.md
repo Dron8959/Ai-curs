@@ -1,10 +1,10 @@
 ---
-when: 2026-11-22 12:40 (New York)
+when: 2026-11-22 17:45 (New York)
 kind: save
 lever: польза: список, который сохраняют
 topic: AI safety
 characters: 294
-card: to draw: пять карточек-вопросов на столе, как салфетки за ужином; сверху чип «Save this»
+card: none (text only)
 ---
 5 questions to ask your kid about AI at dinner. Save this.
 

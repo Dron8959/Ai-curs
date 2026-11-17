@@ -1,10 +1,10 @@
 ---
-when: 2026-11-20 20:40 (New York)
+when: 2026-11-20 17:45 (New York)
 kind: ours
 lever: доверие: честность про ИИ
 topic: AI safety
 characters: 223
-card: text/threads/w2-03-ai-kamilla.mp4
+card: none (text only)
 ---
 Some lessons in our course are led by an AI version of Kamilla, our 10-year-old co-host. Every time, we say so.
 

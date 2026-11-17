@@ -1,5 +1,5 @@
 ---
-when: 2026-11-20 12:40 (New York)
+when: 2026-11-20 15:10 (New York)
 kind: how
 lever: любопытство: как это работает
 topic: AI for kids

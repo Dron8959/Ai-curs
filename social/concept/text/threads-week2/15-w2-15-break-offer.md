@@ -1,10 +1,10 @@
 ---
-when: 2026-11-24 20:40 (New York)
+when: 2026-11-24 18:30 (New York)
 kind: offer
 lever: предложение (раз в неделю)
 topic: AI for kids
 characters: 417
-card: to draw: три шага первого урока (email, игра за 10 до 20 минут, играете вместе) на фоне осенних листьев; чип «Free lesson»
+card: none (text only)
 ---
 If your kid is off school for Thanksgiving break, here's something for one afternoon.
 

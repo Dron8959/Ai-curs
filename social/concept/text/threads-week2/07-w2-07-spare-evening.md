@@ -1,10 +1,10 @@
 ---
-when: 2026-11-22 08:10 (New York)
+when: 2026-11-22 17:00 (New York)
 kind: ours
 lever: малый шаг, снятие вины
 topic: Parenting
 characters: 208
-card: to draw: календарь на неделю, пять вечеров, один обведён; рядом таймер «20 min»
+card: none (text only)
 ---
 Sunday question for parents: which evening this week has 20 spare minutes?
 

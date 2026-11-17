@@ -1,10 +1,10 @@
 ---
-when: 2026-11-25 20:40 (New York)
+when: 2026-11-25 18:30 (New York)
 kind: story
 lever: тепло и семья
 topic: Parenting
 characters: 311
-card: to draw: накрытый стол, на каждой тарелке карточка: песня, мультфильм, игра; цитата Сьюзан
+card: none (text only)
 ---
 Tomorrow a lot of families sit at one big table. A song, a cartoon or a game your kid made is something to show them.
 

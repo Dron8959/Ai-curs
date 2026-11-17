@@ -1,10 +1,10 @@
 ---
-when: 2026-11-24 12:40 (New York)
+when: 2026-11-24 17:45 (New York)
 kind: case
 lever: польза: как семья добилась результата
 topic: AI for kids
 characters: 416
-card: to draw: сайт в рамке браузера, нарисованный ребёнком, и цитата Рэйчел; чип «Early-access family»
+card: none (text only)
 ---
 A 7-year-old made a website with his mom, and now he keeps asking when the next lesson is. How does a lesson get a 7-year-old to ask for more?
 

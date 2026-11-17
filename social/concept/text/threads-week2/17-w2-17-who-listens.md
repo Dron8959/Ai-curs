@@ -1,10 +1,10 @@
 ---
-when: 2026-11-25 12:40 (New York)
+when: 2026-11-25 17:45 (New York)
 kind: try
 lever: игра вместе
 topic: AI for kids
 characters: 315
-card: to draw: один вопрос «Why is the sky blue?» и три ответа разной длины для 6 лет, 12 лет и бабушки
+card: none (text only)
 ---
 Can AI explain the same thing to a 6-year-old and to a grandparent? It can, if you tell it who's listening.
 

@@ -4,8 +4,15 @@
 //
 //   node social/concept/threads-week2.mjs     checks every post and writes text/threads-week2/NN-id.md
 //
-// HALF-TEMPLATE
-// Day = 3 posts (New York): 8:10 ours · 12:40 USEFUL · 20:40 ours. Thanksgiving is Thu 26.11.
+// NEW RULE (owner, 17.11.2026, after the first stats: the text-only 17:30 post got the most views):
+// the week is a test. 90% of posts are text only, and they go out in one window, 17:00 to 18:30 New York
+// (30 minutes before and an hour after 17:30), 17:00 / 17:45 / 18:30. The useful post of the day is the middle one.
+// Two card posts stay OUTSIDE the window as a control: ex-words-to-picture (Fri 15:10, already in Metricool) and
+// w2-05-spot-the-fake (Sat 12:40). One exception on Thanksgiving: the morning post goes at 8:10 (it says "before the turkey").
+// Compare views of the window text posts with the control cards and with week 1 (cards at 8:10, 12:40, 20:40).
+//
+// HALF-TEMPLATE (the content shape, the clock times above replace the old 8:10 / 12:40 / 20:40)
+// Day = 3 posts: ours, USEFUL, ours. Thanksgiving is Thu 26.11.
 //
 // Useful post (12:40), "question + paradox + one visual". One of four kinds, never two of a kind in a row:
 //   how    "How/why does AI ...?" a mechanism in plain words (six fingers, static to picture)
@@ -29,6 +36,16 @@ import { lint } from './threads-lint.mjs';
 const here = dirname(fileURLToPath(import.meta.url));
 const url = 'https://www.makeshowlab.com/?utm_source=threads&utm_medium=social&utm_campaign=free-lesson-break#free';
 export const SLOTS = { am: '08:10', noon: '12:40', pm: '20:40' };
+export const CARD_POSTS = new Set(['ex-words-to-picture', 'w2-05-spot-the-fake']);
+const FIXED = { 'ex-words-to-picture': '15:10', 'w2-05-spot-the-fake': '12:40', 'w2-19-before-turkey': '08:10' };
+const WINDOW = ['17:00', '17:45', '18:30'];
+// New York clock time of a post
+export function whenOf(p, all) {
+  if (FIXED[p.id]) return FIXED[p.id];
+  const day = all.filter((q) => q.date === p.date && !FIXED[q.id]);
+  const t = day.length === 3 ? WINDOW : WINDOW.slice(0, 2);
+  return t[day.indexOf(p)];
+}
 
 export const posts = [
   // ---------------------------------------------------------------- Fri 20.11
@@ -206,11 +223,15 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
   for (const d of days) {
     const day = posts.filter((p) => p.date === d);
     if (day.filter((p) => !NOT_USEFUL.includes(p.kind)).length > 1) throw new Error(`${d}: one useful post a day`);
-    if (day.length === 3 && !day.some((p) => p.slot === 'noon' && !NOT_USEFUL.includes(p.kind))) throw new Error(`${d}: the 12:40 post must be useful`);
+    if (day.length === 3 && !day.some((p) => p.slot === 'noon' && !NOT_USEFUL.includes(p.kind))) throw new Error(`${d}: the middle post must be useful`);
+    const inWin = day.map((p) => whenOf(p, posts)).filter((w) => w >= '17:00' && w <= '18:30').length;
+    if (day.length - inWin > 2) throw new Error(`${d}: too many posts outside the 17:00-18:30 window`);
   }
   const useful = posts.filter((p) => !NOT_USEFUL.includes(p.kind));
   if (posts.filter((p) => p.kind === 'offer').length > 1) throw new Error('one offer a week');
   useful.forEach((p, i) => { if (i && useful[i - 1].kind === p.kind) throw new Error(`${p.id}: two "${p.kind}" useful posts in a row`); });
+  const cards = posts.filter((p) => CARD_POSTS.has(p.id)).length;
+  if (cards / posts.length > 0.1) throw new Error(`${cards} card posts of ${posts.length}: 90% must be text only`);
   posts.forEach((p, i) => {
     const n = [...p.text].length;
     const bad = lint(p.text).filter((h) => !h.includes('too long for a phone read'));
@@ -219,11 +240,10 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
     if (/^Rule \d+ of 5:/m.test(p.text)) bad.push('lecture format "Rule N of 5:"');
     if (!/^[A-Z0-9"]/.test(p.text)) bad.push('must start with a capital letter');
     if (!/\?/.test(p.text.trim().split('\n').slice(-2).join(' ')) && !(p.kind === 'offer' && /tell me/i.test(p.text))) bad.push('must end on a real question');
-    if (p.media && !existsSync(join(here, 'text', 'threads', `${p.media}.mp4`))) bad.push(`no card text/threads/${p.media}.mp4`);
-    if (!p.media && !p.visual) bad.push('no card and no visual brief');
+    if (CARD_POSTS.has(p.id) && !existsSync(join(here, 'text', 'threads', `${p.media}.mp4`))) bad.push(`no card text/threads/${p.media}.mp4`);
     if (bad.length) throw new Error(`${p.id}: ${bad.join('; ')}`);
     const nn = String(i + 1).padStart(2, '0');
-    writeFileSync(join(out, `${nn}-${p.id}.md`), `---\nwhen: ${p.date} ${SLOTS[p.slot]} (New York)\nkind: ${p.kind}\nlever: ${p.lever}\ntopic: ${p.topic}\ncharacters: ${n}\ncard: ${p.media ? `text/threads/${p.media}.mp4` : `to draw: ${p.visual}`}\n---\n${p.text}\n`);
-    console.log(`${nn} ${p.date} ${SLOTS[p.slot]} ${p.kind.padEnd(5)} ${p.id.padEnd(22)} ${String(n).padStart(3)}ch`);
+    writeFileSync(join(out, `${nn}-${p.id}.md`), `---\nwhen: ${p.date} ${whenOf(p, posts)} (New York)\nkind: ${p.kind}\nlever: ${p.lever}\ntopic: ${p.topic}\ncharacters: ${n}\ncard: ${CARD_POSTS.has(p.id) ? `text/threads/${p.media}.mp4` : 'none (text only)'}\n---\n${p.text}\n`);
+    console.log(`${nn} ${p.date} ${whenOf(p, posts)} ${CARD_POSTS.has(p.id) ? 'CARD' : 'text'} ${p.kind.padEnd(5)} ${p.id.padEnd(22)} ${String(n).padStart(3)}ch`);
   });
 }
