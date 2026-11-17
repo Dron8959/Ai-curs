@@ -7,5 +7,7 @@ export const LIVE_FB = {
   7: ['2026-11-19', '11:00', 429843719], 8: ['2026-11-19', '19:00', 429843779],
   6: ['2026-11-20', '11:00', 429843847], 9: ['2026-11-20', '19:00', 429843928],
   10: ['2026-11-21', '11:00', 429844006], 4: ['2026-11-21', '19:00', 429845747],
+  // Instagram trial reels, mirrored on Facebook as normal reels at the same hour (17 Nov)
+  11: ['2026-11-17', '09:00', 431067470], 18: ['2026-11-17', '15:00', 431067493],
 };
 export const DRAFT_FB = new Set(); // post 4 confirmed by the owner on 16 Nov, draft removed
