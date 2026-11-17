@@ -106,7 +106,7 @@ async function renderStatic() {
       ...(p.alt ? [`alt: "${p.alt.replace(/"/g, '\\"')}"`] : []), '---'].join('\n');
     writeFileSync(join(d, 'caption.md'), `${head}\n${p.caption.trim()}\n`);
     writePlatforms(p, d);
-    if (p.slides && packaging[p.id]?.tiktok?.photo) {
+    if (p.slides && (packaging[p.id]?.tiktok?.photo || p.tt)) {
       // TikTok photo mode wants 9:16: the same composition on a tall frame of the slide's own colour
       mkdirSync(join(d, 'tiktok'), { recursive: true });
       for (const [i, s] of p.slides.entries()) {

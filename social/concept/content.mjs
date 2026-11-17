@@ -2,6 +2,7 @@
 // captions. Reel scenes live in reels.mjs. Copy is English, written to social/brand/voice.md and only
 // uses facts from social/brand/facts.md and the verbatim reviews in social/media/landing/reviews/quotes.md.
 
+import { posts as W2POSTS } from './review/week2-reels.mjs';
 import { A, C, M, top, card, ring, pill, tape, star, arrow, char, icon, foot } from './kit.mjs';
 import { TILES } from './review/week2-art.mjs';
 import { TEXTS } from './review/week2-texts.mjs';
@@ -322,6 +323,8 @@ Link in bio.
     tile: TILES[11].html, caption: TEXTS[11].caption },
   { id: '18-sounds-sure', n: 18, rubric: 'lab', no: '', format: 'reel', ai: true, title: 'Why does AI sound so sure when it\'s wrong?',
     tile: TILES[18].html, caption: TEXTS[18].caption },
+  // the rest of the pack, from one template (owner's look of 17 Nov): review/week2-reels.mjs
+  ...W2POSTS,
 ];
 
 export const byId = (id) => posts.find((p) => p.id === id || p.id.startsWith(id));

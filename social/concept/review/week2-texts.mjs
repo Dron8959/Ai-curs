@@ -39,7 +39,7 @@ That's how our AI course for kids 6 to 14 is set up. Save this for the first les
       'I\'m ten, and I made this cartoon.',
       'I didn\'t draw a single frame.',
       'I told the AI my story and my characters.',
-      'Then I checked every scene and fixed the ones that came out wrong.',
+      'Then I fixed the scenes that came out wrong.',
       'About twenty minutes. Two or three tries a scene.'],
     caption: `Comment "CARTOON" and I'll send you the free first lesson.
 
@@ -56,7 +56,7 @@ Send this to someone who thinks kids just watch cartoons.
       'Say yes, with one rule.',
       'It\'s your account, not theirs. They never sign up alone.',
       'You sit next to them and see everything they make.',
-      'Four more rules on the fridge card. Comment RULES.'],
+      'More rules on the fridge card. Comment RULES.'],
     caption: `Comment "RULES" and I'll send you the fridge card.
 
 Your kid asks for ChatGPT because everyone at school has it. You can say yes, with one rule: it's your account, not theirs. They never sign up anywhere alone, and you sit next to them, so you see everything they make.
@@ -67,8 +67,8 @@ That's how every lesson of our AI course for kids works. The other four rules ar
 
   15: { who: 'Anna', voice: [
       'How does AI draw from words?',
-      'It doesn\'t start with a blank page. It starts with static, like an old TV.',
-      'Step by step it removes a little noise, nudged toward the words.',
+      'It starts with static, like an old TV.',
+      'Step by step, it takes the noise away.',
       'Until the picture matches what you asked for.',
       'In our lessons, the words are your kid\'s idea.'],
     caption: `Comment "CARTOON" and I'll send you the free first lesson.
@@ -175,7 +175,7 @@ Send this to the family group chat.
 
   22: { who: 'Anna', voice: [
       'Is AI alive? It talks like a friend.',
-      'It learned how people write by reading a huge amount of text.',
+      'It learned from a huge amount of text people wrote.',
       'So it sounds like a person.',
       'But it doesn\'t eat, or sleep, or miss you.',
       'Ask your kid what they think.'],
@@ -260,7 +260,7 @@ Send this to grandma.
 
   28: { who: 'Anna', voice: [
       'Is that Kamilla, or her AI version?',
-      'If a lesson is led by an AI version of Kamilla, it says so.',
+      'An AI version of Kamilla? The lesson says so.',
       'Every time.',
       'Kids should always know who they\'re talking to.',
       'One rule for every app.'],

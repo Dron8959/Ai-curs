@@ -194,3 +194,158 @@ date; the PDFs in `out/` are out of date. They are only needed if new recordings
 | 3 | 8.3-12.5 | It writes the most likely next word, again and again. | 2.4 |
 | 4 | 12.5-16.2 | Likely and true aren't the same thing. | 1.9 |
 | 5 | 16.2-19.4 | So kids check what comes back. | 1.9 |
+
+## Next week (19-25 Nov), one template: review/week2-reels.mjs
+
+### 13-cartoon-how · Kamilla · 19.4 s
+| scene | seconds | line | words/s |
+|---|---|---|---|
+| 1 | 0.0-4.2 | I'm ten, and I made this cartoon. | 1.7 |
+| 2 | 4.2-8.3 | I didn't draw a single frame. | 1.5 |
+| 3 | 8.3-12.5 | I told the AI my story and my characters. | 2.1 |
+| 4 | 12.5-16.2 | Then I fixed the scenes that came out wrong. | 2.4 |
+| 5 | 16.2-19.4 | About twenty minutes. Two or three tries a scene. | 2.8 |
+
+### 14-one-rule · Anna · 19.4 s
+| scene | seconds | line | words/s |
+|---|---|---|---|
+| 1 | 0.0-4.2 | Your kid asks for ChatGPT. Everyone at school has it. | 2.4 |
+| 2 | 4.2-8.3 | Say yes, with one rule. | 1.2 |
+| 3 | 8.3-12.5 | It's your account, not theirs. They never sign up alone. | 2.4 |
+| 4 | 12.5-16.2 | You sit next to them and see everything they make. | 2.7 |
+| 5 | 16.2-19.4 | More rules on the fridge card. Comment RULES. | 2.5 |
+
+### 15-draw-from-words · Anna · 19.4 s
+| scene | seconds | line | words/s |
+|---|---|---|---|
+| 1 | 0.0-4.2 | How does AI draw from words? | 1.4 |
+| 2 | 4.2-8.3 | It starts with static, like an old TV. | 2.0 |
+| 3 | 8.3-12.5 | Step by step, it takes the noise away. | 1.9 |
+| 4 | 12.5-16.2 | Until the picture matches what you asked for. | 2.2 |
+| 5 | 16.2-19.4 | In our lessons, the words are your kid's idea. | 2.8 |
+
+### 16-game-tonight · Anna · 19.4 s
+| scene | seconds | line | words/s |
+|---|---|---|---|
+| 1 | 0.0-4.2 | Tonight, your kid can make a game. | 1.7 |
+| 2 | 4.2-8.3 | Leave your email. No card. | 1.2 |
+| 3 | 8.3-12.5 | Ten to twenty minutes, on a laptop or a tablet. | 2.4 |
+| 4 | 12.5-16.2 | Then you play it against each other. | 1.9 |
+| 5 | 16.2-19.4 | Comment GAME and I'll send you the link. | 2.5 |
+
+### 19-kid-is-6 · Anna · 19.4 s
+| scene | seconds | line | words/s |
+|---|---|---|---|
+| 1 | 0.0-4.2 | Your kid is six. Can they do this? | 1.9 |
+| 2 | 4.2-8.3 | They don't need to read or type. | 1.7 |
+| 3 | 8.3-12.5 | They talk, and you type. | 1.2 |
+| 4 | 12.5-16.2 | The idea is theirs. The keyboard is yours. | 2.2 |
+| 5 | 16.2-19.4 | Comment GAME for the free first lesson. | 2.2 |
+
+### 21-stickers · Kamilla · 19.4 s
+| scene | seconds | line | words/s |
+|---|---|---|---|
+| 1 | 0.0-4.2 | I made a character. | 1.0 |
+| 2 | 4.2-8.3 | Then I turned her into stickers. | 1.5 |
+| 3 | 8.3-12.5 | Happy, surprised, silly. A whole pack. | 1.4 |
+| 4 | 12.5-16.2 | That was one lesson. | 1.1 |
+| 5 | 16.2-19.4 | What would your character be? | 1.6 |
+
+### 22-is-ai-alive · Anna · 19.4 s
+| scene | seconds | line | words/s |
+|---|---|---|---|
+| 1 | 0.0-4.2 | Is AI alive? It talks like a friend. | 1.9 |
+| 2 | 4.2-8.3 | It learned from a huge amount of text people wrote. | 2.4 |
+| 3 | 8.3-12.5 | So it sounds like a person. | 1.4 |
+| 4 | 12.5-16.2 | But it doesn't eat, or sleep, or miss you. | 2.4 |
+| 5 | 16.2-19.4 | Ask your kid what they think. | 1.9 |
+
+### 23-cartoon-for-grandma · Anna · 19.4 s
+| scene | seconds | line | words/s |
+|---|---|---|---|
+| 1 | 0.0-4.2 | A cartoon for grandma this Thanksgiving. | 1.4 |
+| 2 | 4.2-8.3 | Your kid draws it. Crayons are fine. | 1.7 |
+| 3 | 8.3-12.5 | Then the AI turns the drawing into a cartoon. | 2.1 |
+| 4 | 12.5-16.2 | The idea and the drawing stay theirs. | 1.9 |
+| 5 | 16.2-19.4 | Start with the free first lesson. Comment CARTOON. | 2.5 |
+
+### 26-know-ai-first · Anna · 19.4 s
+| scene | seconds | line | words/s |
+|---|---|---|---|
+| 1 | 0.0-4.2 | Do I need to know AI first? | 1.7 |
+| 2 | 4.2-8.3 | No. Everything starts from zero, for both of you. | 2.2 |
+| 3 | 8.3-12.5 | A laptop or a tablet. Nothing to install. | 1.9 |
+| 4 | 12.5-16.2 | The full course is one hundred ninety-seven dollars, paid once. | 2.7 |
+| 5 | 16.2-19.4 | Or start with the free first lesson. | 2.2 |
+
+### 27-song · Anna · 19.4 s
+| scene | seconds | line | words/s |
+|---|---|---|---|
+| 1 | 0.0-4.2 | A song from her own words. | 1.4 |
+| 2 | 4.2-8.3 | Your kid writes the words. The AI makes the music. | 2.4 |
+| 3 | 8.3-12.5 | Susan, a grandmother, made one with her granddaughter. | 1.9 |
+| 4 | 12.5-16.2 | Here's what she told us. | 1.4 |
+| 5 | 16.2-19.4 | Send this to grandma. | 1.3 |
+
+### 28-ai-version · Anna · 19.4 s
+| scene | seconds | line | words/s |
+|---|---|---|---|
+| 1 | 0.0-4.2 | Is that Kamilla, or her AI version? | 1.7 |
+| 2 | 4.2-8.3 | An AI version of Kamilla? The lesson says so. | 2.2 |
+| 3 | 8.3-12.5 | Every time. | 0.5 |
+| 4 | 12.5-16.2 | Kids should always know who they're talking to. | 2.2 |
+| 5 | 16.2-19.4 | One rule for every app. | 1.6 |
+
+### 29-crayon-to-cartoon · Anna · 19.4 s
+| scene | seconds | line | words/s |
+|---|---|---|---|
+| 1 | 0.0-4.2 | How does a crayon drawing become a cartoon? | 1.9 |
+| 2 | 4.2-8.3 | The AI doesn't start over. It starts from the drawing. | 2.4 |
+| 3 | 8.3-12.5 | It keeps the shapes and redraws them in a new style. | 2.6 |
+| 4 | 12.5-16.2 | That's why the truck on the rainbow is still there. | 2.7 |
+| 5 | 16.2-19.4 | The idea stays the kid's. | 1.6 |
+
+### 31-worst-case · Anna · 19.4 s
+| scene | seconds | line | words/s |
+|---|---|---|---|
+| 1 | 0.0-4.2 | Worst case: twenty minutes on the couch. | 1.7 |
+| 2 | 4.2-8.3 | Leave your email. No card. | 1.2 |
+| 3 | 8.3-12.5 | Your kid builds a game, and you play it together. | 2.4 |
+| 4 | 12.5-16.2 | If it isn't a fit, that's all you lose. | 2.4 |
+| 5 | 16.2-19.4 | Comment GAME and I'll send you the link. | 2.5 |
+
+### 32-cat-croissant · Kamilla · 19.4 s
+| scene | seconds | line | words/s |
+|---|---|---|---|
+| 1 | 0.0-4.2 | A cat with a croissant? | 1.2 |
+| 2 | 4.2-8.3 | That was my idea. | 1.0 |
+| 3 | 8.3-12.5 | I told the AI my characters and my story. | 2.1 |
+| 4 | 12.5-16.2 | Then I fixed the scenes that came out wrong. | 2.4 |
+| 5 | 16.2-19.4 | What would your cartoon be about? | 1.9 |
+
+### 33-paris · Kamilla · 19.4 s
+| scene | seconds | line | words/s |
+|---|---|---|---|
+| 1 | 0.0-4.2 | This is Paris in my cartoon. | 1.4 |
+| 2 | 4.2-8.3 | The AI drew every street. | 1.2 |
+| 3 | 8.3-12.5 | But I chose where we go and what happens. | 2.1 |
+| 4 | 12.5-16.2 | When a scene came out wrong, I asked again. | 2.4 |
+| 5 | 16.2-19.4 | Where would your cartoon go? | 1.6 |
+
+### 34-characters · Kamilla · 19.4 s
+| scene | seconds | line | words/s |
+|---|---|---|---|
+| 1 | 0.0-4.2 | Every character here, I made up. | 1.4 |
+| 2 | 4.2-8.3 | The girls, the cat, the trip to Paris. | 2.0 |
+| 3 | 8.3-12.5 | I told the AI who they are. It drew them. | 2.4 |
+| 4 | 12.5-16.2 | When a scene came out wrong, I tried again. | 2.4 |
+| 5 | 16.2-19.4 | Who would be in your cartoon? | 1.9 |
+
+### 35-tries-a-scene · Kamilla · 19.4 s
+| scene | seconds | line | words/s |
+|---|---|---|---|
+| 1 | 0.0-4.2 | Two or three tries a scene. | 1.4 |
+| 2 | 4.2-8.3 | Not every scene comes out right the first time. | 2.2 |
+| 3 | 8.3-12.5 | So I look, and I tell the AI what to fix. | 2.6 |
+| 4 | 12.5-16.2 | The whole cartoon took about twenty minutes. | 1.9 |
+| 5 | 16.2-19.4 | Would you fix it, or keep it? | 2.2 |

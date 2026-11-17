@@ -42,7 +42,9 @@ const posts = readdirSync(join(concept, 'posts')).filter((d) => /^\d\d-/.test(d)
     const sample = join(concept, 'out', `voice-sample-${nn}.mp4`);
     voiced = existsSync(sample);
     const src = voiced ? sample : join(pdir, 'reel.mp4');
-    video = `m/${nn}.mp4`; copyFileSync(src, join(site, video));
+    video = `m/${nn}.mp4`;
+    if (n >= 13) execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', src, '-vf', 'scale=540:-2', '-c:v', 'libx264', '-crf', '27', '-preset', 'veryfast', '-c:a', 'aac', '-b:a', '96k', '-movflags', '+faststart', join(site, video)]);
+    else copyFileSync(src, join(site, video));
     poster = `m/${nn}-poster.jpg`;
     execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-ss', '1.2', '-i', src, '-frames:v', '1', '-vf', 'scale=540:-2', '-q:v', '4', join(site, poster)]);
   } else {

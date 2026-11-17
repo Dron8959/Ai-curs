@@ -1,6 +1,6 @@
 // The key pictures of next week's pack as data: the frame of each post (3:4 tile) and the drawn pieces the reels
 // reuse (the six-finger hand). week2-tiles.mjs renders them; content.mjs and reels.mjs import them for the reels.
-import { C, M, A, top, card, ring, pill, tape, star, arrow, char, icon } from '../kit.mjs';
+import { C, M, A, top, card, ring, pill, tape, star, arrow, char, icon, cartoonBg } from '../kit.mjs';
 const W2 = 'social/concept/out/week2/assets';
 
 const h1 = (html, top = 190, size = 120) => `<h1 class="t" style="top:${top}px;font-size:${size}px">${html}</h1>`;
@@ -140,3 +140,10 @@ export const TILES = {
     <div class="card" style="left:56px;right:56px;top:auto;bottom:150px;width:auto;height:auto;padding:38px 44px;background:#FFC533;transform:rotate(-1.5deg);overflow:visible"><p style="font:800 76px/1.02 Sora;letter-spacing:-.045em;color:#141A33">What would your kid’s cartoon be about?</p>${pill('first lesson free', -10, -80, -3)}</div>` },
 };
 
+
+// Owner, 17 Nov: Kamilla's cartoon behind every flat tile ([frame, tint opacity]); 13, 15 and 32-36 are cartoon already.
+export const BG = { 11: ['f3', .7], 12: ['f11', .7], 14: ['f8', .7], 16: ['f19', .7], 17: ['f17', .7], 18: ['f1', .7], 19: ['f5', .7], 20: ['f14', .7],
+  21: ['f22', .7], 22: ['f9', .7], 23: ['f17', .7], 24: ['f19', .7], 25: ['f3', .7], 26: ['f11', .7], 27: ['f5', .7], 28: ['f8', .7], 29: ['f22', .7],
+  30: ['f14', .7], 31: ['f1', .7] };
+// the whole tile as posted: cartoon background, the picture, the comment word in quotes
+export const tileHtml = (n, kw) => `${BG[n] ? cartoonBg(...BG[n]) : ''}${TILES[n].html}${kw ? `<span class="btn" style="right:56px;bottom:46px;height:84px;padding:0 34px;font-size:36px;box-shadow:8px 8px 0 #fff;z-index:12">Comment “${kw}”</span>` : ''}`;
