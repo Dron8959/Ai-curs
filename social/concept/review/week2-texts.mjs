@@ -10,7 +10,7 @@ export const TEXTS = {
       'But in its photos, hands are half hidden.',
       'It knows how a hand looks. Not how many fingers.',
       'So kids count the fingers.'],
-    caption: `Comment LESSON and I'll send you the free first lesson.
+    caption: `Comment "LESSON" and I'll send you the free first lesson.
 
 AI can paint a face that looks like a photo and still give someone six fingers. It learned hands from millions of pictures where they're half hidden, holding a cup or tucked in a pocket. It knows how a hand looks, not how many fingers it has.
 
@@ -41,7 +41,7 @@ That's how our AI course for kids 6 to 14 is set up. Save this for the first les
       'I told the AI my story and my characters.',
       'Then I checked every scene and fixed the ones that came out wrong.',
       'About twenty minutes. Two or three tries a scene.'],
-    caption: `Comment CARTOON and I'll send you the free first lesson.
+    caption: `Comment "CARTOON" and I'll send you the free first lesson.
 
 Kamilla is 10. She made this cartoon without drawing a single frame. She told the AI her story and her characters, checked every scene and fixed the ones that came out wrong. About 20 minutes, two or three tries a scene.
 
@@ -57,7 +57,7 @@ Send this to someone who thinks kids just watch cartoons.
       'It\'s your account, not theirs. They never sign up alone.',
       'You sit next to them and see everything they make.',
       'Four more rules on the fridge card. Comment RULES.'],
-    caption: `Comment RULES and I'll send you the fridge card.
+    caption: `Comment "RULES" and I'll send you the fridge card.
 
 Your kid asks for ChatGPT because everyone at school has it. You can say yes, with one rule: it's your account, not theirs. They never sign up anywhere alone, and you sit next to them, so you see everything they make.
 
@@ -71,7 +71,7 @@ That's how every lesson of our AI course for kids works. The other four rules ar
       'Step by step it removes a little noise, nudged toward the words.',
       'Until the picture matches what you asked for.',
       'In our lessons, the words are your kid\'s idea.'],
-    caption: `Comment CARTOON and I'll send you the free first lesson.
+    caption: `Comment "CARTOON" and I'll send you the free first lesson.
 
 AI doesn't draw on a blank page. It starts with pure static, like an old TV, and removes a little noise at a time, each step nudged toward the words it was given. That's why better words make better pictures.
 
@@ -85,7 +85,7 @@ In our AI course for kids the words are your kid's idea.
       'Ten to twenty minutes, on a laptop or a tablet.',
       'Then you play it against each other.',
       'Comment GAME and I\'ll send you the link.'],
-    caption: `Comment GAME and I'll send you the link to the free first lesson.
+    caption: `Comment "GAME" and I'll send you the link to the free first lesson.
 
 Leave your email, no card. Your kid builds a game in 10 to 20 minutes on a laptop or a tablet, with you right there. Then you play it against each other on the couch.
 
@@ -99,7 +99,7 @@ Leave your email, no card. Your kid builds a game in 10 to 20 minutes on a lapto
       ['Linda · gift', '“I wanted to give my grandson something more meaningful than another toy.”'],
       ['Patricia · game', '“We created a little game together, and seeing her excitement was priceless.”'],
       ['Send this to your mom before the holidays.', 'They received the course free and shared honest feedback. Names and photos are used with their permission.']],
-    caption: `Comment GIFT and I'll send you the free first lesson.
+    caption: `Comment "GIFT" and I'll send you the free first lesson.
 
 Four grandmothers tried our course with their grandkids before launch. They made a cartoon, a song, a game and a gift that wasn't another toy.
 
@@ -115,7 +115,7 @@ Send this to your mom before the holidays.
       'It writes the most likely next word, again and again.',
       'Likely and true aren\'t the same thing.',
       'So kids check what comes back.'],
-    caption: `Comment LESSON and I'll send you the free first lesson.
+    caption: `Comment "LESSON" and I'll send you the free first lesson.
 
 A chatbot doesn't look anything up. It writes the most likely next word, again and again. Likely and true aren't the same thing, and it sounds just as calm either way.
 
@@ -131,7 +131,7 @@ Send this to the parent whose kid uses ChatGPT for homework.
       'They talk, and you type.',
       'The idea is theirs. The keyboard is yours.',
       'Comment GAME for the free first lesson.'],
-    caption: `Comment GAME and I'll send you the free first lesson.
+    caption: `Comment "GAME" and I'll send you the free first lesson.
 
 A 6-year-old doesn't need to read or type to make something with AI. They talk, you type, and the idea stays theirs.
 
@@ -146,7 +146,7 @@ Our AI course is for kids 6 to 14, made side by side with a parent. Lessons take
       ['Hands look fine?', 'Read any sign or label. AI often scrambles the letters.'],
       ['Check it together', 'Your kid counts, you read. Next time they start without you.'],
       ['Save this for the next “is this real?”', 'Spotting fakes is one of the safety lessons in our course.']],
-    caption: `Comment RULES and I'll send you the fridge card.
+    caption: `Comment "RULES" and I'll send you the fridge card.
 
 Your kid holds up the phone and asks if the picture is real. Skip the face, AI draws faces best. Look at the hands: six fingers or a cup held by nothing is your answer. If the hands look fine, read any sign in the picture. AI often scrambles the letters.
 
@@ -162,7 +162,7 @@ Save this for the next "is this real?"
       'Happy, surprised, silly. A whole pack.',
       'That was one lesson.',
       'What would your character be?'],
-    caption: `Comment STICKERS and I'll send you the free first lesson.
+    caption: `Comment "STICKERS" and I'll send you the free first lesson.
 
 Kamilla, 10, made her own character and turned it into a sticker pack. Happy, surprised, silly, a whole set.
 
@@ -178,7 +178,7 @@ Send this to the family group chat.
       'So it sounds like a person.',
       'But it doesn\'t eat, or sleep, or miss you.',
       'Ask your kid what they think.'],
-    caption: `Comment LESSON and I'll send you the free first lesson.
+    caption: `Comment "LESSON" and I'll send you the free first lesson.
 
 AI talks like a friend because it learned from a huge amount of text that people wrote. So it sounds like a person. It doesn't eat, sleep or miss anyone.
 
@@ -192,7 +192,7 @@ Ask your kid first, then send this to them.
       'Then the AI turns the drawing into a cartoon.',
       'The idea and the drawing stay theirs.',
       'Start with the free first lesson. Comment CARTOON.'],
-    caption: `Comment CARTOON and I'll send you the free first lesson.
+    caption: `Comment "CARTOON" and I'll send you the free first lesson.
 
 Thursday is Thanksgiving. A drawing your kid made, turned into a cartoon, is a gift grandma will keep. In our course the kid has the idea and makes the drawing, and the AI follows it.
 
@@ -207,7 +207,7 @@ The first lesson is free and ends with a game. The cartoon comes later in the co
       ['So say it out loud', 'Name with school, address, passwords and face photos stay out.'],
       ['Make the list together', 'So they know why each thing is on it.'],
       ['Comment RULES', 'I\'ll send you the fridge card.']],
-    caption: `Comment RULES and I'll send you the fridge card.
+    caption: `Comment "RULES" and I'll send you the fridge card.
 
 Your kid is chatting with an AI, it feels like a friend, and they type the name of their school. On its own a school is harmless. Next to a full name, it points to one real kid, and you can't take back what you typed.
 
@@ -233,7 +233,7 @@ Ask an AI the same question twice and you'll often get two different answers. It
       'A laptop or a tablet. Nothing to install.',
       'The full course is one hundred ninety-seven dollars, paid once.',
       'Or start with the free first lesson.'],
-    caption: `Comment GAME and I'll send you the free first lesson.
+    caption: `Comment "GAME" and I'll send you the free first lesson.
 
 You don't need to know anything about AI. Every lesson starts from zero for both of you, on a laptop or a tablet, with nothing to install.
 
@@ -247,7 +247,7 @@ The full course is $197, paid once, no subscription. With Anna checking homework
       'Susan, a grandmother, made one with her granddaughter.',
       'Here\'s what she told us.',
       'Send this to grandma.'],
-    caption: `Comment SONG and I'll send you the free first lesson.
+    caption: `Comment "SONG" and I'll send you the free first lesson.
 
 In one of our lessons your kid writes the words and the AI makes the music. Susan, grandmother of an 8-year-old, told us: "We made a song together, and she wanted to show it to everyone in the family!"
 
@@ -263,7 +263,7 @@ Send this to grandma.
       'Every time.',
       'Kids should always know who they\'re talking to.',
       'One rule for every app.'],
-    caption: `Comment RULES and I'll send you the fridge card.
+    caption: `Comment "RULES" and I'll send you the fridge card.
 
 If a lesson in our course is led by an AI version of Kamilla, the lesson says so. Kids should always know whether they're talking to a person or to an AI.
 
@@ -277,7 +277,7 @@ Save this. It's a rule for every app, not just ours.
       'It keeps the shapes and redraws them in a new style.',
       'That\'s why the truck on the rainbow is still there.',
       'The idea stays the kid\'s.'],
-    caption: `Comment CARTOON and I'll send you the free first lesson.
+    caption: `Comment "CARTOON" and I'll send you the free first lesson.
 
 When AI turns a kid's drawing into a cartoon, it doesn't start over. It starts from the drawing, keeps the shapes and redraws them in a new style. That's why the monster truck on top of the rainbow is still there.
 
@@ -294,7 +294,7 @@ Send this to the parent whose fridge is covered in drawings.
       ['No subscription', 'No sales calls. Payment through Stripe.'],
       ['Less than a month of tutoring', 'Most families do a lesson every day or two and finish in about two weeks.'],
       ['Start free', 'The first lesson is free. No card, just an email.']],
-    caption: `Comment PRICE and I'll send you what each plan includes.
+    caption: `Comment "PRICE" and I'll send you what each plan includes.
 
 Creator is $197, paid once: the whole course, every lesson and project, for you and your kid, at your own pace. Creator + Homework is $297: the same, plus Anna checks homework the same day.
 
@@ -310,7 +310,7 @@ Save this for when you decide.
       'Your kid builds a game, and you play it together.',
       'If it isn\'t a fit, that\'s all you lose.',
       'Comment GAME and I\'ll send you the link.'],
-    caption: `Comment GAME and I'll send you the free first lesson.
+    caption: `Comment "GAME" and I'll send you the free first lesson.
 
 If it isn't a fit for your family, you've lost nothing but 20 minutes on the couch. Leave your email, no card. Your kid builds a game, then you play it against each other.
 
@@ -324,7 +324,7 @@ If you like it, the full course is $197, paid once.
       'I told the AI my characters and my story.',
       'Then I fixed the scenes that came out wrong.',
       'What would your cartoon be about?'],
-    caption: `Comment CARTOON and I'll send you the free first lesson.
+    caption: `Comment "CARTOON" and I'll send you the free first lesson.
 
 A cat with a croissant was Kamilla's idea. She's 10. She told the AI her characters and her story, then fixed the scenes that came out wrong. The AI drew, she directed.
 
@@ -338,7 +338,7 @@ Making a cartoon is one of the projects in our AI course for kids 6 to 14.
       'I told the AI who they are. It drew them.',
       'When a scene came out wrong, I tried again.',
       'Who would be in your cartoon?'],
-    caption: `Comment CARTOON and I'll send you the free first lesson.
+    caption: `Comment "CARTOON" and I'll send you the free first lesson.
 
 Every character in this cartoon came from Kamilla, 10. The girls, the cat, the trip to Paris. She told the AI who they are and tried again when a scene came out wrong.
 

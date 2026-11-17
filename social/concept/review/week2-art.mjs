@@ -122,26 +122,21 @@ export const TILES = {
   30: { theme: 'n', html: `${top('make')}${h1('What it costs.<br><mark>What you get.</mark>', 190, 116)}
     ${[['$197', 'Creator', 'the whole course, every lesson, your pace'], ['$297', 'Creator + Homework', 'all of that, and Anna checks homework the same day']].map(([p, n, t], i) =>
       card({ l: 70 + i * 480, t: 560 + i * 40, w: 450, h: 620, rot: i ? 2 : -2, inner: `<div style="padding:50px 44px"><p style="font:800 120px Sora;letter-spacing:-.05em;color:#141A33">${p}</p><p style="margin-top:10px;font:800 44px Sora;letter-spacing:-.03em;color:#141A33">${n}</p><p style="margin-top:24px;font:700 38px/1.2 Urbanist;color:#4B5070">${t}</p></div>` })).join('')}
-    ${pill('one time · no subscription', 140, 1260, -2)}` },
+    ${pill('one time · no subscription', 120, 1190, -2)}` },
   31: { theme: 'm', html: `${top('start')}${h1('Worst case:<br><mark>20 minutes</mark><br>on the couch.', 190, 112)}
     ${card({ l: 380, t: 760, w: 620, h: 400, rot: 3, src: `${M}/landing/game.jpg`, cls: 'screen' })}
     ${char('anna', 40, 900, 420)}${pill('first lesson free', 430, 1220, -3)}` },
 
   // ---- Kamilla's cartoon series: a frame of her cartoon full bleed, faces clear, the line on a sticker card at the bottom
   32: { theme: 'y', html: `<img src="${A('social/concept/out/week2/frames/f5.jpg')}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%">${top('show')}
-    <div class="card" style="left:56px;right:56px;top:auto;bottom:150px;width:auto;height:auto;padding:38px 44px;background:#FFC533;transform:rotate(-1.5deg)"><p style="font:800 76px/1.02 Sora;letter-spacing:-.045em;color:#141A33">A cat with a croissant?<br><mark style="background:#fff;border-radius:16px;padding:0 .12em">Her idea.</mark></p></div>
-    ${pill('made by Kamilla, 10', 70, 1010, -3)}` },
+    <div class="card" style="left:56px;right:56px;top:auto;bottom:150px;width:auto;height:auto;padding:38px 44px;background:#FFC533;transform:rotate(-1.5deg);overflow:visible"><p style="font:800 76px/1.02 Sora;letter-spacing:-.045em;color:#141A33">A cat with a croissant?<br><mark style="background:#fff;border-radius:16px;padding:0 .12em">Her idea.</mark></p>${pill('made by Kamilla, 10', -10, -80, -3)}</div>` },
   33: { theme: 'y', html: `<img src="${A('social/concept/out/week2/frames/f11.jpg')}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%">${top('show')}
-    <div class="card" style="left:56px;right:56px;top:auto;bottom:150px;width:auto;height:auto;padding:38px 44px;background:#FFC533;transform:rotate(-1.5deg)"><p style="font:800 76px/1.02 Sora;letter-spacing:-.045em;color:#141A33">Paris, drawn by AI.<br>Directed by a kid.</p></div>
-    ${pill('her story, her characters', 70, 1010, -3)}` },
+    <div class="card" style="left:56px;right:56px;top:auto;bottom:150px;width:auto;height:auto;padding:38px 44px;background:#FFC533;transform:rotate(-1.5deg);overflow:visible"><p style="font:800 76px/1.02 Sora;letter-spacing:-.045em;color:#141A33">Paris, drawn by AI.<br>Directed by a kid.</p>${pill('her story, her characters', -10, -80, -3)}</div>` },
   34: { theme: 'y', html: `<img src="${A('social/concept/out/week2/frames/f8.jpg')}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 35%">${top('show')}
-    <div class="card" style="left:56px;right:56px;top:auto;bottom:150px;width:auto;height:auto;padding:38px 44px;background:#FFC533;transform:rotate(-1.5deg)"><p style="font:800 76px/1.02 Sora;letter-spacing:-.045em;color:#141A33">Every character? Made up by a kid.</p></div>
-    ${pill('her characters', 70, 1010, -3)}` },
+    <div class="card" style="left:56px;right:56px;top:auto;bottom:150px;width:auto;height:auto;padding:38px 44px;background:#FFC533;transform:rotate(-1.5deg);overflow:visible"><p style="font:800 76px/1.02 Sora;letter-spacing:-.045em;color:#141A33">Every character? Made up by a kid.</p>${pill('her characters', -10, -80, -3)}</div>` },
   35: { theme: 'y', html: `<img src="${A('social/concept/out/week2/frames/f14.jpg')}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%">${top('show')}
-    <div class="card" style="left:56px;right:56px;top:auto;bottom:150px;width:auto;height:auto;padding:38px 44px;background:#FFC533;transform:rotate(-1.5deg)"><p style="font:800 76px/1.02 Sora;letter-spacing:-.045em;color:#141A33">2-3 tries a scene.<br>About 20 minutes.</p></div>
-    ${pill('her first cartoon', 70, 1010, -3)}` },
+    <div class="card" style="left:56px;right:56px;top:auto;bottom:150px;width:auto;height:auto;padding:38px 44px;background:#FFC533;transform:rotate(-1.5deg);overflow:visible"><p style="font:800 76px/1.02 Sora;letter-spacing:-.045em;color:#141A33">2-3 tries a scene.<br>About 20 minutes.</p>${pill('her first cartoon', -10, -80, -3)}</div>` },
   36: { theme: 'y', html: `<img src="${A('social/concept/out/week2/frames/f17.jpg')}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%">${top('show')}
-    <div class="card" style="left:56px;right:56px;top:auto;bottom:150px;width:auto;height:auto;padding:38px 44px;background:#FFC533;transform:rotate(-1.5deg)"><p style="font:800 76px/1.02 Sora;letter-spacing:-.045em;color:#141A33">What would your kid’s cartoon be about?</p></div>
-    ${pill('first lesson free', 70, 1010, -3)}` },
+    <div class="card" style="left:56px;right:56px;top:auto;bottom:150px;width:auto;height:auto;padding:38px 44px;background:#FFC533;transform:rotate(-1.5deg);overflow:visible"><p style="font:800 76px/1.02 Sora;letter-spacing:-.045em;color:#141A33">What would your kid’s cartoon be about?</p>${pill('first lesson free', -10, -80, -3)}</div>` },
 };
 

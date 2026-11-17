@@ -140,8 +140,12 @@ export const pill = (text, l, t, rot = 0, cls = '', style = '', a = '') =>
 
 export const tape = (l, t, rot = -8, style = '', a = '') => `<i class="tape"${a} style="left:${l}px;top:${t}px;transform:rotate(${rot}deg);${style}"></i>`;
 
+// Owner, 17 Nov: Kamilla's cartoon behind the flat graphics, tinted in the tile's colour so the text still reads.
+export const cartoonBg = (frame, op = 0.8, pos = '50% 40%') => `<img src="${A(`social/concept/out/week2/frames/${frame}.jpg`)}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:${pos}" alt=""><i style="position:absolute;inset:0;background:var(--bg);opacity:${op}"></i>`;
+
+// Owner, 17 Nov: no rubric word (show / make / lab / start) on new creatives; the top keeps only the logo, on the right.
 export const top = (word, no = '', right = null) =>
-  `<div class="top"><span class="chip">${word}${no ? `<i>${no}</i>` : ''}</span>${right ?? `<img class="mini" src="${A(`${LOGO}/logo/icon-small.svg`)}" alt="">`}</div>`;
+  `<div class="top" style="justify-content:flex-end">${right ?? `<img class="mini" src="${A(`${LOGO}/logo/icon-small.svg`)}" alt="">`}</div>`;
 
 export const char = (who, l, t, w, style = '', a = '') =>
   `<img class="char"${a} src="${A(`${LOGO}/logo/char-${who}.svg`)}" style="left:${l}px;top:${t}px;width:${w}px;${style}" alt="">`;
