@@ -68,10 +68,10 @@ export const TILES = {
   16: { theme: 'm', html: `${top('start')}${h1('Tonight: a game<br><mark>your kid made.</mark>', 190, 112)}
     ${card({ l: 86, t: 540, w: 908, h: 560, rot: 2, src: `${M}/landing/game.jpg`, cls: 'screen' })}
     ${pill('10-20 min', 90, 1150, -4)}${pill('no card, just email', 450, 1180, 3)}` },
-  17: { theme: 'y', html: `${top('show')}${h1('What 4 grandmothers<br><mark>made</mark> with AI', 190, 104)}
-    ${[['margaret', 'cartoon', '50% 30%'], ['susan', 'song', '55% 30%'], ['linda', 'gift', '50% 25%'], ['patricia', 'game', '55% 25%']].map(([w, m, p], i) =>
-      `${ring({ l: 70 + (i % 2) * 480, t: 500 + Math.floor(i / 2) * 420, d: 340, src: `${M}/landing/reviews/${w}.jpg`, pos: p, zoom: 175, pad: 16 })}${pill(m, 250 + (i % 2) * 480, 780 + Math.floor(i / 2) * 420, i % 2 ? 4 : -4)}`).join('')}
-    <p class="fine" style="top:1340px">Early-access families. They got the course free and told us what happened.</p>` },
+  17: { theme: 'y', html: `${top('show')}${h1('4 grandmas, 4 grandkids.<br><mark>What they made</mark><br><mark>together.</mark>', 180, 80)}
+    ${[['margaret', 'grandson, 9 · a cartoon', '50% 30%'], ['susan', 'granddaughter, 8 · a song', '55% 30%'], ['linda', 'grandson, 10 · not a toy', '50% 25%'], ['patricia', 'granddaughter, 7 · a game', '55% 25%']].map(([w, m, p], i) =>
+      `${ring({ l: 150 + (i % 2) * 480, t: 540 + Math.floor(i / 2) * 370, d: 270, src: `${M}/landing/reviews/${w}.jpg`, pos: p, zoom: 175, pad: 14 })}${pill(m, 70 + (i % 2) * 490, 800 + Math.floor(i / 2) * 370, i % 2 ? 3 : -3, '', 'font-size:25px;height:58px;padding:0 20px')}`).join('')}
+    <p class="fine" style="top:1250px">Early-access families. They got the course free<br>and told us what happened.</p>` },
   18: { theme: 'c', html: `${top('lab')}${h1('Why does AI sound<br>so sure when<br>it’s <mark>wrong?</mark>', 190, 104)}
     ${bubble('The answer is…', 90, 720, 560, { me: true })}
     <div style="position:absolute;z-index:6;left:90px;top:920px;display:flex;gap:18px">${['definitely', 'clearly', 'probably'].map((w, i) => `<span style="background:${i ? '#FFF4DC' : '#FFFFFF'};border:5px solid #141A33;border-radius:22px;padding:18px 30px;font:800 44px Urbanist;color:#141A33;box-shadow:6px 6px 0 #141A33">${w}</span>`).join('')}</div>
@@ -119,10 +119,10 @@ export const TILES = {
     ${card({ l: 520, t: 600, w: 470, h: 700, rot: 4, src: `${M}/works/rainbow-cartoon.jpg`, z: 4 })}
     ${arrow(120, 110, 'M14 8 C 60 18, 96 46, 100 96', 'M70 78 L101 98 L112 62', 'left:420px;top:500px')}
     ${pill('the truck stayed', 90, 1220, -3)}` },
-  30: { theme: 'n', html: `${top('make')}${h1('What it costs.<br><mark>What you get.</mark>', 190, 116)}
-    ${[['$197', 'Creator', 'the whole course, every lesson, your pace'], ['$297', 'Creator + Homework', 'all of that, and Anna checks homework the same day']].map(([p, n, t], i) =>
-      card({ l: 70 + i * 480, t: 560 + i * 40, w: 450, h: 620, rot: i ? 2 : -2, inner: `<div style="padding:50px 44px"><p style="font:800 120px Sora;letter-spacing:-.05em;color:#141A33">${p}</p><p style="margin-top:10px;font:800 44px Sora;letter-spacing:-.03em;color:#141A33">${n}</p><p style="margin-top:24px;font:700 38px/1.2 Urbanist;color:#4B5070">${t}</p></div>` })).join('')}
-    ${pill('one time · no subscription', 120, 1190, -2)}` },
+  30: { theme: 'n', html: `${top('make')}${h1('What it costs.<br><mark>What you get.</mark>', 190, 112)}
+    ${(() => { const base = ['every lesson, 6-20 min', 'a game, a cartoon, a song', 'a website, stickers, a voiceover', 'AI safety lessons', 'for you and your kid', 'at your own pace'];
+      return [['$197', 'Creator', base, []], ['$297', 'Creator + Homework', base, ['+ homework', '+ Anna checks it the same day']]].map(([p, n, rows, extra], i) =>
+      card({ l: 56 + i * 494, t: 480 + i * 24, w: 474, h: 800, rot: i ? 1.5 : -1.5, inner: `<div style="padding:40px 36px"><p style="font:800 104px Sora;letter-spacing:-.05em;color:#141A33">${p}</p><p style="margin-top:4px;font:800 34px Sora;letter-spacing:-.03em;color:#141A33">${n}</p><p style="font:700 26px Urbanist;color:#4B5070;margin:4px 0 18px">paid once, no subscription</p>${rows.map((r) => `<p style="font:700 29px/1.25 Urbanist;color:#141A33;margin-top:8px">✓ ${r}</p>`).join('')}${extra.map((r) => `<p style="font:800 29px/1.25 Urbanist;color:#141A33;margin-top:8px;background:#FFC533;border-radius:8px;padding:2px 8px">${r}</p>`).join('')}</div>` })).join(''); })()}` },
   31: { theme: 'm', html: `${top('start')}${h1('Worst case:<br><mark>20 minutes</mark><br>on the couch.', 190, 112)}
     ${card({ l: 380, t: 760, w: 620, h: 400, rot: 3, src: `${M}/landing/game.jpg`, cls: 'screen' })}
     ${char('anna', 40, 900, 420)}${pill('first lesson free', 430, 1220, -3)}` },

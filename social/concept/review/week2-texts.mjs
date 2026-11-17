@@ -92,16 +92,17 @@ Leave your email, no card. Your kid builds a game in 10 to 20 minutes on a lapto
 #aiforkids #kidsgames #familygamenight #kidsandai` },
 
   17: { slides: [
-      ['What 4 grandmothers made with AI', 'A cartoon, a song, a gift and a game.'],
-      ['They tried it first.', 'Before launch, we asked families to tell us what really happened at their table. Four of them were grandmothers.'],
-      ['Margaret · cartoon', '“We made a little cartoon together, and he was so proud of it.”'],
-      ['Susan · song', '“We made a song together, and she wanted to show it to everyone in the family!”'],
-      ['Linda · gift', '“I wanted to give my grandson something more meaningful than another toy.”'],
-      ['Patricia · game', '“We created a little game together, and seeing her excitement was priceless.”'],
+      ['4 grandmas, 4 grandkids. What they made together.', 'Side by side at the table: the grandkid had the idea, grandma sat right there.'],
+      ['They tried it first.', 'Before launch, families told us what really happened at their table. Four of them were grandmothers.'],
+      ['Margaret and her grandson, 9 · a cartoon', '“We made a little cartoon together, and he was so proud of it.”'],
+      ['Susan and her granddaughter, 8 · a song', '“We made a song together, and she wanted to show it to everyone in the family!”'],
+      ['Linda and her grandson, 10 · not another toy', '“MakeShowLab gave us a fun way to spend time together.”'],
+      ['Patricia and her granddaughter, 7 · a game', '“We created a little game together, and seeing her excitement was priceless.”'],
+      ['What they got', 'A thing the grandkid made and wanted to show the family. And an evening together.'],
       ['Send this to your mom before the holidays.', 'They received the course free and shared honest feedback. Names and photos are used with their permission.']],
     caption: `Comment "GIFT" and I'll send you the free first lesson.
 
-Four grandmothers tried our course with their grandkids before launch. They made a cartoon, a song, a game and a gift that wasn't another toy.
+Four grandmothers sat down with their grandkids, 7 to 10, and made something together: a cartoon, a song, a game. Linda wanted to give her grandson "something more meaningful than another toy." What they got was a thing the kid made and wanted to show the family, and an evening side by side.
 
 They received the course free and shared honest feedback. Names and photos are used with their permission.
 
@@ -289,16 +290,18 @@ Send this to the parent whose fridge is covered in drawings.
 
   30: { slides: [
       ['What it costs. What you get.', 'Two plans, both paid once.'],
-      ['Creator · $197', 'The whole course: every lesson and project, for you and your kid, at your own pace.'],
-      ['Creator + Homework · $297', 'Everything in Creator, and Anna checks homework the same day.'],
+      ['Creator · $197', 'Every lesson, 6 to 20 minutes. A game, a cartoon, a song, a website, a sticker pack, a voiceover in your kid\'s own voice. AI safety lessons. For you and your kid, at your own pace.'],
+      ['Creator + Homework · $297', 'Everything in Creator, plus homework. Anna checks every homework the same day.'],
       ['No subscription', 'No sales calls. Payment through Stripe.'],
       ['Less than a month of tutoring', 'Most families do a lesson every day or two and finish in about two weeks.'],
       ['Start free', 'The first lesson is free. No card, just an email.']],
     caption: `Comment "PRICE" and I'll send you what each plan includes.
 
-Creator is $197, paid once: the whole course, every lesson and project, for you and your kid, at your own pace. Creator + Homework is $297: the same, plus Anna checks homework the same day.
+Creator, $197 paid once: every lesson (6 to 20 minutes each), and every project: a game, a cartoon, a song, a website, a sticker pack, a voiceover in your kid's own voice. Plus the AI safety lessons. For you and your kid, at your own pace.
 
-Both are paid once, and nobody will call to sell you anything. The first lesson is free.
+Creator + Homework, $297: all of that, plus homework, and Anna checks it the same day.
+
+No subscription, and nobody will call to sell you anything. The first lesson is free.
 
 Save this for when you decide.
 
@@ -343,6 +346,35 @@ Making a cartoon is one of the projects in our AI course for kids 6 to 14.
 Every character in this cartoon came from Kamilla, 10. The girls, the cat, the trip to Paris. She told the AI who they are and tried again when a scene came out wrong.
 
 Ask your kid who would be in their cartoon. Making one is a project in our AI course for kids.
+
+#aiforkids #kidscartoon #creativekids #kidsandai` },
+
+
+  33: { who: 'Kamilla', voice: [
+      'This is Paris in my cartoon.',
+      'The AI drew every street.',
+      'But I chose where we go and what happens.',
+      'When a scene came out wrong, I asked again.',
+      'Where would your cartoon go?'],
+    caption: `Comment "CARTOON" and I'll send you the free first lesson.
+
+The AI drew every street of this Paris. Kamilla, 10, decided where her characters go and what happens there, and asked again when a scene came out wrong.
+
+Making a cartoon is one of the projects in our AI course for kids 6 to 14.
+
+#aiforkids #kidscartoon #creativekids #kidsandai` },
+
+  35: { who: 'Kamilla', voice: [
+      'Two or three tries a scene.',
+      'Not every scene comes out right the first time.',
+      'So I look, and I tell the AI what to fix.',
+      'The whole cartoon took about twenty minutes.',
+      'Would you fix it, or keep it?'],
+    caption: `Comment "CARTOON" and I'll send you the free first lesson.
+
+Kamilla, 10, took two or three tries a scene for her cartoon. Not every scene comes out right the first time, so she looks and tells the AI what to fix. The whole thing took about 20 minutes.
+
+Checking and fixing what the AI makes is part of every lesson in our course.
 
 #aiforkids #kidscartoon #creativekids #kidsandai` },
 

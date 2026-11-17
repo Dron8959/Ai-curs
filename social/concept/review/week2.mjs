@@ -25,8 +25,8 @@ export const DAYS = ['Thu 19 Nov', 'Fri 20 Nov', 'Sat 21 Nov', 'Sun 22 Nov', 'Mo
 // ask: [kind, text]; kind = keyword (GAME or RULES in comments, answered by hand: DM.md), save, send
 export const WEEK2 = [
   // Thu 19
-  { n: 11, day: 0, slot: 0, series: 'Ask AI', rubric: 'lab', format: 'Reel', hook: 'Why does AI draw six fingers?',
-    angle: 'Рисует лицо как фото и не может сосчитать до пяти. Учился на фото, где руки спрятаны.', ask: ['send', 'Send this to the kid who asks you everything.'], note: 'Общее знание.' },
+  { n: 33, day: 0, slot: 0, series: 'Made by a kid', rubric: 'show', format: 'Reel', hook: 'Paris, drawn by AI. Directed by a kid.',
+    angle: 'Вместо №11 (он вышел 17.11 пробным роликом). Кадры Парижа из мультфильма Камиллы: ИИ рисует, режиссёр она.', ask: ['keyword', 'Comment "CARTOON" and I\'ll send you the free first lesson.'], note: 'Серия по мультфильму.' },
   { n: 32, day: 0, slot: 1, series: 'Made by a kid', rubric: 'show', format: 'Reel', hook: 'A cat with a croissant? Her idea.',
     angle: 'Вместо слабого №12 (списки по возрастам). Кадр мультфильма Камиллы, её голос: идея её, ИИ рисует, она правит сцены.', ask: ['keyword', 'Comment CARTOON and I\'ll send you the free first lesson.'], note: 'Серия по мультфильму (17.11). Факты: Камилле 10, персонажи и история её.' },
   { n: 13, day: 0, slot: 2, series: 'Made by a kid', rubric: 'show', format: 'Reel', hook: 'A 10-year-old made this cartoon. How?',
@@ -41,8 +41,8 @@ export const WEEK2 = [
   // Sat 21
   { n: 17, day: 2, slot: 0, series: 'Made by a kid', rubric: 'show', format: 'Carousel', hook: 'What 4 grandmothers made with their grandkids',
     angle: 'Никто из них ничего не знал про ИИ. Мультфильм, песня, подарок, игра. Сезон подарков.', ask: ['send', 'Send this to your mom before the holidays.'], note: 'Цитаты дословно, с пометкой, что курс бесплатно.' },
-  { n: 18, day: 2, slot: 1, series: 'Ask AI', rubric: 'lab', format: 'Reel', hook: 'Why does AI sound so sure when it\'s wrong?',
-    angle: 'Он не ищет ответ, он угадывает следующее слово. Вероятное и верное не одно и то же.', ask: ['send', 'Send this to the parent whose kid uses ChatGPT for homework.'], note: 'Общее знание. Мостик к шагу «проверь».' },
+  { n: 35, day: 2, slot: 1, series: 'Made by a kid', rubric: 'show', format: 'Reel', hook: '2-3 tries a scene. About 20 minutes.',
+    angle: 'Вместо №18 (вышел 17.11). Как Камилла переделывала сцены: 2-3 попытки на сцену, около 20 минут.', ask: ['keyword', 'Comment "CARTOON" and I\'ll send you the free first lesson.'], note: 'Цифры от владельца 13.11.' },
   { n: 19, day: 2, slot: 2, series: 'How it works', rubric: 'make', format: 'Reel', hook: 'Your kid is 6. Can they do this?',
     angle: 'Читать и печатать не нужно: ребёнок говорит, вы печатаете. Идея его.', ask: ['keyword', 'Comment GAME and I\'ll send you the free first lesson.'], note: 'facts.md, возраст.' },
   // Sun 22
@@ -85,6 +85,8 @@ export const DONE2 = [
   'Все 16 роликов ставим пробными (Trial Reels): их видят только неподписчики, в сетку не попадают (17.11).',
   'Пробных роликов 3-5 в день, не больше (17.11): лимит Instagram неофициальный, перебор грозит блокировкой пробных.',
   'Слабые №12 и №25 заменены роликами по мультфильму №32 и №34 (17.11). №33, 35, 36 в запасе на следующую неделю.',
+  '№11 и №18 вышли 17.11 пробными роликами на всех площадках; в паке их места заняли №33 и №35 из серии по мультфильму. В запасе остаётся №36.',
+  'Владелец 17.11: предварительное «ок» на выпуск всего пака. Пост 17 переписан (бабушки вместе с внуками), в посте 30 по пунктам, что входит в каждый тариф.',
   'Посты-списки №14, 20, 24 переписаны в «одну историю»: одна сцена с ребёнком вместо перечня (17.11).',
 ];
 
@@ -98,7 +100,5 @@ export const QUESTIONS = [
 
 // Owner, 17 Nov: many more posts like 13, on frames of Kamilla's cartoon with a line about AI and cartoons. Proposed, not in the week yet.
 export const EXTRA = [
-  { n: 33, hook: 'Paris, drawn by AI. Directed by a kid.' },
-  { n: 35, hook: '2-3 tries a scene. About 20 minutes.' },
   { n: 36, hook: 'What would your kid\'s cartoon be about?' },
 ];
