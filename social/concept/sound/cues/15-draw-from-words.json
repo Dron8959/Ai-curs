@@ -2,7 +2,7 @@
  "_doc": "Written by render.mjs from the reel timeline. f = frame at 30 fps where the eye reads the event. Kinds: land (a card or character lands), pop (a label, badge or portrait pops in), slide (a row slides in), write (a handwritten note, dur frames), whoosh (a transition that gets an air sound), cut (a silent transition), logo (the stacked logo on the closing card).",
  "fps": 30,
  "bpm": 130,
- "total": 623,
+ "total": 637,
  "acts": {
   "s1": {
    "from": 0,
@@ -22,7 +22,7 @@
   },
   "s5": {
    "from": 498.462,
-   "dur": 124.615
+   "dur": 138.462
   }
  },
  "cue": {
