@@ -11,6 +11,7 @@
 // `swish: true` marks the two transitions per reel that get an air sound; the other cuts stay silent.
 
 import { C, M, B, an, on, card, ring, pill, tape, star, char, icon, plate, endScene } from './kit.mjs';
+import { hand, bubble } from './review/week2-art.mjs';
 
 const h1 = (html, { top = 470, size = 112, a = an('words', 0.15), style = '' } = {}) =>
   `<h1 class="t"${a} style="top:${top}px;font-size:${size}px;${style}">${html}</h1>`;
@@ -173,5 +174,42 @@ export const reels = {
     ${h1('Teach them to<br><mark>think with it.</mark>', { top: 700, size: 92, a: an('words', at(3)) })}
     ${char('anna', 190, 990, 560, '', reveal(on('slap', 1)))}` },
     endScene('Let them do<br>the <mark>thinking.</mark>'),
+  ],
+
+  // ---------------------------------------------------------------- next week's pack: trial reels (Ask AI series)
+  // 42 beats, 19.4 s, the same cut as reel 08: scenes of 9, 9, 9 and 8 beats, the answer is the reveal (beat 28), logo on beat 36.
+  '11-six-fingers': [
+    { theme: 'c', beats: 9, html: `${plate()}
+    ${h1('Why does AI draw<br><mark>six fingers?</mark>', { top: 470, size: 98, a: an('settle', 0) })}
+    <div${on('slap', 1)} style="position:absolute;inset:0;z-index:4">${hand(150, 760)}</div>` },
+    { theme: 'k', beats: 9, wipe: '450,800', html: `${plate()}
+    ${h1('It paints faces<br>like <mark>photos.</mark>', { top: 520, size: 100 })}
+    ${card({ l: 120, t: 820, w: 620, h: 620, rot: -2, src: `${M}/landing/cartoon-girl.jpg`, pos: '50% 30%', a: on('slap', 2), kb: true })}` },
+    { theme: 'c', beats: 9, wipe: '300,700', html: `${plate()}
+    ${h1('But in its photos,<br>hands are <mark>hidden.</mark>', { top: 500, size: 86 })}
+    ${[['coffee', 'holding a cup'], ['hand', 'in a pocket'], ['eye-off', 'blurry']].map(([ic, t], i) =>
+      pill(`${icon(ic, 46, '#141A33', 2.6, 'margin-right:16px')}${t}`, i % 2 ? 160 : 70, 860 + i * 170, [-3, 2, -2][i], 'step', '', on('pop', 2 + i * 1.5))).join('')}` },
+    { theme: 'n', beats: 8, wipe: '450,700', swish: true, html: `${plate()}
+    ${h1('It knows the look.<br><mark>Not the count.</mark>', { top: 500, size: 84 })}
+    ${char('kamilla', 190, 900, 560, '', reveal(on('slap', 1)))}` },
+    endScene('Count the<br><mark>fingers.</mark>'),
+  ],
+
+  // 42 beats, 19.4 s, the same cut as reel 08.
+  '18-sounds-sure': [
+    { theme: 'c', beats: 9, html: `${plate()}
+    ${h1('Why does AI sound<br>so sure when<br>it’s <mark>wrong?</mark>', { top: 470, size: 88, a: an('settle', 0) })}
+    <div${on('pop', 2)} style="position:absolute;inset:0;z-index:5">${bubble('The answer is definitely…', 80, 960, 680, { me: true, size: 48 })}</div>` },
+    { theme: 'k', beats: 9, wipe: '450,800', html: `${plate()}
+    ${h1('It isn’t looking<br><mark>anything up.</mark>', { top: 520, size: 96 })}
+    <i class="badge"${on('pop', 2)} style="left:230px;top:860px;width:380px;height:380px;background:${C.mint};transform:rotate(-6deg)">${icon('search-x', 190, '#141A33', 2.2)}</i>` },
+    { theme: 'c', beats: 9, wipe: '300,700', html: `${plate()}
+    ${h1('It guesses the<br><mark>next word.</mark>', { top: 500, size: 100 })}
+    <div${on('pop', 1)} style="position:absolute;inset:0;z-index:5">${bubble('The answer is…', 70, 830, 560, { me: true })}</div>
+    ${['definitely', 'clearly', 'probably'].map((w, i) => `<span${on('pop', 3 + i)} style="position:absolute;z-index:6;left:${70 + i * 250}px;top:${1060 + (i % 2) * 30}px;background:${i ? '#FFF4DC' : '#FFFFFF'};border:5px solid #141A33;border-radius:22px;padding:18px 26px;font:800 44px Urbanist;color:#141A33;box-shadow:6px 6px 0 #141A33">${w}</span>`).join('')}` },
+    { theme: 'n', beats: 8, wipe: '450,700', swish: true, html: `${plate()}
+    ${h1('Likely and true<br>aren’t the <mark>same.</mark>', { top: 500, size: 84 })}
+    ${char('anna', 190, 990, 560, '', reveal(on('slap', 1)))}` },
+    endScene('Sounds sure?<br><mark>Check it.</mark>'),
   ],
 };

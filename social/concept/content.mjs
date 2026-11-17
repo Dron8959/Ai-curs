@@ -3,6 +3,8 @@
 // uses facts from social/brand/facts.md and the verbatim reviews in social/media/landing/reviews/quotes.md.
 
 import { A, C, M, top, card, ring, pill, tape, star, arrow, char, icon, foot } from './kit.mjs';
+import { TILES } from './review/week2-art.mjs';
+import { TEXTS } from './review/week2-texts.mjs';
 
 // ---------------------------------------------------------------- shared slide templates (cream ground)
 const page = (rubric, no, i, total) => top(rubric, no, `<span class="page">${i} / ${total}</span>`);
@@ -313,6 +315,13 @@ If it isn't a fit for your family, you've lost nothing but 20 minutes. It's the 
 Link in bio.
 
 #aiforkids #kidsgames #kidsandai #familyactivities` },
+
+  // ---------------------------------------------------------------- next week's pack (19-25 Nov), Instagram trial reels
+  // Pictures: review/week2-art.mjs, words: review/week2-texts.mjs. First two built early as trial reels (owner, 17 Nov).
+  { id: '11-six-fingers', n: 11, rubric: 'lab', no: '', format: 'reel', ai: true, title: 'Why does AI draw six fingers?',
+    tile: TILES[11].html, caption: TEXTS[11].caption },
+  { id: '18-sounds-sure', n: 18, rubric: 'lab', no: '', format: 'reel', ai: true, title: 'Why does AI sound so sure when it\'s wrong?',
+    tile: TILES[18].html, caption: TEXTS[18].caption },
 ];
 
 export const byId = (id) => posts.find((p) => p.id === id || p.id.startsWith(id));

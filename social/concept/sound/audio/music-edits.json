@@ -125,6 +125,40 @@
     97,
     "G | C: the ending, last chord on the logo"
    ]
+  ],
+  "11-six-fingers": [
+   [
+    0,
+    2,
+    "C C Am: the opening under the question"
+   ],
+   [
+    36,
+    40,
+    "F F | G G | F: four bars that build, bar 40 on the answer"
+   ],
+   [
+    95,
+    97,
+    "G | C: the ending, last chord on the logo"
+   ]
+  ],
+  "18-sounds-sure": [
+   [
+    0,
+    2,
+    "C C Am: the opening under the question"
+   ],
+   [
+    36,
+    40,
+    "F F | G G | F: four bars that build, bar 40 on the answer"
+   ],
+   [
+    95,
+    97,
+    "G | C: the ending, last chord on the logo"
+   ]
   ]
  }
 }

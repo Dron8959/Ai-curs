@@ -7,9 +7,9 @@ export const TEXTS = {
   11: { who: 'Anna', voice: [
       'Why does AI draw six fingers?',
       'It can paint a face that looks like a photo.',
-      'But it learned hands from pictures where they\'re half hidden, holding cups, in pockets.',
-      'So it knows what a hand looks like. Not how many fingers it has.',
-      'That\'s why kids count the fingers. Checking is part of every lesson.'],
+      'But in its photos, hands are half hidden.',
+      'It knows how a hand looks. Not how many fingers.',
+      'So kids count the fingers.'],
     caption: `Send this to the kid who asks you everything.
 
 AI can paint a face that looks like a photo and still give someone six fingers. It learned hands from millions of pictures where they're half hidden, holding a cup or tucked in a pocket. It knows how a hand looks, not how many fingers it has.
@@ -111,8 +111,8 @@ They received the course free and shared honest feedback. Names and photos are u
       'Why does AI sound so sure when it\'s wrong?',
       'It isn\'t looking anything up.',
       'It writes the most likely next word, again and again.',
-      'Likely and true aren\'t the same thing. And it sounds just as calm either way.',
-      'That\'s why kids check what comes back.'],
+      'Likely and true aren\'t the same thing.',
+      'So kids check what comes back.'],
     caption: `Send this to the parent whose kid uses ChatGPT for homework.
 
 A chatbot doesn't look anything up. It writes the most likely next word, again and again. Likely and true aren't the same thing, and it sounds just as calm either way.

@@ -176,3 +176,21 @@ Reel 04 is built on the 7:02 to 7:41 story, which the owner confirmed on 16 Nove
 The briefs (`out/voice-brief-*.pdf`) carry the lines of 11 November. The lines were remade on 12 Nov, so
 `tools/voice_brief.mjs` now stops with "the lines here and in VOICEOVER.md differ" until its data is brought up to
 date; the PDFs in `out/` are out of date. They are only needed if new recordings are wanted.
+
+### 11-six-fingers · Anna · 19.4 s
+| scene | seconds | line | words/s |
+|---|---|---|---|
+| 1 | 0.0-4.2 | Why does AI draw six fingers? | 1.4 |
+| 2 | 4.2-8.3 | It can paint a face that looks like a photo. | 2.4 |
+| 3 | 8.3-12.5 | But in its photos, hands are half hidden. | 1.7 |
+| 4 | 12.5-16.2 | It knows how a hand looks. Not how many fingers. | 2.7 |
+| 5 | 16.2-19.4 | So kids count the fingers. | 1.6 |
+
+### 18-sounds-sure · Anna · 19.4 s
+| scene | seconds | line | words/s |
+|---|---|---|---|
+| 1 | 0.0-4.2 | Why does AI sound so sure when it's wrong? | 2.1 |
+| 2 | 4.2-8.3 | It isn't looking anything up. | 1.2 |
+| 3 | 8.3-12.5 | It writes the most likely next word, again and again. | 2.4 |
+| 4 | 12.5-16.2 | Likely and true aren't the same thing. | 1.9 |
+| 5 | 16.2-19.4 | So kids check what comes back. | 1.9 |
