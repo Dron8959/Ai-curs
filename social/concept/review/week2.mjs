@@ -15,7 +15,8 @@ export const STAGE = 2;
 export const SLOTS = ['08:00', '12:30', '19:30'];
 // Owner, 17 Nov: the profile grid stays about the first ten posts; every reel goes out as an Instagram Trial Reel
 // (shown to non-followers only, not in the grid or the followers' feed until shared). Carousels cannot be trial.
-export const TRIAL = (p) => p.format === 'Reel';
+// 18 Nov: Instagram refused trial reels (the account has too few followers). Owner: regular reels, in the grid.
+export const TRIAL = () => false;
 // Owner, 17 Nov: every post carries one word to comment, by topic; each word gets a DM by hand (social/concept/DM.md).
 export const KW = { 11: 'LESSON', 12: 'LESSON', 13: 'CARTOON', 14: 'RULES', 15: 'CARTOON', 16: 'GAME', 17: 'GIFT', 18: 'LESSON', 19: 'GAME', 20: 'RULES',
   21: 'STICKERS', 22: 'LESSON', 23: 'CARTOON', 24: 'RULES', 25: 'LESSON', 26: 'GAME', 27: 'SONG', 28: 'RULES', 29: 'CARTOON', 30: 'PRICE', 31: 'GAME',
@@ -82,7 +83,7 @@ export const DONE2 = [
   'Картинки утверждены (16.11). Пост 11: рука перерисована ближе к настоящей.',
   'Продающие посты: №26 и №30 говорят цены, в №31 одна строка с ценой. Итого 3 из 21.',
   'Пост 19: остаётся рисованная девочка и фото шага Make.',
-  'Все 16 роликов ставим пробными (Trial Reels): их видят только неподписчики, в сетку не попадают (17.11).',
+  'Пробные ролики (Trial Reels) Instagram не принял 17.11: у аккаунта мало подписчиков. Решение 18.11: все ролики идут обычными Reels в сетку.',
   'Пробных роликов 3-5 в день, не больше (17.11): лимит Instagram неофициальный, перебор грозит блокировкой пробных.',
   'Слабые №12 и №25 заменены роликами по мультфильму №32 и №34 (17.11). №33, 35, 36 в запасе на следующую неделю.',
   '№11 и №18 вышли 17.11 пробными роликами на всех площадках; в паке их места заняли №33 и №35 из серии по мультфильму. В запасе остаётся №36.',
