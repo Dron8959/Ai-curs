@@ -691,6 +691,283 @@ pins.push(
     ${star(80, '#fff', 'left:860px;top:560px')}${star(44, '#fff', 'left:800px;top:600px')}${star(36, '#fff', 'left:470px;top:640px')}` },
 );
 
+// ---- batch 5 (24.11): the owner's 2-week topic bank (A fear "AI thinks for my kid", B screen time, C safety, D explainers,
+// E "what to do with a bored kid", F gifts; 80% about the parent's problem, 20% about the course), turned into searches.
+// Hook = the parent's search phrase, body = something to use tonight, the course only in the footer and the last line.
+const promptCard = (lines, t, h, label = 'copy this prompt') => `${card({ l: 56, t, w: 888, h, rot: -1, inner: `<div style="padding:44px 46px 0"><p style="font:800 28px Urbanist;letter-spacing:.1em;text-transform:uppercase;color:#4B5070">${label}</p>
+  <p style="margin-top:22px;padding:30px 34px;border-radius:22px;background:#141A33;color:#FFF4DC;font:600 44px/1.25 Urbanist">${lines}</p></div>` })}`;
+const twoCol = (left, right, t, lt = 'Watching', rt = 'Making') => `
+  ${card({ l: 56, t, w: 420, h: 700, rot: -2, inner: `<div style="padding:40px 34px"><b style="display:block;font:800 52px Sora;letter-spacing:-.04em;color:#8A8FA8">${lt}</b><div style="margin-top:30px;display:grid;gap:26px">${left.map((x) => `<span style="font:700 38px/1.1 Urbanist;color:#4B5070">${x}</span>`).join('')}</div></div>` })}
+  ${card({ l: 524, t: t + 30, w: 420, h: 700, rot: 2, inner: `<div style="padding:40px 34px"><b style="display:block;font:800 52px Sora;letter-spacing:-.04em;color:#141A33">${rt}</b><div style="margin-top:30px;display:grid;gap:26px">${right.map((x) => `<span style="font:800 38px/1.1 Urbanist;color:#141A33">${x}</span>`).join('')}</div></div>`, z: 4 })}`;
+const strip = (srcs, t) => srcs.map(([src, pos, lab], i) => `${card({ l: 56 + i * 300, t: t + (i % 2) * 40, w: 280, h: 480, rot: [-3, 2, -2][i], src, pos, z: 3 + i })}${pill(lab, 70 + i * 300, t + 430 + (i % 2) * 40, [-4, 3, -3][i], '', 'z-index:8;height:58px;font-size:26px')}`).join('');
+
+pins.push(
+  // A. "AI will think for my kid"
+  { file: 'ai-homework-help-for-kids', n: 46, board: 'ai', anchor: 'how', variant: 'промпт', ai: false,
+    phrase: 'AI homework help for kids',
+    title: 'AI Homework Help for Kids | Make It Quiz Them, Not Answer | A Prompt to Copy',
+    text: 'AI homework help for kids that keeps them thinking: tell the chatbot to quiz your kid one question at a time instead of giving answers. Copy the prompt and try it tonight.',
+    alt: 'Coral pin that reads "AI homework help for kids. Make it quiz them, not answer" with a prompt to copy: do not give me the answer, ask me one question at a time and tell me if I am right.',
+    why: 'Тема A1: страх «ИИ делает уроки за ребёнка». Польза на сегодня: промпт «квизуй, а не отвечай». Общий приём, без фактов о курсе.',
+    html: `${h('AI <mark>homework</mark><br>help for kids', { size: 112 })}
+    ${p('Make it quiz them. Not answer for them.', 440, 44, 'color:#141A33;font-weight:800')}
+    ${promptCard('Don\'t give me the answer. Ask me one question at a time, and tell me if I got it right.', 560, 560)}
+    ${pill('try it tonight', 600, 1080, 4)}` },
+
+  { file: 'how-kids-should-use-ai', n: 47, board: 'ai', anchor: 'how', variant: 'петля', ai: false,
+    phrase: 'how kids should use AI',
+    title: 'How Kids Should Use AI | One Habit: Their Idea, AI Does It, They Fix It | Ages 6-14',
+    text: 'How kids should use AI comes down to one habit: the kid has the idea, tells the AI, checks what comes back and fixes it. The thinking stays with the child.',
+    alt: 'Coral pin that reads "How kids should use AI. One habit" with four steps in a loop: their idea, they tell the AI, they check it, they fix it.',
+    why: 'Тема A2: разница между «списывает» и «строит» в одной привычке. Петля «решает, говорит ИИ, проверяет, правит» уже есть в постах Threads и Instagram.',
+    html: `${h('How kids <mark>should</mark><br>use AI', { size: 104 })}
+    ${p('One habit makes the difference.', 440, 46, 'color:#141A33;font-weight:800')}
+    ${tips(['Their idea', 'They tell the AI', 'They check it', 'They fix it'], 540, 640, { size: 54, gap: 52 })}
+    ${p('The thinking stays with the kid.', 1240, 42, 'color:#141A33;font-weight:800')}` },
+
+  { file: 'before-your-kid-uses-chatgpt', n: 48, board: 'safety', anchor: 'safe', variant: 'три вопроса', ai: false,
+    phrase: 'before your kid uses ChatGPT',
+    title: 'Before Your Kid Uses ChatGPT | 3 Questions to Ask First | For Parents of Kids 6-14',
+    text: 'Before your kid uses ChatGPT, ask three questions: whose account is it, who can message them there, and what never goes into the chat. Then sit next to them the first time.',
+    alt: 'Coral pin that reads "Before your kid uses ChatGPT: 3 questions" in three big question cards: whose account is it, who can message them, what never goes in.',
+    why: 'Тема A3. Три вопроса из наших правил безопасности (facts.md: аккаунт родителя, без чатов с незнакомцами, что не говорить ИИ).',
+    html: `${h('Before your kid<br>uses <mark>ChatGPT</mark>', { size: 106 })}
+    ${p('Ask these 3 questions first.', 440, 46, 'color:#141A33;font-weight:800')}
+    ${bubble('Whose account is it?', 56, 560, 760, { size: 54, rot: -2, bg: '#FFF4DC' })}
+    ${bubble('Who can message them there?', 184, 790, 760, { size: 54, tail: 'right', rot: 2 })}
+    ${bubble('What never goes into the chat?', 56, 1020, 800, { size: 54, rot: -1, bg: '#FFF4DC' })}` },
+
+  { file: 'is-using-ai-for-homework-cheating', n: 49, board: 'homeschool', anchor: 'how', variant: 'три проверки', ai: false,
+    phrase: 'is using AI for homework cheating',
+    title: 'Is Using AI for Homework Cheating | 3 Checks That Show Who Did the Thinking | Parents',
+    text: 'Is using AI for homework cheating? Check three things: can your kid explain it in their own words, did they decide what to ask, and did they check the answer. If yes, they did the thinking.',
+    alt: 'Coral pin that reads "Is using AI for homework cheating?" with three checks: can they explain it in their own words, did they decide what to ask, did they check the answer.',
+    why: 'Тема A4, без непроверяемого «учителя видят за секунды»: вместо этого три проверки для родителя.',
+    html: `${h('Is using AI for<br><mark>homework</mark> cheating?', { size: 86 })}
+    ${p('Three checks that show who did the thinking.', 440, 42, 'color:#141A33;font-weight:800')}
+    ${tips(['Can they explain it in their own words?', 'Did they decide what to ask?', 'Did they check the answer?'], 560, 620, { size: 46, gap: 52 })}
+    ${pill('3 yes = their thinking', 520, 1180, 4, 'dark')}` },
+
+  // B. Screen time
+  { file: 'active-vs-passive-screen-time', n: 50, board: 'screen', anchor: 'problem', variant: 'две колонки', ai: false,
+    phrase: 'active vs passive screen time',
+    title: 'Active vs Passive Screen Time | How to Tell in 10 Seconds | For Parents of Kids 6-14',
+    text: 'Active vs passive screen time, the 10-second test: ask your kid what they made. Watching, scrolling and swiping are passive. Building, writing and recording are active.',
+    alt: 'Coral pin that reads "Active vs passive screen time" with two cards: watching, with scroll, swipe, next video; making, with build, write, record, show you.',
+    why: 'Тема B6. Тест за 10 секунд: «что ты сделал?». Мысль бренда «экран, который заканчивается вещью».',
+    html: `${h('Active vs passive<br><mark>screen time</mark>', { size: 100 })}
+    ${p('The 10-second test: ask "what did you make?"', 440, 40, 'color:#141A33;font-weight:800')}
+    ${twoCol(['Scroll', 'Swipe', 'Next video', 'Again'], ['Build', 'Write', 'Record', 'Show you'], 560, 'Passive', 'Active')}` },
+
+  { file: 'alternatives-to-youtube-for-kids', n: 51, board: 'screen', anchor: 'free', variant: 'час видео против часа', ai: true,
+    phrase: 'alternatives to YouTube for kids',
+    title: 'Alternatives to YouTube for Kids | What One Hour of Making Looks Like | Ages 6-14',
+    text: 'Alternatives to YouTube for kids: one hour of short lessons can end with a game, a song and a sticker pack your kid made, with you next to them, instead of an hour of videos.',
+    alt: 'Coral pin that reads "Alternatives to YouTube for kids" comparing one hour of videos, a grey stack of thumbnails, with one hour of making: a game, a song, a sticker pack.',
+    why: 'Тема B5 без чужой статистики «20 часов Shorts»: просто «час видео или час, в котором ребёнок сделал три вещи». Уроки 6–20 минут (facts.md).',
+    html: `${h('Alternatives to<br><mark>YouTube</mark> for kids', { size: 104 })}
+    ${p('One hour of making looks like this:', 440, 44, 'color:#141A33;font-weight:800')}
+    ${card({ l: 56, t: 560, w: 888, h: 300, rot: -2, src: `${M}/landing/game.jpg`, cls: 'screen' })}
+    ${card({ l: 56, t: 900, w: 500, h: 360, rot: 2, src: `${M}/landing/step-show.jpg`, pos: '58% 80.3%', zoom: 330, z: 4 })}
+    ${tile('♪', 'a song', 600, 920, 344, '#FFF4DC', 3)}
+    ${pill('a game', 80, 820, -4)}${pill('a sticker pack', 90, 1220, -3)}` },
+
+  { file: 'educational-screen-time-for-kids', n: 52, board: 'screen', anchor: 'problem', variant: 'текст', ai: false,
+    phrase: 'educational screen time for kids',
+    title: 'Educational Screen Time for Kids | Change What the Screen Is For | Ages 6-14',
+    text: 'Educational screen time for kids does not mean less fun. Change what the screen is for: it ends with something they made and want to show you, not with the next video.',
+    alt: 'Coral pin that reads "Educational screen time for kids. Change what the screen is for" with a drawn girl in headphones and the words: it ends with something to show you.',
+    why: 'Тема B7 без личной истории Анны (её нет в facts.md): та же мысль общими словами бренда.',
+    html: `${h('Educational<br><mark>screen time</mark><br>for kids', { size: 104 })}
+    ${p('Don\'t cut the screen.<br>Change what it\'s for.', 560, 50, 'color:#141A33;font-weight:800')}
+    ${char('kamilla', 500, 760, 460)}
+    ${bubble('Look what I made!', 70, 860, 420, { size: 50, rot: -3, bg: '#FFF4DC' })}` },
+
+  // C. Safety
+  { file: 'safe-ai-apps-for-kids', n: 53, board: 'safety', anchor: 'safe', variant: 'чек-лист', ai: false,
+    phrase: 'safe AI apps for kids',
+    title: 'Safe AI Apps for Kids | 3 Things to Check Before They Start | Parent Checklist',
+    text: 'Safe AI apps for kids pass three checks: the account belongs to the parent, strangers cannot message your kid, and anything made by AI is clearly labeled.',
+    alt: 'Coral pin that reads "Safe AI apps for kids: 3 things to check" with a checklist: the account is yours, no messages from strangers, AI is labeled.',
+    why: 'Тема C9. Три проверки из facts.md (раздел «Безопасность»).',
+    html: `${h('Safe <mark>AI apps</mark><br>for kids', { size: 118 })}
+    ${p('3 things I check before they start.', 440, 46, 'color:#141A33;font-weight:800')}
+    ${card({ l: 56, t: 560, w: 888, h: 620, rot: 1.2, inner: `<div style="padding:60px 50px 0;display:grid;gap:64px">${['The account is mine', 'Strangers can\'t message them', 'AI is clearly labeled'].map((t) =>
+      `<div style="display:flex;align-items:center;gap:28px"><b style="flex:none;display:grid;place-items:center;width:92px;height:92px;border:5px solid #141A33;border-radius:18px;background:${C.mint};font:800 60px/1 Sora;color:#141A33">✓</b><span style="font:800 52px/1.06 Urbanist;color:#141A33">${t}</span></div>`).join('')}</div>` })}` },
+
+  { file: 'is-this-photo-ai', n: 54, board: 'safety', anchor: 'safe', variant: 'ребёнок учит бабушку', ai: true,
+    phrase: 'is this photo AI',
+    title: 'Is This Photo AI | 3 Checks Your Kid Can Teach Grandma | Kids and AI Safety',
+    text: 'Is this photo AI? Three quick checks: count the fingers, read the small letters, and ask if it looks too perfect. Easy enough for a kid to teach grandma.',
+    alt: 'Coral pin that reads "Is this photo AI? 3 checks your kid can teach grandma" with a cartoon picture and three checks: count the fingers, read the letters, too perfect.',
+    why: 'Тема C10: угол «ребёнок учит бабушку». Приметы общие, урок про фейки в курсе есть (facts.md).',
+    html: `${h('Is this<br>photo <mark>AI</mark>?', { size: 120 })}
+    ${p('3 checks your kid can teach grandma.', 440, 44, 'color:#141A33;font-weight:800')}
+    ${card({ l: 56, t: 560, w: 400, h: 600, rot: -3, src: `${M}/works/rainbow-cartoon.jpg` })}
+    <div style="position:absolute;left:500px;top:600px;width:444px;display:grid;gap:56px">${['Count the fingers', 'Read the small letters', 'Too perfect? Check'].map((t, i) =>
+      `<div style="display:flex;gap:18px;align-items:center"><b style="flex:none;display:grid;place-items:center;width:70px;height:70px;border-radius:50%;background:#141A33;color:#fff;font:800 38px Sora">${i + 1}</b><span style="font:800 44px/1.05 Urbanist;color:#141A33">${t}</span></div>`).join('')}</div>
+    ${pill('kid teaches grandma', 520, 1160, 4, 'dark')}` },
+
+  { file: 'how-to-talk-to-kids-about-ai', n: 55, board: 'safety', anchor: 'safe', variant: 'вопросы для разговора', ai: false,
+    phrase: 'talking to kids about AI',
+    title: 'Talking to Kids About AI | 4 Questions for Dinner, No Lecture | Kids and AI Safety',
+    text: 'Talking to kids about AI without a lecture: ask four questions at dinner. What would you make with it? Can it be wrong? What would you never tell it? Who would you ask?',
+    alt: 'Coral pin that reads "Talking to kids about AI: 4 questions for dinner" with four question cards on a table.',
+    why: 'Тема C8 в сохраняемом формате (вопросы для разговора вместо ещё одной памятки, памятки уже есть: пины 3, 13, 31).',
+    html: `${h('Talking to kids<br>about <mark>AI</mark>', { size: 112 })}
+    ${p('4 questions for dinner. No lecture.', 440, 46, 'color:#141A33;font-weight:800')}
+    ${['What would you make with it?', 'Can it be wrong?', 'What would you never tell it?', 'Who would you ask if unsure?'].map((t, i) =>
+      `${card({ l: i % 2 ? 500 : 56, t: 570 + Math.floor(i / 2) * 340, w: 444, h: 300, rot: [-3, 2, 2, -2][i], inner: `<div style="padding:36px 32px"><b style="display:block;font:800 40px Sora;color:${C.coral}">${i + 1}</b><span style="display:block;margin-top:10px;font:800 42px/1.1 Urbanist;color:#141A33">${t}</span></div>` })}`).join('')}` },
+
+  // D. Explainers
+  { file: 'why-does-ai-make-things-up', n: 56, board: 'ai', anchor: 'how', variant: 'объяснялка', ai: false,
+    phrase: 'why does AI make things up',
+    title: 'Why Does AI Make Things Up | Explained So a 7-Year-Old Gets It | Kids and AI',
+    text: 'Why does AI make things up? It picks words that sound right, not words it has checked. So the rule for kids is simple: if an answer sounds too smooth, check it.',
+    alt: 'Navy pin that reads "Why does AI make things up?" with a chat bubble that says sounds right is not the same as checked, and the rule: too smooth, check it.',
+    why: 'Тема D12 («галлюцинации» простыми словами). Общие знания, без терминов.',
+    html: `${h('Why does AI<br><mark>make things up</mark>?', { size: 100 })}
+    ${p('Explained so a 7-year-old gets it.', 440, 44)}
+    ${bubble('It picks words that sound right.', 56, 580, 720, { size: 52, rot: -2 })}
+    ${bubble('Not words it checked.', 224, 800, 720, { size: 52, tail: 'right', bg: '#FFC533', rot: 2 })}
+    ${tile('Too smooth?', 'check it', 230, 1030, 540, '#5FE0A8', -2)}` },
+
+  { file: 'teach-kids-about-ai-at-home', n: 57, board: 'homeschool', anchor: 'how', variant: 'три мысли', ai: false,
+    phrase: 'teach kids about AI at home',
+    title: 'Teach Kids About AI at Home | 3 Ideas for the Kitchen Table Tonight | Ages 6-14',
+    text: 'Teach kids about AI at home with three ideas tonight: AI guesses, it does not know; AI can be wrong, so check; and the idea is always yours.',
+    alt: 'Dark blue pin that reads "Teach kids about AI at home" with three ideas: AI guesses, AI can be wrong, the idea is yours.',
+    why: 'Тема D14 без прогноза «школы научат через 5 лет»: кухонный стол сегодня вечером.',
+    html: `${h('Teach kids<br>about AI <mark>at home</mark>', { size: 106 })}
+    ${p('3 ideas for the kitchen table tonight.', 440, 44)}
+    ${tile('1', 'AI guesses. It doesn\'t know.', 56, 560, 420, '#FFC533', -3)}
+    ${tile('2', 'It can be wrong. Check.', 524, 620, 420, '#5FE0A8', 3)}
+    ${tile('3', 'The idea is always yours.', 290, 930, 420, '#FFF4DC', -1)}` },
+
+  { file: 'ai-words-for-kids', n: 58, board: 'ai', anchor: 'how', variant: 'словарик', ai: false,
+    phrase: 'AI words for kids',
+    title: 'AI Words for Kids | 4 Words Every Kid Should Know | Save for Later',
+    text: 'AI words for kids, explained in one line each: a prompt is what you tell the AI, a guess is what it gives back, a fake is a picture that never happened, and a check is your job.',
+    alt: 'Navy pin that reads "AI words for kids" with four word cards: prompt, guess, fake, check, each with a one-line meaning.',
+    why: 'Тема D: сохраняемый словарик, «рубрика-объяснялка».',
+    html: `${h('<mark>AI words</mark><br>for kids', { size: 120 })}
+    ${p('4 words every kid should know.', 440, 46)}
+    ${[['Prompt', 'what you tell the AI'], ['Guess', 'what it gives back'], ['Fake', 'a picture that never happened'], ['Check', 'your job, every time']].map(([w, m], i) =>
+      card({ l: 56, t: 550 + i * 190, w: 888, h: 160, rot: i % 2 ? 1 : -1, inner: `<div style="padding:30px 40px;display:flex;align-items:baseline;gap:26px"><b style="flex:none;width:230px;font:800 54px Sora;letter-spacing:-.04em;color:${[C.coral, '#141A33', C.coral, '#141A33'][i]}">${w}</b><span style="font:700 40px/1.1 Urbanist;color:#141A33">${m}</span></div>` })).join('')}` },
+
+  // E. Bored kid
+  { file: 'rainy-day-activities-for-kids', n: 59, board: 'activities', anchor: 'free', variant: 'план на 20 минут', ai: true,
+    phrase: 'rainy day activities for kids',
+    title: 'Rainy Day Activities for Kids | A 20-Minute Plan With One Laptop | Ages 6-14',
+    text: 'Rainy day activities for kids with one laptop: your kid picks the idea, makes a little game in one short lesson with you next to them, then you play it together.',
+    alt: 'Mint pin that reads "Rainy day activities for kids: a 20-minute plan" with three steps, idea, make, play together, and a pixel game.',
+    why: 'Тема E15: «дождливая суббота, скучающий ребёнок, один ноутбук». Длина урока до 20 минут (facts.md).',
+    html: `${h('Rainy day<br><mark>activities</mark> for kids', { size: 104 })}
+    ${p('One laptop. About 20 minutes.', 440, 46, 'color:#141A33;font-weight:800')}
+    ${tips(['Your kid picks the idea', 'They make a little game', 'You play it together'], 540, 460, { size: 46, gap: 40 })}
+    ${card({ l: 180, t: 1030, w: 764, h: 290, rot: 2, src: `${M}/landing/game.jpg`, cls: 'screen', z: 4 })}` },
+
+  { file: 'what-to-do-when-kids-are-bored', n: 60, board: 'screen', anchor: 'problem', variant: 'было и стало', ai: false,
+    phrase: 'when kids say they are bored',
+    title: 'When Kids Say They Are Bored | From "I\'m Bored" to "Look What I Made" | Ages 6-14',
+    text: 'When kids say they are bored, swap the next video for 20 minutes of making. "I\'m bored" turns into "look what I made", and they have something to show you.',
+    alt: 'Mint pin that reads "When kids say they are bored" with two speech bubbles: I\'m bored, and after 20 minutes, look what I made.',
+    why: 'Тема E16: обмен «скучно» на «смотри, что я сделал».',
+    html: `${h('When kids say<br>they are <mark>bored</mark>', { size: 106 })}
+    ${bubble('I\'m bored.', 56, 500, 520, { size: 64, rot: -3, bg: '#B9C0DE' })}
+    <svg viewBox="0 0 120 160" style="position:absolute;z-index:3;left:430px;top:710px;width:120px;height:160px"><path d="M60 10 V130" stroke="#141A33" stroke-width="12" stroke-linecap="round"/><path d="M25 100 L60 140 L95 100" fill="none" stroke="#141A33" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    ${pill('20 minutes later', 560, 760, 4, 'dark')}
+    ${bubble('Look what I made!', 300, 920, 640, { size: 64, tail: 'right', rot: 2, bg: '#FFC533' })}` },
+
+  { file: 'things-kids-can-make-with-ai', n: 61, board: 'activities', anchor: 'works', variant: 'листикл', ai: true,
+    phrase: 'things kids can make with AI',
+    title: 'Things Kids Can Make With AI | 5 Projects Before Dinner | No Coding, Ages 6-14',
+    text: 'Things kids can make with AI before dinner: a game, a cartoon, a song from their own words, a sticker pack of their own character and a little website.',
+    alt: 'Yellow pin that reads "5 things kids can make with AI" with a numbered list: a game, a cartoon, a song, a sticker pack, a website, next to a cartoon cat.',
+    why: 'Тема E17: листикл из пяти проектов курса (facts.md).',
+    html: `${h('5 things kids can<br>make <mark>with AI</mark>', { size: 100 })}
+    ${p('Before dinner. No coding.', 440, 46, 'color:#141A33;font-weight:800')}
+    ${tips(['A game', 'A cartoon', 'A song', 'A sticker pack', 'A website'], 540, 760, { size: 50, gap: 40 })}
+    ${card({ l: 620, t: 620, w: 320, h: 520, rot: 4, src: `${M}/landing/cartoon-cat.jpg`, pos: '50% 35%', z: 6 })}` },
+
+  { file: 'activities-for-kids-and-parents-together', n: 62, board: 'activities', anchor: 'how', variant: 'фото', ai: false,
+    phrase: 'activities for kids and parents together',
+    title: 'Activities for Kids and Parents Together | Side by Side, 6 to 20 Minutes | Ages 6-14',
+    text: 'Activities for kids and parents together that fit a weeknight: short lessons you do side by side, where your kid makes the thing and you sit right next to them.',
+    alt: 'Yellow pin that reads "Activities for kids and parents together" above a photo of a mom and daughter making something at a laptop.',
+    why: 'Тема E: «вместе». Живое фото мамы и дочки за ноутбуком.',
+    html: `${h('Activities for kids<br>and <mark>parents</mark> together', { size: 82 })}
+    ${p('Side by side. 6 to 20 minutes.', 430, 46, 'color:#141A33;font-weight:800')}
+    ${card({ l: 56, t: 540, w: 888, h: 700, rot: -2, src: `${M}/landing/step-make.jpg` })}
+    ${pill('you, right next to them', 420, 1200, 4)}` },
+
+  // F. Gifts
+  { file: 'gifts-for-kids-who-have-everything', n: 63, board: 'gifts', anchor: 'pricing', variant: 'список', ai: false,
+    phrase: 'gifts for kids who have everything',
+    title: 'Gifts for Kids Who Have Everything | Give Them Something to Make | Ages 6-14',
+    text: 'Gifts for kids who have everything: skip the next toy and give them something to make. A short AI course you do together ends with a game, a cartoon and a song.',
+    alt: 'Yellow pin that reads "Gifts for kids who have everything" with crossed-out toys and a card: something to make, together.',
+    why: 'Тема F18. Подарок-курс без скидок (их нет в facts.md).',
+    html: `${h('Gifts for kids who<br>have <mark>everything</mark>', { size: 96 })}
+    ${card({ l: 56, t: 470, w: 888, h: 380, rot: -2, inner: `<div style="padding:46px 50px;display:grid;gap:22px">${['another toy', 'another gadget', 'another box'].map((t) => `<span style="font:800 54px Urbanist;color:#8A8FA8;text-decoration:line-through;text-decoration-thickness:6px;text-decoration-color:${C.coral}">${t}</span>`).join('')}</div>` })}
+    ${tile('Something to make', 'together', 180, 900, 640, '#FFF4DC', 2)}` },
+
+  { file: 'gifts-kids-can-make-for-grandparents', n: 64, board: 'gifts', anchor: 'families', variant: 'три подарка', ai: true,
+    phrase: 'gifts kids can make for grandparents',
+    title: 'Gifts Kids Can Make for Grandparents | A Song, a Cartoon, Stickers | Christmas Idea',
+    text: 'Gifts kids can make for grandparents this Christmas: a song from their own words, a short cartoon or a sticker pack of their own character. Made by the kid, not bought.',
+    alt: 'Yellow pin that reads "Gifts kids can make for grandparents" with three gifts: a song, a cartoon frame and a sheet of stickers, each with a gift tag.',
+    why: 'Тема F19: «подарок, который бабушка хранит: сделанный ребёнком». Сезон Рождества.',
+    html: `${h('Gifts kids can make<br>for <mark>grandparents</mark>', { size: 92 })}
+    ${p('Made by the kid. Not bought.', 430, 46, 'color:#141A33;font-weight:800')}
+    ${strip([[`${M}/landing/cartoon-friends.jpg`, '50% 40%', 'a cartoon'], [`${M}/landing/step-show.jpg`, '62% 85%', 'stickers'], [`${M}/landing/cartoon-girl.jpg`, '30% 40%', 'a song for her']], 560)}` },
+
+  // Course 20%
+  { file: 'ai-course-for-kids-reviews', n: 65, board: 'activities', anchor: 'families', variant: 'отзывы', ai: false,
+    phrase: 'AI course for kids reviews',
+    title: 'AI Course for Kids Reviews | What Early-Access Families Said | Ages 6-14',
+    text: 'AI course for kids reviews from early-access families, word for word: short lessons, real projects at the end, and kids who ask for the next one.',
+    note: 'Amanda, Jessica and Emily are early-access testers. They received the course free and shared honest feedback.',
+    alt: 'Yellow pin that reads "AI course for kids reviews" with three short quotes from moms with their photos.',
+    why: 'Курс (20%): доказательство. Три цитаты дословно (quotes.md), пометка про бесплатный курс в описании.',
+    html: `${h('AI course for kids<br><mark>reviews</mark>', { size: 100 })}
+    ${[['amanda', 'She created a little game and was so proud of herself.', 'Amanda, mom of a 10-year-old'], ['jessica', 'Our little song turned out so cute!', 'Jessica, mom of an 8-year-old'], ['emily', 'We made our own little cartoon together, and he was so excited to show it to his dad.', 'Emily, mom of a 9-year-old']].map(([f, q, w], i) =>
+      `${card({ l: 56, t: 440 + i * 300, w: 888, h: 260, rot: [-1.5, 1.5, -1][i], inner: `<div style="padding:34px 40px 0 250px"><p style="font:700 40px/1.15 Urbanist;color:#141A33">“${q}”</p><p style="margin-top:14px;font:800 24px Urbanist;letter-spacing:.08em;text-transform:uppercase;color:#4B5070">${w}</p></div>` })}${ring({ l: 80, t: 465 + i * 300, d: 190, src: `${M}/landing/reviews/${f}.jpg`, pos: '50% 25%', zoom: 175, z: 6, pad: 8 })}`).join('')}` },
+
+  { file: 'first-ai-lesson-for-kids', n: 66, board: 'homeschool', anchor: 'free', variant: 'шаги', ai: true,
+    phrase: 'first AI lesson for kids',
+    title: 'First AI Lesson for Kids | Free, No Card | They Build a Game in 10-20 Minutes',
+    text: 'A first AI lesson for kids that is free: leave an email, no card, and your kid builds a playable game in 10 to 20 minutes on a laptop or tablet. Nothing to install.',
+    alt: 'Mint pin that reads "First AI lesson for kids, free" with three steps: email, no card; build a game in 10 to 20 minutes; play it together, and a pixel game.',
+    why: 'Курс (20%): прямой призыв на бесплатный урок, каждый пункт из facts.md.',
+    html: `${h('<mark>First</mark> AI lesson<br>for kids', { size: 112 })}
+    ${p('Free. No card. Nothing to install.', 440, 46, 'color:#141A33;font-weight:800')}
+    ${rowsCard(['Leave an email', 'Build a game: 10–20 min', 'Play it together'], 540, 520)}
+    ${card({ l: 300, t: 1010, w: 644, h: 310, rot: 3, src: `${M}/landing/game.jpg`, cls: 'screen', z: 5 })}` },
+
+  { file: 'ai-course-made-by-a-mom', n: 67, board: 'homeschool', anchor: 'team', variant: 'кто за этим', ai: false,
+    phrase: 'AI course made by a mom',
+    title: 'AI Course Made by a Mom | Every Lesson Tested on Her 10-Year-Old | Ages 6-14',
+    text: 'An AI course made by a mom: Anna built every lesson herself and tested it on her 10-year-old daughter Kamilla at the kitchen table. Whatever lost her attention got cut.',
+    alt: 'Dark blue pin that reads "AI course made by a mom" with a round photo of Anna and the words: every lesson tested on her 10-year-old, what lost her got cut.',
+    why: 'Курс (20%): «кто за этим стоит». Только факты из facts.md. Строку «делает ИИ-рекламу брендам с 2023 года» не ставим: в facts.md её нет, нужен источник.',
+    html: `${h('AI course<br>made by a <mark>mom</mark>', { size: 112 })}
+    ${ring({ l: 56, t: 450, d: 520, src: `${M}/landing/anna.jpg`, pos: '50% 25%', zoom: 250 })}
+    ${ring({ l: 600, t: 640, d: 320, src: `${M}/landing/kamilla.jpg`, pos: '44% 19%', zoom: 215, z: 5 })}
+    ${pill('Anna, mom', 90, 920, -5, '', `background:${C.coral}`)}${pill('Kamilla, 10', 640, 930, 4, '', `background:${C.mint}`)}
+    ${p('Every lesson tested at our kitchen table.<br>What lost her attention got cut.', 1080, 40)}` },
+
+  { file: 'ai-cartoon-for-kids', n: 68, board: 'activities', anchor: 'works', variant: 'кадры', ai: true,
+    phrase: 'AI cartoon for kids',
+    title: 'AI Cartoon for Kids | A 10-Year-Old Made This One, Frame by Frame | No Coding',
+    text: 'An AI cartoon for kids, made by a 10-year-old: her characters, a cat with a croissant, a bakery in Paris. She told the AI her story and checked every scene.',
+    alt: 'Yellow pin that reads "AI cartoon for kids, made by a 10-year-old" with three frames from her cartoon: a girl with glasses, two friends in a bakery, a cat with a croissant.',
+    why: 'Курс (20%): один лучший демо-мультфильм Камиллы (кадры из cartoon-*.jpg), вместо трёх похожих.',
+    html: `${h('AI <mark>cartoon</mark><br>for kids', { size: 120 })}
+    ${p('A 10-year-old made this one.', 440, 46, 'color:#141A33;font-weight:800')}
+    ${strip([[`${M}/landing/cartoon-girl.jpg`, '30% 40%', 'her character'], [`${M}/landing/cartoon-friends.jpg`, '50% 40%', 'her story'], [`${M}/landing/cartoon-cat.jpg`, '50% 35%', 'her cat']], 560)}` },
+);
+
 // Series frame (SERIES.md): colour and chip per pin. Ask AI + Safe AI coral, By a kid yellow, How it works navy, Free lesson mint.
 const FRAME = { c: ['c'], y: ['y'], n: ['n'], m: ['m'] };
 const SERIES_OF = {
@@ -713,6 +990,14 @@ const SERIES_OF = {
   'ai-prompts-for-kids': ['ask', 'c'], 'fun-ai-experiment-for-kids': ['ask', 'c'], 'ai-for-6-year-olds': ['how', 'n'],
   'short-lessons-for-kids-at-home': ['how', 'n'], 'what-kids-need-to-learn-ai': ['how', 'n'], 'ai-for-homeschool-kids': ['how', 'n'],
   'gift-for-kids-who-love-tech': ['free', 'm'], 'free-ai-class-for-kids-online': ['free', 'm'], 'winter-break-activities-for-kids': ['free', 'm'],
+  'ai-homework-help-for-kids': ['ask', 'c'], 'how-kids-should-use-ai': ['ask', 'c'], 'before-your-kid-uses-chatgpt': ['safe', 'c'],
+  'is-using-ai-for-homework-cheating': ['ask', 'c'], 'active-vs-passive-screen-time': ['how', 'c'], 'alternatives-to-youtube-for-kids': ['how', 'c'],
+  'educational-screen-time-for-kids': ['how', 'c'], 'safe-ai-apps-for-kids': ['safe', 'c'], 'is-this-photo-ai': ['safe', 'c'],
+  'how-to-talk-to-kids-about-ai': ['safe', 'c'], 'why-does-ai-make-things-up': ['ask', 'n'], 'teach-kids-about-ai-at-home': ['ask', 'n'],
+  'ai-words-for-kids': ['ask', 'n'], 'rainy-day-activities-for-kids': ['free', 'm'], 'what-to-do-when-kids-are-bored': ['how', 'm'],
+  'things-kids-can-make-with-ai': ['kid', 'y'], 'activities-for-kids-and-parents-together': ['kid', 'y'], 'gifts-for-kids-who-have-everything': ['kid', 'y'],
+  'gifts-kids-can-make-for-grandparents': ['kid', 'y'], 'ai-course-for-kids-reviews': ['kid', 'y'], 'first-ai-lesson-for-kids': ['free', 'm'],
+  'ai-course-made-by-a-mom': ['how', 'n'], 'ai-cartoon-for-kids': ['kid', 'y'],
 };
 for (const pin of pins) [pin.series, pin.theme] = SERIES_OF[pin.file];
 // the alt text names the background colour, which follows the series frame
