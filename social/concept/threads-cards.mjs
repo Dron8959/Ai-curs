@@ -847,6 +847,73 @@ cards['ex-our-dog'] = { theme: 'n', chip: 'Try tonight',
       .from('.dg',{y:80,opacity:0,duration:.5,ease:'back.out(1.8)',stagger:1.4},.9)
       .from('.dd',{opacity:0,y:10,duration:.4},2.6);` };
 
+// ---------------------------------------------------- week 3 (threads-week3.mjs)
+cards['w3-quiz-me'] = { theme: 'y', chip: 'Copy this',
+  hl: `Don't give me<br>the <mark>answer.</mark>`,
+  stage: `
+    <div class="box" style="left:0;top:0;width:952px;height:600px;padding:40px;background:#FFFFFF">
+      <div class="lab" style="font-size:20px;margin-bottom:22px">Paste this before the homework question</div>
+      <div class="bub" id="pq" style="position:relative;margin-left:auto;width:fit-content;max-width:820px;white-space:normal;background:#FFC533;font:800 40px/1.2 Sora">"Don't give me the answer. Ask me questions until I figure it out."</div>
+      <div class="bub" id="aq" style="position:relative;margin-top:34px;width:fit-content;max-width:760px;white-space:normal;background:#EFEAD8;font:700 34px/1.25 Urbanist;display:flex;gap:14px;align-items:flex-start">${icon('bot', 38, 2.4)}<span>OK. What do you already know about fractions?</span></div>
+      <div class="bub" id="kd" style="position:absolute;right:40px;bottom:40px;font:800 34px Sora;background:#5FE0A8;transform:rotate(-4deg)">The kid does the thinking</div>
+    </div>`,
+  tl: `
+    tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
+      .from('.hl mark',{scale:0,duration:.4,ease:'back.out(3)'},.45)
+      .from('#pq',{scale:0,transformOrigin:'100% 0',duration:.45,ease:'back.out(2.2)'},.9)
+      .from('#aq',{scale:0,transformOrigin:'0 0',duration:.45,ease:'back.out(2.2)'},2.0)
+      .from('#kd',{scale:2,opacity:0,duration:.35,ease:'power3.in'},3.4);` };
+
+cards['w3-three-questions'] = { theme: 'n', chip: 'Before any AI app',
+  hl: `3 questions<br>before <mark>ChatGPT.</mark>`,
+  stage: `
+    ${[['user-round', 'Whose account is it on?'], ['message-circle-off', 'Can a stranger message them?'], ['lock', 'Do they know what never goes in a chat?']].map(([ic, t], i) => `
+    <div class="box q3" style="left:0;top:${i * 190}px;width:952px;height:166px;display:flex;align-items:center;gap:28px;padding:0 34px;background:#FFF4DC">
+      <div style="flex:none;width:70px;height:70px;border:5px solid #141A33;border-radius:50%;background:#FFC533;font:800 36px Sora;display:flex;align-items:center;justify-content:center">${i + 1}</div>
+      ${icon(ic, 56, 2.4)}<div class="big" style="font-size:42px;line-height:1.1">${t}</div></div>`).join('')}`,
+  tl: `
+    tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
+      .from('.hl mark',{scale:0,duration:.4,ease:'back.out(3)'},.45)
+      .from('.q3',{x:-120,opacity:0,duration:.45,ease:'power3.out',stagger:.6},.9);` };
+
+cards['w3-one-hour'] = { theme: 'c', chip: 'One hour',
+  hl: `An hour of Shorts<br>or an hour of <mark>making?</mark>`,
+  stage: `
+    <div class="box" id="sh" style="left:0;top:0;width:430px;height:560px;padding:26px;background:#E9EDFF;overflow:hidden">
+      <div class="big" style="font-size:36px;position:relative;z-index:2;background:#E9EDFF;margin:-26px -26px 16px;padding:26px 26px 10px">Shorts</div>
+      <div id="feed" style="display:flex;flex-direction:column;gap:12px">${Array.from({ length: 14 }, (_, i) => `<div style="height:62px;border:4px solid #141A33;border-radius:14px;background:${['#B9C0DE', '#9AA2C4', '#C9CCD6'][i % 3]}"></div>`).join('')}</div>
+      <div class="lab" style="position:absolute;z-index:2;left:26px;bottom:20px;font-size:20px;background:#E9EDFF;padding:4px 8px">Nothing to show after</div>
+    </div>
+    <div class="box" id="mk" style="left:470px;top:0;width:482px;height:560px;padding:26px 30px;background:#FFF9EC">
+      <div class="big" style="font-size:36px;margin-bottom:20px">Making</div>
+      ${[['gamepad-2', 'A small game'], ['music', 'A song in their words'], ['clapperboard', 'A short cartoon']].map(([ic, t]) => `
+      <div class="mi" style="display:flex;align-items:center;gap:18px;margin-bottom:26px">${icon(ic, 54, 2.4)}<span class="big" style="font-size:36px;line-height:1.1">${t}</span></div>`).join('')}
+      <div class="bub" id="lk" style="position:relative;display:inline-block;font:800 30px Sora;background:#FFC533;transform:rotate(-3deg)">"Look what I made!"</div>
+    </div>`,
+  tl: `
+    tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
+      .from('.hl mark',{scale:0,duration:.4,ease:'back.out(3)'},.45)
+      .from('#sh',{x:-80,opacity:0,duration:.45,ease:'back.out(1.8)'},.9)
+      .to('#feed',{y:-420,duration:5,ease:'none'},1.2)
+      .from('#mk',{x:80,opacity:0,duration:.45,ease:'back.out(1.8)'},1.4)
+      .from('.mi',{y:30,opacity:0,duration:.35,stagger:.5},1.9)
+      .from('#lk',{scale:0,duration:.4,ease:'back.out(3)'},3.6);` };
+
+cards['w3-agreement'] = { theme: 'm', chip: 'Save this',
+  hl: `Our family<br>AI <mark>agreement.</mark>`,
+  stage: `
+    <div class="box" id="pp" style="left:60px;top:10px;width:832px;height:590px;padding:44px 48px;background:#FFFDF6;transform:rotate(-1.5deg)">
+      <div style="position:absolute;left:50%;top:-22px;width:44px;height:44px;margin-left:-22px;border-radius:50%;background:#FF6F4A;border:5px solid #141A33"></div>
+      ${['We use AI on a parent\'s account.', 'We make something first.', 'Name, school, address stay out.', 'Too perfect? We check it.', 'We show each other what we made.'].map((t, i) => `
+      <div class="ag" style="display:flex;align-items:center;gap:22px;height:98px;border-bottom:3px dashed #D9CDB0">
+        <span style="flex:none;font:800 36px Sora;color:#FF6F4A;width:40px">${i + 1}</span><span class="big" style="font-size:38px">${t}</span></div>`).join('')}
+    </div>`,
+  tl: `
+    tl.from('.hl',{y:40,opacity:0,duration:.5,ease:'back.out(2)'},0)
+      .from('.hl mark',{scale:0,duration:.4,ease:'back.out(3)'},.45)
+      .from('#pp',{y:80,rotation:-8,opacity:0,duration:.5,ease:'back.out(1.6)'},.9)
+      .from('.ag',{opacity:0,x:-30,duration:.3,stagger:.45},1.5);` };
+
 // ------------------------------------------------------------------------------------------ render
 const run = (cmd, args) => new Promise((res, rej) => spawn(cmd, args, { stdio: 'inherit' }).on('close', (c) => (c ? rej(new Error(`${cmd} ${c}`)) : res())));
 
