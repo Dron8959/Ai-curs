@@ -3,10 +3,10 @@ when: 2026-11-28 08:10 (New York)
 fear: экран вместо общения
 course: false
 card: none (text only)
-characters: 234
+characters: 249
 ---
-A 10-second test for any screen in your house. Ask your kid "what are you doing?"
+Quick test I like. Next time your kid is on a screen, ask "what are you doing?"
 
-If the answer is a noun, a video or a show, they're watching. If it's a verb, building, drawing, writing, they're making.
+If you get a noun back (a video, a show), they're watching. If you get a verb (building, drawing, writing), they're making something.
 
-Which one did you get today?
+Noun or verb at your house today?

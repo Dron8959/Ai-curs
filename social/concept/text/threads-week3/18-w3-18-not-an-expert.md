@@ -3,10 +3,10 @@ when: 2026-12-02 20:40 (New York)
 fear: я сам не разбираюсь
 course: false
 card: none (text only)
-characters: 260
+characters: 284
 ---
-You don't need to understand AI to sit next to your kid while they use it.
+You don't have to understand AI to sit next to your kid while they use it. Really.
 
-You need two questions: "Why did you tell it that?" and "Is that right?" The checking is the part kids learn from you.
+Two questions do most of the work: "Why did you tell it that?" and "Is that right?" That checking habit is what they pick up from you.
 
 What's the one thing about AI you'd want explained to you first?

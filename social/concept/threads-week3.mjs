@@ -26,125 +26,125 @@ export const SLOTS = { am: '08:10', noon: '12:40', pm: '20:40' };
 export const posts = [
   // ---------------------------------------------------------------- Fri 27.11 (Black Friday)
   { id: 'w3-01-has-everything', date: '2026-11-27', slot: 'am', topic: 18, fear: 'подарки: ещё одна игрушка',
-    text: `Black Friday question: what do you get a kid who already has everything?
+    text: `Black Friday question, and I mean it: what do you get a kid who already has everything?
 
-A toy gets opened in a minute. Something they made gets shown to everyone for a week.
+A toy gets opened in a minute. Something they made themselves gets shown to grandma, the neighbors and the dog.
 
 What's the one gift your kid still talks about?` },
   { id: 'w3-02-quiz-me', date: '2026-11-27', slot: 'noon', topic: 1, fear: 'ИИ сделает домашку за ребёнка', card: 'w3-quiz-me',
-    text: `Before your kid asks AI for the homework answer, have them paste this in first:
+    text: `Homework tip for the AI age. Before your kid asks for the answer, they paste this in first:
 
 "Don't give me the answer. Ask me questions until I figure it out."
 
-Same app, very different kid at the end of it.
+Same app. A lot more thinking on their side of the screen.
 
-Would yours actually use it?` },
+Would yours use it or roll their eyes?` },
   { id: 'w3-03-rainy-plan', date: '2026-11-27', slot: 'pm', topic: 15, fear: 'чем занять ребёнка',
-    text: `Rainy weekend, bored kid, one laptop. A 20-minute plan:
+    text: `Rainy weekend plan for one bored kid and one laptop. 20 minutes total.
 
-5 minutes: your kid picks what to make. A game, a song, a story.
-10 minutes: they describe it to AI out loud. If they're little, you type.
-5 minutes: they show it to someone who wasn't in the room.
+First 5: they pick what to make. Game, song, story, whatever.
+Next 10: they describe it to AI out loud. Little kids talk, you type.
+Last 5: they show it to someone who wasn't in the room.
 
-What would yours pick?` },
+What would yours make?` },
 
   // ---------------------------------------------------------------- Sat 28.11
   { id: 'w3-04-noun-or-verb', date: '2026-11-28', slot: 'am', topic: 6, fear: 'экран вместо общения',
-    text: `A 10-second test for any screen in your house. Ask your kid "what are you doing?"
+    text: `Quick test I like. Next time your kid is on a screen, ask "what are you doing?"
 
-If the answer is a noun, a video or a show, they're watching. If it's a verb, building, drawing, writing, they're making.
+If you get a noun back (a video, a show), they're watching. If you get a verb (building, drawing, writing), they're making something.
 
-Which one did you get today?` },
+Noun or verb at your house today?` },
   { id: 'w3-05-guesser', date: '2026-11-28', slot: 'noon', topic: 12, fear: 'ИИ может навредить / врёт',
-    text: `Why does AI sometimes make things up? The way I'd put it for a 7-year-old:
+    text: `My favorite way to explain to a 7-year-old why AI makes stuff up: AI is a guesser.
 
-AI is a guesser. It guesses which words usually come next, and a guess can sound very sure and still be wrong.
+It guesses which words usually come next. A guess can sound super sure and still be wrong.
 
-So the house rule is simple: if it sounds too smooth, check it somewhere else.
+So our rule is short. If it sounds too smooth, check it somewhere else.
 
 How would your kid explain it?` },
   { id: 'w3-06-grandma-gift', date: '2026-11-28', slot: 'pm', topic: 19, fear: 'подарки: время вместе', course: true,
-    text: `Grandma probably has enough scarves.
+    text: `Grandma probably has enough scarves by now.
 
-A song with your kid's own words in it, on her phone, is the kind of gift she plays for her friends.
+A song your kid wrote the words to, saved on her phone, is the thing she'll make her friends listen to.
 
-Making a song from their own words is one of the lessons in our course. What would your kid's song for grandma be about?` },
+A song from their own words is one of the lessons in our course. What would your kid's song for grandma be about?` },
 
   // ---------------------------------------------------------------- Sun 29.11
   { id: 'w3-07-what-for', date: '2026-11-29', slot: 'am', topic: 7, fear: 'экран вместо общения',
-    text: `You can spend the whole week fighting the screen. Or you can change what it's for.
+    text: `You can fight the screen all week. Or you can change what it's for.
 
-When your kid makes something on it, your question changes too. You stop asking "how long?" and start asking "what is it?"
+When they're making something on it, even your question changes. It goes from "how long have you been on that?" to "wait, what is that?"
 
-Which one do you ask more at your house?` },
+Which one do you say more?` },
   { id: 'w3-08-three-questions', date: '2026-11-29', slot: 'noon', topic: 3, fear: 'это небезопасно', card: 'w3-three-questions',
-    text: `3 questions before your kid opens ChatGPT or any AI app:
+    text: `3 questions to ask before your kid opens ChatGPT, or any AI app really:
 
 1. Whose account is it on?
 2. Can a stranger message them in there?
-3. Do they know what never goes into a chat? Full name, school, address.
+3. Do they know what never goes in a chat? Full name, school, address.
 
-If one answer is "not sure", start there. Which one was it for you?` },
+If you said "not sure" to any of them, start there. Which one got you?` },
   { id: 'w3-09-one-evening', date: '2026-11-29', slot: 'pm', topic: 22, fear: 'нет времени', course: true,
-    text: `Sunday night, nothing planned for the week? Here's one evening sorted.
+    text: `Sunday night and nothing planned for the week? One evening, sorted.
 
-Your kid builds a game in 10 to 20 minutes on a laptop or tablet, with you next to them. Then you play it against each other on the couch.
+Your kid builds a game in 10 to 20 minutes on a laptop or tablet, you sit next to them, then you play it against each other on the couch.
 
 The first lesson of our course is free, no card: ${url}
 
-Who do you think wins at your house?` },
+Who wins at your house?` },
 
   // ---------------------------------------------------------------- Mon 30.11
   { id: 'w3-10-who-has-the-idea', date: '2026-11-30', slot: 'am', topic: 2, fear: 'ИИ сделает ребёнка ленивым',
-    text: `A kid who cheats with AI and a kid who builds with it usually differ in one habit: who has the idea first.
+    text: `Cheating with AI and building with it usually come down to one habit: who had the idea first.
 
-If the kid brings the idea, they still have to check what comes back and fix it. If AI brings the idea, there's nothing left for the kid to do.
+Kid's idea? Then they still have to check what comes back and fix it. AI's idea? There's nothing left for the kid to do.
 
-Who has the idea first at your house?` },
+Who usually has it first at your house?` },
   { id: 'w3-11-explain-it', date: '2026-11-30', slot: 'noon', topic: 4, fear: 'ИИ сделает домашку за ребёнка',
-    text: `AI can write your kid's homework. It can't explain it for them at the dinner table.
+    text: `AI can write your kid's homework. It can't explain it at dinner.
 
-So try one question tonight: "Explain it to me without the screen."
+One question tonight: "Explain it to me without the screen."
 
-If they can, AI helped. If they can't, AI did the homework. Could yours?` },
+If they can, AI helped. If they can't, AI did the homework. Want to try it tonight?` },
   { id: 'w3-12-teach-grandma', date: '2026-11-30', slot: 'pm', topic: 10, fear: 'фейки и безопасность',
-    text: `Ask your kid to teach grandma how to spot a fake photo.
+    text: `Little challenge: ask your kid to teach grandma how to spot a fake photo.
 
-Hands, letters on signs, shadows going the wrong way. A kid who has to explain it remembers it, and grandma gets a little safer online too.
+Hands. Letters on signs. Shadows going the wrong way. Kids remember stuff way better when they're the one explaining, and grandma gets a bit safer online too.
 
-Who's the fact-checker at your house?` },
+Who's the fact-checker in your family?` },
 
   // ---------------------------------------------------------------- Tue 01.12
   { id: 'w3-13-twenty-minutes', date: '2026-12-01', slot: 'am', topic: 16, fear: 'скука и экран',
-    text: `"I'm bored" and "look what I made" are often about 20 minutes apart.
+    text: `"I'm bored" and "look what I made" are usually about 20 minutes apart.
 
-The gap is usually one question from you: "What would you make if you could make anything?"
+What gets them across is one question from you: "If you could make anything right now, what would it be?"
 
-What did yours say last time you asked?` },
+What did yours say last time?` },
   { id: 'w3-14-one-hour', date: '2026-12-01', slot: 'noon', topic: 5, fear: 'экран вместо общения', card: 'w3-one-hour',
-    text: `An hour of Shorts, or an hour of making?
+    text: `An hour of Shorts or an hour of making?
 
-An hour of making can be a small game, a song from your kid's own words and a short cartoon. Each one is something they'll want to show you.
+An hour of making can be a tiny game, a song with their own words and a short cartoon. All three are things they'll come find you to show.
 
-Which would your kid trade an hour of Shorts for?` },
+Which would your kid trade the Shorts for?` },
   { id: 'w3-15-four-grandmas', date: '2026-12-01', slot: 'pm', topic: 21, fear: 'подарки: время вместе', course: true,
-    text: `Who in your family would sit down and make a cartoon with your kid?
+    text: `Who in your family would actually sit down and make a cartoon with your kid?
 
-Four grandmothers from our early-access group did it with their grandkids, 7 to 10: a cartoon, a song, a game. They got the course free and told us honestly how it went.
+Four grandmothers from our early-access group did it with grandkids aged 7 to 10. Cartoon, song, game. They got the course free and told us honestly how it went.
 
-Linda: "I wanted to give my grandson something more meaningful than another toy."
+Linda's words: "I wanted to give my grandson something more meaningful than another toy."
 
 Would your kid's grandma be up for it?` },
 
   // ---------------------------------------------------------------- Wed 02.12
   { id: 'w3-16-kitchen-table', date: '2026-12-02', slot: 'am', topic: 14, fear: 'школа не учит, ребёнок отстанет',
-    text: `Most schools are still deciding what to do about AI. Your kitchen table doesn't have to wait for them.
+    text: `Most schools are still figuring out what to do about AI. Your kitchen table doesn't have to wait.
 
-Twenty minutes, one laptop, your kid's idea, you next to them.
+20 minutes, one laptop, your kid's idea, you sitting next to them. That's the whole setup.
 
-What would you want your kid to make first?` },
+What would you want them to make first?` },
   { id: 'w3-17-agreement', date: '2026-12-02', slot: 'noon', topic: 8, fear: 'это небезопасно', card: 'w3-agreement',
-    text: `A family AI agreement short enough for the fridge. Save this.
+    text: `Our family AI agreement. It fits on the fridge, so save it:
 
 1. We use AI on a parent's account.
 2. We make something before we ask it anything else.
@@ -152,33 +152,33 @@ What would you want your kid to make first?` },
 4. If it looks too perfect, we check it.
 5. We show each other what we made.
 
-What would you add?` },
+What would you add to yours?` },
   { id: 'w3-18-not-an-expert', date: '2026-12-02', slot: 'pm', topic: null, fear: 'я сам не разбираюсь',
-    text: `You don't need to understand AI to sit next to your kid while they use it.
+    text: `You don't have to understand AI to sit next to your kid while they use it. Really.
 
-You need two questions: "Why did you tell it that?" and "Is that right?" The checking is the part kids learn from you.
+Two questions do most of the work: "Why did you tell it that?" and "Is that right?" That checking habit is what they pick up from you.
 
 What's the one thing about AI you'd want explained to you first?` },
 
   // ---------------------------------------------------------------- Thu 03.12
   { id: 'w3-19-lazy', date: '2026-12-03', slot: 'am', topic: null, fear: 'ИИ сделает ребёнка ленивым',
-    text: `Will AI make my kid lazy? It depends on who does the deciding.
+    text: `"Will AI make my kid lazy?" Depends who's doing the deciding.
 
-If your kid decides what to make, what it should look like and what to fix, the thinking stays theirs. If they press "generate" and walk away, it doesn't.
+If your kid picks what to make, how it should look and what to fix, the thinking is still theirs. If they hit generate and wander off, not so much.
 
-Which have you seen at your house?` },
+Which one have you seen?` },
   { id: 'w3-20-dream-pet', date: '2026-12-03', slot: 'noon', topic: 13, fear: 'чем занять ребёнка',
-    text: `Tonight's game: your kid draws their dream pet on paper first. Then they describe it to AI in words and see what comes back.
+    text: `Tonight's game: your kid draws their dream pet on paper first. Then they describe it to AI and see what comes back.
 
-The paper one is always more them. The words get better with every try.
+The paper one always looks more like them. The words get better every try, though.
 
-Whose version won at your house?` },
+Which version won at your house?` },
   { id: 'w3-21-paris-cartoon', date: '2026-12-03', slot: 'pm', topic: 20, fear: 'ИИ думает за ребёнка', course: true,
-    text: `How many tries does a 10-year-old need for a cartoon scene?
+    text: `How many tries does a 10-year-old need for one cartoon scene? Kamilla needed two or three.
 
-Kamilla needed two or three a scene for her cartoon: a cat, a croissant, Paris. She looked at what came back and told the AI what to fix. The whole thing took about 20 minutes.
+Her cartoon has a cat, a croissant and Paris. Each time she looked at what came back and told the AI what to fix. About 20 minutes for the whole thing.
 
-Checking and fixing is part of every lesson in our course. What would your kid's cartoon be about?` },
+That checking and fixing is in every lesson of our course. What would your kid's cartoon be about?` },
 ];
 
 const LIMIT = 450;

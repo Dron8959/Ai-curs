@@ -3,10 +3,10 @@ when: 2026-11-28 20:40 (New York)
 fear: подарки: время вместе
 course: true
 card: none (text only)
-characters: 260
+characters: 263
 ---
-Grandma probably has enough scarves.
+Grandma probably has enough scarves by now.
 
-A song with your kid's own words in it, on her phone, is the kind of gift she plays for her friends.
+A song your kid wrote the words to, saved on her phone, is the thing she'll make her friends listen to.
 
-Making a song from their own words is one of the lessons in our course. What would your kid's song for grandma be about?
+A song from their own words is one of the lessons in our course. What would your kid's song for grandma be about?

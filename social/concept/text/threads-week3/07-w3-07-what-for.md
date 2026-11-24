@@ -3,10 +3,10 @@ when: 2026-11-29 08:10 (New York)
 fear: экран вместо общения
 course: false
 card: none (text only)
-characters: 248
+characters: 233
 ---
-You can spend the whole week fighting the screen. Or you can change what it's for.
+You can fight the screen all week. Or you can change what it's for.
 
-When your kid makes something on it, your question changes too. You stop asking "how long?" and start asking "what is it?"
+When they're making something on it, even your question changes. It goes from "how long have you been on that?" to "wait, what is that?"
 
-Which one do you ask more at your house?
+Which one do you say more?
