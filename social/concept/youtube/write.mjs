@@ -4,10 +4,12 @@ import { readdirSync, writeFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { WEEK2_YT } from './week2.mjs';
+import { WEEK3_YT } from './week3.mjs';
+const ALL = { ...WEEK2_YT, ...WEEK3_YT };
 const POSTS = join(dirname(fileURLToPath(import.meta.url)), '..', 'posts');
 const dirs = readdirSync(POSTS);
 let bad = 0, wrote = 0, waiting = [];
-for (const [n, y] of Object.entries(WEEK2_YT)) {
+for (const [n, y] of Object.entries(ALL)) {
   const errs = [];
   const t = y.title.toLowerCase(), kw = y.kw.toLowerCase(), b = y.body.toLowerCase();
   if (y.title.length < 50 || y.title.length > 60) errs.push(`title ${y.title.length} chars (want 50-60)`);
@@ -36,5 +38,5 @@ ${y.body.trim()}
 `);
   wrote++;
 }
-console.log(`${Object.keys(WEEK2_YT).length} entries: ${bad} with problems, ${wrote} written, ${waiting.length} waiting for their folder (${waiting.join(', ')})`);
+console.log(`${Object.keys(ALL).length} entries: ${bad} with problems, ${wrote} written, ${waiting.length} waiting for their folder (${waiting.join(', ')})`);
 if (bad) process.exit(1);
