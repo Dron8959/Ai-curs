@@ -349,3 +349,75 @@ date; the PDFs in `out/` are out of date. They are only needed if new recordings
 | 3 | 8.3-12.5 | So I look, and I tell the AI what to fix. | 2.6 |
 | 4 | 12.5-16.2 | The whole cartoon took about twenty minutes. | 1.9 |
 | 5 | 16.2-19.4 | Would you fix it, or keep it? | 2.2 |
+
+### 37-homework-quiz · Anna · 19.4 s
+| scene | seconds | line | words/s |
+|---|---|---|---|
+| 1 | 0.0-4.2 | Don't let AI do the homework. | 1.4 |
+| 2 | 4.2-8.3 | Make it quiz your kid instead. | 1.5 |
+| 3 | 8.3-12.5 | Type: ask me questions until I get it. | 1.9 |
+| 4 | 12.5-16.2 | Now your kid does the thinking. | 1.6 |
+| 5 | 16.2-19.4 | Free first lesson? Type lesson below. | 1.9 |
+
+### 38-ai-makes-things-up · Anna · 19.4 s
+| scene | seconds | line | words/s |
+|---|---|---|---|
+| 1 | 0.0-4.2 | Why does AI make things up? | 1.4 |
+| 2 | 4.2-8.3 | It guesses the next word, one at a time. | 2.2 |
+| 3 | 8.3-12.5 | A wrong guess can still sound very sure. | 1.9 |
+| 4 | 12.5-16.2 | So if it sounds too smooth, check it. | 2.2 |
+| 5 | 16.2-19.4 | Want our five rules? Type rules below. | 2.2 |
+
+### 39-gifts-not-toys · Anna · 19.4 s
+| scene | seconds | line | words/s |
+|---|---|---|---|
+| 1 | 0.0-4.2 | For the kid who has everything. | 1.4 |
+| 2 | 4.2-8.3 | A gift they make, instead of one you buy. | 2.2 |
+| 3 | 8.3-12.5 | A song, a cartoon, a game, for grandma. | 1.9 |
+| 4 | 12.5-16.2 | Linda wanted more than another toy. | 1.6 |
+| 5 | 16.2-19.4 | Free first lesson? Type gift below. | 1.9 |
+
+### 40-rainy-saturday · Anna · 19.4 s
+| scene | seconds | line | words/s |
+|---|---|---|---|
+| 1 | 0.0-4.2 | Rainy Saturday, and your kid is bored. | 1.7 |
+| 2 | 4.2-8.3 | First, your kid picks an idea. | 1.5 |
+| 3 | 8.3-12.5 | They talk, you type, AI builds a game. | 1.9 |
+| 4 | 12.5-16.2 | Then you play it against each other. | 1.9 |
+| 5 | 16.2-19.4 | Want the free lesson? Type game below. | 2.2 |
+
+### 43-watching-or-making · Anna · 19.4 s
+| scene | seconds | line | words/s |
+|---|---|---|---|
+| 1 | 0.0-4.2 | Watching or making? Here's a ten-second test. | 1.7 |
+| 2 | 4.2-8.3 | Ask one question: what did you make? | 1.7 |
+| 3 | 8.3-12.5 | If the answer is nothing, it was watching. | 1.9 |
+| 4 | 12.5-16.2 | If they show you something, it was making. | 2.2 |
+| 5 | 16.2-19.4 | Want a first thing to make? Type game. | 2.5 |
+
+### 44-one-habit · Anna · 19.4 s
+| scene | seconds | line | words/s |
+|---|---|---|---|
+| 1 | 0.0-4.2 | Cheating with AI, or building with it? | 1.7 |
+| 2 | 4.2-8.3 | It comes down to one habit. | 1.5 |
+| 3 | 8.3-12.5 | The idea comes from your kid, AI does the work. | 2.4 |
+| 4 | 12.5-16.2 | Then your kid checks it and fixes it. | 2.2 |
+| 5 | 16.2-19.4 | Want the free lesson? Type lesson below. | 2.2 |
+
+### 45-explain-it-back · Anna · 19.4 s
+| scene | seconds | line | words/s |
+|---|---|---|---|
+| 1 | 0.0-4.2 | AI can write the homework for your kid. | 1.9 |
+| 2 | 4.2-8.3 | It can't explain it for them. | 1.5 |
+| 3 | 8.3-12.5 | Ask your kid to explain it in their own words. | 2.4 |
+| 4 | 12.5-16.2 | If they can, they learned it. | 1.6 |
+| 5 | 16.2-19.4 | Free first lesson? Type lesson below. | 1.9 |
+
+### 46-three-ways · Anna · 19.4 s
+| scene | seconds | line | words/s |
+|---|---|---|---|
+| 1 | 0.0-4.2 | Tonight's game: one question, three ways. | 1.4 |
+| 2 | 4.2-8.3 | Ask AI: explain rain like I'm six. | 1.7 |
+| 3 | 8.3-12.5 | Then like I'm twelve. | 1.0 |
+| 4 | 12.5-16.2 | Then like my grandma. Which one was best? | 2.2 |
+| 5 | 16.2-19.4 | Free first lesson? Type lesson below. | 1.9 |

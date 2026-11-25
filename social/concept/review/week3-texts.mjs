@@ -39,7 +39,7 @@ Comment "RULES" and I'll send you our 5 AI house rules for the fridge.
     tileVis: 'Linda photo ring + quote “something more meaningful than another toy”',
     scenes: [['Made by them.<br><mark>Not bought.</mark>', 'img:landing/step-show.jpg'], ['A song.<br><mark>A cartoon. A game.</mark>', 'icon:gift'], ['“More meaningful<br><mark>than another toy.”</mark>', 'ring:linda']],
     end: 'A gift<br><mark>they made.</mark>',
-    voice: ['For the kid who has everything.', 'A gift they make, instead of one you buy.', 'A song, a cartoon, a game, for grandma.', 'Linda wanted more than another toy.', 'Want the free first lesson? Type gift below.'],
+    voice: ['For the kid who has everything.', 'A gift they make, instead of one you buy.', 'A song, a cartoon, a game, for grandma.', 'Linda wanted more than another toy.', 'Free first lesson? Type gift below.'],
     note: 'Linda: review on the site, early access, got the course free. Projects from facts.md.',
     caption: `Black Friday idea for the kid who has everything: a gift they make instead of one you buy.
 
@@ -54,9 +54,9 @@ Comment "GIFT" and I'll send you the free first lesson.
     tileVis: 'three pills: 1 idea · 2 build · 3 play',
     scenes: [['1. Your kid<br><mark>picks an idea.</mark>', 'say:a dragon who bakes cookies'], ['2. They talk.<br><mark>You type.</mark>', 'img:landing/step-make.jpg'], ['3. Play it<br><mark>together.</mark>', 'img:landing/together-game.jpg']],
     end: '20 minutes.<br><mark>One game.</mark>',
-    voice: ['Rainy Saturday, bored kid, one laptop.', 'First, your kid picks an idea.', 'They talk, you type, and AI builds a game.', 'Then you play it against each other.', 'Want the free lesson? Type game below.'],
+    voice: ['Rainy Saturday, and your kid is bored.', 'First, your kid picks an idea.', 'They talk, you type, AI builds a game.', 'Then you play it against each other.', 'Want the free lesson? Type game below.'],
     note: 'facts.md: free lesson, a game in 10-20 minutes, play each other on the couch.',
-    caption: `Rainy Saturday, bored kid, one laptop. Here's a 20-minute plan.
+    caption: `Rainy Saturday, and your kid is bored. Here's a 20-minute plan.
 
 1. Your kid picks an idea for a game. Anything: a dragon who bakes cookies works.
 2. They talk, you type, and the AI builds it.
@@ -163,7 +163,7 @@ Comment "LESSON" and I'll send you the free first lesson of our AI course for ki
     tileVis: 'three bubbles: “like I’m 6” / “like I’m 12” / “like my grandma”',
     scenes: [['Explain rain<br><mark>like I’m 6.</mark>', 'say:Explain rain like I’m 6.'], ['Now<br><mark>like I’m 12.</mark>', 'say:Now like I’m 12.'], ['Now like<br><mark>my grandma.</mark>', 'say:Now like my grandma.']],
     end: 'Which one<br><mark>was best?</mark>',
-    voice: ['A game for tonight: one question, three ways.', 'Ask AI: explain rain like I\'m six.', 'Then like I\'m twelve.', 'Then like my grandma. Which one was best?', 'Free first lesson? Type lesson below.'],
+    voice: ['Tonight\'s game: one question, three ways.', 'Ask AI: explain rain like I\'m six.', 'Then like I\'m twelve.', 'Then like my grandma. Which one was best?', 'Free first lesson? Type lesson below.'],
     note: 'General activity (from the Threads post “explain to a 6-year-old vs grandma”).',
     caption: `A game for tonight: ask AI the same question 3 ways.
 

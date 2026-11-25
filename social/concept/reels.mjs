@@ -13,6 +13,7 @@
 import { C, M, B, an, on, card, ring, pill, tape, star, char, icon, plate, endScene } from './kit.mjs';
 import { hand, bubble } from './review/week2-art.mjs';
 import { reelScenes } from './review/week2-reels.mjs';
+import { reelScenes3 } from './review/week3-reels.mjs';
 
 const h1 = (html, { top = 470, size = 112, a = an('words', 0.15), style = '' } = {}) =>
   `<h1 class="t"${a} style="top:${top}px;font-size:${size}px;${style}">${html}</h1>`;
@@ -215,4 +216,5 @@ export const reels = {
   ],
   // the rest of next week's pack, one template: review/week2-reels.mjs
   ...reelScenes,
+  ...reelScenes3,
 };
