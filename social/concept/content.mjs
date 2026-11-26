@@ -4,6 +4,7 @@
 
 import { posts as W2POSTS } from './review/week2-reels.mjs';
 import { posts3 as W3POSTS } from './review/week3-reels.mjs';
+import { postsH as HPOSTS } from './review/holiday-reels.mjs';
 import { A, C, M, top, card, ring, pill, tape, star, arrow, char, icon, foot } from './kit.mjs';
 import { TILES } from './review/week2-art.mjs';
 import { TEXTS } from './review/week2-texts.mjs';
@@ -328,6 +329,8 @@ Link in bio.
   ...W2POSTS,
   // pack 3 (owner audit 24 Nov, 80% about the parent): review/week3-reels.mjs
   ...W3POSTS,
+  // holiday sales posts 47-50 (owner 26 Nov, "Gift a skill"): review/holiday-reels.mjs
+  ...HPOSTS,
 ];
 
 export const byId = (id) => posts.find((p) => p.id === id || p.id.startsWith(id));
