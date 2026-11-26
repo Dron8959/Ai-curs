@@ -1,0 +1,111 @@
+<title>Праздничные продажи</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;800&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: one column review sheet: what is ready (two printables), then the post plan, then the drafts */
+:root{--bg:#f4f3ef;--panel:#fff;--fg:#141a33;--mute:#5d6280;--line:#e1ded4;--accent:#ffc533;--need:#c2410c;--need-soft:#fde8dc;--display:"Sora",system-ui,sans-serif;--text:"Inter",system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10131f;--panel:#1a1f33;--fg:#eef0f8;--mute:#a3a8c3;--line:#2c3350;--accent:#ffc533;--need:#ff9a6b;--need-soft:#3d2317;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#10131f;--panel:#1a1f33;--fg:#eef0f8;--mute:#a3a8c3;--line:#2c3350;--accent:#ffc533;--need:#ff9a6b;--need-soft:#3d2317;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--text);line-height:1.5;padding-block:20px 60px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+main{max-width:60rem;margin:0 auto;display:grid;gap:26px}
+h1,h2,h3{font-family:var(--display);margin:0;letter-spacing:-.02em;text-wrap:balance}
+h1{font-size:1.7rem}h2{font-size:1.2rem}h3{font-size:1rem}
+p{margin:0;max-width:68ch}
+.mute{color:var(--mute)}
+.note{background:var(--need-soft);border:1px solid var(--need);border-radius:8px;padding:10px 14px}
+.note b{color:var(--need)}
+.pair{display:grid;grid-template-columns:3fr 2fr;gap:14px}
+@media (max-width:640px){.pair{grid-template-columns:minmax(0,1fr)}}
+figure{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px;display:grid;gap:8px;min-width:0}
+figure img{width:100%;border-radius:6px;display:block}
+figcaption{font-size:.85rem;color:var(--mute)}
+figcaption a{color:var(--fg)}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.9rem}
+th,td{text-align:left;padding:8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.75rem;text-transform:uppercase;letter-spacing:.04em;color:var(--mute)}
+.st{font-size:.75rem;font-weight:600;padding:2px 8px;border-radius:999px;background:var(--line);white-space:nowrap}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px;display:grid;gap:8px}
+pre{white-space:pre-wrap;font:400 .88rem/1.5 var(--text);background:var(--bg);border-radius:6px;padding:10px;margin:0}
+mark{background:var(--need-soft);color:var(--need);padding:0 3px;border-radius:3px}
+</style>
+<main>
+  <header style="display:grid;gap:8px">
+    <h1>Праздничные продажи</h1>
+    <p class="mute">«Подари навык» и бесплатный Winter Break Challenge. Здесь всё, что готово на сейчас.</p>
+    <p class="note"><b>Самих постов ещё нет.</b> Готовы сертификат, чек-лист, план постов и тексты. Картинки и ролики соберу, когда вы назовёте скидку и одобрите схему подарка.</p>
+  </header>
+
+  <section style="display:grid;gap:12px">
+    <h2>Готово: сертификат и чек-лист</h2>
+    <div class="pair">
+      <figure><img src="cert.jpg" alt="Сертификат «This gift is a skill»: поля для имени ребёнка и от кого, шесть проектов, выбор тарифа"><figcaption>Сертификат «Подари навык». Серёжа отправляет его в личку после покупки, имя вписывается от руки или в PDF. <a href="gift-certificate.pdf">PDF</a></figcaption></figure>
+      <figure><img src="challenge.jpg" alt="Чек-лист Winter Break Challenge: 10 проектов с квадратиками для отметки"><figcaption>Чек-лист челленджа, отдаём в личку за слово «CHALLENGE». <a href="winter-break-challenge.pdf">PDF</a></figcaption></figure>
+    </div>
+  </section>
+
+  <section style="display:grid;gap:12px">
+    <h2>План продающих постов</h2>
+    <div class="tbl"><table>
+      <tr><th>Пост</th><th>Дата</th><th>Формат</th><th>Хук</th><th>Слово</th><th>Статус</th></tr>
+      <tr><td>H1</td><td>Пт 27.11, Чёрная пятница</td><td>карусель</td><td lang="en">Gift a skill, not another toy</td><td>GIFT</td><td><span class="st">ждёт скидку</span></td></tr>
+      <tr><td>H2</td><td>Сб 28.11</td><td>ролик</td><td lang="en">The gift they open, then use all winter</td><td>GIFT</td><td><span class="st">текст позже</span></td></tr>
+      <tr><td>H3</td><td>Пн 30.11, Киберпонедельник</td><td>карусель</td><td lang="en">Cyber Monday: last day</td><td>GIFT</td><td><span class="st">ждёт скидку</span></td></tr>
+      <tr><td>H4</td><td>Вт 01.12</td><td>карусель</td><td lang="en">Winter break is 2 weeks. Here are 10 projects.</td><td>CHALLENGE</td><td><span class="st">текст готов</span></td></tr>
+      <tr><td>H5</td><td>~15.12</td><td>ролик</td><td lang="en">Still need a gift? This one fits in an email.</td><td>GIFT</td><td><span class="st">текст позже</span></td></tr>
+      <tr><td>H6</td><td>21.12</td><td>ролик</td><td lang="en">Day 1 of the Winter Break Challenge</td><td>CHALLENGE</td><td><span class="st">текст позже</span></td></tr>
+    </table></div>
+  </section>
+
+  <section style="display:grid;gap:12px">
+    <h2>Тексты</h2>
+    <div class="card">
+      <h3>H1 · Чёрная пятница · карусель</h3>
+      <p class="mute">Слайды: 1) Gift a skill, not another toy. 2) Что сделает ребёнок: игра, мультфильм, песня, сайт, стикеры, озвучка. 3) Под ёлку: сертификат с его именем. 4) Цена и скидка. 5) Comment “GIFT”.</p>
+      <pre lang="en">Gift a skill this year, not another toy.
+
+Our AI course is something your kid makes with you: a game, a cartoon, a song, a website, a sticker pack, a voiceover in their own voice. Lessons take 6 to 20 minutes, and each one ends with something finished to show the family.
+
+Under the tree goes a certificate with their name on it.
+
+<mark>[скидка Black Friday]</mark>
+
+Comment "GIFT" and I'll send you how it works.
+
+#blackfriday #giftideas #giftsforkids #aiforkids</pre>
+    </div>
+    <div class="card">
+      <h3>H4 · анонс челленджа · карусель</h3>
+      <p class="mute">Слайды: 1) Winter break is 2 weeks. Here are 10 projects. 2–6) по два проекта на слайд. 7) Comment “CHALLENGE”.</p>
+      <pre lang="en">Winter break is about two weeks. Here are 10 projects to make with your kid, one a day, about 20 minutes each.
+
+A game, a holiday card from their drawing, a song for grandma, a bedtime story where they pick what happens, a comic about the pet, and five more. Any AI tool on your own account works.
+
+Comment "CHALLENGE" and I'll send you the printable checklist. It's free.
+
+#winterbreak #kidsactivities #familytime #aiforkids</pre>
+    </div>
+    <div class="card">
+      <h3>Ответ в личку на «GIFT»</h3>
+      <pre lang="en">Hi! Here's how the gift works:
+
+1. Pick the plan at makeshowlab.com: Creator $197, or Creator + Homework $297 (Anna checks homework the same day).
+2. Send us your kid's first name here.
+3. We send you a certificate with their name to print and put under the tree.
+
+The login comes to your email right away. Questions? Just reply here.</pre>
+    </div>
+    <div class="card">
+      <h3>Ответ в личку на «CHALLENGE»</h3>
+      <pre lang="en">Hi! Here's the Winter Break Challenge: 10 projects, about 20 minutes each, one a day. Print it and tick them off.
+
+If you want lessons that walk you through it, the first lesson of our course is free, no card: makeshowlab.com</pre>
+    </div>
+  </section>
+
+  <section class="note" style="display:grid;gap:6px">
+    <p><b>Нужно от вас для поста на Чёрную пятницу (27.11):</b></p>
+    <p>1. Скидка: сколько, на какой тариф, промокод, до какого числа и часа.</p>
+    <p>2. Схема подарка: покупка на сайте, потом сертификат от Серёжи в личку. Подходит?</p>
+  </section>
+</main>
