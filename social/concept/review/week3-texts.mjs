@@ -4,7 +4,7 @@
 // Spoken keywords are lower case. Facts: social/brand/facts.md; general advice is marked as such in `note`.
 // scenes: [on-screen line, picture idea] for scenes 2-4 of the reel; end: the closing card line.
 export const W3 = [
-  { n: 37, slug: 'homework-quiz', grid: 'A1', kw: 'LESSON', format: 'Reel', theme: 'c',
+  { n: 37, slug: 'homework-quiz', grid: 'A1', kw: 'LESSON', format: 'Reel', theme: 'n',
     tile: 'Don’t let AI do<br>the homework.<br><mark>Make it quiz</mark><br><mark>your kid.</mark>',
     tileVis: 'chat: kid “Do my math homework.” / prompt card “Don’t give me the answer. Ask me questions until I get it.”',
     scenes: [['Don’t let it<br><mark>answer.</mark>', 'say:Do my homework for me.'], ['Let it<br><mark>ask.</mark>', 'say-me:Ask me questions until I get it.'], ['Your kid<br><mark>does the thinking.</mark>', 'icon:brain']],
@@ -19,7 +19,7 @@ Comment "LESSON" and I'll send you the free first lesson of our AI course for ki
 
 #aiforkids #homeworkhelp #parentingtips #kidsandai` },
 
-  { n: 38, slug: 'ai-makes-things-up', grid: 'D12', kw: 'RULES', format: 'Reel', theme: 'k',
+  { n: 38, slug: 'ai-makes-things-up', grid: 'D12', kw: 'RULES', format: 'Reel', theme: 'n',
     tile: 'Why does AI<br><mark>make things up?</mark>',
     tileVis: 'bubble: “Penguins live at the North Pole!” with a red ✕ stamp; note “sounds sure”',
     scenes: [['It guesses<br><mark>the next word.</mark>', 'icon:dice-5'], ['A good guess<br><mark>sounds sure.</mark>', 'say:Penguins live at the North Pole!'], ['Too smooth?<br><mark>Check it.</mark>', 'icon:search-check']],
@@ -34,22 +34,22 @@ Comment "RULES" and I'll send you our 5 AI house rules for the fridge.
 
 #aiforkids #kidsandai #aisafety #parentingtips` },
 
-  { n: 39, slug: 'gifts-not-toys', grid: 'F18', kw: 'GIFT', format: 'Reel', theme: 'y',
+  { n: 39, slug: 'gifts-not-toys', grid: 'F18', kw: 'GIFT', format: 'Reel', theme: 'm',
     tile: 'Gifts that<br><mark>aren’t toys.</mark>',
     tileVis: 'Linda photo ring + quote “something more meaningful than another toy”',
-    scenes: [['Made by them.<br><mark>Not bought.</mark>', 'img:landing/step-show.jpg'], ['A song.<br><mark>A cartoon. A game.</mark>', 'icon:gift'], ['“More meaningful<br><mark>than another toy.”</mark>', 'ring:linda']],
+    scenes: [['Made by them.<br><mark>Not bought.</mark>', 'img:landing/step-show.jpg'], ['A song. A cartoon.<br><mark>A game.</mark>', 'icon:gift'], ['Linda wanted<br><mark>more than a toy.</mark>', 'ring:linda']],
     end: 'A gift<br><mark>they made.</mark>',
     voice: ['For the kid who has everything.', 'A gift they make, instead of one you buy.', 'A song, a cartoon, a game, for grandma.', 'Linda wanted more than another toy.', 'Free first lesson? Type gift below.'],
     note: 'Linda: review on the site, early access, got the course free. Projects from facts.md.',
     caption: `Black Friday idea for the kid who has everything: a gift they make instead of one you buy.
 
-A song from their own words, a cartoon from their drawing, a game the family can play. Linda, a grandmother from our early-access group, wanted to give her grandson "something more meaningful than another toy." Her family got the course free and shared honest feedback.
+It could be a song in their own words, or their drawing turned into a cartoon. Linda, a grandmother from our early-access group, wanted to give her grandson "something more meaningful than another toy." Her family got the course free and shared honest feedback.
 
 Comment "GIFT" and I'll send you the free first lesson.
 
 #giftideas #blackfriday #giftsforkids #aiforkids` },
 
-  { n: 40, slug: 'rainy-saturday', grid: 'E15', kw: 'GAME', format: 'Reel', theme: 'm',
+  { n: 40, slug: 'rainy-saturday', grid: 'E15', kw: 'GAME', format: 'Reel', theme: 'y',
     tile: 'Rainy Saturday.<br>Bored kid.<br><mark>A 20-minute plan.</mark>',
     tileVis: 'three pills: 1 idea · 2 build · 3 play',
     scenes: [['1. Your kid<br><mark>picks an idea.</mark>', 'say:a dragon who bakes cookies'], ['2. They talk.<br><mark>You type.</mark>', 'img:landing/step-make.jpg'], ['3. Play it<br><mark>together.</mark>', 'img:landing/together-game.jpg']],
@@ -68,14 +68,14 @@ Comment "GAME" and I'll send you the link.
 
 #rainydayactivities #kidsactivities #familytime #aiforkids` },
 
-  { n: 41, slug: 'three-questions', grid: 'A3', kw: 'RULES', format: 'Carousel', theme: 'c',
+  { n: 41, slug: 'three-questions', grid: 'A3', kw: 'RULES', format: 'Carousel', theme: 'm',
     tile: '3 questions<br>before your kid<br><mark>opens ChatGPT.</mark>',
     slides: [
       ['3 questions before your kid opens ChatGPT', 'Ask them out loud, together.'],
-      ['1. Whose account is it?', 'Yours. Your kid never signs up anywhere alone.'],
+      ['1. Whose account<br>is it?', 'Yours. Your kid never signs up anywhere alone.'],
       ['2. What stays out?', 'Full name with school, home address, passwords, photos of their face.'],
-      ['3. What if it says something wrong?', 'Stop, show me, and we check it together.'],
-      ['Three answers, one evening', 'Then let them start, with you next to them.'],
+      ['3. What if it says<br>something wrong?', 'Stop, show me, and we check it together.'],
+      ['Three answers,<br>one evening', 'Then let them start, with you next to them.'],
       ['Comment “RULES”', 'I’ll send you all 5 rules for the fridge.']],
     note: 'Rules 1, 3, 5 of the fridge card (facts.md safety + general advice).',
     caption: `Before your kid opens ChatGPT, ask these 3 questions together.
@@ -90,15 +90,15 @@ Comment "RULES" and I'll send you all 5 rules for the fridge.
 
 #chatgptforkids #aisafety #kidsandai #parentingtips` },
 
-  { n: 42, slug: 'house-rules', grid: 'C8', kw: 'RULES', format: 'Carousel', theme: 'k',
+  { n: 42, slug: 'house-rules', grid: 'C8', kw: 'RULES', format: 'Carousel', theme: 'y',
     tile: '5 AI rules<br><mark>for the fridge.</mark>',
     slides: [
       ['5 AI rules for the fridge', 'Read them together. Both of you agree.'],
       ['1. The account is yours', 'Every AI tool runs on the parent’s account.'],
-      ['2. No chats with strangers', 'In any app.'],
-      ['3. Some things stay out of AI', 'Full name with school, home address, passwords, face photos.'],
-      ['4. Links get a second look', 'Looks strange? Don’t click. Ask first.'],
-      ['5. Too perfect? Check it', 'A picture, a video or a text can be fake.'],
+      ['2. No chats<br>with strangers', 'In any app.'],
+      ['3. Some things<br>stay out of AI', 'Full name with school, home address, passwords, face photos.'],
+      ['4. Links get<br>a second look', 'Looks strange? Don’t click. Ask first.'],
+      ['5. Too perfect?<br>Check it', 'A picture, a video or a text can be fake.'],
       ['Comment “RULES”', 'I’ll send you the card to print.']],
     note: 'The RULES card (review/rules-card.mjs) as a carousel.',
     caption: `5 AI rules for the fridge. Read them with your kid tonight.
@@ -113,10 +113,10 @@ Save this, or comment "RULES" and I'll send you the card to print.
 
 #aisafety #onlinesafety #kidsandai #parentingtips` },
 
-  { n: 43, slug: 'watching-or-making', grid: 'B6', kw: 'GAME', format: 'Reel', theme: 'n',
+  { n: 43, slug: 'watching-or-making', grid: 'B6', kw: 'GAME', format: 'Reel', theme: 'm',
     tile: 'Watching<br>or making?<br><mark>Tell in 10 seconds.</mark>',
     tileVis: 'two cards: “watched 40 videos” ✕ / “made a game” ✓',
-    scenes: [['Ask one<br><mark>question.</mark>', 'say-me:What did you make?'], ['Nothing?<br><mark>That was watching.</mark>', 'icon:tv'], ['Something to show?<br><mark>That was making.</mark>', 'img:landing/step-show.jpg']],
+    scenes: [['Ask one<br><mark>question.</mark>', 'say-me:What did you make?'], ['Nothing?<br><mark>That was watching.</mark>', 'icon:tv'], ['Something<br>to show?<br><mark>That was making.</mark>', 'img:landing/step-show.jpg']],
     end: 'What did<br><mark>you make?</mark>',
     voice: ['Watching or making? Here\'s a ten-second test.', 'Ask one question: what did you make?', 'If the answer is nothing, it was watching.', 'If they show you something, it was making.', 'Want a first thing to make? Type game.'],
     note: 'General parenting advice; brand line from facts.md.',
@@ -128,7 +128,7 @@ Comment "GAME" and I'll send you the free first lesson, where your kid makes a g
 
 #screentime #parentingtips #kidsandai #aiforkids` },
 
-  { n: 44, slug: 'one-habit', grid: 'A2', kw: 'LESSON', format: 'Reel', theme: 'm',
+  { n: 44, slug: 'one-habit', grid: 'A2', kw: 'LESSON', format: 'Reel', theme: 'n',
     tile: 'Cheating with AI<br>or building with it?<br><mark>One habit.</mark>',
     tileVis: 'three steps: idea (kid) → work (AI) → fix (kid)',
     scenes: [['The idea is<br><mark>your kid’s.</mark>', 'icon:lightbulb'], ['AI does<br><mark>the work.</mark>', 'icon:bot'], ['Your kid checks<br><mark>and fixes it.</mark>', 'icon:pencil']],
@@ -143,7 +143,7 @@ Comment "LESSON" and I'll send you the free first lesson of our AI course for ki
 
 #aiforkids #kidsandai #parentingtips #learning` },
 
-  { n: 45, slug: 'explain-it-back', grid: 'A4', kw: 'LESSON', format: 'Reel', theme: 'c',
+  { n: 45, slug: 'explain-it-back', grid: 'A4', kw: 'LESSON', format: 'Reel', theme: 'n',
     tile: 'AI can write<br>the homework.<br><mark>It can’t explain it</mark><br><mark>for your kid.</mark>',
     tileVis: 'speech bubble from parent: “Explain it to me in your own words.”',
     scenes: [['Ask your kid<br><mark>to explain it.</mark>', 'say-me:Explain it to me in your own words.'], ['Can they?<br><mark>They learned it.</mark>', 'icon:check'], ['Can’t?<br><mark>Go back together.</mark>', 'icon:rotate-ccw']],
@@ -158,7 +158,7 @@ Comment "LESSON" and I'll send you the free first lesson of our AI course for ki
 
 #homeworkhelp #parentingtips #kidsandai #aiforkids` },
 
-  { n: 46, slug: 'three-ways', grid: 'D13', kw: 'LESSON', format: 'Reel', theme: 'k',
+  { n: 46, slug: 'three-ways', grid: 'D13', kw: 'LESSON', format: 'Reel', theme: 'y',
     tile: 'Ask AI<br>the same question<br><mark>3 ways.</mark>',
     tileVis: 'three bubbles: “like I’m 6” / “like I’m 12” / “like my grandma”',
     scenes: [['Explain rain<br><mark>like I’m 6.</mark>', 'say:Explain rain like I’m 6.'], ['Now<br><mark>like I’m 12.</mark>', 'say:Now like I’m 12.'], ['Now like<br><mark>my grandma.</mark>', 'say:Now like my grandma.']],

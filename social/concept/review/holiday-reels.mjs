@@ -7,7 +7,7 @@ import { TILESH, tileHtmlH, CERT } from './holiday-art.mjs';
 
 const A = (type, beat, rev) => (rev ? `${on(type, beat)} data-reveal` : on(type, beat));
 const h1 = (html, top = 470, size = 92) => `<h1 class="t"${an('words', 0.15)} style="top:${top}px;font-size:${size}px">${html}</h1>`;
-const BADGE = [C.yellow, C.mint, C.coral];
+const BADGE = [C.yellow, C.mint, C.white];
 // one picture per scene (y 820-1440, x 64-850)
 const vis = (spec, i) => (r) => {
   const [kind, ...rest] = spec.split(':'); const arg = rest.join(':');
@@ -19,7 +19,7 @@ const vis = (spec, i) => (r) => {
 const FRAMES = ['f22', 'f14'];
 const flat = (theme, frame, line, v, reveal) => ({ theme, beats: 9, html: `${cartoonBg(frame, 0.78)}${plate()}${h1(line)}${v(reveal)}` });
 const cover = (n) => ({ theme: TILESH[n].theme, beats: 9, html: `${cartoonBg('f22', 1)}<div${an('settle', 0)} style="position:absolute;z-index:2;left:64px;top:250px;width:842px;height:1123px"><div style="position:absolute;left:0;top:0;width:1080px;height:1440px;overflow:hidden;transform:scale(.78);transform-origin:0 0" class="tile ${TILESH[n].theme}">${tileHtmlH(n, false)}</div></div>` });
-const alt = (t) => (t === 'k' ? 'c' : 'k');
+const alt = (t) => ({ y: 'm', m: 'n', n: 'y' })[t] || 'y';   // owner 26 Nov: only teal, yellow, blue
 const reel = (p, k) => [cover(p.n), ...p.scenes.map(([line, spec], i) => ({ ...flat(i === 1 ? alt(p.theme) : p.theme, FRAMES[(k + i) % FRAMES.length], line, vis(spec, i), i === 2),
   wipe: ['450,800', '300,700', '450,700'][i], swish: i === 2 })), { ...endScene(p.end), beats: 8 }];   // the closing line needs one more beat on the card
 
@@ -41,7 +41,7 @@ const SB = { 47: [null, ['gamepad-2', C.mint], ['users', C.yellow], 'cert', ['wa
   49: [null, ['mail', C.yellow], 'cert', ['sparkles', C.mint], ['wallet', C.yellow], ['message-circle', C.mint]] };
 const extra = (n, i) => { const b = SB[n][i]; return !b ? '' : b === 'cert' ? certSlide : badge(...b); };
 const carousel = (p) => [{ theme: p.theme, html: tileHtmlH(p.n) },
-  ...p.slides.slice(1).map(([h, b], i) => slide(['k', 'c', 'k', 'n', 'm'][i % 5], FRAMES[(i + p.n) % FRAMES.length], HEAD[p.n][i + 1] || h, BODY[p.n][i + 1] || b, extra(p.n, i + 1)))];
+  ...p.slides.slice(1).map(([h, b], i) => slide([alt(p.theme), alt(alt(p.theme)), p.theme][i % 3], FRAMES[(i + p.n) % FRAMES.length], HEAD[p.n][i + 1] || h, BODY[p.n][i + 1] || b, extra(p.n, i + 1)))];
 
 const RUB = { c: 'lab', k: 'lab', y: 'show', m: 'start', n: 'make' };
 export const idOfH = (n) => `${n}-${H.find((p) => p.n === n).slug}`;

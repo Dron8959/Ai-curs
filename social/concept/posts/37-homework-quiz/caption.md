@@ -1,6 +1,6 @@
 ---
 post: 37
-rubric: lab
+rubric: make
 type: reel
 network: instagram
 ai_generated: true

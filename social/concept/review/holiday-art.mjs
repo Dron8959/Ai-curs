@@ -15,9 +15,9 @@ export const TILESH = {
     ${cert(90, 580, 800, -3)}${badge('gift', 720, 1000, 230, C.coral, 8)}` },
   48: { theme: 'm', html: `${top('')}${h1(P[48].tile, 190, 96)}
     ${cert(90, 560, 800, -2)}${badge('snowflake', 720, 1000, 230, '#FFF4DC', 8)}` },
-  49: { theme: 'n', html: `${top('')}${h1(P[49].tile, 190, 96)}
+  49: { theme: 'y', html: `${top('')}${h1(P[49].tile, 190, 96)}
     ${cert(170, 720, 760, 3)}${badge('mail', 80, 1020, 240, C.yellow, -8)}` },
-  50: { theme: 'c', html: `${top('')}${h1('Still need a gift?<br><mark>No shipping needed.</mark>', 190, 84)}
+  50: { theme: 'm', html: `${top('')}${h1('Still need a gift?<br><mark>No shipping needed.</mark>', 190, 84)}
     ${cert(90, 600, 780, -2)}${badge('package-x', 720, 1020, 230, C.yellow, 8)}` },
 };
 export const BGH = { 47: ['f22', .7], 48: ['f14', .7], 49: ['f22', .7], 50: ['f14', .7] };

@@ -38,7 +38,7 @@ Comment "GIFT" and I'll send you how it works.
 
 #giftsforkids #christmasgifts #giftideas #aiforkids` },
 
-  { n: 49, slug: 'gift-in-an-email', grid: 'H3', date: 'Mon 30 Nov (Cyber Monday)', kw: 'GIFT', format: 'Carousel', theme: 'n',
+  { n: 49, slug: 'gift-in-an-email', grid: 'H3', date: 'Mon 30 Nov (Cyber Monday)', kw: 'GIFT', format: 'Carousel', theme: 'y',
     tile: 'Still shopping?<br><mark>This gift fits</mark><br><mark>in an email.</mark>',
     slides: [
       ['Still shopping? This gift fits in an email', 'No shipping, no waiting.'],
@@ -57,7 +57,7 @@ Comment "GIFT" and I'll send you how it works.
 
 #cybermonday #giftideas #giftsforkids #aiforkids` },
 
-  { n: 50, slug: 'last-minute-gift', grid: 'H5', date: 'about 15 Dec', kw: 'GIFT', format: 'Reel', theme: 'c',
+  { n: 50, slug: 'last-minute-gift', grid: 'H5', date: 'about 15 Dec', kw: 'GIFT', format: 'Reel', theme: 'm',
     tile: 'Still need a gift?<br><mark>No shipping needed.</mark>',
     scenes: [['No shipping.<br><mark>No waiting.</mark>', 'icon:mail'], ['The login comes<br><mark>by email.</mark>', 'icon:laptop'], ['Print the<br><mark>certificate.</mark>', 'img:certificate']],
     end: 'Ready by<br><mark>tonight.</mark>',

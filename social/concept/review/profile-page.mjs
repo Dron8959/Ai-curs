@@ -27,14 +27,12 @@ const src = (n, f) => {
 const body = (md) => md.replace(/^---[\s\S]*?---\n/, '').trim();
 
 // [date, time, post, why] — the proposal; the owner says yes or no per post
-export const PLAN = [
+export const PLAN = [   // owner 26 Nov: holiday posts first, tied to the dates and early; then the 80/20 pack
   ['2026-11-27', '08:00', 47, 'Чёрная пятница: подарок'], ['2026-11-27', '12:30', 39, 'подарки, а не игрушки'], ['2026-11-27', '19:30', 37, 'домашка'],
   ['2026-11-28', '08:00', 40, 'суббота дома'], ['2026-11-28', '12:30', 48, 'подарок на всю зиму'], ['2026-11-28', '19:30', 38, 'почему ИИ выдумывает'],
-  ['2026-11-29', '08:00', 42, '5 правил на холодильник'], ['2026-11-29', '12:30', 27, 'песня для бабушки'], ['2026-11-29', '19:30', 43, 'смотрит или делает'],
-  ['2026-11-30', '08:00', 49, 'Киберпонедельник: подарок без доставки'], ['2026-11-30', '12:30', 44, 'одна привычка'], ['2026-11-30', '19:30', 30, 'цены'],
-  ['2026-12-01', '08:00', 41, '3 вопроса до ChatGPT'], ['2026-12-01', '12:30', 21, 'стикеры: идея подарка'], ['2026-12-01', '19:30', 45, 'объясни своими словами'],
-  ['2026-12-02', '08:00', 46, 'игра: 3 способа'], ['2026-12-02', '12:30', 22, 'живой ли ИИ'], ['2026-12-02', '19:30', 24, 'чатбот и школа'],
-  ['2026-12-03', '08:00', 19, 'ребёнку 6 лет'], ['2026-12-03', '12:30', 29, 'рисунок в мультфильм'], ['2026-12-03', '19:30', 28, 'человек или ИИ'],
+  ['2026-11-29', '08:00', 42, '5 правил на холодильник'], ['2026-11-29', '12:30', 43, 'смотрит или делает'], ['2026-11-29', '19:30', 44, 'одна привычка'],
+  ['2026-11-30', '08:00', 49, 'Киберпонедельник: подарок без доставки'], ['2026-11-30', '12:30', 41, '3 вопроса до ChatGPT'], ['2026-11-30', '19:30', 45, 'объясни своими словами'],
+  ['2026-12-01', '12:30', 46, 'игра: 3 способа'],
   ['2026-12-17', '12:30', 50, 'подарок в последний момент, без доставки'],
 ];
 const PUBLISHED = [15, 14, 13, 18, 11, 4, 10, 9, 6, 8, 7, 5, 2, 3, 1];   // already on the profile (newest first)
@@ -61,7 +59,14 @@ const html = `<title>Профиль Instagram</title>
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#000000;--fg:#f5f5f5;--mute:#a8a8a8;--line:#262626;--chip:#262626;--yes:#5fd39c;--yes-soft:#173a2b;--no:#ff9a6b;--no-soft:#3d2317;--accent:#4cb5f9;--sheet:#121212;--shade:rgba(0,0,0,.7);color-scheme:dark}}
 :root[data-theme="dark"]{--bg:#000000;--fg:#f5f5f5;--mute:#a8a8a8;--line:#262626;--chip:#262626;--yes:#5fd39c;--yes-soft:#173a2b;--no:#ff9a6b;--no-soft:#3d2317;--accent:#4cb5f9;--sheet:#121212;--shade:rgba(0,0,0,.7);color-scheme:dark}
 body{background:var(--bg);color:var(--fg);font:14px/1.4 var(--ui);padding-block:0 40px}
-.phone{max-width:430px;margin:0 auto}
+.phone{max-width:430px;margin:0 auto;background:var(--bg)}
+.status{display:flex;justify-content:space-between;padding:10px 22px 4px;font-weight:600;font-size:14px}
+@media (min-width:520px){body{background:#d9d6cf;padding-block:24px}
+  .phone{width:390px;height:844px;border:12px solid #111;border-radius:52px;overflow-y:auto;box-shadow:0 20px 50px rgba(0,0,0,.35);scrollbar-width:none;position:relative}
+  .phone::-webkit-scrollbar{display:none}
+  .sheet{position:fixed}}
+@media (min-width:520px) and (prefers-color-scheme:dark){:root:not([data-theme="light"]) body{background:#1c1c1e}}
+:root[data-theme="dark"] body{background:#1c1c1e}
 .bar{display:flex;align-items:center;justify-content:center;gap:6px;height:44px;font-weight:700;font-size:16px;border-bottom:1px solid var(--line)}
 .head{display:grid;grid-template-columns:86px minmax(0,1fr);gap:18px;align-items:center;padding:14px max(16px,env(safe-area-inset-right,0px)) 8px max(16px,env(safe-area-inset-left,0px))}
 .ava{width:86px;height:86px;border-radius:50%;background:var(--chip);overflow:hidden;border:1px solid var(--line)}
@@ -111,6 +116,7 @@ textarea{display:block;width:calc(100% - 28px);margin:10px 14px 0;box-sizing:bor
 button:focus-visible,textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
 </style>
 <div class="phone">
+  <div class="status"><span>9:41</span><span>●●● 5G ▮</span></div>
   <div class="bar">make_showlab</div>
   <div class="head"><div class="ava"><img src="m/avatar.png" alt="аватар"></div>
     <div class="stats"><div><b id="cnt">0</b><span>posts</span></div><div><b>1,274</b><span>followers</span></div><div><b>—</b><span>following</span></div></div></div>

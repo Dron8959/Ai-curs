@@ -1,6 +1,6 @@
 ---
 post: 49
-rubric: make
+rubric: show
 type: carousel
 network: instagram
 ai_generated: false

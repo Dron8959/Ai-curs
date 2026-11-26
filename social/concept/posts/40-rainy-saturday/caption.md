@@ -1,11 +1,11 @@
 ---
 post: 40
-rubric: start
+rubric: show
 type: reel
 network: instagram
 ai_generated: true
 ---
-Rainy Saturday, bored kid, one laptop. Here's a 20-minute plan.
+Rainy Saturday, and your kid is bored. Here's a 20-minute plan.
 
 1. Your kid picks an idea for a game. Anything: a dragon who bakes cookies works.
 2. They talk, you type, and the AI builds it.

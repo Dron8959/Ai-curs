@@ -1,6 +1,6 @@
 ---
 post: 41
-rubric: lab
+rubric: start
 type: carousel
 network: instagram
 ai_generated: false
