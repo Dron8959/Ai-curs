@@ -1,6 +1,6 @@
 ---
 post: 39
-rubric: start
+rubric: show
 type: reel
 network: instagram
 ai_generated: true
