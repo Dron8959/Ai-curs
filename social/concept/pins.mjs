@@ -41,7 +41,7 @@ export const boards = {
 // every pin (head() below): a big mark plus the Make Show Lab wordmark, and the layout is scaled into the rest.
 const brand = () => '';
 const HEAD = 190, S = 0.93;                     // band height; layout scale (its y=150 lands right under the band)
-const SERIES = { ask: 'ASK AI', safe: 'SAFE AI', kid: 'BY A KID', how: 'HOW IT WORKS', free: 'FREE LESSON' };   // SERIES.md in this folder's parent
+const SERIES = { ask: 'ASK AI', safe: 'SAFE AI', kid: 'BY A KID', how: 'HOW IT WORKS', free: 'FREE LESSON', ideas: 'IDEAS', xmas: 'CHRISTMAS', gifts: 'GIFT IDEAS', learn: 'LEARNING' };   // SERIES.md in this folder's parent
 const head = (series) => `<div style="position:absolute;z-index:20;left:44px;top:34px;display:flex;align-items:center;gap:22px">
   <img src="${A(`${LOGO}/logo/icon.svg`)}" style="width:150px;height:150px;display:block" alt="">
   <div><span style="display:flex;align-items:center;width:max-content;height:90px;padding:0 30px;border:5px solid #141A33;border-radius:999px;background:#fff;box-shadow:6px 6px 0 #141A33">
@@ -968,6 +968,271 @@ pins.push(
     ${strip([[`${M}/landing/cartoon-girl.jpg`, '30% 40%', 'her character'], [`${M}/landing/cartoon-friends.jpg`, '50% 40%', 'her story'], [`${M}/landing/cartoon-cat.jpg`, '50% 35%', 'her cat']], 560)}` },
 );
 
+// ---- batch 6 (26.11): broad parent searches, not only "AI for kids" (the account got 1 impression in 30 days:
+// our AI phrases are searched too little). A pin answers a big everyday search (things to do, Christmas, gifts, drawing,
+// family, school) and is useful on its own; making something with AI is one item of the list, marked, and the course
+// stays in the footer. Ideas in the lists are general; only the marked item is about the course (facts.md).
+const ideas = (items, t, h, { cols = 2, size = 36, hi = [], rot = -1, gap = 22 } = {}) => card({ l: 56, t, w: 888, h, rot, inner: `<div style="padding:40px 38px 0;display:grid;grid-template-columns:repeat(${cols},1fr);gap:${gap}px 26px">${
+  items.map((x, i) => `<div style="display:flex;gap:14px;align-items:flex-start;${hi.includes(i) ? `margin:-8px -10px;padding:8px 10px;border-radius:14px;background:${C.yellow}` : ''}"><b style="flex:none;min-width:44px;font:800 ${Math.round(size * 1.15)}px/1.1 Sora;color:${hi.includes(i) ? '#141A33' : C.coral}">${i + 1}</b><span style="font:${hi.includes(i) ? 800 : 700} ${Math.round(size * 1.15)}px/1.12 Urbanist;color:#141A33">${x}</span></div>`).join('')}</div>` });
+const wordGrid = (words, t, h, { cols = 3, rot = 1, hi = -1 } = {}) => card({ l: 56, t, w: 888, h, rot, cls: 'paper', inner: `<div style="padding:36px 32px;display:grid;grid-template-columns:repeat(${cols},1fr);gap:16px">${
+  words.map((w, i) => `<span style="display:grid;place-items:center;min-height:104px;padding:8px 10px;border:4px solid #141A33;border-radius:16px;background:${i === hi ? C.yellow : ['#fff', '#FFF4DC'][i % 2]};text-align:center;font:800 33px/1.08 Urbanist;color:#141A33">${w}</span>`).join('')}</div>` });
+const aiTag = (l, t, rot = 4) => pill('★ made with AI', l, t, rot, 'dark', 'z-index:9;height:56px;font-size:24px');
+
+pins.push(
+  { file: 'indoor-activities-for-kids', n: 69, board: 'activities', anchor: 'free', variant: 'список 14', ai: false,
+    phrase: 'indoor activities for kids',
+    title: 'Indoor Activities for Kids | 14 Easy Ideas for Cold or Rainy Days | Ages 6-14',
+    text: 'Indoor activities for kids for cold or rainy days: a blanket fort, a living room obstacle course, a puppet show, baking, and one screen idea that ends with a game they made.',
+    alt: 'Cream pin that reads "14 indoor activities for kids" with a numbered list from a blanket fort and an obstacle course to making your own video game.',
+    why: 'Широкий запрос. Полезный список без экрана, один пункт про курс (сделать свою игру).',
+    html: `${h('14 <mark>indoor</mark><br>activities for kids', { size: 104 })}
+    ${ideas(['Blanket fort', 'Obstacle course', 'Puppet show', 'Bake cookies', 'Scavenger hunt', 'Paper airplanes', 'Dance party', 'Board game day', 'Build a marble run', 'Write a comic', 'Indoor picnic', 'Make a video game', 'Shadow puppets', 'Story time tent'], 450, 880, { hi: [11] })}
+    ${aiTag(560, 1080)}` },
+
+  { file: 'boredom-busters-for-kids', n: 70, board: 'screen', anchor: 'free', variant: 'список 20', ai: false,
+    phrase: 'boredom busters for kids',
+    title: 'Boredom Busters for Kids | 20 Ideas for When They Say "I\'m Bored" | Ages 6-14',
+    text: 'Boredom busters for kids for the next "I\'m bored": 20 quick ideas, mostly screen free, from a paper boat race to a backwards day, plus one that turns screen time into a game they made.',
+    alt: 'Cream pin that reads "20 boredom busters for kids" with a grid of quick ideas such as paper boat race, backwards day and make a song.',
+    why: 'Широкий запрос «скучно». Сетка из 20 идей, одна про курс (песня из своих слов).',
+    html: `${h('20 boredom<br><mark>busters</mark> for kids', { size: 104 })}
+    ${p('For the next "I\'m bored."', 430, 44, 'color:#141A33;font-weight:800')}
+    ${wordGrid(['Paper boat race', 'Backwards day', 'Build a fort', 'Draw a map', 'Sock puppets', 'Bake something', 'Yoga for kids', 'Cup tower', 'Make a song', 'Treasure hunt', 'Mini Olympics', 'Write a letter', 'Plant a seed', 'Magic tricks', 'Card house', 'Freeze dance', 'Shadow art', 'Ice painting', 'Fashion show', 'Joke contest'], 520, 800, { cols: 4, hi: 8 })}
+    ${aiTag(600, 1290)}` },
+
+  { file: 'christmas-activities-for-kids', n: 71, board: 'activities', anchor: 'free', variant: 'список 12', ai: true,
+    phrase: 'Christmas activities for kids',
+    title: 'Christmas Activities for Kids | 12 Ideas to Do at Home in December | Ages 6-14',
+    text: 'Christmas activities for kids at home: bake gingerbread, make paper snowflakes, write to Santa, have a cocoa movie night, and make a Christmas cartoon card for grandma.',
+    alt: 'Dark blue pin that reads "12 Christmas activities for kids" with a numbered list from gingerbread and paper snowflakes to a cartoon Christmas card for grandma.',
+    why: 'Сезон: декабрь. 12 идей, один пункт про курс (мультфильм-открытка бабушке).',
+    html: `${h('12 <mark>Christmas</mark><br>activities for kids', { size: 100 })}
+    ${ideas(['Bake gingerbread', 'Paper snowflakes', 'Letter to Santa', 'Cocoa movie night', 'Light walk', 'Ornament making', 'Christmas cartoon card for grandma', 'Cookie decorating', 'Carol karaoke', 'Wrap gifts together', 'Kindness advent', 'Read by the tree'], 450, 860, { hi: [6], size: 34 })}
+    ${aiTag(560, 1270)}
+    ${star(70, C.yellow, 'left:860px;top:330px')}` },
+
+  { file: 'christmas-crafts-for-kids', n: 72, board: 'activities', anchor: 'works', variant: 'было и стало', ai: true,
+    phrase: 'Christmas crafts for kids',
+    title: 'Christmas Crafts for Kids | 8 Easy Ideas Plus One Drawing That Comes to Life | Ages 6-14',
+    text: 'Christmas crafts for kids that are easy: salt dough ornaments, handprint reindeer, paper chains, pinecone trees, and one drawing that comes to life as a cartoon.',
+    alt: 'Dark blue pin that reads "Christmas crafts for kids" with a list of easy crafts and a kid\'s rainbow drawing next to its cartoon version.',
+    why: 'Сезон: поделки. Пример «рисунок ожил» — радуга 6-летнего (подтверждено Аней).',
+    html: `${h('Easy <mark>Christmas</mark><br>crafts for kids', { size: 104 })}
+    ${ideas(['Salt dough ornaments', 'Handprint reindeer', 'Paper chains', 'Pinecone trees', 'Popsicle stick stars', 'Felt garland', 'Cotton ball snowman', 'Paper plate wreath'], 450, 470, { size: 34, gap: 16 })}
+    ${card({ l: 56, t: 960, w: 340, h: 360, rot: -4, src: `${M}/works/rainbow-drawing.jpg`, cls: 'paper' })}
+    ${card({ l: 430, t: 960, w: 514, h: 360, rot: 3, src: `${M}/works/rainbow-cartoon.jpg`, pos: '50% 45%', z: 4 })}
+    ${pill('+1: the drawing comes to life', 330, 1290, -2, '', 'z-index:9')}` },
+
+  { file: 'winter-bucket-list-for-kids', n: 73, board: 'screen', anchor: 'free', variant: 'чек-лист 16', ai: false,
+    phrase: 'winter bucket list for kids',
+    title: 'Winter Bucket List for Kids | 16 Things to Do This Winter | Printable Checklist',
+    text: 'A winter bucket list for kids with 16 things to tick off: build a snowman, make hot cocoa, go sledding, read under a blanket, and record a song about snow in their own words.',
+    alt: 'Cream pin that reads "Winter bucket list for kids" with a printable checklist of 16 winter activities.',
+    why: 'Сохраняемая распечатка-чеклист. Один пункт про курс (песня своими словами).',
+    html: `${h('Winter <mark>bucket list</mark><br>for kids', { size: 94 })}
+    ${card({ l: 56, t: 440, w: 888, h: 880, rot: 1, cls: 'paper', inner: `<div style="padding:40px 40px;display:grid;grid-template-columns:1fr 1fr;gap:20px 24px">${['Build a snowman', 'Hot cocoa bar', 'Go sledding', 'Read under a blanket', 'Snow angels', 'Bird feeder', 'Bake cookies', 'Ice lanterns', 'Movie marathon', 'Puzzle night', 'Snowball target', 'Paper snowflakes', 'Winter nature walk', 'A song about snow', 'Pajama day', 'Stargazing'].map((t, i) =>
+      `<div style="display:flex;align-items:center;gap:14px"><i style="flex:none;width:44px;height:44px;border:4px solid #141A33;border-radius:10px;background:${i === 13 ? C.yellow : '#fff'}"></i><span style="font:${i === 13 ? 800 : 700} 33px/1.1 Urbanist;color:#141A33">${t}</span></div>`).join('')}</div>` })}
+    ${tape(420, 420, -3)}${aiTag(520, 1250)}` },
+
+  { file: 'advent-calendar-ideas-for-kids', n: 74, board: 'activities', anchor: 'free', variant: 'календарь 24', ai: false,
+    phrase: 'advent calendar ideas for kids',
+    title: 'Advent Calendar Ideas for Kids | 24 Activities Instead of Candy | Save for December',
+    text: 'Advent calendar ideas for kids that are activities, not candy: 24 small things to do together in December, from a cocoa date to a cartoon they make for grandma.',
+    alt: 'Dark blue pin that reads "24 advent calendar ideas for kids" with a calendar grid of 24 small activities, one marked made with AI.',
+    why: 'Сезон: адвент-календарь занятий. Сетка 24 дня, один день про курс.',
+    html: `${h('<mark>Advent calendar</mark><br>ideas for kids', { size: 100 })}
+    ${p('24 activities instead of candy.', 430, 44)}
+    <div style="position:absolute;z-index:3;left:56px;top:520px;width:888px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;transform:rotate(-1deg)">${['Cocoa date', 'Snowflakes', 'Write to Santa', 'Light walk', 'Bake cookies', 'Give a toy', 'Movie night', 'Ornament', 'Carols', 'Card for a teacher', 'Pajama day', 'Puzzle', 'Gingerbread', 'Cartoon for grandma', 'Kindness note', 'Fort night', 'Read aloud', 'Wrap gifts', 'Dance party', 'Snow walk', 'Photo booth', 'Thank-you notes', 'Family game', 'Open one gift'].map((t, i) =>
+      `<div style="min-height:118px;padding:10px;border:4px solid #141A33;border-radius:14px;background:${i === 13 ? C.yellow : '#FFF4DC'}"><b style="display:block;font:800 28px Sora;color:${C.coral}">${i + 1}</b><span style="display:block;margin-top:4px;font:800 24px/1.05 Urbanist;color:#141A33">${t}</span></div>`).join('')}</div>` },
+
+  { file: 'gifts-for-10-year-old-girl', n: 75, board: 'gifts', anchor: 'pricing', variant: 'список', ai: true,
+    phrase: 'gifts for 10 year old girl',
+    title: 'Gifts for 10 Year Old Girl | 10 Ideas She Will Actually Use | Christmas Gift Guide',
+    text: 'Gifts for 10 year old girl ideas she will actually use: a sketchbook and good markers, a journal with a lock, a craft kit, and a course where she makes a sticker pack of her own character.',
+    alt: 'Yellow pin that reads "Gifts for 10 year old girl" with a list of ten gift ideas and a sheet of stickers a 10-year-old made of her own character.',
+    why: 'Массовый подарочный запрос по возрасту. Камилле 10, стикерпак её (facts.md).',
+    html: `${h('Gifts for<br><mark>10 year old</mark> girl', { size: 108 })}
+    ${ideas(['Sketchbook + markers', 'Journal with a lock', 'Craft kit', 'Book series', 'Room lights', 'Her own sticker pack', 'Karaoke mic', 'Baking set', 'Puzzle', 'Day out with you'], 450, 600, { size: 34, hi: [5] })}
+    ${card({ l: 300, t: 1000, w: 644, h: 320, rot: 3, src: `${M}/landing/step-show.jpg`, pos: '58% 80.3%', zoom: 330, z: 4 })}
+    ${aiTag(70, 1110, -4)}` },
+
+  { file: 'gifts-for-10-year-old-boy', n: 76, board: 'gifts', anchor: 'pricing', variant: 'список', ai: true,
+    phrase: 'gifts for 10 year old boy',
+    title: 'Gifts for 10 Year Old Boy | 10 Ideas Beyond Another Toy | Christmas Gift Guide',
+    text: 'Gifts for 10 year old boy ideas beyond another toy: a build kit, a comic book series, a magic set, and a course where he makes his own video game and plays it with you.',
+    alt: 'Yellow pin that reads "Gifts for 10 year old boy" with a list of ten gift ideas and a pixel-art game a kid made.',
+    why: 'Массовый подарочный запрос по возрасту. Один пункт про курс (своя игра).',
+    html: `${h('Gifts for<br><mark>10 year old</mark> boy', { size: 108 })}
+    ${ideas(['Build kit', 'Comic book series', 'Magic set', 'His own video game', 'Science kit', 'Walkie-talkies', 'Sports gear', 'Board game', 'Model rocket', 'Day out with you'], 450, 600, { size: 34, hi: [3] })}
+    ${card({ l: 300, t: 1000, w: 644, h: 320, rot: 3, src: `${M}/landing/game.jpg`, cls: 'screen', z: 4 })}
+    ${aiTag(70, 1110, -4)}` },
+
+  { file: 'stocking-stuffers-for-kids', n: 77, board: 'gifts', anchor: 'works', variant: 'сетка', ai: false,
+    phrase: 'stocking stuffers for kids',
+    title: 'Stocking Stuffers for Kids | 16 Small Ideas Under $15 | Ages 6-14',
+    text: 'Stocking stuffers for kids that are small and fun: mini puzzles, fun socks, a flashlight, card games, stickers, and printed stickers of a character they designed themselves.',
+    alt: 'Cream pin that reads "Stocking stuffers for kids" with a grid of 16 small gift ideas.',
+    why: 'Сезон. «Under $15» относится к обычным мелочам, наш пункт — распечатанные стикеры своего персонажа.',
+    html: `${h('<mark>Stocking stuffers</mark><br>for kids', { size: 96 })}
+    ${p('16 small ideas.', 430, 44, 'color:#141A33;font-weight:800')}
+    ${wordGrid(['Mini puzzle', 'Fun socks', 'Flashlight', 'Card game', 'Bath bombs', 'Slime kit', 'Hair clips', 'Mini notebook', 'Yo-yo', 'Gel pens', 'Their own stickers', 'Lip balm', 'Bouncy ball', 'Hand warmers', 'Joke book', 'Keychain'], 520, 700, { cols: 4, hi: 10 })}
+    ${aiTag(560, 1180)}` },
+
+  { file: 'diy-gifts-kids-can-make', n: 78, board: 'gifts', anchor: 'families', variant: 'список + цитата', ai: false,
+    phrase: 'DIY gifts kids can make',
+    title: 'DIY Gifts Kids Can Make | 10 Ideas for Grandparents and Teachers | Christmas',
+    text: 'DIY gifts kids can make for grandparents and teachers: a handprint ornament, a coupon book, a photo calendar, a recipe card, and a song written in their own words.',
+    note: 'Susan is an early-access tester. She received the course free and shared honest feedback.',
+    alt: 'Yellow pin that reads "DIY gifts kids can make" with ten ideas and a grandmother\'s words: We made a song together, and she wanted to show it to everyone in the family.',
+    why: 'Подарки руками ребёнка. Пункт про курс — песня, с дословной цитатой Сьюзан.',
+    html: `${h('<mark>DIY gifts</mark><br>kids can make', { size: 112 })}
+    ${ideas(['Handprint ornament', 'Coupon book', 'Photo calendar', 'Recipe card', 'Painted mug', 'A song in their words', 'Bookmark', 'Friendship bracelet', 'Framed drawing', 'Thank-you letter'], 440, 560, { size: 34, hi: [5] })}
+    ${quoteCard('We made a song together, and she wanted to show it to everyone in the family!', 'Susan, grandmother of an 8-year-old', 1030, 290, 2, 38)}` },
+
+  { file: 'drawing-ideas-for-kids', n: 79, board: 'activities', anchor: 'works', variant: 'сетка 24', ai: false,
+    phrase: 'drawing ideas for kids',
+    title: 'Drawing Ideas for Kids | 24 Things to Draw When Bored | Plus How to Bring One to Life',
+    text: 'Drawing ideas for kids when they are bored: a dragon who bakes, your dream treehouse, a robot pet, a map of a secret island. Then pick a favorite and bring it to life as a cartoon.',
+    alt: 'Cream pin that reads "24 drawing ideas for kids" with a grid of things to draw, such as a dragon who bakes and a robot pet.',
+    why: 'Огромный запрос. Сетка тем для рисования, последний шаг — «оживи рисунок» (урок курса).',
+    html: `${h('24 <mark>drawing</mark> ideas<br>for kids', { size: 94 })}
+    ${wordGrid(['A dragon who bakes', 'Dream treehouse', 'Robot pet', 'Secret island map', 'Your family as animals', 'A new planet', 'Monster truck', 'Underwater city', 'Your superhero', 'A cat in Paris', 'Flying car', 'Candy house', 'Alien friend', 'Castle in the clouds', 'Dino party', 'Your dream room', 'A talking tree', 'Space pizza shop', 'Unicorn school', 'Pirate ship', 'Snow fort', 'Rainbow bridge', 'Shoe house', 'Bring one to life'], 450, 880, { cols: 4, hi: 23 })}
+    ${aiTag(560, 1335)}` },
+
+  { file: 'christmas-drawing-ideas-for-kids', n: 80, board: 'activities', anchor: 'works', variant: 'сетка 16', ai: false,
+    phrase: 'Christmas drawing ideas for kids',
+    title: 'Christmas Drawing Ideas for Kids | 16 Things to Draw in December | Easy Prompts',
+    text: 'Christmas drawing ideas for kids: a reindeer on a skateboard, a snowman family, Santa on vacation, a gingerbread house. Easy prompts for a quiet December afternoon.',
+    alt: 'Dark blue pin that reads "Christmas drawing ideas for kids" with a grid of 16 holiday drawing prompts.',
+    why: 'Сезон + рисование. Чистая польза, курс только в полосе.',
+    html: `${h('<mark>Christmas</mark> drawing<br>ideas for kids', { size: 90 })}
+    ${wordGrid(['Reindeer on a skateboard', 'Snowman family', 'Santa on vacation', 'Gingerbread house', 'Elf workshop', 'A penguin party', 'Your dream gift', 'Cozy cocoa mug', 'Northern lights', 'Sledding dog', 'Ugly sweater', 'Tree with lights', 'Snow globe', 'Polar bear cafe', 'Stocking full', 'Star on top'], 450, 830, { cols: 4 })}
+    ${star(60, C.yellow, 'left:870px;top:330px')}` },
+
+  { file: 'story-ideas-for-kids', n: 81, board: 'homeschool', anchor: 'works', variant: 'подсказки', ai: false,
+    phrase: 'story ideas for kids',
+    title: 'Story Ideas for Kids | 12 Starters to Get Them Writing | Then Turn One Into a Cartoon',
+    text: 'Story ideas for kids who say they have nothing to write about: a dog who runs a pizza shop, a door in the backyard, a day when gravity stops. Then turn the best one into a cartoon.',
+    alt: 'Cream pin that reads "12 story ideas for kids" with story starters on cards and a cartoon frame.',
+    why: 'Широкий учебный запрос. Пункт про курс — мультфильм по своей истории.',
+    html: `${h('12 <mark>story</mark> ideas<br>for kids', { size: 112 })}
+    ${ideas(['A dog who runs a pizza shop', 'A door in the backyard', 'The day gravity stopped', 'My shoes can talk', 'A dragon afraid of the dark', 'Lost in a giant library', 'Grandma was a spy', 'The robot who wanted a pet', 'A school on the moon', 'The cat who became mayor', 'Snow in July', 'Turn the best one into a cartoon'], 440, 880, { size: 31, hi: [11], gap: 18 })}
+    ${aiTag(560, 1270)}` },
+
+  { file: 'writing-prompts-for-kids', n: 82, board: 'homeschool', anchor: 'works', variant: 'подсказки', ai: false,
+    phrase: 'writing prompts for kids',
+    title: 'Writing Prompts for Kids | 10 Fun Starters for Ages 6-14 | Plus a Song Idea',
+    text: 'Writing prompts for kids that are fun: if I had a superpower, the best day ever, a letter to my future self, my pet as a teacher. Bonus: turn four lines into a song.',
+    alt: 'Coral pin that reads "Writing prompts for kids" with ten prompts on a notebook page and a bonus: turn four lines into a song.',
+    why: 'Учебный запрос. Бонус про курс: песня из своих строк.',
+    html: `${h('<mark>Writing prompts</mark><br>for kids', { size: 104 })}
+    ${card({ l: 56, t: 440, w: 888, h: 880, rot: -1, cls: 'paper', inner: `<div style="padding:44px 48px;display:grid;gap:20px">${['If I had a superpower...', 'The best day ever was...', 'Dear future me...', 'My pet became a teacher...', 'If I ran the school...', 'The strangest dream...', 'A new holiday I\'d invent...', 'If animals could talk...', 'My secret hideout...', 'Bonus: 4 lines into a song'].map((t, i) =>
+      `<p style="padding-bottom:10px;border-bottom:3px solid #DCD6C6;font:${i === 9 ? 800 : 400} ${i === 9 ? 38 : 46}px/1.05 ${i === 9 ? 'Urbanist' : "'Caveat Brush'"};color:${i === 9 ? C.coral : '#141A33'}">${t}</p>`).join('')}</div>` })}` },
+
+  { file: 'family-game-night-ideas', n: 83, board: 'activities', anchor: 'free', variant: 'список', ai: true,
+    phrase: 'family game night ideas',
+    title: 'Family Game Night Ideas | 12 Games for All Ages | Including One Your Kid Builds',
+    text: 'Family game night ideas for all ages: charades, a drawing guessing game, card tower contest, trivia about the family, and one game your kid built that everyone plays.',
+    alt: 'Mint pin that reads "Family game night ideas" with twelve games and a pixel-art game a kid built.',
+    why: 'Семейный запрос. Пункт про курс — игра, которую сделал ребёнок (первый урок).',
+    html: `${h('Family <mark>game night</mark><br>ideas', { size: 96 })}
+    ${ideas(['Charades', 'Drawing guess game', 'Card tower contest', 'Family trivia', 'Two truths, one lie', 'Freeze dance', 'A game your kid built', 'Treasure hunt', 'Story chain', 'Minute-to-win-it', 'Spoons', 'Hot potato'], 440, 640, { size: 34, hi: [6] })}
+    ${card({ l: 300, t: 1040, w: 644, h: 280, rot: 3, src: `${M}/landing/game.jpg`, cls: 'screen', z: 4 })}
+    ${aiTag(70, 1130, -4)}` },
+
+  { file: 'family-christmas-traditions-ideas', n: 84, board: 'activities', anchor: 'families', variant: 'список', ai: false,
+    phrase: 'family Christmas traditions ideas',
+    title: 'Family Christmas Traditions Ideas | 12 to Start This Year | Simple and Cozy',
+    text: 'Family Christmas traditions ideas to start this year: matching pajamas on Christmas Eve, a cookie bake-off, a gratitude jar, and a cartoon premiere of something your kid made.',
+    alt: 'Dark blue pin that reads "Family Christmas traditions ideas" with twelve cozy traditions on a list.',
+    why: 'Сезон, семья. Пункт про курс — «премьера» мультфильма ребёнка.',
+    html: `${h('Family <mark>Christmas</mark><br>traditions ideas', { size: 100 })}
+    ${ideas(['Christmas Eve pajamas', 'Cookie bake-off', 'Gratitude jar', 'Lights drive', 'Ornament each year', 'Your kid\'s cartoon premiere', 'Letters to each other', 'Gingerbread contest', 'Donate a toy', 'Breakfast in PJs', 'Read the same book', 'Family photo'], 440, 860, { size: 34, hi: [5] })}
+    ${aiTag(560, 1270)}` },
+
+  { file: 'kids-birthday-party-ideas-at-home', n: 85, board: 'activities', anchor: 'free', variant: 'список', ai: false,
+    phrase: 'kids birthday party ideas at home',
+    title: 'Kids Birthday Party Ideas at Home | 12 Games and Activities | Ages 6-14',
+    text: 'Kids birthday party ideas at home: a scavenger hunt, a decorate-your-cupcake station, a photo booth, freeze dance, and a cartoon the birthday kid made to show their friends.',
+    alt: 'Mint pin that reads "Kids birthday party ideas at home" with twelve party games and activities.',
+    why: 'Массовый запрос. Пункт про курс — показать гостям свой мультфильм.',
+    html: `${h('Kids <mark>birthday party</mark><br>ideas at home', { size: 96 })}
+    ${ideas(['Scavenger hunt', 'Cupcake station', 'Photo booth', 'Freeze dance', 'Pinata', 'Their own cartoon show', 'Tattoo station', 'Musical chairs', 'Slime making', 'Dance contest', 'Movie corner', 'Balloon pop'], 440, 860, { size: 34, hi: [5] })}
+    ${aiTag(560, 1270)}` },
+
+  { file: 'screen-time-rules-for-kids', n: 86, board: 'screen', anchor: 'problem', variant: 'памятка', ai: false,
+    phrase: 'screen time rules for kids',
+    title: 'Screen Time Rules for Kids | 8 Family Rules That Actually Work | Printable',
+    text: 'Screen time rules for kids that are easy to keep: screens off at meals, no phones in bedrooms at night, homework first, and make before you scroll. Print them for the fridge.',
+    alt: 'Coral pin with a paper sheet titled "Our screen time rules" with eight simple family rules.',
+    why: 'Огромный запрос родителей. Наш пункт — «сначала сделай, потом листай».',
+    html: `${h('<mark>Screen time</mark><br>rules for kids', { size: 108 })}
+    ${card({ l: 56, t: 440, w: 888, h: 860, rot: 1, cls: 'paper', inner: `<div style="padding:44px 50px"><p style="font:800 30px Urbanist;letter-spacing:.1em;text-transform:uppercase;color:#4B5070">Our screen time rules</p><div style="margin-top:26px;display:grid;gap:24px">${['No screens at meals', 'Phones sleep outside bedrooms', 'Homework first', 'Make before you scroll', 'Ask before new apps', 'Screens off an hour before bed', 'Outside time every day', 'Grown-ups follow them too'].map((t, i) =>
+      `<div style="display:flex;align-items:center;gap:20px"><b style="flex:none;display:grid;place-items:center;width:62px;height:62px;border-radius:50%;background:${i === 3 ? C.yellow : C.coral};border:4px solid #141A33;color:#141A33;font:800 32px Sora">${i + 1}</b><b style="font:800 40px/1.05 Urbanist;color:#141A33">${t}</b></div>`).join('')}</div></div>` })}
+    ${tape(420, 420, -3)}` },
+
+  { file: 'screen-free-activities-for-kids', n: 87, board: 'screen', anchor: 'problem', variant: 'список 20', ai: false,
+    phrase: 'screen free activities for kids',
+    title: 'Screen Free Activities for Kids | 20 Ideas for Home | Ages 6-14',
+    text: 'Screen free activities for kids at home: build a cardboard city, start a nature journal, bake bread, play board games, write a comic. Twenty ideas, no screen needed.',
+    alt: 'Cream pin that reads "20 screen free activities for kids" with a grid of ideas from a cardboard city to a nature journal.',
+    why: 'Запрос растёт (по отчёту Pinterest +200%). Честно без экрана: польза и доверие, курс только в полосе.',
+    html: `${h('20 <mark>screen free</mark><br>activities for kids', { size: 100 })}
+    ${wordGrid(['Cardboard city', 'Nature journal', 'Bake bread', 'Board games', 'Write a comic', 'Puppet theater', 'Garden', 'Bike ride', 'Origami', 'Library trip', 'Paint rocks', 'Build a birdhouse', 'Kitchen science', 'Play store', 'Jump rope', 'Sew a pillow', 'Chalk art', 'Card tricks', 'Letter to a friend', 'Fort building'], 450, 830, { cols: 4 })}` },
+
+  { file: 'educational-activities-for-kids', n: 88, board: 'homeschool', anchor: 'free', variant: 'список', ai: true,
+    phrase: 'educational activities for kids',
+    title: 'Educational Activities for Kids | 12 Ideas That Feel Like Play | Ages 6-14',
+    text: 'Educational activities for kids that feel like play: a kitchen measuring game, a map scavenger hunt, a backyard bug count, and a short lesson where they build a game with AI.',
+    alt: 'Mint pin that reads "Educational activities for kids" with twelve ideas and a photo of a girl at a laptop.',
+    why: 'Запрос растёт (по отчёту Pinterest +280%). Пункт про курс — урок, где ребёнок делает игру.',
+    html: `${h('<mark>Educational</mark><br>activities for kids', { size: 104 })}
+    ${ideas(['Kitchen measuring game', 'Map scavenger hunt', 'Backyard bug count', 'Grocery budget game', 'Build a game with AI', 'Spelling hopscotch', 'Read & act it out', 'Weather journal', 'Coin sorting', 'Story dice', 'Fraction pizza', 'Planet models'], 440, 620, { size: 34, hi: [4] })}
+    ${card({ l: 300, t: 1020, w: 644, h: 300, rot: 3, src: `${M}/landing/step-make.jpg`, z: 4 })}
+    ${aiTag(70, 1110, -4)}` },
+
+  { file: 'stem-activities-for-kids-at-home', n: 89, board: 'homeschool', anchor: 'free', variant: 'список', ai: false,
+    phrase: 'STEM activities for kids at home',
+    title: 'STEM Activities for Kids at Home | 10 Easy Experiments | Ages 6-14',
+    text: 'STEM activities for kids at home with things you already have: a spaghetti bridge, a baking soda volcano, paper airplane tests, a balloon car, and building a game step by step.',
+    alt: 'Dark blue pin that reads "STEM activities for kids at home" with ten easy experiments.',
+    why: 'Большой учебный запрос. Пункт про курс — собрать игру по шагам.',
+    html: `${h('<mark>STEM</mark> activities<br>for kids at home', { size: 104 })}
+    ${ideas(['Spaghetti bridge', 'Baking soda volcano', 'Paper airplane test', 'Balloon car', 'Build a game, step by step', 'Egg drop', 'Magnet maze', 'Rainbow in a glass', 'Lemon battery', 'Ice melt race'], 440, 820, { size: 38, hi: [4], gap: 30 })}
+    ${aiTag(560, 1230)}` },
+
+  { file: 'quiet-time-activities-for-kids', n: 90, board: 'screen', anchor: 'problem', variant: 'список', ai: false,
+    phrase: 'quiet time activities for kids',
+    title: 'Quiet Time Activities for Kids | 12 Calm Ideas for the Afternoon | Ages 6-14',
+    text: 'Quiet time activities for kids for a calm afternoon: audiobooks, sticker scenes, puzzle mats, building blocks, drawing prompts, and a quiet story they write and illustrate.',
+    alt: 'Cream pin that reads "Quiet time activities for kids" with twelve calm ideas on a list.',
+    why: 'Широкий запрос. Чистая польза, курс только в полосе.',
+    html: `${h('<mark>Quiet time</mark><br>activities for kids', { size: 104 })}
+    ${ideas(['Audiobook + coloring', 'Sticker scenes', 'Puzzle mat', 'Building blocks', 'Drawing prompts', 'Lacing cards', 'Write & illustrate a story', 'Play dough', 'I-spy bottle', 'Reading nook', 'Bead art', 'Watercolors'], 440, 860, { size: 36 })}` },
+
+  { file: 'music-activities-for-kids', n: 91, board: 'activities', anchor: 'works', variant: 'список', ai: false,
+    phrase: 'music activities for kids',
+    title: 'Music Activities for Kids | 10 Fun Ideas at Home | Including Writing Their Own Song',
+    text: 'Music activities for kids at home: kitchen drums, rhythm clapping games, freeze dance, a homemade shaker, and writing their own song from their own words.',
+    alt: 'Dark blue pin that reads "Music activities for kids" with ten ideas and sound bars for a song a kid wrote.',
+    why: 'Широкий запрос. Пункт про курс — своя песня.',
+    html: `${h('<mark>Music</mark> activities<br>for kids', { size: 108 })}
+    ${ideas(['Kitchen drums', 'Clapping games', 'Freeze dance', 'Homemade shakers', 'Their own song', 'Guess the song', 'Rain stick', 'Rhythm walk', 'Family band', 'Musical stories'], 440, 600, { size: 36, hi: [4] })}
+    <svg viewBox="0 0 888 220" style="position:absolute;z-index:3;left:56px;top:1080px;width:888px;height:220px">${Array.from({ length: 22 }, (_, i) => { const hh = [50, 100, 170, 120, 80, 190, 140, 90, 200, 160, 110, 180, 70, 130, 200, 150, 90, 170, 120, 60, 140, 90][i]; return `<rect x="${i * 40 + 6}" y="${110 - hh / 2}" width="26" height="${hh}" rx="13" fill="${['#FFC533', '#5FE0A8', '#FF6F4A'][i % 3]}"/>`; }).join('')}</svg>
+    ${aiTag(600, 1060)}` },
+
+  { file: 'art-projects-for-kids-at-home', n: 92, board: 'activities', anchor: 'works', variant: 'список + было/стало', ai: true,
+    phrase: 'art projects for kids at home',
+    title: 'Art Projects for Kids at Home | 8 Easy Ideas | Plus a Drawing That Becomes a Cartoon',
+    text: 'Art projects for kids at home: salt painting, leaf rubbings, tape resist art, a paper mosaic, and one that turns a crayon drawing into a short cartoon.',
+    alt: 'Cream pin that reads "Art projects for kids at home" with eight ideas and a crayon rainbow drawing next to the same scene as a cartoon.',
+    why: 'Широкий запрос. Пример «рисунок → мультфильм» на радуге 6-летнего.',
+    html: `${h('<mark>Art projects</mark><br>for kids at home', { size: 104 })}
+    ${ideas(['Salt painting', 'Leaf rubbings', 'Tape resist art', 'Paper mosaic', 'Bubble prints', 'Clay animals', 'Collage portrait', 'Drawing to cartoon'], 440, 450, { size: 36, hi: [7], gap: 18 })}
+    ${card({ l: 56, t: 940, w: 340, h: 380, rot: -4, src: `${M}/works/rainbow-drawing.jpg`, cls: 'paper' })}
+    ${card({ l: 430, t: 940, w: 514, h: 380, rot: 3, src: `${M}/works/rainbow-cartoon.jpg`, pos: '50% 45%', z: 4 })}` },
+);
+
 // Series frame (SERIES.md): colour and chip per pin. Ask AI + Safe AI coral, By a kid yellow, How it works navy, Free lesson mint.
 const FRAME = { c: ['c'], y: ['y'], n: ['n'], m: ['m'] };
 const SERIES_OF = {
@@ -998,6 +1263,14 @@ const SERIES_OF = {
   'things-kids-can-make-with-ai': ['kid', 'y'], 'activities-for-kids-and-parents-together': ['kid', 'y'], 'gifts-for-kids-who-have-everything': ['kid', 'y'],
   'gifts-kids-can-make-for-grandparents': ['kid', 'y'], 'ai-course-for-kids-reviews': ['kid', 'y'], 'first-ai-lesson-for-kids': ['free', 'm'],
   'ai-course-made-by-a-mom': ['how', 'n'], 'ai-cartoon-for-kids': ['kid', 'y'],
+  'indoor-activities-for-kids': ['ideas', 'k'], 'boredom-busters-for-kids': ['ideas', 'k'], 'christmas-activities-for-kids': ['xmas', 'n'],
+  'christmas-crafts-for-kids': ['xmas', 'n'], 'winter-bucket-list-for-kids': ['ideas', 'k'], 'advent-calendar-ideas-for-kids': ['xmas', 'n'],
+  'gifts-for-10-year-old-girl': ['gifts', 'y'], 'gifts-for-10-year-old-boy': ['gifts', 'y'], 'stocking-stuffers-for-kids': ['gifts', 'k'],
+  'diy-gifts-kids-can-make': ['gifts', 'y'], 'drawing-ideas-for-kids': ['ideas', 'k'], 'christmas-drawing-ideas-for-kids': ['xmas', 'n'],
+  'story-ideas-for-kids': ['learn', 'k'], 'writing-prompts-for-kids': ['learn', 'c'], 'family-game-night-ideas': ['ideas', 'm'],
+  'family-christmas-traditions-ideas': ['xmas', 'n'], 'kids-birthday-party-ideas-at-home': ['ideas', 'm'], 'screen-time-rules-for-kids': ['safe', 'c'],
+  'screen-free-activities-for-kids': ['ideas', 'k'], 'educational-activities-for-kids': ['learn', 'm'], 'stem-activities-for-kids-at-home': ['learn', 'n'],
+  'quiet-time-activities-for-kids': ['ideas', 'k'], 'music-activities-for-kids': ['ideas', 'n'], 'art-projects-for-kids-at-home': ['ideas', 'k'],
 };
 for (const pin of pins) [pin.series, pin.theme] = SERIES_OF[pin.file];
 // the alt text names the background colour, which follows the series frame
