@@ -6,7 +6,7 @@ import { writeFileSync, mkdirSync, unlinkSync } from 'node:fs';
 import { createRequire } from 'node:module';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
-import { css, here, char, C } from '../kit.mjs';
+import { css, here, icon, C } from '../kit.mjs';
 const { chromium } = createRequire(import.meta.url)('playwright');
 const out = join(here, 'out', 'holiday'); mkdirSync(out, { recursive: true });
 
@@ -36,7 +36,7 @@ const cert = `<div style="position:relative;width:1650px;height:1275px;backgroun
   <p style="position:absolute;left:110px;top:200px;font:400 64px 'Caveat Brush';color:${C.coral};transform:rotate(-2deg)">A gift for</p>
   <i style="position:absolute;left:110px;top:330px;width:820px;border-bottom:5px solid ${C.navy}"></i>
   <h1 style="position:absolute;left:110px;top:380px;margin:0;font:800 104px/1 Sora;letter-spacing:-.05em;color:${C.navy}">This gift<br>is a <mark style="background:${C.yellow};padding:0 14px;border-radius:14px">skill.</mark></h1>
-  <p style="position:absolute;left:110px;top:620px;width:900px;font:700 40px/1.3 Urbanist;color:${C.navy}">An AI creativity course you make together, with mom or dad right next to you.</p>
+  <p style="position:absolute;left:110px;top:620px;width:900px;font:700 40px/1.3 Urbanist;color:${C.navy}">An AI creativity course you make together, with a parent right next to you.</p>
   <div style="position:absolute;left:110px;top:760px;width:900px;display:flex;flex-wrap:wrap;gap:14px">
     ${['a game', 'a cartoon', 'a song', 'a website', 'a sticker pack', 'a voiceover'].map((t) => `<span style="font:800 32px Urbanist;color:${C.navy};background:#fff;border:4px solid ${C.navy};border-radius:999px;padding:8px 24px">${t}</span>`).join('')}
   </div>
@@ -45,7 +45,14 @@ const cert = `<div style="position:relative;width:1650px;height:1275px;backgroun
     <span>From:<i style="display:inline-block;width:360px;border-bottom:4px solid ${C.navy};margin-left:14px"></i></span>
     <span>Plan: ☐ Creator ☐ Creator + Homework</span>
   </div>
-  <div style="position:absolute;right:120px;top:300px;width:420px;height:560px">${char('kamilla', 0, 0, 420)}</div>
+  <div style="position:absolute;right:150px;top:300px;width:400px;height:520px">
+    <i style="position:absolute;left:40px;top:200px;width:320px;height:260px;background:${C.coral};border:8px solid ${C.navy};border-radius:26px;box-shadow:14px 14px 0 ${C.navy}"></i>
+    <i style="position:absolute;left:10px;top:140px;width:380px;height:90px;background:${C.coral};border:8px solid ${C.navy};border-radius:22px"></i>
+    <i style="position:absolute;left:170px;top:140px;width:60px;height:320px;background:${C.yellow};border-left:8px solid ${C.navy};border-right:8px solid ${C.navy}"></i>
+    <i style="position:absolute;left:110px;top:70px;width:90px;height:80px;border:12px solid ${C.navy};border-radius:50% 50% 10% 50%;transform:rotate(-20deg);background:${C.yellow}"></i>
+    <i style="position:absolute;left:200px;top:70px;width:90px;height:80px;border:12px solid ${C.navy};border-radius:50% 50% 50% 10%;transform:rotate(20deg);background:${C.yellow}"></i>
+    ${[['gamepad-2', -70, 10, C.mint], ['music', 330, 0, C.yellow], ['clapperboard', -90, 330, C.yellow], ['mic', 360, 340, C.mint]].map(([n, l, t, bg]) => `<b style="position:absolute;left:${l}px;top:${t}px;width:110px;height:110px;border-radius:50%;background:${bg};border:6px solid ${C.navy};display:grid;place-items:center">${icon(n, 56, C.navy, 2.4)}</b>`).join('')}
+  </div>
   <p style="position:absolute;right:110px;top:880px;width:480px;text-align:right;font:700 26px/1.35 Urbanist;color:${C.navy}">How to start: open the email with your login and pick lesson 1.<br><b>makeshowlab.com</b></p>
 </div>`;
 
@@ -64,7 +71,7 @@ const list = `<div style="position:relative;width:1275px;height:1650px;backgroun
 </div>`;
 
 const b = await chromium.launch();
-for (const [name, w, h, body] of [['gift-certificate', 1650, 1275, cert], ['winter-break-challenge', 1275, 1650, list]]) {
+for (const [name, w, h, body] of [['gift-certificate', 1650, 1275, cert]]) {
   const tmp = join(out, `${name}.html`); writeFileSync(tmp, page(w, h, body));
   const pg = await (await b.newContext({ viewport: { width: w, height: h } })).newPage();
   await pg.goto(pathToFileURL(tmp).href); await pg.evaluate(() => document.fonts.ready); await pg.waitForTimeout(200);
