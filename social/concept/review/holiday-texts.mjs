@@ -4,7 +4,7 @@
 // Imagery stays gender-neutral: the gift can go to a boy or a girl.
 export const DISCOUNT = null;   // e.g. { line: '...', until: '...' } once the owner gives size, plan, code and end time
 export const H = [
-  { n: 47, slug: 'gift-a-skill', grid: 'H1', date: 'Fri 27 Nov (Black Friday)', kw: 'GIFT', format: 'Carousel', theme: 'y',
+  { n: 47, slug: 'gift-a-skill', grid: 'H1', date: 'Fri 27 Nov (Black Friday)', kw: 'GIFT', format: 'Carousel', theme: 'n',
     tile: 'Gift a skill,<br><mark>not another toy.</mark>',
     slides: [
       ['Gift a skill, not another toy', 'For the kid who has everything.'],
@@ -38,7 +38,7 @@ Comment "GIFT" and I'll send you how it works.
 
 #giftsforkids #christmasgifts #giftideas #aiforkids` },
 
-  { n: 49, slug: 'gift-in-an-email', grid: 'H3', date: 'Mon 30 Nov (Cyber Monday)', kw: 'GIFT', format: 'Carousel', theme: 'y',
+  { n: 49, slug: 'gift-in-an-email', grid: 'H3', date: 'Mon 30 Nov (Cyber Monday)', kw: 'GIFT', format: 'Carousel', theme: 'n',
     tile: 'Still shopping?<br><mark>This gift fits</mark><br><mark>in an email.</mark>',
     slides: [
       ['Still shopping? This gift fits in an email', 'No shipping, no waiting.'],

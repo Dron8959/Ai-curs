@@ -16,7 +16,7 @@ const out = join(concept, 'out', 'review', 'profile');
 rmSync(out, { recursive: true, force: true }); mkdirSync(join(out, 'm'), { recursive: true });
 const tmp = join(out, '_src'); mkdirSync(tmp, { recursive: true });
 const ff = (...a) => execFileSync('ffmpeg', ['-y', '-loglevel', 'error', ...a]);
-const HEAD = new Set([37, 38, 39, 40, 41, 42, 43, 44, 45, 46]);   // last checked versions (a QA pass was stopped half-way)
+const HEAD = new Set([]);   // 26 Nov: the working tree holds the recoloured, checked versions
 const dirOf = (n) => readdirSync(join(concept, 'posts')).find((d) => d.startsWith(String(n).padStart(2, '0') + '-'));
 const src = (n, f) => {
   const rel = `social/concept/posts/${dirOf(n)}/${f}`;
@@ -37,12 +37,12 @@ export const PLAN = [   // owner 26 Nov: holiday posts first, tied to the dates 
 ];
 const PUBLISHED = [15, 14, 13, 18, 11, 4, 10, 9, 6, 8, 7, 5, 2, 3, 1];   // already on the profile (newest first)
 const files = [];
-const tile = (n, name) => { const s = src(n, 'tile.jpg'); if (!s) return ''; const o = `m/${name}.jpg`; ff('-i', s, '-vf', 'scale=360:-2', '-q:v', '5', join(out, o)); files.push(o); return o; };
+const tile = (n, name) => { const s = src(n, 'tile.jpg'); if (!s) return ''; const o = `m/${name}-v3.jpg`; ff('-i', s, '-vf', 'scale=360:-2', '-q:v', '5', join(out, o)); files.push(o); return o; };
 const posts = PLAN.map(([date, time, n, why]) => {
   const d = dirOf(n); const r = { n, date, time, why, ig: body(readFileSync(src(n, 'caption.md'), 'utf8')), tile: tile(n, `t${n}`) };
   const v = src(n, 'reel.mp4');
-  if (v) { r.video = `m/${n}.mp4`; ff('-i', v, '-vf', 'scale=540:-2', '-c:v', 'libx264', '-crf', '27', '-preset', 'veryfast', '-c:a', 'aac', '-b:a', '96k', '-movflags', '+faststart', join(out, r.video)); files.push(r.video); }
-  else r.slides = readdirSync(join(concept, 'posts', d)).filter((f) => /^slide-\d+\.jpg$/.test(f)).sort().map((f, i) => { const o = `m/${n}-${i + 1}.jpg`; ff('-i', src(n, f), '-vf', 'scale=540:-2', '-q:v', '4', join(out, o)); files.push(o); return o; });
+  if (v) { try { r.video = `m/${n}-v3.mp4`; ff('-i', v, '-vf', 'scale=540:-2', '-c:v', 'libx264', '-crf', '27', '-preset', 'veryfast', '-c:a', 'aac', '-b:a', '96k', '-movflags', '+faststart', join(out, r.video)); files.push(r.video); } catch { delete r.video; r.busy = true; } }
+  else r.slides = readdirSync(join(concept, 'posts', d)).filter((f) => /^slide-\d+\.jpg$/.test(f)).sort().map((f, i) => { const o = `m/${n}-${i + 1}-v3.jpg`; ff('-i', src(n, f), '-vf', 'scale=540:-2', '-q:v', '4', join(out, o)); files.push(o); return o; });
   r.group = n >= 47 ? 'праздник' : n >= 37 ? '80/20' : 'пак 2';
   return r;
 });
@@ -149,7 +149,7 @@ function render() {
     const s = (saved[p.n] || {}).status || '';
     const b = el('button', { class: 'tile ' + s, type: 'button', 'aria-label': '№' + p.n + ', ' + fmt(p) });
     b.append(el('img', { src: p.tile, alt: '', loading: 'lazy' }), el('span', { class: 'd' }, fmt(p)));
-    b.append(el('span', { class: 'k' }, p.video ? '▶' : '❐'));
+    b.append(el('span', { class: 'k' }, p.slides ? '❐' : '▶'));
     if (s) b.append(el('span', { class: 's' }, s === 'yes' ? 'Да' : 'Нет'));
     b.onclick = () => show(p); g.append(b);
   }
@@ -162,7 +162,8 @@ function render() {
 function paint() { const s = (saved[open.n] || {}).status || ''; $('#yes').setAttribute('aria-pressed', String(s === 'yes')); $('#no').setAttribute('aria-pressed', String(s === 'no')); }
 function show(p) {
   open = p; const m = $('#media'); m.textContent = '';
-  if (p.video) m.append(el('video', { src: p.video, controls: '', playsinline: '', autoplay: '', muted: '' }));
+  if (p.busy) m.append(el('img', { src: p.tile, alt: '' }), el('p', { class: 'hint' }, 'Ролик пересобирается в новом цвете, появится здесь позже.'));
+  else if (p.video) m.append(el('video', { src: p.video, controls: '', playsinline: '', autoplay: '', muted: '' }));
   else { const c = el('div', { class: 'car' }); p.slides.forEach((s, i) => c.append(el('img', { src: s, alt: 'слайд ' + (i + 1) }))); m.append(c, el('p', { class: 'hint' }, p.slides.length + ' слайдов, листайте вбок')); }
   $('#when').textContent = fmt(p) + ' · №' + p.n + ' · ' + p.group;
   $('#why').textContent = p.why; $('#cap').textContent = p.ig;

@@ -19,7 +19,7 @@ Comment "LESSON" and I'll send you the free first lesson of our AI course for ki
 
 #aiforkids #homeworkhelp #parentingtips #kidsandai` },
 
-  { n: 38, slug: 'ai-makes-things-up', grid: 'D12', kw: 'RULES', format: 'Reel', theme: 'n',
+  { n: 38, slug: 'ai-makes-things-up', grid: 'D12', kw: 'RULES', format: 'Reel', theme: 'y',
     tile: 'Why does AI<br><mark>make things up?</mark>',
     tileVis: 'bubble: “Penguins live at the North Pole!” with a red ✕ stamp; note “sounds sure”',
     scenes: [['It guesses<br><mark>the next word.</mark>', 'icon:dice-5'], ['A good guess<br><mark>sounds sure.</mark>', 'say:Penguins live at the North Pole!'], ['Too smooth?<br><mark>Check it.</mark>', 'icon:search-check']],
@@ -34,7 +34,7 @@ Comment "RULES" and I'll send you our 5 AI house rules for the fridge.
 
 #aiforkids #kidsandai #aisafety #parentingtips` },
 
-  { n: 39, slug: 'gifts-not-toys', grid: 'F18', kw: 'GIFT', format: 'Reel', theme: 'm',
+  { n: 39, slug: 'gifts-not-toys', grid: 'F18', kw: 'GIFT', format: 'Reel', theme: 'y',
     tile: 'Gifts that<br><mark>aren’t toys.</mark>',
     tileVis: 'Linda photo ring + quote “something more meaningful than another toy”',
     scenes: [['Made by them.<br><mark>Not bought.</mark>', 'img:landing/step-show.jpg'], ['A song. A cartoon.<br><mark>A game.</mark>', 'icon:gift'], ['Linda wanted<br><mark>more than a toy.</mark>', 'ring:linda']],
@@ -68,7 +68,7 @@ Comment "GAME" and I'll send you the link.
 
 #rainydayactivities #kidsactivities #familytime #aiforkids` },
 
-  { n: 41, slug: 'three-questions', grid: 'A3', kw: 'RULES', format: 'Carousel', theme: 'm',
+  { n: 41, slug: 'three-questions', grid: 'A3', kw: 'RULES', format: 'Carousel', theme: 'y',
     tile: '3 questions<br>before your kid<br><mark>opens ChatGPT.</mark>',
     slides: [
       ['3 questions before your kid opens ChatGPT', 'Ask them out loud, together.'],
@@ -90,7 +90,7 @@ Comment "RULES" and I'll send you all 5 rules for the fridge.
 
 #chatgptforkids #aisafety #kidsandai #parentingtips` },
 
-  { n: 42, slug: 'house-rules', grid: 'C8', kw: 'RULES', format: 'Carousel', theme: 'y',
+  { n: 42, slug: 'house-rules', grid: 'C8', kw: 'RULES', format: 'Carousel', theme: 'm',
     tile: '5 AI rules<br><mark>for the fridge.</mark>',
     slides: [
       ['5 AI rules for the fridge', 'Read them together. Both of you agree.'],
@@ -113,7 +113,7 @@ Save this, or comment "RULES" and I'll send you the card to print.
 
 #aisafety #onlinesafety #kidsandai #parentingtips` },
 
-  { n: 43, slug: 'watching-or-making', grid: 'B6', kw: 'GAME', format: 'Reel', theme: 'm',
+  { n: 43, slug: 'watching-or-making', grid: 'B6', kw: 'GAME', format: 'Reel', theme: 'n',
     tile: 'Watching<br>or making?<br><mark>Tell in 10 seconds.</mark>',
     tileVis: 'two cards: “watched 40 videos” ✕ / “made a game” ✓',
     scenes: [['Ask one<br><mark>question.</mark>', 'say-me:What did you make?'], ['Nothing?<br><mark>That was watching.</mark>', 'icon:tv'], ['Something<br>to show?<br><mark>That was making.</mark>', 'img:landing/step-show.jpg']],
@@ -128,7 +128,7 @@ Comment "GAME" and I'll send you the free first lesson, where your kid makes a g
 
 #screentime #parentingtips #kidsandai #aiforkids` },
 
-  { n: 44, slug: 'one-habit', grid: 'A2', kw: 'LESSON', format: 'Reel', theme: 'n',
+  { n: 44, slug: 'one-habit', grid: 'A2', kw: 'LESSON', format: 'Reel', theme: 'm',
     tile: 'Cheating with AI<br>or building with it?<br><mark>One habit.</mark>',
     tileVis: 'three steps: idea (kid) → work (AI) → fix (kid)',
     scenes: [['The idea is<br><mark>your kid’s.</mark>', 'icon:lightbulb'], ['AI does<br><mark>the work.</mark>', 'icon:bot'], ['Your kid checks<br><mark>and fixes it.</mark>', 'icon:pencil']],
