@@ -116,7 +116,7 @@ Save this, or comment "RULES" and I'll send you the card to print.
   { n: 43, slug: 'watching-or-making', grid: 'B6', kw: 'GAME', format: 'Reel', theme: 'n',
     tile: 'Watching<br>or making?<br><mark>Tell in 10 seconds.</mark>',
     tileVis: 'two cards: “watched 40 videos” ✕ / “made a game” ✓',
-    scenes: [['Ask one<br><mark>question.</mark>', 'say-me:What did you make?'], ['Nothing?<br><mark>That was watching.</mark>', 'icon:tv'], ['Something<br>to show?<br><mark>That was making.</mark>', 'img:landing/step-show.jpg']],
+    scenes: [['Ask one<br><mark>question.</mark>', 'say:What did you make?'], ['Nothing?<br><mark>That was watching.</mark>', 'icon:tv'], ['Something<br>to show?<br><mark>That was making.</mark>', 'img:landing/step-show.jpg']],
     end: 'What did<br><mark>you make?</mark>',
     voice: ['Watching or making? Here\'s a ten-second test.', 'Ask one question: what did you make?', 'If the answer is nothing, it was watching.', 'If they show you something, it was making.', 'Want a first thing to make? Type game.'],
     note: 'General parenting advice; brand line from facts.md.',
