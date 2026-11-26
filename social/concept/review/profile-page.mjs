@@ -37,12 +37,12 @@ export const PLAN = [   // owner 26 Nov: holiday posts first, tied to the dates 
 ];
 const PUBLISHED = [15, 14, 13, 18, 11, 4, 10, 9, 6, 8, 7, 5, 2, 3, 1];   // already on the profile (newest first)
 const files = [];
-const tile = (n, name) => { const s = src(n, 'tile.jpg'); if (!s) return ''; const o = `m/${name}-v3.jpg`; ff('-i', s, '-vf', 'scale=360:-2', '-q:v', '5', join(out, o)); files.push(o); return o; };
+const tile = (n, name) => { const s = src(n, 'tile.jpg'); if (!s) return ''; const o = `m/${name}-v4.jpg`; ff('-i', s, '-vf', 'scale=360:-2', '-q:v', '5', join(out, o)); files.push(o); return o; };
 const posts = PLAN.map(([date, time, n, why]) => {
   const d = dirOf(n); const r = { n, date, time, why, ig: body(readFileSync(src(n, 'caption.md'), 'utf8')), tile: tile(n, `t${n}`) };
   const v = src(n, 'reel.mp4');
-  if (v) { try { r.video = `m/${n}-v3.mp4`; ff('-i', v, '-vf', 'scale=540:-2', '-c:v', 'libx264', '-crf', '27', '-preset', 'veryfast', '-c:a', 'aac', '-b:a', '96k', '-movflags', '+faststart', join(out, r.video)); files.push(r.video); } catch { delete r.video; r.busy = true; } }
-  else r.slides = readdirSync(join(concept, 'posts', d)).filter((f) => /^slide-\d+\.jpg$/.test(f)).sort().map((f, i) => { const o = `m/${n}-${i + 1}-v3.jpg`; ff('-i', src(n, f), '-vf', 'scale=540:-2', '-q:v', '4', join(out, o)); files.push(o); return o; });
+  if (v) { try { r.video = `m/${n}-v4.mp4`; ff('-i', v, '-vf', 'scale=540:-2', '-c:v', 'libx264', '-crf', '27', '-preset', 'veryfast', '-c:a', 'aac', '-b:a', '96k', '-movflags', '+faststart', join(out, r.video)); files.push(r.video); } catch { delete r.video; r.busy = true; } }
+  else r.slides = readdirSync(join(concept, 'posts', d)).filter((f) => /^slide-\d+\.jpg$/.test(f)).sort().map((f, i) => { const o = `m/${n}-${i + 1}-v4.jpg`; ff('-i', src(n, f), '-vf', 'scale=540:-2', '-q:v', '4', join(out, o)); files.push(o); return o; });
   r.group = n >= 47 ? 'праздник' : n >= 37 ? '80/20' : 'пак 2';
   return r;
 });
