@@ -118,6 +118,48 @@ Which version do you think your kid would pick?
 ${LAST}
 
 #familygamenight #kidsactivities`, comment: FREE(46) },
+  // Holiday "Gift a skill" posts (owner, 26 Nov; Instagram texts: review/holiday-texts.mjs). Sales posts: the course is
+  // named, prices only as on Instagram, no discounts. The gift works by message: buy on the site, send us the kid's
+  // first name, get the certificate to print.
+  47: { caption: `Gift a skill this year, not another toy.
+
+For the kid who has everything: an AI course they make things in, with you or a grandparent right next to them. A game, a cartoon, a song, a website, a sticker pack, a voiceover in their own voice. Lessons take 6 to 20 minutes, and each one ends with something finished to show the family.
+
+Under the tree goes a certificate with their name on it. Send us a message with your kid's first name after you buy, and we'll send it to you.
+
+Who on your list has everything already?
+
+#giftideas #giftsforkids`, comment: `How the gift works, and the free first lesson: ${link(47, 'pricing')}` },
+
+  48: { caption: `A gift they open, then use all winter.
+
+Not another toy that's forgotten by January. In our AI course your kid makes a game, a song, a cartoon, a website, with you next to them. Under the tree goes a certificate with their name.
+
+$197 paid once, or $297 with homework checked the same day. No subscription.
+
+Share this with a grandparent who is still looking for a gift.
+
+#giftsforkids #christmasgifts`, comment: `How the gift works, and the free first lesson: ${link(48, 'pricing')}` },
+
+  49: { caption: `Still shopping? This gift fits in an email.
+
+No shipping and no waiting: the login comes to your email right after you buy. Send us a message with your kid's first name, and we send you a certificate to print and put under the tree.
+
+Inside: a game, a cartoon, a song, a website, a sticker pack, a voiceover, all made by your kid with you next to them. $197 paid once, or $297 with homework checked the same day.
+
+Share this with someone who still has a name left on their list.
+
+#giftideas #giftsforkids`, comment: `How the gift works, and the free first lesson: ${link(49, 'pricing')}` },
+
+  50: { caption: `Still need a gift? This one needs no shipping.
+
+The login to our AI course comes by email right after you buy. Send us a message with your kid's first name, and we send you a certificate to print and put under the tree. Inside: a game, a cartoon, a song, a website, made by your kid with you next to them.
+
+$197 paid once, or $297 with homework checked the same day.
+
+Who is still left on your list?
+
+#lastminutegifts #giftsforkids`, comment: `How the gift works, and the free first lesson: ${link(50, 'pricing')}` },
 };
 
 // Checks: no link and no long dash in the post, no comment keyword, two hashtags, a link in the comment,
@@ -132,7 +174,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     if ((p.caption.match(/#\w+/g) || []).length !== 2) errs.push('hashtags != 2');
     if (!/https:\/\/www\.makeshowlab\.com\//.test(p.comment)) errs.push('no link in comment');
     const paras = p.caption.split('\n\n'); const body = paras.slice(0, -2).join('\n\n');
-    if (/our (AI )?course|first lesson/i.test(body) && n !== '39') errs.push('course before the last line');
+    if (/our (AI )?course|first lesson/i.test(body) && !['39', '47', '48', '49', '50'].includes(n)) errs.push('course before the last line');
     if (errs.length) { bad++; console.log(n, errs.join(', ')); }
   }
   console.log(`${Object.keys(FB3).length} Facebook captions, ${bad} with problems`);
