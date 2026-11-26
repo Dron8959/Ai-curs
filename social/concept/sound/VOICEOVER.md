@@ -421,3 +421,21 @@ date; the PDFs in `out/` are out of date. They are only needed if new recordings
 | 3 | 8.3-12.5 | Then like I'm twelve. | 1.0 |
 | 4 | 12.5-16.2 | Then like my grandma. Which one was best? | 2.2 |
 | 5 | 16.2-19.4 | Free first lesson? Type lesson below. | 1.9 |
+
+### 48-gift-all-winter · Anna · 19.4 s
+| scene | seconds | line | words/s |
+|---|---|---|---|
+| 1 | 0.0-4.2 | A gift they open, then use all winter. | 1.9 |
+| 2 | 4.2-8.3 | Not another toy they forget by January. | 1.7 |
+| 3 | 8.3-12.5 | They make a game, a song, a cartoon. | 1.9 |
+| 4 | 12.5-16.2 | Their name goes on the certificate. | 1.6 |
+| 5 | 16.2-19.4 | Want the details? Type gift below. | 1.9 |
+
+### 50-last-minute-gift · Anna · 19.4 s
+| scene | seconds | line | words/s |
+|---|---|---|---|
+| 1 | 0.0-4.2 | Still need a gift? This one needs no shipping. | 2.1 |
+| 2 | 4.2-8.3 | No boxes, no waiting at the door. | 1.7 |
+| 3 | 8.3-12.5 | The login comes by email right after you buy. | 2.1 |
+| 4 | 12.5-16.2 | Print the certificate with their name. | 1.6 |
+| 5 | 16.2-19.4 | Want the details? Type gift below. | 1.9 |
