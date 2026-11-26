@@ -111,4 +111,38 @@ Read the three answers out loud and vote for the best one. Your kid learns the t
 ${foot}
 
 #familygamenight #kidsactivities #aiforkids` },
+  47: { kind: 'carousel', ai: false, kw: 'black friday gifts for kids', title: 'Black Friday Gifts for Kids: Gift a Skill, Not Another Toy',
+    tags: ['black friday gifts for kids', 'gift ideas for kids', 'non toy gifts', 'ai for kids', 'gifts for kids'],
+    body: `Black Friday gifts for kids: gift a skill this year, not another toy.
+
+It's an AI course your kid makes things in, with you right next to them: a game, a cartoon, a song, a website, a sticker pack, a voiceover in their own voice. Lessons take 6 to 20 minutes, and each one ends with something finished to show the family. Under the tree goes a certificate with their name on it.
+
+$197 paid once, or $297 with homework checked the same day. No subscription.
+${FREE}
+
+#blackfriday #giftideas #aiforkids` },
+  48: { kind: 'reel', ai: true, kw: 'christmas gifts for kids', title: 'Christmas Gifts for Kids: One They Open, Then Use All Winter',
+    tags: ['christmas gifts for kids', 'gift ideas for kids', 'non toy gifts', 'ai for kids', 'gifts for kids'],
+    body: `Christmas gifts for kids: a gift they open, then use all winter. Not another toy that's forgotten by January. In our AI course your kid makes a game, a song, a cartoon, a website, with you next to them. Under the tree goes a certificate with their name.
+
+$197 paid once, or $297 with homework checked the same day. No subscription.
+${FREE}
+
+#christmasgifts #giftideas #aiforkids` },
+  49: { kind: 'carousel', ai: false, kw: 'cyber monday gifts for kids', title: 'Cyber Monday Gifts for Kids: This One Fits in an Email',
+    tags: ['cyber monday gifts for kids', 'gift ideas for kids', 'last minute gifts', 'ai for kids', 'gifts for kids'],
+    body: `Cyber Monday gifts for kids, still shopping? This gift fits in an email. No shipping: the login comes to your email right after you buy. We send you a certificate with your kid's name to print and put under the tree.
+
+Inside: a game, a cartoon, a song, a website, a sticker pack, a voiceover, all made by your kid with you next to them. $197 paid once, or $297 with homework checked the same day. No subscription.
+${FREE}
+
+#cybermonday #giftideas #aiforkids` },
+  50: { kind: 'reel', ai: true, kw: 'last minute gifts for kids', title: 'Last Minute Gifts for Kids: No Shipping, Print the Card',
+    tags: ['last minute gifts for kids', 'christmas gifts for kids', 'gift ideas for kids', 'ai for kids', 'gifts for kids'],
+    body: `Last minute gifts for kids: this one needs no shipping. The login to our AI course comes by email right after you buy, and we send you a certificate with your kid's name to print and put under the tree. Inside: a game, a cartoon, a song, a website, made by your kid with you next to them.
+
+$197 paid once, or $297 with homework checked the same day. No subscription.
+${FREE}
+
+#lastminutegifts #christmasgifts #aiforkids` },
 };
